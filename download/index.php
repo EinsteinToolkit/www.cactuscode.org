@@ -118,8 +118,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <pre>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus \<br>co &lt;<var>arrangement</var>&gt;</pre>
 
 <p>
-  To checkout individual thorns (e.g. see our standard 
-  <a href="../Toolkit/thornlists">ThornLists</a>)
+  To checkout individual thorns (e.g. see our
+  standard <a href="../Toolkit/thornlists">ThornLists</a>)
 </p>
 
 <pre>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus \<br>co &lt;<var>arrangement</var>&gt;/&lt;<var>thorn</var>&gt;</pre>
@@ -134,8 +134,11 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   Form Interface</a> to download a tar file.
 </p>
 
-<a name="requirements"></a> 
-<h2>Requirements</h2> 
+<a name="requirements"></a>
+
+
+
+<h2>Requirements</h2>
 
 <p>
   The Cactus Code is very portable.  The requirements section of the
