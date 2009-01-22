@@ -789,7 +789,7 @@ sub Message
     print "\n";
     print "To install more arrangements and thorns:\n";
     print "\n";
-    print "\n   gmake checkout\n";
+    print "   gmake checkout\n";
     print "\n";
     print "To compile Cactus:\n";
     print "\n";
