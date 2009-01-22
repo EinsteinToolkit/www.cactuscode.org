@@ -1,0 +1,29 @@
+# $Id:
+
+!DESC "WaveToy Application"
+
+!REPOSITORY_TYPE pserver
+!REPOSITORY_LOCATION cvs.cactuscode.org
+!REPOSITORY_NAME /cactus
+
+CactusWave/WaveToyC        
+CactusWave/WaveToyF77      
+CactusWave/WaveToyCXX      
+CactusWave/WaveToyFreeF90  
+CactusWave/WaveToyF90      
+CactusWave/WaveBinarySource
+CactusWave/IDScalarWave    
+CactusWave/IDScalarWaveC   
+CactusWave/IDScalarWaveCXX 
+CactusBase/Boundary        
+CactusBase/CartGrid3D      
+CactusBase/CoordBase
+CactusBase/IOASCII
+CactusBase/IOBasic         
+CactusBase/IOUtil          
+CactusBase/SymBase
+CactusBase/Time            
+CactusPUGH/PUGH            
+CactusPUGH/PUGHSlab
+CactusPUGH/PUGHReduce
+CactusBase/LocalReduce
