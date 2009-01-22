@@ -37,8 +37,6 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   instructions
 </p>
 
-<pre>./GetCactus</pre>
-
 <code>./GetCactus</code>
 
 <p>
@@ -52,7 +50,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   not issue the perl command, but rather just execute the file
 </p>
 
-<pre>./GetCactus &lt;<var>thornlist-name</var>&gt;</pre>
+<code>./GetCactus &lt;<var>thornlist-name</var>&gt;</code>
 
 <p>
   To add more Thorns to your Cactus, either use
@@ -61,7 +59,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   (Using <kbd>GetCactus</kbd> is preferred).
 </p>
 
-<pre>gmake checkout</pre>
+<code>gmake checkout</code>
 
 
 
@@ -90,20 +88,20 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
       and password).
 </p>
 
-<pre>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus login</pre>
+<code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus login</code>
 
 <p>
   Checkout the Cactus flesh
 </p>
 
-<pre>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus co Cactus</pre>
+<code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus co Cactus</code>
 
 <p>
   Move to the arrangements directory of the Cactus installation and
   install the required arrangements and thorns.
 </p>
 
-<pre>cd Cactus/arrangements</pre>
+<code>cd Cactus/arrangements</code>
 
 <p>
   If you are using thorns other than those in the standard Cactus
@@ -116,15 +114,15 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   To checkout complete arrangements (e.g. see our standard
   <a href="../Toolkit/thornlists">ThornLists</a>)
 </p>
- /
-<pre>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;</pre>
+
+<code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;</code>
 
 <p>
   To checkout individual thorns (e.g. see our
   standard <a href="../Toolkit/thornlists">ThornLists</a>)
 </p>
 
-<pre>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;/&lt;<var>thorn</var>&gt;</pre>
+<code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;/&lt;<var>thorn</var>&gt;</code>
 
 
 
