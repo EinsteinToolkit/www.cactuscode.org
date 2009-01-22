@@ -7,11 +7,11 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <p>
   The Cactus Code is (C) Copyrighted by the individual Authors and
   distributed under
-  the <a href="http://www.gnu.org/copyleft/gpl.html">GNU public
-  license</a>.  Most of the computational packages that come with it
-  follow this license but the authors of any thorn are free to follow
-  any licensing they deem appropriate as long as they state it
-  explicitly in their thorn distribution.
+  the <a href="http://www.gnu.org/copyleft/lgpl.html">GNU Lesser
+  General Public License</a>.  Most of the computational packages that
+  come with it follow this license, but the authors of any thorn are
+  free to follow any licensing they deem appropriate as long as they
+  state it explicitly in their thorn distribution.
 </p>
 
 
@@ -19,9 +19,11 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <h2>Getting the Code</h2>
 
 <p>
-  Cactus is maintained using CVS (Concurrent Versioning System).  The
+  Cactus is maintained
+  using <a href="http://www.nongnu.org/cvs/">CVS</a> (Concurrent
+  Versions System).  The
   preferred method is to use the <kbd>GetCactus</kbd> script along
-  with a ThornList as described below. We maintain
+  with a thornlist as described below. We maintain
   a <a href="../Toolkit/thornlists/document_view">page of basic
   thornlists</a>, or you can use your own customized thornlist.
 </p>
@@ -33,7 +35,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <p>
   To checkout the flesh only (compiling the flesh alone will not allow
-  you to run any applications) type the below and follow the
+  you to run any applications), type the below and follow the
   instructions:
 </p>
 
@@ -43,11 +45,6 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   To checkout an application version of Cactus, choose and save
   a <a href="../Toolkit/thornlists">ThornList</a>, or provide one to
   your own needs, and issue the command:
-</p>
-
-<p>
-  Please note, that for the <kbd>GetCactus</kbd> script, you should
-  not issue the perl command, but rather just execute the file:
 </p>
 
 <code>./GetCactus &lt;<var>thornlist-name</var>&gt;</code>
@@ -66,6 +63,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <h2>CVS Repositories</h2>
 
 <p>
+  Instead of using the <kbd>GetCactus</kbd> script, you can also check
+  out Cactus using <kbd>cvs</kbd> commands.
   The main Cactus CVS Server (<kbd>cvs.cactuscode.org</kbd>) hosts
   several different repositories
   (explained <a href="../Documentation/CactusRepositories-HOWTO">CactusRepositories-HOWTO</a>),
@@ -75,9 +74,9 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <p>
   To checkout flesh and Thorns for the stable release, move to the
-  directory where the Cactus installation should be made: (for the
-  latest development version use <kbd>/cactusdevcvs</kbd> instead of
-  <kbd>/cactus</kbd> everywhere below)
+  directory where the Cactus installation should be made.  (For the
+  latest development version of Cactus, use <kbd>/cactusdevcvs</kbd>
+  instead of <kbd>/cactus</kbd> everywhere below).
 </p>
 
 <p>
@@ -90,7 +89,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus login</code>
 
 <p>
-  Checkout the Cactus flesh:
+  Check out the Cactus flesh:
 </p>
 
 <code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout Cactus</code>
@@ -133,10 +132,10 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   Form Interface</a> to download a tar file.
 </p>
 
+
+
+
 <a name="requirements"></a>
-
-
-
 <h2>Requirements</h2>
 
 <p>
