@@ -1,21 +1,17 @@
 <!-- -*-mode:html;coding:utf-8-*- -->
-<?php
-$title='Documentation';
-include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
-?>
+<?php $title='Documentation';
+include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <p>Cactus Documentation</p>
 
 <ul>
 
-  <li> <a href="UsersGuide.pdf">Users' Guide</a> </li>
-  <li> <a href="ReferenceManual.pdf">Reference Manual</a> </li>
-  <li> <a href="CoreDoc.pdf">Basic Concepts</a> </li>
-  <li> <a href="arrangements/">Arrangement Guides</a> </li>
-  <li> <a href="thorns/">Thorn Guides</a> </li>
+  <li> <a href="UsersGuide.pdf">Users' Guide (PDF)</a> </li>
+  <li> <a href="ReferenceManual.pdf">Reference Manual (PDF)</a> </li>
+  <li> <a href="CoreDoc.pdf">Advanced Concepts (PDF)</a> </li>
+  <li> <a href="arrangements/">List of Arrangement Guides</a> </li>
+  <li> <a href="thorns/">List of Thorn Guides</a> </li>
 
 </ul>
 
-<?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');
-?>
+<?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
