@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <?php $title='Funding';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <p>
   Cactus has been made possible by a variety of grants and funding
