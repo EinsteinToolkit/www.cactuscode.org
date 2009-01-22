@@ -20,7 +20,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <p>
   Cactus is maintained using CVS (Concurrent Versioning System).  The
-  preferred method is to use the <code>GetCactus</code> script along
+  preferred method is to use the <kbd>GetCactus</kbd> script along
   with a ThornList as described below. We maintain
   a <a href="../Toolkit/thornlists/document_view">page of basic
   thornlists</a>, or you can use your own customized thornlist.
