@@ -1,9 +1,7 @@
 <?php
-$title='page title goes here';
+$title='Publications';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
-
-<p>content paragraph</p>
 
 <p>content paragraph</p>
 
