@@ -11,7 +11,7 @@
 				<input type="submit" name="sa" value="Search" class="button" />
 			</div>
 			</form>
-			<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=en"></script>
+			<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
 			
 			<!-- side navigation links -->
 			<?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/sidelinks.php');?>
