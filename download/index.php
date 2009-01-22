@@ -34,7 +34,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <p>
   To checkout the flesh only (compiling the flesh alone will not allow
   you to run any applications) type the below and follow the
-  instructions
+  instructions:
 </p>
 
 <code>./GetCactus</code>
@@ -47,7 +47,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <p>
   Please note, that for the <kbd>GetCactus</kbd> script, you should
-  not issue the perl command, but rather just execute the file
+  not issue the perl command, but rather just execute the file:
 </p>
 
 <code>./GetCactus &lt;<var>thornlist-name</var>&gt;</code>
@@ -81,24 +81,23 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 </p>
 
 <p>
-  Login to the CVS server, the <kbd>&lt;<var>user
-      name</var>&gt;</kbd> is <kbd>cvs_anon</kbd> and the password
-      is <kbd>anon</kbd> (unless you have a CVS account on our
-      server in which case you can alternatively use your own username
-      and password).
+  Login to the CVS server, the <kbd>&lt;<var>user name</var>&gt;</kbd>
+  is <kbd>cvs_anon</kbd> and the password is <kbd>anon</kbd> (unless
+  you have a CVS account on our server in which case you can
+  alternatively use your own username and password).
 </p>
 
 <code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus login</code>
 
 <p>
-  Checkout the Cactus flesh
+  Checkout the Cactus flesh:
 </p>
 
-<code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus co Cactus</code>
+<code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout Cactus</code>
 
 <p>
   Move to the arrangements directory of the Cactus installation and
-  install the required arrangements and thorns.
+  install the required arrangements and thorns:
 </p>
 
 <code>cd Cactus/arrangements</code>
@@ -112,14 +111,14 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <p>
   To checkout complete arrangements (e.g. see our standard
-  <a href="../Toolkit/thornlists">ThornLists</a>)
+  <a href="../Toolkit/thornlists">ThornLists</a>):
 </p>
 
 <code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;</code>
 
 <p>
   To checkout individual thorns (e.g. see our
-  standard <a href="../Toolkit/thornlists">ThornLists</a>)
+  standard <a href="../Toolkit/thornlists">ThornLists</a>):
 </p>
 
 <code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;/&lt;<var>thorn</var>&gt;</code>
