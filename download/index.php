@@ -2,10 +2,7 @@
 <?php $title='Download Cactus';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<h1>License</h1>
 <h2>License</h2>
-<h3>License</h3>
-<h4>License</h4>
 
 <p>
   The Cactus Code is (C) Copyrighted by the individual Authors and
