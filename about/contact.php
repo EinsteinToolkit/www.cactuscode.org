@@ -1,3 +1,4 @@
+<!-- -*-mode:html;coding:utf-8-*- -->
 <?php
 $title='Contact';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
