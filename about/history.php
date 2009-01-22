@@ -54,7 +54,7 @@ and supported by a close-knit team spanning AEI and CCT.</p>
 Along the way, many other friends and colleagues have contributed to
 Cactus, including Wai-Mo Suen, Thomas Dramlitsch, Thomas Schweizer,
 Karen Camarda, Malcolm Tobias, Mark Miller, Ed Evans, Werner Benger,
-Bernd BrÃ¼gmann, Ian Hawke, Andre Merzky, and Bernard Schutz.
+Bernd Brügmann, Ian Hawke, Andre Merzky, and Bernard Schutz.
 </p>
 
 <?php
