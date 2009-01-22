@@ -28,7 +28,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <p>
   Save the <a href="../download/GetCactus">checkout script</a> with
-  the name <code>GetCactus</code>.
+  the name <kbd>GetCactus</kbd>.
 </p>
 
 <p>
@@ -46,7 +46,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 </p>
 
 <p>
-  Please note, that for the <code>GetCactus</code> script, you should
+  Please note, that for the <kbd>GetCactus</kbd> script, you should
   not issue the perl command, but rather just execute the file
 </p>
 
@@ -54,9 +54,9 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <p>
   To add more Thorns to your Cactus, either use
-  the <code>GetCactus</code> script with a new Thorn List, or use the
+  the <kbd>GetCactus</kbd> script with a new Thorn List, or use the
   below make target from within the Cactus distribution.
-  (Using <code>GetCactus</code> is preferred).
+  (Using <kbd>GetCactus</kbd> is preferred).
 </p>
 
 <pre>gmake checkout</pre>
@@ -66,7 +66,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <h2>CVS Repositories</h2>
 
 <p>
-  The main Cactus CVS Server (<code>cvs.cactuscode.org</code>) hosts
+  The main Cactus CVS Server (<kbd>cvs.cactuscode.org</kbd>) hosts
   several different repositories
   (explained <a href="../Documentation/CactusRepositories-HOWTO">CactusRepositories-HOWTO</a>),
   including different repositories for the stable and development
@@ -76,14 +76,14 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <p>
   To checkout flesh and Thorns for the stable release, move to the
   directory where the Cactus installation should be made: (for the
-  latest development version use <code>/cactusdevcvs</code> instead of
-  <code>/cactus</code> everywhere below)
+  latest development version use <kbd>/cactusdevcvs</kbd> instead of
+  <kbd>/cactus</kbd> everywhere below)
 </p>
 
 <p>
-  Login to the CVS server, the <code>&lt;<var>user
-      name</var>&gt;</code> is <code>cvs_anon</code> and the password
-      is <code>anon</code> (unless you have a CVS account on our
+  Login to the CVS server, the <kbd>&lt;<var>user
+      name</var>&gt;</kbd> is <kbd>cvs_anon</kbd> and the password
+      is <kbd>anon</kbd> (unless you have a CVS account on our
       server in which case you can alternatively use your own username
       and password).
 </p>
