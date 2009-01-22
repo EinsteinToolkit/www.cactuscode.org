@@ -15,7 +15,7 @@ community toolkits for Cactus.
 
 <p>
 Cactus allows you to develop code in your language of choice: F77,
-F90, C, C++ are all supported &emdash; developers write their own
+F90, C, C++ are all supported &mdash; developers write their own
 components, which we call "thorns" which are connected together by the
 Cactus "flesh".  Developers and users can take advantage of a
 selection of existing computational thorns, as well as a growing
@@ -33,7 +33,7 @@ quickly available to our users.
 <p>
 Cactus is developed and supported by an international team of
 computational and computer scientists, based largely at the Center for
-Computation &amp; Technology at Louisiana State University..
+Computation &amp; Technology at Louisiana State University.
 </p>
 
 <ul>
