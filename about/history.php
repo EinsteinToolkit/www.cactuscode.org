@@ -1,4 +1,4 @@
-<!-- -*-mode:html-*- -*-coding:utf-8-*- -->
+<!-- -*-mode:html;coding:utf-8-*- -->
 <?php
 $title='History';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
@@ -31,7 +31,7 @@ but also by other computational scientists in other domains with
 similar needs for large scale computing.  This lead to a major
 redesign and rewrite of Cactus, learning from all our previous
 experiences.  In July 1999, Cactus 4.0 Beta 1 was finally released,
-with the main development coming from Tom Goodale, Joan Mass�,
+with the main development coming from Tom Goodale, Joan MassÃ³,
 Gabrielle Allen, Gerd Lanfermann and John Shalf.
 </p>
 
@@ -54,7 +54,7 @@ and supported by a close-knit team spanning AEI and CCT.</p>
 Along the way, many other friends and colleagues have contributed to
 Cactus, including Wai-Mo Suen, Thomas Dramlitsch, Thomas Schweizer,
 Karen Camarda, Malcolm Tobias, Mark Miller, Ed Evans, Werner Benger,
-Bernd Br�gmann, Ian Hawke, Andre Merzky, and Bernard Schutz.
+Bernd BrÃ¼gmann, Ian Hawke, Andre Merzky, and Bernard Schutz.
 </p>
 
 <?php
