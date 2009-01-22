@@ -39,6 +39,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <pre>./GetCactus</pre>
 
+<code>./GetCactus</code>
+
 <p>
   To checkout an application version of Cactus, choose and save
   a <a href="../Toolkit/thornlists">ThornList</a>, or provide one to
