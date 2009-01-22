@@ -38,10 +38,10 @@ Computation &amp; Technology at Louisiana State University.
 
 <ul>
 
-<li> <a href="../About/CactusTeam">Cactus Development Team</a>
-<li> <a href="../About/History">Cactus History and Funding</a>
-<li> <a href="../About/Prizes">Cactus Prizes and Major Achievements</a>
-<li> <a href="../About/Contact">Contact Us!</a>
+<li> <p><a href="../About/CactusTeam">Cactus Development Team</a></p>
+<li> <p><a href="../About/History">Cactus History and Funding</a></p>
+<li> <p><a href="../About/Prizes">Cactus Prizes and Major Achievements</a></p>
+<li> <p><a href="../About/Contact">Contact Us!</a></p>
 
 </ul>
 
