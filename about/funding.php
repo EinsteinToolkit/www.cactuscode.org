@@ -13,7 +13,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   <li> National Center for Supercomputing Applications </li>
   <li> Lawrence Berkeley National Laboratory </li>
   <li> Washington University </li>
-  <li> University of Tübingen </li>
+  <li> University of T&uuml;bingen </li>
 </ul>
 
 <p>
@@ -52,7 +52,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
       Supercomputer Simulations and Approximation Techniques</i>
       (HPRN-CT-2000-00137) </li>
   <li> DFN-Verein <i>GriKSL: Grid-Immersion: Kollision Schwarzer
-      Löcher</i> (TK 6-2-AN 200) </li>
+      L&ouml;cher</i> (TK 6-2-AN 200) </li>
   <li> European Commission <i>GridLab: A Grid Application Toolkit and
       Testbed</i> (IST-2001-32133) </li>
   <li> DFG <i>Gravitational Wave Astronomy and Sources of
