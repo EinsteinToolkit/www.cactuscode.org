@@ -17,7 +17,7 @@ In 1995, Ed Seidel and many of his group moved to the Max Planck
 Institute for Gravitational Physics (Albert Einstein Institute or AEI)
 in Potsdam, Germany.  Frustrated by the difficulties of coordinating
 the development and use of several different codes across a large
-collaborative group, Paul Walker, Joan Masso, Ed Seidel, and John
+collaborative group, Paul Walker, Joan Massó, Ed Seidel, and John
 Shalf, designed and wrote the original version of Cactus, Cactus 1.0,
 which provided a collaborative parallel toolkit for numerical
 relativity.
@@ -31,7 +31,7 @@ but also by other computational scientists in other domains with
 similar needs for large scale computing.  This lead to a major
 redesign and rewrite of Cactus, learning from all our previous
 experiences.  In July 1999, Cactus 4.0 Beta 1 was finally released,
-with the main development coming from Tom Goodale, Joan MassÃ³,
+with the main development coming from Tom Goodale, Joan Massó³,
 Gabrielle Allen, Gerd Lanfermann and John Shalf.
 </p>
 
