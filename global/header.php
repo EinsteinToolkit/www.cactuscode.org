@@ -23,7 +23,7 @@
   echo '#menu ul li#'.$category.' a {text-decoration:overline;}';
   
 ?></style>
-<title>Cactus Code — <?php echo $title; ?></title>
+<title>Cactus Code &mdash; <?php echo $title; ?></title>
 </head>
 
 <body>
