@@ -9,7 +9,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 <ul>
 
   <li> <a href="UsersGuide.pdf">Users' Guide</a> </li>
-  <li> <a href="RerefenceManual.pdf">Reference Manual</a> </li>
+  <li> <a href="ReferenceManual.pdf">Reference Manual</a> </li>
 
 </ul>
 
