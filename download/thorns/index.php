@@ -2,10 +2,6 @@
 $title='Thorn Lists';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
-        <h2>ThornList files for specific Cactus applications</h2>
-    
-        
-    
       <p>
         The thorn lists below provide a convenient way for choosing a configuration of Cactus for checkout and compilation.  More thorn lists will be added as applications and examples are developed. Note that thorn lists for the development version of Cactus may be slightly different.
 <!-- , and should be downloaded from the 
@@ -22,7 +18,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
       <p>
       
       <p>
-        For more information about individual thorns, check the <a href="http://www.cactuscode.org/cactus_cgi-bin/viewthorn.pl">Thorn Information</a> page, and the <a href="../Documentation/computationalToolKitHowTo.txt">ComputationalToolKit-HOWTO</a>.
+        For more information about individual thorns, check the  <a href="../Documentation/computationalToolKitHowTo.txt">ComputationalToolKit-HOWTO</a>.
       </p>
 
       
