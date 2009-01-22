@@ -95,6 +95,10 @@ code
 	border: 1px solid #E5F0FB;  
 	background: #F4F8FD;
 	}
+.blit {
+	font: 500 1em/1.5em 'Lucida Console', 'courier new', monospace ;
+    font-weight: bold;
+}
 acronym
 	{
 	cursor: help;
