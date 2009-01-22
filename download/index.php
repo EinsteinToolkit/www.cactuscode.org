@@ -39,6 +39,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   instructions:
 </p>
 
+<code>chmod a+x GetCactus</code>
 <code>./GetCactus</code>
 
 <p>
