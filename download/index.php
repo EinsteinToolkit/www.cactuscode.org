@@ -114,15 +114,15 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   To checkout complete arrangements (e.g. see our standard
   <a href="../Toolkit/thornlists">ThornLists</a>)
 </p>
-
-<pre>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus \<br>co &lt;<var>arrangement</var>&gt;</pre>
+ /
+<pre>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;</pre>
 
 <p>
   To checkout individual thorns (e.g. see our
   standard <a href="../Toolkit/thornlists">ThornLists</a>)
 </p>
 
-<pre>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus \<br>co &lt;<var>arrangement</var>&gt;/&lt;<var>thorn</var>&gt;</pre>
+<pre>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;/&lt;<var>thorn</var>&gt;</pre>
 
 
 
