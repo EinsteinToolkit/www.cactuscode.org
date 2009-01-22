@@ -784,15 +784,25 @@ sub Message
     $thorndir  = $1;
     $thornname = $2;
 
-    print "\n$line";
-    print "\n To install more arrangements and thorns:\n\n  gmake checkout\n";
-    print "\n To compile Cactus:\n\n  gmake <config-name>\n";
-    print "\n To create user documentation:\n\n  gmake UsersGuide\n";
-    print "\n To receive Email updates about Cactus news and developments\n";
-    print " please join our Cactus Users list by mailing\n";
-    print "\n                  majordomo\@cactuscode.org\n\n";
-    print " with the message line\n\n";
-    print "                    subscribe users\n\n";
+    print "\n";
+    print $line;
+    print "\n";
+    print "To install more arrangements and thorns:\n";
+    print "\n";
+    print "\n   gmake checkout\n";
+    print "\n";
+    print "To compile Cactus:\n";
+    print "\n";
+    print "   gmake <config-name>\n";
+    print "\n";
+    print "To create user documentation:\n";
+    print "\n";
+    print "   gmake UsersGuide\n";
+    print "\n";
+    print "To receive email updates about Cactus news and developments, please\n";
+    print "join our Cactus Users list by visiting <http://www.cactuscode.org/>\n";
+    print "and following the instructions there.\n";
+    print "\n";
     print $line;
     print "\n";
   }
