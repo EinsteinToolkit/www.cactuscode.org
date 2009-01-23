@@ -12,7 +12,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <ul>
   
-  <li>Linux Clusters
+  <li><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters
     <ul>
       <li><a href="http://www.ncsa.uiuc.edu/UserInfo/Resources/Hardware/Intel64Cluster/">Abe</a>
         (NCSA)</li>
@@ -32,7 +32,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     </ul>
   </li>
   
-  <li>Cray XT4
+  <li><a href="http://en.wikipedia.org/wiki/Cray_XT4">Cray XT4</a> (CNL)
     <ul>
       <li><a href="http://www.nersc.gov/nusers/systems/franklin/">Franklin</a>
         (NERSC)</li>
@@ -41,13 +41,14 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     </ul>
   </li>
   
-  <li>IBM Blue Gene/P
+  <li>IBM <a href="http://en.wikipedia.org/wiki/Blue_Gene">Blue
+      Gene</a>/P (Linux)
     <ul>
       <li><a href="http://www.alcf.anl.gov/resources/storage.php">Surveyor</a> (ALCF)</li>
     </ul>
   </li>
   
-  <li>IBM P5
+  <li><a href="http://en.wikipedia.org/wiki/IBM_System_p">IBM p5</a> (AIX)
     <ul>
       <li><a href="http://www.loni.org/systems/system.php?system=Bluedawg">Bluedawg</a>,
         <a href="http://www.loni.org/systems/system.php?system=Ducky">Ducky</a>,
@@ -60,7 +61,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     </ul>
   </li>
   
-  <li>SGI Altix
+  <li>SGI <a href="http://en.wikipedia.org/wiki/Altix">Altix</a>
     <ul>
       <li><a href="http://www.lrz-muenchen.de/services/compute/hlrb/">HLRB
           II</a> (LRZ)</li>
@@ -69,26 +70,45 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     </ul>
   </li>
   
-  <li>SiCortex
+  <li>SiCortex (Linux)
     <ul>
       <li><a href="http://sicortex.com/">SiCortex</a> (Houston)</li>
     </ul>
   </li>
   
-  <li>Linux Laptops/Workstations
+  <li><a href="http://en.wikipedia.org/wiki/Linux">Linux</a>
+    Laptops/Workstations
     <ul>
       <li><a href="http://www.cct.lsu.edu/">numrel02</a> (CCT, Linux
         workstation)</li>
     </ul>
   </li>
   
-  <li>Mac OS X Laptops/Workstations
+  <li><a href="http://en.wikipedia.org/wiki/Mac_OS_X">Mac OS X</a>
+    Laptops/Workstations
     <ul>
       <li><a href="http://www.cct.lsu.edu/">Redshift</a> (CCT, Mac OS X
         laptop)</li>
     </ul>
   </li>
   
+</ul>
+
+
+
+<h2>Supported Compilers</h2>
+
+<p>
+  Different system architectures support various compilers.  Usually,
+  each system has a preferred compiler.
+</p>
+
+<ul>
+  <li><a href="http://en.wikipedia.org/wiki/GNU_Compiler_Collection">GCC</a></li>
+  <li>IBM</li>
+  <li>Intel</li>
+  <li>PathScale</li>
+  <li>PGI</li>
 </ul>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
