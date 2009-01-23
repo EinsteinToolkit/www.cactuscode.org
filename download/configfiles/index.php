@@ -60,7 +60,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   <ul>
     <li><a href="http://www.lrz-muenchen.de/services/compute/hlrb/">HLRB
         II</a> (LRZ)</li>
-    <li><a href="http://www.hpc.lsu.edu/systems/system.php?system=Santaka"Santaka</a>
+    <li><a href="http://www.hpc.lsu.edu/systems/system.php?system=Santaka">Santaka</a>
     (LSU)</li>
   </ul>
   
