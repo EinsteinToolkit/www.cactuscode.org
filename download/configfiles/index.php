@@ -8,7 +8,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 
 
-<h2>Supported Architectures</h2>
+<h2>Supported Architectures (With Example Systems)</h2>
 
 <ul>
   
