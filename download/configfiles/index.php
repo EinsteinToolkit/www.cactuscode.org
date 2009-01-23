@@ -97,8 +97,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 
 <p>
-  Missing, potentially interesting machines/architectures, in order of
-  decreasing interest:
+  TODO: Missing, potentially interesting machines/architectures, in
+  order of decreasing interest:
 </p>
 
 <ul>
