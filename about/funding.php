@@ -31,7 +31,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   <li>
     NSF <a href="http://www.cct.lsu.edu/~eschnett/Alpaca/"><i>Alpaca:
         Cactus Tools for Application Level Profiling and Correctness
-        Analysis</i></a> (NSF 0701566) </li>
+        Analysis</i></a> (NSF 0721915) </li>
   <li> ONR <i>Development of an Integrated Modeling Framework for
       Simulations of Coastal Processes in Deltaic Environments Using
       High-Performance Computing (COMI)</i> </li>

@@ -41,14 +41,15 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     </ul>
   </li>
   
-  <li>IBM <a href="http://en.wikipedia.org/wiki/Blue_Gene">Blue
-      Gene</a>/P (Linux)
+  <li><a href="http://en.wikipedia.org/wiki/Blue_Gene">IBM Blue
+      Gene/P</a> (Linux)
     <ul>
       <li><a href="http://www.alcf.anl.gov/resources/storage.php">Surveyor</a> (ALCF)</li>
     </ul>
   </li>
   
-  <li><a href="http://en.wikipedia.org/wiki/IBM_System_p">IBM p5</a> (AIX)
+  <li><a href="http://en.wikipedia.org/wiki/IBM_System_p">IBM p5</a>
+    (AIX)
     <ul>
       <li><a href="http://www.loni.org/systems/system.php?system=Bluedawg">Bluedawg</a>,
         <a href="http://www.loni.org/systems/system.php?system=Ducky">Ducky</a>,
@@ -61,7 +62,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     </ul>
   </li>
   
-  <li>SGI <a href="http://en.wikipedia.org/wiki/Altix">Altix</a>
+  <li><a href="http://en.wikipedia.org/wiki/Altix">SGI Altix</a>
     <ul>
       <li><a href="http://www.lrz-muenchen.de/services/compute/hlrb/">HLRB
           II</a> (LRZ)</li>
