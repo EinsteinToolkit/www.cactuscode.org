@@ -104,11 +104,15 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 </p>
 
 <ul>
-  <li><a href="http://en.wikipedia.org/wiki/GNU_Compiler_Collection">GCC</a></li>
-  <li>IBM</li>
-  <li>Intel</li>
-  <li>PathScale</li>
-  <li>PGI</li>
+  <li><a href="http://gcc.gnu.org/">GCC</a> (gcc, g++, gfortran)</li>
+  <li><a href="http://www.ibm.com/software/awdtools/xlcpp/">IBM</a>
+    (xlc, xlC, xlf, xlf90)</li>
+  <li><a href="www.intel.com/cd/software/products/asmo-na/eng/compilers/">Intel</a>
+  (icc, icpc, ifort)</li>
+  <li><a href="http://www.pathscale.com/">PathScale</a> (pathcc,
+    pathCC, pathf95)</li>
+  <li><a href="http://www.pgroup.com/">PGI</a> (pgcc, pgCC, pgf,
+    pgf90)</li>
 </ul>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
