@@ -2,9 +2,9 @@
 <?php $title='Configuration Files';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<!-- 2009-01-22 Erik Schnetter: This file is currently manually --
-  -- created from information stored in the SimFactory machine --
-  -- database.  This process should be automated.  -->
+<!-- 2009-01-22 Erik Schnetter: This file is currently manually
+     created from information stored in the SimFactory machine
+     database.  This process should be automated.  -->
 
 
 
