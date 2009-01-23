@@ -96,6 +96,21 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 </ul>
 
 
+<p>
+  Missing, potentially interesting machines/architectures, in order of
+  decreasing interest:
+</p>
+
+<ul>
+  <li>Big Red (IBM e1350)</li>
+  <li>Big Ben (Cray XT3) (but we have Cray XT4)</li>
+  <li>TeraGrid Clusters at NCSA, SDSC, UC/ANL (Itanium2)</li>
+  <li>Frost (IBM BlueGene/L) (but we have BlueGene/P)</li>
+  <li>Pople (SGI Altix 4700) (but we have SGI Altix)</li>
+  <li>Q (Mac OS X) (we have Mac OS X already)</li>
+</ul>
+
+
 
 <h2>Supported Compilers</h2>
 
