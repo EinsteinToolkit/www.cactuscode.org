@@ -103,7 +103,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/media/news/recent.php');
 echo '
 <h2>Recent News</h2>
 <ul class="sidemenu">'.$news_links.
-'	<p class="align-right"><a href="/media/news/">More...</a></p>
+'	<li class="align-right"><a href="/media/news/">More...</a></li>
 </ul>
 ';
 break;
