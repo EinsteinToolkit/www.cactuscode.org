@@ -2,7 +2,7 @@
 <?php $title='Documentation';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<p>Cactus Documentation</p>
+<h2>Cactus Documentation</h2>
 
 <ul>
 
