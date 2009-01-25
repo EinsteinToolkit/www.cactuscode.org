@@ -1,0 +1,372 @@
+ComputationalToolKit-HOWTO
+Gabrielle Allen
+v1.1, 13 September 2000
+
+This document is designed to give a brief overview of the capabilities of 
+the Cactus Computational ToolKit (CCTK). The intent is that it will be useful 
+for those starting to write thorns for applications, by indicating where to 
+find information on things like setting the timestep, getting IO, and using 
+boundary conditions.
+
+This document will be complemented at some stage by a complete guide to the
+ToolKit, and it is planned that this toolkit guide will be created 
+automatically from the documentation already available in each thorn.
+
+This document is only planned as an overview, for more information consult 
+the documentation in the /doc directory of each thorn. We are continually 
+working at the documentation, so please send us an email at 
+cactusmaint@cvs.cactuscode.org when details are missing, and we'll add 
+them straightaway.
+
+Please help us to keep this documentation complete and up-to-date by 
+sending complaints, suggestions and errata to the Cactus Team at 
+cactusmaint@cactuscode.org 
+
+============================================================================
+
+A.  What is the Cactus Computational ToolKit ?
+
+    The Cactus Computational ToolKit is not required for compiling or 
+    running Cactus. The toolkit is a collection of thorns which provide 
+    much of the basic infrastructure needed for any simulation.
+
+    For example, there are thorns for setting up coordinates, for parallel 
+    IO and parallel interpolators as well as example application thorns. 
+    You do not have to use the supplied toolkit thorn for e.g. creating 
+    Cartesian coordinates. As with any other thorn you can replace it with 
+    your own coordinate thorn. 
+
+============================================================================
+
+B.  Capabilities
+
+
+1.  "Driver Thorn"
+
+    The Cactus flesh knows all the information about grid variables 
+    which is supplied in the configuration files of each thorn. The
+    flesh holds this information in a database. However, the flesh
+    doesn't "create" grid variables, this is the job of a driver thorn.
+    A driver thorn is necessary for any simulation, among other tasks,
+    it sets up grid variables, allocating their storage, distributing
+    them among processors for a parallel run, and handles communications
+    of ghostzones between processors.
+ 
+    The standard driver for Cactus is CactusPUGH/PUGH, which uses MPI
+    for communications and can handle all data types supported by the 
+    Cactus Flesh. 
+
+
+2.  Cartesian Coordinates
+
+    The toolkit thorn CactusBase/CartGrid3D sets up, at the start of the 
+    simulation, a 3D Cartesian coordinate system on the computational grid.
+    The coordinates can be specified in several different ways, for example
+    by giving their maximum and minumum values on the grid (ByRange) or by 
+    specifying the grid spacing in each direction (BySpacing). 
+
+    The coordinates are created as four 3D grid functions x,y,z and the
+    radial coordinate r, and are "public" variables, so are passed into all
+    scheduled routines in thorns which inherit from CartGrid3D.
+
+    CartGrid3D can also be used to define and use grids with symmetries. 
+    This is useful for problems whose solutions are known to possess 
+    symmetries across the coordinate axes. For example, you can specify 
+    octant symmetry to indicate that you want symmetry boundary conditions
+    to be applied to grid functions on the lower grid boundaries.
+
+    Symmetry boundary conditions can only be applied to grid variables
+    which have defined their behaviour across a coordinate axis, and the
+    conditions are applied by making function calls to routines in the 
+    CartGrid3D thorn.
+
+    There are plans to add thorns to set up Cartesian, and Polar, grids for
+    other spatial dimensions.
+
+
+3.  Timestep 
+
+    At each iteration the current time is updated in the Flesh by adding on 
+    the current value of the timestep. The values of the current time and 
+    timestep are internal Cactus variables, cctk_time and cctk_delta_time,  
+    which are passed to all scheduled routines as part of the 
+    CCTK_ARGUMENTS macro.
+
+    The Computational Toolkit contains a thorn CactusBase/Time which is 
+    usually used to set the timestep, either once at the start of the 
+    simulation, or dynamically before each evolution step (using a Courant 
+    type condition). 
+
+    You do not need to use thorn Time to set the timestep, you are free to
+    set the timestep yourself, using one of the two following methods:
+
+       * Write your own code/routine/thorn to set the timestep, by simply
+         setting the value of cctk_delta_time. Make sure that the timestep
+         is set at the appropriate point in the schedule tree.
+
+         [Note that from C, you will need to set *cctk_delta_time]
+
+       * You don't have to use cctk_delta_time at all! Perform your own
+         time management by using grid variables e.g. MyTimeStep and MyTime.
+	 The Cactus cctk_delta_time will default to the value 1, and the 
+         the Cactus cctk_time will thus default to the iteration number. 
+	 Note that performing your own time management will have 
+         implications for other thorns which are using Cactus time, for 
+         example the IO thorns in the Computational ToolKit.
+
+
+4.  Outer Boundary Conditions
+
+    The Computational ToolKit provide a number of different boundary 
+    conditions which can be applied to grid functions, and are accessed by 
+    making function calls, these are contained in the thorn 
+    CactusBase/Boundary.
+
+    [An exception is periodic boundary conditions, which are implemented
+    in a driver thorn, e.g. CactusPUGH/PUGH. Periodic boundary conditions
+    can be implemented in any coordinate direction, and are currently
+    applied to all boundary conditions. The implementation of periodic 
+    boundary conditions may change in the future, to make them callable
+    for specific grid functions in the same way as outer outer boundary
+    conditions.]
+
+    If you look at the source code in these routines they look complicated 
+    because of two reasons:
+
+       * They must take into account parallelism, which means that before a
+         boundary condition is applied there is code to check that the 
+         boundary of the local grid is a real boundary and not just a 
+         processor boundary
+
+       * They also work for grids which have symmetry boundaries (e.g. for 
+         just an octant), which means that they also check that a boundary 
+         is not a symmetry boundary before they apply the condition.
+
+    If you want to use a boundary condition which is not available in thorn
+    Boundary, it should be a straightforward matter to add it by copying
+    part of the code from this thorn. Alternatively, write to 
+    cactusmaint@cactuscode.org, and if we think the boundary condition would
+    be useful for other people we will add it. 
+
+
+5.  Output
+
+    Output from Cactus is usually achieved by choices in the parameter file.
+    After each iteration in Cactus, each IO method which is compiled into 
+    your executable will be prompted to perform output, depending on the
+    values of its own parameters.
+
+    IO methods supplied in the Computational ToolKit all (with the current
+    exception of CactusPUGHIO/IsoSurfacer), use the thorn CactusBase/IOUtil,
+    which acts as a "flesh" for IO thorns, providing a standard set of 
+    default parameters. The different IO methods in Cactus, are described
+    in the documentation for CactusBase/IOUtil.
+
+    It can be useful to call output routines directly from Cactus, for
+    example for debugging purposes. If you want to do this, look at the 
+    IO section in the Thorn Writers part of the Users Guide.
+
+    If you want to provide your own output, start by looking at thorn
+    CactusBase/IOASCII.
+
+
+6.  Reduction and Interpolation
+
+    Thorns which provide reduction or interpolation operations register their
+    capabilities with the Flesh. These operators are then applied to 
+    grid variables (and also local variables) by calling a standard API
+    (described in the Users Guide) which includes the name of the operation
+    required.
+
+    The Computational ToolKit provides reduction operators to return the
+    minimum, maximum and L1 and L2 norms of variables. These reduction 
+    operators are provided in CactusPUGH/PUGH. Interpolation routines 
+    are supplied by CactusPUGH/Interp.
+
+============================================================================
+
+C.  ToolKit Arrangements
+
+    As described in the Users Guide, thorns are collected in groups 
+    called arrangements for organisational purposes. The arrangements
+    making up the Cactus Computational ToolKit are
+
+    CactusBase		General computational infrastructure thorns
+
+    CactusBench		Benchmarking applications
+
+    CactusElliptic	Thorns providing Elliptic Solver infrastructure
+			and solvers
+  
+    CactusExamples	Example applications
+  
+    CactusExternal    	External packages which can be included as thorns
+			and thus compiled during the standard cactus 
+			make process.
+
+    CactusIO		Thorns providing IO methods independent of a 
+		        particular driver thorn.
+
+    CactusPUGH		The standard driver thorn PUGH, and other thorns
+			which require PUGH explicitly.
+
+    CactusPUGHIO	Thorns providing input/output methods which
+			require the standard driver thorn PUGH explicitly
+
+    CactusTest		Thorns which test out various parts of the Cactus
+			infrastructure, also providing examples of usage.
+
+    CactusWave		Standard example application, which we use for 
+			testing new functionality, demos and tutorials.
+
+============================================================================
+
+D.  ToolKit Thorns 
+
+    Here the ToolKit thorns are briefly described.
+
+    We also list the dependencies of thorns in the Computational ToolKit
+    with other thorns. It is important to note that, allow here actual 
+    thorn names are listed in the "requires" section, they can be replaced
+    by any other thorn providing the same implementation. Here the 
+    Computational ToolKit thorn names are only given for convenience for
+    the reader. 
+
+    Note that two of the thorns require external libraries to be installed
+    on your system for compilation, CactusElliptic/EllPETSc requires the 
+    PETSc library, and CactusPUGHIO/IOHDF5 requires the HDF5 library.
+
+ 
+    CactusBase/
+
+      CactusBase/Boundary
+	- range of outer boundary conditions
+      CactusBase/CartGrid3D
+	- 3D Cartesian coordinates, symmetry conditions
+      CactusBase/IOASCII	(requires IOUtil, PUGHSlab)
+	- 1D or 2D ASCII output
+      CactusBase/IOBasic	(requires IOUtil, PUGHReduce)
+	- Screen or Scalar output
+      CactusBase/IOUtil
+	- the "flesh" for IO thorns
+      CactusBase/Time
+	- sets the timestep
+
+    CactusBench/
+
+      CactusBench/BenchADM	(requires Einstein)
+	- benchmark using a floating point intensive GR application
+
+    CactusElliptic/
+
+      CactusElliptic/EllBase
+	- the "flesh" for elliptic thorns
+      CactusElliptic/EllPETSc  (requires the PETSc library, EllBase)
+	- 3D elliptic solver using the PETSc library
+      CactusElliptic/EllSOR    (requires EllBase, Boundary)
+	- standard 3D SOR solvers
+      CactusElliptic/EllTest   (requires CartGrid3D, EllBase)
+	- example thorn 
+
+    CactusExamples/
+
+      CactusExamples/WaveToy1DF77
+	- self contained scalar wave application in 1D
+      CactusExamples/WaveToy2DF77
+	- self contained scalar wave application in 2D
+
+    CactusIO/
+
+      CactusIO/IOJpeg
+	- output of 2D slices in jpeg format
+
+    CactusPUGH/
+
+      CactusPUGH/Interp
+	- interpolation operators
+      CactusPUGH/PUGH
+	- MPI parallel driver 
+      CactusPUGH/PUGHReduce
+	- reduction operators
+      CactusPUGH/PUGHSlab
+	- extracts custom hyperslabs of grid functions
+	
+    CactusPUGHIO/
+
+      CactusPUGHIO/IOFlexIO	(requires PUGHSlab, IEEEIO)
+	- 2D or 3D output using IEEEIO data format
+      CactusPUGHIO/IOHDF5	(requires the HDF5 library)
+	- 3D output using the HDF5 data format
+      CactusPUGHIO/IsoSurfacer	
+	- calculate isosurfaces of grid functions
+
+    CactusTest/
+
+      CactusTest/TestArrays
+	- test of grid arrays
+      CactusTest/TestComplex
+	- test of complex data types
+      CactusTest/TestCoordinates
+	- test of coordinate registration
+      CactusTest/TestInclude1
+	- test of include file mechanism
+      CactusTest/TestInclude2
+	- test of include file mechanism
+      CactusTest/TestInterp	
+	- test of interpolation
+
+    CactusWave/
+
+      CactusWave/IDScalarWave	(requires a WaveToyXX thorn, CartGrid3D)
+	- initial data for 3D scalar wave application (F90)
+      CactusWave/IDScalarWaveC	(requires a WaveToyXX thorn, CartGrid3D)
+	- initial data for 3D scalar wave application (C)	
+      CactusWave/IDScalarWaveCXX(requires a WaveToyXX thorn, CartGrid3D)
+	- initial data for 3D scalar wave application (C++)
+      CactusWave/IDScalarWaveElliptic
+				(requires a WaveToyXX thorn, CartGrid3D, 
+				 EllBase)
+	- elliptic initial data for 3D scalar wave application 
+      CactusWave/WaveBinarySource
+				(requires a WaveToyXX thorn, 
+				 an IDScalarWaveXX thorn, CartGrid3D)
+	- orbiting sources for a 3D scalar wave
+      CactusWave/WaveToyC
+	- evolver for 3D scalar wave (C)
+      CactusWave/WaveToyCXX
+	- evolver for 3D scalar wave (C++)
+      CactusWave/WaveToyF77
+	- evolver for 3D scalar wave (F77)
+      CactusWave/WaveToyF90
+	- evolver for 3D scalar wave (Fixed form F90)
+      CactusWave/WaveToyFreeF90
+	- evolver for 3D scalar wave (Free form F90)
+
+    CactusExternal/
+
+      CactusExternal/FlexIO
+	- library and interface for IEEEIO data format
+      CactusExternal/jpeg6b
+	- jpeg library
+
+============================================================================
+
+Further documentation on Cactus can be found at www.cactuscode.org
+
+Please report bugs or feature requests using the tracking system at
+www.cactuscode.org/cactus_cgi-bin/gnatsweb.pl
+
+Please direct questions about compiling and running cactus to 
+cactusmaint@cactuscode.org
+
+Comments and general questions should be directed to cactusmaint@cactuscode.org
+
+============================================================================
+
+
+
+
+
+
+
+

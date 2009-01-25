@@ -1,0 +1,123 @@
+QuickStart-HOWTO
+Gabrielle Allen
+v1.1, 25 April 2000
+
+This HOWTO is designed for those who want to checkout Cactus,
+compile it, run it, and look at some results without having to
+wade through all the documentation. Of course, we heartily 
+recommend that you read all the available documentation before 
+trying this at home. Please help us to keep this documentation
+complete and up-to-date by sending complaints, suggestions and 
+errata to the Cactus Team at cactusmaint@cactuscode.org 
+
+
+1. We are going to explain how to run examples from given applications
+   in Cactus. To run Cactus you need to compile the core code (the 
+   "flesh"), and a number of modules (the "thorns"). The flesh provides
+   the interfaces and structure for Cactus, you can compile it on it's
+   own, but it doesn't actually "do" anything. The thorns provide the
+   applications and the computational infrastructure, you need to 
+   compile Cactus with all the thorns needed to run your application, 
+   for example, if you need I/O you will need to add thorns to do this.
+
+   For convenience we provide thorn lists for some example applications
+   on our web pages.
+
+2. Get hold of a copy of the latest version of the Cactus Code, 
+   preferably from our CVS server. The simplest way is to use the
+   GetCactus script which you can find on the web pages at 
+
+   http://www.cactuscode.org/Download/GetCactus
+ 
+   You also need the list of thorns required for an application, 
+   we recommend the WaveToy set of applications (standard 3D scalar wave 
+   evolver written in all supported programming languages), 
+
+   http://www.cactuscode.org/Download/ThornLists/WaveToy.th
+
+   or the benchmark application.
+
+   http://www.cactuscode.org/Download/ThornLists/BenchADM.th
+
+   If you don't have a Fortran compiler, there is a WaveToy 
+   application which uses thorns written only in C
+
+   http://www.cactuscode.org/Download/ThornLists/WaveToyC.th
+
+   To download the code (flesh and application thorns) simply type
+
+   > ./GetCactus <thorn list name>
+
+   Choose the default values at all the prompts, and you should
+   end up with a new directory ./Cactus containing the code,
+   move into this directory
+
+   > cd Cactus
+
+3. Now create a configuration.
+
+   If you want to compile for a single processor machine, without MPI, 
+   the command is just (you can replace myapp with any name you like)
+
+   > gmake myapp-config THORNLIST=<thorn list>
+
+   (Replace "<thorn list>" with the filename of the file which
+   contains the list of thorns to be compiled.  Include the path if
+   the file is not in the current directory.)  If you want to compile
+   with MPI and your machine has a native version (T3E, Origin, SP2)
+   use
+
+   > gmake myapp-config MPI=NATIVE THORNLIST=<thorn list>
+
+   or if you know your machine has MPICH installed try
+
+   > gmake myapp-config MPI=MPICH MPICH_DEVICE=ch_shmem THORNLIST=<thorn list>
+
+   If you run into problems at this stage, you really need
+   to look at the documentation in the Users Guide for compiling
+   Cactus. Here it explains how to customise the compilers and MPI
+   libraries used etc.
+
+4. If the configuration is created sucessfully, compile the code with
+
+   > gmake myapp
+
+   Hopefully, you won't hit any problems in which case you will have
+   an executable exe/cactus_myapp.
+
+5. Now it is time to test the compilation. The thorns contain
+   several "test suites" which contain the results from an 
+   earlier run, so that you can check that the same answers are given.
+   Type
+
+   > gmake myapp-testsuite
+
+   and follow the instructions, you should only need to use
+   the default values. Hopefully you should then see messages 
+   telling you the test suites have all passed.
+
+6. Finally, you can run the parameter files that come with 
+   the application. 
+
+   Type 
+
+   > gmake myapp-examples
+
+   which should move all the parameter files from your application 
+   into the directory "examples/myapp". To run a 
+   parameter file with Cactus use (the exact details will depend on
+   the machine you are using)
+
+   e.g. with MPI
+
+   > mpirun -np 2 ./exe/cactus_myapp examples/myapp/<parameter file name>
+
+   or without MPI
+
+   > ./exe/cactus_myapp examples/myapp/<parameter file name>
+
+   The output from the run should be in a directory with the same name as
+   the parameter file (this is specified in the parameter file). In this
+   directory there will probably be 1D output files which can be viewed
+   with xgraph. The extension .xg specifies data formated for use with
+   xgraph (or ygraph).

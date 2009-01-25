@@ -1,0 +1,182 @@
+VizLauncher-HOWTO
+Thomas Radke
+version $Id: VizLauncher-HOWTO,v 1.9 2002/03/27 12:51:12 goodale Exp $
+
+This HOWTO describes the use of the VizLauncher package.
+
+Please help us to keep this documentation complete and up-to-date
+by sending complaints, suggestions and errata to the Cactus Team at
+
+                       cactusmaint@cactuscode.org
+
+
+
+General Information about VizLauncher
+-------------------------------------
+
+  The intention of the VizLauncher package is to provide a set of tools
+  to Cactus users which allow easy monitoring and live visualizations
+  on your local machine, or remote jobs running on machines anywhere
+  else in the world.
+
+  The current version of the VizLauncher package contains a perl script
+  which is to be used as a Netscape browser helper application to
+  automatically launch visualization programs on data that is produced
+  by a remote Cactus job.
+
+  VizLauncher also works from the command line on files in your local 
+  file system.
+
+  The remote datafiles are accessed via the Cactus HTTP webserver interface
+  and downloaded by the browser. The VizLauncher perl script will then
+  run an appropriate visualization tool, according to the MIME type of the
+  downloaded data.
+
+
+  Currently the following visualizations can be launched by the VizLauncher:
+
+    * xgraph
+      - trace line plots of scalar/reduction output from thorn 
+        CactusBase/IOBasic
+      - 1D line plot of 1D output from thorn CactusBase/IOASCII
+
+    * gnuplot
+      - trace line plots of scalar/reduction output from thorn 
+        Cactus/Base/IOBasic
+      - 1D line plot of 1D output from thorn CactusBase/IOASCII
+      - 2D surface plots of 2D output from thorn CactusBase/IOASCII
+
+    * IsoView
+      - 3D isosurface plots of streamed isosurface data from thorn
+        CactusPUGHIO/IsoSurfacer
+
+    * OpenDX
+      - arbitrary multidimensional plots of streamed HDF5 data from
+        thorn IOStreamedHDF5 and file-based HDF5 data from thorn IOHDF5
+
+    * h5ls, h5dump
+      - ASCII dumps of streamed HDF5 data from thorn IOStreamedHDF5
+        and file-based HDF5 data from thorn IOHDF5
+
+
+  For detailed information about these visualization tools and how to get
+  them please refer to our Cactus VizTools webpage
+
+       http://www.cactuscode.org/VizTools.html
+
+
+
+Download and Install VizLauncher
+--------------------------------
+
+  The VizLauncher package is available via anonymous checkout from
+  the Cactus CVS server:
+
+      cvs -d :pserver:cvs_anon@cvs.cactuscode.org:/cactus login
+          [ password is 'anon' ]
+      cvs -d :pserver:cvs_anon@cvs.cactuscode.org:/cactus  \
+          checkout -d VizLauncher VizTools/VizLauncher
+
+  This downloads a perl script named VizLauncher which now needs to be
+  registered as an application to the Netscape browser to handle the MIME
+  types used to advertise all the different output data on the Cactus
+  simulation side.
+  The VizLauncher package provides the following two files for that
+  purpose:
+
+    * mailcap
+
+      This file associates several MIME types used by Cactus output
+      with the VizLauncher application. Either copy this file
+      to .mailcap in your home directory, or append your existing .mailcap
+      file.
+
+      The path to the VizLauncher script should be set properly,
+      either by editing the .mailcap file or by setting the VIZLAUNCHER_DIR
+      environment variable to point to it.
+      To prevent warning messages from the VizLauncher, you should also
+      comment out all lines for visualizations tools which you don't have
+      installed on your local machine.
+
+    * mime.types
+      This file associates the file extensions of Cactus output files
+      with the appropriate MIME types as specified in the .mailcap file.
+      Either copy this file to .mime.types in your home directory, or 
+      append your existing .mime.types file.
+
+      With these mappings you will also be able to launch visualizations
+      on local Cactus output files - simply by clicking on them in the
+      browser's file selection window.
+
+  To install these two files, just copy or append them in your HOME
+  directory or to the system's default mailcap file location.
+  The browser needs to be restarted then in order to activate the changes.
+
+
+  VizLauncher itself might also need some customization if other than 
+  the default settings should be used. This effects the scratch directory 
+  for temporary files ('/tmp'), how to start an xterm
+  window ('xterm -e'), and how to bring up a menu ('xmessage -center').
+  See the default settings of these parameters at the top of the script.
+
+  The VizLauncher script will search for visualization programs in
+  locations according to the user's PATH environment variable.
+  If a program cannot be found that way, the script should be adapted
+  by putting the absolute path to the program into the VizTools database
+  (found at the top of the script).
+
+  In order to launch visualizations with OpenDX, the VizLauncher script
+  needs to know where to find appropriate OpenDX networks. For that it
+  will check the environment variable DX_NETWORK_DIRS which should
+  contain a list of directories (separated by spaces) containing OpenDX
+  network files (*.net).
+  Some example OpenDX network files for both file- and stream-based
+  visualizations are to be found in the OpenDXUtils package. For details
+  please see the OpenDX-HOWTO.
+
+
+
+Using VizLauncher
+-----------------
+
+  Once these steps were performed properly you should now be able to 
+
+  * launch visualizations on a remote Cactus job (for example, check out 
+    the perpetual run on the Cactus home page). Just connect to the 
+    simulation HTTP webserver, go to the "Files" page for downloadable 
+    files and click on one of the links.
+
+  * view files in your local filesystem by typing
+
+    VizLauncher <filename>
+
+
+
+Details
+-------
+
+When recognizing files in the local file space, VizLauncher uses the following extensions:
+
+asc -> gnuplot
+xg,xl,yl,zl,dl -> xgraph
+h5 -> HDF5
+
+ 
+
+Further development plans
+-------------------------
+
+  The VizLauncher perl script was tested to work with the Netscape
+  web browser. It would be nice to know how to use it from within other
+  browsers as well.
+
+  If you find other visualization tools suitable to process Cactus output
+  data we would like to add them to the VizLauncher's VizTools database.
+
+  Finally, we also want to develop more VizLauncher tools which can
+  be used for visualization of live Cactus data, such as java-based
+  applications or standalone programs with their own GUI's.
+
+
+  Any suggestions or contributions regarding these development plans
+  are highly welcome. Just send your comments to developers@cactuscode.org.

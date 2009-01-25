@@ -1,0 +1,193 @@
+
+Management-HOWTO
+Gabrielle Allen
+v1.1, 2 December 2000
+
+This HOWTO explains how to conveniently get hold of, and compile 
+the thorns you want on different platforms. Please help us to keep 
+this documentation complete and up-to-date by sending complaints, 
+suggestions and errata to the Cactus Team at cactusmaint@cactuscode.org .
+
+
+Introduction
+------------
+
+Probably the most difficult aspect of using Cactus for the first time,
+is finding out which thorns need to be compiled for a given application.
+We're still working on how to make that process easier, and this HOWTO
+describes the best current way to manage different Cactus configurations.
+
+You may also want to read the HOWTOs describing the various Cactus CVS
+repositories (CactusRepositories-HOWTO), and the Computational Toolkit
+(ComputationalToolkit-HOWTO).
+
+
+ThornLists
+----------
+
+Maintaining and saving ThornLists for your different Cactus applications
+is the best way to easily checkout and compile on different machines. A 
+ThornList simply contains a list of thorns and optionally embedded 
+directives describing the CVS servers where they can be found.
+
+If all your thorns are available from CVS servers, you can checkout
+everything you need for an application on any machine by running
+
+perl GetCactus <ThornList>
+
+You can run this even if you already have a version of Cactus checked out,
+to get additional thorns.
+
+You can also use a ThornList to compile just the thorns you need for a 
+given application as well. In the Cactus home directory type
+
+gmake <configuration-name>-config <other options> \
+	THORNLIST=<filename> \
+	THORNLIST_DIR=<directoryname>
+
+
+ThornList Syntax
+----------------
+
+Thorns are listed in a ThornList by giving the arrangement and thorn names,
+in the form
+
+<arrangement name>/<thorn name>
+
+Comments can be added to a ThornList using the "#" symbol. Anything following
+the # on a line is ignored.
+
+Directives are indicated by a "!" at the beginning of the line. Directives 
+apply from the point in the ThornList they occur, until they are optionally
+redefined. The syntax for a directive is
+
+!<directive> <assignment>
+
+Current directives are
+
+  DESC
+    Description of this thorn list (not currently used)
+
+  REPOSITORY_TYPE
+    Type of CVS repository used, e.g. pserver
+
+  REPOSITORY_TAG
+    Tag to use for checking out of CVS repository
+
+  REPOSITORY_USER
+    Username for checking out of CVS repository
+
+  REPOSITORY_NAME
+    Name of CVS repository (position in filesystem)
+
+  REPOSITORY_LOCATION
+    Name of machine hosting CVS server
+
+  REPOSITORY_MODULE
+    Location of the thorn in the CVS repository (if the location is
+    not <arrangement>/<thorn>).  
+
+
+Example ThornList
+-----------------
+
+###################################################
+#     
+# MyApp.th
+#
+# Version 1.4: March 2001
+#
+###################################################
+
+!DESC "ThornList for running my special application
+
+# THORNS FROM THE CACTUS COMPUTATIONAL TOOLKIT 
+# (DEVELOPMENT RELEASE)
+
+!REPOSITORY_TYPE pserver
+!REPOSITORY_LOCATION cvs.cactuscode.org
+!REPOSITORY_NAME /cactusdevcvs
+!REPOSITORY_USER cvs_anon
+
+CactusBase/Boundary        
+CactusBase/CartGrid3D      
+CactusBase/IOASCII
+
+CactusConnect/HTTPD
+CactusConnect/HTTPDExtra
+
+CactusPUGH/PUGH            
+CactusPUGH/PUGHReduce
+
+# THORNS FROM THE CACTUS EINSTEIN TOOLKIT
+# (DEVELOPMENT RELEASE)
+
+!REPOSITORY_TYPE pserver
+!REPOSITORY_LOCATION cvs.cactuscode.org
+!REPOSITORY_NAME /cactusdevcvs
+!REPOSITORY_USER cvs_anon
+
+CactusEinstein/Einstein
+CactusEinstein/ADM
+
+# THORNS FROM MY OWN ARRANGEMENT OF THE CACTUS SERVER
+
+!REPOSITORY_TYPE pserver
+!REPOSITORY_LOCATION cvs.cactuscode.org
+!REPOSITORY_NAME /arrangements
+!REPOSITORY_USER allen
+
+SpecialTools/FirstOne
+SpecialTools/SecondOne
+
+# THORNS FROM MY OWN CVS SERVER
+# NOTE: THESE ARE NOT ARCHIVED IN ARRANGEMENTS 
+#       BUT IT DIFFERENT LOCATIONS ... HOWEVER 
+#       I WANT THEM IN THE SAME ARRANGEMENT IN 
+#       MY CACTUS INSTALLATION 
+
+!REPOSITORY_TYPE pserver
+!REPOSITORY_LOCATION trumpet.aei.mpg.de
+!REPOSITORY_NAME /cvsroot
+!REPOSITORY_USER allen
+
+!REPOSITORY_MODULE AllenCVS/Violin
+TestKit/Violin
+
+!REPOSITORY_MODULE AllenCVS/SomeThorns/Guitar
+TestKit/Guitar
+
+!REPOSITORY_MODULE AllenCVS/SomeThorns/Test/Piano
+TestKit/Piano
+
+# END THORNLIST
+
+
+Configuration Files
+-------------------
+
+Configuration files allow you to save options for configuring Cactus,
+for example, compiler flag options, MPI locations. This is useful, since
+it allows you to save a configuration file for each machine that you 
+use, e.g. you might save origin.config, t3e.config. Or you might save 
+useful compiler flags for debugging etc.
+
+If a configuration file is used, additional options may also be specified
+as usual on the command line. Currently, any option in a configuration
+file overides an option on the command line.
+
+To configure Cactus from such a file, use
+
+gmake <config>-config options=<filename>
+
+
+Example Configuration File
+--------------------------
+
+# MPICH-G2 ON ORIGIN
+GLOBUS_LIB_DIR=/opt/globus/deploy/lib
+MPICH_DIR=/opt/mpich-1.2.1
+MPICH_DEVICE=globus
+MPI=MPICH
+HDF5=yes
+    
