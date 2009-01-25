@@ -2,8 +2,7 @@
 <?php $title='Documentation';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<h2>Cactus Documentation</h2>
-
+<p>
 <ul>
 
   <li> <a href="UsersGuide.pdf">Users' Guide (PDF)</a> </li>
@@ -13,5 +12,6 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   <li> <a href="thorns/">List of Thorn Guides</a> </li>
 
 </ul>
+</p>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
