@@ -39,12 +39,9 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <p>
   Connect to our <a href="http://cactus.cct.lsu.edu:5555/">Cactus
   demo</a> to see the simple WaveToy example in action, and read
-  the <a href="../WaveToyDemo/index_html">demo guide</a>.
+  the <a href="/documentation/tutorials/wavetoydemo/">demo guide</a>.
 </p>
-
-<p>
-  <i>(Old Cactus web
-  pages: <a href="http://www.cactuscode.org/old/index.html">http://www.cactuscode.org/old/index.html</a>.)</i>
-</p>
+ 
+<p>(Very old Cactus web pages: <a href="/old/">cactuscode.org/old</a>.)</i></p>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
