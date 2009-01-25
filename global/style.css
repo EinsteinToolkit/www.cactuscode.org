@@ -1,13 +1,4 @@
 /********************************************
-   AUTHOR:  			Erwin Aligam 
-   WEBSITE:   			http://www.styleshout.com/
-	TEMPLATE NAME:		CoolWater
-   TEMPLATE CODE: 	S-0019
-   VERSION:          1.0     
-	DATE:					November-07-2007     	
- *******************************************/
- 
-/********************************************
    HTML ELEMENTS
 ********************************************/ 
 
@@ -228,6 +219,7 @@ input.button
 	vertical-align: top;
 	}
 
+
 /********************************************
    LAYOUT
 ********************************************/ 
@@ -330,7 +322,8 @@ input.button
 	{
 	text-decoration: underline;
 	/*color: #3b5e0b;*/
-	}	
+	}
+/* for current section link color */
 /*#menu ul li#current a
 	{
 	color: black;
@@ -382,7 +375,7 @@ input.button
 	list-style-image: url(images/bullet.gif); 
 	}
 
-/* Sidebar */	
+/* sidebar */	
 #sidebar
 	{
 	float: right;
@@ -459,7 +452,7 @@ input.button
 #footer a
 	{ 
 	color: #fff;
-	text-decoration: none; 
+	text-decoration: none;
 	}
 
 /* post footer */
@@ -467,7 +460,7 @@ input.button
 	{
 	background: #F4F8FD;
 	padding: 5px; margin: 20px 25px 0 25px;
-	border: 1px solid #E5F0FB; 
+	border: 1px solid #E5F0FB;
 	font-size: 95%;
 	}
 .post-footer .date
@@ -515,3 +508,10 @@ input.button
 	{
 	clear: both;
 	}
+
+/********************************************
+	Original Credit
+	AUTHOR: 	 Erwin Aligam 
+	WEBSITE:	http://www.styleshout.com/     
+	DATE:		November-07-2007     	
+ *******************************************/
