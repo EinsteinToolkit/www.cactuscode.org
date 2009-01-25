@@ -1,0 +1,248 @@
+WebBrowser-HOWTO
+Gabrielle Allen, Werner Benger, Denis Pollney, Thomas Radke
+v1.1, 20 June 2000
+v1.2, 10 September 2000
+v2.0, 23 September 2000, Changed to new version of web server thorn
+
+This HOWTO describes how to monitor and steer a Cactus job using 
+a web browser. Please help us to keep this documentation complete 
+and up-to-date by sending complaints, suggestions and errata to 
+the Cactus Team at cactusmaint@cactuscode.org and werner@aei-potsdam.mpg.de
+
+0. CVS REPOSITORY
+
+   All the thorns mentioned here are from the current development version
+   of Cactus (4.0 Beta 9) and should be checked out from the development
+   CVS repository
+ 
+   cvs -d :pserver:cvs_anon@cvs.cactuscode.org:/cactusdevcvs co <name> 
+
+1. Introduction
+
+   Compiling and running Cactus with thorns which act as web servers
+   makes it possible to connect to a running Cactus job with a web 
+   browser, monitor the simulation, and interact with the run, for 
+   example changing the values of steerable parameters or terminating   
+   the job. The functionality available will depend on the thorns 
+   providing the web server capability. 
+
+2. Required thorns
+
+   Here we will describe how to use thorns available with the standard
+   Cactus release to provide web server functionality. 
+
+  	CactusConnect/HTTPD
+	CactusConnect/HTTPDExtra
+	CactusConnect/Socket
+
+   The first thorn here, CactusConnect/HTTPD provides the full implementation
+   of the web server. In addition, HTTPD provides the following functionality
+   and content
+
+	- status report of the simulation
+	- a password protected control panel for pausing, restarting or 
+          terminating the simulation.
+	- password protected pages for steering parameters 
+	- full information about all parameters and variables in the
+	  active thorns
+'
+   Thorn HTTPDExtra can be optionally used to provide additional features, 
+   including
+ 
+        - collaborative message board
+	- download page for output files
+        - viewport for inline visualisation of certain filetypes
+
+   Thorn Socket is a utility thorn required by HTTPD. It provides
+   low-level socket I/O functionality.
+ 
+   The web server thorns can be used to serve and display output files
+   created by Cactus, currently 1D line plots and Jpegs. This requires 
+   CactusConnect/HTTPExtra, in addition to the usual thorns needed for output,
+   that is
+
+   - for 1D line plots
+
+ 	CactusBase/IOUtil
+	CactusBase/IOASCII
+	CactusPUGH/PUGHSlab
+	CactusPUGH/PUGH
+
+   - for Jpegs
+
+ 	CactusBase/IOUtil
+	CactusPUGH/PUGH
+	CactusPUGH/PUGHSlab
+	CactusIO/IOJpeg
+	CactusExternal/jpeg6b
+       
+   These thorns must be included in both your ThornList for compilation,
+   and the ActiveThorns parameter in your parameter file for running 
+   Cactus.
+
+3. Running Cactus with Thorn http
+
+   When you run a Cactus parameter file including these thorns, you will
+   see a message appear saying something like
+
+------------------------------------------------------------------------------
+Server started on http://gullveig:7089/
+------------------------------------------------------------------------------
+
+   [The URL will consist of the host where you are running Cactus 
+    together with a port number]
+
+   This message indicates that Thorn HTTPD is listening on port 7089 
+   of the machine gullveig for HTTP requests. See below for more information
+   about the port number and associated problems.
+
+4. Connecting to the Cactus simulation
+
+   From any other machine, start up a web browser and point it to the 
+   indicated URL. As long as Cactus is still running, you will see the 
+   Simulation Home Page.
+
+5. Changing or "steering" parameters
+
+   Before you can steer parameters, you need to authenticate yourself
+   by going to the Control Page. The default username and password are
+   both anon, although these can be set to different values in the parameter
+   file.	
+
+   Following the link to "Parameters", provides a list of Active
+   thorns. Clicking on a thorn name shows two lists of parameters and 
+   their current values for the thorn, separating the Steerable parameters 
+   from the Fixed parameters.
+  
+   To change a steerable parameter simply change the value in the input
+   box by its name, and press the submit button.
+
+   For example, steerable parameters might include IO options such as 
+   which grid variables to output, and how often to output them. A more 
+   complex steerable parameter could be the timestep for an evolution run.
+   Note that the presence of a steerable parameter, and the HTML input box
+   only indicates that it is possible to change the parameter, not that
+   it is necessarily meaningful to do so ... badly thought out steerable
+   parameters could provide confusing or catastrophic consequences if 
+   changed.
+
+6. Viewing 1D output from thorn IOASCII 
+
+   If you have included the IO thorns, and have e.g. the graphics package
+   xgraph installed on your machine, you can view 1D output. First, make
+   sure that you have configured your browser correctly to read the
+   xgraph output (see below). 
+
+   Go to the "Files" page, where a list of available files for download
+   or visualisation is provided. Clicking on any filename with the 
+   extension .xl, .yl, .zl or .tl should pop up an xgraph window displaying
+   the data.
+
+   To add or remove IOASCII grid variables, go to the "Parameters" page,
+   and then to "IOASCII" and edit the values of "out1d_vars" and 
+   "out1d_every". To see possible grid variables to output, follow the 
+   link in the menu to "Groups and Variables"
+
+7. Configuring a web browser to read xgraph files
+
+   To configure your browser to read xgraph output from CactusBase/IOASCII,
+   
+   Netscape 4.x
+	- Select <Edit/Preferences> from the toolbar
+	- Select <Navigator> and then <Applications> from the category 
+          menu
+	- Select the <New...> button. File in the fields as follows:
+	
+	  MIMEType: application/x-graph
+	  Application: xgraph %s
+   
+8. Thorn http Web server port number
+
+   The port number on which Thorn HTTPD listens for HTTP requests is 
+   a parameter choice for "httpd::port" in Thorn HTTPD, which defaults 
+   to the value 5555. Only one instance of Thorn HTTPD can be listening 
+   at each port, and if the chosen port is already in use (for example
+   by another Cactus run), HTTPD will automatically try to find 
+   the next free port number. (This behaviour can be disabled using the
+   parameter httpd::hunt)
+
+9. Jpeg images.
+
+    It is also possible to view jpegs of 2D slices from 3D grid functions.
+    To make use of this feature you need to compile with
+
+	CactusExternal/jpeg6b
+	CactusIO/IOJpeg
+	CactusConnect/HTTPD
+	CactusConnect/HTTPDExtra
+	CactusConnect/Socket
+
+    The Jpeg images will be displayed on the Viewport page of the 
+    Simulation server.
+
+10. Example
+
+    An example thorn list for testing the web browser is
+
+#== BEGIN THORNLIST FILE
+
+!REPOSITORY_NAME /cactusdevcvs
+
+CactusBase/Boundary                
+CactusBase/CartGrid3D              
+CactusBase/IOASCII                 
+CactusBase/IOBasic                 
+CactusBase/IOUtil                  
+CactusBase/Time                    
+CactusPUGH/PUGH    
+CactusPUGH/PUGHReduce                
+CactusPUGH/PUGHSlab                
+CactusWave/IDScalarWaveC           
+CactusWave/WaveToyC                
+CactusConnect/HTTPD
+CactusConnect/HTTPDExtra
+CactusConnect/Socket
+CactusIO/IOJpeg
+CactusExternal/jpeg6b
+
+#== END THORNLIST FILE
+
+    use this with the parameter file
+
+#== BEGIN PARAMETER FILE
+
+ActiveThorns = "boundary idscalarwavec time wavetoyc pugh pughslab pughreduce cartgrid3d iobasic ioutil iojpeg ioascii httpd httpdextra socket"
+
+driver::global_nx = 40
+driver::global_ny = 40
+driver::global_nz = 40
+
+time::dtfac = 0.5
+
+Cactus::cctk_itlast=10000
+
+IO::outdir = "httpdemo"
+IOBasic::outInfo_vars = "wavetoy::phi"
+IOBasic::outInfo_every = 10
+IOASCII::out1D_vars = "wavetoy::phi"
+IOASCII::out1d_every = 10
+IOJpeg::out2D_vars = "wavetoy::phi"
+IOJpeg::out2d_every = 1
+IOJpeg::mode = "remove"
+
+#== END PARAMETER FILE
+   
+============================================================================
+
+Further documentation on Cactus can be found at www.cactuscode.org
+
+Please report bugs or feature requests using the tracking system at
+www.cactuscode.org/cactus_cgi-bin/gnatsweb.pl
+
+Please direct questions about compiling and running cactus to 
+cactusmaint@cactuscode.org
+
+Comments and general questions should be directed to cactusmaint@cactuscode.org
+
+============================================================================
+

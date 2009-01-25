@@ -1,0 +1,225 @@
+HDF5-HOWTO
+Thomas Radke
+version $Id: HDF5-HOWTO,v 1.9 2002/08/20 04:30:30 rideout Exp $
+
+This HOWTO describes how to use HDF5 as an external I/O library to output
+various kinds of Cactus variables in different formats.
+
+Please help us to keep this documentation complete and up-to-date
+by sending complaints, suggestions and errata to the Cactus Team at
+
+                     cactusmaint@cactuscode.org
+
+
+Contents
+--------
+1.  What is HDF5
+2.  Obtaining and Installing HDF5 on Your Machine
+3.  Configuring Cactus with HDF5
+4.  Visualizing Cactus HDF5 Output
+
+
+1.  What is HDF5
+----------------
+
+    HDF5 stands for 'Hierarchical Data Format' (version 5).
+    It is a freely available software package developed and maintained
+    by the HDF5 group at the National Center for Supercomputing Applications
+    (NCSA). The official Web page for HDF5 is
+
+        http://hdf.ncsa.uiuc.edu/HDF5/
+
+    HDF5 defines a file format and provides a software library for storing
+    arbitrary multidimensional datasets of various types.
+    The file format is hierarchical and very similar to the structure of
+    a UNIX filesystem: there exist groups (directories) and datasets (files)
+    as basic named objects. Datasets contain the actual data, with given
+    rank, dimensions, and type. Datasets are stored in groups which
+    themselves can be nested in a hierarchical group tree, starting from a
+    preexisting root group ('/').
+    Individual groups or datasets in HDF5 files can be accessed randomly
+    via their object name and the (full or relative) group path to them
+    within the file.
+    A dataset has its rank, dimensions, and type information implicitly
+    attached as metadata so that the contents of an HDF5 file is already
+    self-describing. In addition to that, one can also add attributes to
+    groups and datasets which may contain more user information such as time
+    or coordinate values.
+
+    The HDF5 I/O library provides several low-level drivers to read/write
+    the contents of an HDF5 file from/to disk or another storage medium.
+    Transparent access to these drivers is accomplished by the Virtual
+    File Driver Layer in HDF5.
+    Most important Virtual File Drivers (for the use with Cactus) are
+
+      - the "sec2" driver
+        This is the default driver which does unbuffered UNIX file I/O
+        using read(2) and write(2).
+
+      - the "mpio" driver
+        If the HDF5 library was built with this driver and you have a parallel
+        file system, it can do I/O from multiple processors into a single
+        shared file using the parallel I/O extensions of the underlying
+        MPI library.
+
+      - the "Stream" driver
+        If the HDF5 library was built with this driver you can stream the
+        contents of an HDF5 file via live socket connections to remote clients.
+        Very useful for remote online visualization.
+
+    There is also a "GridFtp" driver under development which will allow
+    applications to access HDF5 files from any remote Ftp server (if it
+    supports partial file access).
+ 
+
+2.  Obtaining and Installing HDF5 on Your Machine
+-------------------------------------------------
+
+    HDF5 is completely separate from Cactus and therefore must be preinstalled
+    as an external library before you can use it within Cactus.
+
+    Note to AEI users: On most of the computer systems you have access to
+                       there already exists an HDF5 installation which is
+                       ready to use for building Cactus with it.
+                       Please see a complete list of machines at
+                       http://jean-luc.aei.mpg.de/AEIWeb/Machines.html
+
+    Note to laptop users: If you don't want to build and install HDF5 yourself
+                          you can simply download a ready-to-use
+                          HDF5 installation for x86 Linux from
+
+                          http://jean-luc.aei.mpg.de/Codes/HDF5/index.html
+
+                          This HDF5 distribution also contains the Stream
+                          driver for doing socket I/O.
+
+    The Cactus CVS server cvs.cactuscode.org doesn't include the HDF5
+    software package to save us the burden of managing different versions.
+    Instead you can easily obtain it from the official HDF5 Download Site
+
+      http://hdf.ncsa.uiuc.edu/register5.html
+
+    and install it yourself on the machine on which you want to build Cactus.
+    When downloading please be sure to fetch a tarball with HDF5 version 1.4
+    or later in order to use the streaming capabilities of HDF5 - older
+    versions don't include the "Stream" driver yet.
+
+    To build and install HDF5 just do the following in the toplevel
+    directory of your unpacked HDF5 tarball:
+
+      ./configure --enable-stream-vfd                                     \
+                  --disable-shared                                        \
+                  --prefix=<HDF5_installation_dir>                        \
+                  [ any other options you might want to use ]
+      make
+      make install
+
+    Because the "Stream" Virtual File Driver is not build by default
+    you have to enable it explicitly using the '--enable-stream-vfd' option.
+    The same holds for the "mpio" driver - for details on how to configure
+    HDF5 with this driver please refer to the instructions given in the
+    INSTALL_parallel file of the HDF5 source distribution.
+    It is also recommended that you only build the static HDF5 libraries.
+    This saves you from setting your LD_LIBRARY_PATH environment variable
+    to point to the HDF5 installation.
+
+    The above steps will build the HDF5 I/O library and some utility programs
+    and install everything in the directory you specified in the '--prefix'
+    option under the subdirectories lib/ and bin/ respectively.
+
+
+3.  Configuring Cactus with HDF5
+--------------------------------
+
+    As with other externally provided software libraries (eg. MPI)
+    you have to tell Cactus at configuration time to use HDF5:
+
+      gmake <my_app>-config HDF5=yes                                      \
+                          [ HDF5_DIR=<HDF5_installation_dir> ]            \
+                          [ any other options you might want to use ]
+
+    The configuration process will automatically search for an HDF5
+    installation in some standard places. If it cannot find one you should
+    use the 'HDF5_DIR' option to manually point to it.
+    The configure script will also detect whether your HDF5 installation
+    was built with the "mpio" driver. If so, the appropriate HDF5 I/O thorns
+    will automatically use this driver to do parallel output from multiple
+    processors into a single shared file.
+
+    Currently (as of Cactus 4.0 beta 9) there exist the following I/O thorns
+    which use the routines from the HDF5 library to output Cactus variables
+    (grid scalars, grid functions and arrays) of any type in HDF5 file format:
+
+       Arrangement / Thorn         | Description
+      -----------------------------|--------------------------------------
+       CactusPUGHIO/IOHDF5Util     | Utility thorn providing common routines
+                                   | shared between other HDF5 I/O thorns
+                                   |
+       CactusPUGHIO/IOHDF5         | (parallel) output of N-dimensional
+                                   | variables and hyperslabs thereof
+                                   | to chunked/unchunked files on disk
+                                   |
+       CactusPUGHIO/IOStreamedHDF5 | stream N-dimensional variables and
+                                   | hyperslabs thereof via live socket
+                                   | connections to any connected client
+                                   |
+
+    Both IOHDF5 and IOStreamedHDF5 can output any type of Cactus grid variables
+    as well as hyperslabs.
+    A hyperslab can be any subvolume of the original multidimensional dataset,
+    together with downsampling and type conversion into single-precision.
+    This functionality is provided by a separate hyperslab thorn in Cactus.
+
+    These I/O thorns also provide checkpointing/recovery functionality.
+    You can save the current state of your simulation in an HDF5 checkpoint
+    file and later on recover from it to continue the simulation.
+    For details on checkpointing/recovery please refer to the Cactus User
+    Guide.
+
+    To build Cactus with all the HDF5 thorns included you need to have
+    the following thorns in your thornlist configuration file:
+
+       CactusPUGHIO/IOHDF5Util      # utility thorn for all HDF5 thorns
+       CactusPUGHIO/IOHDF5
+       CactusPUGHIO/IOStreamedHDF5
+       CactusConnect/Socket         # basic socket routines for IOStreamedHDF5
+       CactusBase/IOUtil            # utility thorn for all I/O thorns
+       CactusPUGH/PUGH              # driver-specific data and routines
+       CactusPUGH/PUGHSlab          # hyperslab routines
+
+
+4.  Visualizing Cactus HDF5 Output
+----------------------------------
+
+    Two of the utility programs (located in the bin/ subdirectory of the
+    HDF5 installation) which you will find useful for debugging and very
+    simple data analysis are 'h5ls' and 'h5dump'.
+    The first tool lets you browse through the contents of an HDF5 file
+    displaying the names and metadata information of all objects stored in it
+    (try option '-r' for listing the complete hierarchy of objects).
+    For example to browse the physical file phi.h5 simply use
+
+      h5ls phi.h5
+
+    or for online data being streamed from a running Cactus you should
+    look at the startup messages which contain a line such as
+
+      INFO (IOStreamedHDF5): HDF5 data streaming service started on
+                               localhost:1235
+
+    The hostname/port number information can then be used to view the
+    streamed data with eg.
+
+      h5dump localhost:1235
+
+    In addition to the browsing feature, the second program will also dump the
+    contents of all datasets in the file to stdout in a human-readable format.
+    Here you can see what data was actually written to the file and do a
+    quick check against the values you've expected.
+
+    For graphical visualization of Cactus data in HDF5 file format
+    there are a number of visualization packages which already have
+    an integrated HDF5 reader to process the Cactus output.
+    For a description of these tools and how to use them for visualizing
+    Cactus data please refer to the Cactus online documentation in
+    http://www.cactuscode.org/Documentation/HOWTO/Visualization-HOWTO

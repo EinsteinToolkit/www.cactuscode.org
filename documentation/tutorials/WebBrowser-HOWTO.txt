@@ -1,0 +1,192 @@
+WebBrowser-HOWTO
+Gabrielle Allen, Werner Benger, Denis Pollney, Thomas Radke
+v1.1, 20 June 2000
+v1.2, 10 September 2000
+
+This HOWTO describes how to monitor and steer a Cactus job using 
+a web browser. Please help us to keep this documentation complete 
+and up-to-date by sending complaints, suggestions and errata to 
+the Cactus Team at cactusmaint@cactuscode.org and werner@aei-potsdam.mpg.de
+
+1. Introduction
+
+   Compiling and running Cactus with thorns which act as web servers
+   makes it possible to connect to a running Cactus job with a web 
+   browser, monitor the simulation, and interact with the run, for 
+   example changing the values of steerable parameters or terminating   
+   the job. The functionality available will depend on the thorns 
+   providing the web server capability.
+
+2. Required thorns
+
+   Here we will describe how to use thorns available with the standard
+   Cactus release to provide web server functionality. These thorns are
+
+        CactusNet/Announce	(recommended, but not required)
+  	CactusNet/http
+	external/TCPXX
+
+   is you want to view 1D output files, you will also need
+
+ 	CactusBase/IOUtil
+	CactusBase/IOASCII
+        CactusNet/Download
+	CactusPUGH/PUGHSlab
+	CactusPUGH/PUGH
+
+   These thorns must be included in both your ThornList for compilation,
+   and the ActiveThorns parameter in your parameter file for running 
+   Cactus.
+
+3. Running Cactus with Thorn http
+
+   When you run a Cactus parameter file including these thorns, you will
+   see a message appear saying something like
+
+   Cactus Webserver is active - please point your browser to:
+
+	http://origin:7050/
+
+   [The URL will consist of the host where you are running Cactus 
+    together with a port number]
+
+   This message indicates that thorn http is listening on port 7050 
+   of the machine origin for HTTP requests. See below for more information
+   about the port number and associated problems.
+
+4. Connecting to the Cactus simulation
+
+   From any other machine, start up a web browser and point it to the 
+   indicated URL. As long as Cactus is still running, you will see the 
+   thorn http main page, displaying information such as the current 
+   physical time and iteration number of the simulation. You will also 
+   see links to the different thorns, grid variables and parameters which 
+   are active for this simulation.
+
+5. Changing or "steering" parameters
+
+   Following the link to parameters, you will again see a list of active 
+   thorns. Clicking on a thorn will list the values of the parameters 
+   used for this run (that is the values provided in the parameter file,
+   or the default values). Some of the parameters will have HTML input
+   boxes beside them. The input box indicates that the parameter is 
+   "steerable". Steerable parameters are parameters whose values can be 
+   changed at runtime, a complete description of steerable parameters is
+   provided in the documentation. 
+
+   For example, steerable parameters might include IO options such as 
+   which grid variables to output, and how often to output them. A more 
+   complex steerable parameter could be the timestep for an evolution run.
+   Note that the presence of a steerable parameter, and the HTML input box
+   only indicates that it is possible to change the parameter, not that
+   it is necessarily meaningful to do so ... badly thought out steerable
+   parameters could provide confusing or catastrophic consequences if 
+   changed.
+
+   NOTE: Since of Aug 21 2000, the parameter control is PASSWORD protected.
+   We still have to find out what is the best way how to *define* user
+   and password. For now, as a preliminiary state, user and password
+   are hardcoded to be
+	User:     werner
+	Password: cctk
+   This will of course change soon, but for now, that's the experimental
+   state (and it's better than completely open, so only people who have
+   read this file and at least somehow know what goes on are allowed to
+   change parameters).
+
+6. Viewing 1D output from thorn IOASCII 
+
+   If you have included the IO thorns, and have e.g. the graphics package
+   xgraph installed on your machine, you can view 1D output. First, make
+   sure that you have configured your browser correctly to read the
+   xgraph output (see below). 
+
+   Click on the "Cactus Thorns" link on the Thorn http home page, and then 
+   on the "IOASCII" link. A list of available grid functions will be 
+   displayed. Click on a grid function, if everything is correctly 
+   configured, xgraph should start displaying the chosen field.
+
+   To add or remove IOASCII grid variables, select "Cactus Parameters"
+   on the Thorn http home page, and the "IOASCII" and edit the value 
+   of "out1d_vars", to change the frequency of the output, edit the 
+   value of "out1d_every"
+
+7. Configuring a web browser to read xgraph files
+
+   To configure your browser to read xgraph output from CactusBase/IOASCII,
+   
+   Netscape 4.x
+	- Select <Edit/Preferences> from the toolbar
+	- Select <Navigator> and then <Applications> from the category 
+          menu
+	- Select the <New...> button. File in the fields as follows:
+	
+	  MIMEType: application/x-graph
+	  Application: xgraph %s
+   
+8. Thorn http Web server port number
+
+   The port number on which Thorn http listens for HTTP requests is 
+   a parameter choice for "http::port" in Thorn http, which defaults 
+   to the value 7050. Only one instance of Thorn http can be listening 
+   at each port, and if the chosen port is already in use (for example
+   by another Cactus run), Thorn http will automatically try to find 
+   the next free port number. 
+
+9. WARNINGS
+
+   There is currently only very limited security checking implemented 
+   in Thorn http. If you are steering a parameter, be sure that you are
+   connected to the correct simulation!! User authentification will be
+   implemented at some later date, until then please treat the WebServer
+   functionality provided by Thorn http as developmental.
+
+10. Jpeg images (not tested on all platforms, most lately verified on NT, 
+    Linux, SGI)
+
+    It is also possible to view jpegs of 2D slices from 3D grid functions.
+    To make use of this feature you need to compile in
+
+	external/jpeg6b
+	CactusNet/Jpeg
+
+    There is a nice example parameter file in 
+
+	arrangements/CactusNet/http/par/binarywave_http.par
+
+    which shows how to use the jpeg thorn and the http parameters.
+
+11. Jpeg Movies (not tested on all platforms, most lately verified on NT, 
+    Linux, SGI)
+
+    Jpeg images might be streamed as a movie, using the `server pull'
+    technique, so no plugin is required for the netscape browser.
+    In addition to the jpeg thorns, you need
+
+	CactusNet/Movie
+
+    which also brings a nice parameter file
+
+	arrangements/CactusNet/Movie/par/binwaves_movie.par
+
+    When running, click on the Movie page and select one output
+    direction. You should get an animation of all timeslices which
+    have to be computed up to the current time step. To replay the
+    animation, you need to reload the page or click again on the
+    slice icon. There is no loop mode for the animation.
+
+    WARNING: A smooth animation requires generating image frames 
+    for nearly each time slice. As jpeg images are stored one-by-
+    one (there is no `container' format for jpeg which holds more
+    than one image at once), you cactus run will produce an incredible
+    amount of jpeg images in one directory, and you might run into
+    troubles with that. If it happens that you can not any longer
+    remove all jpeg images in the output directory using `rm *.jpeg'
+    because the `arg list too long' error under a unix shell, you
+    are still allowed to remove the entire output directory. Also,
+    try commands like `rm *xy*.jpeg' to remove just the xy slices
+    first, then the other slices. This makes the command list shorter
+    and might still work, even if *.jpeg is too long.
+
+
+ Please report any problems to werner@aei-potsdam.mpg.de

@@ -1,0 +1,160 @@
+Globus-HOWTO
+Gabrielle Allen, Thomas Dramlitsch and Thomas Radke
+$Header: /cactus/CactusWebSite/Documentation/HOWTO/Globus-HOWTO,v 1.12 2002/07/03 12:01:29 tradke Exp $
+
+This HOWTO describes how to compile and run Cactus using the Globus
+MPICH libraries. Please help us to keep this documentation complete and 
+up-to-date by sending complaints, suggestions and errata to the 
+Cactus Team at cactusmaint@cactuscode.org 
+
+
+1. Globus
+
+   Globus is a research and development project which is focused on 
+   enabling the application of Grid concepts to scientific and 
+   engineering computing. The web pages for Globus, where you can download
+   the Globus Toolkit and related software, and find documentation, are 
+   located at www.globus.org.
+
+   ---------------------------------------------------------------------
+   You *do not* need the Globus Toolkit in general to compile or use 
+   Cactus. Using the Globus Toolkit with Cactus simply provides you with
+   easy access to Grid enabled computing.
+   ---------------------------------------------------------------------
+
+   The job submission, data handling, and tracking features of Globus can 
+   be used with any Cactus executable, here we describe how to make use
+   of the grid enabled MPICH libraries (MPICH-G2) which provide an easy way
+   to run simulations across multiple machines.
+
+   Once Cactus is compiled with the Globus MPICH libraries, it can be run 
+   using an RSL script as any other application would be run using Globus. 
+   Please consult the Globus documentation for running applications with
+   the Globus toolkit.
+
+
+2. Version Information
+
+   Cactus (Beta 8 and higher) will compile with the old Globus 1.0.x and 
+   the current 1.1.x versions. It is fully tested with the latest version of 
+   Globus 1.1.4 and the Globus device from MPICH 1.1.2.
+
+   Note that the Globus device only works with MPICH 1.2.1 or MPICH versions
+   later than 1.2.2.3, see the MPICH-G2 web page http://www.globus.org/mpi/
+   for more details.
+
+   Cactus (Beta 12 and higher) was also tested to build with Globus 2.0
+   and MPICH-G2 on a few platforms (SGI Irix and Hitachi SR8000) but we
+   do not officially support Globus 2.0 in Cactus yet (for build options
+   with Globus 2.0 and MPICH-G2 see the following section).
+
+
+3. Compiling Cactus with Globus
+
+   Cactus can be compiled for running with the Globus toolkit which means
+   that you have access to Globus features like resource management, data
+   management and information services. If your driver thorn uses MPI for 
+   domain decomposition (the standard driver thorn CactusPUGH/PUGH does 
+   use MPI) you can compile Cactus with the 1.x Globus device of MPICH or
+   with Globus 2.0 and MPICH-G2, which is the Globus device for Globus 2.0.
+   You can perform distributed runs across a heterogeneous setup. MPICH-G2
+   can be downloaded via the Globus web pages at http://www.globus.org/mpi.
+
+   To compile Cactus with MPICH globus device and the Globus 1.x Toolkit
+
+   a) Install Cactus on your machine (see QuickStart-HOWTO for instructions
+      on installing and using Cactus for the first time, or for more details
+      the User Guide). Suggested initial application thornlists for testing 
+      purposes are the WaveToy set of thorns (WaveToy.th) or the benchmark 
+      application (BenchADM.th), these can be found on the Cactus web pages.
+
+   b) To configure Cactus, decide on a name for your configuration, 
+      for example testglobus, and in the Cactus home directory type
+
+      gmake testglobus-config MPI=MPICH \
+	      		      MPICH_DIR=<mpich-installation-directory> \ 
+     		              MPICH_DEVICE=globus \
+                              GLOBUS_LIB_DIR=<globus-library-directory>  
+
+   c) To build a Cactus executable, you should now be able to simply type
+
+       gmake testglobus
+
+ 
+   To compile Cactus with Globus 2.0 and MPICH-G2
+
+   a) Install Globus 2.0 and MPICH-G2 on your machine
+ 
+   b) To configure Cactus, choose a configuration name (e.g. G2) and type
+
+      gmake G2-config MPI=CUSTOM \
+                      CC=<mpich-G2-installation-directory>/bin/mpicc
+                      CXX=<mpich-G2-installation-directory>/bin/mpiCC
+                      F90=<mpich-G2-installation-directory>/bin/mpif90
+                      LD=<mpich-G2-installation-directory>/bin/mpiCC
+ 
+   c) To build a Cactus executable, you should now be able to simply type
+  
+      gmake G2
+
+
+4. Running Cactus with Globus and MPICH-G2
+
+   To run your Globus version of Cactus, you need to use an rsl script, 
+   as with any other Globus application. You cannot currently run Cactus' 
+   automatic testsuite system with Globus, this will hopefully change in 
+   later versions.
+
+   Example:
+
+	globusrun -f test.rsl
+
+   where test.rsl containts
+
++(&(resourceManagerContact="origin.aei.mpg.de")         (* where to run the job  *)
+    (count=4)                                   	(* this selects 4 CPUs   *)
+    (label=globustest)                          	(* convenient job name   *)
+    (environment=(GLOBUS_DUROC_SUBJOB_INDEX 0)          (* first subjob          *)
+    (directory=/data/user/Cactus/exe/)     	        (* where to find the exe *)
+    (executable=cactus_testglobus)   			(* what to run           *)
+    (arguments=testglobus.par)                          (* which arguments       *)
+    (stderr=err) 					(* standardout           *)
+    (stdout=out)                                        (* standarderr           *)                                                
+)
+
+(&(resourceManagerContact="modi4.ncsa.uiuc.edu")        (* where to run the job  *)
+    (count=8)                                           (* this selects 8 CPUs   *)
+    (label=globustest2)                                 (* convenient job name   *)
+    (environment=(GLOBUS_DUROC_SUBJOB_INDEX 1)          (* second subjob         *)
+    (directory=/data/user/Cactus/exe/)                  (* where to find the exe *)
+    (executable=cactus_testglobus)                      (* what to run           *)
+    (arguments=testglobus.par)                          (* which arguments       *)
+    (stderr=err)                                        (* standardout           *)
+    (stdout=out)                                        (* standarderr           *)
+ 
+)
+
+  this starts a job on 12 processors.
+
+
+5. Feedback requested
+ 
+   If you are running Cactus with Globus we would like to hear about your
+   experiences and difficulties ... please contact us at 
+   cactusmaint@cactuscode.org
+
+
+
+============================================================================
+
+Further documentation on Cactus can be found at www.cactuscode.org
+
+Please report bugs or feature requests using the tracking system at
+www.cactuscode.org/cactus_cgi-bin/gnatsweb.pl
+
+Please direct questions about compiling and running cactus to 
+cactusmaint@cactuscode.org
+
+Comments and general questions should be directed to cactusmaint@cactuscode.org
+
+============================================================================

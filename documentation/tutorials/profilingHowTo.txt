@@ -1,0 +1,273 @@
+Profiling-HOWTO
+v1.1, 02 July  2001
+
+
+This HOWTO describes how to use the availabe profiling tools on
+various machines. Currently only SGI, but more to come.
+
+
+1) SGI: perfex, SpeedShop (ssrun), cvperf
+
+The SGI's R10000 and R12000 processors include counters that can be used to
+count the frequency of events during the execution of a program.  The
+information returned by the counters can be helpful in optimizing the
+program.  The perfex(1) and ssrun(1) commands provide convenient
+interfaces to hardware counter information.
+
+1.1) perfex
+
+The R10000 processor supplies two performance counters for counting
+certain hardware events. Each counter can track one event at a time and
+there are a choice of sixteen events per counter, the interesting ones
+are listed here, for all others, see "man perfex".
+
+
+ 21 = Graduated floating point instructions:          
+      Incremented when a graduated floating-point instruction 
+      is issued.
+
+ 25 = Primary (L1) data cache misses
+      Incremented when the next data item is not in primary 
+      data cache.
+
+ 26 = Secondary (L2) data cache misses
+      Incremented when the next data item is not in secondary
+      data cache.
+
+You can either profile for a specific event or multiplex over all
+events (rotating through all available events in the course of the
+simulation). 
+
+USAGE:
+
+origin%> perfex -a -y -o YourProfileLog mpirun -np 1 ./cactus_test BH.par
+
+FLAGS:
+
+-a	  Multiplexes over all events, projecting totals. Not an
+          accurate way of looking at the individual events.
+
+-e event  Profile with respect to a specific event (eg. -e 21)        
+  
+-o file   Redirect output to file
+
+-y        In addition the event counts and cost estimates, perfex -y 
+          also reports a number of statistics derived from the typical
+          costs. Again, the more interesting ones:
+
+	  
+          - MFLOPS (MB/s, average per process)
+            This is the ratio of the graduated floating-point
+            instructions and the total program run time. Note that
+            while a multiply-add carries out two floating-point
+            operations, it only counts as one instruction, so this
+            statistic may underestimate the number of floating-point
+            operations per second. 
+
+	  - Primary Data Cache Hit Rate
+            This is the fraction of data accesses that are satisfied
+            from a  cache line already resident in the primary data
+            cache. It is calculated as 1.0 - (primary data cache
+            misses divided by the sum of graduated loads and graduated
+	    stores). 
+            Cactus: numbers are usually in the rage of 0.9
+	
+
+	  - Secondary Data Cache Hit Rate
+	    Cactus: good are values around 0.95, 
+                    bad are numbers below 0.8
+
+
+SAMPLE OUTPUT:
+
+                                                                      Based on 195 MHz IP27
+                                                                          MIPS R10000 CPU
+                                                                        CPU revision 2.x 
+                                                                                  Typical      Minimum      Maximum
+   Event Counter Name                                          Counter Value   Time (sec)   Time (sec)   Time (sec)
+===================================================================================================================
+ 0 Cycles......................................................  62679489248   321.433278   321.433278   321.433278
+16 Cycles......................................................  62679489248   321.433278   321.433278   321.433278
+23 TLB misses..................................................    233159152    81.414393    81.414393    81.414393
+26 Secondary data cache misses.................................    208468880    80.714874    52.769353    89.801979
+25 Primary data cache misses...................................   1225390240    56.619313    17.721028    56.619313
+ 2 Issued loads................................................   9389560512    48.151592    48.151592    48.151592
+21 Graduated floating point instructions.......................   7813471184    40.069083    20.034541  2083.592316
+<snip>
+
+Statistics
+=========================================================================================
+Graduated instructions/cycle................................................     0.458026
+L1 Data Cache Hit Rate......................................................     0.874912
+L2 Data Cache Hit Rate......................................................     0.829876
+MFLOPS (average per process)................................................    24.308221
+
+
+To get an impression of your programm, looking at the statistics of
+the -y output will be enough. To get a better understanding where
+certain events accumulate and slow a programm down, use SpeedShop.
+
+
+
+1.2) SpeedShop (ssrun)
+
+ssrun is used by the SpeedShop and WorkShop performance tools to
+establish an environment to capture performance data for an
+executable, to create a process from the executable (or an
+instrumented version), and to run the process. 
+
+Capturing specific performance data is called an "experiment". You can
+only query for one event per session.
+
+After collecting the performance data, ssrun either writes it to a
+file or makes it available to WorkShop for display by the cvperf(1)
+user interface.
+
+SAMPLE USAGE:
+
+origin%> ssrun -dsc_hwc mpirun -np 1 ./cactus_kopitz Kopitz.par
+
+FLAGS:
+
+-exp_type	Specifies the type of experiment to run.  The value of
+                exp_type specifies the particular performance data that
+                will be recorded during the run.
+
+A list of the more important experiments (see "man ssrun" for all)
+
+
+totaltime   Measures inclusive and exclusive wallclock time spent in
+            each function while your program runs. 
+            Exclusive means only counting the time spend in a
+            routine. Inlcusive means also couting the time spend in
+            subroutines.
+
+
+usertime    Measures CPU time, which includes both the time
+            your program is actually running and the time the
+            system is providing services for your program, such as
+            executing system calls.  It excludes the time your
+            program is waiting to execute
+
+ideal       Uses instrumentation to count the number of
+            times each basic block is executed, and then estimates
+            the best possible time your program could achieve.
+
+heap        Traces the allocation and deallocation of memory.
+
+dsc_hwc     Counts overflows of the secondary data cache miss
+            counter. 
+
+
+
+
+The following example gathers data for a SpeedShop usertime experiment:
+
+
+origin%>mpirun -np 1 ssrun -usertime ./cactus_kopitz Kopitz.par
+
+
+The ssrun command will generate files, which are named
+<executable>.<experiment>.<processID>, for example:
+
+cactus_kopitz.usertime.f1177571
+cactus_kopitz.usertime.m1178563 
+
+You can transform the raw data of this experiment to formatted output by using
+the "prof" command. Here we look at an experiment which measured the usertime 
+of the simulation.(Use the "f" file for this).
+
+origin%>prof cactus_kopitz.usertime.f1177571
+
+
+-------------------------------------------------------------------------
+SpeedShop profile listing generated Tue Jul  3 11:20:12 2001
+   prof cactus_kopitz.usertime.f1177571
+           cactus_kopitz (n64): Target program
+                      usertime: Experiment name
+                         ut:cu: Marching orders
+               R10000 / R10010: CPU / FPU
+                            64: Number of CPUs
+                           195: Clock frequency (MHz.)
+  Experiment notes--
+          From file cactus_kopitz.usertime.f1177571:
+        Caliper point 0 at target begin, PID 1177571
+                        /data/lanfer/Cactus/Cactus/exe/cactus_kopitz Kopitz.par
+        Caliper point 1 at exit(0)
+-------------------------------------------------------------------------
+Summary of statistical callstack sampling data (usertime)--
+                          4948: Total Samples
+                           124: Samples with incomplete traceback
+                       148.440: Accumulated Time (secs.)
+                          30.0: Sample interval (msecs.)
+-------------------------------------------------------------------------
+Function list, in descending order by exclusive time
+-------------------------------------------------------------------------
+ [index]  excl.secs excl.%   cum.%  incl.secs incl.%    samples  procedure  (dso: file, line)
+
+    [15]     89.490  60.3%   60.3%     91.590  61.7%       3053  adm_bssn_sources (cactus_kopitz: Sources.f, 1)
+    [27]     13.590   9.2%   69.4%     13.590   9.2%        453  __pow (libm.so: pow.c, 256)
+    [28]     13.080   8.8%   78.3%     13.170   8.9%        439  admconstraints (cactus_kopitz: ADMConstraints.f, 1)
+    [25]      7.320   4.9%   83.2%     19.770  13.3%        659  stencil_brbr (cactus_kopitz: stencil.c, 228)
+
+
+
+
+This result is interesting, because a significant 
+amount of time was spend in the __pow function. To investigate 
+from where these calls were made, use cvprof.
+
+
+1.3) cvprof
+
+Rerun the profiling with the -workshop option and start cvperf with
+the generated logfile. (Use ls -t to look at the last written files.)
+
+
+origin%>mpirun -np 1 ssrun -workshop -usertime ./cactus_kopitz Kopitz.par
+
+origin%>cvperf cactus_kopitz.usertime.f1180090
+
+After cvperf has started up, do the following:
+
+Config->Preferences: 
+
+        check "Display Data As" : Percentages
+
+        check the data you want to display:
+        Incl.Total Time / **Excl. Percentage** / Excl.TotalTime
+
+
+Config->Sort
+        check "Sort Function Lists by": Excl.Percentage
+
+The upper window will list the time spend in the individual
+routine. Double clicking on the routine will open a window with the
+source code. A yellow bar will indicate the cumulation of the
+profiling events. In our case, the __pow system function is listed at
+second place. To find out where a routine -here pow() - is called
+from, single-click the respective function and click the "ShowNode"
+button below.
+
+CallGraph:
+The CallGraph opens in a separate window. Click on "Butterfly" to show
+the conncetion graphs of all routines which make references to
+pow. The percentage of routine references is indicated as well. A
+double click on a routine-box will open a  window showing the
+corresponding source file.
+
+SourceWindow:
+To search for the occurence of "pow", use CTRL-S (or File->Search)
+type "pow". The occurences of the search string are highlighted in the
+scrollbar. 
+
+
+
+
+
+
+
+
+
+
+      

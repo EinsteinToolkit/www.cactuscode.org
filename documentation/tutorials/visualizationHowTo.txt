@@ -1,0 +1,182 @@
+Visualization-HOWTO
+Gabrielle Allen
+v1.2, 11 July 2000
+
+This HOWTO describes software and methods for visualizing data from 
+Cactus simulations, which is created using the IO thorns in the 
+Computation Toolkit thorns. Please help us to keep this documentation
+complete and up-to-date by sending complaints, suggestions and errata
+to the Cactus Team at cactusmaint@cactuscode.org 
+
+
+1. Introduction
+
+   At the moment most of the output thorns for Cactus are specialised to 
+   3D grid functions. From these grid functions it is possible to output
+
+     0D - timelines (max, min, etc)
+     1D - lines along the axis and the diagonal
+     2D - slices 
+     3D - the entire data set
+
+   The IO routines are currently being extended to include the output of
+   1D and 2D grid functions.
+
+   If the functionality you require is not provided by the standard IO 
+   thorns please contact cactusmaint@cactuscode.org, or make a feature 
+   request to the Bug Tracking system at www.CactusCode.org.
+
+
+2. IO Thorns in the Cactus Computational Toolkit
+
+   CactusBase/IOUtil
+   CactusBase/IOBasic
+   CactusPUGHIO/IOASCII
+   CactusPUGHIO/IOFlexIO
+   CactusPUGHIO/IOHDF5
+
+    
+3. Data Formats
+
+   The following data formats are used by the above IO thorns
+
+a) ASCII  (1D/2D using CactusBase/IOUtil and CactusPUGHIO/IOASCII)
+	  (0D using CactusBase/IOUtil and CactusBase/IOBasic)
+
+b) IEEEIO (2D/3D using CactusBase/IOUtil and CactusPUGHIO/IOFlexIO)
+  
+          For more information on the IEEEIO data format see
+
+          http://zeus.ncsa.uiuc.edu/~jshalf/FlexIO/IEEEIO.html
+   
+c) HDF5   
+
+          For more information on the HDF5 data format see
+
+          http://hdf.ncsa.uiuc.edu/HDF5/
+
+          i) (2D/3D using CactusBase/IOUtil and CactusPUGHIO/IOHDF5)
+
+             The data sets here have a layout optimised for Cactus with 
+             a unigrid, and use native HDF5 n-dimensional arrays. There is
+             HDF5 Hyperslab functionality available for readers.
+ 
+          
+4. Visualization Packages
+
+   Here packages with which we have experience are described. If you know
+   of others which can be used with Cactus data and should be mentioned, 
+   please let us know.
+
+a) xgraph (freely available) 
+
+   Can be used to view 1D ASCII data created by CactusPUGHIO/IOASCII
+
+   Can be downloaded from
+
+   http://jean-luc.aei-potsdam.mpg.de/Codes/xgraph
+
+   Supported platforms: Most 
+
+b) gnuplot (freely available)
+ 
+   Can be used to view 1D or 2D ASCII data created by CactusPUGHIO/IOASCII
+
+   There are currently no provided scripts for viewing Cactus data.
+
+   http://www.gnuplot.org/
+
+   Supported platforms: Most
+
+c) LCA Vision (freely available)
+
+   Can be used to view 2D or 3D IEEEIO data created by CactusPUGHIO/IOFlexIO
+   as well as HDF4 data which has been converted from the HDF5 format.
+
+   http://zeus.ncsa.uiuc.edu/~miksa/LCAVision.html
+
+   Supported platforms: SGI
+
+   Current development: Port to Linux and HDF5 support
+
+d) OpenDX (freely available)
+
+   Can be used to view 1D,2D,3D HDF5 data created by CactusPUGHIO/IOHDF5
+   or 1D,2D ASCII data created by CactusPUGHIO/IOASCII.
+   Also allows the user to read streaming data.
+
+   HDF5 reader modules and sample networks for OpenDX are part of the
+   Utilities arrangement. (Utilities/OpenDXutils).
+   
+   The Cactus Developers are currently working on a thorn to write 2D and 3D 
+   data in the OpenDx native format.
+
+   http://www.opendx.org
+
+   Supported platforms: Several
+
+e) Amira (commercial, 30 day demo version)
+
+   Can be used to view 2D and 3D IEEEIO created by CactusPUGHIO/IOFlexIO. 
+
+   The FlexIO reader is available as part of the Numerical Relativity 
+   add-ons to Amira. 
+
+   http://amira.zib.de/
+
+   Supported platforms: SGI, Linux, HP-UX, Sun Windows
+   Supported platforms (Numerical Relativity add-ons): SGI, Linux
+
+f) AVS (commercial)
+
+   Can be used to view 2D and 3D IEEEIO data created by CactusPUGHIO/IOFlexIO
+   as well as HDF5 data created by CactusPUGHIO/IOHDF5 (and HDF4 data which 
+   has been converted from the HDF5 format). 
+
+   Readers for IEEEIO can be found on the IEEEIO web pages.
+
+   http://www.avs.com/
+
+   Supported platforms: 
+
+g) IDL (commercial, multi-use 7 minute demo version)
+
+   Can be used to view 1D and 2D ASCII data files created by 
+   CactusPUGHIO/IOASCII, and 2D and 3D IEEEIO data created by 
+   CactusPUGHIO/IOFlexIO as well as HDF4 data which has been converted 
+   from the HDF5 format.
+
+   IEEEIO readers can be downloaded from the Cactus Code web pages.
+
+   http://www.rsinc.com/idl/index.cfm
+
+   Supported platforms: Most
+
+h) NAG Explorer (commercial)
+
+   Can be used to view 2D and 3D IEEEIO data created by CactusPUGHIO/IOFlexIO
+   as well as HDF4 data which has been converted from the HDF5 format.
+
+   http://www.nag.co.uk/Welcome_IEC.html
+
+   Supported platforms: 
+
+
+5. Using the Visualization Packages
+
+   Here we will add information on how to use the various visualization 
+   packages to view Cactus data. This information will be added as it is
+   asked for.
+
+
+6. Tools
+
+a) Converting HDF5 data files to (flat) HDF4 data files
+
+   A HDF5 to HDF4 converter is included in the HDF5 distribution
+
+
+7. Additional Comments
+
+
+

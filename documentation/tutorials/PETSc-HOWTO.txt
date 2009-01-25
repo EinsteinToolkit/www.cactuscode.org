@@ -1,0 +1,99 @@
+PETSc-HOWTO
+Gerd Lanfermann
+v1.2, 13 July 2000
+
+This HOWTO describes how to use PETSc with Cactus. Please help 
+us to keep this documentation complete and up-to-date by sending 
+complaints, suggestions and errata to the Cactus Team at 
+cactusmaint@cactuscode.org 
+
+1.  PETSc
+1.1 Overview
+1.2 PETSc and Cactus
+1.3 PETSC Download and Documentation
+2.  Installation & Setup of PETSc
+2.1 Compiling with PETSc
+3.  Access of PETSc from within Cactus
+
+1.) PETSc
+
+1.1) Overview
+
+     	PETSc is a suite of data structures and routines for the scalable
+     	(parallel) solution of scientific applications modeled by partial
+     	differential equations.  It employs the MPI standard for all
+	message-passing communication. 
+
+	The Scalable Linear Equations Solvers (SLES) component of PETSc
+	provides an easy-to-use interface to the combination of a Krylov
+	subspace iterative method and a preconditioner (in the KSP and PC
+	components, respectively) or a sequential direct solver. SLES 
+	users can set various Krylov and preconditioning options.
+
+	The Scalable Nonlinear Equations Solvers (SNES) component
+	provides an easy-to-use interface to Newton-based methods 
+	for solving systems of nonlinear equations. SNES users can set
+	various algorithmic options. SNES internally employs SLES for
+	the solution of its linear systems. 
+  
+1.2) PETSc and Cactus
+
+	PETSc is currently employed in one thorn of the Computational 
+	Toolkit, CactusElliptic/EllPETSc. This thorn provides capabilities
+	for solving linear elliptic equations. Compiling and using this 
+	thorn requires
+
+	- including CactusElliptic/EllBase
+	- compiling with MPI
+	- an installation of PETSc on your system
+
+	More information about solving elliptic equations with the 
+	Computational Toolkit, and with PETSC in particular, can be found
+        in the thorn documentation of EllBase and EllPETSc.
+
+1.3) PETSc Download and documentation
+
+     	PETSc can be downloaded for free at
+     	http://www-fp.mcs.anl.gov/petsc/
+     	It has been ported to all major architectures 
+	and operating systems.
+	
+
+2.) Installation & Setup of PETSc
+
+	If there is no PETSc installed on your system, compile and install
+	PETSc according to the documentation. Make sure you install the MPI
+	version. Test the installation. You need to have the
+	environment variables PETSC_DIR and PETSC_ARCH set according
+	to the PETSc documentation. 	
+
+	Ensure that the PETSc libraries are in the library search path:
+	e.g. you may need to set the environment variable
+	LD_LIBRARY_PATH. Otherwise, the Cactus executable    
+	compiles and starts, but will complain about missing libraries. 
+
+	If there is a preinstalled version of PETSc on your system,
+	refer to the PETSc documentation on how to set the
+	PETSC_DIR / PETSC_ARCH appropriately. 
+
+2.1) Compiling with PETSc
+
+	Cactus has been used with PETSc version 2.0.24, all versions up 
+	from this should work.
+
+	Cactus and PETSc have only been tested with the MPI version of 
+	PETSc. Therefore, you need to configure Cactus with MPI if you
+	make use of a thorn which uses PETSc directly (for example 
+	CactusElliptic/EllPETSc). The PETSc thorn itself may have 
+	additional requirements.
+	
+        If the MPI version of PETSc is installed correctly and you have
+	configured Cactus with MPI, it will compile out-of-the box if
+	you compile with a (working) thorn which uses PETSc.
+
+3.) Access of PETSc from within Cactus
+	
+	Routines which make use of PETSc are written as any other routine
+	in Cactus. Please refer to the example thorn EllPETSc in the
+	CactusElliptic arrangement and its documentation.
+

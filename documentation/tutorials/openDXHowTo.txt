@@ -1,0 +1,317 @@
+OpenDX-HOWTO
+Gerd Lanfermann, Thomas Radke
+version $Id: OpenDX-HOWTO,v 1.18 2002/08/12 15:41:33 tradke Exp $
+
+This HOWTO will give a description on how to utilize OpenDX for visualizing
+Cactus output data read from files or online from a running simulation via
+a live socket connection.
+
+Please help us to keep this documentation complete and up-to-date
+by sending complaints, suggestions and errata to the Cactus Team at
+
+                     cactusmaint@cactuscode.org
+
+
+Contents
+--------
+1.  What is OpenDX
+2.  Obtaining and Installing OpenDX on Your Machine
+3.  Installing the Data Import Modules to read Cactus HDF5 output
+4.  Visualizing Cactus HDF5 output with OpenDX
+5.  Architecture Notes
+
+
+1.  What is OpenDX
+------------------
+
+    OpenDX is the open source software version of IBM's Visualization
+    Data Explorer Product (see http://www.ibm.com/dx). 
+
+    OpenDX is a uniquely powerful, full-featured software package
+    for the visualization of scientific, engineering and analytical
+    data: Its open system design is built on a standard interface
+    environment. And its sophisticated data model provides users
+    with great flexibility in creating visualizations.
+
+    The official OpenDX home page can be found at
+
+      http://www.opendx.org
+
+    and should be visited to get general information about OpenDX.
+    There are links to a "Getting Started" introduction into OpenDX,
+    a gallery of OpenDX visualization examples, a user and developer
+    discussion forum, FAQs, support contacts, and much more.
+
+
+    Similar to the visualization package AVS, OpenDX offers a flow-
+    based programming environment. Modules are the basic components
+    for building a visualization application. They contain a
+    textual module description as well as the program code which
+    implements a module-specific functionality. The code uses the
+    OpenDX runtime library API to interface with the kernel and other
+    modules.
+    Modules provide input/output ports by which they can be connected
+    with other modules to form an OpenDX network. Each time a change
+    of state at one of its input ports is triggered by predecessors
+    within the network, the corresponding module is activated and will
+    recompute its own internal state. This update then gets propagated
+    via its output port(s) to connected successor modules.
+    As an example: a data flow starts in an Import module which reads
+    a dataset from a file; this data is sent to a connected Renderer
+    module which may compute some isosurfaces. Finally, the computed
+    isosurface geometry serves as input to a Graphics module to display
+    the image in a window on screen. The Import module could periodi-
+    cally check the data file for new data being appended and, if so,
+    will activate all other modules in the network. Also, the Renderer
+    module may have an Interactor module with a slider connected to it
+    at a second port where the user can select a specific isovalue to
+    compute. Changing the isovalue will automatically trigger only the
+    Renderer and the Graphics module.
+
+    There exist various built-in modules providing functionality
+    such as
+
+      - Import and Export of data
+      - Data Transformation
+      - Rendering
+      - Graphics output
+      - Interactors
+      - Flow Control
+      - Debugging
+
+    All these modules are integrated into an OpenDX server program
+    and thus available in a standard distribution.
+    Developers can also add their own, specialized functionality
+    as external modules to link against the OpenDX runtime libraries
+    and build their own server program.
+    We are using this mechanism to provide our own Data Import modules
+    to read Cactus output created in HDF5 format.
+
+
+
+2.  Obtaining and Installing OpenDX on Your Machine
+---------------------------------------------------
+
+    Note to AEI users: OpenDX is already installed and available on all
+                       Linux and SGI machines at the AEI. A softlink in the
+                       /usr/local/bin/ directory (which should be in
+                       your PATH environment variable) points to the
+                       OpenDX installation in /usr/local/apps/.
+
+                       So you can skip the following installation
+                       instructions and continue with section 4.
+
+    Note to laptop users: If you don't want to install a full OpenDX
+                          source distribution and build the modules for
+                          visualizing Cactus HDF5 data on your own
+                          you can simply download a ready-to-use
+                          OpenDX installation for x86 Linux from
+
+                          http://jean-luc.aei.mpg.de/Codes/OpenDX/index.html
+
+                          This distribution contains statically linked
+                          OpenDX executables with the HDF5 Import modules
+                          already integrated. The complete set of OpenDX
+                          example networks is included as well as the
+                          Tutorial and the Online Documentation.
+                          Just unpack the compressed tarball in your instal-
+                          lation package directory (eg. /usr/local/apps/),
+                          set the DXROOT environment variable to point to
+                          your OpenDX installation (eg.
+                          /usr/local/apps/dx-4.2.0/dx/) and add the path to
+                          the dx wrapper script ($DXROOT/bin/) to your PATH
+                          environment variable. 
+
+
+    The following paragraphs describe where to get the OpenDX
+    source code distribution and how to compile and install OpenDX.
+    Section 3 explains where to get the sources of the external
+    Import modules to read Cactus HDF5 data and how to build
+    your own OpenDX server program with these modules.
+
+    For obtaining OpenDX you can go to the OpenDX download page at
+
+      http://www.opendx.org/download.html
+
+    which provides pre-compiled binaries for a number of architectures.
+    If your architecture is not among these, or the binary distribution
+    doesn't work for you, you can also download the sources and build
+    OpenDX yourself. Please read the README and INSTALL files in the
+    source distribution and follow the instructions given therein.
+
+    You should also download the OpenDX examples which come as a
+    separate package and install these in the same directory as OpenDX.
+
+    Finally, after successful installation you should set the environment
+    variable DXROOT to point to your OpenDX installation directory
+    (eg. /usr/local/apps/dx-4.2.0/dx/) and add $DXROOT/bin/ to your PATH
+    variable.
+    Now you can run OpenDX simply by typing
+
+      dx
+
+    in a shell. This should bring up the OpenDX main menu.
+    Select "Run Tutorial..." to get an online introduction on how
+    to use OpenDX, or click on "Examples..." to try one of the OpenDX
+    example networks.
+
+
+3.  Installing the Data Import Modules to read Cactus HDF5 output
+-----------------------------------------------------------------
+
+    Multidimensional Cactus data are output in either FlexIO or
+    HDF5 format. These file formats cannot be read by one of the
+    built-in OpenDX Import modules. For that reason appropriate
+    readers must be provided as external OpenDX modules. 
+
+    Currently there are two modules available to read Cactus output
+    in HDF5 file format into an OpenDX visualization application:
+
+       Module             | Description
+      --------------------|------------------------------------------
+       ImportHDF5         | reads arbitrary N-dimensional datasets
+                          | from a local or remote HDF5 file, or
+                          | from a running Cactus simulation
+                          | via a live socket connection
+                          |
+       ImportAHFinderFile | reads HDF5 output files from the Cactus
+                          | Apparent Horizon Finder thorn
+
+    These reader modules can be obtained from the Cactus CVS server
+    via anonymous checkout:
+
+      cvs -d :pserver:cvs_anon@cvs.cactuscode.org:/cactus login
+          [ password is 'anon' ]
+      cvs -d :pserver:cvs_anon@cvs.cactuscode.org:/cactus                     \
+          checkout VizTools/OpenDXutils
+
+    The OpenDXutils package contains a src/ subdirectory with the
+    modules' source files ImportHDF5.c and ImportAHFinderFile.c
+    and the corresponding module description file ImportHDF5.mdf.
+    A Makefile is also supplied to build the loadable modules
+    from the source files.
+
+    Before trying to build the modules you should have installed
+    HDF5 on your system. For details where to obtain and how to
+    install HDF5 please refer to the Cactus HDF5 HowTo page
+
+      http://www.cactuscode.org/Documentation/HOWTO/HDF5-HOWTO
+
+    Now set the enviromnet variable HDF5_DIR to point to your
+    HDF5 installation (eg. /usr/local/apps/hdf5/).
+    You also need to set the DXROOT environment variable to point
+    to your OpenDX installation (eg. /usr/local/apps/dx-4.2.0/dx/)
+    so that make can find the OpenDX libraries to link with.
+    The Makefile already defines the proper compiler and linker
+    options, so just by typing
+
+      make
+
+    in the src/ subdirectory, a loadable module file called
+    ImportHDF5 should be created which contains the code of the two
+    HDF5 Data Import modules. This module file must be dynamically
+    loaded by OpenDX in order to run the visualization networks as
+    described in the following section.
+    This is done by either running
+
+      dx -mdf  <my_VizTools_dir>/OpenDXutils/src/ImportHDF5.mdf \
+         -modules  <my_VizTools_dir>/OpenDXutils/src            \
+         [ any other options to OpenDX ]
+
+    or more easily by setting the following two environment variables
+    to point to the HDF5 import module file and its module description
+    file:
+
+      for csh/tcsh:
+      setenv DXMODULES  <my_VizTools_dir>/OpenDXutils/src
+      setenv DXMDF      <my_VizTools_dir>/OpenDXutils/src/ImportHDF5.mdf
+
+      for bash:
+      export DXMODULES=<my_VizTools_dir>/OpenDXutils/src
+      export DXMDF=<my_VizTools_dir>/OpenDXutils/src/ImportHDF5.mdf
+
+    If you have write access to your OpenDX installation, you can also
+    simply copy the HDF5 import module file and its module description
+    file to it so that OpenDX will automatically find it:
+
+      cp <my_VizTools_dir>/OpenDXutils/src/ImportHDF5     $DXROOT/lib_<arch>/
+      cp <my_VizTools_dir>/OpenDXutils/src/ImportHDF5.mdf $DXROOT/lib/
+
+
+4.  Visualizing Cactus HDF5 output with OpenDX
+----------------------------------------------
+
+    It is assumed here that you already know how to create Cactus
+    output data in HDF5 file format. Just use one of the HDF5 thorns
+    described on the Cactus HDF5 HowTo page
+
+      http://www.cactuscode.org/Documentation/HOWTO/HDF5-HOWTO
+
+    As an example, you can run one of the parameter files in the
+    par/ subdirectories of these thorns.
+    Thorn IOHDF5 will create HDF5 output files which can be fed into
+    the ImportHDF5File module. Thorn IOStreamedHDF5 will stream out
+    data from a running Cactus simulation (the hostname/port number
+    to connect to is reported at startup); the ImportHDF5Stream can
+    then be used to connect to Cactus and continuously receive data
+    for doing online visualization.
+
+    For visualizing Cactus HDF5 output you need to have an OpenDX
+    network with the HDF5 Import modules properly connected to other
+    modules to do rendering and displaying.
+    Several example networks are located in the net/ subdirectory
+    of the OpenDXutils package that you have checked out from
+    the Cactus CVS server (see instructions given in section 3).
+    Also, the data/ subdirectory already contains a sample Cactus
+    output file in HDF5 format.
+
+    Just start OpenDX in a shell as following:
+
+      dx -program <my_network>.net
+
+    This will start the server program and pop up the Visual Program 
+    Editor in which you can see your network with all the modules
+    and their connections. Click on one of the Interactor modules
+    (named "String" or "Scalar") to change the parameter defaults
+    (filename to open, hostname/port number to connect to) of the
+    network according to your settings.
+    Then you can choose "Execute/Execute on Change" or
+    "Execute/Execute Once" from the menu to trigger the network
+    and perform some visualizations.
+
+    Networks are fairly easy to construct once you've had some
+    training with OpenDX. Just start from one of the simpler
+    examples in the OpenDX samples packages or the net/ subdirectory
+    of OpenDXutils and add other/more modules according to your needs.
+    If you think you have a network which is of general interest
+    please contact the Cactus team so that we can add it to the
+    distribution.
+
+
+5.  Architecture Notes
+----------------------
+
+    - SGI systems: 
+      
+      Error message: "Connection to server failed / Error during 
+                      initialization / cannot get shared memory segment"
+                     That means OpenDX couldn't allocate shared memory
+                     segments according the the main memory it would use.
+
+      Solution:      Start OpenDX specifying the maximum amount of memory
+                     (in MByte) to use:
+
+                     machine%> dx -memory 32
+
+
+      You can switch color depth in the Image window:
+        "Options"->"Image Depth"
+      24 is default, 12 is interesting because it lets you use
+      hardware rendering:
+        "Options"->"Rendering Options": "Hardware"
+
+    - OpenDX on Linux (laptops):
+      Some of the renderer modules will crash the server program
+      if you try to remote display OpenDX from an SGI to your laptop.
+      You need a graphics card which supports the GLX hardware
+      rendering options.
