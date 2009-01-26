@@ -13,11 +13,11 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <table>
   
   <tr>
-    <td>Architecture</td>
-    <td>Machine</td>
-    <td>Location</td>
-    <td>Option List</td>
-    <td>Script File Template</td>
+    <th>Architecture</th>
+    <th>Machine</th>
+    <th>Location</th>
+    <th>Option List</th>
+    <th>Script File Template</th>
   </tr>
   
   <tr>
