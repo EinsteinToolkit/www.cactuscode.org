@@ -2,12 +2,6 @@
 <?php $title='Configuration Files';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<!-- 2009-01-22 Erik Schnetter: This file is currently manually
-     created from information stored in the SimFactory machine
-     database.  This process should be automated.  -->
-
-
-
 <h2>Supported Architectures (With Example Systems)</h2>
 
 <table>
@@ -20,12 +14,35 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <th>Script File Template</th>
   </tr>
   
+  <!-- abe -->
   <tr>
     <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters</td>
     <td><a href="http://www.ncsa.uiuc.edu/UserInfo/Resources/Hardware/Intel64Cluster/">Abe</td>
     <td>NCSA</td>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/abe-mvapich2">abe-mvapich2</a></td>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/abe-mvapich2">abe-mvapich2</td>
+  </tr>
+  
+  <!-- damiana -->
+  <tr>
+    <td></td>
+    <td><a href="http://supercomputers.aei.mpg.de/damiana">Damiana</a></td>
+    <td>AEI</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/damiana">damiana</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/damiana">damiana</td>
+  </tr>
+  
+  <tr>
+    <td></td>
+    <td><a href="http://www.loni.org/systems/system.php?system=Eric">Eric</a>,
+      <a href="http://www.loni.org/systems/system.php?system=Louie">Louie</a>,
+      <a href="http://www.loni.org/systems/system.php?system=Oliver">Oliver</a>,
+      <a href="http://www.loni.org/systems/system.php?system=Poseidon">Poseidon</a>,
+      <a href="http://www.loni.org/systems/system.php?system=QueenBee">Queen
+        Bee</a>, <a href="http://www.hpc.lsu.edu/systems/system.php?system=Tezpur">Tezpur</a></td>
+    <td>LONI, LSU</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/eric-mvapich2">eric-mvapich2</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/eric-mvapich2">eric-mvapich2</td>
   </tr>
   
 </table>
