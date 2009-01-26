@@ -7,12 +7,12 @@ echo '<br />';
 if(isset($_GET['golive']))
 {
   echo '<p>'.exec('/var/www/golive').'</p>';
-  echo '<p>Live site updated!</p>';
+  echo '<p>Live site now current.</p>';
 }
 elseif(isset($_GET['updatesvn']))
 {
   echo '<p>'.exec('/var/www/updatesvn').'</p>';
-  echo '<p>Preview site updated.</p>';
+  echo '<p>Preview site now current.</p>';
 }
 else
 {
