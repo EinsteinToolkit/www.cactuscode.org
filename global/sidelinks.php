@@ -7,7 +7,7 @@ case 'about':
 echo '
 <h2>About</h2>
 <ul class="sidemenu">
-	<li><a href="/about/contact">Contact</a></li>
+	<li><a href="/about/contact.php">Contact</a></li>
 	<li><a href="/about/funding">Funding</a></li>
 	<li><a href="/about/history">History</a></li>
 	<li><a href="/about/team/">Team</a></li>
