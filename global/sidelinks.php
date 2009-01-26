@@ -70,7 +70,7 @@ echo '
 	<li><a href="/download/configfiles/">Configuration Files</a></li>
 	<li><a href="/download/releasenotes/">Release Notes</a></li>
 	<li><a href="/download/thorns/">Thorn Lists</a></li>
-	<li><a href="/download/wavetoydemo/">WaveToy Demo</a></li>
+	<li><a href="/documentation/tutorials/wavetoydemo/">WaveToy Demo</a></li>
 </ul>
 ';
 break;
