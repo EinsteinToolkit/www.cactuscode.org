@@ -14,7 +14,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <th>Script File Template</th>
   </tr>
   
-  <!-- abe -->
+  <!-- abe-mvapich2 -->
   <tr>
     <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters</td>
     <td><a href="http://www.ncsa.uiuc.edu/UserInfo/Resources/Hardware/Intel64Cluster/">Abe</td>
@@ -32,6 +32,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/damiana">damiana</td>
   </tr>
   
+  <!-- eric-mvapich2 -->
   <tr>
     <td></td>
     <td><a href="http://www.loni.org/systems/system.php?system=Eric">Eric</a>,
@@ -45,31 +46,27 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/eric-mvapich2">eric-mvapich2</td>
   </tr>
   
+  <!-- lonestar -->
+  <tr>
+    <td></td>
+    <td><a href="http://www.tacc.utexas.edu/services/userguides/lonestar/">Lonestar</a></td>
+    <td>TACC</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/lonestar">lonestar</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/lonestar">lonestar</a></td>
+  </tr>
+  
+  <!-- ranger -->
+  <tr>
+    <td></td>
+    <td><a href="http://www.tacc.utexas.edu/services/userguides/ranger/">Ranger</a></td>
+    <td>TACC</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/ranger-mvapich">ranger-mvapich</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/ranger-mvapich">ranger-mvapich</a></td>
+  </tr>
+  
 </table>
 
 <ul>
-  
-  <li><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters
-    <ul>
-      <li><a href="http://www.ncsa.uiuc.edu/UserInfo/Resources/Hardware/Intel64Cluster/">Abe</a>
-        (NCSA), <a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/abe-mvapich2">option
-        list</a>, <a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/abe-mvapich2">script
-        file template</a></li>
-      <li><a href="http://supercomputers.aei.mpg.de/damiana">Damiana</a>
-        (AEI)</li>
-      <li><a href="http://www.loni.org/systems/system.php?system=Eric">Eric</a>,
-        <a href="http://www.loni.org/systems/system.php?system=Louie">Louie</a>,
-        <a href="http://www.loni.org/systems/system.php?system=Oliver">Oliver</a>,
-        <a href="http://www.loni.org/systems/system.php?system=Poseidon">Poseidon</a>,
-        <a href="http://www.loni.org/systems/system.php?system=QueenBee">Queen
-          Bee</a>, <a href="http://www.hpc.lsu.edu/systems/system.php?system=Tezpur">Tezpur</a>
-        (LONI/LSU)</li>
-      <li><a href="http://www.tacc.utexas.edu/services/userguides/lonestar/">Lonestar</a>
-        (TACC)</li>
-      <li><a href="http://www.tacc.utexas.edu/services/userguides/ranger/">Ranger</a>
-        (TACC)</li>
-    </ul>
-  </li>
   
   <li><a href="http://en.wikipedia.org/wiki/Cray_XT4">Cray XT4</a> (CNL)
     <ul>
