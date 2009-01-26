@@ -91,35 +91,51 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/kraken">kraken</a></td>
   </tr>
   
+  
+  
+  <!-- IBM Blue Gene -->
+  
+  <!-- Surveyor -->
+  <tr>
+    <td><a href="http://en.wikipedia.org/wiki/Blue_Gene">IBM Blue
+        Gene/P</a> (Linux)</td>
+    <td><a href="http://www.alcf.anl.gov/resources/storage.php">Surveyor</a></td>
+    <td>ALCF</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/surveyor">surveyor</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/surveyor">surveyor</a></td>
+  </tr>
+  
+  
+  
+  <!-- IBM p5 -->
+  
+  <!-- ducky -->
+  <tr>
+    <td><a href="http://en.wikipedia.org/wiki/IBM_System_p">IBM p5</a>
+      (AIX)</td>
+    <td><a href="http://www.loni.org/systems/system.php?system=Bluedawg">Bluedawg</a>,
+      <a href="http://www.loni.org/systems/system.php?system=Ducky">Ducky</a>,
+      <a href="http://www.loni.org/systems/system.php?system=LaCumba">LaCumba</a>,
+      <a href="http://www.loni.org/systems/system.php?system=Neptune">Neptune</a>,
+      <a href="http://www.loni.org/systems/system.php?system=Zeke">Zeke</a></td>
+    <td>LONI</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/ducky">ducky</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/ducky">ducky</a></td>
+  </tr>
+  
+  <!-- pelican -->
+  <tr>
+    <td><a href="http://en.wikipedia.org/wiki/IBM_System_p">IBM p5</a>
+      (AIX)</td>
+    <td><a href="http://www.hpc.lsu.edu/systems/system.php?system=Pelican">Pelican</a></td>
+    <td>LSU</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/pelican">pelican</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/pelican">pelican</a></td>
+  </tr>
+  
 </table>
 
 <ul>
-  
-  <li>
-    <ul>
-    </ul>
-  </li>
-  
-  <li><a href="http://en.wikipedia.org/wiki/Blue_Gene">IBM Blue
-      Gene/P</a> (Linux)
-    <ul>
-      <li><a href="http://www.alcf.anl.gov/resources/storage.php">Surveyor</a> (ALCF)</li>
-    </ul>
-  </li>
-  
-  <li><a href="http://en.wikipedia.org/wiki/IBM_System_p">IBM p5</a>
-    (AIX)
-    <ul>
-      <li><a href="http://www.loni.org/systems/system.php?system=Bluedawg">Bluedawg</a>,
-        <a href="http://www.loni.org/systems/system.php?system=Ducky">Ducky</a>,
-        <a href="http://www.loni.org/systems/system.php?system=LaCumba">LaCumba</a>,
-        <a href="http://www.loni.org/systems/system.php?system=Neptune">Neptune</a>,
-        <a href="http://www.loni.org/systems/system.php?system=Zeke">Zeke</a>
-        (LONI)</li>
-      <li><a href="http://www.hpc.lsu.edu/systems/system.php?system=Pelican">Pelican</a>
-        (LSU)</li>
-    </ul>
-  </li>
   
   <li><a href="http://en.wikipedia.org/wiki/Altix">SGI Altix</a>
     <ul>
