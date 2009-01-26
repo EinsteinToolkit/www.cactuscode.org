@@ -13,8 +13,8 @@ model black holes, neutron stars, and boson stars.
 </p>
 
 <p>
-In 1995, Ed Seidel and many of his group moved to the Max Planck
-Institute for Gravitational Physics (Albert Einstein Institute or AEI)
+In 1995, Ed Seidel and many of his group moved to the <a href="http://www.aei.mpg.de">Max Planck
+Institute for Gravitational Physics (Albert Einstein Institute or AEI)</a>
 in Potsdam, Germany.  Frustrated by the difficulties of coordinating
 the development and use of several different codes across a large
 collaborative group, Paul Walker, Joan Massó, Ed Seidel, and John
@@ -46,9 +46,10 @@ about these awards can be found on our News pages.
 
 <p>
 In 2003, several members of the AEI Cactus group left Germany to help
-found the Center for Computation &amp; Technology (CCT) at Louisiana
-State University with new director Ed Seidel.  Cactus is now developed
-and supported by a close-knit team spanning AEI and CCT.</p>
+found the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">
+Center for Computation &amp; Technology (CCT)</a> at
+<a href="http://lsu.edu/">LSU</a></li> with new director Ed Seidel.  
+Cactus is now developed and supported by a close-knit team spanning AEI and CCT.</p>
 
 <p>
 Along the way, many other friends and colleagues have contributed to
