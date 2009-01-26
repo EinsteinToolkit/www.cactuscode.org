@@ -4,6 +4,10 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <h2>Supported Architectures (With Example Systems)</h2>
 
+<!-- Please keep the list below sorted first by architecture, then by
+     machine name.  The comments in front of every entry refer to the
+     SimFactory machine name.  Thank you.  -->
+
 <table>
   
   <tr>
@@ -29,7 +33,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   
   <!-- damiana -->
   <tr>
-    <td></td>
+    <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters</td>
     <td><a href="http://supercomputers.aei.mpg.de/damiana">Damiana</a></td>
     <td>AEI</td>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/damiana">damiana</a></td>
@@ -38,7 +42,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   
   <!-- eric-mvapich2 -->
   <tr>
-    <td></td>
+    <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters</td>
     <td><a href="http://www.loni.org/systems/system.php?system=Eric">Eric</a>,
       <a href="http://www.loni.org/systems/system.php?system=Louie">Louie</a>,
       <a href="http://www.loni.org/systems/system.php?system=Oliver">Oliver</a>,
@@ -52,7 +56,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   
   <!-- lonestar -->
   <tr>
-    <td></td>
+    <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters</td>
     <td><a href="http://www.tacc.utexas.edu/services/userguides/lonestar/">Lonestar</a></td>
     <td>TACC</td>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/lonestar">lonestar</a></td>
@@ -61,7 +65,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   
   <!-- ranger -->
   <tr>
-    <td></td>
+    <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters</td>
     <td><a href="http://www.tacc.utexas.edu/services/userguides/ranger/">Ranger</a></td>
     <td>TACC</td>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/ranger-mvapich">ranger-mvapich</a></td>
@@ -84,7 +88,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   
   <!-- kraken -->
   <tr>
-    <td></td>
+    <td><a href="http://en.wikipedia.org/wiki/Cray_XT4">Cray XT4</a>
+      (CNL)</td>
     <td><a href="http://www.nics.tennessee.edu/computing-resources/kraken">Kraken</a></td>
     <td>NICS</td>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/kraken">kraken</a></td>
@@ -133,60 +138,67 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/pelican">pelican</a></td>
   </tr>
   
+  
+  
+  <!-- SGI Altix -->
+  
+  <!-- hlrb2 -->
+  <tr>
+    <td><a href="http://en.wikipedia.org/wiki/Altix">SGI Altix</a></td>
+    <td><a href="http://www.lrz-muenchen.de/services/compute/hlrb/">HLRB
+        II</a></td>
+    <td>LRZ</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/hlrb2">hlrb2</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/hlrb2">hlrb2</a></td>
+  </tr>
+  
+  <!-- santaka -->
+  <tr>
+    <td><a href="http://en.wikipedia.org/wiki/Altix">SGI Altix</a></td>
+    <td><a href="http://www.hpc.lsu.edu/systems/system.php?system=Santaka">Santaka</a></td>
+    <td>LSU</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/santaka">santaka</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/santaka">santaka</a></td>
+  </tr>
+  
+  
+  
+  <!-- SiCortex -->
+  
+  <!-- sicortex -->
+  <tr>
+    <td>SiCortex (Linux)</td>
+    <td><a href="http://sicortex.com/">SiCortex</a></td>
+    <td>Houston</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/sicortex">sicortex</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/sicortex">sicortex</a></td>
+  </tr>
+  
+  
+  
+  <!-- Laptops, Workstations -->
+  
+  <!-- numrel02 -->
+  <tr>
+    <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a>
+      Laptops/Workstations</td>
+    <td><a href="http://www.cct.lsu.edu/">numrel02</a></td>
+    <td>CCT, Linux workstation</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/numrel-intel">numrel-intel</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/numrel-intel">numrel-intel</a></td>
+  </tr>
+  
+  <!-- redshift -->
+  <tr>
+    <td><a href="http://en.wikipedia.org/wiki/Mac_OS_X">Mac OS X</a>
+      Laptops/Workstations</td>
+    <td><a href="http://www.cct.lsu.edu/">Redshift</a></td>
+    <td>CCT, Mac OS X laptop</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/redshift-gcc">redshift-gcc</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/redshift-gcc">redshift-gcc</a></td>
+  </tr>
+  
 </table>
-
-<ul>
-  
-  <li><a href="http://en.wikipedia.org/wiki/Altix">SGI Altix</a>
-    <ul>
-      <li><a href="http://www.lrz-muenchen.de/services/compute/hlrb/">HLRB
-          II</a> (LRZ)</li>
-      <li><a href="http://www.hpc.lsu.edu/systems/system.php?system=Santaka">Santaka</a>
-        (LSU)</li>
-    </ul>
-  </li>
-  
-  <li>SiCortex (Linux)
-    <ul>
-      <li><a href="http://sicortex.com/">SiCortex</a> (Houston)</li>
-    </ul>
-  </li>
-  
-  <li><a href="http://en.wikipedia.org/wiki/Linux">Linux</a>
-    Laptops/Workstations
-    <ul>
-      <li><a href="http://www.cct.lsu.edu/">numrel02</a> (CCT, Linux
-        workstation)</li>
-    </ul>
-  </li>
-  
-  <li><a href="http://en.wikipedia.org/wiki/Mac_OS_X">Mac OS X</a>
-    Laptops/Workstations
-    <ul>
-      <li><a href="http://www.cct.lsu.edu/">Redshift</a> (CCT, Mac OS X
-        laptop)</li>
-    </ul>
-  </li>
-  
-</ul>
-
-
-<p>
-  TODO: Missing, potentially interesting machines/architectures, in
-  order of decreasing interest:
-</p>
-
-<ul>
-  <li>Big Red (IBM e1350)</li>
-  <li>Big Ben (Cray XT3) (but we have Cray XT4)</li>
-  <li>TeraGrid Clusters at NCSA, SDSC, UC/ANL (Itanium2)</li>
-  <li>Frost (IBM BlueGene/L) (but we have BlueGene/P)</li>
-  <li>Pople (SGI Altix 4700) (but we have SGI Altix)</li>
-  <li>Q (Mac OS X) (but we have Mac OS X already)</li>
-  <li>Windows</li>
-  <li>PlayStation 3</li>
-  <li>XBox</li>
-</ul>
 
 
 
