@@ -14,6 +14,10 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <th>Script File Template</th>
   </tr>
   
+  
+  
+  <!-- Linux Clusters -->
+  
   <!-- abe-mvapich2 -->
   <tr>
     <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters</td>
@@ -64,16 +68,35 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/ranger-mvapich">ranger-mvapich</a></td>
   </tr>
   
+  
+  
+  <!-- Cray XT4 -->
+  
+  <!-- franklin -->
+  <tr>
+    <td><a href="http://en.wikipedia.org/wiki/Cray_XT4">Cray XT4</a>
+      (CNL)</td>
+    <td><a href="http://www.nersc.gov/nusers/systems/franklin/">Franklin</a>
+    <td>NERSC</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/franklin">franklin</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/franklin">franklin</a></td>
+  </tr>
+  
+  <!-- kraken -->
+  <tr>
+    <td></td>
+    <td><a href="http://www.nics.tennessee.edu/computing-resources/kraken">Kraken</a></td>
+    <td>NICS</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/kraken">kraken</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/kraken">kraken</a></td>
+  </tr>
+  
 </table>
 
 <ul>
   
-  <li><a href="http://en.wikipedia.org/wiki/Cray_XT4">Cray XT4</a> (CNL)
+  <li>
     <ul>
-      <li><a href="http://www.nersc.gov/nusers/systems/franklin/">Franklin</a>
-        (NERSC)</li>
-      <li><a href="http://www.nics.tennessee.edu/computing-resources/kraken">Kraken</a>
-        (NICS)</li>
     </ul>
   </li>
   
