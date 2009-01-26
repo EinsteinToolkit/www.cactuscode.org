@@ -10,6 +10,26 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <h2>Supported Architectures (With Example Systems)</h2>
 
+<table>
+  
+  <tr>
+    <td>Architecture</td>
+    <td>Machine</td>
+    <td>Location</td>
+    <td>Option List</td>
+    <td>Script File Template</td>
+  </tr>
+  
+  <tr>
+    <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters</td>
+    <td><a href="http://www.ncsa.uiuc.edu/UserInfo/Resources/Hardware/Intel64Cluster/">Abe</td>
+    <td>NCSA</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/abe-mvapich2">abe-mvapich2</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/abe-mvapich2">abe-mvapich2</td>
+  </tr>
+  
+</table>
+
 <ul>
   
   <li><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters
