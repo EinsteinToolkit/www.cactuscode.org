@@ -15,7 +15,9 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   <li><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters
     <ul>
       <li><a href="http://www.ncsa.uiuc.edu/UserInfo/Resources/Hardware/Intel64Cluster/">Abe</a>
-        (NCSA)</li>
+        (NCSA), <a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/abe-mvapich2">option
+        list</a>, <a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/abe-mvapich2">script
+        file template</a></li>
       <li><a href="http://supercomputers.aei.mpg.de/damiana">Damiana</a>
         (AEI)</li>
       <li><a href="http://www.loni.org/systems/system.php?system=Eric">Eric</a>,
@@ -107,7 +109,10 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   <li>TeraGrid Clusters at NCSA, SDSC, UC/ANL (Itanium2)</li>
   <li>Frost (IBM BlueGene/L) (but we have BlueGene/P)</li>
   <li>Pople (SGI Altix 4700) (but we have SGI Altix)</li>
-  <li>Q (Mac OS X) (we have Mac OS X already)</li>
+  <li>Q (Mac OS X) (but we have Mac OS X already)</li>
+  <li>Windows</li>
+  <li>PlayStation 3</li>
+  <li>XBox</li>
 </ul>
 
 
