@@ -198,7 +198,7 @@ Server started on http://tg-c305.ncsa.teragrid.org:5555/</tt></pre>
   <img src="http1.jpg" alt="screenshot 1" width="400" />
 </center>
 <p> Click through the links to find information about the thorns, parameters and variables you are using.
-  Go to the ViewPort and see Jpeg images from the simulation, if you press the refresh/reload button on your browser these will update (you may need to press e.g. the shift button as well depending on your browser and option settings), go to the Files page and see some of the output files that are being created. (If you have xgraph installed on your machine you can set up your browser to automatically view these when you click on them, see the <a href="/Documentation/WebBrowser-HOWTO">WebBrowser-HOWTO</a> for more 
+  Go to the ViewPort and see Jpeg images from the simulation, if you press the refresh/reload button on your browser these will update (you may need to press e.g. the shift button as well depending on your browser and option settings), go to the Files page and see some of the output files that are being created. (If you have xgraph installed on your machine you can set up your browser to automatically view these when you click on them, see the <a href="/documentation/tutorials/WebBrowser-HOWTO.txt">WebBrowser-HOWTO</a> for more 
   details). </p>
 <center>
   <img src="http2.jpg" alt="screenshot 2" width="400" />

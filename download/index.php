@@ -45,7 +45,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <p>
   To checkout an application version of Cactus, choose and save
-  a <a href="../Toolkit/thornlists">ThornList</a>, or provide one to
+  a <a href="thorns">ThornList</a>, or provide one to
   your own needs, and issue the command:
 </p>
 
@@ -69,7 +69,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   out Cactus using <kbd>cvs</kbd> commands.
   The main Cactus CVS Server (<kbd>cvs.cactuscode.org</kbd>) hosts
   several different repositories
-  (explained <a href="../Documentation/CactusRepositories-HOWTO">CactusRepositories-HOWTO</a>),
+  (explained <a href="/documentation/tutorials/CactusRepositories-HOWTO.txt">CactusRepositories-HOWTO</a>),
   including different repositories for the stable and development
   versions of Cactus.
 </p>
@@ -112,14 +112,14 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <p>
   To checkout complete arrangements (e.g. see our standard
-  <a href="../Toolkit/thornlists">ThornLists</a>):
+  <a href="/documentation/arrangements/">ThornLists</a>):
 </p>
 
 <code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;</code>
 
 <p>
   To checkout individual thorns (e.g. see our
-  standard <a href="../Toolkit/thornlists">ThornLists</a>):
+  standard <a href="/documentation/thorns/">ThornLists</a>):
 </p>
 
 <code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;/&lt;<var>thorn</var>&gt;</code>
