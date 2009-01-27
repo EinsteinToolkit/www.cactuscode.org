@@ -10,7 +10,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   <li> <a href="CoreDoc.pdf">Advanced Concepts (PDF)</a> </li>
   <li> <a href="arrangements/">List of Arrangement Guides</a> </li>
   <li> <a href="thorns/">List of Thorn Guides</a> </li>
-  <li> <a href="Readme_info.php"</a>Info from README files of thorns</li>
+  <li> <a href="Readme_info.php"</a>Info from README files of thorns</a></li>
 
 </ul>
 </p>
