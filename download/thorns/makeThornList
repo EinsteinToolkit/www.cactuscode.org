@@ -1,0 +1,286 @@
+
+eval 'exec perl -sS $0 ${1+"$@"}' if 0;
+
+# remove "if 0" from the command line
+$#ARGV -= 2;
+
+#/*@@
+#  @file    MakeThornList
+#  @date    Thu Aug 22 12:50:16 CEST 2002
+#  @author   Ian Kelley
+#  @desc
+#    This program, given a parameter file, will produce a thornlist, doing the matching
+#    by looking at a 'master thornlist' that is stored in a specific location, or specified
+#    at run-time by the user.
+#  @enddesc
+#  @version $Header: /cactus/Utilities/Scripts/MakeThornList,v 1.8 2004/11/30 10:26:34 tradke Exp $
+#@@*/
+
+# READ important command line variables
+$master    = $m if ((defined $m) && (! defined $master));
+$masterlist = $master;
+$output    = $o if ((defined $o) && (! defined $output));
+$paramfile  = shift;
+
+
+# if they did not specify an outfile, but just the switch
+if ((defined $output) && ($output eq 1)) {
+  $output = $paramfile;
+  $output =~ s/\..*?$/\.th/;
+}
+
+# to catch people who are not executing the program correctly, then give help
+if ($paramfile) {
+  if (($paramfile eq "-h") || ($paramfile eq "-help")) {
+   $h = 1;
+  }
+}
+
+# standard help function
+if ( (! defined $paramfile) || ($h || $help) || ($paramfile =~ /^\-?\-?help$/i ) ) {
+print <<EOC;
+
+USAGE:
+
+  ./MakeThornList <parameter file>
+
+  ./MakeThornList [-output=<output file>] [-master=<master thornlist>] [-desc=<thornlist description>] [-verbose] <parameter file>
+
+SYNOPSIS:
+
+  MakeThornList uses a master thornlist, which contains all the thorns a user
+has access to with all the relevant directives for locating them from CVS,
+to generate a ThornList for checking out a version of Cactus for running
+a given parameter file.
+
+OPTIONS:
+
+  Use the ActiveThorns parameter in <parameter file> as the list of thorns
+required in Cactus.
+
+  -d, -desc=<description>
+	The text <description> will be used for the description directive
+      in the generated thornlist. If this option isn't used, the
+      description directive from the parameter file will be used along
+	with the parameter filename and date, if there is no such directive
+      in the parameter file the description will consist of the parameter
+	filename and date.
+	
+  -h, -help
+      Give information about using this script.
+
+  -m, -master=<master thornlist>
+	The file <master thornlist> will be used as the master thornlist
+      containing the list of thorns with CVS directives to use for
+      generating the parameter file thornlist. If this option is not
+      used, and the environment variable \$CACTUSRC has been set, the
+      file \$CACTUSRC/.cactus/MasterThornList will be used, otherwise the
+      file \$HOME/.cactus/MasterThornList will be used.
+
+  -o, -output=<output file>
+	The created ThornList will be sent to file <output file>. If no
+      file name is given, the default name <base>.th is used, where
+      <base> is the basename of the parameter file used. If this option
+      isn't used the ThornList will be written to standard out.
+
+  -v, -verbose
+	Print debugging information to standard out.
+
+
+EXAMPLES:
+
+Use master thornlist in \$HOME/.cactus/MasterThornList and write final thornlist
+to file:
+
+\t\$ ./MakeThornList parfile.par
+
+Use custom options:
+
+\t\$ ./MakeThornList -o=newThornList.th -master=bh.th \\
+          -desc="My bh activethorns" -verbose parfile.par
+
+
+ENVIRONMENT:
+
+	CACTUSRC: The location of the Cactus configuration directory
+
+AUTHOR:
+	
+	Ian Kelley, <ikelley\@aei.mpg.de>
+	June 12 2001
+
+EOC
+
+exit 0;
+}
+
+
+# get the description
+$desc   = $d if ((defined $d) && (! defined $desc));
+
+# verbose mode?
+$verbose = 1  if ((defined $v) && (! defined $verbose));
+
+if (! defined $desc) {
+  # if they did not give us a description, we create one
+  $d = `date`;
+  chomp $d;
+  $description = "$paramfile [$d]";
+} else {
+  $description = $desc;
+}
+
+# we need to look around for the ''master thornlist''
+if (! defined $masterlist)
+{
+  $thorndir = defined $ENV{"CACTUSRC"} ? $ENV{"CACTUSRC"} : $ENV{"HOME"};
+  $thorndir =~ s/\/$//;
+
+  # see if we can find the master thornlist.
+  # try 'MasterThornList' first, use 'ThornList' if that couldn't be found
+  $masterlist = "${thorndir}/.cactus/MasterThornList";
+  if (! -e "${masterlist}")
+  {
+    $masterlist = "${thorndir}/.cactus/ThornList";
+  }
+  if (! -e "${masterlist}")
+  {
+    print STDERR "\nFatal Error: Cannot read the master thornlist (${thorndir}/.cactus/MasterThornList), use \"perl -s MakeThornList\" -h for help\n\n";
+    exit 0;
+  }
+}
+
+print STDERR "\nReading master thornlist from \"$masterlist\"\n" if ($verbose);
+
+
+# GET ACTIVE THORNS FROM PARAMFILE
+open (PARAM, "$paramfile") || die "\nFatal Error: cannot open $paramfile: $!";
+
+$contents = "";
+while (<PARAM>)
+{
+  # skip commented out lines
+  next if /^\s*?\#/;
+
+  $contents .= $_;
+}
+close PARAM;
+
+# get rid of newlines, replace with spaces
+$contents =~ s/\n/ /gms;
+
+# we keep looping searching to find ALL declarations of ''activethorns=''
+while ($contents =~ s/activethorns\s*?=\s*?\".*?(\S.*?)\s*?\"//im) {
+  $activethorns .= " $1";
+}
+
+# get rid of preceeding and following spaces
+$activethorns =~ s/^\s+//;
+$activethorns =~ s/\s+$//;
+
+# couldn't get valid activethorns, bail
+if ($activethorns !~ /\w/) {
+   die "\nCould not parse parameter file ($paramfile) for activethorns, giving up";
+}
+
+#if ($contents =~ /activethorns\s*?=\s*?\".*?(\S.*?)\s*?\"/im) {
+#  $activethorns = $1;
+#} else {
+#  die "\nCould not parse parameter file ($paramfile) for activethorns, giving up";
+#}
+
+@activethorns = split/\s+/, $activethorns;
+
+# PARSE MASTER THORNLIST #
+open (MASTER, "$masterlist") || die "\nFatal Error: cannot open $masterlist: $!";
+
+# open output file if specified, and then select it, otherwise printing is to STDOUT
+if (defined $output) {
+  open (OUT, ">$output") || die "\nFatal Error: cannot open $output: $!";
+  select OUT;
+}
+
+# print out the DESC directive, once at the top of the file
+print "!DESC \"$description\"\n";
+
+$print_directives = 1;
+while (<MASTER>)
+{
+  # clean things up a bit
+  chomp;
+  s/(.*?)#.*/$1/;
+  s/\s*$//;
+  s/^\s*//;
+
+  next if (/^$/);
+
+  ####################
+  # find a directive #
+  ####################
+  if (/^\s*?!(.*?)\s+(.*)/)
+  {
+    if (! defined $directives{$1})
+    {
+      print STDERR "\nDirective Declared: \"!$1\" \"$2\"" if ($verbose);
+    } else {
+      print STDERR "\nDirective re-declared: \"!$1\" \"$2\"" if ($verbose);
+    }
+    if ($1 ne 'DESC')
+    {
+      $directives{$1} = $_;
+      $print_directives = 1;
+    }
+    next;
+  }
+
+  ################
+  # find a thorn #
+  ################
+  # loop through active thorns, see if we get a match, first match is the only we take #
+  foreach $thorn (@activethorns)
+  {
+    next if (! /\/$thorn/i || defined ($defined{$thorn}));
+
+    print STDERR "\nReferencing \"$thorn\" to \"$_\"" if ($verbose);
+    $defined{$thorn} = $_;
+
+    # print out directives only if they've changed
+    if ($print_directives)
+    {
+      print "\n";
+      foreach $directive (sort keys %directives)
+      {
+        print "$directives{$directive}\n";
+
+        # delete the MODULE directive, as it should only be used once #
+        delete $directives{$directive} if ($directive eq 'REPOSITORY_MODULE');
+      }
+      $print_directives = 0;
+    }
+
+    # print the arrangement/thorn line
+    print "$_\n"
+  }
+}
+
+close MASTER;
+close OUT;
+
+##########################################################################
+# PRINT OUT THORNS REQUESTED IN PARAMFILE BUT NOT INCLUDED IN MASTERLIST #
+print STDERR "\n";
+
+foreach (@activethorns)
+{
+  if (! defined $defined{$_})
+  {
+    print STDERR "\nERROR: \n  Thorn \"$_\" needed by $paramfile, \n  but not located in $masterlist\n";
+  }
+}
+
+#print STDERR "($output created)\n" if ($output);
+print STDERR "\n";
+
+#######
+# END #
+#######

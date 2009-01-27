@@ -11,14 +11,14 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
       <p>
 
         For information on using a ThornList for checking out thorns, please see the <a
-        href="../Documentation/managementHowTo.txt">Management-HOWTO</a>. The
+        href="/documentation/tutorials/managementHowTo.txt">Management-HOWTO</a>. The
 <a href="../download/makeThornList">MakeThornList</a> script can be used to generate a ThornList for a specific parameter file.   
       </p>
 
       <p>
       
       <p>
-        For more information about individual thorns, check the  <a href="../Documentation/computationalToolKitHowTo.txt">ComputationalToolKit-HOWTO</a>.
+        For more information about individual thorns, check the  <a href="/documentation/tutorials/computationalToolKitHowTo.txt">ComputationalToolKit-HOWTO</a>.
       </p>
 
       
