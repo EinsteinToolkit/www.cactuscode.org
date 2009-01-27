@@ -2,8 +2,6 @@
 <?php $title='Overview of Thorn README files';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<table>
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/documentation/Readme_Info.inc');?>
-</table>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
