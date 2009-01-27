@@ -29,9 +29,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 </p>
 
 <p>
-  [TODO: point to CVS checkout of "Utilities"]
-  Save the <a href="../download/GetCactus">checkout script</a> with
-  the name <kbd>GetCactus</kbd>.
+  Save the <a href="GetCactus">checkout script</a> with the
+  name <kbd>GetCactus</kbd>.
 </p>
 
 <p>
