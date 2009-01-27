@@ -40,6 +40,7 @@ echo '
 <ul class="sidemenu">
 	<li><a href="/documentation/guides/">Guides</a></li>
 	<li><a href="/documentation/tutorials/">Tutorials</a></li>
+	<li><a href="/documentation/faq">FAQ</a></li>
 </ul>
 ';
 break;

@@ -6,7 +6,6 @@ if ($hide_path!=1)
   $bcsep = ' &rarr; '; //text separator between links
   $bcstart = '&gt; <a href="/">home</a>'.$bcsep; //text first symbol
   $bcend = ''; //text last symbol
-  
   echo '<div id= "link-path">';
   
   //array of text between the slashes in the path
@@ -15,8 +14,6 @@ if ($hide_path!=1)
   $cpath=array_filter($cpath);  
   //deal with nondirectory/.php files
   if($cpath[count($cpath)]=='index.php') array_pop($cpath);
-//last four characters==.php
-  //if($cpath[count($cpath)]) substr_replace($current_file, '', -4, strlen($current_file))
   $cpath[count($cpath)]=str_replace('.php','', $cpath[count($cpath)]);
   
   //create an output stack of html formatted links from the cpath array
