@@ -9,6 +9,8 @@ Denis Pollney<br>
 Thomas Radke<br>
 David Rideout<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Implements a "cartoon" axisymmetric evolution according to the method
 described in gr-qc/9908012.  The original idea for 'Cartoon2D' was due
@@ -18,6 +20,8 @@ to Steve Brandt.
  <tr>
 <td>HTTPD</td><td>Tom Goodale<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This is a prototype C version of a web server thorn.
 </td>
@@ -25,12 +29,16 @@ to Steve Brandt.
  <tr>
 <td>HTTPDExtra</td><td>unknown<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>not documented
 </td>
  </tr>
  <tr>
 <td>IOASCIIStream</td><td>unknown<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>not documented
@@ -46,6 +54,8 @@ Gerd Lanfermann<br>
 Miguel Alcubierre<br>
 David Rideout<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn defines a generic interface for boundary conditions, which
 allows, among other things, symmetry boundary conditions associated
@@ -58,6 +68,8 @@ them.
 Gerd Lanfermann<br>
 Joan Masso<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn sets up a Cartesian grid, for a given domain. It also
 provides a method for registering symmetries of Grid Functions
@@ -68,6 +80,8 @@ conditions.
  <tr>
 <td>CoordBase</td><td>Cactus team<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Provides generic handling of coordinates for grid variables.
 </td>
@@ -77,6 +91,8 @@ conditions.
 Tom Goodale<br>
 Thomas Radke<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn does 1D, 2D, and 3D output of 3D variables in ASCII format.
 </td>
@@ -84,6 +100,8 @@ Thomas Radke<br>
  <tr>
 <td>IOBasic</td><td>Gabrielle Allen<br>
 Thomas Radke<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn provides two I/O methods "Info" and "Scalar" which output grid
@@ -95,6 +113,8 @@ variables as scalars as a function on time.
 Tom Goodale<br>
 Thomas Radke<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn is the flesh for IO - it always needs to be activated
 if you want to do some IO in Cactus.
@@ -102,6 +122,8 @@ if you want to do some IO in Cactus.
  </tr>
  <tr>
 <td>InitBase</td><td>Erik Schnetter<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>Thorn InitBase specifis how initial data are to be set up.  It does
@@ -116,6 +138,8 @@ can check their actions against this thorn.
 Jonathan Thornburg<br>
 Erik Schnetter<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn does processor-local interpolation of N-dimensional data
 arrays.  In general there may be many input arrays (all defined on the
@@ -128,12 +152,16 @@ of interpolation points.
 Tom Goodale<br>
 Yaakoub El Khamra<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Local array reduction implementation, using the new local reduction API. New features added, please refer to the thorn documentation for details and to TestLocalReduce thorn for examples of usage. 
 </td>
  </tr>
  <tr>
 <td>MoL</td><td>Ian Hawke<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn provides generic time integrators.
@@ -148,12 +176,16 @@ unigrid.
  <tr>
 <td>SymBase</td><td>Erik Schnetter<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Provide generic handling of symmetries for grids and grid arrays.
 </td>
  </tr>
  <tr>
 <td>Time</td><td>Gabrielle Allen<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>Thorn Time sets the timestep for the simulation by either
@@ -167,6 +199,8 @@ unigrid.
 <td>BenchADM</td><td>Gabrielle Allen<br>
 Authors of CactusEinstein/ADM<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn provides one of the key evolution methods of the Einstein
 Equations, to be used and optimised for benchmarking.
@@ -174,6 +208,8 @@ Equations, to be used and optimised for benchmarking.
  </tr>
  <tr>
 <td>BenchIO</td><td>Cactus team<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn provides a number of benchmarking parameter files for 
@@ -190,6 +226,8 @@ provides.
 Tom Goodale<br>
 Thomas Radke<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This is a prototype C version of a web server thorn.  
 </td>
@@ -198,6 +236,8 @@ Thomas Radke<br>
 <td>HTTPDExtra</td><td>Gabrielle Allen<br>
 Tom Goodale<br>
 Thomas Radke<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn registers additional HTML pages with the web server provided by
@@ -208,6 +248,8 @@ thorn HTTPD.
 <td>Socket</td><td>Tom Goodale<br>
 Thomas Radke<br>
 John Shalf<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn provides platform-independent socket calls.
@@ -225,6 +267,8 @@ Joan Masso<br>
 Mark Miller<br>
 Paul Walker<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn evolves the standard 3+1 variables using the ADM Evolution
 equations.
@@ -233,6 +277,8 @@ equations.
  <tr>
 <td>ADMAnalysis</td><td>Tom Goodale<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn does basic analysis of the metric and extrinsic curvature 
 tensors.
@@ -240,6 +286,8 @@ tensors.
  </tr>
  <tr>
 <td>ADMBase</td><td>Tom Goodale<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn provides the basic variables used to communicate between
@@ -250,6 +298,8 @@ thorns doing General Relativity in the 3+1 formalism.
 <td>ADMConstraints</td><td>Gabrielle Allen<br>
 Mark Miller<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This analysis thorn calculates the violation in the ADM constraints using 
 the standard Einstein variables. 
@@ -258,6 +308,8 @@ the standard Einstein variables.
  <tr>
 <td>ADMCoupling</td><td>Ian Hawke<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>The "friend of a friend" thorn to help matter / spacetime coupling. Does nothing itself.
 </td>
@@ -265,12 +317,16 @@ the standard Einstein variables.
  <tr>
 <td>ADMMacros</td><td>Tom Goodale<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn provides nothing but a load of macros for other thorns to use
 </td>
  </tr>
  <tr>
 <td>AHFinder</td><td>Miguel Alcubierre<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn looks for apparent horizons (AH) in 3D.  An AH is defined
@@ -280,12 +336,16 @@ as a surface where the expansion of outgoing null geodesics is zero.
  <tr>
 <td>CoordGauge</td><td>Tom Goodale<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Base thorn to provide the infrastructure for dynamic gauge selection.
 </td>
  </tr>
  <tr>
 <td>Einstein</td><td>Cactus team<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>Thorn Einstein is now defunct and has been replaced with ADMBase plus
@@ -302,6 +362,8 @@ CactusEinstein/StaticConformal
  <tr>
 <td>EvolSimple</td><td>unknown<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Simplistic evolver for the ADM equations, demonstrating the use of
 the CactusEinstein arrangement.
@@ -309,6 +371,8 @@ the CactusEinstein arrangement.
  </tr>
  <tr>
 <td>Extract</td><td>Gabrielle Allen<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>Calculate gauge invariant waveforms, using the Moncrief formalism,
@@ -322,6 +386,8 @@ Joan Masso<br>
 Ed Seidel<br>
 Paul Walker<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn calculates analytic initial data for the Einstein grid functions
 (lapse, shift, metric, curv) for various black hole spacetimes:
@@ -332,6 +398,8 @@ Paul Walker<br>
 Paul Walker<br>
 Ryoji Takahashi<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn calculates initial data for a black hole distorted by an
 even parity perturbation.
@@ -341,6 +409,8 @@ even parity perturbation.
 <td>IDBrillData</td><td>Carsten Gundlach<br>
 Miguel Alcubierre<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Initializes Brill wave data.
 </td>
@@ -349,6 +419,8 @@ Miguel Alcubierre<br>
 <td>IDLinearWaves</td><td>Malcolm Tobias<br>
 Joan Masso<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Provides analytic data for linear gravitational waves.
 </td>
@@ -356,12 +428,16 @@ Joan Masso<br>
  <tr>
 <td>IDSimple</td><td>Cactus team<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Simple initial data sets for 3-metric and extrinsic curvature.
 </td>
  </tr>
  <tr>
 <td>Maximal</td><td>unknown<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn setus up the maximal slicing equation (dtrK/dt=0):
@@ -373,6 +449,8 @@ John Baker<br>
 Hisaaki Shinkai<br>
 Paul Walker<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn provides a somewhat invariant means of measuring "waves" and 
 other geometrical content in a numerically generated spacetime. 
@@ -381,6 +459,8 @@ other geometrical content in a numerically generated spacetime.
  <tr>
 <td>SpaceMask</td><td>Denis Pollney<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Provides utilities for assigning states to individual grid points
 using a mask grid function.
@@ -388,6 +468,8 @@ using a mask grid function.
  </tr>
  <tr>
 <td>StaticConformal</td><td>Tom Goodale<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn provides the variables defining a static conformal factor
@@ -400,6 +482,8 @@ conformal values as opposed to the physical values.
  <tr>
 <td>TimeGeodesic</td><td>Miguel Alcubierre<br>
 Florian Siebel<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn integrates timelike geodesics.  The integration is
@@ -416,12 +500,16 @@ spacetime (given by thorn Exact).
  <tr>
 <td>EllBase</td><td>unknown<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn does ...
 </td>
  </tr>
  <tr>
 <td>EllPETSc</td><td>Cactus team<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn shows how PETSc can be used with the EllBase Elliptic 
@@ -430,6 +518,8 @@ solver interface.
  </tr>
  <tr>
 <td>EllSOR</td><td>Cactus team<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn provides basic elliptic solvers for different equation types 
@@ -444,12 +534,16 @@ pedagogical rather that a viable fast solver.
  <tr>
 <td>DemoInterp</td><td>Thomas Radke<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn demonstrates the use of the Cactus interpolation API.
 </td>
  </tr>
  <tr>
 <td>FleshInfo</td><td>Cactus team<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>Demonstrates obtaining information about computational infrastructure
@@ -459,12 +553,16 @@ from the flesh.
  <tr>
 <td>HelloWorld</td><td>Cactus team<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Hello World example for Cactus, possibly the simplest thorn ever.
 </td>
  </tr>
  <tr>
 <td>IDWaveMoL</td><td>Ian Hawke<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>Provides initial data for the WaveMoL thorn.
@@ -473,6 +571,8 @@ from the flesh.
  <tr>
 <td>SampleBoundary</td><td>Carsten Gundlach<br>
 David Rideout<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn provides a simple example of how to create and register a
@@ -483,6 +583,8 @@ boundary condition in three dimensions.
  <tr>
 <td>SampleIO</td><td>Thomas Radke<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn provides a very simple I/O method which prints the values of
 three-dimensional Cactus grid functions and arrays at a chosen location
@@ -491,6 +593,8 @@ three-dimensional Cactus grid functions and arrays at a chosen location
  </tr>
  <tr>
 <td>TimerInfo</td><td>Cactus team<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>At the moment just prints out the value of all timers at chosen
@@ -501,6 +605,8 @@ report of different kinds of timing information in different ways
  <tr>
 <td>WaveMoL</td><td>Ian Hawke<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This implements the wave equation in FOSH form for use with the Method
 of Lines thorn. Intended as a basic test. 
@@ -509,6 +615,8 @@ of Lines thorn. Intended as a basic test.
  <tr>
 <td>WaveToy1DF77</td><td>Gabrielle Allen<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn illustrates the solution of the scalar wave equation in 1D using
 centered explicit finite differencing. Included are routines to
@@ -516,6 +624,8 @@ centered explicit finite differencing. Included are routines to
  </tr>
  <tr>
 <td>WaveToy2DF77</td><td>Gabrielle Allen<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn illustrates the solution of the scalar wave equation in 2D using
@@ -532,6 +642,8 @@ NOTE: This thorn isn't working properly yet for multiple processors, it
 <td>BLAS</td><td>Yaakoub Y El-Khamra<br>
 Erik Schnetter<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn enables a configuration to access the BLAS library.
 </td>
@@ -539,12 +651,16 @@ Erik Schnetter<br>
  <tr>
 <td>FFTWlib</td><td>Erik Schnetter<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn enables a configuration to access the FFTW library.
 </td>
  </tr>
  <tr>
 <td>FlexIO</td><td>John Shalf<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>Thorn FlexIO provides a library for writing multidimensional data from 
@@ -556,6 +672,8 @@ to be installed on a machine.
  <tr>
 <td>GSL</td><td>Erik Schnetter<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Make the GSL (GNU Scientific Library) available to Cactus thorns.
 See http://www.gnu.org/software/gsl.
@@ -563,6 +681,8 @@ See http://www.gnu.org/software/gsl.
  </tr>
  <tr>
 <td>HDF5</td><td>Yaakoub Y El-Khamra<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn provides a capability 'HDF5' and some utility programs
@@ -573,6 +693,8 @@ to manipulate HDF5 files (independently of any Carpet or PUGH specifics).
 <td>LAPACK</td><td>Yaakoub Y El-Khamra<br>
 Erik Schnetter<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn enables a configuration to access the LAPACK library.
 </td>
@@ -580,6 +702,8 @@ Erik Schnetter<br>
  <tr>
 <td>LORENE</td><td>Yaakoub Y El-Khamra<br>
 Erik Schnetter<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn enables a configuration to access the LORENE library.
@@ -589,12 +713,16 @@ Erik Schnetter<br>
 <td>PETSc</td><td>Yaakoub Y El-Khamra<br>
 Erik Schnetter<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn adds PETSc capability to a configuration.
 </td>
  </tr>
  <tr>
 <td>SDF</td><td>Thomas Radke<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorns checks for an external SDF installation and, if one was found,
@@ -603,6 +731,8 @@ provides the capability SDF.
  </tr>
  <tr>
 <td>jpeg6b</td><td>The Independent JPEG Group<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn contains a copy of the Independent JPEG Group's JPEG software
@@ -620,6 +750,8 @@ Tom Goodale<br>
 Gerd Lanfermann<br>
 Thomas Radke<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn does output of 2D slices from Cactus grid functions and arrays
 in jpeg image format.
@@ -627,6 +759,8 @@ in jpeg image format.
  </tr>
  <tr>
 <td>IOSDF</td><td>Thomas Radke<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn does 1D, 2D, and 3D output of grid variables in SDF file format.
@@ -643,6 +777,8 @@ Thomas Radke<br>
 Matei Ripeanu<br>
 Paul Walker<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn provides a unigrid parallel driver with MPI.
 </td>
@@ -650,6 +786,8 @@ Paul Walker<br>
  <tr>
 <td>PUGHInterp</td><td>Paul Walker<br>
 Thomas Radke<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>   This thorn implements the Cactus flesh interpolation API routine
@@ -662,6 +800,8 @@ Thomas Radke<br>
 Tom Goodale<br>
 Thomas Radke<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Standard reduction operators which use PUGH for communications
 </td>
@@ -670,6 +810,8 @@ Thomas Radke<br>
 <td>PUGHSlab</td><td>Gabrielle Allen<br>
 Tom Goodale<br>
 Thomas Radke<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn implements the following parts of the CCTK hyperslab API:
@@ -683,6 +825,8 @@ Thomas Radke<br>
 <td>IOFlexIO</td><td>John Shalf<br>
 Thomas Radke<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn does output of arbitrary Cactus variables in IEEEIO file format.
 </td>
@@ -690,12 +834,16 @@ Thomas Radke<br>
  <tr>
 <td>IOHDF5</td><td>Thomas Radke<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn does output of arbitrary Cactus variables in HDF5 file format.
 </td>
  </tr>
  <tr>
 <td>IOHDF5Util</td><td>Thomas Radke<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn serves as a utility thorn for other HDF5 I/O thorns such as
@@ -705,6 +853,8 @@ IOStreamedHDF5 and IOHDF5.
  <tr>
 <td>IOPanda</td><td>Thomas Radke<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn does output of 3D variables in IEEEIO format.
 It uses the I/O library Panda for writing files in parallel.
@@ -713,6 +863,8 @@ It uses the I/O library Panda for writing files in parallel.
  <tr>
 <td>IOStreamedHDF5</td><td>Thomas Radke<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn uses the HDF5 Stream Virtual File Driver to stream HDF5 data and
 checkpoint files via live sockets to any connected clients.
@@ -720,6 +872,8 @@ checkpoint files via live sockets to any connected clients.
  </tr>
  <tr>
 <td>IsoSurfacer</td><td>John Shalf<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn extracts isosurfaces of grid functions.
@@ -732,12 +886,16 @@ checkpoint files via live sockets to any connected clients.
  <tr>
 <td>TestAllTypes</td><td>Erik Schnetter<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Test all the variable types.
 </td>
  </tr>
  <tr>
 <td>TestArrays</td><td>unknown<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>not documented
@@ -746,6 +904,8 @@ checkpoint files via live sockets to any connected clients.
  <tr>
 <td>TestComplex</td><td>unknown<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>not documented
 </td>
@@ -753,12 +913,16 @@ checkpoint files via live sockets to any connected clients.
  <tr>
 <td>TestCoordinates</td><td>Gabrielle Allen<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Test the Cactus coordinate infrastructure.
 </td>
  </tr>
  <tr>
 <td>TestFortranDependencies1</td><td>Erik Schnetter<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>Test Fortran intra-thorn and inter-thorn make dependencies.  This
@@ -769,6 +933,8 @@ TestFortranDependencies2.
  <tr>
 <td>TestFortranDependencies2</td><td>Erik Schnetter<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Test Fortran intra-thorn and inter-thorn make dependencies.  Thorn
 TestFortranDependencies1 depends on this thorn.
@@ -776,6 +942,8 @@ TestFortranDependencies1 depends on this thorn.
  </tr>
  <tr>
 <td>TestFpointerNULL</td><td>Thomas Radke<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn tests whether a Fortran routine accepts a NULL pointer reference
@@ -786,12 +954,16 @@ as long as the NULL pointer argument isn't dereferenced.
  <tr>
 <td>TestFreeF90</td><td>Erik Schnetter<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Test automatic line breaks in free-form Fortran 90 code.
 </td>
  </tr>
  <tr>
 <td>TestGlobalReduce</td><td>Yaakoub Y El Khamra<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>not documented
@@ -800,12 +972,16 @@ as long as the NULL pointer argument isn't dereferenced.
  <tr>
 <td>TestInclude1</td><td>unknown<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>not documented
 </td>
  </tr>
  <tr>
 <td>TestInclude2</td><td>unknown<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>not documented
@@ -814,12 +990,16 @@ as long as the NULL pointer argument isn't dereferenced.
  <tr>
 <td>TestLocalReduce</td><td>unknown<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>not documented
 </td>
  </tr>
  <tr>
 <td>TestReduce</td><td>unknown<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>not documented
@@ -828,6 +1008,8 @@ as long as the NULL pointer argument isn't dereferenced.
  <tr>
 <td>TestSchedule</td><td>Rion Dooley<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn is used to test that all schedule bins are executed.
 </td>
@@ -835,12 +1017,16 @@ as long as the NULL pointer argument isn't dereferenced.
  <tr>
 <td>TestStrings</td><td>Cactus team<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Test use of strings in Cactus. At the moment:
 </td>
  </tr>
  <tr>
 <td>TestTable</td><td>Jonathan Thornburg<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn contains a test driver for the Cactus key/value tables
@@ -850,12 +1036,16 @@ API, Util_Table*().
  <tr>
 <td>TestTimers</td><td>Cactus team<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn demonstrates and tests the use of Timers in thorns.
 </td>
  </tr>
  <tr>
 <td>TestTypes</td><td>Erik Schnetter<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>Test most of the variable types.
@@ -868,6 +1058,8 @@ API, Util_Table*().
  <tr>
 <td>NaNChecker</td><td>Thomas Radke<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn can be used to analyze CCTK variables of real or complex data type
 for NaN (Not-a-Number) and (on availability of finite(3)) infinite values.
@@ -875,6 +1067,8 @@ for NaN (Not-a-Number) and (on availability of finite(3)) infinite values.
  </tr>
  <tr>
 <td>TimerReport</td><td>Cactus team<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>Simplistic additional timer information.  This thorn provides timer
@@ -890,6 +1084,8 @@ depending on parameter settings.
 <td>IDScalarWave</td><td>Tom Goodale<br>
 Gabrielle Allen<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorns sets initial data for the scalar wave equation evolver
 </td>
@@ -898,6 +1094,8 @@ Gabrielle Allen<br>
 <td>IDScalarWaveC</td><td>Tom Goodale<br>
 Gabrielle Allen<br>
 Werner Benger<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn sets initial data for the scalar wave equation evolver.
@@ -908,6 +1106,8 @@ Werner Benger<br>
 Gabrielle Allen<br>
 Werner Benger<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorns sets initial data for the scalar wave equation evolver
 </td>
@@ -915,12 +1115,16 @@ Werner Benger<br>
  <tr>
 <td>IDScalarWaveElliptic</td><td>unknown<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>not documented
 </td>
  </tr>
  <tr>
 <td>WaveBinarySource</td><td>Gerd Lanfermann<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>Provides a source term to the scalar field evolution
@@ -931,12 +1135,16 @@ for two rotating binary charges.
 <td>WaveToyC</td><td>Gabrielle Allen<br>
 Tom Goodale<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn solves the linear wave equation.
 </td>
  </tr>
  <tr>
 <td>WaveToyCXX</td><td>unknown<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>not documented
@@ -945,12 +1153,16 @@ Tom Goodale<br>
  <tr>
 <td>WaveToyExtra</td><td>Cactus team<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>Additional functionality for the WaveToy example
 </td>
  </tr>
  <tr>
 <td>WaveToyF77</td><td>Tom Goodale<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn solves the linear wave equation
@@ -959,6 +1171,8 @@ Tom Goodale<br>
  <tr>
 <td>WaveToyF90</td><td>Tom Goodale<br>
   </td>
+<td>Cactus team<br>
+  </td>
 <td>LGPL</td>
 <td>This thorn solves the linear wave equation
 </td>
@@ -966,6 +1180,8 @@ Tom Goodale<br>
  <tr>
 <td>WaveToyFreeF90</td><td>Tom Goodale<br>
 Erik Schnetter<br>
+  </td>
+<td>Cactus team<br>
   </td>
 <td>LGPL</td>
 <td>This thorn solves the linear wave equation, using free form (as
