@@ -10,7 +10,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <h3>Background</h3>
 <ul>
-<li>BSc Space Physics, University of Science $amp; Technology of China</li>
+<li>BSc Space Physics, University of Science &amp; Technology of China</li>
 <li>MS Computational Astrophysics, Washington University in St.Louis</li>
 <li>PhD Computational Astrophysics, Washington University in St.Louis</li>
 </ul>
