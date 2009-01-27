@@ -37,7 +37,7 @@
 		<div id="header-links">
 			<p>
 			<a href="/">Home</a> | 
-			<a href="/about/contact.php">Contact</a>
+			<a href="/about/contact">Contact</a>
 			</p>		
 		</div>		
 	</div>
