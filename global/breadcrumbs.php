@@ -1,48 +1,51 @@
-<?php
-//dynamic breadcrumb links
+<?php //dynamic breadcrumb links
+
+//do this if hide_path isn't turned on
 if ($hide_path!=1)
 {
   $bcsep = ' &rarr; '; //text separator between links
-  $bcstart = ''; //text first symbol
+  $bcstart = '&gt; <a href="/">home</a>'.$bcsep; //text first symbol
   $bcend = ''; //text last symbol
-  echo '<div id="link-path">';
-  $bc=explode("/",$_SERVER["PHP_SELF"]); //array of elements between the slashes
-  echo $bcstart.'<a href="/">home</a>';
-  while(list($key,$val)=each($bc))
+  
+  echo '<div id= "link-path">';
+  
+  //array of text between the slashes in the path
+  $cpath=explode("/",$_SERVER["PHP_SELF"]);
+  //remove blank elements from array
+  $cpath=array_filter($cpath);  
+  //deal with nondirectory/.php files
+  if($cpath[count($cpath)]=='index.php') array_pop($cpath);
+//last four characters==.php
+  //if($cpath[count($cpath)]) substr_replace($current_file, '', -4, strlen($current_file))
+  $cpath[count($cpath)]=str_replace('.php','', $cpath[count($cpath)]);
+  
+  //create an output stack of html formatted links from the cpath array
+  $output=array();
+  array_push($output, array_pop($cpath)); //no link for current page/directory
+  while(count($cpath)>=1)
   {
-    $dir; //used for link paths
-    if($key > 1)
-    {
-      $n=1;
-      while($n < $key)
-      {
-        $dir.='/'.$bc[$n]; //assemble all elements starting each with a slash
-        $val=$bc[$n]; //used for directory name
-        $n++;
-      }
-      if($key < count($bc)-1) echo $bcsep.'<a href="'.$dir.'/">'.$val.'</a>'; //add link
-    }
+    array_push($output, makeLink($cpath));
+    array_pop($cpath);
   }
-  //if the page is not index.php then link the current directory and echo the page name without the extension
-  $current_file=$bc[count($bc)-1];
-  if($current_file=='index.php') //it's just an index, don't bother showing the file name
+  
+  //echo the output array
+  echo $bcstart;
+  while(count($output)>=1)
   {
-    if($bc[count($bc)-2]=='') //the name would be blank (essentially dealing with root-level or anything else unexpected)
-    {
-      echo $bcend; //so skip showing anything, endpath
-    }
-    else //name isn't blank so go ahead and show it
-    {
-      echo $bcsep.$bc[count($bc)-2].$bcend; //show the current directory name (not as a link), endpath
-    }
+    echo array_pop($output);
+    if (count($output)>=1) echo $bcsep;
   }
-  else //it must be a subpage (.php file that isn't the directory index)
-  {
-    //echo directory name, as a link
-    echo $bcsep.'<a href=".">'.$bc[count($bc)-2].'</a>';
-    //echo page name without three character extension, endpath
-    echo $bcsep.substr_replace($current_file, '', -4, strlen($current_file)).$bcend;
-  }
-echo '</div> <!-- closing path span -->';
+  echo $bcend;
+  echo '</div> <!-- closing link-path div -->';
+}
+
+//takes a "path" array and returns the appropriate html link
+function makeLink($array)
+{
+  $link= '<a href="/';
+  //compose the actual link path
+  $link=$link.implode('/',$array);
+  //return all of that plus the texts (the last element of the array)
+  return $link.'">'.array_pop($array).'</a>';
 }
 ?>
