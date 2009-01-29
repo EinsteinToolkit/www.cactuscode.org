@@ -16,8 +16,8 @@ elseif(isset($_GET['updatesvn']))
 }
 else
 {
-  echo '<p><h3><a href="/x?updatesvn">Update the preview site now</a></h3></p>
-  <p><h3><a href="/x?golive">Push changes to the live site now</a></h3></p>';
+  echo '<p>Preview site is at version: '.exec('svnversion /var/www/dev').'<br /><h3><a href="/x?updatesvn">Update the preview site now</a></h3></p><br />
+  <p>Live site is at version: '.exec('svnversion /var/www/live').'<h3><a href="/x?golive">Push changes to the live site now</a></h3></p>';
 }
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');
