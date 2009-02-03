@@ -31,7 +31,7 @@ else
 <td>
 <p>
 The live site is currently at version <strong>'
-.exec('svnversion /var/www/dev')
+.exec('svnversion /var/www/live')
 .'</strong>. 
 <br /><br />
 <input class="button" type="button" value="Make Recent Changes Live" onclick="window.location.href=\'/x?golive\'" />
