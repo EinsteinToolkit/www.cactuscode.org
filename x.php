@@ -1,9 +1,14 @@
 <?php
-$title='update interface';
+$title='Updates Interface';
 $hide_path=1;
-include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
+$category='internal';
 
-echo '<br />';
+include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
+?>
+
+<br />
+
+<?php
 if(isset($_GET['golive']))
 {
   echo '<p>'.exec('/var/www/golive').'</p>';
@@ -16,9 +21,39 @@ elseif(isset($_GET['updatesvn']))
 }
 else
 {
-  echo '<p>Preview site is at version: '.exec('svnversion /var/www/dev').'<br /><h3><a href="/x?updatesvn">Update the preview site now</a></h3></p><br />
-  <p>Live site is at version: '.exec('svnversion /var/www/live').'<h3><a href="/x?golive">Push changes to the live site now</a></h3></p>';
-}
+  echo '<table>
+<tr>
+<th>Live Site</th>
+<th>Preview Site</th>
+</tr>
+<tr>
 
+<td>
+<p>
+The live site is currently at version <strong>'
+.exec('svnversion /var/www/dev')
+.'</strong>. 
+<br /><br />
+<input class="button" type="button" value="Make Recent Changes Live" onclick="window.location.href=\'/x?golive\'" />
+<br /><br />This happens automatically every hour, on the hour.
+</p>
+</td>
+<td>
+<p>
+The preview site is currently at version <strong>'
+.exec('svnversion /var/www/dev')
+.'</strong>. 
+<br /><br />
+<input class="button" type="button" value="Update Preview Site" onclick="window.location.href=\'/x?updatesvn\'" />
+<br /><br />This updates repositories on the webserver.
+</p>
+</td>
+
+</tr>
+</table>';
+}
+?>
+
+<?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');
 ?>

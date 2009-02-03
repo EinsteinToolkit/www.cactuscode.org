@@ -20,6 +20,7 @@
 
   //style the menu link whose id matches the current first level directory
   list($blank0, $category)=explode("/",$_SERVER["PHP_SELF"]);
+  if ($category=='x.php') $category='internal'; //special case for update interface
   echo '#menu ul li#'.$category.' a {text-decoration:overline;}';
   
 ?></style>
