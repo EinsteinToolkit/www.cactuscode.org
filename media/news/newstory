@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Making a new news story called "$1
+cp -r template $1
+rm -rf $1/.svn
+svn add $1
+
+#add a link to recent.php?
