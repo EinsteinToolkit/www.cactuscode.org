@@ -14,7 +14,7 @@ tail -9 template/index.php;
 ) > $1/index.php
 
 echo "--Adding it to svn"
-#svn add $1
+svn add $1
 
 mv recent.php oldrecent.php
 echo "--Including a link to the story in the recent stories list"
