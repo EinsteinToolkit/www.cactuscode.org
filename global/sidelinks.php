@@ -100,11 +100,12 @@ break;
 
 //make this dynamic as part of the news system
 default:
-include_once($_SERVER['DOCUMENT_ROOT'].'/media/news/recent.php');
 echo '
 <h2>Recent News</h2>
-<ul class="sidemenu">'.$news_links.
-'	<li class="align-right"><a href="/media/news/">More...</a></li>
+<ul class="sidemenu">
+';
+include_once($_SERVER['DOCUMENT_ROOT'].'/media/news/recent.php');
+echo '<li class="align-right"><a href="/media/news/">More...</a></li>
 </ul>
 ';
 break;

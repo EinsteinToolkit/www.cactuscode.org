@@ -1,8 +1,25 @@
 #!/bin/bash
 
-echo "Making a new news story called "$1
+#this script expects two arguments, the url name and the title for the news story
+# $#=2
+
+echo "--Making a new news story called "$1
 cp -r template $1
 rm -rf $1/.svn
-svn add $1
 
-#add a link to recent.php?
+#change the title variable in index.php
+(
+echo "<?php \$title='"$2"';";
+tail -9 template/index.php;
+) > $1/index.php
+
+echo "--Adding it to svn"
+#svn add $1
+
+mv recent.php oldrecent.php
+echo "--Including a link to the story in the recent stories list"
+(
+echo '	<li><a href="/media/news/'$1'">'$2'</a></li>';
+cat oldrecent.php;
+) > recent.php
+rm oldrecent.php
