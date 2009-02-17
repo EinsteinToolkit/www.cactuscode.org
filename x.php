@@ -44,8 +44,8 @@ The preview site is currently at version <strong>'
 .exec('svnversion /var/www/dev')
 .'</strong>. 
 <br /><br />
-<input class="button" type="button" value="Update Preview Site" onclick="window.location.href=\'/x?updatesvn\'" />
-<br /><br />This updates repositories on the webserver.
+<input class="button" type="button" value="Manually Update Preview Site" onclick="window.location.href=\'/x?updatesvn\'" />
+<br /><br />This updates repositories on the webserver and happens automatically after svn commits.
 </p>
 </td>
 
