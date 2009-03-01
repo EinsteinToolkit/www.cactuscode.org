@@ -27,8 +27,16 @@ team:
 <br />Research scientist at both <a href="http://lsu.edu/">LSU</a> and Cardiff University.</li>
 <br />
 
+<li><a href="cjordan">Colby Jordan</a>
+<br />Internal Support for Cactus at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a></li>
+<br />
+
 <li><a href="sko">Soon-Heum Ko</a>
 <br />Postdoc researcher at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://lsu.edu/">LSU</a></li>
+<br />
+
+<li><a href="okorobkin">Oleg Korobkin</a>
+<br />Graduate student at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://lsu.edu/">LSU</a></li>
 <br />
 
 <li><a href="floeffler">Frank Loeffler</a>
@@ -52,17 +60,6 @@ of the <a href="http://www.aei.mpg.de/" title="Max-Planck-Institute for Gravitat
 <br />Postdoc researcher at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://lsu.edu/">LSU</a></li>
 <br />
 
-<li><a href="okorobkin">Oleg Korobkin</a>
-<br />Graduate student at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://lsu.edu/">LSU</a></li>
-<br />
-
-<li><a href="ecaraba">Elena Caraba</a>
-<br />Research Undergraduate Student at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a></li>
-<br />
-
-<li><a href="cjordan">Colby Jordan</a>
-<br />Internal Support for Cactus at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a></li>
-<br />
 </ul>
 
 <?php
