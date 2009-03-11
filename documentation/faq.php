@@ -4,6 +4,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 //
 //include the faq.html from the latest checkout folder for cactus?
 //
+?>
 
 <style type="text/css">
     .FAQ pre{ color: #236; background: transparent; border: none; overflow: auto; }
@@ -1876,5 +1877,4 @@ $                          "off")) then
 </ol>
 </div>
 
-
-include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
+<?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
