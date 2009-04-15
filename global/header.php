@@ -32,7 +32,7 @@
 <div id="wrap">
 	<!--header -->
 	<div id="header">
-		<h1 id="logo-text"><a href="/">cactus code</a></h1>		
+		<h1 id="logo-text"><img id="logo" src="/global/images/cactuslogo.png" /><a href="/">cactus code</a></h1>		
 		<!-- <p id="slogan">code</p> -->	
 
 		<div id="header-links">
