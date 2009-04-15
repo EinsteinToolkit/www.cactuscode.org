@@ -257,7 +257,14 @@ input.button
 	background: transparent;
 	
 	/* change the values of top and left to adjust the position of the logo*/
-	top: 30px; left: 30px;	
+	top: 40px; left: 100px;	
+	}
+#header img#logo
+	{
+	background: transparent;
+	border: none;
+	position: absolute;
+	top: 25px; left: 25px;	
 	}
 #header p#slogan
 	{
