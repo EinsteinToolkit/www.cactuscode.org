@@ -24,7 +24,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   Versions System).  The
   preferred method is to use the <kbd>GetCactus</kbd> script along
   with a thornlist as described below. We maintain
-  a <a href="/documentation/thorns/">page of basic
+  a <a href="/download/thorns/">page of basic
   thornlists</a>, or you can use your own customized thornlist.
 </p>
 
