@@ -31,7 +31,15 @@ echo '
 break;
 
 
-//demo sidebar?
+case 'partners':
+echo '
+<h2>Community</h2>
+<ul class="sidemenu">
+	<li><a href="/community/partners/AEI">AEI</a></li>
+	<li><a href="/community/partners/LSU">LSU</a></li>
+</ul>
+';
+break;
 
 
 case 'documentation':
