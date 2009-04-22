@@ -41,10 +41,11 @@ Computation &amp; Technology at Louisiana State University.
 
 <li> <a href="team/">Cactus Development Team</a> </li>
 <li> <a href="history">Cactus History and Funding</a> </li>
-<li> <a href="prizes">Cactus Prizes and Major Achievements</a> </li>
 <li> <a href="contact">Contact Us!</a> </li>
 
 </ul>
+
+<br />
 
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');
