@@ -47,7 +47,7 @@
 	<div id="menu"><ul>
 		<li id="about"><a href="/about/">About</a></li>
 		<li id="media"><a href="/media/">Media</a></li>
-		<li id="demo"><a href="http://cactuscode.org:5555/">Demo</a></li>
+		<li id="demo"><a href="/demo/">Demo</a></li>
 		<li id="download"><a href="/download/">Download</a></li>
 		<li id="documentation"><a href="/documentation/">Documentation</a></li>
 		<li id="community"><a href="/community/">Community</a></li>
