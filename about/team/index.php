@@ -12,11 +12,11 @@ team:
 
 <ul>
 <li><a href="gallen">Gabrielle Allen</a>
-<br />Lead of Cactus project at <a href="http://lsu.edu/">LSU</a>, and inactive developer</li>
+<br />Lead of Cactus project at <a href="http://www.lsu.edu/">LSU</a>, and inactive developer</li>
 <br />
 
 <li><a href="ebentivegna">Eloisa Bentivegna</a>
-<br />Postdoc researcher at the <a href="http://cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://lsu.edu/">LSU</a></li>
+<br />Postdoc researcher at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
 
 <li><a href="yelkhamra">Yaakoub El-Khamra</a>
@@ -24,23 +24,22 @@ team:
 <br />
 
 <li><a href="tgoodale">Tom Goodale</a>
-<br />Research scientist at both <a href="http://lsu.edu/">LSU</a> and Cardiff University.</li>
+<br />Research scientist at both <a href="http://www.lsu.edu/">LSU</a> and Cardiff University</li>
 <br />
 
 <li><a href="cjordan">Colby Jordan</a>
-<br />Internal Support for Cactus at the <a href="http://cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://lsu.edu/">LSU</a></li>
+<br />Internal Support for Cactus at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
 
 <li><a href="sko">Soon-Heum Ko</a>
-<br />Postdoc researcher at the <a href="http://cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://lsu.edu/">LSU</a></li>
+<br />Postdoc researcher at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
 
 <li><a href="okorobkin">Oleg Korobkin</a>
-<br />Graduate student at the <a href="http://cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://lsu.edu/">LSU</a></li>
-<br />
+<br />Graduate student at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> and the <a href="http://www.phys.lsu.edu/">Department of Physics &amp; Astronomy</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 
 <li><a href="floeffler">Frank Löffler</a>
-<br />Postdoc researcher at the <a href="http://cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://lsu.edu/">LSU</a></li>
+<br />Postdoc researcher at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
 
 <li><a href="tradke">Thomas Radke</a>
@@ -53,11 +52,11 @@ of the <a href="http://www.aei.mpg.de/" title="Max-Planck-Institute for Gravitat
 <br />
 
 <li><a href="eschnetter">Erik Schnetter</a>
-<br />Scientist in the <a href="http://cct.lsu.edu/numerical/">Numerical Relativity Group</a> at the <a href="http://cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a></li>
+<br />Scientist in the <a href="http://www.cct.lsu.edu/numerical/">Numerical Relativity Group</a> at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> and the <a href="http://www.phys.lsu.edu/">Department of Physics &amp; Astronomy</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
 
 <li><a href="jtao">Jian Tao</a>
-<br />Postdoc researcher at the <a href="http://cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://lsu.edu/">LSU</a></li>
+<br />Postdoc researcher at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
 
 </ul>
