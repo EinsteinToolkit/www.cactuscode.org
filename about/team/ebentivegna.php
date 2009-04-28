@@ -16,7 +16,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <h3>Research</h3>
 <p>My research is centered around the numerical simulation of systems governed by the 
-laws of General Relativity, ranging from black holes to the large-scale universe, and in 
+laws of General Relativity, ranging from black holes to the large-scale universe, and around 
 the computational tools required. In particular, I develop high-level debugging and 
 visualization tools within the <a href="http://www.cactuscode.org/Development/alpaca">Alpaca</a> 
 project and have an interest in numerical methods for the extraction of physical 
