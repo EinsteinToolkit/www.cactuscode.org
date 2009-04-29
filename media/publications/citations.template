@@ -1,0 +1,15 @@
+\documentclass{revtex4}
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{mathpazo}
+
+\begin{document}
+
+\nocite{*}
+
+\bibliographystyle{apsrev-titles-manyauthors}
+\bibliography{citations-STATUS}
+
+\end{document}
