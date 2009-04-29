@@ -8,11 +8,13 @@ SECTIONS = background webpage compsci numrel poster report
 
 ALLSECTIONS = $(SECTIONS) internal
 
-all: cactus-publications.pdf publications.html
+all: cactus-publications.pdf cactus-publications.html
 
 cactus-publications.pdf: cactus-publications.tex cactus-publications.bib $(SECTIONS:%=citations-%.bibitems)
+	pdflatex cactus-publications
+	pdflatex cactus-publications
 
-publications.html: $(SECTIONS:%=citations-%.html-updated)
+cactus-publications.html: $(SECTIONS:%=citations-%.html-updated)
 
 .PRECIOUS: $(SECTIONS:%=citations-%.tex)
 citations-%.tex: citations.template
@@ -26,23 +28,21 @@ citations-%.bib: cactus-publications.bib
 # this produces also %.aux and %.bbl
 .PRECIOUS: $(SECTIONS:%=citations-%.pdf)
 citations-%.pdf: citations-%.tex citations-%.bib
-
-%.pdf: %.tex
-	pdflatex $*
-	bibtex $*
-	pdflatex $*
-	pdflatex $*
+	pdflatex citations-$*
+	bibtex citations-$*
+	pdflatex citations-$*
+	pdflatex citations-$*
 
 citations-%.bibitems: citations-%.pdf
 	cat citations-$*.bbl | grep -v thebibliography | sed -e 's/bibitem/blurb/' > $@
 
 # http://www.spinellis.gr/sw/textproc/bib2xhtml/
 # Sorted alphabetically:
-# ./bib2xhtml -r -s empty -u $*.aux publications.html
-# ./bib2xhtml -s unsort -u $*.aux publications.html
-# ./bib2xhtml -s unsortlist -u $*.aux publications.html
+# ./bib2xhtml -r -s empty -u $*.aux cactus-publications.html
+# ./bib2xhtml -s unsort -u $*.aux cactus-publications.html
+# ./bib2xhtml -s unsortlist -u $*.aux cactus-publications.html
 citations-%.html-updated: citations-%.pdf
-	./bib2xhtml -s unsortlist -u citations-$*.aux publications.html
+	./bib2xhtml -s unsortlist -u citations-$*.aux cactus-publications.html
 	: > $@
 
 EMPTY :=
