@@ -3,7 +3,11 @@ $title='Publications';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
-<p>content paragraph</p>
+<h1>Cactus Publications</h1>
+
+<p>We have them in <a href="cactus-publications.html">html</a> and as
+  <a href="cactus-publications.pdf">PDF</a>, and in
+  raw <a href="cactus-publications.bib">bibtex</a>.</p>
 
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');
