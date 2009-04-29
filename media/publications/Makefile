@@ -4,9 +4,7 @@
 # This list defines the sections (keywords) we have.  This list must
 # be consistent with the keywords in the bibtex file, and with the
 # include statements in the tex and html files.
-SECTIONS = background webpage compsci numrel poster report
-
-ALLSECTIONS = $(SECTIONS) internal
+SECTIONS = cactuscode webpage numrel computerscience performance applications studenttheses cstheses nrtheses
 
 all: cactus-publications.pdf cactus-publications.html
 
@@ -42,13 +40,13 @@ citations-%.bibitems: citations-%.pdf
 # ./bib2xhtml -s unsort -u $*.aux cactus-publications.html
 # ./bib2xhtml -s unsortlist -u $*.aux cactus-publications.html
 citations-%.html-updated: citations-%.pdf
-	./bib2xhtml -s unsortlist -u citations-$*.aux cactus-publications.html
+	./bib2xhtml -s unsortlist citations-$*.aux cactus-publications.html
 	: > $@
 
 EMPTY :=
 SPACE := $(EMPTY) $(EMPTY)
 check:
-	bibtool -q -- 'select.non{status "$(subst $(SPACE),\|,$(ALLSECTIONS))"}' < cactus-publications.bib
+	bibtool -q -- 'select.non{status "$(subst $(SPACE),\|,$(SECTIONS))"}' < cactus-publications.bib
 
 clean:
 	$(RM) cactus-publications.{aux,bbl,blg,log,out,pdf,toc}
