@@ -11,7 +11,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <h3>Background</h3>
 <ul>
 <li>Laurea in Fisica, Universit&agrave; di Catania (Italy) </li>
-<li>PhD Physics - minor in High Performance Computing, Penn State University (Italy)</li>
+<li>PhD Physics - minor in High Performance Computing, Penn State University (U.S.A.)</li>
 </ul>
 
 <h3>Research</h3>
