@@ -19,10 +19,23 @@
     Cactus runs on 131,072 cores on Blue Gene/P at ANL
 </a></li>
 
-<li><a href="/media/news/GPUcomputing">CCT researcher accelerates Einstein code with GPU computing</a></li>
+<li><a href="/media/news/GPUcomputing">
+    [March 15, 2008]<br />
+    CCT researcher accelerates Einstein code with GPU computing
+</a></li>
 
-<li><a href="/media/news/XiRelWorkshop08">First XiRel Workshop</a></li>
+<li><a href="/media/news/Cactus-Loongson">
+    [Feburary 3, 2008]<br />
+    Cactus scalability benchmark results from First Loongson 2F
+    Chinese Cluster
+</a></li>
 
-<li><a href="/media/news/Ranger">Cactus Benchmarks Run on Ranger</a></li>
+<li><a href="/media/news/XiRelWorkshop08">
+    [January 23, 2008]<br />
+    First XiRel Workshop held at LSU
+</a></li>
 
-<li><a href="/media/news/CactusLoongson">Cactus Run on First Loongson 2F Chinese Cluster</a></li>
+<li><a href="/media/news/Cactus-Ranger">
+    [January 15, 2008]<br />
+    Cactus scalability benchmark results from Ranger at TACC
+</a></li>
