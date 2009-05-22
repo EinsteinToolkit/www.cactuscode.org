@@ -8,11 +8,11 @@ $cdirectory = str_replace('index.php','', $cdirectory);
 
 $dir_handle = @opendir($cdirectory) or die('Unable to open directory.');
 
-echo 'Directory Listing of '.$cdirectory.'<br />';
+//echo 'Directory Listing of '.$cdirectory.'<br />';
 //list each item
 while ($file = readdir($dir_handle)) 
 {
-  if ($file != '.DS_Store' and $file != '.svn' and $file != 'recent.php' and $file != 'index.php' and $file != 'template')
+  if ($file != '.DS_Store' and $file != '.svn' and $file != 'recent.php' and $file != 'index.php' and $file != 'template' and $file != '..' and $file != '.')
     echo '<a href="'.$file.'">'.$file.'</a><br/>';
 }
 
