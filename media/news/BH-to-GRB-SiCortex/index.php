@@ -34,7 +34,8 @@ This webcast is part of a series of Science-to-Science webcasts
 sponsored by SiCortex and intended to highlight the use of HPC systems
 in advancing scientific discovery.  The webcast and associated white
 paper, Relativistic Astrophysics on the SiCortex Architecture, can be
-viewed <a href="http://sicortex.com/news_events/campaigns/lsu_webinar/cactus_resources">here</a>.
+viewed <a href="http://sicortex.com/news_events/campaigns/lsu_webinar/cactus_resources">on
+    the SiCortex website</a>.
 </p>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
