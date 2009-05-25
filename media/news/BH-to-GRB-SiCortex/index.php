@@ -3,7 +3,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
 <h3>
-May 25, 2009:<br />
+March 17, 2009:<br />
 <i>From Black Holes to Gamma-Ray Bursts</i> Webcast Available
 </h3>
 
