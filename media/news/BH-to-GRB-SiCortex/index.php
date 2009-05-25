@@ -37,5 +37,4 @@ paper, Relativistic Astrophysics on the SiCortex Architecture, can be
 viewed <a href="http://sicortex.com/news_events/campaigns/lsu_webinar/cactus_resources">here</a>.
 </p>
 
-<h3 class="align-right">25 May 2009 — Erik Schnetter</h3>
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
