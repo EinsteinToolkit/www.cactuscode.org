@@ -10,12 +10,17 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 </tr>
 
 <tr>
-<td><a href="APS_08_Poster.pdf"><img src="APS_08_Poster.jpg" width="120"></a></td>
-<td><i>Binary Neutron Star Evolution with Adaptive Mesh Refinement Methods.</i> J. Tao, W.-M. Suen, R. Wolfmeyer and H.-M. Zhang,  American Physical Society Meeting, April 2008, St. Louis, Mo., USA.</td>
+<td><a href="Scale2009_May2009_Poster.pdf"><img src="Scale2009_May2009_Poster.jpg" width="120"></a></td>
+<td><i></i></td>
 </tr>
 
 <tr>
 <td>2008</td> <td></td>
+</tr>
+
+<tr>
+<td><a href="APS_08_Poster.pdf"><img src="APS_08_Poster.jpg" width="120"></a></td>
+<td><i>Binary Neutron Star Evolution with Adaptive Mesh Refinement Methods.</i> J. Tao, W.-M. Suen, R. Wolfmeyer and H.-M. Zhang,  American Physical Society Meeting, April 2008, St. Louis, Mo., USA.</td>
 </tr>
 
 <tr>
