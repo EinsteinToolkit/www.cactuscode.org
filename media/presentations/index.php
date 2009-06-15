@@ -11,7 +11,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <tr>
 <td><a href="Scale2009_May2009_Poster.pdf"><img src="Scale2009_May2009_Poster.jpg" width="120"></a></td>
-<td><i></i></td>
+<td><i>Large Scale Problem Solving Using Automatic Code Generation and Distributed Visualization</i>G. Allen, W. Benger, E. Bentivegna, P. Diener, J. Ge, A. Hutanu, R. Kooima, O. Korobkin, K. Liu, C. Toole, R. Paruchuri, E. Schenetter, J. Tao, and A. Yates, ICCS 2009, Baton Rouge, LA, USA.</td>
 </tr>
 
 <tr>
