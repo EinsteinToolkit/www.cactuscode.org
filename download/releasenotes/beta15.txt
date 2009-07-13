@@ -1,0 +1,1531 @@
+Release Notices for Cactus 4.0 beta 15
+======================================
+Date: 2 Nov 2004
+
+Released modules:
+================
+
+      Cactus
+      CactusBase
+      CactusBench
+      CactusConnect
+      CactusEinstein
+      CactusElliptic
+      CactusExamples
+      CactusExternal
+      CactusIO
+      CactusPUGH
+      CactusPUGHIO
+      CactusTest
+      CactusUtils
+      CactusWave
+
+
+New thorns:
+==========
+
+      LocalReduce
+      MoL
+      TestSchedule
+      TestLocalReduce
+      TestGlobalReduce
+      IDWaveMoL
+      WaveMoL
+
+
+New supported architectures:
+============================
+
+      SGI Altix
+      Intel EM64T
+      XBox
+
+CVS Tag:
+
+Cactus_4_0_Beta_15
+
+==============================================================================
+
+
+CHANGES FOR BETA 15
+===================
+
+Flesh
+=====
+
+Architectures
+  - The cygwin port has been updated to use the cygwin Perl rather
+    than the ActiveState Perl, making installation easier.  The
+    support for the Intel compilers has been fixed.
+  - We have tested Cactus on three new architectures, the SGI Altix,
+    Intel's new Extended Memory 64 Technology, and Microsoft's XBox,
+    all running Linux.
+
+New Reduction Interface
+  - The reduction interface has been brought into line with the
+    interpolation interface.  The old reduction interface will 
+    be deprecated now and will be removed before Cactus 4.0.0.
+
+Core Thorns
+===========
+
+Method of Lines
+   - The Method of Lines (MoL) thorn has been moved into the
+     CactusBase arrangement.  This thorn provides a generic mechanism
+     to evolve equations using the method of lines.  The
+     CactusExamples arrangement now contains example thorns.
+
+==============================================================================
+
+
+KNOWN BUGS IN BETA 15
+=====================
+(See Cactus bug tracking system for a complete list)
+
+==============================================================================
+
+
+WHAT TO EXPECT IN BETA 16
+=========================
+
+The configuration for extra packages such as HDF5 or PETSc will be
+moved into thorns, using the configuration.ccl mechanism.  This should
+make it less necessary to recreate a configuration, considerably
+reduce recompilation times when the packages are added or removed, and
+make the addition of new packages more straightforward.
+
+With the new reduction interface in place, all thorns in the standard
+release will be updated.
+
+When an implementation A inherits from another implementation B, all
+variables it inherits will be also inherited by any other
+implementation, C, say, inheriting from it, and all thorns providing A
+must also inherit from B.  We intend to add the concept of private
+inheritance so that a thorn providing B may inherit from A without
+requiring all thorns providing B to inherit from A.
+
+We noted various problems during this beta release, in particular
+failures of the new reduction interface with MPI on several
+architectures, and consistent failure of some test suites.  These will
+be investigated and fixed.
+
+We hope to test be able to include the Cray X-1 as a new supported
+architecture in the next release, and possibly the IBM Blue Gene.
+
+==============================================================================
+
+
+TEST MACHINES NOTES
+===================
+
+(Alphabetical by architecture.)
+
+ * Em64T Intel Xeon (Linux Redhat 9.0)
+
+     o pnp.wustl.edu 
+       (Intel icc/ifort 8.1.023, no MPI)
+
+      - not compiling:
+        CactusElliptic/EllPETSc      (No PETSc)
+        CactusPUGHIO/IOHDF5          (No HDF5)
+        CactusPUGHIO/IOHDF5Util      (No HDF5)
+        CactusPUGHIO/IOStreamedHDF5  (No HDF5)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o pnp.wustl.edu 
+       (Portland PGI Workstation 5.2.4, no MPI)
+
+      - not compiling:
+        CactusElliptic/EllPETSc      (No PETSc)
+        CactusPUGHIO/IOFlexIO        (linking error)
+        CactusPUGHIO/IOHDF5          (No HDF5)
+        CactusPUGHIO/IOHDF5Util      (No HDF5)
+        CactusPUGHIO/IOStreamedHDF5  (No HDF5)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+ * Hitachi SR8000-F1 (HI-UX/MPP)
+
+     o sr8000.lrz-muenchen.de without MPI
+       (native compilers)
+
+      - not compiling:
+        CactusElliptic/EllPETSc      (No PETSc)
+        CactusPUGHIO/IOPanda         (Not parallel)
+
+      - testsuites failing:
+        CactusEinstein/AHFinder         (test_AHF_1.par)
+        CactusEinstein/AHFinder         (test_AHF_2.par)
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o sr8000.lrz-muenchen.de with MPI (native)
+       (native compilers)
+
+      - not compiling:
+        CactusElliptic/EllPETSc      (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/AHFinder         (test_AHF_1.par)
+        CactusEinstein/AHFinder         (test_AHF_2.par)
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+ * HP/Compaq Alpha (OSF1 V5.1 2650 alpha)
+
+     o lemieux.psc.edu without MPI
+       (Compaq C V6.5-303, HP Fortran V5.5A-3548)
+
+      - not compiling:
+        CactusElliptic/EllPETSc      (No PETSc)
+        CactusPUGHIO/IOPanda         (Not parallel)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o lemieux.psc.edu without MPI
+       (gcc 3.4.0, HP Fortran V5.5A-3548)
+
+      - not compiling:
+        CactusElliptic/EllPETSc      (No PETSc)
+        CactusPUGHIO/IOPanda         (Not parallel)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o lemieux.psc.edu with MPI (ELAN)
+       (Compaq C V6.5-303, HP Fortran V5.5A-3548)
+
+      - not compiling:
+        CactusElliptic/EllPETSc      (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o lemieux.psc.edu with MPI (ELAN)
+       (gcc 3.4.0, HP Fortran V5.5A-3548)
+
+      - not compiling:
+        CactusElliptic/EllPETSc      (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+ * IBM SP (AIX 5.2.0.0)
+
+     o psi.rzg.mpg.de without MPI
+       (C Compiler V. 6, XL Fortran for AIX)
+
+      - not compiling:
+        CactusPUGHIO/IOPanda            (no MPI)
+        CactusElliptic/EllPETSc         (no MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o psi.rzg.mpg.de with MPI (native)
+       (C Compiler V. 6, XL Fortran for AIX, Native MPI)
+
+      - not compiling:
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusTest/TestComplex          (TestComplex.par)
+        CactusTest/TestGlobalReduce     (TestAvg.par - took too long)
+        CactusTest/TestGlobalReduce     (TestAvg_dest0.par - took too long)
+        CactusTest/TestGlobalReduce     (TestMax.par - took too long)
+        CactusTest/TestGlobalReduce     (TestMax_dest0.par - took too long)
+        CactusTest/TestGlobalReduce     (TestSum.par - took too long)
+        CactusTest/TestGlobalReduce     (TestSum_dest0.par - took too long)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+ * Intel IA64 Madison (Linux SUSE SLES8/2.4.19-SMP)
+
+     o tg-login.ncsa.teragrid.org without MPI
+       (gcc 3.2.2 and Intel ifort 8.0.046)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+        CactusExamples/WaveToy2DF77    (test_WaveToy2D.par)
+
+     o tg-login.ncsa.teragrid.org without MPI
+       (Intel icc 8.0.066 and ifort 8.0.046)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+        CactusExamples/WaveToy2DF77    (test_WaveToy2D.par)
+
+     o tg-login.ncsa.teragrid.org with MPI (MPICH gm)
+       (Intel icc 8.0.066 and ifort 8.0.046)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+        CactusExamples/WaveToy2DF77    (test_WaveToy2D.par)
+        CactusEinstein/Maximal          (test_maximal_1.par)
+
+     o tg-login.ncsa.teragrid.org with MPI (MPICH gm)
+       (gcc 3.2.2 and Intel ifort 8.0.046)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+        CactusExamples/WaveToy2DF77    (test_WaveToy2D.par)
+        CactusEinstein/Maximal          (test_maximal_1.par)
+
+ * Intel IA32 (Linux Redhat 7.3)
+
+     o helix.bcvc.lsu.edu without MPI
+       (ABSoft Pro Fortran 8.2 compiler, gcc 2.96)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu without MPI
+       (ABSoft Pro Fortran 8.2 compiler, Intel C++ Compiler 7.1)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu without MPI
+       (ABSoft Pro Fortran 8.2 compiler, Portland PGI Workstation 5.0)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+
+     o helix.bcvc.lsu.edu without MPI
+       (Lahey/Fujitsu Fortran 95, gcc 2.96)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu without MPI
+       (Lahey/Fujitsu Fortran 95, Intel C++ Compiler 7.1)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu without MPI
+       (Lahey/Fujitsu Fortran 95, Portland PGI Workstation 5.0)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu without MPI
+       (Intel(R) Fortran Compiler Version 7.1, gcc 2.96)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu without MPI
+        (Intel(R) Fortran Compiler Version 7.1, Intel C++ Compiler 7.1)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu without MPI
+       (Intel(R) Fortran Compiler Version 7.1, Portland PGI Workstation 5.0)
+ 
+     - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu without MPI
+       (NAGWare Fortran 95 compiler Release 4.2(464), gcc 2.96)
+ 
+      - not compiling:
+        CactusEinstein/IDAxiBrillBH (Compilation error)
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+        CactusTest/TestComplex      (Compilation error)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu without MPI 
+       (NAGWare Fortran 95 compiler Release 4.2(464), Intel C++ Compiler 7.1)
+
+      - not compiling:
+        CactusEinstein/IDAxiBrillBH (Compilation error)
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+        CactusTest/TestComplex      (Compilation error)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu without MPI
+       (NAGWare Fortran 95 compiler Release 4.2(464), Portland PGI Workstation 5.0)
+
+      - not compiling:
+        CactusEinstein/IDAxiBrillBH (Compilation error)
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+        CactusTest/TestComplex      (Compilation error)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu without MPI
+       (Portland PGI Workstation 5.0, gcc 2.96)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu without MPI
+       (Portland PGI Workstation 5.0, Intel C++ Compiler 7.1)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu without MPI
+       (Portland PGI Workstation 5.0, Portland PGI Workstation 5.0)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm)
+       (ABSoft Pro Fortran 8.2 compiler, gcc 2.96)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm)
+       (ABSoft Pro Fortran 8.2 compiler, Intel C++ Compiler 7.1)
+
+      - not compiling:
+        CactusTest/TestFreeF90      (Compilation error)
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm) 
+       (ABSoft Pro Fortran 8.2 compiler, Portland PGI Workstation 5.0)
+
+      - not compiling:
+        CactusTest/TestFreeF90      (Compilation error)
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm)
+       (Lahey/Fujitsu Fortran 95, gcc 2.96)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm)
+       (Lahey/Fujitsu Fortran 95, Intel C++ Compiler 7.1)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm)
+       (Lahey/Fujitsu Fortran 95, Portland PGI Workstation 5.0)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm)
+       (Intel(R) Fortran Compiler Version 7.1, gcc 2.96)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm)
+       (Intel(R) Fortran Compiler Version 7.1, Intel C++ Compiler 7.1)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm) 
+       (Intel(R) Fortran Compiler Version 7.1, Portland PGI Workstation 5.0)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm)
+       (NAGWare Fortran 95 compiler Release 4.2(464), gcc 2.96)
+
+      - not compiling:
+        CactusEinstein/IDAxiBrillBH (Compilation error)
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusTest/TestComplex      (Compilation error)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm)
+       (NAGWare Fortran 95 compiler Release 4.2(464), Intel C++ Compiler 7.1)
+
+      - not compiling:
+        CactusEinstein/IDAxiBrillBH (Compilation error)
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusTest/TestComplex      (Compilation error)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm)
+       (NAGWare Fortran 95 compiler Release 4.2(464), Portland PGI Workstation 5.0)
+
+      - not compiling:
+        CactusEinstein/IDAxiBrillBH (Compilation error)
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusTest/TestComplex      (Compilation error)
+
+      - testsuites failing:
+        Could not testsuite: Segmentation fault error when linking
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm)
+       (Portland PGI Workstation 5.0, gcc 2.96)
+
+      - not compiling:
+        CactusElliptic/EllPETSc         (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/IDAxiBrillBH (Compilation error)
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusTest/TestComplex      (Compilation error)
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm)
+       (Portland PGI Workstation 5.0, Intel C++ Compiler 7.1)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o helix.bcvc.lsu.edu with MPI (MPICH gm)
+       (Portland PGI Workstation 5.0, Portland PGI Workstation 5.0)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o peyote.aei.mpg.de without MPI
+       (Intel icc v8.0.058 / ifort v8.0.039)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (No MPI)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o peyote.aei.mpg.de with MPI (MPICH ch_p4)
+       (Intel icc v8.0.058 / ifort v8.0.039)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing: (on 2 processors)
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+ * Intel IA32 (Windows 2003 Server)
+
+     o mangrove.cct.lsu.edu without MPI
+       (Microsoft C/C++ 6.0, Compaq F90 6.6A)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOHDF5         (No HDF5)
+        CactusPUGHIO/IOHDF5Util     (No HDF5)
+        CactusPUGHIO/IOPanda        (Not parallel)
+        CactusPUGHIO/IOStreamedHDF5 (No HDF5)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusTest/TestArrays           (arrays0.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o mangrove.cct.lsu.edu without MPI
+       (Microsoft C/C++ 6.0, Intel F90 8.0)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOHDF5         (No HDF5)
+        CactusPUGHIO/IOHDF5Util     (No HDF5)
+        CactusPUGHIO/IOPanda        (Not parallel)
+        CactusPUGHIO/IOStreamedHDF5 (No HDF5)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusTest/TestArrays           (arrays0.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o mangrove.cct.lsu.edu without MPI
+       (Intel C/C++ 8.0, Compaq F90 6.6A)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOHDF5         (No HDF5)
+        CactusPUGHIO/IOHDF5Util     (No HDF5)
+        CactusPUGHIO/IOPanda        (Not parallel)
+        CactusPUGHIO/IOStreamedHDF5 (No HDF5)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusTest/TestArrays           (arrays0.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o mangrove.cct.lsu.edu without MPI
+       (Intel C/C++ 8.0, Intel F90 8.0)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOHDF5         (No HDF5)
+        CactusPUGHIO/IOHDF5Util     (No HDF5)
+        CactusPUGHIO/IOPanda        (Not parallel)
+        CactusPUGHIO/IOStreamedHDF5 (No HDF5)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusTest/TestArrays           (arrays0.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+ * MacOS X (Darwin Kernal Version 7.3.0)
+
+     o greengrass.cct.lsu.edu without MPI
+       (gcc 3.3, IBM xlf 8.1)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (Not parallel)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o greengrass.cct.lsu.edu without MPI
+       (gcc 3.3, Absoft f90 8.2)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (Not parallel)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o greengrass.cct.lsu.edu without MPI
+       (IBM xlc 6.0, IBM xlf 8.1)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (Not parallel)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o greengrass.cct.lsu.edu without MPI
+       (IBM xlc 6.0, Absoft f90 8.2)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOPanda        (Not parallel)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o greengrass.cct.lsu.edu with MPI (MPICH ch_p4)
+       (gcc 3.3, IBM xlf 8.1)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusTest/TestComplex          (TestComplex.par)
+        CactusTest/TestGlobalReduce     (TestAvg.par)
+        CactusTest/TestGlobalReduce     (TestAvg_dest0.par)
+        CactusTest/TestGlobalReduce     (TestMax.par)
+        CactusTest/TestGlobalReduce     (TestMax_dest0.par)
+        CactusTest/TestGlobalReduce     (TestSum.par)
+        CactusTest/TestGlobalReduce     (TestSum_dest0.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o greengrass.cct.lsu.edu with MPI  (MPICH ch_p4)
+       (gcc 3.3, Absoft f90 8.2)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusTest/TestComplex          (TestComplex.par)
+        CactusTest/TestGlobalReduce     (TestAvg.par)
+        CactusTest/TestGlobalReduce     (TestAvg_dest0.par)
+        CactusTest/TestGlobalReduce     (TestMax.par)
+        CactusTest/TestGlobalReduce     (TestMax_dest0.par)
+        CactusTest/TestGlobalReduce     (TestSum.par)
+        CactusTest/TestGlobalReduce     (TestSum_dest0.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o greengrass.cct.lsu.edu with MPI (MPICH ch_p4)
+       (IBM xlc 6.0, IBM xlf 8.1)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusTest/TestComplex          (TestComplex.par)
+        CactusTest/TestGlobalReduce     (TestAvg.par)
+        CactusTest/TestGlobalReduce     (TestAvg_dest0.par)
+        CactusTest/TestGlobalReduce     (TestMax.par)
+        CactusTest/TestGlobalReduce     (TestMax_dest0.par)
+        CactusTest/TestGlobalReduce     (TestSum.par)
+        CactusTest/TestGlobalReduce     (TestSum_dest0.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o greengrass.cct.lsu.edu with MPI  (MPICH ch_p4)
+       (IBM xlc 6.0, Absoft f90 8.2)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusTest/TestComplex          (TestComplex.par)
+        CactusTest/TestGlobalReduce     (TestAvg.par)
+        CactusTest/TestGlobalReduce     (TestAvg_dest0.par)
+        CactusTest/TestGlobalReduce     (TestMax.par)
+        CactusTest/TestGlobalReduce     (TestMax_dest0.par)
+        CactusTest/TestGlobalReduce     (TestSum.par)
+        CactusTest/TestGlobalReduce     (TestSum_dest0.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+ * NEC SX-5
+
+     o himiko.rzg.mpg.de without MPI
+       (native compilers)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOHDF5         (No HDF5)
+        CactusPUGHIO/IOHDF5Util     (No HDF5)
+        CactusPUGHIO/IOPanda        (Not parallel)
+        CactusPUGHIO/IOStreamedHDF5 (No HDF5)
+
+      - testsuites failing:
+        CactusEinstein/AHFinder         (test_AHF_1.par)
+        CactusEinstein/AHFinder         (test_AHF_2.par)
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o himiko.rzg.mpg.de with MPI (native)
+       (native compilers)
+ 
+     - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOHDF5         (No HDF5)
+        CactusPUGHIO/IOHDF5Util     (No HDF5)
+        CactusPUGHIO/IOStreamedHDF5 (No HDF5)
+
+     - testsuites failing:
+        CactusEinstein/AHFinder         (test_AHF_1.par - core dump)
+        CactusEinstein/AHFinder         (test_AHF_2.par - core dump)
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusEinstein/Extract          (extract_physical.par - took too long)
+        CactusEinstein/Extract          (test_extract.par - took too long)
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusTest/TestComplex          (TestComplex.par - core dump)
+        CactusTest/TestGlobalReduce     (TestAvg.par - core dump)
+        CactusTest/TestGlobalReduce     (TestAvg_dest0.par - core dump)
+        CactusTest/TestGlobalReduce     (TestMax.par - core dump)
+        CactusTest/TestGlobalReduce     (TestMax_dest0.par - core dump)
+        CactusTest/TestGlobalReduce     (TestSum.par - core dump)
+        CactusTest/TestGlobalReduce     (TestSum_dest0.par - core dump)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+ * SGI Altix 3700 ProPack 2.4
+
+     o cobalt.ncsa.uiuc.edu without MPI
+       (Intel icc v8.0.066 / ifort v8.0.046)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o cobalt.ncsa.uiuc.edu without MPI
+       (gcc 2.96 / ifort v8.0.046)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o cobalt.ncsa.uiuc.edu with MPI (MPI: Native)
+       (Intel icc v8.0.066 / ifort v8.0.046)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o cobalt.ncsa.uiuc.edu with MPI (MPI: Native)
+       (gcc 2.96 / ifort v8.0.046)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+
+      - testsuites failing:
+        CactusBench/BenchADM    (test_Bench.par)
+        CactusEinstein/ADM    (test_ADM_1.par)
+        CactusEinstein/ADM    (test_ADM_2.par)
+        CactusEinstein/ADM    (test_ADM_3.par)
+        CactusEinstein/ADM    (test_ADM_4.par)
+        CactusEinstein/ADMConstraints    (ADMConstraints_Mask.par)
+        CactusEinstein/ADMConstraints    (ADMConstraints_Physical.par)
+        CactusEinstein/ADMConstraints    (ADMConstraints_Shift.par)
+        CactusEinstein/ADMConstraints    (test_ADM.par)
+        CactusEinstein/AHFinder    (test_AHF_2.par)
+        CactusEinstein/EvolSimple    (EvolSimple_Teuk.par)
+        CactusEinstein/Extract    (extract_physical.par)
+        CactusEinstein/Extract    (test_extract.par)
+        CactusEinstein/IDAnalyticBH    (kerr.par)
+        CactusEinstein/IDAnalyticBH    (test_misner.par)
+        CactusEinstein/IDAxiBrillBH    (test_axibrill.par)
+        CactusEinstein/IDLinearWaves    (test_pw_ADM_leap.par)
+        CactusEinstein/IDLinearWaves    (test_pw_ADM_sl.par)
+        CactusEinstein/Maximal    (test_maximal_1.par)
+        CactusEinstein/PsiKadelia    (teuktest.par)
+        CactusEinstein/TimeGeodesic    (test_misner-geodesics.par)
+        CactusExamples/SampleBoundary    (wavetoyc.par)
+        CactusExamples/WaveMoL    (gaussian.par)
+        CactusExamples/WaveToy2DF77    (test_WaveToy2D.par)
+        CactusExternal/FlexIO    (test_recover.par)
+        CactusPUGHIO/IOHDF5    (test_recover.par)
+        CactusTest/TestComplex    (TestComplex.par)
+        CactusWave/IDScalarWaveElliptic    (test_waveell.par)
+        CactusWave/WaveBinarySource    (test_binary_1.par)
+        CactusWave/WaveToyC    (test_rad.par)
+        CactusWave/WaveToyC    (wave_output.par)
+        CactusWave/WaveToyCXX    (test_rad.par)
+        CactusWave/WaveToyExtra    (test_custom.par)
+        CactusWave/WaveToyF77    (test_rad.par)
+        CactusWave/WaveToyF77    (test_rob.par)
+        CactusWave/WaveToyF90    (test_rad.par)
+        CactusWave/WaveToyF90    (test_wavef90_flat.par)
+        CactusWave/WaveToyF90    (test_wavef90_zero.par)
+        CactusWave/WaveToyFreeF90    (test_rad.par)
+       
+ * SGI 64 bit (Irix 6.5)
+
+     o onyx3.zib.de without MPI 
+       (MIPSpro compilers 7.41)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOHDF5         (No HDF5)
+        CactusPUGHIO/IOHDF5Util     (No HDF5)
+        CactusPUGHIO/IOPanda        (Not parallel)
+        CactusPUGHIO/IOStreamedHDF5 (No HDF5)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusEinstein/Extract          (extract_physical.par)
+        CactusEinstein/Extract          (test_extract.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o onyx3.zib.de with MPI (native) 
+       (MIPSpro compilers 7.41)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOHDF5         (No HDF5)
+        CactusPUGHIO/IOHDF5Util     (No HDF5)
+        CactusPUGHIO/IOStreamedHDF5 (No HDF5)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusEinstein/Extract          (extract_physical.par)
+        CactusEinstein/Extract          (test_extract.par)
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+ * SGI 32 bit (Irix 6.5)
+
+     o onyx3.zib.de without MPI
+       (native compilers)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOHDF5         (No HDF5)
+        CactusPUGHIO/IOHDF5Util     (No HDF5)
+        CactusPUGHIO/IOPanda        (Not parallel)
+        CactusPUGHIO/IOStreamedHDF5 (No HDF5)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusEinstein/Extract          (extract_physical.par)
+        CactusEinstein/Extract          (test_extract.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+     o onyx3.zib.de with MPI (native)
+       (native compilers)
+
+      - not compiling:
+        CactusElliptic/EllPETSc     (No PETSc)
+        CactusPUGHIO/IOHDF5         (No HDF5)
+        CactusPUGHIO/IOHDF5Util     (No HDF5)
+        CactusPUGHIO/IOStreamedHDF5 (No HDF5)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par)
+        CactusEinstein/Extract          (extract_physical.par)
+        CactusEinstein/Extract          (test_extract.par)
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par)
+
+ * Sony Playstation 2 (Linux)
+
+     o ps2@cct.lsu.edu without MPI
+       (gcc 2.95.2)
+
+     - not compiling:
+       All Fortran thorns           (No Fortran compiler)
+       CactusElliptic/EllPETSc      (No PETSc)
+       All HDF5 thorns              (No HDF5)
+       CactusPUGHIO/IOPanda         (Not parallel)
+ 
+      - testsuites failing:
+ 
+        All passed.
+       
+ * Sun Sparc (SunOS 5.6)
+
+     o byte.csc.lsu.edu without MPI
+       (native compilers)
+
+      - not compiling:
+        CactusElliptic/EllPETSc      (No PETSc)
+        CactusExternal/FlexIO        (Compilation error)
+        CactusPUGHIO/IOFlexIO        (No FleXIO)
+        CactusPUGHIO/IOHDF5          (No HDF5)
+        CactusPUGHIO/IOHDF5Util      (No HDF5)
+        CactusPUGHIO/IOPanda         (No parallel)
+        CactusPUGHIO/IOStreamedHDF5  (No HDF5)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+ * Xbox (Gentoo Linux 2.4.22-xbox)
+
+     o xbox.cct.lsu.edu without MPI
+       (gcc 3.2.3 and Intel Compiler 7.0)
+        
+      - not compiling:
+        CactusElliptic/EllPETSc      (No PETSc)
+        CactusPUGHIO/IOHDF5          (No HDF5)
+        CactusPUGHIO/IOHDF5Util      (No HDF5)
+        CactusPUGHIO/IOPanda         (Not parallel)
+        CactusPUGHIO/IOStreamedHDF5  (No HDF5)
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+     o xbox.cct.lsu.edu with MPI (LAM-MPI 7.0.4)
+       (gcc 3.2.3 and Intel Compiler 7.0)
+        
+      - not compiling:
+        CactusElliptic/EllPETSc      (No PETSc)
+        CactusPUGHIO/IOHDF5          (No HDF5)
+        CactusPUGHIO/IOHDF5Util      (No HDF5)
+        CactusPUGHIO/IOStreamedHDF5  (No HDF5)
+
+
+      - testsuites failing:
+        CactusEinstein/EvolSimple       (EvolSimple_Teuk.par )
+        CactusEinstein/Maximal          (test_maximal_1.par)
+        CactusWave/IDScalarWaveElliptic (test_waveell.par )
+
+=====================================================================
+
+CONFIGURATION FILES FOR TEST MACHINES
+-------------------------------------
+
+(Alphabetical by hostname.)
+
+byte.csc.lsu.edu
+---------------------
+
+o Native compilers without MPI
+
+CC=/opt/SUNWspro/bin/cc
+CXX=/opt/SUNWspro/bin/CC 
+F90=/opt/SUNWspro/bin/f90 
+FPP=$${PERL} $${CCTK_HOME}/lib/sbin/cpp.pl
+
+
+cobolt.ncsa.uiuc.edu
+--------------------
+
+o Intel C v8.0.066, Intel Fortran v8.0.046 Without MPI
+
+CC=/usr/local/intel/8.0.069/bin/icc
+F90=/usr/local/intel/8.0.069/bin/ifort
+HDF5=yes
+HDF5_DIR=/usr/apps/phdf5/hdf5-1.6.2
+FPP=$${PERL} $${CCTK_HOME}/lib/sbin/cpp.pl
+
+o GCC v2.96, Intel Fortran v8.0.046 Without MPI
+
+CC=gcc
+F90=/usr/local/intel/8.0.069/bin/ifort
+HDF5=yes
+HDF5_DIR=/usr/apps/phdf5/hdf5-1.6.2
+FPP=$${PERL} $${CCTK_HOME}/lib/sbin/cpp.pl
+
+o Intel C v8.0.066, Intel Fortran v8.0.046 With MPI
+
+CC=/usr/local/intel/8.0.069/bin/icc
+F90=/usr/local/intel/8.0.069/bin/ifort
+
+#MPI is actually a native SGI MPI implementation
+MPI=CUSTOM
+
+HDF5=yes
+HDF5_DIR=/usr/apps/phdf5/hdf5-1.6.2
+FPP=$${PERL} $${CCTK_HOME}/lib/sbin/cpp.pl
+
+o GCC v2.96, Intel Fortran v8.0.046 With MPI
+
+CC=gcc
+F90=/usr/local/intel/8.0.069/bin/ifort
+
+#MPI is actually a native SGI MPI implementation
+MPI=CUSTOM
+
+HDF5=yes
+HDF5_DIR=/usr/apps/phdf5/hdf5-1.6.2
+FPP=$${PERL} $${CCTK_HOME}/lib/sbin/cpp.pl
+
+greengrass.cct.lsu.edu
+----------------------
+
+o Without MPI
+
+o gcc, IBM xlf
+
+HDF5=yes
+HDF5_DIR=/Users/goodale 
+LIBZ_DIR=/Users/goodale
+
+o gcc, Absoft f95
+
+HDF5=yes
+HDF5_DIR=/Users/goodale 
+LIBZ_DIR=/Users/goodale
+
+F90=/Applications/Absoft/bin/f95
+
+o IBM xlc, xlC, xlf
+
+CC=xlc 
+CXX=xlC
+
+HDF5=yes
+HDF5_DIR=/Users/goodale 
+LIBZ_DIR=/Users/goodale
+
+o IBM xlc, xlC, Absoft f95
+
+CC=xlc
+CXX=xlC
+F90=/Applications/Absoft/bin/f95 
+
+HDF5=yes
+HDF5_DIR=/Users/goodale 
+LIBZ_DIR=/Users/goodale
+
+o With MPI
+
+o gcc, IBM xlf
+
+HDF5=yes
+HDF5_DIR=/Users/goodale 
+LIBZ_DIR=/Users/goodale
+MPI=MPICH
+MPICH_DIR=/Users/goodale
+
+o gcc, Absoft f95
+
+HDF5=yes
+HDF5_DIR=/Users/goodale 
+LIBZ_DIR=/Users/goodale
+F90=/Applications/Absoft/bin/f95
+MPI=MPICH
+MPICH_DIR=/Users/goodale
+
+o IBM xlc, xlC, IBM xlf
+
+CC=xlc 
+CXX=xlC
+
+HDF5=yes
+HDF5_DIR=/Users/goodale 
+LIBZ_DIR=/Users/goodale
+MPI=MPICH
+MPICH_DIR=/Users/goodale
+
+o IBM xlc, xlC, Absoft f95
+
+CC=xlc 
+CXX=xlC
+
+HDF5=yes
+HDF5_DIR=/Users/goodale 
+LIBZ_DIR=/Users/goodale
+F90=/Applications/Absoft/bin/f95
+MPI=MPICH
+MPICH_DIR=/Users/goodale
+
+helix.bcvc.lsu.edu
+------------------
+
+# For convenience, this is the sum of all 30
+# opt files used to test on helix
+# please comment the options you do not want to
+# configure with
+
+# Absoft Fortran Compiler
+# set environment variable ABSOFT to /opt/absoft/
+F90=/opt/absoft/bin/f95
+
+# Fujitsu Fortran Compiler
+LAHEY=/usr/local/lf9562/
+F90=/usr/local/lf9562/bin/lf95
+
+# Intel Fortran Compiler
+F90=ifc
+
+# Nagware Fortran Compiler
+F90=/usr/local/NAGWare/bin/f95
+
+# Portland Fortran Compiler
+F90=/usr/local/pgi/linux86/5.0/bin/pgf90
+
+# GCC C/C++ Compiler
+CC=gcc
+CXX=g++
+
+# Intel C/C++ Compiler
+CC=icc
+CXX=icc
+
+# Portland C/C++ Compiler
+CC=pgcc
+CXX=pgCC
+
+# HDF5 options
+HDF5=yes
+LIBSZ_DIR=/usr/local/packages/hdf5-1.6.1-intel/serial/lib
+
+# MPICH options
+MPI=MPICH
+MPICH_DIR=/usr/local/mpich-1.2.5..10/sIntel
+MPICH_DEVICE=ch_gm
+MYRINET_DIR=/usr/gm
+PTHREADS=yes
+
+# Fortran Pre-Processor script
+FPP=$${PERL} $${CCTK_HOME}/lib/sbin/cpp.pl
+
+himiko.rzg.mpg.de
+-----------------
+
+o Without MPI
+
+FPP=$${PERL} $${CCTK_HOME}/lib/sbin/cpp.pl
+
+o With MPI
+
+FPP=$${PERL} $${CCTK_HOME}/lib/sbin/cpp.pl
+MPI=NATIVE
+
+Note that the default gmake is buggy and you need to install a newer
+version to compile cactus.
+
+lemieux.psc.edu
+---------------
+
+o Without MPI
+
+CC=cc
+CXX=cxx
+HDF5_DIR=/usr/users/1/tradke/install/hdf5
+HDF5=yes
+
+o With MPI
+
+CC=cc
+CXX=cxx
+MPI=CUSTOM
+MPI_LIBS= mpi elan
+HDF5_DIR=/usr/users/1/tradke/install/hdf5
+HDF5=yes
+
+mangrove.cct.lsu.edu
+--------------------
+
+o Microsoft C/C++ with Compaq F90 without MPI
+
+<NO OPTIONS NEEDED>
+
+o Microsoft C/C++ with Intel F90 without MPI
+
+F90=ifort
+
+o Intel C/C++ with Compaq F90 without MPI
+
+CC=icl 
+CXX='icl /TP'
+
+o Intel C/C++ with Intel F90 without MPI
+
+CC=icl 
+CXX='icl /TP' 
+F90=ifort
+
+
+onyx3.zib.de
+------------
+
+o 64-bit without MPI
+
+<NO OPTIONS NEEDED>
+
+o 64-bit with MPI
+
+MPI=NATIVE
+
+o 32-bit without MPI
+
+IRIX_BITS=32
+
+o 32-bit with MPI
+
+IRIX_BITS=32
+MPI=NATIVE
+
+peyote.aei.mpg.de
+-----------------
+
+o Intel compilers (Intel icc v8.0.058 / ifort v8.0.039) without MPI
+
+CC=icc
+CXX=icc
+F90=ifort
+FPPFLAGS=-traditional
+HDF5=yes
+
+o Intel compilers (Intel icc v8.0.058 / ifort v8.0.039) with MPI (MPICH ch_p4)
+
+CC=icc
+CXX=icc
+F90=ifort
+FPPFLAGS=-traditional
+HDF5=yes
+MPI=MPICH
+MPICH_DIR=/opt/mpich/intel_ia32
+
+pnp.wustl.edu
+-----------------
+
+o Intel compilers (Intel icc v8.1.023 / ifort v8.1.023) without MPI
+
+CC=icc
+CXX=icc
+F77=ifort
+F90=ifort
+LD=icpc
+
+# lib dir
+LIBDIRS= /opt/intel_fce_80/lib /opt/intel_cce_80/lib
+
+# optimisation up to O2, never try O3
+OPTIMISE=yes
+CXX_OPTIMISE_FLAGS = -axP -O2
+C_OPTIMISE_FLAGS = -axP -O2
+F77_OPTIMISE_FLAGS = -axP -O2
+F90_OPTIMISE_FLAGS = -axP -O2
+
+o Portland PGI Workstation 5.2.4, without MPI
+
+CC=pgCC
+CXX=pgCXX
+F90=pgF90
+F77=pgF77
+#optimization is by default O2
+#adding further optimzation flags
+#caused linker error
+
+ps2.cct.lsu.edu
+---------------
+
+o Without MPI
+
+<NO OPTIONS NEEDED>
+
+psi.rzg.mpg.de
+--------------
+
+o Without MPI
+
+HDF5=yes
+HDF5_DIR=/u/tradke/install/hdf5
+
+o With MPI
+
+MPI=NATIVE
+HDF5=yes
+HDF5_DIR=/u/tradke/install/hdf5
+
+sr8000.lrz-muenchen.de
+----------------------
+
+o Without MPI
+
+HDF5=yes
+
+o With MPI
+
+HDF5=yes
+MPI=NATIVE
+
+tg-login.ncsa.teragrid.org
+--------------------------
+
+o Intel compilers, no MPI
+
+F77=ifort
+F90=ifort
+CC=icc
+CXX=icc
+
+HDF5=yes
+HDF5_DIR=/usr/local/hdf5/1.6.2r2
+
+o Intel Fortran and gcc, no MPI
+
+F90=ifort
+CC=gcc
+CXX=gcc
+FPP=$${PERL} $${CCTK_HOME}/lib/sbin/cpp.pl
+
+HDF5=yes
+HDF5_DIR=/usr/local/hdf5/1.6.2r2
+
+o Intel compilers with MPI
+
+# Note: need to add -lpmpich to link line
+
+F77=ifort
+F90=ifort
+
+CC=icc
+CXX=icc
+
+HDF5=yes
+HDF5_DIR=/usr/local/hdf5/1.6.2r2
+
+MPI=MPICH
+MPICH_DIR=/usr/local/mpich/mpich-gm-1.2.5..10-intel-r1
+MPICH_DEVICE=ch_gm
+MYRINET_DIR=/opt/gm
+PTHREADS=yes
+
+o Intel Fortran and gcc with MPI
+
+# Note: need to add -lpmpich to link line
+
+F90=ifort
+CC=gcc
+CXX=gcc
+FPP=$${PERL} $${CCTK_HOME}/lib/sbin/cpp.pl
+
+HDF5=yes
+HDF5_DIR=/usr/local/hdf5/1.6.2r2
+
+MPI=MPICH
+MPICH_DIR=/usr/local/mpich/mpich-gm-1.2.5..10-intel-r1
+MPICH_DEVICE=ch_gm
+MYRINET_DIR=/opt/gm
+PTHREADS=yes
+
+xbox.cct.lsu.edu (Xbox)
+----------------------
+
+o Without MPI
+
+F90=ifc
+
+o With MPI
+
+F90=ifc
+MPI=LAM
+LIBS = pthread util

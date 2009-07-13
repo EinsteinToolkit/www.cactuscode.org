@@ -1,0 +1,345 @@
+Release Notices for Cactus 4.0 beta 9
+=====================================
+Date: 21st December 2000
+
+Released modules:
+================
+      Cactus
+      CactusBase
+      CactusBench
+      CactusConnect
+      CactusEinstein
+      CactusElliptic
+      CactusExamples
+      CactusIO
+      CactusPUGH
+      CactusPUGHIO
+      CactusTest
+      CactusWave
+      CactusExternal
+
+New thorns:
+==========
+   
+      CactusConnect arrangement
+      CactusIO arrangement
+      CactusExternal arrangement
+
+      CactusConnect/HTTPD
+      CactusConnect/HTTPDExtra
+      CactusExternal/FlexIO
+      CactusExternal/jpeg6b
+      CactusIO/IOJpeg
+      CactusPUGH/PUGHReduce
+      
+
+Removed thorns:
+==============
+
+      external arrangement
+      external/IEEEIO (moved to CactusExternal/FlexIO)
+      external/TCPXX
+      external/RemoteIO
+      external/jpeg6b (moved to CactusExternal/jpeg6b)
+
+CVS Tag: Cactus_4_0_Beta_9
+=======
+
+
+==============================================================================
+
+
+CHANGES FOR BETA 9
+==================
+
+Flesh
+=====
+
+1) New functions:
+	CCTK_RunTime - number of seconds since simulation started
+	CCTK_CurrentTime - string with current time
+	CCTK_CurrentData - string with current date
+        CCTK_ParameterFilename - returns full name of parameter file used
+	Util_SplitFilename - returns directory and filename from full name
+
+2) Running:
+
+	The parameter file can now be read from standard input by adding
+        a "-" at the end of the executable line, e.g.
+
+	 ./exe/cactus_myconfig -
+
+3) Compilation:
+
+	CST will no longer stop for duplicate thorn names in the ThornList
+	which are in the same arrangement
+
+	The thorn list can be specified on the compile line with the new
+	argument THORNS. This can be used in conjunction with THORNLIST
+
+	  gmake myconfig-config THORNS="Fancy/NewOne" THORNLIST="OldOne.th"
+
+        (Note that the notation for this will probably change slightly 
+         for the next release)
+
+        CST now accept USES without a range block in the param.ccl
+
+        CST no longer accepts deprecated keyword LOGICAL for BOOLEAN
+
+4) Deprecated:
+
+	CCTK_GetInterpHandle        -> CCTK_InterpHandle
+	CCTK_RegisterInterpOperator -> CCTK_InterpRegisterOperator
+	CCTK_mkdir                  -> CCTK_CreateDirectory
+	FMODIFIER                   -> CCTK_FCALL
+	FORTRAN_NAME                -> CCTK_FNAME
+
+5) Removed deprecated macros
+
+	GROUP_SCALAR -> CCTK_SCALAR
+	GROUP_GF     -> CCTK_GF
+	GROUP_ARRAY  -> CCTK_ARRAY
+
+	GROUP_PRIVATE   -> CCTK_PRIVATE
+	GROUP_PROTECTED -> CCTK_PROTECTED
+	GROUP_PUBLIC    -> CCTK_PUBLIC
+
+6) Changed names
+
+        DISTRIB_CONSTANT -> CCTK_DISTRIB_CONSTANT
+	DISTRIB_DEFAULT  -> CCTK_DISTRIB_DEFAULT
+
+7) Coordinates
+
+	Fixed bug in CCTK_CoordLocalRange
+
+8) CYGWIN/Windows compilation updates
+
+        Works with latest Cygwin (1.1.6)
+        Works with Intel icl and ifl compilers
+        Picks up INCLUDE environment variable when making dependencies
+        LIBS and LIBDIRS may now be set in the make.config.defn file
+        Tested under Windows 2000
+        Preliminary configuration support for HPVM
+             MPI=HPVM HPVM_DIR='...'
+        Preliminary configuration support for MPIPro
+             MPI=MPIPro
+
+        (See README.NT for specific details of Cactus on the Windows platform.)
+
+9) AIX
+
+        Free format F90 now works.
+
+Util Thorns
+===========
+
+1) CactusBase/Time: Added fixed timestep and changed some parameter names
+                 to be more consistent:
+
+		 courant_method -> method
+
+		 options:	given
+				courant_static (was standard)
+				courant_speed  (was courant)
+				courant_time
+
+		 courant_outevery -> timestep_outevery
+
+2) CactusBase/Boundary,CartGrid3D: Deprecated functions
+
+	ConstantBCVar
+	ConstantBCVarI
+	ConstantBCGroup
+	ConstantBCGroupI
+	ApplyConstantBC
+	CopyBCGroup
+	CopyBCGroupI
+	CopyBCVar
+	CopyBCVarI
+	FlatBCGroupI
+	FlatBCGroup
+	FlatBCVarI
+	FlatBCVar
+
+3) CactusBase/IOUtil
+
+   The utility routine to parse variable names in a parameter file string
+   IOUtil_ParseVarsForOutput has now been generalised and moved to the
+   Flesh. It is now called CCTK_TraverseString. 
+
+4) CactusPUGH/PUGH
+
+   No longer parallelises on directions with less than or equal to 
+   2*ghostsize+1 points.
+
+   Reduction operators have been removed from CactusPUGH/PUGH and moved 
+   into the new thorn CactusPUGH/PUGHReduce
+
+5) CactusConnect
+
+   New arrangement with thorns to add a web server to the simulation, which
+   can be accessed via any web browser to access information and basic
+   visualisation for the simulation, as well as providing steering 
+   capabilities. See the WebServer-HOWTO for more details
+
+6) CactusIO/IOJpeg
+
+   IO method providing 2D images in jpeg format
+
+Einstein Thorns
+===============
+
+CactusEinstein/ADM:
+	bound = radiation -> bound = radiative
+
+
+
+==============================================================================
+
+
+KNOWN BUGS IN BETA 9
+====================
+(See Cactus bug tracking system for a complete list)
+
+==============================================================================
+
+
+WHAT TO EXPECT IN BETA 10
+=========================
+
+1) Function definitions in CCL files
+
+2) CCL file with configuration information
+
+3) Full hyperslabbing interface
+
+4) C version of Interp
+
+5) More documentation
+
+6) More bug fixes
+
+==============================================================================
+
+
+TEST MACHINES NOTES
+===================
+
+	   * Intel IA32 (Linux Redhat 6.2)
+                o bifrost.aei-potsdam.mpg.de w/wo MPICH (p4 and shmem devices)
+
+	        Fortran compiler: Absoft F90
+                - not compiling: 
+			CactusElliptic/EllPETSc (compiles with MPI)
+
+	        Fortran compiler: Vast F90
+                - not compiling: 
+			CactusElliptic/EllPETSc (compiles with MPI)
+			CactusEinstein/AHFinder
+                - failing testsuite
+			test_extract.par (file handle problem)
+
+	        Fortran compiler: g77 F77
+                - not compiling: 
+			CactusBench/BenchADM
+			CactusEinstein/ADM
+			CactusEinstein/ADMConstraints
+			CactusEinstein/AHFinder
+			CactusEinstein/Extract
+			CactusEinstein/IDAxiBrillBH
+			CactusEinstein/IDBrillData
+			CactusEinstein/IDLinearWaves
+			CactusEinstein/PsiKadelia
+			CactusEinstein/TimeGeodesic
+			CactusElliptic/EllPETSc
+			CactusElliptic/EllSOR
+			CactusElliptic/EllTest
+			CactusPUGH/Interp
+			CactusTest/TestArrays
+			CactusTest/TestCoordinates
+			CactusTest/TestInclude1
+			CactusTest/TestInclude2
+			CactusTest/TestComplex
+			CactusTest/TestInterp
+			CactusTest/TestReduce
+			CactusWave/WaveToyF90
+			CactusWave/WaveToyFreeF90
+			
+	   * Intel IA32 (Linux Redhat 6.2)
+                o loslobos.alliance.unm.edu 
+                - not compiling: 
+			CactusElliptic/EllPETSc (PETSc not installed)
+			
+           * Cray T3E (Unicos mk2.0.5.X)
+                o berte.zib.de w/wo native MPI
+                - not compiling:
+			CactusElliptic/EllPETSc (PETSc not installed)
+		- failing testsuites
+                        test_AHF_1
+                        test_AHF_2
+                
+           * Dec Alpha (osf4.0f, gcc 2.95.2)
+                o jalapeno.cactuscode.org wo MPICH 
+		- not compiling
+			Cactus/Elliptic/EllPETSc (PETSc not installed)
+		- failing testsuites
+			test_ADM_2
+		- comments:
+			compiles with MPICH (p4, shmem), but didn't get
+			to run testsuite
+
+	   * IBM SP2 (AIX 4.2.0.0)
+                o quad.mcs.anl.gov w/wo native MPI
+                - not compiling:
+			CactusElliptic/EllPETSc (PETSc not configured 
+			for this machine)
+
+           * SGI 64 bit (Irix 6.5)
+                o origin.aei-potsdam.mpg.de, w/wo native MPI
+		- not compiling:
+			CactusElliptic/EllPETSc (compiles with MPI)
+	
+           * SGI 32 bit (Irix 6.5)
+                o nott.aei-potsdam.mpg.de wo MPI
+		- not compiling:
+			CactusElliptic/EllPETSc (compiles with MPI)
+			CactusPUGHIO/IOHDF5 (HDF5 not installed)
+
+           * Intel IA32 (Windows NT 4.0)
+                o ntsc-ts1.ncsa.uiuc.edu w/wo MPI (HPVM)
+                - not compiling:
+			CactusElliptic/EllPETSc (PETSc not installed)
+			CactusPUGHIO/IOHDF5 (HDF5 not installed)
+		- failing testsuites
+                        test_ADM_4
+                        test_extract
+                        test_WaveToy2D
+		- comments: 
+                  MPI configured with MPI=HPVM HPVM_DIR='d:\apps\hpvm'
+                  Test suite not run on MPI compilation due to batch system
+
+           * Intel IA32 (Windows 2000)
+                o ctclogin1.tc.cornell.edu w/wo MPI (MPIPro)
+                - not compiling:
+			CactusElliptic/EllPETSc (PETSc not installed)
+			CactusPUGHIO/IOHDF5 (HDF5 not installed)
+		- failing testsuites
+                        test_extract
+                        test_WaveToy2D
+		- comments: 
+                  MPI configured with MPI=MPIPro
+                  Test suite not run on MPI compilation due to batch system
+
+           * Sun Sparc II (SunOS 5.7)
+                o pitcairn.mcs.anl.gov  (no MPI)
+		- not compiling
+			CactusEinstein/TimeGeodesics
+
+	   * Hitachi SR8000-F1 (HI-UX/MPP)
+		o contact cactusmaint@cactuscode.org for status
+                o sr8000.lrz-muenchen.de w/wo native MPI
+                - not compiling:
+			CactusElliptic/EllPETSc (PETSc not installed)
+			CactusEinstein/TimeGeodesic with MPI
+

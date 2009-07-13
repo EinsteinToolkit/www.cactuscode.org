@@ -1,0 +1,466 @@
+Release Notices for Cactus 4.0 beta 8
+=====================================
+Date: 28th July 2000
+
+Released modules:
+================
+      Cactus
+      CactusBase
+      CactusBench
+      CactusEinstein
+      CactusElliptic
+      CactusExamples
+      CactusPUGH
+      CactusPUGHIO
+      CactusTest
+      CactusWave
+      external
+
+New thorns:
+==========
+      CactusPUGH/PUGHSlab
+      CactusBase/IOASCII
+      CactusWave/WaveBinarySource
+
+Removed thorns:
+==============
+      CactusPUGHIO/IOASCII	
+      CactusWave/IDBinarySource
+      CactusNet/*
+
+New supported architectures
+===========================
+      Solaris
+      Intel IA64
+      Hitachi SR8000-F1 (partial)
+      
+CVS Tag: Cactus_4_0_Beta_8
+=======
+
+
+==============================================================================
+
+
+CHANGES FOR BETA 8
+==================
+
+Infrastructure
+==============
+
+Flesh
+=====
+
+1) Calling Fortran routines
+   FMODIFIER is deprecated (removed in beta 9)
+   FMODIFIER -> CCTK_FCALL
+   FORTRAN_NAME is deprecated (removed in beta 9)
+   FORTRAN_NAME -> CCTK_FNAME
+
+2) Fixed bug in CCTK_SyncGroups which could have affected anyone 
+   synchronising from the scheduler
+
+3) Added new function 
+
+   CCTK_CreateDirectory(pathname, mode)
+
+   which creates a new directory (including any parent directories
+   needed). This function replaces CCTK_mkdir, which will be removed
+   in beta 9.  This new function doesn't use the 'system' call, so
+   has resolved a long-standing problem with the myrinet libraries.
+
+4) Some routine name changes and extra arguements added (needed for 
+   handling coordinate systems for different dimensions). Now as well 
+   as registering coordinate names, coordinate systems are also registered.
+   See the Users Guide for details of the new routines.
+
+   Removed routines
+
+   CCTK_RegisterCoordI
+   CCTK_CoordOrigin
+   CCTK_RegisterCoord
+   CCTK_RegisterCoordRange
+
+   New routines/Changed argument lists
+
+   CCTK_CoordRegisterRange
+   CCTK_CoordRange
+   CCTK_CoordSystemDim
+   CCTK_CoordDir
+   CCTK_CoordIndex
+   CCTK_CoordRegisterData
+
+   Be warned, these could change again slightly, as we realise what
+   the coordinate functions have to be capable of handling.
+
+5) Changed names of interpolation calls to fit standard notation
+
+   CCTK_GetInterpHandle -> CCTK_InterpHandle
+   CCTK_RegisterInterpOperator -> CCTK_InterpRegisterOperator
+
+   Old names will be removed in beta 9
+
+6) Removed deprecated include files 
+
+   cctk_arguments.h -> cctk_Arguments.h
+   cctk_parameters.h -> cctk_Parameters.h
+
+7) Arguments changed to exit calls
+
+   CCTK_Exit(int retval, cctkGH *GH) -> CCTK_Exit(cctkGH *GH, int retval)
+   CCTK_Abort(cctkGH *GH)            -> CCTK_Abort(cctkGH *GH, int retval)
+
+   The first change is just for consistency, the second because MPI_Abort
+   takes an exit code. Driver thorn writers should change any overloaded 
+   functions.
+
+8) Building include files
+
+   The notation for building include files has changed, to make a distinction
+   between executable source code and header files. This is so that 
+   executable source code can be wrapped by a call to CCTK_IsThornActive.
+   See the documentation for details. The old notation will still work
+   but will be removed in Beta 9.
+
+9) Reduction operators
+
+   Registered reduction operators should now return an int, rather than a void.
+
+10) The GNU regex and getopt libraries are only compiled if they, or the
+    equivalent, are not available on the system already.  This solved a
+    long-standing bug when compiling with the Portland C compiler.
+
+Util Thorns
+===========
+
+1) CactusBase/CartGrid3D
+
+   Removed deprecated routines:
+
+	SetCartSymmetry
+	SetCartSymVN
+	CartSymBCGroupI
+	CartSymBCVar
+	CartSymBCVarI
+	CartSymBCGroup
+	SetCartSymBCVar
+	CartSymBCGroup
+	ApplySymmetry
+	RadiativeBCVar
+	RadiativeBCVarI
+	RadiativeBCGroup
+	RadiativeBCGroupI
+
+
+  Replaced by:
+
+	SetCartSymGN 
+	SetCartSymGI
+	SetCartSymVN
+	SetCartSymVI
+	CartSymGN
+	CartSymGI
+	CartSymVN
+	CartSymVI
+
+   Note that all the Fortran calls now have an integer error code as the 
+   first argument
+
+2) CactusPUGH/PUGHSlab: This is a new thorn which returns data from a 
+   hyperslab of a given grid function. This functionality makes writing 
+   IO thorns a lot easier, and will give them much more functionality.
+
+3) CactusBase/IOASCII: CactusPUGHIO/IOASCII now make use of thorn 
+   PUGHSlab to obtain it's data, this means that it no longer makes 
+   use of PUGH, and so has moved arrangements. To compile 
+   CactusBase/IOASCII you should have CactusPUGH/PUGHSlab (or any other 
+   implementation of hyperslab) in your active thorns list.
+
+4) CactusBase/Boundary: 
+
+   The following functions are deprecated, and will be removed in beta 9
+
+   ConstantBCVar
+   ConstantBCVarI
+   ConstantBCGroup
+   ConstantBCGroupI
+   ApplyConstantBC
+   CopyBCGroup
+   CopyBCGroupI
+   CopyBCVar
+   CopyBCVarI
+   FlatBCGroupI
+   FlatBCGroup
+   FlatBCVarI
+   FlatBCVar
+
+   the routines for applying constant boundary conditions now follow 
+   the standard notation
+
+   BndScalarVI (by variable index)
+   BndScalarVN (by variable name)
+   BndScalarGI (by group index)
+   BndScalarGN (by group name)
+
+   BndCopyVI   
+   BndCopyVN   
+   BndCopyGI   
+   BndCopyGN   
+
+   BndRadiativeVI
+   BndRadiativeVN
+   BndRadiativeGI
+   BndRadiativeGN
+
+   BndFlatVI
+   BndFlatVN
+   BndFlatGI
+   BndFlatGN
+
+5) CactusBase/IOASCII:
+
+   Now can do 2D output of ASCII data from 3D grid functions
+
+6) CactusBase/IOUtil, CactusBase/IOASCII, CactusBase/IOFlexIO
+
+   Changed and added parameters for the way that 1D and 2D slices are
+   selected for output. The symmetry parameters (e.g. octant) from CartGrid3D
+   are no longer used, instead there are now parameters for specifying 
+   the slice by a physical coordinate or by a grid index. These parameters
+   default to the parameters in IOUtil, but can be overriden by parameters
+   for the individual methods. The order of choosing the data by parameters
+   in the parameter file is
+
+   * if an index is set for a method that is used or
+   * if an index is set for IOUtil that is used or
+   * if a coordinate value is set for a method that is used or
+   * if a coordinate value is set for IOUtil that is used
+
+   if nothing is set in the parameter file you get the same output as 
+   before EXCEPT for a full grid the lines/planes will move to index 0 
+   rather than being at the center of the grid.
+
+7) CactusBase/IOUtil
+
+   The utility routine to parse variable names in a parameter file string
+   for IO is now called 
+
+   IOUtil_ParseVarsForOutput
+
+   changed from ParseVarsForOutput
+
+8) CactusWave/WaveBinarySource
+
+   New thorn which evolves orbiting scalar sources, this is useful since
+   it provides a constant wave stream for testing.
+
+9) CactusTest: New Arrangement
+
+   Thorns for testing different parts of the Cactus infrastructure
+
+10) CactusExamples: New Arrangement
+
+    Example applications ... the WaveToy example in 1D and 2D, defining
+    coordinates etc.
+
+11) CactusNet
+
+    This is still available, but due to the very active development of the
+    thorns in this arrangement we decided to not include it in the set of
+    tested thorns for this release.
+
+==============================================================================
+
+
+KNOWN BUGS IN BETA 8
+====================
+(See Cactus bug tracking system for a complete list)
+
+1) Output for DISTRIB=CONSTANT arrays isn't supported yet.
+2) Deletion of a thorn which was in the ThornList of a
+   configuration requires the user to manually delete
+   make.thornlist in <config>/config-data
+3) No warning for unreachable schedule points.
+4) Activation doesn't check that all parent and friend 
+   implementations are activated.
+ 
+==============================================================================
+
+
+WHAT TO EXPECT IN BETA 9
+========================
+
+1) More sophisticated method to incorporate external libraries
+2) Function aliasing
+3) Directional syncing policies in the schedule.ccl
+4) gmake bugreport, gmake <config>-bugreport
+
+... and, as normal, more documentation and bug fixes.
+
+==============================================================================
+
+
+TEST MACHINES NOTES
+===================
+
+	   * Intel IA32 (Linux Redhat 6.2)
+                o bifrost.aei-potsdam.mpg.de w/wo MPICH (p4 and shmem devices)
+
+	        Fortran compiler: Portland, Absoft F90
+                - not compiling: 
+			CactusElliptic/EllPETSc (compiles with MPI)
+
+	        Fortran compiler: Vast F90
+                - not compiling: 
+			CactusElliptic/EllPETSc (compiles with MPI)
+			CactusEinstein/AHFinder
+
+	        Fortran compiler: g77 F77
+                - not compiling: 
+			CactusBench/BenchADM
+			CactusEinstein/ADM
+			CactusEinstein/ADMConstraints
+			CactusEinstein/AHFinder
+			CactusEinstein/Extract
+			CactusEinstein/IDAxiBrillBH
+			CactusEinstein/IDBrillData
+			CactusEinstein/IDLinearWaves
+			CactusEinstein/PsiKadelia
+			CactusEinstein/TimeGeodesic
+			CactusElliptic/EllPETSc
+			CactusElliptic/EllSOR
+			CactusElliptic/EllTest
+			CactusPUGH/Interp
+			CactusTest/TestArrays
+			CactusTest/TestCoordinates
+			CactusTest/TestInclude1
+			CactusTest/TestInclude2
+			CactusTest/TestComplex
+			CactusTest/TestInterp
+			CactusWave/WaveToyF90
+			CactusWave/WaveToyFreeF90
+			
+
+	   * Intel IA32 Cluster (Linux Redhat 6.2)
+                o roadrunner.alliance.unm.edu w/wo MPICH (gm device)
+		- not compiling:
+			CactusElliptic/EllPETSc (should work) 
+			CactusPUGHIO/IOHDF5 (HDF5 not installed)
+
+			
+           * Cray T3E (Unicos mk2.0.5.X)
+                o berte.zib.de w/wo native MPI
+                - not compiling:
+			CactusElliptic/EllPETSc (PETSc not installed)
+			CactusPUGHIO/IsoSurfacer
+			external/RemoteIO
+			external/TCPXX
+		- failing testsuite
+			CactusEinstein/IDAxiBrillBH
+
+
+           * Dec Alpha (osf4.0f, gcc 2.95.2)
+                o jalapeno.cactuscode.org w/wo MPICH (shmem and p4 devices)
+		- not compiling:
+			CactusElliptic/EllPETSc (not installed)
+			external/RemoteIO
+			external/TCPXX
+
+
+	   * HP Exemplar (HPUX 10.01)
+		We no longer have access to a HP Exemplar for testing
+
+
+	   * IBM SP2 (AIX 4.2.0.0)
+                o quad.mcs.anl.gov w/wo native MPI
+		- not compiling:
+			CactusElliptic/EllPETSc (not installed)
+			CactusPUGHIO/IOHDF5 
+			CactusPUGHIO/IsoSurfacer
+			CactusWave/WaveToyFreeF90
+			external/RemoteIO,
+			external/TCPXX,
+	        - comments:
+			Free format fortran isn't supported yet
+
+           * SGI 64 bit (Irix 6.5)
+                o origin.aei-potsdam.mpg.de, w/wo native MPI
+		- not compiling:
+			CactusElliptic/EllPETSc (compiles with MPI)
+
+	
+           * SGI 32 bit (Irix 6.5)
+                o nott.aei-potsdam.mpg.de wo MPI
+		- not compiling
+			CactusElliptic/EllPETSc (not installed)
+			CactusPUGHIO/IOHDF5 (not installed)
+
+
+           * Intel IA64 (TurboLinux Frontier 2.3.99-pre6-000501-18)
+                o  SGI gcc and f90  crosscompiler wo MPI
+                - not compiling
+			CactusElliptic/EllPETSc (PETSc not installed)
+			CactusPUGHIO/IOHDF5 (HDF5 not installed)
+			CactusPUGHIO/IsoSurfacer (compiles with native compiler)
+			external/RemoteIO (compiles with native compiler)
+			external/TCPXX (compiles with native compiler)
+
+
+           * Intel IA32 (Windows NT 4.0)
+                o saraband.aei-potsdam.mpg.de (VM) wo MPI
+                - not compiling
+			CactusElliptic/EllPETSc (not installed)
+			CactusPUGHIO/IOHDF5 (not installed)
+			CactusPUGHIO/IsoSurfacer
+			external/RemoteIO
+			external/TCPXX
+		- failing testsuite
+			CactusEinstein/ADM
+			CactusEinstein/AHFinder
+			CactusExamples/WaveToy2D
+			CactusPUGHIO/IOFlexIO
+		- comments: 
+                        *** Need to use beta 5 version of IEEEIO ***
+                            > cd arrangements/external/IEEEIO
+                            > cvs update -r Cactus_4_0_Beta_5
+
+
+           * Intel IA32 (Windows NT 4.0)
+                o ntsc-ts1.ncsa.uiuc.edu w/wo MPI (HPVM)
+                - not compiling
+			CactusElliptic/EllPETSc (not installed)
+			CactusPUGHIO/IOHDF5 (not installed)
+			CactusPUGHIO/IsoSurfacer
+			external/RemoteIO
+			external/TCPXX
+		- failing testsuite
+			CactusEinstein/ADM
+			CactusEinstein/AHFinder
+			CactusExamples/WaveToy2D
+			CactusPUGHIO/IOFlexIO
+		- comments: 
+                        *** Need to use beta 5 version of IEEEIO ***
+                            > cd arrangements/external/IEEEIO
+                            > cvs update -r Cactus_4_0_Beta_5
+			Maybe problems with MPI (but probably just
+			this machine)
+
+
+           * Sun Sparc II (SunOS 5.7)
+                o ufer.zib.de (VM) w/wo MPICH (p4 device)
+                - not compiling
+			CactusEinstein/IDAxiBrillBH 
+			CactusElliptic/EllPETSc (PETSc not installed)
+			CactusPUGHIO/IOFlexIO
+			CactusPUGHIO/IOHDF5 (HDF5 not installed)
+			CactusPUGHIO/IsoSurfacer
+			external/IEEEIO
+		- comments: 
+			need to compile with gmake -k
+			and no optimisation (for TimeGeodesic)
+
+
+	   * Hitachi SR8000-F1 (HI-UX/MPP)
+		o contact cactusmaint@cactuscode.org for status
+
+
+

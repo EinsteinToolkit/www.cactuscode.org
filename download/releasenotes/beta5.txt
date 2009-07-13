@@ -1,0 +1,192 @@
+Release Notices for Cactus 4.0 beta 5
+=====================================
+Friday November 12th 1999
+
+(Super Computing 1999 Release)
+
+Released modules:
+================
+
+      Cactus
+      CactusBase
+      CactusEinstein
+      CactusElliptic
+      CactusNet
+      CactusPUGH
+      CactusPUGHIO
+      CactusWave
+      external
+
+New thorns:
+==========
+      CactusEinstein/TimeGeodesic
+      CactusEinstein/AHFinder
+
+Main Changes:
+============
+      Faster compilation times (Cactus)
+      Initial implementation of timing information (Cactus)   
+
+CVS Tag: Cactus_4_0_Beta_5
+=======
+
+
+==============================================================================
+
+
+CHANGES FOR BETA 5
+==================
+
+Utils
+=====
+
+1) Recompilation times faster. Now adding or removing thorns does not involve
+   a complete rebuild
+
+2) Initial implementation of timing information, use parameter Cactus::timing_
+
+
+Util Thorns
+===========
+
+1) CactusBase/Boundary: Robin boundary conditions added
+
+2) CactusPUGHIO/IsoSurfacer: Now works correctly for data from analysis routines
+
+
+Relativity Thorns
+=================
+
+1) CactusEinstein/TimeGeodesic: New thorn: Tracks timelike geodesics 
+   with given initial positions and velocities.
+
+2) CactusEinstein/AHFinder: New thorn: locates apparent horizons on a 
+   slice
+
+==============================================================================
+
+
+KNOWN BUGS IN BETA 5
+====================
+(See Cactus bug tracking system for a complete list)
+
+1) CactusNet/http, external/TCPXX, external/RemoteIO still not compiling
+   on all platforms
+
+2) EllPETSc only compiles with MPI, but doesn't tell you this
+
+3) AxiBrillBH has problems on some platforms
+
+
+==============================================================================
+
+
+WHAT TO EXPECT IN BETA 6
+========================
+
+1) Fixes for all known bugs in Beta 5
+
+2) Finished implementation of 1D, 2D, 3D arrays
+
+3) Maximal slicing
+
+4) Generic implementation of parameter choice for elliptic slicings 
+
+
+==============================================================================
+
+
+TEST MACHINES NOTES
+===================
+
+           * Intel Linux
+                o bifrost.aei-potsdam.mpg.de Redhat 6.0, Absoft
+                  compiler, wo MPI
+                     + Remove: 
+			CactusElliptic/EllPETSc
+			CactusPUGHIO/IOHDF5,
+                     + Notes: CactusElliptic/EllPETSc compiled with
+                       MPICH
+                o gullveig.aei-potsdam.mpg.de Redhat 6.0, Absoft
+                  compiler, MPI LAM
+                     + Remove: 
+			CactusPUGHIO/IOHDF5,
+			CactusElliptic/EllPETSc
+
+           * Dec Alpha
+                o galar.aei-potsdam.mpg.de wo MPI
+                     + Remove: 
+			CactusEinstein/IDAxiBrillBH
+			CactusElliptic/EllPETSc,
+			CactusNet/http, 
+			CactusPUGHIO/HDF5, 
+			external/RemoteIO,
+
+           * SGI 64 bit 
+                o kvasir.aei-potsdam.mpg.de Irix 6.5, w/wo native
+                  MPI
+                     + Remove: 
+			CactusElliptic/EllPETSc
+                     + Configure: HDF5=yes MPI=NATIVE
+                       HDF5_DIR=/usr/local/apps/hdf5
+
+           * SGI 32 bit
+                o nott.aei-potsdam.mpg.de Irix 6.5 wo MPI
+                     + Remove: 
+			CactusElliptic/EllPETSc
+			CactusPUGHIO/IOHDF5,
+                     + Notes: Problem with output for PsiKadelia
+                       test
+
+           * T3E
+                o pc.rzg.mpg.de w/wo native MPI
+                     + Remove:
+			CactusEinstein/IDAxiBrillBH
+			CactusElliptic/EllPETSc,
+			CactusPUGHIO/IOHDF5,
+
+           * Windows NT
+                o ntsc-ts1.ncsa.uiuc.edu w/wo HPVM MPI
+                     + Remove: 
+			CactusElliptic/PETSc, 
+			CactusNet/http, 
+			CactusNet/NetGeometry,
+			CactusPUGHIO/IOHDF5,
+			CactusPUGHIO/IsoSurfacer, 
+			CactusWave/IDScalarWaveCXX,
+			CactusWave/IDWaveToyCXX
+			external/RemoteIO,
+			external/TCPXX,
+	             + Configure: MPI=CUSTOM MPI_LIBS="mpi.lib fm.lib
+                       advapi32.lib kernel32.lib wsock32.lib" MPI_INC_DIRS
+                       ="d:/apps/hpvm/include"
+	             + Notes: testsuite checking technology doesn't
+                              work here with MPI because of batch queues
+
+           * HP
+                o exemplar.npaci.edu wo MPI, HP-UX 10.01
+                     + Remove: 
+			CactusElliptic/PETSc, 
+			CactusNet/http, 
+			CactusNet/NetGeometry
+			CactusPUGHIO/IsoSurfacer,
+			CactusPUGHIO/IOHDF5
+			external/RemoteIO,
+			external/TCPXX,
+
+	   * SP2
+		o quad.mcs.anl.gov wo MPI
+		     + Remove: 
+			CactusEinstein/IDAxiBrillBH, 
+			CactusElliptic/EllPETSc, 
+			CactusNet/http, 
+			CactusNet/NetGeometry, 
+			CactusPUGHIO/IsoSurfacer,
+			CactusPUGHIO/IOHDF5
+			external/RemoteIO,
+			external/TCPXX,
+	             + Notes: dependencies broken for IEEEIO, can ignore
+                              and continue
+
+
+

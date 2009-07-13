@@ -1,0 +1,198 @@
+Release Notices for Cactus 4.0 beta 4
+=====================================
+Monday November 1st 1999
+
+
+Released modules:
+================
+
+      Cactus
+      CactusBase
+      CactusEinstein
+      CactusElliptic
+      CactusNet
+      CactusPUGH
+      CactusPUGHIO
+      CactusWave
+      external
+
+
+New thorns:
+==========
+      CactusEinstein/IDAxiBrillBH
+      CactusEinstein/Extract
+      CactusNet/NetGeometry
+
+Main Changes:
+============
+      Faster compilation times (Cactus)
+      
+
+CVS Tag: Cactus_4_0_Beta_4
+=======
+
+
+==============================================================================
+
+
+CHANGES FOR BETA 4
+==================
+
+
+Utils
+=====
+
+1) CST: The perl part of the compilation has been optimised, and
+   is now much faster
+
+2) Compilation for thorns with large numbers of grid variables fixed
+   on origin
+
+3) Testsuite checking technology fixed for NT
+
+
+Util Thorns
+===========
+
+1) CactusBase/Boundary: Bugs fixed in radiation boundary conditions.
+   Copying boundary conditions added. ConstantBC conditions
+   renamed to ScalarBC. ConstantBC will be removed in next beta release.
+
+2) CactusPUGHIO/IOASCII: Memory bugs fixed
+
+3) CactusPUGHIO/IsoSurfacer: Now works on T3E
+
+4) CactusNet/NetGeometry: Generic interface for data streaming via
+   a TCP socket connection to viz clients
+
+Relativity Thorns
+=================
+
+1) CactusEinstein/IDAxiBrillBH: New thorn: Constructs initial data for a 
+   black hole with an even parity perturbation. This thorn still has a little
+   trouble on a few platforms, see below for details
+
+2) CactusEinstein/Extract: New thorn: Extracts gauge invariant waveforms
+   from a spacetime with approximate spherical symmetry
+ 
+
+==============================================================================
+
+
+KNOWN BUGS IN BETA 4
+====================
+(See Cactus bug tracking system for a complete list)
+
+1) CactusNet/http, external/TCPXX, external/RemoteIO still not compiling
+   on all platforms
+
+2) EllPETSc only compiles with MPI, but doesn't tell you this
+
+3) AxiBrillBH has problems on some platforms
+
+
+==============================================================================
+
+
+WHAT TO EXPECT IN BETA 5
+========================
+
+1) Fixes for all known bugs in Beta 4
+
+2) Implementation of 1D, 2D, 3D arrays
+
+3) Maximal slicing
+
+4) Generic implementation of parameter choice for elliptic slicings 
+
+5) Apparent horizon finding thorn
+
+
+==============================================================================
+
+
+TEST MACHINES NOTES
+===================
+
+           * Intel Linux
+                o bifrost.aei-potsdam.mpg.de Redhat 6.0, Absoft
+                  compiler, wo MPI
+                     + Remove: CactusPUGHIO/IOHDF5,
+                       CactusElliptic/EllPETSc
+                     + Notes: CactusElliptic/EllPETSc compiled with
+                       MPICH
+                o gullveig.aei-potsdam.mpg.de Redhat 6.0, Absoft
+                  compiler, MPI LAM
+                     + Remove: CactusPUGHIO/IOHDF5,
+                       CactusElliptic/EllPETSc
+
+           * Dec Alpha
+                o galar.aei-potsdam.mpg.de wo MPI
+                     + Remove: CactusElliptic/EllPETSc,
+                       CactusPUGHIO/HDF5, external/RemoteIO,
+                       CactusNet/http, CactusEinstein/IDAxiBrillBH
+
+           * SGI 64 bit
+                o origin.aei-potsdam.mpg.de Irix 6.5, w/wo native
+                  MPI
+                     + Remove: CactusElliptic/EllPETSc
+                     + Configure: HDF5=yes MPI=NATIVE
+                       HDF5_DIR=/usr/local/apps/hdf5
+
+           * SGI 32 bit
+                o nott.aei-potsdam.mpg.de Irix 6.5 wo MPI
+                     + Remove: CactusPUGHIO/IOHDF5,
+                       CactusElliptic/EllPETSc
+                     + Notes: Problem with output for PsiKadelia
+                       test
+                o null.wustl.edu Irix 6.2 wo MPI
+                     + Remove: CactusNet/http, CactusPUGHIO/IOHDF5,
+                       CactusElliptic/EllPETSc, external/TCPXX,
+                       external/RemoteIO
+                     + Notes: Gives a lot of warnings about data
+                       alignment
+
+           * T3E
+                o pc.rzg.mpg.de w/wo native MPI
+                     + Remove:
+                       CactusElliptic/EllPETSc,CactusPUGHIO/IOHDF5,
+		       CactusEinstein/IDAxiBrillBH
+
+           * Windows NT
+                o saraband.aei-potsdam.mpg.de wo MPI
+                     + Remove: CactusNet/http, external/RemoteIO,
+                       CactusElliptic/PETSc,
+                       CactusPUGHIO/IsoSurfacer, external/TCPXX,
+                       CactusWave/IDScalarWaveCXX,
+                       CactusWave/IDWaveToyCXX
+                o ntsc-ts1.ncsa.uiuc.edu w/wo HPVM MPI
+                     + Remove: CactusNet/http, external/RemoteIO,
+                       CactusElliptic/PETSc, CactusPUGHIO/IOHDF5,
+                       CactusPUGHIO/IsoSurfacer, external/TCPXX,
+                       CactusWave/IDScalarWaveCXX,
+                       CactusWave/IDWaveToyCXX
+	             + Configure: MPI=CUSTOM MPI_LIBS="mpi.lib fm.lib
+                       advapi32.lib kernel32.lib wsock32.lib" MPI_INC_DIRS
+                       ="d:/apps/hpvm/include"
+	             + Notes: testsuite checking technology doesn't
+                              work here with MPI because of batch queues
+
+           * HP
+                o exemplar.npaci.edu wo MPI, HP-UX 10.01
+                     + Remove: CactusNet/http, external/RemoteIO,
+                       CactusPUGHIO/IsoSurfacer,
+                       CactusElliptic/PETSc, external/TCPXX,
+		       CactusNet/NetGeometry
+
+	   * SP2
+		o quad.mcs.anl.gov wo MPI
+		     + Remove: CactusNet/http, external/RemoteIO,
+		       CactusPUGHIO/IsoSurfacer,
+		       CactusNet/NetGeometry, external/TCPXX,
+		       CactusEinstein/IDAxiBrillBH, 
+	               CactusElliptic/EllPETSc, CactusPUGHIO/IOHDF5
+	             + Notes: dependencies broken for IEEEIO, can ignore
+                              and continue
+
+
+

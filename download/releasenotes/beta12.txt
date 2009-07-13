@@ -1,0 +1,372 @@
+Release Notices for Cactus 4.0 beta 12
+======================================
+Date: June 7, 2002
+
+Released modules:
+================
+      Cactus
+      CactusBase
+      CactusBench
+      CactusConnect
+      CactusEinstein
+      CactusElliptic
+      CactusExamples
+      CactusExternal
+      CactusIO
+      CactusPUGH
+      CactusPUGHIO
+      CactusTest
+      CactusUtils
+      CactusWave
+
+New thorns:
+==========
+      CactusPUGHIO/IOHDF5           (formerly in AlphaThorns)
+      CactusPUGHIO/IOHDF5Util       (formerly in BetaThorns)
+      CactusPUGHIO/IOStreamedHDF5   (formerly in BetaThorns)
+      CactusPUGHIO/IOPanda          (formerly in AlphaThorns)
+      CactusExamples/HelloWorld
+      CactusExamples/SampleIO
+      CactusExamples/DemoInterp     (former CactusTest/TestInterp)
+      CactusConnect/Socket          (formerly in BetaThorns)
+      CactusBase/LocalInterp        (formerly in BetaThorns)
+      CactusTest/TestInterp         (replaced by new version)
+      CactusEinstein/ADMAnalysis
+      CactusEinstein/ADMBase
+      CactusEinstein/ADMConstraints
+      CactusEinstein/CoordGauge
+      CactusEinstein/EvolSimple
+      CactusEinstein/IDSimple
+      CactusEinstein/SpaceMask
+      CactusEinstein/StaticConformal
+
+Removed thorns:
+==============
+      CactusPUGHIO/IOHDF5 (replaced by new version from AlphaThorns arrangement
+      CactusElliptic/EllTest
+      CactusEinstein/Einstein
+
+Deprecated thorns:
+=================
+
+New supported architectures / operating systems
+===============================================
+
+Fujitsu VPP300, VPP700, VPP5000
+IA32/OpenBSD 3.0 and 3.1
+IA32/Windows XP
+
+CVS Tag:
+
+Cactus_4_0_Beta_12
+
+==============================================================================
+
+
+CHANGES FOR BETA 12
+===================
+
+Utilities
+=========
+
+Testsuites:
+      New scripts for running and comparing testsuites with more options
+      and output.
+
+Flesh
+=====
+
+Key/value tables:
+      A standard API to store, query and, pass around key/value tables.
+      A table holds a set of key/value pairs, where the key is a character
+      string and the value may be a scalar or 1-dimensional array of any
+      Cactus data type (character, integer, real number, or complex number).
+      The table API will be used by other Cactus APIs such as hyperslabbing,
+      reduction, interpolation, and I/O thorns to pass optional information.
+      (There's a new chapter in the User's Guide on how to use the table API.)
+
+Vector groups:
+      Can have a group of variables which appears as a one
+      dimensional array of the sources, with the number of GVs in
+      this group decided at run time.
+
+Additions of array sizes:
+      can specify sizes by integer constants or parameters (from
+      same thorn or shared parameter) which may be used in arithmetic
+      operations (using *,+,/,-,%,^)
+
+Scheduler:
+      STORAGE lines in the schedule.ccl file must now indicate how
+      many timelevels to use, for grid variables with more than one
+      timelevel.
+
+Array parameters:
+      A parameters can now be an array of values instead of just a
+      single number.
+
+Accumulator parameters:
+      A parameter value can now be automatically built from the
+      values of other parameters.
+
+Parameter aliasing:
+      Parameters can now be given a different name from their
+      original definition in the sources, or other thorns which
+      use them.  This can be used to prevent conflicts when
+      using or extending a parameter from another implementation.
+
+TAGS on groups:
+      Groups can now have an optional tags table (a set of key value
+      pairs) associated with them.  These can be queried and
+      manipulated through the standard table interface.
+
+
+Util Thorns
+===========
+
+CactusBase/LocalInterp:
+      This thorn provides interpolation local to a processor.  It includes
+      the former PUGHInterp CCTK_InterpLocal() interpolator, and a new
+      CCTK_InterpLocalUniform() interpolator.
+
+CactusConnect/Socket:
+      This thorn provides platform-independent socket I/O functionality
+      which can be used by other thorns.
+      Thorns CactusConnect/HTTPD and CactusPUGHIO/IOStreamedHDF5 now inherit
+      from thorn Socket.
+
+New I/O thorns:
+      IOHDF5, IOHDF5Util, IOStreamedHDF5, and IOPanda were moved from their
+      development arrangements into production mode. They provide new I/O
+      methods for output of arbitrary grid variables (and hyperslabs thereof)
+      in HDF5 and IEEEIO file format.
+
+Reorganization of I/O Parameters:
+      Some I/O parameter names changed in order to make the naming scheme
+      consistent between all I/O thorns. The old parameter names are still
+      there and can be used. A perl script is provided to rename the changed
+      I/O parameters in your parameter files automatically:
+
+        http://www.cactuscode.org/Development/Release/FixParametersForBETA13.pl
+
+CactusBase/IOUtil:
+      The new filenaming scheme for output files is now the default.
+      This effects all existing testsuites because the output filenames
+      changed.
+      The old scheme can be selected by setting IO::new_filename_scheme = "no".
+
+CactusBase/IOASCII:
+CactusIO/IOJpeg:
+CactusPUGHIO/IOHDF5:
+CactusPUGHIO/IOStreamedHDF5:
+CactusPUGHIO/IOFlexIO:
+CactusPUGHIO/IOPanda:
+CactusExamples/SampleIO:
+      The option 'out_every' can be set in an option string of the 'out_vars'
+      I/O parameter to set the output frequency for individual variables.
+
+CactusPUGHIO/IOHDF5:
+CactusPUGHIO/IOStreamedHDF5:
+CactusPUGHIO/IOFlexIO:
+CactusPUGHIO/IOPanda:
+      The options 'origin', 'direction', 'extent', and 'downsample' can be
+      set as hyperslab parameters in an option string of the 'out_vars' I/O
+      parameter to specify a hyperslab selection for individual variables.
+
+
+Einstein Thorns
+===============
+
+The Einstein thorns were reworked for Beta 12, essentially breaking up
+the former CactusEinstein/Einstein into more modular components. Much
+more documentation for the Einstein thorns is now available in the
+ThornGuide.
+
+Refer to the web pages at
+
+      www.cactuscode.org/Community/Relativity.html
+
+for a complete description.
+
+Test Thorns
+===========
+
+CactusTest/TestInterp
+      This is a new test driver for interpolators, which tests 3 different
+      interpolator APIs: CCTK_InterpGV(), CCTK_InterpLocal(), and
+      CCTK_InterpLocalUniform().
+
+
+==============================================================================
+
+
+KNOWN BUGS IN BETA 12
+=====================
+(See Cactus bug tracking system for a complete list)
+
+ * The testsuite test_wavef90_zero.par from CactusWave/WaveToyF90 doesn't
+   pass on most platforms because of uninitialized boundaries.
+
+ * The testsuite test_maximal_1.par from CactusEinstein/Maximal doesn't
+   pass on multiple processors.
+
+ * Recovering and file reading from chunked files doesn't work because
+   of a bug in the I/O and hyperslabbing code.
+   You should recombine the files into a single unchunked fike and restart
+   from that one instead.
+
+ * Some testsuites from thorn CactusTest/TestInterp are reported as failing
+   on a few platforms although the created output files only differ in
+   machine precision. This is because the Cactus testsuite script cannot
+   be configured yet to use different precisions when comparing individual
+   output files in the same testsuite.
+
+
+==============================================================================
+
+
+WHAT TO EXPECT IN BETA 13
+=========================
+
+Improved interfaces for Interpolation and Reduction
+
+==============================================================================
+
+
+TEST MACHINES NOTES
+===================
+
+ Notes:
+
+ 1. CactusElliptic/EllPETSc only tested on Linux IA32 and SGI 64 bit
+ 2. CactusPUGHIO/IOPanda only tested with MPI configurations
+ 3. On Cray T3E, SP3, and Fujitsu systems the ThornList had to be split into
+    two separate lists because the bindings library wouldn't build otherwise
+    (argument line to ar command too long).
+
+
+  * Intel IA32 (Linux Redhat 7.2, LAM/MPICH)
+
+     o gullveig.aei.mgp.de w/wo MPI (Intel ifc/icc 6.0)
+       - testsuites failing
+         CactusWave/WaveToyF90 (test_wavef90_zero.par)
+
+     o gullveig.aei.mgp.de w/wo MPI (Absoft f90, gcc 2.76)
+       - testsuites failing
+         CactusWave/WaveToyF90 (test_wavef90_zero.par)
+
+     o platinum.ncsa.uiuc.edu w/wo MPI (Portland C/C++/Fortran compilers 3.3-2)
+       - testsuites failing
+         CactusWave/WaveToyF90 (test_wavef90_zero.par)
+         CactusEinstein/IDBrillData (test_wsor.par)
+
+
+  * Intel IA64 (Linux ia64 2.4.16)
+
+     o titan.ncsa.uiuc.edu  Intel C/C++/F90 wo MPI
+       - testsuites failing
+         CactusWave/WaveToyF90 (test_wavef90_zero.par)
+
+
+ * Intel IA32 (Windows XP/Windows NT, Digital Fortran 6.0, MSVC++ ??)
+
+    o gullveig.aei-potsdam.mpg.de wo MPI
+      - not compiling (HDF5 not installed)
+          CactusPUGHIO/IOHDF5Util
+          CactusPUGHIO/IOHDF5
+          CactusPUGHIO/IOStreamedHDF5
+
+      - testsuites failing
+          CactusEinstein/ADM (test_ADMadj.par)
+          CactusEinstein/ADMConstraints (ADMConstraints_Shift.par)
+
+
+ * SGI 64 bit (Irix 6.5, MIPSPro f90/cc/CC (7.3.1.2m), Native MPI)
+
+    o origin.aei-potsdam.mpg.de, w/wo MPI
+
+
+ * SGI 32 bit (Irix 6.5, MIPSpro f90/cc/CC (7.2.1))
+
+    o lux.aei-potsdam.mpg.de w native compilers wo MPI
+      - not compiling
+          CactusEinstein/TimeGeodesic
+
+      - testsuites failing
+          CactusEinstein/ADMConstraints (ADMConstraints_Shift.par)
+
+
+ * Dec Alpha (OSF1 V5.1, Compaq cc(6.4-014) C++(6.3-008) f90 (5.5-1877),
+              Elan MPI)
+
+    o lemieux.psc.edu, w/wo MPI
+      - testsuites failing
+          with MPI some testsuites are failing but it looks like a transient
+          file problem
+
+
+ * Dec Alpha (OSF1 V4.0, c++(gcc version 2.8.1) DIGITAL Fortran 90 V5.2-705,
+              w/wo MPI)
+
+    o holodec19.aei-potsdam.mpg.de
+      - testsuites failing
+          CactusWave/WaveToyF90 (test_wavef90_zero.par)
+
+
+ * IBM SP3 (AIX 4.3.3.0)
+
+    o seaborg.nersc.gov with native compilers, native MPI
+      - testsuites failing
+        CactusWave/WaveToyF90 (test_wavef90_zero.par)
+
+
+ * Cray T3E (Unicos 2.0.5.54)
+
+    o pc.rzg.mpg.de with native MPI
+      - testsuites failing
+          CactusEinstein/ADMConstraints (ADMConstraints_Shift.par)
+          CactusEinstein/AHFinder (test_AHF_1.par)
+          CactusEinstein/IDBrillData (test_wsor.par)
+          CactusEinstein/Maximal (test_maximal_1.par)
+          BetaThorns/Cartoon2D (test_cartoon_3.par)
+
+
+ * Sun Sparc II (SunOS 5.7)
+
+    o pitcairn.mcs.anl.gov with native compilers, no MPI
+      - not compiling:
+        CactusEinstein/TimeGeodesic (internal compiler error on exa_dt.F)
+
+      - testsuites failing
+        CactusWave/WaveToyF90 (test_wavef90_zero.par)
+        BetaThorns/Cartoon2D (test_cartoon_3.par)
+
+
+ * MacOS X (Darwin Kernal Version 5.4)
+
+    o seidelg4.aei-potsdam.mpg.de
+      [Absoft F90, Apple C/C++ (gcc 2.95.2), MPICH or LAM]
+
+
+ * Hitachi SR8000-F1 (HI-UX/MPP)
+
+    o sr8000.lrz-muenchen.de with native compilers, native MPI
+      - not compiling:
+        CactusTest/TestInterp (C++ compiler doesn't know name spaces)
+
+      - testsuites failing
+        CactusWave/WaveToyF90 (test_wavef90_zero.par)
+        CactusEinstein/IDBrillData (test_brilldata_1.par)
+        CactusEinstein/IDBrillData (test_brilldata_2.par)
+
+
+ * Fujitsu VPP700
+
+    o vpp1.lrz-muenchen.de with native compilers, native MPI
+      - not compiling:
+        CactusTest/TestInterp (C++ compiler doesn't know name spaces)
+        The configuration with all CactusEinstein thorns couldn't be
+        built (linker command line too long).
+
+      - testsuites failing
+        CactusWave/WaveToyF90 (test_wavef90_zero.par)
+
