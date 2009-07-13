@@ -1,0 +1,277 @@
+Release Notices for Cactus 4.0 beta 7
+=====================================
+Date: April 20th 2000
+
+Released modules:
+================
+
+      Cactus
+      CactusBase
+      CactusBench
+      CactusEinstein
+      CactusElliptic
+      CactusNet
+      CactusPUGH
+      CactusPUGHIO
+      CactusWave
+      external
+
+New thorns:
+==========
+	
+      CactusBench/BenchADM
+      CactusWave/IDScalarWaveC
+
+
+CVS Tag: Cactus_4_0_Beta_7
+=======
+
+
+==============================================================================
+
+
+CHANGES FOR BETA 7
+==================
+
+Infrastructure
+==============
+
+1) Added script "GetCactus" which, given a thorn list with CVS repository
+   information, will checkout the thorns. It is also possible to embed
+   parameter files in the thorn list, which will be automatically 
+   extracted. The script and sample parameter files are available from 
+   the web pages. 
+
+Flesh
+=====
+
+1) Added configuration options DEBUG and OPTIMISE
+   Added build option WARN.  
+
+2) Now can use CCTK_ARGUMENTS and DECLARE_CCTK_ARGUMENTS 
+   rather than specifying CCTK_FARGUMENTS, CCTK_CARGUMENTS,
+   DECLARE_CCTK_FARGUMENTS or DECLARE_CCTK_CARGUMENTS
+
+3) Changed gmake doc to 
+	gmake UsersGuide -> produces UsersGuide.ps (manual for users)
+	gmake MaintGuide -> produces MaintGuide.ps (manual for maintainers)
+
+4) Added new make targets 
+	gmake cvsstatus
+	-> processes information from CVS on the status of your checked 
+	   out code
+	gmake cvsdiff
+	-> reports the differences between your checked out code and the 
+	   version in the CVS repository
+
+5) Added new make option PROMPT=no, which should complete the compilation
+   without giving you any further prompts. Use this in conjunction from
+   the THORNLIST option to build a new configuration in one step.
+
+6) Changed name of 
+	gmake <config>-thornparfiles 
+   to
+	gmake <config>-examples 
+
+7) Added the capability to specify that an array should have a constant
+   size on each processor. This is specified in the interface.ccl by 
+   assigning
+	DISTRIB=CONSTANT 
+   the default value is 
+	DISTRIB=DEFAULT
+
+8) External packages, such as MPI, recognised by the flesh now define e.g.
+	#define CCTK_MPI 
+   instead of 
+	#define MPI
+   Both will continue to work for the next release as this is made
+   consistent, and the work on including external packages is completed.
+
+9) New Architectures: 
+   Cactus port to IBM SP2 finished (should work out of the box with native 
+   MPI). Tested on SP2s at Argonne, NERSC and MHPCC. The default compiler 
+   on the SP2 is xlc.
+   Initial port to Hitachi SR8000.
+
+
+10) Added support for the Lahey/Fujitsu Fortran Compiler. This should be 
+    treated as experimental, since we don't have our own version. (Thanks 
+    to Erik Schnetter for the known architectures file).
+
+11) rfrTraverse has been removed, and is replaces by CCTK_Traverse
+
+12) Memory tracing added. 
+
+13) Added support for MPICH 1.2.0
+
+
+Util Thorns
+===========
+
+1) Removed deprecated routines in CactusBase/Boundary
+
+2) CactusPUGH/PUGH - Added manual decomposition (donated by 
+   Matei Ripeneau), and changed parameter names for manual processor 
+   topology. See the README in PUGH/doc for more information.
+
+3) CactusPUGH/PUGH - Major changes to remove the old pGF and implement 
+   grid functions as a special case of a grid array.
+
+4) CactusPUGH/PUGH - Implemented support for constant sized arrays on
+   each processor
+
+5) CactusBase/IOUtil - Append to output data files after restarting
+   from a checkpoint file 
+
+6) CactusBase/IOUtil - can now recover from the latest checkpoint file 
+   in a given directory (so you can submit several consecutive jobs to 
+   a queue without editing the parameter file)
+
+7) Added CactusBench arrangement to contain benchmarking thorns. 
+   Currently there is just BenchADM which contains the staggered leapfrog
+   evolution method for CactusEinstein/ADM with the macros expanded, and
+   some optimisations.
+
+8) New thorn: IDScalarWaveC, initial data for the scalar wave equation all
+   in C
+
+==============================================================================
+
+
+KNOWN BUGS IN BETA 7
+====================
+(See Cactus bug tracking system for a complete list)
+
+
+==============================================================================
+
+
+WHAT TO EXPECT IN BETA 8
+========================
+
+1) Fixes for all known bugs in Beta 7.
+
+2) Full support for Hitachi and Exemplar machines.
+
+3) Support for Intel C/C++ compiler with NT.
+
+4) Compiling on DEC Alphas with native MPI
+
+5) Function aliasing
+
+6) New infrastructure for compiling with external packages (e.g.  
+   HDF5, PETSc,...)
+
+7) Example 1D and 2D applications, extensions of computational infrastructure
+   to support 1D and 2D.
+
+==============================================================================
+
+
+TEST MACHINES NOTES
+===================
+
+	   * Intel IA32 (Linux Redhat 6.2)
+                o bifrost.aei-potsdam.mpg.de
+                  compiler, w/wo MPICH
+                - not compiling: 
+			CactusElliptic/EllPETSc (wo MPICH)
+		- failing testsuite:
+			CactusEinstein/AHFinder,
+		- comments:	
+			Absoft, Portland and Pacific-Sierra
+			F90 compilers (CactusEinstein/AHFinder will not 
+			compile with the Pacific-Sierra compiler)
+			
+			
+           * Cray T3E (Unicos mk2.0.5.X)
+                o berte.zib.de w/wo native MPI
+                - not compiling Remove:
+			CactusElliptic/EllPETSc,
+			CactusNet,
+			CactusPUGHIO/IsoSurfacer,
+			external/RemoteIO,
+			external/TCPXX
+		- failing testsuite
+			CactusEinstein/AHFinder,
+
+
+           * Dec Alpha (osf4.0f, gcc 2.95.2)
+                o jalapeno.cactuscode.org w/wo MPICH
+		- not compiling:
+			CactusNet,
+			CactusPUGHIO/IOFlexIO,
+			CactusPUGHIO/IsoSurfacer,
+			external/IEEEIO,
+			external/RemoteIO,
+			external/TCPXX
+		- failing testsuite:
+			CactusEinstein/AHFinder,
+
+
+	   * HP Exemplar (HPUX 10.01)
+                o neptune.npaci.edu wo MPI
+		- not compiling:
+			CactusNet,
+			CactusPUGHIO/IsoSurfacer,
+			external/RemoteIO,
+			external/TCPXX,
+			CactusEinstein/TimeGeodesic,
+			CactusPUGHIO/IOHDF5
+		- failing testsuite:
+			CactusEinstein/AHFinder,
+	        - comments:
+			compiling failing in preprocessing, but you
+			just need to type gmake <config> again
+
+
+	   * IBM SP2 (AIX 4.2.0.0)
+                o quad.mcs.anl.gov w/wo native MPI
+		- not compiling:
+			CactusElliptic/EllPETSc,
+			CactusNet,
+			CactusPUGHIO/IOHDF5,
+			CactusPUGHIO/IsoSurfacer,
+			external/RemoteIO,
+			external/TCPXX,
+			CactusWave/WaveToyFreeF90
+		- failing testsuite:
+			CactusEinstein/AHFinder,
+	        - comments:
+			Free format fortran won't compile yet
+
+
+           * SGI 64 bit (Irix 6.5)
+                o origin.aei-potsdam.mpg.de, w/wo native MPI
+		- not compiling:
+			CactusElliptic/EllPETSc
+		- failing testsuite
+			CactusEinstein/AHFinder
+
+	
+           * SGI 32 bit (Irix 6.5)
+                o nott.aei-potsdam.mpg.de wo MPI
+		- not compiling
+			CactusElliptic/EllPETSc
+			CactusPUGHIO/IOHDF5,
+		- failing testsuite
+			CactusEinstein/AHFinder
+
+
+           * Intel IA32 (Windows NT 4.0)
+                o saraband.aei-potsdam.mpg.de (VM) wo MPI
+                - not compiling
+			CactusElliptic/PETSc, 
+			CactusNet/http, 
+			CactusNet/NetGeometry,
+			CactusPUGHIO/IOHDF5,
+			CactusPUGHIO/IsoSurfacer, 
+			external/RemoteIO,
+			external/TCPXX,
+		- failing testsuite
+			CactusEinstein/AHFinder
+			CactusEinstein/IDAnalyticBH
+		- comments: 
+                        *** Need to use beta 5 version of IEEEIO ***
+                            > cd arrangements/external/IEEEIO
+                            > cvs update -r Cactus_4_0_Beta_5

@@ -1,0 +1,206 @@
+Release Notices for Cactus 4.0 beta 3
+=====================================
+Sunday October 24th 1999
+
+
+Released modules:
+================
+
+      Cactus
+      CactusBase
+      CactusEinstein
+      CactusElliptic
+      CactusNet
+      CactusPUGH
+      CactusPUGHIO
+      CactusWave
+      external
+
+
+Main Changes:
+============
+      Initial implementation of general dimension grid functions
+                                             (CactusPUGH/PUGH)
+      Dynamic courant condition (CactusBase/Time)
+      Ghostzone generality (CactusPUGH/PUGH)
+      Faster compilation times (Cactus)
+
+
+CVS Tag: Cactus_4_0_Beta_3
+=======
+
+
+==============================================================================
+
+
+CHANGES FOR BETA 3
+==================
+
+Utils
+=====
+
+1) The perl processing part of the compilation process
+   now only replaces files which have actually changed,
+   so that compilation times are now much quicker (after
+   the first time).
+
+2) The test suite checker doesn't report a failed test if 
+   thorns needed are missing. 
+
+Util Thorns
+===========
+
+1) The names of boundary condition routines in 
+   CactusBase/Boundary have been standardised and 
+   renamed to make a distinction between groups and
+   variables. The old names remain, but will be removed
+   in Beta 4. See the documentation in this thorn for
+   details.
+
+2) Thorn CactusBase/Time now contains a routine for 
+   using a dynamic courant condition to set the timestep.
+   This is implemented in CactusEinstein/Einstein for 
+   the relativity thorns ... see the documentation in 
+   Time for details.
+
+3) The standard PUGH driver now supports different 
+   numbers of ghostzones in different directions.
+   Also, there is a now a parameter for setting 
+   the number of grid points on each local processor.
+
+4) The standard PUGH driver now supports 1D grid functions.
+
+5) The IsoSurfacer now supports display from Linux machines.
+
+
+Relativity Thorns
+=================
+
+1) Einstein now uses thorn CactusBase/Time to set the
+   timestep (previously Einstein set it itself). This
+   means that you now have to compile Time and add it 
+   to your active thorns, and the parameter einstein::dtfac
+   should be changed to time::dtfac in parameter files.
+
+2) Bugs in misner data and Brill Lindquist data have
+   been fixed
+
+
+==============================================================================
+
+
+KNOWN BUGS IN BETA 3 
+====================
+(See Cactus bug tracking system for a complete list)
+
+1) thorns CactusNet/http, external/TCPXX and external/RemoteIO
+   are not compiling under most platforms other than SGI or
+   Intel Linux
+
+2) Cactus fails to compile for thorns with many grid variables
+   on the origin due to a problem with the C preprocessor.
+
+3) There is a memory bug occuring occasionally in 1D ASCII IO
+
+4) EllPETSc only compiles with MPI, but it doesn't tell you this
+
+5) The testsuite checking technology isn't working under NT
+
+
+==============================================================================
+
+
+WHAT TO EXPECT IN BETA 4
+========================
+
+1) Fixes for all known bugs in Beta 3
+
+2) A mechanism to get rid of all the warnings for unused
+   variables seen with Irix 6.5
+
+3) Fuller implementation of 1D and 2D grid functions
+
+4) Initial implementation of 1D, 2D and 3D arrays
+
+5) Generic implementation of parameter choices for
+   elliptic slicings
+
+6) Maximal slicing properly integrated into ADM
+
+ 
+==============================================================================
+
+
+TEST MACHINES NOTES
+===================
+
+           * Intel Linux
+                o bifrost.aei-potsdam.mpg.de Redhat 6.0, Absoft
+                  compiler, wo MPI
+                     + Remove: CactusPUGHIO/IOHDF5,
+                       CactusElliptic/EllPETSc
+                     + Notes: CactusElliptic/EllPETSc compiled with
+                       MPICH
+                o gullveig.aei-potsdam.mpg.de Redhat 6.0, Absoft
+                  compiler, MPI LAM
+                     + Remove: CactusPUGHIO/IOHDF5,
+                       CactusElliptic/EllPETSc
+           * Dec Alpha
+                o galar.aei-potsdam.mpg.de wo MPI
+                     + Remove: CactusElliptic/EllPETSc,
+                       CactusPUGHIO/HDF5, external/RemoteIO,
+                       CactusNet/http
+           * SGI 64 bit
+                o origin.aei-potsdam.mpg.de Irix 6.5, w/wo native
+                  MPI
+                     + Remove: CactusElliptic/EllPETSc
+                     + Configure: HDF5=yes
+                       HDF5_DIR=/usr/local/apps/hdf5
+           * SGI 32 bit
+                o nott.aei-potsdam.mpg.de Irix 6.5 wo MPI
+                     + Remove: CactusPUGHIO/IOHDF5,
+                       CactusElliptic/EllPETSc
+                     + Notes: Problem with output for PsiKadelia
+                       test
+                o null.wustl.edu Irix 6.2 wo MPI
+                     + Remove: CactusNet/http, CactusPUGHIO/IOHDF5,
+                       CactusElliptic/EllPETSc, external/TCPXX,
+                       external/RemoteIO
+                     + Notes: Gives a lot of warnings about data
+                       alignment
+           * T3E
+                o pc.rzg.mpg.de w/wo native MPI
+                     + Remove:
+                       CactusElliptic/EllPETSc,CactusPUGHIO/IOHDF5,
+                       CactusNet/http, external/RemoteIO
+                     + Notes: dependencies went funny in IEEEIO,
+                       problem with output for PsiKadelia test
+           * Windows NT
+                o saraband.aei-potsdam.mpg.de wo MPI
+                     + Remove: CactusNet/http, external/RemoteIO,
+                       CactusElliptic/PETSc,
+                       CactusPUGHIO/IsoSurfacer, external/TCPXX,
+                       CactusWave/IDScalarWaveCXX,
+                       CactusWave/IDWaveToyCXX
+	             + Notes: tested compilation only, problem with
+                       perl testsuite runner
+                o ntsc-ts1.ncsa.uiuc.edu w/wo HPVM MPI
+                     + Remove: CactusNet/http, external/RemoteIO,
+                       CactusElliptic/PETSc,
+                       CactusPUGHIO/IsoSurfacer, external/TCPXX,
+                       CactusWave/IDScalarWaveCXX,
+                       CactusWave/IDWaveToyCXX
+	             + Configure: MPI=CUSTOM MPI_LIBS="mpi.lib fm.lib
+                       advapi32.lib kernel32.lib wsock32.lib" MPI_INC_DIRS
+                       ="d:/apps/hpvm/include"
+                     + Notes: tested compilation only, problem with
+                       perl testsuite runner
+           * HP
+                o exemplar.npaci.edu wo MPI, HP-UX 10.01
+                     + Remove: CactusNet/http, external/RemoteIO,
+                       CactusPUGHIO/IsoSurfacer,
+                       CactusElliptic/PETSc, external/TCPXX
+                     + Notes: dependencies went funny in TCPXX
+
+
+

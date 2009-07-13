@@ -1,0 +1,294 @@
+Release Notices for Cactus 4.0 beta 11
+======================================
+Date: January 28, 2002
+
+Released modules:
+================
+      Cactus
+      CactusBase
+      CactusBench
+      CactusConnect
+      CactusEinstein
+      CactusElliptic
+      CactusExamples
+      CactusExternal
+      CactusIO
+      CactusPUGH
+      CactusPUGHIO
+      CactusTest
+      CactusUtils
+      CactusWave
+
+New thorns:
+==========
+      CactusExamples/FleshInfo
+      CactusExamples/TimerInfo
+      CactusEinstein/Maximal
+      CactusTest/TestStrings
+      CactusTest/TestTimers
+
+Removed thorns:
+==============
+      CactusPUGH/Interp (replaced in beta10 by CactusPUGH/PUGHInterp)
+   
+Deprecated thorns:
+=================
+      None
+
+CVS Tag: Cactus_4_0_Beta_11
+
+==============================================================================
+
+
+CHANGES FOR BETA 11
+===================
+
+Flesh
+=====
+
+Interface:
+	Initial support for vector grid variables
+
+	Array sizes can be specified by expressions
+
+Configuration:
+	Re-configuration with same extra options (e.g. MPI or HDF5) no longer
+	rebuilds whole configuration.
+
+        Implemented user defaults for configuration contained in the file
+        $HOME/.cactus/config or $CACTUSRC/.cactus/config
+
+        Changed order of precedence for configuration options, now command line
+        options override all others
+
+Compilation:
+	New architecture: Fujitsu VPP700
+ 
+	Can now have thorns with no source files.
+
+        Less recompilation necessary eg with HDF5, MPI
+
+Makefile:
+	New targets to display configuration information
+	gmake configinfo
+	gmake <config>-configinfo
+
+Thorn Activation:
+	The ActiveThorns parameter is now checked for self-consistency 
+	and you are no longer able to incorrectly activate a thorn
+	without activating thorns providing implementations a thorn inherits
+	from or has declared itself a friend of.
+
+New Utility Functions:
+	StringList routines - routines which deal with a fixed-sized
+                              sorted list of strings
+	Util_asprintf,Util_asnprintf,Util_snprintf,Util_vsnprintf
+	added to allow people to use these functions portably.
+
+        Key-value table routines (the Cactus equivalent of perl hash tables).
+        (The general API is Util_Table****)
+
+        New chapter added to User Guide for Utility functions, including
+        complete description of Key-value routines.
+        
+Driver:
+	Added flesh support for grid arrays to be specified with given 
+        integer dimensions, in addition to parameter values. Parameters
+        and integers can also be combined with a +/-
+
+        Grid scalars should now be activated with the STORAGE tag in the
+        schedule.ccl files. (This influencing their treatment by thorns,
+        for example initialisation in drivers and output by IO methods).
+
+	API for some Fortran driver subroutine calls changed to include
+	a (missing) integer error argument ierr:
+
+	CCTK_Barrier(ierr, <as before>)
+        CCTK_SyncGroup(ierr, <as before>)
+	CCTK_SyncGroupI(ierr, <as before>)
+	CCTK_SyncGroupWithVar(ierr, <as before>)
+	CCTK_SyncGroupWithVarI(ierr, <as before>)
+ 
+	[NOTE for those using CCTK_SyncGroup routines:
+	 Please check whether you really need to sync directly, or 
+	 whether if it can be moved into the schedule.ccl
+         enabling the scheduler do control ghostzone syncronisation. 
+	 This will be the only way Cactus can guarantee your code to work 
+	 with techniques such as AMR and automatic cache-aware subblocking 
+	 once those are available.]
+
+Coordinates:
+	New API to allow thorns providing functions to register and
+	obtain the extent of the physical grid (using indices).
+	
+	CCTK_CartRegisterRangePhysIndex
+	CCTK_CartRangePhysIndex
+
+Termination:
+	There is now a keyword parameter "terminate" to decide whether
+	to terminate the evolution loop by "iteration", "time", "either",
+	"both" or "never".
+
+Timers:
+	Fortran wrappers and documentation added for using Cactus timers
+
+Checkpointing:
+	The very first POSTSTEP schedule bin is now before 
+	RECOVER_VARIABLES, so that POSTSTEP routines no longer run twice 
+	on the same timestep after recovery.
+
+New functions:
+	There are several new functions for obtaining information from
+	the flesh about IO methods, reduction operators, interpolation
+	operators and coordinate systems. An example of using these 
+	functions is provided in the new thorn CactusExamples/FleshInfo
+ 
+Util Thorns
+===========
+
+CactusBase/IOUtil:
+	Parameters added to copy a parameter file to the output directory,
+	or to generate one sorted by thorns (see IO::parfile_write and 
+	IO::parfile_name)
+
+CactusBase/Time:
+	Negative timesteps are now supported.
+
+CactusBase/IOASCII:
+        New parameters out1D_style, out1D_style (deprecating out_style) 
+        to specify the type of output to perform for xgraph, gnuplot.
+	Diagonal output added for non-cubic grids
+	IOASCII now outputs all relevent slabs of data from 1D, 2D or 
+        3D grid arrays
+
+CactusBase/Boundary:
+	Robin boundary conditions added
+
+CactusPUGH/PUGH:
+	Implementation of integer specified grid array sizes
+	Respect storage for grid scalars
+	New debugging function PUGH_PrintStorage(cctkGH) prints the
+	variables with storage allocated to screen
+
+CactusUtil/NaNChecker
+	Now has an API for calling the NaNChecker directly from thorns,
+	and for setting the grid variables to NaNs. The NaNChecker can
+	also be used for chosen timelevels.
+
+
+Einstein Thorns
+===============
+
+CactusEinstein/AHFinder:
+	Improved IO layer of AHFinder
+	AHFinder is now scheduled at ANALYSIS
+
+CactusEinstein/Einstein
+	Isotropic Schwarzschild initial lapse added
+
+
+==============================================================================
+
+
+KNOWN BUGS IN BETA 11
+=====================
+(See Cactus bug tracking system for a complete list)
+
+==============================================================================
+
+
+WHAT TO EXPECT IN BETA 12
+=========================
+
+Improved interfaces for Interpolation and Reduction
+Thorn LocalInterp for interpolation local to a processor
+
+==============================================================================
+
+
+TEST MACHINES NOTES
+===================
+
+[Note: CactusElliptic/EllPETSc only tested on Linux IA32 and SGI 64 bit]
+
+           * MacOS X (Darwin Kernal Version 5.2)
+                o seidelg4.aei-potsdam.mpg.de 
+	          [Absoft F90, gcc 2.95.2, MPICH or LAM]
+
+	        - not compiling because of buggy C preprocessor
+			CactusBase/Boundary (fix available on Cactus web pages)
+		- notes
+			CactusEinstein/ADM and CactusEinstein/AHFinder can only
+			be compiled without optimisation
+
+           * SGI 64 bit (Irix 6.5)
+                o origin.aei-potsdam.mpg.de, w/wo native MPI
+		- testsuites failing
+			CactusEinstein/IDBrillData
+
+           * SGI 32 bit (Irix 6.5)
+                o nott.aei-potsdam.mpg.de w native compilers wo MPI 
+
+           * Cray T3E (Unicos mk2.0.5.X)
+                o berte.zib.de w/wo native MPI
+                - failing testsuites
+			CactusEinstein/AHFinder
+			CactusEinstein/IDBrillData (on multiprocessors)
+
+           * Sun Sparc II (SunOS 5.7)
+                o pitcairn.mcs.anl.gov with native compilers, no MPI
+		- not compiling
+			CactusEinstein/TimeGeodesic
+
+	   * IBM SP2 (AIX 4.3.3.0)
+                o seaborg.nersc.gov with native compilers, MPI
+
+           * Intel IA64 (Linux ia64 2.4.13)
+                o  ia64.osc.edu  Intel C/C++/F90 w/wo MPICH Myrinet
+	
+	   * Intel IA32 (Linux Redhat 6.2)
+		o xeon01.aei.mpg.de w/wo MPICH (shmem device)
+
+                Fortran compiler: Intel icc/F90
+
+                o bifrost.aei-potsdam.mpg.de w/wo MPICH (p4 and shmem devices)
+
+	        Fortran compiler: Absoft F90
+
+	        Fortran compiler: Lahey F90
+
+	        Fortran compiler: Vast F90
+                - not compiling: 
+			CactusEinstein/AHFinder
+
+	        Fortran compiler: g77 F77
+		- not compiling
+			Fortran77/90 thorns
+
+                o bifrost.aei-potsdam.mpg.de w LAM
+
+	        Fortran compiler: Absoft F90
+                - not compiling: 
+			CactusEinstein/TimeGeodesic (compiles without LAM MPI)
+
+           * Intel IA32 (Windows 2000)
+                o gullveig.aei-potsdam.mpg.de wo MPI
+		- not compiling
+			CactusConnect/HTTPDExtra
+			CactusUtils/NaNChecker
+
+           * Dec Alpha (OSF1 V4.0 1229 alpha)
+                 o holodec01.aei.mpg.de wo MPI
+
+	   * Hitachi SR8000-F1 (HI-UX/MPP)
+                o sr8000.lrz-muenchen.de with native MPI and compilers
+                - failing testsuites
+			CactusEinstein/AHFinder
+			CactusEinstein/IDBrillWave
+
+           * Fujitsu VPP700
+                o vpp1.lrz-muenchen.de with native compilers, native MPI
+                - not compiling because of peculiar fortran compiler
+			CactusEinstein/AHFinder 
+			(minval, maxval, trim not recognized as 
+			 intrinsic functions)`

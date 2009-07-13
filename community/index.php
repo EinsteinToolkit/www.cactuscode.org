@@ -3,7 +3,7 @@ $title='Community';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
-<p>Start page for the community section</p>
+<p>Use the subsection links at the right for information on benchmarks, the bug reporting system, Cactus mailing lists, Cactus partners, projects, and regression tests. </p>
 
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');

@@ -1,0 +1,288 @@
+Release Notices for Cactus 4.0 beta 6
+=====================================
+
+Date: 8th February 2000
+
+Released modules:
+================
+
+      Cactus
+      CactusBase
+      CactusEinstein
+      CactusElliptic
+      CactusNet
+      CactusPUGH
+      CactusPUGHIO
+      CactusWave
+      external
+
+New thorns:
+==========
+
+	CactusEinstein/AHFinder
+
+Main Changes:
+============
+
+
+CVS Tag: Cactus_4_0_Beta_6
+=======
+
+
+==============================================================================
+
+
+CHANGES FOR BETA 6
+==================
+
+Flesh
+=====
+
+1) Support for free form Fortran 90 (with file extension F90 for
+   preprocessed or f90 for no preprocessing)
+
+2) CCTK_BOUND schedule point removed since it is no longer needed
+
+3) Support for Complex grid variables in both C and Fortran. Complex
+   variables can be defined in the configuration (ccl) files, and 
+   manipulated in C with the same functionality as is provided by 
+   standard fortran by the CCTK functions:
+
+     CCTK_Cmplx 
+     CCTK_CmplxReal
+     CCTK_CmplxImag 
+     CCTK_CmplxConjg
+     CCTK_CmplxAbs
+     CCTK_CmplxAdd
+     CCTK_CmplxSub
+     CCTK_CmplxMul
+     CCTK_CmplxDiv
+     CCTK_CmplxSqrt *
+     CCTK_CmplxSin  *
+     CCTK_CmplxCos  *
+     CCTK_CmplxLog  *
+     CCTK_CmplxExp  *
+
+   (The functions marked with a * still need to be filled out). Complex
+   grid variables are supported by CactusPugh/Interp, but as yet are
+   not supported by the IO routines.
+
+4) For better name consistency the following name changes have been made
+
+   CCTK_RegisterCoordI     -> CCTK_CoordRegisterI
+   CCTK_RegisterCoord      -> CCTK_CoordRegister
+   CCTK_RegisterCoordRange -> CCTK_CoordRegisterRange 
+
+   The old names are now deprecated.
+
+5) New CCTK functions include
+
+   CCTK_CoordDir
+   CCTK_CoordLocalRange
+
+6) The function used by driver thorns
+
+   CCTK_GroupData 
+
+   has been rewritten to return a structure containing the group 
+   information (to allow us to add new information easily). The new 
+   function is 
+
+   cGroup *CCTK_GroupData(int group)
+
+   where the cGroup structure is
+
+   typedef struct
+   {
+     int grouptype;
+     int variabletype;
+     int staggertype;
+     int dim;
+     int numvariables;
+     int numtimelevels;
+   } cGroup;
+
+   the old deprecated function remains with the new name 
+
+   CCTK_OldGroupData
+
+7) Added a new option for building configurations
+
+gmake <target> THORNLIST=<thorn_file> THORNLIST_DIR=<directory> uses the file directory/thorn_file as the list of thorns for the configuration   
+
+8) Communication (ghostzone swapping) is now automatically enabled for all
+   variables which have storage assigned in the schedule.ccl. This means 
+   that a call to CCTK_SyncGroup will always syncronise the ghostzones.
+
+9) The include files for thorns using Cactus parameters or argument lists 
+   have been renamed, to follow the same naming convention as the rest of 
+   the Cactus include files 
+
+	cctk_parameters.h  -> cctk_Parameters.h
+	cctk_arguments.h   -> cctk_Arguments.h 
+
+   the old names will still work, but are depreciated.
+
+10) Removed warnings for unused variables (parameters and grid variables)
+    on the origin. 
+
+11) Continued to add features needed for AMR
+    - schedule global functions
+    - can now schedule synchronisation of groups in the schedule.ccl
+    - CCTK_rfrTraverse is now replaced by CCTK_Traverse
+
+12) Added staggering capabilities for grid functions, see the documentation
+    for details. Staggering is still being tested and should be treated
+    as developmental. 
+
+13)
+    Removed redundant src/rfr directory.  If you do an update rather than a
+    fresh checkout you'll need to edit src/CVS/Entries to remove the line
+    referencing this directory.
+
+Util Thorns
+===========
+
+1) Bug fix in recovering grid scalars from checkpointing data
+
+2) CactusPUGH/PUGH: Many changes to PUGH to add multidimensional 
+   arrays. [If you are using any PUGH infrastructure please make 
+   sure you keep up to date with CVS commit messages for the thorn
+   since this thorn will now be revised and tidied]
+   Multidimensional arrays (1D, 2D, 3D) are now working. Arrays can
+   be set to have any size, and any ghostzone size in a thorn's
+   interface.ccl. At the moment the sizes must be specified with parameters.
+   Currently Sychronising of ghostzones works for 1D and 3D, but not for
+   2D. This will go in as PUGH is revised for the next beta release.
+
+Relativity Thorns
+=================
+
+1) CactusEinstein/AHFinder: New thorn, locates apparent horizons on a 
+   timeslice
+
+2) CactusEinstein/Extract: Fixed bug on multiprocessors
+
+3) CactusEinstein/IDAxiBrillBH: Fixed bug which prevented 
+   compilation/linking/running on some architectures.
+
+==============================================================================
+
+
+KNOWN BUGS IN BETA 6
+====================
+(See Cactus bug tracking system for a complete list)
+
+1) Free format Fortran 90 doesn't work on the SP2
+
+==============================================================================
+
+
+WHAT TO EXPECT IN BETA 7
+========================
+
+1) Fixes for all known bugs in Beta 6
+
+2) Individual thorn configuration scripts
+
+3) Function declarations in the interface.ccl
+
+
+==============================================================================
+
+
+TEST MACHINES NOTES
+===================
+	   * Intel Linux
+                o bifrost.aei-potsdam.mpg.de Redhat 6.0, Absoft
+                  compiler, w/wo MPI
+                     + Remove: 
+			CactusElliptic/EllPETSc
+			CactusPUGHIO/IOHDF5,
+                     + Notes: CactusElliptic/EllPETSc compiled with
+                       MPICH
+                o saraband.aei-potsdam.mpg.de Redhat 6.1, Absoft
+                  compiler, wo MPI
+                     + Remove: 
+			CactusElliptic/EllPETSc
+
+           * Dec Alpha
+                o skadi.aei-potsdam.mpg.de wo MPI
+                     + Remove: 
+			CactusEinstein/IDAxiBrillBH
+			CactusElliptic/EllPETSc,
+			CactusPUGHIO/HDF5, 
+
+           * SGI 64 bit 
+                o kvasir.aei-potsdam.mpg.de Irix 6.5, w/wo native
+                  MPI
+                     + Remove: 
+			CactusElliptic/EllPETSc
+                     + Configure: HDF5=yes MPI=NATIVE
+                       HDF5_DIR=/usr/local/apps/hdf5
+                       Notes: fails testsuite for AHFinder 	
+		      
+           * SGI 32 bit
+                o nott.aei-potsdam.mpg.de Irix 6.5 wo MPI
+                     + Remove: 
+			CactusElliptic/EllPETSc
+			CactusPUGHIO/IOHDF5,
+                     + Notes: Problem with output for PsiKadelia
+                       test
+
+           * T3E
+                o berte.zib.de w/wo native MPI
+                     + Remove:
+			CactusElliptic/EllPETSc,
+			CactusPUGHIO/IOHDF5,
+	             + Notes: 
+			fails testsuite for AHFinder 	
+			and IDAxiBrillBH
+
+           * Windows NT
+                o ntsc-ts1.ncsa.uiuc.edu w/wo HPVM MPI
+                     + Remove: 
+			CactusElliptic/PETSc, 
+			CactusNet/http, 
+			CactusNet/NetGeometry,
+			CactusPUGHIO/IOHDF5,
+			CactusPUGHIO/IsoSurfacer, 
+			CactusWave/IDScalarWaveCXX,
+			CactusWave/IDWaveToyCXX
+			external/RemoteIO,
+			external/TCPXX,
+	             + Configure: MPI=CUSTOM MPI_LIBS="mpi.lib fm.lib
+                       advapi32.lib kernel32.lib wsock32.lib" MPI_INC_DIRS
+                       ="d:/apps/hpvm/include"
+	             + Notes: testsuite checking technology doesn't
+                              work here with MPI because of batch queues
+                              Need to use beta 5 version of IEEEIO
+                                - cd arrangements/external/IEEEIO
+                                  cvs update -r Cactus_4_0_Beta_5
+                              AHFinder test fails.
+
+           * HP
+                o exemplar.npaci.edu wo MPI, HP-UX 10.01
+                     + Remove: 
+			CactusElliptic/PETSc, 
+			CactusNet/http, 
+			CactusNet/NetGeometry
+			CactusPUGHIO/IsoSurfacer,
+			CactusPUGHIO/IOHDF5
+			external/RemoteIO,
+			external/TCPXX
+
+	   * SP2
+		o quad.mcs.anl.gov wo MPI
+		     + Remove: 
+			CactusElliptic/EllPETSc, 
+			CactusNet/http, 
+			CactusNet/NetGeometry, 
+			CactusPUGHIO/IsoSurfacer,
+			CactusPUGHIO/IOHDF5
+			CactusWave/WaveToyFreeF90
+			external/RemoteIO,
+			external/TCPXX
+	             + Notes: dependencies broken for IEEEIO, can ignore
+                              and continue
+

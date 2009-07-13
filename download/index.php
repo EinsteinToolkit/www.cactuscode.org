@@ -2,7 +2,7 @@
 <?php $title='Download Cactus';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<h2>License</h2>
+<h3>License</h3>
 
 <p>
   The Cactus Code is (C) Copyrighted by the individual Authors and
@@ -14,9 +14,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   state it explicitly in their thorn distribution.
 </p>
 
-
-
-<h2>Getting the Code</h2>
+<h3>Getting the Code</h3>
 
 <p>
   Cactus is maintained
@@ -60,7 +58,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 
 
-<h2>CVS Repositories</h2>
+<h3>CVS Repositories</h3>
 
 <p>
   Instead of using the <kbd>GetCactus</kbd> script, you can also check
@@ -122,9 +120,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;/&lt;<var>thorn</var>&gt;</code>
 
-
-
-<h2>Download Tar Files</h2>
+<h3>Download Tar Files</h3>
 
 <p>
   If you don't have a CVS client, use
@@ -132,11 +128,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   Form Interface</a> to download a tar file.
 </p>
 
-
-
-
 <a name="requirements"></a>
-<h2>Requirements</h2>
+<h3>Requirements</h3>
 
 <p>
   The Cactus Code is very portable.  The requirements section of the

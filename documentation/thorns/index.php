@@ -14,7 +14,7 @@ while($file = readdir($dd)) {
 closedir($dd);
 sort($files);
 foreach($files as $file) {
-    echo "<li><a href='$file'>$file,</li>\n";
+    echo "<li><a href='$file'>$file</li>\n";
 }
 ?>
 </ol>
