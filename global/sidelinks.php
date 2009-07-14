@@ -30,6 +30,18 @@ echo '
 ';
 break;
 
+case 'benchmarks':
+echo '
+<h2>Benchmarks</h2>
+<ul class="sidemenu">
+	<li><a href="/community/benchmarks/bench_bssn_pugh/">BSSN Pugh</a></li>
+	<li><a href="/community/benchmarks/bench_bssn_carpet/">BSSN Carpet</a></li>
+	<li><a href="/community/benchmarks/bench_whisky_carpet/">Whisky Carpet</a></li>
+	<li><a href="/community/benchmarks/benchio_flexio/">IO FlexIO</a></li>
+	<li><a href="/community/benchmarks/benchio_hdf5/">IO HDF5</a></li>
+</ul>
+';
+break;
 
 case 'partners':
 echo '
@@ -65,6 +77,23 @@ echo '
 	<li><a href="/documentation/guides/visualization/">Visualization Guides</a></li>
 </ul>';
 break;
+
+case 'visualization':
+echo '
+<h2>Visualization</h2>
+<ul class="sidemenu">
+	<li><a href="/documentation/guides/visualization/Amira/">Amira</a></li>
+	<li><a href="/documentation/guides/visualization/DataVaultXVS/">DataVaultXVS</a></li>
+	<li><a href="/documentation/guides/visualization/gnuPlot/">gnuPlot</a></li>
+	<li><a href="/documentation/guides/visualization/IsoView/">IsoView</a></li>
+	<li><a href="/documentation/guides/visualization/openDX/">openDX</a></li>
+	<li><a href="/documentation/guides/visualization/VisIt/">VisIt</a></li>
+	<li><a href="/documentation/guides/visualization/vizLauncher/">vizLauncher</a></li>
+	<li><a href="/documentation/guides/visualization/xGraph/">xGraph</a></li>
+	<li><a href="/documentation/guides/visualization/yGraph/">yGraph</a></li>
+</ul>';
+break;
+
 
 case '_':
 echo '
