@@ -7,7 +7,7 @@ $section='visualization';?>
       <tr>
 	<td>
 
-	<h2>Gnuplot - Powerful Visualization Tool for 1D and 2D Data</h2>
+	<h3>Gnuplot - Powerful Visualization Tool for 1D and 2D Data</h3>
 
 	<table>
 	    <tr>

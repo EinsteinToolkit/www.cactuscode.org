@@ -3,7 +3,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
 <p>
-<b>March 2007: </b>
+<strong>March 2007: </strong>
 Scientists from Lawrence Berkeley National Laboratory and Princeton Plasma Physics Laboratory have chosen Cactus to be one of the six scientific applications used in the evaluation of the performance of six of the world's fastest supercomputers.
 </p>
 

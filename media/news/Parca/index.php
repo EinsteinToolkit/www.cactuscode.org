@@ -2,7 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
-<p><b>April 2007:</b></p>
+<p><strong>April 2007:</strong></p>
 
 <p>
 NASA awarded another <a href="http://www.sbir.nasa.gov/SBIR/abstracts/05/sttr/phase2/STTR-05-2-T4.02-9864.html">STTR grant </a> for the "Interfacing the Paramesh Computational Libraries to the Cactus Computational Framework" proposal. 

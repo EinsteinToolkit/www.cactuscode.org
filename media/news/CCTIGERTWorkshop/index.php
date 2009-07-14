@@ -3,7 +3,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
 <p>
-On <b>April 20</b>, 2007, the LSU IGERT students and CCT organized a <a href="http://www.cct.lsu.edu/IGERT/wiki/index.php/Spring_2007_High_School_Workshop ">workshop</a> for 32 Baton Rouge high school students and their teachers. 
+On <strong>April 20</strong>, 2007, the LSU IGERT students and CCT organized a <a href="http://www.cct.lsu.edu/IGERT/wiki/index.php/Spring_2007_High_School_Workshop ">workshop</a> for 32 Baton Rouge high school students and their teachers. 
 </p>
 <p>
 During the one day workshop that started with presentations by Dr. Ed Seidel and Dr. Joel Tohline, and ended with a wrap-up talk by Dr. Gabrielle Allen, the K-12 students took part in two tutorials. Yaakoub El-Khamra taught them <a href="/media/presentations/HighSchoolApril20.pdf">how to compile and run Cactus in parallel</a> on the LONI supercomputers to simulate the head on collision of black holes, while the IGERT students showed them how to do scientific visualization using <a href="http://www.cct.lsu.edu/IGERT/wiki/index.php/Amira_Tutorial">Amira</a>.

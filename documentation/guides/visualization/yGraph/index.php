@@ -7,7 +7,7 @@ $section='visualization';?>
       <tr>
 	<td>
 
-	  <h2>ygraph: Animated, Easy Client for 1D Line Plots</h2>
+	  <h3>ygraph: Animated, Easy Client for 1D Line Plots</h3>
 
 	  <table>
 	    <tr>

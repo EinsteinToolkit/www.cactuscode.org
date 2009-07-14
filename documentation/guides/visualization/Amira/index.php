@@ -7,7 +7,7 @@ $section='visualization';?>
       <tr>
 	<td>
 
-	  <h2>Amira: ZIB's Advanced 3D Visualization System</h2>
+	  <h3>Amira: ZIB's Advanced 3D Visualization System</h3>
 
 	  <table>
 	    <tr>

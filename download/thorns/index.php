@@ -37,7 +37,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
         <li>
 
           <p>
-        <b>Cactus Computational ToolKit</b>
+        <strong>Cactus Computational ToolKit</strong>
         <br>
         This toolkit contains thorns which will work on all supported platforms, regardless of the availability of additional libraries, needing only the standard required software. 
           </p>
@@ -66,7 +66,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
     
           
         <li>
-          <p><b>WaveToy</b> <br>Scalar wave evolution implemented in all our supported programming languages. Use this Thorn List to check that Cactus is working properly on your platform. 
+          <p><strong>WaveToy</strong> <br>Scalar wave evolution implemented in all our supported programming languages. Use this Thorn List to check that Cactus is working properly on your platform. 
 
           <ul>
         <li><a href="WaveToy.th">WaveToy.th</a>

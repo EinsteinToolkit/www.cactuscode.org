@@ -143,7 +143,7 @@ Please report bugs and send any comments to the <a href="mailto:reisswig@aei.mpg
 </p><p>
 The software in the visitCarpetHDF5 package is available under the GNU General 
 Public License. In addition to the conditions in the GNU General Public License, 
-the authors strongly suggest <b>using this software for non-military purposes only</b>.
+the authors strongly suggest <strong>using this software for non-military purposes only</strong>.
 </p>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
