@@ -1,0 +1,61 @@
+!DESC "Demo WaveToy with Cool Tools"
+
+ActiveThorns = "coordbase localreduce symbase pugh pughslab pughreduce isosurfacer iojpeg jpeg6b ioutil ioascii iobasic time wavetoyc cartgrid3d boundary idscalarwavec wavebinarysource httpd httpdextra socket"
+
+# HTTPD
+
+httpd::port                     = 5555
+httpd::pause                    = 0
+
+
+# Simulation
+
+cactus::cctk_itlast             = 50000
+driver::local_nx                = 40
+driver::local_ny                = 40
+driver::local_nz                = 40
+time::dtfac                     = 0.25
+grid::type                      = "ByRange"
+grid::domain                    = "full"
+grid::xyzmin                    = -1
+grid::xyzmax                    = 1
+
+
+# Physics
+
+wavetoy::bound                  = "radiation"
+wavebinarysource::binary_omega  = 26 
+wavebinarysource::binary_charge = 0.0001
+wavebinarysource::binary_radius = 0.2
+wavebinarysource::binary_size   = 0.1
+
+
+# IO
+
+#IO::out_dir                     = "/dev/null"
+#IO::out_downsample_x            = 2
+#IO::out_downsample_y            = 2
+#IO::out_downsample_z            = 2
+
+IOBasic::outInfo_every          = 10
+IOBasic::outInfo_vars           = "wavetoy::phi"
+
+#IOBasic::outScalar_every        = 10
+#IOBasic::outScalar_vars         = "wavetoy::phi"
+
+#IOASCII::out1D_every            = 10
+#IOASCII::out1D_vars             = "wavetoy::phi"
+
+#IOASCII::out2D_every            = 10
+#IOASCII::out2D_vars             = "wavetoy::phi"
+
+IOJpeg::out_every               = 10
+IOJpeg::out_vars                = "wavetoy::phi"
+IOJpeg::mode                    = "remove"
+IOJpeg::colormap                = "auto"
+IOJpeg::colormap_factor         = 16 
+
+IsoSurfacer::out_format         = "SOCK"
+IsoSurfacer::out_vars           = "WAVETOY::phi"
+IsoSurfacer::isovalue           = 0.5
+IsoSurfacer::compute_normals	= YES

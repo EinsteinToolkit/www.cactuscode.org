@@ -1,0 +1,202 @@
+ 
+#--- Base and Driver Thorns
+
+ActiveThorns	=  "	time 
+			carpet 
+			carpetlib 
+			carpetregrid 
+			carpetreduce 
+			carpetslab 
+			cartgrid3d 
+			coordbase 
+			mol 
+			boundary 
+			spacemask 
+			iobasic 
+			ioutil 
+			symbase 
+			aeilocalinterp 
+			carpetinterp 
+		   "
+
+#--- Spacetime :-)
+
+ActiveThorns	=  "	admbase 
+			staticconformal 
+			admconstraints 
+			admcoupling 
+			coordgauge 
+			admmacros 
+			bssn_mol 
+		   "
+
+#--- Hydrodynamics
+
+ActiveThorns	=  "	whisky 
+			whisky_init_data 
+			whisky_rnsid 
+			eos_base 
+			eos_polytrope 
+		   "
+
+
+################## Output Related Stuff ##################################
+
+IOBasic::outInfo_vars			=	"whisky::rho admbase::alp"
+iobasic::outInfo_every			= 	1
+
+
+#--- general
+
+io::out_single_precision = "yes"
+
+
+#--- output directories
+IO::out_dir					=	$parfile
+
+#--- checkpoint recovery
+io::recover 					= 	"no"
+
+
+#--- output frequency
+
+IOBasic::out_format      			= 	".13e"
+
+io::out_single_precision 			= 	"yes"
+
+
+
+############################# DRIVER  #####################################
+
+#--- Benchmarking
+
+carpet::constant_load_per_processor		= "yes"
+
+#--- performance & infrastructure
+
+carpetlib::use_collective_communication_buffers = "yes"
+carpet::enable_all_storage 			= "no"
+CarpetLib::save_memory_during_regridding 	= "yes"
+
+CarpetLib::print_memstats_every     = 1
+
+#--- Carpet prolongation order settings
+
+Carpet::prolongation_order_space		= 3
+Carpet::prolongation_order_time			= 2
+
+
+#--- Carpet initial data setup parameters
+
+Carpet::init_3_timelevels 			= "yes"
+Carpet::init_each_timelevel 			= "no"
+
+
+#--- Grid Setup and carpet parameters
+
+
+carpet::buffer_width 				= 6
+
+driver::ghost_size                      	= 3
+
+cartgrid3d::type                        	= "box"
+cartgrid3d::domain                      	= "full"
+cartgrid3d::avoid_origin			= "no"
+
+cartgrid3d::dxyz				= 1.0
+driver::global_nx                  		= 48
+driver::global_ny                  		= 48
+driver::global_nz                  		= 48
+
+cactus::cctk_itlast                     	= 64
+
+Carpet::domain_from_coordbase 			= "no"
+
+carpet::max_refinement_levels           	= 3
+carpetregrid::refinement_levels         	= 3
+
+carpet::veryverbose 				= "no"
+carpet::verbose					= "no"
+
+
+################## Spacetime Related Stuff #############################
+
+
+admbase::evolution_method			=	"adm_bssn"
+admbase::lapse_evolution_method			=	"1+log"
+admbase::shift_evolution_method 		= 	"static"
+
+boundary::radpower				=	2
+
+admconstraints::bound				=	"static"
+
+bssn_mol::timelevels				=	3
+
+
+######################## Hydro Related Stuff ###########################
+
+
+whisky::timelevels				=	3
+
+whisky::whisky_rho_central			=	1.61930347e-08
+whisky::riemann_solver				=	"Marquina"
+whisky::whisky_eos_type				=	"Polytype"
+whisky::whisky_eos_table			=	"2D_Polytrope"
+whisky::recon_method	            		=       "ppm"
+whisky::ppm_detect				=	"yes"
+whisky::whisky_stencil          		=       3
+whisky::bound		                	=       "none"
+
+whisky::EoS_Change				=	"no"
+EOS_Polytrope::eos_gamma                	=       2.0
+EOS_Polytrope::eos_k                    	=       1.0
+EOS_Polytrope::use_cgs				=	"yes"
+EOS_Polytrope::gamma_ini			=	2.0
+
+#------ Atmosphere treatment
+
+SpaceMask::use_mask 				= 	yes
+
+whisky::rho_rel_min				=	1.e-5
+
+#------ Atmosphere only for
+whisky::initial_atmosphere_factor		=	0.99
+
+
+
+####################### Initial Data #####################################
+
+
+admbase::initial_data				=	"rnsid"
+admbase::initial_lapse				=	"rnsid"
+admbase::initial_shift				=	"rnsid"
+admbase::metric_type				=	"physical"
+
+rnsid::axes_ratio				=	1.0
+rnsid::accuracy					=	1e-7
+
+rnsid::RNS_Gamma				=	2.0
+rnsid::RNS_K					=	100.0	
+
+rnsid::recover_2Dmodel				=	"no"
+rnsid::save_2Dmodel				=	"no"
+
+rnsid::mdiv					=	151
+rnsid::sdiv					=	301
+
+
+
+
+##################### Infrastructure Related Stuff ########################
+
+#--- Time integration
+
+mol::ode_method					=	"icn"
+MoL::Generic_Type 				= 	"RK"
+MoL::MoL_Intermediate_Steps 			= 	3
+time::dtfac                             	= 	0.375
+
+
+
+#---- Timer output
+cactus::cctk_timer_output               	=       "FULL"

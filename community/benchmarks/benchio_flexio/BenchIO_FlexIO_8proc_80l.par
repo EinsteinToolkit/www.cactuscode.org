@@ -1,0 +1,21 @@
+# Test speed of checkpointing
+
+ActiveThorns = "CoordBase PUGH PUGHSlab BenchIO IOUtil IOFlexIO FlexIO"
+
+driver::local_nx          = 80
+driver::local_ny          = 80
+driver::local_nz          = 80
+
+cactus::cctk_timer_output = "full"
+pugh::timer_output        = "yes"
+io::print_timing_info     = "yes"
+
+PUGH::initialize_memory   = "zero"
+cactus::cctk_itlast       = 0
+
+IO::checkpoint_ID         = "yes"
+IO::out_mode              = "np"
+IO::out_proc_every        = 8
+IO::out_dir               = "."
+IOFlexIO::checkpoint        = "yes"
+

@@ -1,0 +1,620 @@
+--------------------------------------------------------------------------------
+
+       10                                  
+  1   0101       ************************  
+  01  1010 10      The Cactus Code V4.0    
+ 1010 1101 011      www.cactuscode.org     
+  1001 100101    ************************  
+    00010101                               
+     100011     (c) Copyright The Authors  
+      0100      GNU Licensed. No Warranty  
+      0101                                 
+
+--------------------------------------------------------------------------------
+
+Cactus version: 4.0.b16
+Compile date:   Apr 16 2007 (22:10:21)
+Run date:       Apr 16 2007 (22:31:27)
+Run host:       numrel02.cct.lsu.edu
+Executable:     ./exe/cactus_BSSN_PUGH_single
+Parameter file: BENCHMARKS/Bench_BSSN_PUGH_100l.par
+--------------------------------------------------------------------------------
+
+Activating thorn Cactus...Success -> active implementation Cactus
+Activation requested for 
+--->IOUtil<---
+Activating thorn IOUtil...Success -> active implementation IO
+Activation requested for 
+--->PUGH PUGHInterp PUGHReduce PUGHSlab<---
+Activating thorn PUGH...Success -> active implementation Driver
+Activating thorn PUGHInterp...Success -> active implementation Interp
+Activating thorn PUGHReduce...Success -> active implementation Reduce
+Activating thorn PUGHSlab...Success -> active implementation Hyperslab
+Activation requested for 
+--->Boundary CartGrid3D CoordBase SymBase<---
+Activating thorn Boundary...Success -> active implementation boundary
+Activating thorn CartGrid3D...Success -> active implementation grid
+Activating thorn CoordBase...Success -> active implementation CoordBase
+Activating thorn SymBase...Success -> active implementation SymBase
+Activation requested for 
+--->ADMBase ADMCoupling ADMMacros CoordGauge SpaceMask StaticConformal<---
+Activating thorn ADMBase...Success -> active implementation ADMBase
+Activating thorn ADMCoupling...Success -> active implementation ADMCoupling
+Activating thorn ADMMacros...Success -> active implementation ADMMacros
+Activating thorn CoordGauge...Success -> active implementation CoordGauge
+Activating thorn SpaceMask...Success -> active implementation SpaceMask
+Activating thorn StaticConformal...Success -> active implementation StaticConformal
+Activation requested for 
+--->Time<---
+Activating thorn Time...Success -> active implementation time
+Activation requested for 
+--->MoL<---
+Activating thorn MoL...Success -> active implementation MethodOfLines
+Activation requested for 
+--->BSSN_MoL<---
+Activating thorn BSSN_MoL...Success -> active implementation adm_bssn
+Activation requested for 
+--->IOBasic<---
+Activating thorn IOBasic...Success -> active implementation IOBasic
+--------------------------------------------------------------------------------
+  if (recover initial data)
+    Recover parameters
+  endif
+
+  Startup routines
+    [CCTK_STARTUP]
+    BSSN_MoL: Register provided slicings
+    CartGrid3D: Register GH Extension for GridSymmetry
+    CoordBase: Register a GH extension to store the coordinate system handles
+    PUGH: Startup routine
+    IOUtil: Startup routine
+    MoL: Startup banner
+    IOBasic: Startup routine
+    PUGHInterp: PUGHInterp startup routine
+    PUGHReduce: Startup routine
+    SymBase: Register GH Extension for SymBase
+
+  Startup routines which need an existing GH
+    [CCTK_WRAGH]
+    ADMBase: Set up GF symmetries
+    BSSN_MoL: Set symmetries for ADM_BSSN grid functions
+    CoordGauge: Initialize slicing, setup priorities for mixed slicings
+    Boundary: Register boundary conditions that this thorn provides
+    CartGrid3D: Register coordinates for the Cartesian grid
+    CoordGauge: Identify the slicing for the next iteration
+    GROUP ADM_BSSN_separator: Enforce the order of Einstein_ActivateSlicing and MoL_Register
+    MoL: Set up the MoL bookkeeping index arrays
+    MoL: Set the flag so it is ok to register with MoL
+    GROUP MoL_Register: The group where physics thorns register variables with MoL
+      BSSN_MoL: Register evolution variables for BSSN
+    MoL: Report how many of each type of variable there are
+    GROUP SymBase_Wrapper: Wrapper group for SymBase
+      GROUP SymmetryRegister: Register your symmetries here
+        CartGrid3D: Register symmetry boundaries
+      SymBase: Print symmetry boundary face descriptions
+  Parameter checking routines
+    [CCTK_PARAMCHECK]
+    ADMBase: Check consistency of parameters
+    BSSN_MoL: Check the metric type and conformal state
+    Boundary: Check dimension of grid variables
+    CartGrid3D: Check coordinates for CartGrid3D
+    MoL: Basic parameter checking
+
+  Initialisation
+    [CCTK_BASEGRID]
+    ADMBase: Set the shift_state variable to 1
+    ADMMacros: Initialize the local_spatial_order
+    CartGrid3D: Set up ranges for spatial 3D Cartesian coordinates
+    CartGrid3D: Set up spatial 3D Cartesian coordinates on the GH
+    PUGH: Report on PUGH set up
+    SymBase: Check whether the driver set up the grid consistently
+    Time: Initialise Time variables
+    Time: Set timestep based on Courant condition (courant_static)
+    if (NOT (recover initial data AND recovery_mode is 'strict'))
+      [CCTK_INITIAL]
+      StaticConformal: Set the conformal_state variable to 0
+      GROUP ADMBase_InitialData: Schedule group for calculating ADM initial data
+        ADMBase: Set the metric and extrinsic curvature to cartesian minkowski values
+      GROUP ADMBase_InitialGauge: Schedule group for the ADM initial gauge condition
+        ADMBase: Set the lapse to 1 at all points
+        ADMBase: Set the shift to 0 at all points
+      GROUP ADMBase_PostInitial: Schedule group for modifying the ADM initial data, such as e.g. adding noise
+      BSSN_MoL: Initialize ADM_BSSN system
+      IOBasic: Initialisation routine
+      MoL: Initialise the step size control
+      GROUP ADM_BSSN_PostStep: Everything after a MoL step for BSSN
+        BSSN_MoL: Trace A removal
+        BSSN_MoL: Boundary enforcement for BSSN
+        GROUP BSSN_MoL_ApplyBCs: Apply boundary conditions controlled by thorn Boundary
+          GROUP BoundaryConditions: Execute all boundary conditions
+            Boundary: Apply all requested local physical boundary conditions
+            CartGrid3D: Apply symmetry boundary conditions
+          Boundary: Unselect all grid variables for boundary conditions
+        BSSN_MoL: Updates the standard ADM variables
+        BSSN_MoL: Updates the time derivative of the lapse.
+      [CCTK_POSTINITIAL]
+      GROUP MoL_PostStep: Ensure that everything is correct after the initial data have been set up
+        GROUP ADM_BSSN_PostStep: Everything after a MoL step for BSSN
+          BSSN_MoL: Trace A removal
+          BSSN_MoL: Boundary enforcement for BSSN
+          GROUP BSSN_MoL_ApplyBCs: Apply boundary conditions controlled by thorn Boundary
+            GROUP BoundaryConditions: Execute all boundary conditions
+              Boundary: Apply all requested local physical boundary conditions
+              CartGrid3D: Apply symmetry boundary conditions
+            Boundary: Unselect all grid variables for boundary conditions
+          BSSN_MoL: Updates the standard ADM variables
+          BSSN_MoL: Updates the time derivative of the lapse.
+      [CCTK_POSTSTEP]
+      PUGH: Print storage information
+    endif
+    if (recover initial data)
+      [CCTK_RECOVER_VARIABLES]
+      [CCTK_POST_RECOVER_VARIABLES]
+      BSSN_MoL: Initialize logical scalars for ADM_BSSN
+    endif
+    if (checkpoint initial data)
+      [CCTK_CPINITIAL]
+    endif
+    if (analysis)
+      [CCTK_ANALYSIS]
+      GROUP MoL_AllRHS: Calculate the update terms
+        GROUP MoL_PreStep: Prepare the update terms
+          BSSN_MoL: Update slicing condition
+        GROUP MoL_CalcRHS: Calculate the update terms
+          GROUP ADM_BSSN_CalcRHS: Calculate the update terms for BSSN
+            BSSN_MoL: Calculate the update term for BSSN
+            BSSN_MoL: The new radiative boundary condition is part of the MoL step
+        GROUP MoL_PostRHS: Modify the update terms
+      GROUP ADM_BSSN_Analysis: Analyse BSSN quantities
+        BSSN_MoL: Calculate the BSSN constraints
+        GROUP BSSN_MoL_ApplyBCs: Apply boundary conditions controlled by thorn Boundary
+          GROUP BoundaryConditions: Execute all boundary conditions
+            Boundary: Apply all requested local physical boundary conditions
+            CartGrid3D: Apply symmetry boundary conditions
+          Boundary: Unselect all grid variables for boundary conditions
+    endif
+    Do periodic output of grid variables
+
+  do loop over timesteps
+    Rotate timelevels
+    iteration = iteration + 1
+    t = t+dt
+    [CCTK_PRESTEP]
+    CoordGauge: Identify the slicing for the next iteration
+    [CCTK_EVOL]
+    MoL: Initialise the step size control
+    while (MoL::MoL_Stepsize_Bad)
+      GROUP MoL_Evolution: A single Cactus evolution step using MoL
+        GROUP MoL_StartStep: MoL internal setup for the evolution step
+          MoL: Set the counter for the ODE method to loop over
+          MoL: Ensure the correct time and timestep are used
+        GROUP MoL_PreStep: Physics thorns can schedule preloop setup routines in here
+          BSSN_MoL: Update slicing condition
+        MoL: Ensure the data is in the correct timelevel
+        while (MoL::MoL_Intermediate_Step)
+          GROUP MoL_Step: The loop over the intermediate steps for the ODE integrator
+            MoL: Initialise the RHS functions
+            GROUP MoL_CalcRHS: Physics thorns schedule the calculation of the discrete spatial operator in here
+              GROUP ADM_BSSN_CalcRHS: Calculate the update terms for BSSN
+                BSSN_MoL: Calculate the update term for BSSN
+                BSSN_MoL: The new radiative boundary condition is part of the MoL step
+            GROUP MoL_PostRHS: Modify RHS functions
+            GROUP MoL_RHSBoundaries: Any 'final' modifications to the RHS functions (boundaries etc.)
+            MoL: Updates calculated with the efficient Runge-Kutta 3 method
+            MoL: Alter the counter number
+            MoL: If necessary, change the time
+            GROUP MoL_PostStep: The group for physics thorns to schedule boundary calls etc.
+              GROUP ADM_BSSN_PostStep: Everything after a MoL step for BSSN
+                BSSN_MoL: Trace A removal
+                BSSN_MoL: Boundary enforcement for BSSN
+                GROUP BSSN_MoL_ApplyBCs: Apply boundary conditions controlled by thorn Boundary
+                  GROUP BoundaryConditions: Execute all boundary conditions
+                    Boundary: Apply all requested local physical boundary conditions
+                    CartGrid3D: Apply symmetry boundary conditions
+                  Boundary: Unselect all grid variables for boundary conditions
+                BSSN_MoL: Updates the standard ADM variables
+                BSSN_MoL: Updates the time derivative of the lapse.
+            MoL: If necessary, change the timestep
+        end while
+        MoL: Restoring the Save and Restore variables to the original state
+        MoL: Control the step size
+    end while
+    [CCTK_POSTSTEP]
+    PUGH: Print storage information
+    if (checkpoint)
+      [CCTK_CHECKPOINT]
+    endif
+    if (analysis)
+      [CCTK_ANALYSIS]
+      GROUP MoL_AllRHS: Calculate the update terms
+        GROUP MoL_PreStep: Prepare the update terms
+          BSSN_MoL: Update slicing condition
+        GROUP MoL_CalcRHS: Calculate the update terms
+          GROUP ADM_BSSN_CalcRHS: Calculate the update terms for BSSN
+            BSSN_MoL: Calculate the update term for BSSN
+            BSSN_MoL: The new radiative boundary condition is part of the MoL step
+        GROUP MoL_PostRHS: Modify the update terms
+      GROUP ADM_BSSN_Analysis: Analyse BSSN quantities
+        BSSN_MoL: Calculate the BSSN constraints
+        GROUP BSSN_MoL_ApplyBCs: Apply boundary conditions controlled by thorn Boundary
+          GROUP BoundaryConditions: Execute all boundary conditions
+            Boundary: Apply all requested local physical boundary conditions
+            CartGrid3D: Apply symmetry boundary conditions
+          Boundary: Unselect all grid variables for boundary conditions
+    endif
+    Do periodic output of grid variables
+  enddo
+
+  Termination routines
+    [CCTK_TERMINATE]
+    MoL: Free the MoL bookkeeping index arrays
+    PUGH: Print storage information
+    PUGH: Termination routine
+
+  Shutdown routines
+    [CCTK_SHUTDOWN]
+
+  Routines run after restricting:
+    [CCTK_POSTRESTRICT]
+    GROUP MoL_PostStep: Ensure that everything is correct after restriction
+      GROUP ADM_BSSN_PostStep: Everything after a MoL step for BSSN
+        BSSN_MoL: Trace A removal
+        BSSN_MoL: Boundary enforcement for BSSN
+        GROUP BSSN_MoL_ApplyBCs: Apply boundary conditions controlled by thorn Boundary
+          GROUP BoundaryConditions: Execute all boundary conditions
+            Boundary: Apply all requested local physical boundary conditions
+            CartGrid3D: Apply symmetry boundary conditions
+          Boundary: Unselect all grid variables for boundary conditions
+        BSSN_MoL: Updates the standard ADM variables
+        BSSN_MoL: Updates the time derivative of the lapse.
+
+  Routines run after changing the grid hierarchy:
+    [CCTK_POSTREGRID]
+    CartGrid3D: Set Coordinates after regridding
+--------------------------------------------------------------------------------
+INFO (what): PUGHReduce
+--------------------------------------------------------------------------------
+Driver provided by PUGH
+--------------------------------------------------------------------------------
+MoL: Generalized time integration.
+--------------------------------------------------------------------------------
+
+INFO (IOBasic): I/O Method 'Scalar' registered: output of scalar quantities (grid scalars, reductions) to ASCII files
+INFO (IOBasic): I/O Method 'Info' registered: output of scalar quantities (grid scalars, reductions) to screen
+INFO (MoL): Using Runge-Kutta 3 as the time integrator.
+INFO (MoL): The maximum number of evolved variables is 25. 25 are registered.
+INFO (MoL): The maximum number of constrained variables is 15. 12 are registered.
+INFO (MoL): The maximum number of SandR variables is 1. 0 are registered.
+INFO (MoL): The maximum number of evolved complex variables is 0. 0 are registered.
+INFO (MoL): The maximum number of constrained complex variables is 0. 0 are registered.
+INFO (MoL): The maximum number of SandR complex variables is 0. 0 are registered.
+INFO (MoL): The maximum number of evolved array variables is 0. 0 are registered.
+INFO (MoL): The maximum number of constrained array variables is 0. 0 are registered.
+INFO (MoL): The maximum number of SandR array variables is 0. 0 are registered.
+INFO (MoL): The maximum number of evolved complex array variables is 0. 0 are registered.
+INFO (MoL): The maximum number of constrained complex array variables is 0. 0 are registered.
+INFO (MoL): The maximum number of SandR complex array variables is 0. 0 are registered.
+INFO (MoL): The maximum size of any array variables is 0.
+INFO (ADMMacros): Spatial finite differencing order: 4
+INFO (CartGrid3D): Grid Spacings:
+INFO (CartGrid3D): dx=>1.0101010e-02  dy=>1.0101010e-02  dz=>1.0101010e-02
+INFO (CartGrid3D): Computational Coordinates:
+INFO (CartGrid3D): x=>[-0.500, 0.500]  y=>[-0.500, 0.500]  z=>[-0.500, 0.500]
+INFO (CartGrid3D): Indices of Physical Coordinates:
+INFO (CartGrid3D): x=>[0,99]  y=>[0,99]  z=>[0,99]
+INFO (PUGH): MPI Evolution on 1 processors
+INFO (PUGH): 3-dimensional grid functions
+INFO (PUGH):   Size: 100 100 100
+INFO (PUGH):   Processor topology: 1 x 1 x 1
+INFO (PUGH):   Local load: 1000000   [100 x 100 x 100]
+INFO (PUGH):   Maximum load skew: 0.000000
+INFO (Time): Timestep set to 0.00252525 (courant_static)
+INFO (BSSN_MoL): Chosen options for BSSN:
+INFO (BSSN_MoL):   Trace of Aij subtracted each timestep
+INFO (BSSN_MoL):   Gammas are evolved
+INFO (BSSN_MoL):   Replacing R using Hamiltonian constraint
+INFO (BSSN_MoL):   No attenuation.
+INFO (BSSN_MoL):   Gamma2 shift
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+INFO (IOBasic): Periodic info output requested for 'ADMBASE::alp'
+-------------------------------------------------
+   it  |          | ADMBASE::alp                |
+       |    t     | minimum      | maximum      |
+-------------------------------------------------
+     0 |    0.000 |   1.00000000 |   1.00000000 |
+INFO (BSSN_MoL): 1+log slicing
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+     1 |    0.003 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+     2 |    0.005 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+     3 |    0.008 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+     4 |    0.010 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+     5 |    0.013 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+     6 |    0.015 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+     7 |    0.018 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+     8 |    0.020 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+     9 |    0.023 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    10 |    0.025 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    11 |    0.028 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    12 |    0.030 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    13 |    0.033 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    14 |    0.035 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    15 |    0.038 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    16 |    0.040 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    17 |    0.043 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    18 |    0.045 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    19 |    0.048 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    20 |    0.051 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    21 |    0.053 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    22 |    0.056 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    23 |    0.058 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    24 |    0.061 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    25 |    0.063 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    26 |    0.066 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    27 |    0.068 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    28 |    0.071 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    29 |    0.073 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    30 |    0.076 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    31 |    0.078 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    32 |    0.081 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    33 |    0.083 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    34 |    0.086 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    35 |    0.088 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    36 |    0.091 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    37 |    0.093 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    38 |    0.096 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    39 |    0.098 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+    40 |    0.101 |   1.00000000 |   1.00000000 |
+INFO (PUGH): Storage statistics
+INFO (PUGH):   Maximum storage:   0.00MB
+INFO (PUGH):   [0 Grid Functions, 0 Grid Arrays]
+--------------------------------------------------------------------------------
+Done.
+===================================================================================================
+Thorn           | Scheduled routine in time bin           | gettimeofday [secs] | getrusage [secs] 
+===================================================================================================
+BSSN_MoL        | Register provided slicings              |          0.00001700 |       0.00000000 
+CartGrid3D      | Register GH Extension for GridSymmetry  |          0.00000500 |       0.00000000 
+CoordBase       | Register a GH extension to store the coo|          0.00000200 |       0.00000000 
+PUGH            | Startup routine                         |          0.00000700 |       0.00000000 
+IOUtil          | Startup routine                         |          0.00000700 |       0.00000000 
+MoL             | Startup banner                          |          0.00000400 |       0.00000000 
+IOBasic         | Startup routine                         |          0.00000300 |       0.00000000 
+PUGHInterp      | PUGHInterp startup routine              |          0.00000500 |       0.00000000 
+PUGHReduce      | Startup routine                         |          0.00010800 |       0.00000000 
+SymBase         | Register GH Extension for SymBase       |          0.00000300 |       0.00000000 
+---------------------------------------------------------------------------------------------------
+                | Total time for CCTK_STARTUP             |          0.00016100 |       0.00000000 
+===================================================================================================
+ADMBase         | Set up GF symmetries                    |          0.00003800 |       0.00000000 
+BSSN_MoL        | Set symmetries for ADM_BSSN grid functio|          0.00052400 |       0.00000000 
+CoordGauge      | Initialize slicing, setup priorities for|          0.00000800 |       0.00000000 
+Boundary        | Register boundary conditions that this t|          0.00001200 |       0.00000000 
+CartGrid3D      | Register coordinates for the Cartesian g|          0.00005200 |       0.00100000 
+CoordGauge      | Identify the slicing for the next iterat|          0.00000300 |       0.00000000 
+MoL             | Set up the MoL bookkeeping index arrays |          0.00018300 |       0.00000000 
+MoL             | Set the flag so it is ok to register wit|          0.00001000 |       0.00000000 
+BSSN_MoL        | Register evolution variables for BSSN   |          0.00024800 |       0.00000000 
+MoL             | Report how many of each type of variable|          0.00075700 |       0.00000000 
+CartGrid3D      | Register symmetry boundaries            |          0.00001400 |       0.00000000 
+SymBase         | Print symmetry boundary face description|          0.00000400 |       0.00000000 
+---------------------------------------------------------------------------------------------------
+                | Total time for CCTK_WRAGH               |          0.00185300 |       0.00100000 
+===================================================================================================
+ADMBase         | Check consistency of parameters         |          0.00001400 |       0.00000000 
+BSSN_MoL        | Check the metric type and conformal stat|          0.00001600 |       0.00000000 
+Boundary        | Check dimension of grid variables       |          0.00000200 |       0.00000000 
+CartGrid3D      | Check coordinates for CartGrid3D        |          0.00000600 |       0.00000000 
+MoL             | Basic parameter checking                |          0.00001300 |       0.00000000 
+---------------------------------------------------------------------------------------------------
+                | Total time for CCTK_PARAMCHECK          |          0.00005100 |       0.00000000 
+===================================================================================================
+ADMBase         | Set the shift_state variable to 1       |          0.00001200 |       0.00000000 
+ADMMacros       | Initialize the local_spatial_order      |          0.00006500 |       0.00000000 
+CartGrid3D      | Set up ranges for spatial 3D Cartesian c|          0.00040600 |       0.00000000 
+CartGrid3D      | Set up spatial 3D Cartesian coordinates |          0.08988500 |       0.04099300 
+PUGH            | Report on PUGH set up                   |          0.00050800 |       0.00000000 
+SymBase         | Check whether the driver set up the grid|          0.00000800 |       0.00000000 
+Time            | Initialise Time variables               |          0.00000600 |       0.00000000 
+Time            | Set timestep based on Courant condition |          0.00006600 |       0.00000000 
+---------------------------------------------------------------------------------------------------
+                | Total time for CCTK_BASEGRID            |          0.09095600 |       0.04099300 
+===================================================================================================
+StaticConformal | Set the conformal_state variable to 0   |          0.00001100 |       0.00000000 
+ADMBase         | Set the metric and extrinsic curvature t|          0.39753200 |       0.20796900 
+ADMBase         | Set the lapse to 1 at all points        |          0.02418300 |       0.00799900 
+ADMBase         | Set the shift to 0 at all points        |          0.06682200 |       0.01999700 
+BSSN_MoL        | Initialize ADM_BSSN system              |          1.56199800 |       1.13482700 
+IOBasic         | Initialisation routine                  |          0.00000600 |       0.00000000 
+MoL             | Initialise the step size control        |          0.00001400 |       0.00000000 
+BSSN_MoL        | Trace A removal                         |         33.62467500 |      33.62188200 
+BSSN_MoL        | Boundary enforcement for BSSN           |          0.00818400 |       0.00999900 
+Boundary        | Apply all requested local physical bound|          0.00093600 |       0.00000000 
+CartGrid3D      | Apply symmetry boundary conditions      |          0.00147000 |       0.00100000 
+Boundary        | Unselect all grid variables for boundary|          0.00044100 |       0.00000000 
+BSSN_MoL        | Updates the standard ADM variables      |         35.28366500 |      35.27363900 
+BSSN_MoL        | Updates the time derivative of the lapse|          0.00424500 |       0.00300000 
+---------------------------------------------------------------------------------------------------
+                | Total time for CCTK_INITIAL             |         70.97418200 |      70.28031200 
+===================================================================================================
+BSSN_MoL        | Trace A removal                         |         33.62467500 |      33.62188200 
+BSSN_MoL        | Boundary enforcement for BSSN           |          0.00818400 |       0.00999900 
+Boundary        | Apply all requested local physical bound|          0.00093600 |       0.00000000 
+CartGrid3D      | Apply symmetry boundary conditions      |          0.00147000 |       0.00100000 
+Boundary        | Unselect all grid variables for boundary|          0.00044100 |       0.00000000 
+BSSN_MoL        | Updates the standard ADM variables      |         35.28366500 |      35.27363900 
+BSSN_MoL        | Updates the time derivative of the lapse|          0.00424500 |       0.00300000 
+---------------------------------------------------------------------------------------------------
+                | Total time for CCTK_POSTINITIAL         |         68.92361600 |      68.90952000 
+===================================================================================================
+CoordGauge      | Identify the slicing for the next iterat|          0.00042400 |       0.00000000 
+---------------------------------------------------------------------------------------------------
+                | Total time for CCTK_PRESTEP             |          0.00042400 |       0.00000000 
+===================================================================================================
+MoL             | Initialise the step size control        |          0.00042200 |       0.00000000 
+MoL             | Set the counter for the ODE method to lo|          0.00039100 |       0.00000000 
+MoL             | Ensure the correct time and timestep are|          0.00030700 |       0.00000000 
+BSSN_MoL        | Update slicing condition                |          0.00098600 |       0.00200000 
+MoL             | Ensure the data is in the correct timele|          8.89144700 |       8.88864900 
+MoL             | Initialise the RHS functions            |          4.45195500 |       4.45131900 
+BSSN_MoL        | Calculate the update term for BSSN      |        600.18990200 |     597.33919600 
+BSSN_MoL        | The new radiative boundary condition is |         19.14844900 |      19.15009100 
+MoL             | Updates calculated with the efficient Ru|         24.00038200 |      23.99435300 
+MoL             | Alter the counter number                |          0.00203200 |       0.00099900 
+MoL             | If necessary, change the time           |          0.00155700 |       0.00000000 
+BSSN_MoL        | Trace A removal                         |         33.62467500 |      33.62188200 
+BSSN_MoL        | Boundary enforcement for BSSN           |          0.00818400 |       0.00999900 
+Boundary        | Apply all requested local physical bound|          0.00093600 |       0.00000000 
+CartGrid3D      | Apply symmetry boundary conditions      |          0.00147000 |       0.00100000 
+Boundary        | Unselect all grid variables for boundary|          0.00044100 |       0.00000000 
+BSSN_MoL        | Updates the standard ADM variables      |         35.28366500 |      35.27363900 
+BSSN_MoL        | Updates the time derivative of the lapse|          0.00424500 |       0.00300000 
+MoL             | If necessary, change the timestep       |          0.00173300 |       0.00499900 
+MoL             | Restoring the Save and Restore variables|          0.00030300 |       0.00100000 
+MoL             | Control the step size                   |          0.00028700 |       0.00000000 
+---------------------------------------------------------------------------------------------------
+                | Total time for CCTK_EVOL                |        725.61376900 |     722.74212600 
+===================================================================================================
+PUGH            | Print storage information               |          0.00183300 |       0.00300000 
+---------------------------------------------------------------------------------------------------
+                | Total time for CCTK_POSTSTEP            |          0.00183300 |       0.00300000 
+===================================================================================================
+BSSN_MoL        | Update slicing condition                |          0.00098600 |       0.00200000 
+BSSN_MoL        | Calculate the update term for BSSN      |        600.18990200 |     597.33919600 
+BSSN_MoL        | The new radiative boundary condition is |         19.14844900 |      19.15009100 
+BSSN_MoL        | Calculate the BSSN constraints          |          0.00000000 |       0.00000000 
+Boundary        | Apply all requested local physical bound|          0.00093600 |       0.00000000 
+CartGrid3D      | Apply symmetry boundary conditions      |          0.00147000 |       0.00100000 
+Boundary        | Unselect all grid variables for boundary|          0.00044100 |       0.00000000 
+---------------------------------------------------------------------------------------------------
+                | Total time for CCTK_ANALYSIS            |        619.34218400 |     616.49228700 
+===================================================================================================
+MoL             | Free the MoL bookkeeping index arrays   |          0.00000500 |       0.00000000 
+PUGH            | Print storage information               |          0.00001800 |       0.00000000 
+PUGH            | Termination routine                     |          0.12252500 |       0.00200000 
+---------------------------------------------------------------------------------------------------
+                | Total time for CCTK_TERMINATE           |          0.12254800 |       0.00200000 
+===================================================================================================
+---------------------------------------------------------------------------------------------------
+                | Total time for simulation               |        728.15640200 |     724.42987000 
+===================================================================================================
