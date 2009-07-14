@@ -11,7 +11,7 @@ The release notices contain information about changes from one release to the ne
 <p>
 	<strong>Latest release:</strong>
 	<br />
-	<a href="beta16">Cactus 4.0 beta 16</a> (03 February 2009)
+	<a href="beta16">Cactus 4.0 beta 16</a> (02 February 2009)
 </p>
 
 	  <!--<p>

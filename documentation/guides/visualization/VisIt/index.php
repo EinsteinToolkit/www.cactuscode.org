@@ -1,6 +1,7 @@
 <!-- -*-mode:html;coding:utf-8-*- -->
 <?php $title='VisIt';
-include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
+include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
+$section='visualization';?>
 
 <h3>What is VisIt?</h3>
 
