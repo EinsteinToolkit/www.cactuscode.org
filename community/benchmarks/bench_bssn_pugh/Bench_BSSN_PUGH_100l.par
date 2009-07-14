@@ -1,0 +1,76 @@
+# Benchmark of BSSN using PUGH with one refinement level
+# $Header: /cactus/Utilities/Benchmarks/ParameterFiles/Bench_BSSN_PUGH_100l.par,v 1.1 2006/01/13 13:27:37 schnetter Exp $
+
+Cactus::cctk_run_title    = "Benchmark of BSSN using PUGH with one refinement level"
+Cactus::cctk_timer_output = "full"
+
+Cactus::cctk_itlast = 40
+
+
+
+ActiveThorns = "IOUtil"
+
+IO::print_timing_info = yes
+
+
+
+ActiveThorns = "PUGH PUGHInterp PUGHReduce PUGHSlab"
+
+PUGH::local_size_includes_ghosts = no
+driver::local_nsize              = 100
+driver::ghost_size               = 2
+
+PUGH::storage_verbose            = "report"
+PUGH::storage_report_every       = 1
+
+
+
+ActiveThorns = "Boundary CartGrid3D CoordBase SymBase"
+
+grid::type = "box"
+
+
+
+ActiveThorns = "ADMBase ADMCoupling ADMMacros CoordGauge SpaceMask StaticConformal"
+
+ADMMacros::spatial_order = 4
+
+ADMBase::initial_data  = "Cartesian Minkowski"
+ADMBase::initial_lapse = "one"
+ADMBase::initial_shift = "zero"
+
+
+
+ActiveThorns = "Time"
+
+Time::dtfac = 0.25
+
+
+
+ActiveThorns = "MoL"
+
+MoL::ODE_Method = RK3
+
+
+
+ActiveThorns = "BSSN_MoL"
+
+ADMBase::evolution_method = "ADM_BSSN"
+ADM_BSSN::bound           = "newrad"
+ADM_BSSN::advection       = "upwind2"
+ADM_BSSN::stencil_size    = 2
+
+ADMBase::lapse_evolution_method = "1+log"
+ADM_BSSN::lapsesource           = "modified"
+ADM_BSSN::harmonic_f            = 2.0
+
+ADMBase::shift_evolution_method = "gamma2"
+ADM_BSSN::ShiftGammaCoeff       = 0.75
+ADM_BSSN::BetaDriver            = 2
+
+
+
+ActiveThorns = "IOBasic"
+
+IOBasic::outInfo_every = 1
+IOBasic::outInfo_vars  = "ADMBase::alp"
