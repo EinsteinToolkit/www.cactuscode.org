@@ -3,7 +3,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 $section='visualization';?>
 
-<h2>Data Visualization with DV and xvs</h2> 
+<h3>Data Visualization with DV and xvs</h3> 
 
 DV (DataVault) and xvs are freely available visualization packages, written by <a href="http://laplace.physics.ubc.ca/People/matt/">
 Matthew W. Choptuik</a>.

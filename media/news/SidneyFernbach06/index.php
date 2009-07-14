@@ -3,7 +3,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
 <p>
-<b>November 2006:</b> 
+<strong>November 2006:</strong> 
   <table>
 	    <tr>
 	      <td valign=center>Ed Seidel won the 2006 Sidney Fernbach Award for his work with Cactus and Black Holes. He received one of the highest honors in computational science at the annual Supercomputing Conference in Tampa, Fla. on Nov. 15.

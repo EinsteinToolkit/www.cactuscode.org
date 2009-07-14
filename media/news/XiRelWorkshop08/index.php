@@ -7,7 +7,7 @@ The Center for Computation & Technology will held the first XiRel workshop that 
 </p>
 
 <p>
-<b>Agenda:</b>
+<strong>Agenda:</strong>
 <i>Wednesday (Jan 23rd)</i>
 </p>
 
@@ -73,7 +73,7 @@ Session 4 (Lead by Dr. Allen)
 </p>
 
 <p>
-<b>Participants:</b>
+<strong>Participants:</strong>
 <ul>
 <li><i>Louisiana State University:</i>
 <ul>
