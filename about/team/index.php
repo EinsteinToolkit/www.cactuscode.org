@@ -10,6 +10,7 @@ page we list some of the current active members of the development
 team:
 </p>
 
+<h3>Current</h3>
 <ul>
 <li><a href="gallen">Gabrielle Allen</a>
 <br />Lead of Cactus project at <a href="http://www.lsu.edu/">LSU</a>, and inactive developer</li>
@@ -17,14 +18,6 @@ team:
 
 <li><a href="ebentivegna">Eloisa Bentivegna</a>
 <br />Postdoc researcher at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
-<br />
-
-<li><a href="yelkhamra">Yaakoub El-Khamra</a>
-<br />Research Engineering / Scientist Associate III at <a href="http://www.tacc.utexas.edu/">Texas Advanced Computing Center</a></li>
-<br />
-
-<li><a href="tgoodale">Tom Goodale</a>
-<br />Research scientist at both <a href="http://www.lsu.edu/">LSU</a> and Cardiff University</li>
 <br />
 
 <li><a href="cjordan">Colby Jordan</a>
@@ -42,11 +35,6 @@ team:
 <br />Postdoc researcher at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
 
-<li><a href="tradke">Thomas Radke</a>
-<br />Scientific Programmer and Lead of the e-Science group in the <a href="http://www.aei.mpg.de/english/research/teams/astrophysicalRelativity/">Astrophysical Relativity Division</a>
-of the <a href="http://www.aei.mpg.de/" title="Max-Planck-Institute for Gravitational Physics (Albert Einstein Institute)">AEI</a></li>
-<br />
-
 <li><a href="drideout">David Rideout</a>
 <br />Researcher in the <a href="http://www.perimeterinstitute.ca/en/Scientific/Research/Quantum_Foundations/">Quantum  Foundations Group</a> at the <a href="http://www.perimeterinstitute.ca/">Perimeter Institute for Theoretical Physics</a></li>
 <br />
@@ -58,7 +46,31 @@ of the <a href="http://www.aei.mpg.de/" title="Max-Planck-Institute for Gravitat
 <li><a href="jtao">Jian Tao</a>
 <br />Postdoc researcher at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
+</ul>
 
+<h3>Alumni</h3>
+<ul>
+<li>Thomas Dramlitsch</li>
+<br />
+
+<li><a href="yelkhamra">Yaakoub El-Khamra</a>
+<br />Research Engineering / Scientist Associate III at <a href="http://www.tacc.utexas.edu/">Texas Advanced Computing Center</a></li>
+<br />
+
+<li><a href="tgoodale">Tom Goodale</a>
+<br />Research scientist at both <a href="http://www.lsu.edu/">LSU</a> and Cardiff University</li>
+<br />
+
+<li>Gerd Lanfermann</li>
+<br />
+
+<li><a href="tradke">Thomas Radke</a>
+<br />Scientific Programmer and Lead of the e-Science group in the <a href="http://www.aei.mpg.de/english/research/teams/astrophysicalRelativity/">Astrophysical Relativity Division</a>
+of the <a href="http://www.aei.mpg.de/" title="Max-Planck-Institute for Gravitational Physics (Albert Einstein Institute)">AEI</a></li>
+<br />
+
+<li>Steve White</li>
+<br />
 </ul>
 
 <?php

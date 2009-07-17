@@ -3,11 +3,10 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 $section='visualization';?>
 
-<h3>Data Visualization with DV and xvs</h3> 
-
+<p>
 DV (DataVault) and xvs are freely available visualization packages, written by <a href="http://laplace.physics.ubc.ca/People/matt/">
 Matthew W. Choptuik</a>.
-<p>
+</p><p>
 DV is a powerful visualization and data analysis package for numerical codes that solve partial differential equations via grid-based methods, in particular those utilizing adaptive mesh refinement (AMR) and/or
 running in a parallel environment.<br>
 DV provides a comprehensive set of built-in functions to analyze 1D, 2D, and 3D time-dependent datasets, eg.
