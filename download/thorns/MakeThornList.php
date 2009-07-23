@@ -26,7 +26,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 
       <ol>
 
-        <li> Write a <i>Master ThornList</i> containing all
+        <li> Write a <em>Master ThornList</em> containing all
           the thorns you have access to, along with directives
           for their CVS locations. As an example, here is
           <a href="MasterAllen.th">my master thornlist</a>.

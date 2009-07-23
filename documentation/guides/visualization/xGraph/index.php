@@ -162,10 +162,10 @@ cvs -d :pserver:cvs_anon@cvs.cactuscode.org:/cactus co -d \
 
 	  <p>
 	    Please direct questions about xgraph to 
-	    <i>
+	    <em>
 	      <a href="
 		mailto:cactusmaint@cactuscode.org">cactusmaint@cactuscode.org</a>
-	    </i>
+	    </em>
 	  </p>
 
 

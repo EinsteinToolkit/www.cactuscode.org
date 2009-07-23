@@ -113,11 +113,11 @@ ygraph &lt;data filename&gt; &lt;data filename&gt;</pre>
 
 	  <p>
 	    Please direct questions about ygraph to 
-	    <i>
+	    <em>
 
 	      <a href="
 		mailto:pollney@aei.mpg.de">pollney@aei.mpg.de</a>
-	    </i>
+	    </em>
 	  </p>
 
 

@@ -11,7 +11,7 @@ During the one day workshop that started with presentations by Dr. Ed Seidel and
 
 <hr />
 <p>
-<i><font align=left><a href="http://www.cct.lsu.edu/news/news/252">CCT Weekly April 22-28, 2007:</a></i></font>
+<em><font align=left><a href="http://www.cct.lsu.edu/news/news/252">CCT Weekly April 22-28, 2007:</a></em></font>
 </p>
 
 <p>

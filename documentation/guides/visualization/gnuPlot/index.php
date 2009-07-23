@@ -57,7 +57,7 @@ $section='visualization';?>
 
 	  <H3>Abstract:</H3>
 	  <p>
-	    At the time of this writing, there are two supported client programmes available to display Cactus ASCII output graphically, namely <a href="../visualization/xGraph"><i>xgraph</i></a> and <i>gnuplot</i>.
+	    At the time of this writing, there are two supported client programmes available to display Cactus ASCII output graphically, namely <a href="../visualization/xGraph"><em>xgraph</em></a> and <em>gnuplot</em>.
 	    Although xgraph is the default output format, gnuplot offers many more features to the intermediate and expert user. Among those are the capability to choose which part(s) of the dataset to display, or to combine with other data. Below you find an introduction to creating and viewing Cactus ASCII output files in the gnuplot format. Step by step you are then introduced to more advanced features of gnuplot.
 	  </p>
 
@@ -138,7 +138,7 @@ $section='visualization';?>
 	  </H1>
 
 	  <P>
-	    By default, 1D ASCII output from the released Cactus thorns uses xgraph format, and most of the example  parameter files distributed with thorns follow this  convention. The parameter file <i>wavetoyc_gnuplot.par</i> in thorn <strong>WaveToyC</strong> in the <strong>CactusWave</strong> arrangement produces gnuplot output, demonstrating all released output methods which can produce gnuplot output.
+	    By default, 1D ASCII output from the released Cactus thorns uses xgraph format, and most of the example  parameter files distributed with thorns follow this  convention. The parameter file <em>wavetoyc_gnuplot.par</em> in thorn <strong>WaveToyC</strong> in the <strong>CactusWave</strong> arrangement produces gnuplot output, demonstrating all released output methods which can produce gnuplot output.
 	    To test this out:
 	  </P>
 
@@ -149,7 +149,7 @@ $section='visualization';?>
 	    <tt><font size=2>examples/wavetoy</font></tt>
 
 	    </LI>
-	    <LI>Run the parameter file <i>wavetoyc_gnuplot.par</i>
+	    <LI>Run the parameter file <em>wavetoyc_gnuplot.par</em>
 	    </LI>
 	  </OL>
 	  <p>

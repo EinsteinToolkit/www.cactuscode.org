@@ -12,7 +12,7 @@ The conference is an exciting opportunity for scientists, researchers, software 
 Erik Schnetter showed the first large scale runs on <a href="http://www.hpc.lsu.edu/systems/system.php?system=QueenBee">QueenBee</a> in a presentation entitled <a href="http://www.cct.lsu.edu/~eschnett/doc/Reno-2007-Supercomputing-CactusPetascale.pdf">Cactus Tools for Petascale Copmuting</a>. Scaling results of the single-node and of all the 668 nodes of the Einstein Equations can be found in the presentation. At the end, Dr. Schnetter showed an interactive demo on Queen Bee.
 </p>
 <p>
-Chris White showed a <a href="http://www.ucoms.org/">UCoMs</a> demo black oil and Mayank Tyagi talked about the <i>Computational Fluid Dynamics Toolkit in Cactus</i>.
+Chris White showed a <a href="http://www.ucoms.org/">UCoMs</a> demo black oil and Mayank Tyagi talked about the <em>Computational Fluid Dynamics Toolkit in Cactus</em>.
 </p>
 <p>
 <table> 

@@ -10,7 +10,7 @@ The <strong>news</strong> list is used to broadcast Cactus related events, inter
 </p>
 
 <ul>
-  <dt>News items:</dt>
+  <dt><h4>News items:</h4></dt>
   <li>
     <a href="mailto:news@cactuscode.org">news@cactuscode.org</a>
     <br />
@@ -20,7 +20,7 @@ The <strong>news</strong> list is used to broadcast Cactus related events, inter
   </li>
   
   <br />
-  <dt>Discussion list for users:</dt>
+  <dt><h4>Discussion list for users:</h4></dt>
   <li>
     <a href="mailto:users@cactuscode.org">users@cactuscode.org</a>
     <br />
@@ -30,7 +30,7 @@ The <strong>news</strong> list is used to broadcast Cactus related events, inter
   </li>
 
   <br />
-  <dt>Discussion list for all developers:</dt>
+  <dt><h4>Discussion list for all developers:</h4></dt>
   <li>
     <a href="mailto:developers@cactuscode.org">developers@cactuscode.org</a>
     <br />
@@ -40,7 +40,7 @@ The <strong>news</strong> list is used to broadcast Cactus related events, inter
   </li>
 
   <br />
-  <dt>Cactus maintainer mailing list:</dt>
+  <dt><h4>Cactus maintainer mailing list:</h4></dt>
   <li>
     <a href="mailto:cactusmaint@cactuscode.org">cactusmaint@cactuscode.org</a>
     <br />
@@ -51,7 +51,7 @@ The <strong>news</strong> list is used to broadcast Cactus related events, inter
   <p>This list is not public.  You can send questions, comments, or complaints to this list which you do not want to make in public.</p>
 
   <br />
-  <dt>Patch list:</dt>
+  <dt><h4>Patch list:</h4></dt>
   <li>
     <a href="mailto:patches@cactuscode.org" >patches@cactuscode.org</a>
     <br />
@@ -59,11 +59,11 @@ The <strong>news</strong> list is used to broadcast Cactus related events, inter
     &nbsp;
     [<a href="http://www.cactuscode.org/pipermail/patches" >archives</a>]
   </li>
-  <p>This list is only for patches.  Anything sent to <i>patches</i> will be forwarded to the <i>developers</i> list with attachments removed, but a link left in so you can get the patch.  If you want to get the patch mailed to you, please subscribe to the <i>patches</i> mailing list.</p>
+  <p>This list is only for patches.  Anything sent to <em>patches</em> will be forwarded to the <em>developers</em> list with attachments removed, but a link left in so you can get the patch.  If you want to get the patch mailed to you, please subscribe to the <em>patches</em> mailing list.</p>
   <p>For more information on how to use this list, please read the <a href="http://www.cactuscode.org/MailingLists/patches" >patches  information</a> page.</p>
 
   <br />
-  <dt>Flesh CVS list:</dt>
+  <dt><h4>Flesh CVS list:</h4></dt>
   <li>
   	<a href="mailto:flesh-cvs@cactuscode.org" >flesh-cvs@cactuscode.org</a>
   	<br />
@@ -71,7 +71,7 @@ The <strong>news</strong> list is used to broadcast Cactus related events, inter
   </li>
 
   <br />
-  <dt>Cactus Thorns CVS list:</dt>
+  <dt><h4>Cactus Thorns CVS list:</h4></dt>
   <li>
   	<a href="mailto:cactus-thorns-cvs@cactuscode.org" >cactus-thorns-cvs@cactuscode.org</a>
   	<br />

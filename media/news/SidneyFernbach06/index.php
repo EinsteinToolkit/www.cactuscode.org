@@ -27,7 +27,7 @@ Using the high-performance software that Seidel and the CCT researchers develope
 Offering scientists a model for understanding what gravitational waves from black hole collisions look like will ultimately lead to breakthroughs in physics and astronomy, Seidel said.  
 </p>
 <p>
-Among the past recipients are John B. Bell (2005), Jack J. Dongarra (2003), Michael L. Norman (1999) and Phillip Collela (1998). <a href ="http://www.cct.lsu.edu/news/news/155"><i>(Source CCT Weekly)</i></a>
+Among the past recipients are John B. Bell (2005), Jack J. Dongarra (2003), Michael L. Norman (1999) and Phillip Collela (1998). <a href ="http://www.cct.lsu.edu/news/news/155"><em>(Source CCT Weekly)</em></a>
 <p>
 <a href= "/media/presentations/SC06Seidel.pdf">Download Ed's presentation</a>
 </p>
@@ -39,7 +39,7 @@ Among the past recipients are John B. Bell (2005), Jack J. Dongarra (2003), Mich
 <a href="http://appl003.lsu.edu/UNV002.nsf/PressReleases/PR4052?OpenDocument">LSU Article</a>:
 </p>
 <p>
-<i>
+<em>
 There are only a handful of awards in the computational sciences that mark career achievements. Edward Seidel, director of LSU's Center for Computation and Technology, or CCT, has just received one of the most prestigious honors, the Sidney Fernbach Award.
 <p>
 Given by the Institute of Electrical and Electronics Engineers, or IEEE, computer society, this international award recognizes outstanding contributions in the application of high-performance computers using innovative approaches. It was established in 1992 in memory of Sidney Fernbach, one of the pioneers in the development and application of high-performance computers for the solution of large computational problems.
@@ -55,7 +55,7 @@ For example, he realized early on that instead of using a specific algorithm to 
 </p>
 <p>
 Seidel's career is marked by a history of risk-taking experimentation that has paid huge dividends in scientific discovery. His scientific legacy combines an extraordinary grasp of very complex concepts, with a keen eye for the uses of technology and the ability to inspire diverse groups of researchers, scientists and students to lend the full range of their expertise to solving complex problems in novel and groundbreaking ways. It is this level of leadership that makes his work one of the best examples of the success of LSU's Flagship Agenda.
-</i>
+</em>
 </p>
 
 <h3 class="align-right">day Mon year — user posting</h3>

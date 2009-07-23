@@ -8,7 +8,7 @@ The Center for Computation & Technology will held the first XiRel workshop that 
 
 <p>
 <strong>Agenda:</strong>
-<i>Wednesday (Jan 23rd)</i>
+<em>Wednesday (Jan 23rd)</em>
 </p>
 
 <p>
@@ -36,7 +36,7 @@ Session 2 (Lead by Dr. Schnetter)
 </p>
 
 <p>
-<i>Thursday (Jan 24th)</i>
+<em>Thursday (Jan 24th)</em>
 </p>
 
 <p>
@@ -65,7 +65,7 @@ Session 4 (Lead by Dr. Allen)
 </p>
 
 <p>
-<i>Friday (Jan 25th)</i>
+<em>Friday (Jan 25th)</em>
 <table border =0>
 <tr><td>Technical discussions and code writing</td></tr>
 <tr><td>Tentative: hand-on tutorials on BBH Factory and Kranc.</td></tr>
@@ -75,7 +75,7 @@ Session 4 (Lead by Dr. Allen)
 <p>
 <strong>Participants:</strong>
 <ul>
-<li><i>Louisiana State University:</i>
+<li><em>Louisiana State University:</em>
 <ul>
 <li> Gabrielle Allen</li>
 <li> Peter Diener</li>
@@ -87,18 +87,18 @@ Session 4 (Lead by Dr. Allen)
 <li> Enrique Pazos</li>
 </ul>
 
-<li><i>Albert Einstein Institute:</i> 
+<li><em>Albert Einstein Institute:</em> 
 <ul>
 <li> Denis Pollney</li>
 <li> Christian Reisswig</li>
 </ul>
 
-<li><i>Rochester Institute of Technology:</i>
+<li><em>Rochester Institute of Technology:</em>
 <ul>
 <li> Yosef Zlochower</li>
 </ul>
 
-<li><i>Penn State University:</i>
+<li><em>Penn State University:</em>
 <ul>
 <li> Ian Hinder </li>
 </ul>
