@@ -4,7 +4,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 
 <h3>
 March 17, 2009:<br />
-Webcast: <i>From Black Holes to Gamma-Ray Bursts</i>, hosted by SiCortex
+Webcast: <em>From Black Holes to Gamma-Ray Bursts</em>, hosted by SiCortex
 </h3>
 
 <p>

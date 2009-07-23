@@ -8,7 +8,7 @@ Also see the <a href= "http://www.cactuscode.org/News/">
 News</a>: <a href = "http://www.cactuscode.org/News/cactusadm">CactusADM</a> is now part of the 2006 edition of the SPEC benchmark suite.
 </p>
 <p>
-To read a description of the significance and profile of BSSN_PUGH, along with performance and scaling results with various architectures, see <i><a href="http://www.cactuscode.org/Articles/Cactus_Allen07a.pre.pdf">"A Scientific Application Benchmark using the Cactus Framework"</a></i>
+To read a description of the significance and profile of BSSN_PUGH, along with performance and scaling results with various architectures, see <em><a href="http://www.cactuscode.org/Articles/Cactus_Allen07a.pre.pdf">"A Scientific Application Benchmark using the Cactus Framework"</a></em>
 </p>
 
 <h3>Standard Benchmarks</h3>

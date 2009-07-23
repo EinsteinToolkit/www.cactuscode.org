@@ -42,6 +42,6 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   the <a href="/documentation/tutorials/wavetoydemo/">demo guide</a>.
 </p>
  
-<p>(Very old Cactus web pages: <a href="/old/">cactuscode.org/old</a>.)</i></p>
+<p>(Very old Cactus web pages: <a href="/old/">cactuscode.org/old</a>.)</em></p>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>

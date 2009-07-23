@@ -61,6 +61,8 @@ echo '
 	<li><a href="/documentation/guides/">Guides</a></li>
 	<li><a href="/documentation/tutorials/">Tutorials</a></li>
 	<li><a href="/documentation/faq">FAQ</a></li>
+	<li><a href="/documentation/arrangements/">Arrangement Guides</a></li>
+	<li><a href="/documentation/thorns/">Thorn Guides</a></li>
 </ul>
 ';
 break;

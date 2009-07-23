@@ -22,21 +22,21 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 </p>
   
 <ul>
-  <li> NSF <a href="http://www.cybertools.loni.org"><i>Louisiana's
+  <li> NSF <a href="http://www.cybertools.loni.org"><em>Louisiana's
         Research Infrastructure Improvement Strategy
-        (CyberTools)</i></a> (NSF 0701491) </li>
-  <li> NSF <a href="http://www.cct.lsu.edu/xirel/"><i>XiRel: Next
-        Generation Infrastructure for Numerical Relativity</i></a>
+        (CyberTools)</em></a> (NSF 0701491) </li>
+  <li> NSF <a href="http://www.cct.lsu.edu/xirel/"><em>XiRel: Next
+        Generation Infrastructure for Numerical Relativity</em></a>
     (NSF 0701566 and 0653303) </li>
   <li>
-    NSF <a href="http://www.cct.lsu.edu/~eschnett/Alpaca/"><i>Alpaca:
+    NSF <a href="http://www.cct.lsu.edu/~eschnett/Alpaca/"><em>Alpaca:
         Cactus Tools for Application Level Profiling and Correctness
-        Analysis</i></a> (NSF 0721915) </li>
-  <li> ONR <i>Development of an Integrated Modeling Framework for
+        Analysis</em></a> (NSF 0721915) </li>
+  <li> ONR <em>Development of an Integrated Modeling Framework for
       Simulations of Coastal Processes in Deltaic Environments Using
-      High-Performance Computing (COMI)</i> </li>
-  <li> DOE/BOR <i>Ubiquitous Computing and Monitoring System for
-      Discovery and Management of Energy Resources (UCOMS)</i> (DOE
+      High-Performance Computing (COMI)</em> </li>
+  <li> DOE/BOR <em>Ubiquitous Computing and Monitoring System for
+      Discovery and Management of Energy Resources (UCOMS)</em> (DOE
       DE-FG02-04ER46136, BOR DOE/LEQSF(2004-07)) </li>
 </ul>
 
@@ -45,25 +45,25 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 </p>
   
 <ul>
-  <li> NSF <i>Astrophysics Simulation Collaboratory: Enabling Large
-      Scale Simulations of Relativistic Astrophysics</i> (NSF
+  <li> NSF <em>Astrophysics Simulation Collaboratory: Enabling Large
+      Scale Simulations of Relativistic Astrophysics</em> (NSF
       PHY-9979985) </li>
-  <li> European Commission <i>Theoretical Foundations of Sources of
+  <li> European Commission <em>Theoretical Foundations of Sources of
       Gravitational Waves in the Next Century: Synergy between
-      Supercomputer Simulations and Approximation Techniques</i>
+      Supercomputer Simulations and Approximation Techniques</em>
       (HPRN-CT-2000-00137) </li>
-  <li> DFN-Verein <i>GriKSL: Grid-Immersion: Kollision Schwarzer
-      Löcher</i> (TK 6-2-AN 200) </li>
-  <li> European Commission <i>GridLab: A Grid Application Toolkit and
-      Testbed</i> (IST-2001-32133) </li>
-  <li> DFG <i>Gravitational Wave Astronomy and Sources of
-      Gravitational Waves</i> (SFB/TR 7) </li>
-  <li> DFN-Verein <i>TiKSL: Tele Immersion: Collision of Black
-      Holes</i> </li>
+  <li> DFN-Verein <em>GriKSL: Grid-Immersion: Kollision Schwarzer
+      Löcher</em> (TK 6-2-AN 200) </li>
+  <li> European Commission <em>GridLab: A Grid Application Toolkit and
+      Testbed</em> (IST-2001-32133) </li>
+  <li> DFG <em>Gravitational Wave Astronomy and Sources of
+      Gravitational Waves</em> (SFB/TR 7) </li>
+  <li> DFN-Verein <em>TiKSL: Tele Immersion: Collision of Black
+      Holes</em> </li>
   <li>
-    DDDAS-TMRP <i><a href="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0540374">DynaCode:
+    DDDAS-TMRP <em><a href="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0540374">DynaCode:
         A General DDDAS Framework with Coast and Environment Modeling
-        Applications</a></i> </li>
+        Applications</a></em> </li>
 </ul>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>

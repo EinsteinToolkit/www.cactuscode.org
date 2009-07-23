@@ -15,4 +15,6 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 </ul>
 </p>
 
+<br /><br /><br />
+
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
