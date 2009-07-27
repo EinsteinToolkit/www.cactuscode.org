@@ -76,13 +76,13 @@ ul, ol
 
 code
 	{
-	margin: 5px 0;
-	padding: 15px;
+	margin: 3px 0;
+	padding: 5px;
 	text-align: left;
 	display: block;
 	overflow: auto;  
-	font: 500 1em/1.5em 'Lucida Console', 'courier new', monospace ;
-	/* white-space: pre; */
+	font: 500 1em 'Lucida Console', 'courier new', monospace ;
+	white-space: pre;
 	border: 1px solid #E5F0FB;  
 	background: #F4F8FD;
 	}

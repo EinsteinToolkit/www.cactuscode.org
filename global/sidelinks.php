@@ -34,6 +34,7 @@ case 'benchmarks':
 echo '
 <h2>Benchmarks</h2>
 <ul class="sidemenu">
+	<li><a href="/community/benchmarks/tutorial/">Tutorial</a></li>	
 	<li><a href="/community/benchmarks/bench_bssn_pugh/">BSSN Pugh</a></li>
 	<li><a href="/community/benchmarks/bench_bssn_carpet/">BSSN Carpet</a></li>
 	<li><a href="/community/benchmarks/bench_whisky_carpet/">Whisky Carpet</a></li>
