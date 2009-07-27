@@ -1,3 +1,4 @@
+              <br />
 		</div> <!-- closing "main" content div -->
 		
 		<div id="sidebar">

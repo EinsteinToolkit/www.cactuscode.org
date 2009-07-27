@@ -34,29 +34,18 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   To checkout the flesh only (compiling the flesh alone will not allow
   you to run any applications), type the below and follow the
   instructions:
-</p>
-
 <code>chmod a+x GetCactus</code>
 <code>./GetCactus</code>
-
-<p>
   To checkout an application version of Cactus, choose and save
   a <a href="thorns">ThornList</a>, or provide one to
   your own needs, and issue the command:
-</p>
-
 <code>./GetCactus &lt;<var>thornlist-name</var>&gt;</code>
-
-<p>
   To add more Thorns to your Cactus, either use
   the <kbd>GetCactus</kbd> script with a new Thorn List, or use the
   below make target from within the Cactus distribution.
   (Using <kbd>GetCactus</kbd> is preferred).
-</p>
-
 <code>gmake checkout</code>
-
-
+</p>
 
 <h3>CVS Repositories</h3>
 
@@ -82,24 +71,15 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   is <kbd>cvs_anon</kbd> and the password is <kbd>anon</kbd> (unless
   you have a CVS account on our server in which case you can
   alternatively use your own username and password).
-</p>
-
 <code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus login</code>
+</p>
 
 <p>
   Check out the Cactus flesh:
-</p>
-
 <code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout Cactus</code>
-
-<p>
   Move to the arrangements directory of the Cactus installation and
   install the required arrangements and thorns:
-</p>
-
 <code>cd Cactus/arrangements</code>
-
-<p>
   If you are using thorns other than those in the standard Cactus
   distributions you will need to know the details for downloading or
   checking them out. Here we just describe checking out from the
@@ -109,17 +89,13 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <p>
   To checkout complete arrangements (e.g. see our standard
   <a href="/documentation/arrangements/">ThornLists</a>):
-</p>
-
 <code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;</code>
-
-<p>
   To checkout individual thorns (e.g. see our
   standard <a href="/documentation/thorns/">ThornLists</a>):
-</p>
-
+  
 <code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;/&lt;<var>thorn</var>&gt;</code>
-
+</p>
+ 
 <h3>Download Tar Files</h3>
 
 <p>
