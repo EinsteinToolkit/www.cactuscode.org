@@ -4,14 +4,14 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <p><img class="float-right" width="150" src="cjordan.jpg" alt="Colby Jordan"/></p>
 
 <h3>Position</h3>
-<p>Advanced Support for Cactus, CCT</p>
+<p>Cactus Project System Administrator, CCT</p>
 
 <h3>Background</h3>
 <ul>
-<li>working toward BSc in Computer Science, Louisiana State University</li>
+<li>BSc in Computer Science from Louisiana State University, 2009</li>
 </ul>
 
 <h3>Focus</h3>
-<p>Website migration, internal support</p>
+<p>Internal support issues, website migration, and iPhone development</p>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>

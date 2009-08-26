@@ -1,5 +1,6 @@
 <?php
 $title='The Team';
+$section='about';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
@@ -53,20 +54,16 @@ team:
 <li>Thomas Dramlitsch</li>
 <br />
 
-<li><a href="yelkhamra">Yaakoub El-Khamra</a>
-<br />Research Engineering / Scientist Associate III at <a href="http://www.tacc.utexas.edu/">Texas Advanced Computing Center</a></li>
+<li><a href="yelkhamra">Yaakoub El-Khamra</a></li>
 <br />
 
-<li><a href="tgoodale">Tom Goodale</a>
-<br />Research scientist at both <a href="http://www.lsu.edu/">LSU</a> and Cardiff University</li>
+<li><a href="tgoodale">Tom Goodale</a></li>
 <br />
 
 <li>Gerd Lanfermann</li>
 <br />
 
-<li><a href="tradke">Thomas Radke</a>
-<br />Scientific Programmer and Lead of the e-Science group in the <a href="http://www.aei.mpg.de/english/research/teams/astrophysicalRelativity/">Astrophysical Relativity Division</a>
-of the <a href="http://www.aei.mpg.de/" title="Max-Planck-Institute for Gravitational Physics (Albert Einstein Institute)">AEI</a></li>
+<li><a href="tradke">Thomas Radke</a></li>
 <br />
 
 <li>Steve White</li>
