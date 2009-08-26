@@ -15,7 +15,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <p> We are not going to describe completely here how to checkout and compile this Cactus application ... for this see the information on the <a href="/download/">Download</a> page, the <a href="/documentation/tutorials/">HOWTOs</a> or the <a href="/documentation/guides/">Users  Guide</a>. We assume that you are checking out Cactus using CVS, and that you know the configuration line needed, or have a configuration file, for compiling Cactus --- but even if you don't have a go, hopefully the default configuration will work for you! </p>
 <h2>Demo with Web Server and Streaming IsoSurfaces</h2>
 <!-- Add cactusdev links here -->
-Before you start, make sure you have the following items:
+<p>Before you start, make sure you have the following items:</p>
 <ul>
   <li> <a href="/download/GetCactus">GetCactus</a> the perl script for easily checking a Cactus application out from our CVS server. </li>
   <li> <a href="WaveDemo.th">WaveDemo.th</a> the ThornList for the demo, this is used to tell GetCactus which thorns to get. </li>
@@ -26,28 +26,23 @@ Before you start, make sure you have the following items:
 </ul>
 <h3>Check out and compile</h3>
 <p> Checkout the source code using the GetCactus script. Make sure to include the WaveToy thornlist so that all necessary thorns are also downloaded. </p>
-<pre><tt>
-chmod u+x GetCactus
-./GetCactus WaveDemo.th</tt></pre>
+<pre><code>chmod u+x GetCactus
+./GetCactus WaveDemo.th</code></pre>
 <p> You should be able to use the default answers for all the questions. </p>
 <p> Once the checkout has completed, move into the Cactus directory and compile the application. </p>
-<pre><tt>
-cd Cactus
+<pre><code>cd Cactus
 gmake WaveDemo-config
-gmake WaveDemo</tt></pre>
-<p> Hopefully that went OK, and you now have an executable, <tt>exe/cactus_WaveDemo</tt>. Check it really worked by running the testsuites, just type </p>
-<pre><tt>
-gmake WaveDemo-testsuite</tt></pre>
+gmake WaveDemo</code></pre>
+<p> Hopefully that went OK, and you now have an executable, <code>exe/cactus_WaveDemo</code>. Check it really worked by running the testsuites, just type </p>
+<pre><code>gmake WaveDemo-testsuite</code></pre>
 <p> and use the default answers to each question. </p>
 <h3> Run the demo </h3>
 <p> Move the downloaded demo parameter file into the Cactus directory.  To start the simulation, run your new executable with the demo parameter file, if you have a single processor executable </p>
-<pre><tt>
-mv ../WaveDemo.par .
-./exe/cactus_WaveDemo WaveDemo.par</tt></pre>
+<pre><code>mv ../WaveDemo.par .
+./exe/cactus_WaveDemo WaveDemo.par</code></pre>
 <p> If you compiled with MPI and have a multiprocessor version, you will need to use the appropriate mpi command for running. </p>
 <p> When the simulation starts, you will see output describing for example the activated thorns and the scheduling tree. </p>
-<pre><font size="-1"><tt>
-tg-c305 dstark/Cactus&gt; ./exe/cactus_WaveDemo parfiles/WaveDemo.par 
+<pre><code>tg-c305 dstark/Cactus&gt; ./exe/cactus_WaveDemo parfiles/WaveDemo.par 
 --------------------------------------------------------------------------------
 
        10                                  
@@ -179,20 +174,17 @@ INFO (IOBasic): Periodic info output requested for 'WAVETOY::phi'
     90 |    0.584 |  -0.00000002 |   2.38045481 |
    100 |    0.649 |-9.382595e-09 |   2.37422575 |
 
-  . . .</tt></font></pre>
-<p> If you have the simple visualization client <tt>xgraph</tt> installed, you can look at the 1D output </p>
-<pre><tt>
-xgraph WaveDemo/phi_x_[20][20].xg</tt></pre>
+  . . .</code></pre>
+<p> If you have the simple visualization client <code>xgraph</code> installed, you can look at the 1D output </p>
+<pre><code>xgraph WaveDemo/phi_x_[20][20].xg</code></pre>
 <center>
   <img src="xgraph.gif" alt="xgraph" width="400" />
 </center>
 <h3>Connecting with a web browser</h3>
 <p> To connect to the simulation, move to another machine if you have one, and start up a web browser. Connect to </p>
-<pre><tt>
-http://&lt;machine name&gt;:5555</tt></pre>
-where <tt>&lt;machine name&gt;:5555</tt> is the name of the machine where the simulation is running. Note that this information was part of the standard output when the simulation started for example
-<pre><tt>
-Server started on http://tg-c305.ncsa.teragrid.org:5555/</tt></pre>
+<pre><code>http://&lt;machine name&gt;:5555</code></pre>
+where <code>&lt;machine name&gt;:5555</code> is the name of the machine where the simulation is running. Note that this information was part of the standard output when the simulation started for example
+<pre><code>Server started on http://tg-c305.ncsa.teragrid.org:5555/</code></pre>
 <p> Now you should see a screen with information about the simulation. </p>
 <center>
   <img src="http1.jpg" alt="screenshot 1" width="400" />
@@ -205,19 +197,15 @@ Server started on http://tg-c305.ncsa.teragrid.org:5555/</tt></pre>
 </center>
 <h3>Viewing IsoSurfaces</h3>
 <p> Start up the IsoView client, using </p>
-<pre><tt>
-
-IsoView -h &lt;machine name&gt; -dp 7051 -cp 7050</tt></pre>
+<pre><code>IsoView -h &lt;machine name&gt; -dp 7051 -cp 7050</code></pre>
 <p> Again, this information can be found in the standard output, for example </p>
-<pre><font size="-1"><tt>
-
-INFO (IsoSurfacer): Isosurfacer listening for connections
-                   host 'GridRebels-MacBook-Pro.local' control port 7050 data port 7051</tt></font></pre>
+<pre><code>INFO (IsoSurfacer): Isosurfacer listening for connections
+                   host 'GridRebels-MacBook-Pro.local' control port 7050 data port 7051</code></pre>
 <p> You should now see rotating blobs appearing in the client, looking something like this </p>
 <center>
   <img src="iso1.gif" alt="surface 1" />
 </center>
-<p> Now if you move the <tt>val</tt> slider, the value of the isosurface you see will change. Also, if you move the cursor in the main window, holding down the left, middle and right mouse buttons, the surface will rotate, translate and zoom. </p>
+<p> Now if you move the <code>val</code> slider, the value of the isosurface you see will change. Also, if you move the cursor in the main window, holding down the left, middle and right mouse buttons, the surface will rotate, translate and zoom. </p>
 <h3>Steering the Simulation</h3>
 <p> The web interface can also be used to control the simulation and to steer parameter values. Click on the Cactus Control link in the menu, and enter the user id anon and password anon (you can set these to be different values in the parameter file).
   Now you can pause, run or kill the simulation using the top buttons. If you are using the IsoView client press pause and see the blobs stop rotating/ </p>
@@ -228,7 +216,7 @@ INFO (IsoSurfacer): Isosurfacer listening for connections
 <center>
   <img src="http4.jpg" alt="screenshot 4" border="2" />
 </center>
-<p> To steer simulation parameters, select Parameters from the menu, and then WaveBinarySource. We will change the parameter <tt>binary_radius</tt>, which sets the distance between the orbiting sources. Note that the parameters are divided into two sections, depending on whether they are steerable or not. This is decided by the thorn author. </p>
+<p> To steer simulation parameters, select Parameters from the menu, and then WaveBinarySource. We will change the parameter <code>binary_radius</code>, which sets the distance between the orbiting sources. Note that the parameters are divided into two sections, depending on whether they are steerable or not. This is decided by the thorn author. </p>
 <center>
   <img src="http5.jpg" alt="screenshot 5" border="2" />
 </center>
