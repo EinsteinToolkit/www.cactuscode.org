@@ -25,15 +25,15 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   <li> Note that you'll need a live network connection to checkout the code, but you can run the demo on a single machine, the remote tools will look more impressive though if you use two networked machines, preferably a long way apart. </li>
 </ul>
 <h3>Check out and compile</h3>
-<p> Checkout the source code using the GetCactus script. Make sure to include the WaveToy thornlist so that all necessary thorns are also downloaded. </p>
+<p> Checkout the source code using the GetCactus script. Make sure to include the WaveToy thornlist so that all necessary thorns are also downloaded.
 <pre><code>chmod u+x GetCactus
 ./GetCactus WaveDemo.th</code></pre>
-<p> You should be able to use the default answers for all the questions. </p>
-<p> Once the checkout has completed, move into the Cactus directory and compile the application. </p>
+You should be able to use the default answers for all the questions. </p>
+<p> Once the checkout has completed, move into the Cactus directory and compile the application.
 <pre><code>cd Cactus
 gmake WaveDemo-config
 gmake WaveDemo</code></pre>
-<p> Hopefully that went OK, and you now have an executable, <code>exe/cactus_WaveDemo</code>. Check it really worked by running the testsuites, just type </p>
+Hopefully that went OK, and you now have an executable, <code>exe/cactus_WaveDemo</code>. Check it really worked by running the testsuites, just type </p>
 <pre><code>gmake WaveDemo-testsuite</code></pre>
 <p> and use the default answers to each question. </p>
 <h3> Run the demo </h3>

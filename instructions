@@ -2,61 +2,8 @@
 INSTRUCTIONS
 for internal use
 
-important:
-there is a template file located at /global/template.php that should be copied for all new pages.  add html content between the php tags at the top and bottom.  modify the php variable ($title) at the top of the file with the title of the page.
-
-using index.php:
-//todo - make clearer
-when you want a page to be accessible from its directory path only (ex: cactuscode.org/news/stories/), simply copy the global template (/global/template.php) to the folder and name it index.php.
-
-linking to pages without file extension:
-//todo
-
-linking:
-it is preferable to use non-absolute links when pointing to pages inside the cactus website.  an example would be <a href="/download/">linked text</a>.  this particular link would work from any page on the cactus website, since it begins with a slash, but notice that it is not necessary to include "http://www.cactuscode.org" as long as there is an initial slash.
-
-media/other files:
-add photos or other files directly to the directory with the pages that will use them.  this makes it easy to keep them managed and easy to link them.
-once you've added a photo to the directory of the page, you can simply use the <img src="photofilename.jpg" alt="short description" title="An optional attribute that appears on mouseover." /> tag to include it in a page.
-
-some useful html tags:
-to separate paragraphs, surround paragraphs of text with <p></p> tags.
-for bold, use <strong></strong> tags.
-for italic, use <em></em> tags to emphasize.
-to distinguish blocks of code from other text, use <code></code> tags.
-for in-line code snippets, variables names, or to simply show text in fixed width, you can use <kbd></kbd> tags.
-for subheadings, use <h3></h3> tags.  (the main page's title is level h2.)
-for block quotes, use <blockquote></blockquote> tags.
-if you need a line break without the extra spacing that happens around a real paragraph, use the self-closing <br /> tag.
-the <hr /> tag is used for a horizontal rule (line).
-you can define an acronym by using the <acronym title="definition here"></acronym> tags around it.
-
-if you need to use a table to show data, use tags like the following.
-<table>
-	<tr> <!-- row tag -->
-		<th>heading 1</th> <!-- table heading tag -->
-		<th>heading 2</th> <!-- use one th tag per column of the table -->
-	</tr>
-	<tr>
-		<td>this is a cell in row 1</td>
-		<td>this is the second cell</td>
-	</tr>
-	<tr>
-		<td>this is a new row</td>
-		<td>last cell of the table</td>
-	</tr>
-</table>
-
-if you need to present a list, ordered or unordered, use tags like the following.
-<ol>
-	<li>Here is an example</li>
-	<li>of an ordered list</li>
-</ol>
-<ul>
-	<li>Here is an example</li>
-	<li>of an unordered list</li>								
-</ul>
-
+visit the internal wiki, here, for instructions.
+https://wiki.cct.lsu.edu/frameworks/Website
 
 if you need more information, just let me know.  cjordan@cct.lsu.edu
 —colby
