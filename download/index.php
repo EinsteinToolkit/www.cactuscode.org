@@ -96,15 +96,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;/&lt;<var>thorn</var>&gt;</code>
 </p>
  
-<h3>Download Tar Files</h3>
-
-<p>
-  If you don't have a CVS client, use
-  our <a href="http://www.cactuscode.org/cactus_cgi-bin/download.pl">Web
-  Form Interface</a> to download a tar file.
-</p>
-
-<a name="requirements"></a>
+<a name="requirements" />
 <h3>Requirements</h3>
 
 <p>

@@ -21,6 +21,14 @@ team:
 <br />Postdoc researcher at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
 
+<li><a href="rcross">Robert Cross</a>
+<br />TITLE at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
+<br />
+
+<li><a href="ljiang">Lei Jiang</a>
+<br />TITLE at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
+<br />
+
 <li><a href="cjordan">Colby Jordan</a>
 <br />Internal Support for Cactus at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
@@ -31,6 +39,7 @@ team:
 
 <li><a href="okorobkin">Oleg Korobkin</a>
 <br />Graduate student at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> and the <a href="http://www.phys.lsu.edu/">Department of Physics &amp; Astronomy</a> at <a href="http://www.lsu.edu/">LSU</a></li>
+<br />
 
 <li><a href="floeffler">Frank Löffler</a>
 <br />Postdoc researcher at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
@@ -47,6 +56,10 @@ team:
 <li><a href="jtao">Jian Tao</a>
 <br />Postdoc researcher at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
+
+<li><a href="azebrowski">Ashley Zebrowski</a>
+<br />TITLE at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
+<br />
 </ul>
 
 <h3>Alumni</h3>
@@ -54,16 +67,16 @@ team:
 <li>Thomas Dramlitsch</li>
 <br />
 
-<li><a href="yelkhamra">Yaakoub El-Khamra</a></li>
+<li>Yaakoub El-Khamra</li>
 <br />
 
-<li><a href="tgoodale">Tom Goodale</a></li>
+<li>Tom Goodale</li>
 <br />
 
 <li>Gerd Lanfermann</li>
 <br />
 
-<li><a href="tradke">Thomas Radke</a></li>
+<li>Thomas Radke</li>
 <br />
 
 <li>Steve White</li>

@@ -1,0 +1,12 @@
+#Set the graph for the final plot
+set logscale x
+set title "BSSN_PUGH Scaling on BGW"
+set ylabel "Wallclock Time (seconds)"
+set xlabel "Number of Processors"
+
+plot "scaling1.txt" w linespoints pt 7 title "60^3", "scaling2txt" w linespoints pt 5 title "50^3"
+
+#Save the output to a png file  
+set terminal png color small
+set output "Scaling_BSSN_PUGH.png"
+plot "scaling1.txt" w linespoints pt 7 title "60^3", "scaling2.txt" w linespoints pt 5 title "50^3"
