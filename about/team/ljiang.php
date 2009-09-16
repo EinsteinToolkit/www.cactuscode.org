@@ -1,7 +1,7 @@
-<?php $title='Thomas Radke';
+<?php $title='Lei Jiang';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<p><img class="float-right" width="150" src="tradke.jpg" alt="Photo of Thomas Radke"/></p>
+<p><img class="float-right" width="150" src="rcross.png" alt="Photo of Lei Jiang"/></p>
 
 <h3>Position</h3>
 <ul>

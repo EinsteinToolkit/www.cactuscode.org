@@ -9,7 +9,6 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   <li> <a href="ReferenceManual.pdf">Reference Manual (PDF)</a> </li>
   <li> <a href="CoreDoc.pdf">Advanced Concepts (PDF)</a> </li>
   <li> <a href="arrangements/">List of Arrangement Guides</a> </li>
-  <li> <a href="thorns/">List of Thorn Guides</a> </li>
   <li> <a href="Readme_Info.php">Overview of Thorn README files </a> </li>
 
 </ul>

@@ -1,7 +1,7 @@
 <?php $title='WaveToy Demo';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<p>Connect to our <a href="http://www.cactuscode.org:5555/">Cactus demo</a> to see the simple WaveToy example in action. </p>
+<p>Connect to our <a href="http://www.cactuscode.org:5555/">Cactus Demo</a> to see the simple WaveToy example in action. </p>
 <h2>Setting up the WaveToy Demo</h2>
 <p> On this page we describe one of our standard demonstrations, which includes various tools which can be used with your own application, including </p>
 <ul>
@@ -181,10 +181,12 @@ INFO (IOBasic): Periodic info output requested for 'WAVETOY::phi'
   <img src="xgraph.gif" alt="xgraph" width="400" />
 </center>
 <h3>Connecting with a web browser</h3>
-<p> To connect to the simulation, move to another machine if you have one, and start up a web browser. Connect to </p>
+<p> To connect to the simulation, move to another machine if you have one, and start up a web browser. Connect to
 <pre><code>http://&lt;machine name&gt;:5555</code></pre>
-where <code>&lt;machine name&gt;:5555</code> is the name of the machine where the simulation is running. Note that this information was part of the standard output when the simulation started for example
-<pre><code>Server started on http://tg-c305.ncsa.teragrid.org:5555/</code></pre>
+where
+<pre><code>&lt;machine name&gt;:5555</code></pre>
+is the name of the machine where the simulation is running. Note that this information was part of the standard output when the simulation started for example
+<pre><code>Server started on http://tg-c305.ncsa.teragrid.org:5555/</code></pre></p>
 <p> Now you should see a screen with information about the simulation. </p>
 <center>
   <img src="http1.jpg" alt="screenshot 1" width="400" />
