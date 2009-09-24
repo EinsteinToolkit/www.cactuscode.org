@@ -27,8 +27,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters</td>
     <td><a href="http://www.ncsa.uiuc.edu/UserInfo/Resources/Hardware/Intel64Cluster/">Abe</td>
     <td>NCSA</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/abe-mvapich2">abe-mvapich2</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/abe-mvapich2">abe-mvapich2</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/abe-mvapich2.cfg">abe-mvapich2</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/abe-mvapich2.cfg">abe-mvapich2</td>
   </tr>
   
   <!-- damiana -->
@@ -36,8 +36,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters</td>
     <td><a href="http://supercomputers.aei.mpg.de/damiana">Damiana</a></td>
     <td>AEI</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/damiana">damiana</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/damiana">damiana</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/damiana.cfg">damiana</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/damiana.cfg">damiana</td>
   </tr>
   
   <!-- eric-mvapich2 -->
@@ -50,8 +50,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
       <a href="http://www.loni.org/systems/system.php?system=QueenBee">Queen
         Bee</a>, <a href="http://www.hpc.lsu.edu/systems/system.php?system=Tezpur">Tezpur</a></td>
     <td>LONI, LSU</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/eric-mvapich2">eric-mvapich2</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/eric-mvapich2">eric-mvapich2</td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/eric-mvapich2.cfg">eric-mvapich2</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/eric-mvapich2.cfg">eric-mvapich2</td>
   </tr>
   
   <!-- lonestar -->
@@ -59,8 +59,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters</td>
     <td><a href="http://www.tacc.utexas.edu/services/userguides/lonestar/">Lonestar</a></td>
     <td>TACC</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/lonestar">lonestar</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/lonestar">lonestar</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/lonestar.cfg">lonestar</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/lonestar.cfg">lonestar</a></td>
   </tr>
   
   <!-- ranger -->
@@ -68,8 +68,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters</td>
     <td><a href="http://www.tacc.utexas.edu/services/userguides/ranger/">Ranger</a></td>
     <td>TACC</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/ranger-mvapich">ranger-mvapich</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/ranger-mvapich">ranger-mvapich</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/ranger-mvapich.cfg">ranger-mvapich</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/ranger-mvapich.cfg">ranger-mvapich</a></td>
   </tr>
   
   
@@ -82,8 +82,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
       (CNL)</td>
     <td><a href="http://www.nersc.gov/nusers/systems/franklin/">Franklin</a>
     <td>NERSC</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/franklin">franklin</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/franklin">franklin</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/franklin.cfg">franklin</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/franklin.cfg">franklin</a></td>
   </tr>
   
   <!-- kraken -->
@@ -92,8 +92,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
       (CNL)</td>
     <td><a href="http://www.nics.tennessee.edu/computing-resources/kraken">Kraken</a></td>
     <td>NICS</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/kraken">kraken</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/kraken">kraken</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/kraken.cfg">kraken</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/kraken.cfg">kraken</a></td>
   </tr>
   
   
@@ -106,8 +106,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
         Gene/P</a> (Linux)</td>
     <td><a href="http://www.alcf.anl.gov/resources/storage.php">Surveyor</a></td>
     <td>ALCF</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/surveyor">surveyor</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/surveyor">surveyor</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/surveyor.cfg">surveyor</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/surveyor.cfg">surveyor</a></td>
   </tr>
   
   
@@ -124,8 +124,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
       <a href="http://www.loni.org/systems/system.php?system=Neptune">Neptune</a>,
       <a href="http://www.loni.org/systems/system.php?system=Zeke">Zeke</a></td>
     <td>LONI</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/ducky">ducky</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/ducky">ducky</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/ducky.cfg">ducky</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/ducky.cfg">ducky</a></td>
   </tr>
   
   <!-- pelican -->
@@ -134,8 +134,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
       (AIX)</td>
     <td><a href="http://www.hpc.lsu.edu/systems/system.php?system=Pelican">Pelican</a></td>
     <td>LSU</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/pelican">pelican</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/pelican">pelican</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/pelican.cfg">pelican</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/pelican.cfg">pelican</a></td>
   </tr>
   
   
@@ -148,8 +148,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <td><a href="http://www.lrz-muenchen.de/services/compute/hlrb/">HLRB
         II</a></td>
     <td>LRZ</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/hlrb2">hlrb2</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/hlrb2">hlrb2</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/hlrb2.cfg">hlrb2</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/hlrb2.cfg">hlrb2</a></td>
   </tr>
   
   <!-- santaka -->
@@ -157,8 +157,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <td><a href="http://en.wikipedia.org/wiki/Altix">SGI Altix</a></td>
     <td><a href="http://www.hpc.lsu.edu/systems/system.php?system=Santaka">Santaka</a></td>
     <td>LSU</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/santaka">santaka</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/santaka">santaka</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/santaka.cfg">santaka</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/santaka.cfg">santaka</a></td>
   </tr>
   
   
@@ -170,8 +170,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <td>SiCortex (Linux)</td>
     <td><a href="http://sicortex.com/">SiCortex</a></td>
     <td>Houston</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/sicortex">sicortex</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/sicortex">sicortex</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/sicortex.cfg">sicortex</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/sicortex.cfg">sicortex</a></td>
   </tr>
   
   
@@ -184,8 +184,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
       Laptops/Workstations</td>
     <td><a href="http://www.cct.lsu.edu/">numrel02</a></td>
     <td>CCT, Linux workstation</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/numrel-intel">numrel-intel</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/numrel-intel">numrel-intel</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/numrel-intel.cfg">numrel-intel</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/numrel-intel.cfg">numrel-intel</a></td>
   </tr>
   
   <!-- redshift -->
@@ -194,8 +194,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
       Laptops/Workstations</td>
     <td><a href="http://www.cct.lsu.edu/">Redshift</a></td>
     <td>CCT, Mac OS X laptop</td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/redshift-gcc">redshift-gcc</a></td>
-    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/redshift-gcc">redshift-gcc</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/redshift-gcc.cfg">redshift-gcc</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/redshift-gcc.cfg">redshift-gcc</a></td>
   </tr>
   
 </table>
@@ -213,7 +213,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   <li><a href="http://gcc.gnu.org/">GCC</a> (gcc, g++, gfortran)</li>
   <li><a href="http://www.ibm.com/software/awdtools/xlcpp/">IBM</a>
     (xlc, xlC, xlf, xlf90)</li>
-  <li><a href="www.intel.com/cd/software/products/asmo-na/eng/compilers/">Intel</a>
+  <li><a href="http://www.intel.com/cd/software/products/asmo-na/eng/compilers/">Intel</a>
   (icc, icpc, ifort)</li>
   <li><a href="http://www.pathscale.com/">PathScale</a> (pathcc,
     pathCC, pathf95)</li>
