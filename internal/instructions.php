@@ -5,10 +5,11 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 
 
-
 <p>The new Cactus webpages are managed via SVN.  The repository is accessible from <a href="https://svn.cct.lsu.edu/repos/cactus/www" class="external free" title="https://svn.cct.lsu.edu/repos/cactus/www" rel="nofollow">https://svn.cct.lsu.edu/repos/cactus/www</a> with a regular svn checkout, using your CCT credentials.  This article provides tips to introduce the structure as well as guidelines to help standardize and keep its organization orderly.
 </p>
-<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<p>Note: The old webpages are kept in static archived form in an svn repository at <a href="https://svn.cct.lsu.edu/repos/cactus/www-old" class="external free" title="https://svn.cct.lsu.edu/repos/cactus/www-old" rel="nofollow">https://svn.cct.lsu.edu/repos/cactus/www-old</a>.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2></h2></div>
 <ul>
 <li class="toclevel-1"><a href="#Getting_started"><span class="tocnumber">1</span> <span class="toctext">Getting started</span></a></li>
 <li class="toclevel-1"><a href="#Basics_and_organization"><span class="tocnumber">2</span> <span class="toctext">Basics and organization</span></a>
