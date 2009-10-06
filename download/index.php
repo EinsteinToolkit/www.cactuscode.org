@@ -96,7 +96,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <code>cvs -d :pserver:&lt;<var>user name</var>&gt;@cvs.cactuscode.org:/cactus checkout &lt;<var>arrangement</var>&gt;/&lt;<var>thorn</var>&gt;</code>
 </p>
  
-<a name="requirements" />
+<a name="requirements"/></a>
 <h3>Requirements</h3>
 
 <p>
