@@ -14,14 +14,14 @@ if(isset($_GET['golive']))
   echo '<h2>Updating the Live site...</h2>';
   echo '<p>'.exec('/var/www/golive').'</p>';
   echo '<p>The Live site is now current.</p><br />';
-  echo '<p><a href="/x">&lang; back to updates interface</a></p>':
+  echo '<p><a href="/x">&lang; back to updates interface</a></p>';
 }
 elseif(isset($_GET['updatesvn']))
 {
   echo '<h2>Updating the Preview site...</h2>';
   echo '<p>'.exec('/var/www/updatesvn').'</p>';
   echo '<p>The preview site is now current.</p><br />';
-  echo '<p><a href="/x">&lang; back to updates interface</a></p>':
+  echo '<p><a href="/x">&lang; back to updates interface</a></p>';
 }
 else
 {
