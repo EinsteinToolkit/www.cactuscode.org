@@ -1,5 +1,5 @@
 <?php
-$title='Updates Interface';
+$title='Website Updates Interface';
 $hide_path=1;
 $category='internal';
 
@@ -11,13 +11,17 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 <?php
 if(isset($_GET['golive']))
 {
+  echo '<h2>Updating the Live site...</h2>';
   echo '<p>'.exec('/var/www/golive').'</p>';
-  echo '<p>Live site now current.</p>';
+  echo '<p>The Live site is now current.</p><br />';
+  echo '<p><a href="/x">&lt; back to updates interface</a></p>':
 }
 elseif(isset($_GET['updatesvn']))
 {
+  echo '<h2>Updating the Preview site...</h2>';
   echo '<p>'.exec('/var/www/updatesvn').'</p>';
-  echo '<p>Preview site now current.</p>';
+  echo '<p>The preview site is now current.</p><br />';
+  echo '<p><a href="/x">&lt; back to updates interface</a></p>':
 }
 else
 {
@@ -35,7 +39,7 @@ The live site is currently at version <strong>'
 .'</strong>. 
 <br /><br />
 <input class="button" type="button" value="Make Recent Changes Live" onclick="window.location.href=\'/x?golive\'" />
-<br /><br />This happens automatically every hour, on the hour.
+<br /><br />This pushes any changes from the preview site to the live site and happens automatically every hour, on the hour.
 </p>
 </td>
 <td>
