@@ -1,5 +1,5 @@
 <!-- -*-mode:html;coding:utf-8-*- -->
-<?php $title='Instructions about the cactuscode website';
+<?php $title='Instructions about the cactuscode Website';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/internal.php');
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 

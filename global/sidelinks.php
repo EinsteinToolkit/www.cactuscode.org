@@ -142,7 +142,7 @@ break;
 default:
 echo '
 <h2>Recent News</h2>
-<ul class="sidemenu">
+<ul class="sidenews">
 ';
 include_once($_SERVER['DOCUMENT_ROOT'].'/media/news/recent.php');
 echo '<li class="align-right"><a href="/media/news/">More...</a></li>
