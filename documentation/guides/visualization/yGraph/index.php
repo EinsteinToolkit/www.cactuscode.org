@@ -11,9 +11,9 @@ $section='visualization';?>
 
 	  <table>
 	    <tr>
-	      <td valign=top width=75%>
+	      <td valign="top" width="75%">
 		<p>
-		  ygraph is a freely available, lightweight and easy to use visualization client for viewing 1D data files.  It includes features for animation, zooming and saving to postscript. (Also see the page for <a href="../Visualization/xGraph">xgraph</a>)
+		  ygraph is a freely available, lightweight and easy to use visualization client for viewing 1D data files.  It includes features for animation, zooming and saving to postscript. (Also see the page for <a href="../xGraph">xgraph</a>.)
 		  </p>
 
 		  <p>
@@ -21,7 +21,7 @@ $section='visualization';?>
 		  ygraph was developed by Denis Pollney, based on the xgraph package, and much more information is available on the <a href="http://www.aei.mpg.de/~pollney/ygraph/">ygraph homepage</a>.
 		</p>
 	      </td>
-	      <td valign=top>
+	      <td valign="top">
 		<ul>
 		  <li><a href="#download">Download</a>
 		  <li><a href="#using">Using</a>
@@ -38,11 +38,11 @@ $section='visualization';?>
 
 		<td>
 		  <p>
-		    <a href="../images/yGraph.gif">
+		    <a href="yGraph.gif">
 		      <img 
 			border=0 
 			align=right 
-			src="../images/yGraph.gif" 
+			src="yGraph.gif" 
 			alt="XGraph Image"></a>
 		  </p>
 		</td>
@@ -97,7 +97,7 @@ ygraph &lt;data filename&gt; &lt;data filename&gt;</pre>
 	    	    	    </p>
 
 	  <p>
-	    If you are using thorn <tt><font size=2>CactusConnect/HTTPD</font></tt> you can setup your browser to automatically view any advertised ygraph files. Instructions on how to do this are provided in the <a href="../Documentation/webServerHowTo.txt">WebServer-HOWTO</a>.
+	    If you are using thorn <tt><font size=2>CactusConnect/HTTPD</font></tt> you can setup your browser to automatically view any advertised ygraph files. Instructions on how to do this are provided in the <a href="/documentation/tutorials/webServerHowTo.txt">WebServer-HOWTO</a>.
 	  </p>
 
 

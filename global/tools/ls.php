@@ -3,8 +3,9 @@
 //get the system path for the page of which this script is included
 $cdirectory = $_SERVER['DOCUMENT_ROOT'].$_SERVER['PHP_SELF'];
 
-//works only for index.php pages for now...
+//works only for index.php and list.php pages for now...
 $cdirectory = str_replace('index.php','', $cdirectory);
+$cdirectory = str_replace('list.php','', $cdirectory);
 
 $dir_handle = @opendir($cdirectory) or die('Unable to open directory.');
 

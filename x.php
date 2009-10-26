@@ -11,17 +11,17 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 <?php
 if(isset($_GET['golive']))
 {
-  echo '<h2>Updating the Live site...</h2>';
+  echo '<h3>Updating the Live site...</h3>';
   echo '<p>'.exec('/var/www/golive').'</p>';
   echo '<p>The Live site is now current.</p><br />';
-  echo '<p><a href="/x">&lang; back to updates interface</a></p>';
+  echo '<p>&lang; <a href="/x">back to updates interface</a></p>';
 }
 elseif(isset($_GET['updatesvn']))
 {
-  echo '<h2>Updating the Preview site...</h2>';
+  echo '<h3>Updating the Preview site...</h3>';
   echo '<p>'.exec('/var/www/updatesvn').'</p>';
   echo '<p>The preview site is now current.</p><br />';
-  echo '<p><a href="/x">&lang; back to updates interface</a></p>';
+  echo '<p>&lang; <a href="/x">back to updates interface</a></p>';
 }
 else
 {

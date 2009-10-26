@@ -11,13 +11,13 @@ $section='visualization';?>
 
 	  <table>
 	    <tr>
-	      <td valign=top width=75%>
+	      <td valign="top" width="75%">
 		<p>
 		  xgraph is a freely available, lightweight and easy
 		  to use visualization client for viewing 1D data
 		  files.  It includes features for animation, zooming
-		  and saving to postscript. Also see the page for <a
-		  href="../Visualization/yGraph">ygraph</a>
+		  and saving to postscript. (Also see the page for <a
+		  href="../yGraph">ygraph</a>.)
 		</p>
 	      </td>
 
@@ -37,12 +37,12 @@ $section='visualization';?>
 	      <tr>
 		<td>
 		  <p>
-		    <a href="../images/xGraph2.gif">
+		    <a href="xGraph2.gif">
 
 		      <img 
-			border=0 
-			align=right 
-			src="../images/xGraph2.gif" 
+			border="0" 
+			align="right" 
+			src="xGraph2.gif" 
 			alt="XGraph Image"></a>
 		  </p>
 		</td>
@@ -101,10 +101,10 @@ xgraph xgraph.dat -lw 2 -P -t "Easy Plot"</pre>
 	  </p>
 	  
 	  <p>
-	    If you are using thorn <tt><font size=2>CactusConnect/HTTPD</font></tt> you can 
+	    If you are using thorn <tt><font size="2">CactusConnect/HTTPD</font></tt> you can 
 	    setup your browser to automatically view any advertised 
 	    xgraph files. Instructions on how to do this are provided in
-	    the <a href="../Documentation/webServerHowTo.txt">WebServer-HOWTO</a>.
+	    the <a href="/documentation/tutorials/webServerHowTo.txt">WebServer-HOWTO</a>.
 	  </p>
 
 
@@ -114,7 +114,7 @@ xgraph xgraph.dat -lw 2 -P -t "Easy Plot"</pre>
 	  <table>
 	    <tr>
 	      <td>
-		&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;
 	      </td>
 
 	      <td>
