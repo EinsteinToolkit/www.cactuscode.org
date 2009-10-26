@@ -20,8 +20,10 @@ Listed here are some informative tutorials to walk through to get started with C
 <li class="h3"><a href="/documentation/tutorials/CactusTutorial2.pdf">Thorn Writing 101</a></li>
 </ul>
 
-<?php /* Automatic listing
-<p><?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/tools/ls.php'); ?></p>
-*/ ?>
+<br />
+
+<p>
+<a href="list">Complete listing of tutorials</a>
+</p>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>

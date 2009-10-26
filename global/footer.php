@@ -2,14 +2,14 @@
 		</div> <!-- closing "main" content div -->
 		
 		<div id="sidebar">
-			<!-- search -->
+			<!-- search --> 
 			<form action="/search" id="cse-search-box" class="searchform">
 			<div>
 				<input type="hidden" name="cx" value="009769443924807765538:ybe10100euu" />
 				<input type="hidden" name="cof" value="FORID:11" />
 				<input type="hidden" name="ie" value="UTF-8" />
 				<input type="text" name="q" class="textbox" />
-				<input type="submit" name="sa" value="Search" class="button" />
+				<input type="submit" name="sa" value="search" class="button" />
 			</div>
 			</form>
 			<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>

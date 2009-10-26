@@ -14,7 +14,7 @@ team:
 <h3>Current</h3>
 <ul>
 <li><a href="gallen">Gabrielle Allen</a>
-<br />Lead of Cactus project at <a href="http://www.lsu.edu/">LSU</a>, and inactive developer</li>
+<br />Lead of Cactus project at <a href="http://www.lsu.edu/">LSU</a> and inactive developer</li>
 <br />
 
 <li><a href="ebentivegna">Eloisa Bentivegna</a>
