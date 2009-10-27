@@ -59,41 +59,28 @@ case 'documentation':
 echo '
 <h2>Documentation</h2>
 <ul class="sidemenu">
-	<li><a href="/documentation/guides/">Guides</a></li>
 	<li><a href="/documentation/tutorials/">Tutorials</a></li>
 	<li><a href="/documentation/faq">FAQ</a></li>
 	<li><a href="/documentation/arrangements/">Arrangement Guides</a></li>
 	<li><a href="/documentation/thorns/">Thorn Guides</a></li>
+	<li><a href="/documentation/visualization/">Visualization</a></li>
 </ul>
 ';
-break;
-
-case 'guides':
-echo '
-<h2>Guides</h2>
-<ul class="sidemenu">
-	<li><a href="/documentation/guides/arrangements/">Arrangements</a></li>
-	<li><a href="/documentation/guides/maintainer">Maintainer\'s Guide</a></li>
-	<li><a href="/documentation/guides/reference">Reference Guide</a></li>
-	<li><a href="/documentation/guides/thorns/">Thorns</a></li>
-	<li><a href="/documentation/guides/users/">Users\' Guides</a></li>
-	<li><a href="/documentation/guides/visualization/">Visualization Guides</a></li>
-</ul>';
 break;
 
 case 'visualization':
 echo '
 <h2>Visualization</h2>
 <ul class="sidemenu">
-	<li><a href="/documentation/guides/visualization/Amira/">Amira</a></li>
-	<li><a href="/documentation/guides/visualization/DataVaultXVS/">DataVaultXVS</a></li>
-	<li><a href="/documentation/guides/visualization/gnuPlot/">gnuPlot</a></li>
-	<li><a href="/documentation/guides/visualization/IsoView/">IsoView</a></li>
-	<li><a href="/documentation/guides/visualization/openDX/">openDX</a></li>
-	<li><a href="/documentation/guides/visualization/VisIt/">VisIt</a></li>
-	<li><a href="/documentation/guides/visualization/vizLauncher/">vizLauncher</a></li>
-	<li><a href="/documentation/guides/visualization/xGraph/">xGraph</a></li>
-	<li><a href="/documentation/guides/visualization/yGraph/">yGraph</a></li>
+	<li><a href="/documentation/visualization/Amira/">Amira</a></li>
+	<li><a href="/documentation/visualization/DataVaultXVS/">DataVaultXVS</a></li>
+	<li><a href="/documentation/visualization/gnuPlot/">gnuPlot</a></li>
+	<li><a href="/documentation/visualization/IsoView/">IsoView</a></li>
+	<li><a href="/documentation/visualization/openDX/">openDX</a></li>
+	<li><a href="/documentation/visualization/VisIt/">VisIt</a></li>
+	<li><a href="/documentation/visualization/vizLauncher/">vizLauncher</a></li>
+	<li><a href="/documentation/visualization/xGraph/">xGraph</a></li>
+	<li><a href="/documentation/visualization/yGraph/">yGraph</a></li>
 </ul>';
 break;
 
