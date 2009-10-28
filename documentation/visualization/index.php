@@ -28,7 +28,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
    <p><a href="DataVaultXVS">DataVault</a> s a powerful visualization and data analysis package for numerical codes that solve partial differential equations via grid-based methods, in particular those utilizing adaptive mesh refinement (AMR) and/or running in a parallel environment. </p>
 
 <h3> IsoView </h3>
-   <p><a href="IsoView">Isoview</a> version 2 uses pure OpenGL to handle rendering, making it very lightweight. IsoView V2 is a visualization client originally developed for the CactusCode project at Lawrence Berkeley National Laboratory, and now is maintained and developed at Louisiana State University. </p>
+   <p><a href="IsoView">IsoView</a> version 2 uses pure OpenGL to handle rendering, making it very lightweight. IsoView V2 is a visualization client originally developed for the CactusCode project at Lawrence Berkeley National Laboratory, and now is maintained and developed at Louisiana State University. </p>
 
 <h3>VisIt</h3>
 <p><a href="VisIt">VisIt</a> is a state-of-the-art data visualization tool based on the open source 
@@ -39,7 +39,7 @@ engineering and analytical data: Its open system design is built on a standard
 interface environment. And its sophisticated data model provides users with 
 great flexibility in creating visualizations.</p>
 
-
+<br />
   <h2>Cactus Output Methods and Data Formats</h2>
 	  <p>
 	    The following table details output formats which can
@@ -232,10 +232,11 @@ great flexibility in creating visualizations.</p>
 	      </tr>
 	    </tbody></table>
 	  </center>
-	
+	  
+	  <a name="hdf5"></a>
 <h3>Cactus Postprocessing Utilities</h3>
 
-To aid the visualisation of very large HDF5 output data, thorn <code>CactusExternal/HDF5</code>
+<p>To aid the visualisation of very large HDF5 output data, thorn <code>CactusExternal/HDF5</code>
 provides a set of utility programs which can be used to manipulate HDF5 files, independently of
 their driver-specific format:
 
@@ -252,7 +253,8 @@ their driver-specific format:
     This is the reverse operation to what <code>hdf5_merge</code> does. Useful eg.
     for extracting individual timesteps from a time series HDF5 datafile.</li>
 </ul>
-
-For detail please refer to the thorn documentation of <code>CactusExternal/HDF5</code>.
+</p><p>
+For detail please refer to the thorn documentation of <code>CactusExternal/HDF5</code>
+</p>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
