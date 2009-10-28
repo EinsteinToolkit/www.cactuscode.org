@@ -3,7 +3,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 $section='visualization';?>
 
-    <table cellpadding=1>
+    <table cellpadding="1">
       <tr>
 	<td>
 
@@ -11,7 +11,7 @@ $section='visualization';?>
 
 	<table>
 	    <tr>
-	      <td valign=top width="70%">
+	      <td valign="top" width="70%">
 		<p>
 		  Gnuplot is a command-driven interactive function plotting program.  It can plot functions and data points in both two- and three-dimensional plots in various formats (points, lines, surfaces, contours).  A set of built-in terminal drivers support many different graphics devices, eg. for plotting to different types of terminals or for generating GIF, postscript, latex files.
 		</p>
@@ -22,9 +22,9 @@ $section='visualization';?>
 
 	      </td>
 
-	      <td valign=top>
-		<a href="../images/gnuPlot1.gif">
-		  <img border=0 align=right width=400 height=400 src="../images/gnuPlot1.gif"
+	      <td valign="top">
+		<a href="gnuPlot1.gif">
+		  <img border="0" align="right" width="300" height="150" src="gnuPlot1.gif"
 		    alt="Gnuplot Image"></a>
 	      </td>
 	    </tr>
@@ -57,7 +57,7 @@ $section='visualization';?>
 
 	  <H3>Abstract:</H3>
 	  <p>
-	    At the time of this writing, there are two supported client programmes available to display Cactus ASCII output graphically, namely <a href="../visualization/xGraph"><em>xgraph</em></a> and <em>gnuplot</em>.
+	    At the time of this writing, there are two supported client programmes available to display Cactus ASCII output graphically, namely <a href="../xGraph"><em>xgraph</em></a> and <em>gnuplot</em>.
 	    Although xgraph is the default output format, gnuplot offers many more features to the intermediate and expert user. Among those are the capability to choose which part(s) of the dataset to display, or to combine with other data. Below you find an introduction to creating and viewing Cactus ASCII output files in the gnuplot format. Step by step you are then introduced to more advanced features of gnuplot.
 	  </p>
 

@@ -8,8 +8,8 @@ $section='visualization';?>
 	<td>
 
 <h1>IsoView - The lightweight IsoSurfacer Visualization Client<h1>
-<a href="../images/isoview.png" alt="Click here for the full-size image.">
-<img src="../images/isoview.png" width="400" height="300" border="0"/>
+<a href="isoview.png" alt="Click here for the full-size image.">
+<img src="isoview.png" width="400" height="300" border="0"/>
 </a>
 <h3>About</h3>
 <strong>Current Version: 2.0 RC1</strong>
@@ -23,18 +23,18 @@ maintained and developed at Louisiana State University.</p>
 <h3>Files</h3>
 <strong>IsoView</strong>
 <ul>
-  <li><a href="../isoView/IsoView-RC1-MD5SUMS">MD5SUMS</a> - MD5 sums for current tar balls</li>
-  <li><a href="../isoView/IsoView-RC1-Linux.tar.bz2">IsoView-RC1-Linux.tar.bz2</a> - IsoView Linux binary, tar-bzip format</li> 
-  <li><a href="../isoView/IsoView-RC1-Linux.tar.gz">IsoView-RC1-Linux.tar.gz</a> - IsoView Linux binary, tar-gzip format</li> 
-  <li><a href="../isoView/IsoView-RC1-Macintosh.tar.bz2">IsoView-RC1-Macintosh.tar.bz2</a> - IsoView Macintosh binary, tar-bzip format</li> 
-  <li><a href="../isoView/IsoView-RC1-Macintosh.tar.gz">IsoView-RC1-Macintosh.tar.gz</a> - IsoView Macintosh binary, tar-gzip format</li> 
-  <li><a href="../isoView/IsoView-RC1-source.tar.bz2">IsoView-RC1-source.tar.bz2</a> - IsoView source, tar-bzip format</li> 
-  <li><a href="../isoView/IsoView-RC1-source.tar.gz">IsoView-RC1-source.tar.gz</a> - IsoView source, tar-gzip format</li> 
+  <li><a href="IsoView-RC1-MD5SUMS">MD5SUMS</a> - MD5 sums for current tar balls</li>
+  <li><a href="IsoView-RC1-Linux.tar.bz2">IsoView-RC1-Linux.tar.bz2</a> - IsoView Linux binary, tar-bzip format</li> 
+  <li><a href="IsoView-RC1-Linux.tar.gz">IsoView-RC1-Linux.tar.gz</a> - IsoView Linux binary, tar-gzip format</li> 
+  <li><a href="IsoView-RC1-Macintosh.tar.bz2">IsoView-RC1-Macintosh.tar.bz2</a> - IsoView Macintosh binary, tar-bzip format</li> 
+  <li><a href="IsoView-RC1-Macintosh.tar.gz">IsoView-RC1-Macintosh.tar.gz</a> - IsoView Macintosh binary, tar-gzip format</li> 
+  <li><a href="IsoView-RC1-source.tar.bz2">IsoView-RC1-source.tar.bz2</a> - IsoView source, tar-bzip format</li> 
+  <li><a href="IsoView-RC1-source.tar.gz">IsoView-RC1-source.tar.gz</a> - IsoView source, tar-gzip format</li> 
 </ul>
 <strong>Other</strong>
 <ul>
-  <li><a href="../isoView/IsoSurfacer.c">IsoSurfacer.c</a> - Updated IsoSurfacer.c to run this version of IsoView.</a></li> 
-  <li><a href="../isoView/WaveDemo.par">WaveDemo.par</a> - Updated WaveDemo.par file</a></li>
+  <li><a href="IsoSurfacer.c">IsoSurfacer.c</a> - Updated IsoSurfacer.c to run this version of IsoView.</a></li> 
+  <li><a href="WaveDemo.par">WaveDemo.par</a> - Updated WaveDemo.par file</a></li>
 </ul>
 <h3>Installation</h3>
 <ul>
