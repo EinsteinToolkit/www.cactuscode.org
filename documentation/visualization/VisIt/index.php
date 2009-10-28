@@ -130,7 +130,9 @@ Note that there may be a problem if several plugins support HDF5
 files.  In this case, it can happen that the wrong plugin in chosen to
 open a file, even if the correct plugin is selected in the "open file"
 dialogue.  As a work-around, you can remove all other HDF5-based
-plugins, such as e.g. the PIXIE plugin.
+plugins, such as e.g. the PIXIE plugin; alternatively, the command-line
+flag "-assume_format visitCarpetHDF5" passed to VisIt ensures that all
+HDF5 files are opened with this plugin.
 </p>
 
 <h3>Support and Acknowledgements</h3>
