@@ -7,15 +7,10 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
 <p>
-<strong>Recent stories are listed on the right. <em>Use the site search (also on the right) to quickly find text from any news story listed below.</em></strong>
+<strong>Recent news stories are listed on the right. <em>Use the site search (also on the right) to quickly find text from any news story listed below.</em></strong>
 </p>
 
-<?php /*
-<ul>
-<?php echo $new_blurbs;?>
-</ul>
-*/ ?>
-
-<p><?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/tools/ls.php'); ?></p>
+<h4>Complete Listing</h4>
+<ul><?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/tools/ls.php'); ?></ul>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>

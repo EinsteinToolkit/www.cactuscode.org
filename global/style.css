@@ -366,7 +366,7 @@ input.button
 	text-decoration: none;	
 	}
 
-#main p, #main h1, #main h2, #main h3, #main ol, #main ul,
+#main p, #main h1, #main h2, #main h3, #main h4, #main ol, #main ul,
 #main blockquote, #main table, #main form
 	{
 	margin-left: 20px;
@@ -376,6 +376,12 @@ input.button
 	{
 	margin-top: 20px;
 	font: bold 1.5em 'Skia', 'Trebuchet MS', Tahoma, Sans-serif;
+	color: #555;
+	}
+#main h4
+	{
+	margin-top: 20px;
+	font: 1.3em 'Skia', 'Trebuchet MS', Tahoma, Sans-serif;
 	color: #555;
 	}
 
