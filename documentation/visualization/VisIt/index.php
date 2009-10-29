@@ -83,6 +83,15 @@ choosing the corresponding host:
 <a href="visitscreenshot3.jpg"><img border=0 align="center" width="400" src="visitscreenshot3.jpg" alt="VisIt Visualization"></a>
 </p>
 
+<p>
+Notice that the environment variable $VISITSSH controls which executable VisIt invokes
+to log into the remote machine; this is particularly useful if the remote machine is not
+accessible via ssh, but uses, e.g., Globus tools such as gsissh. Sometimes such passwordless
+logins also require VisIt to not try and mediate between the user and the shell, which can 
+be obtained with the command-line shell -nopty. 
+</p>
+
+
 <h2>The visitCarpetHDF5 package</h2>
 <p>
 Datafiles written in the HDF5 file format (as created by various I/O methods in 
