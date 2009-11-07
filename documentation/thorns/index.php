@@ -18,6 +18,7 @@ foreach($files as $file) {
     $parts=explode("-", $file, 2);
     if ($parts[0] != $arrangement) {
       if ($arrangement != "") print "   </li>\n  </ul>\n </li>\n";
+      $arrangement = $parts[0];
       echo " <li>".$parts[0]."\n  <ul>\n";
     }
     echo "    <li><a href='".$parts[1]."'>$file</li>\n";
