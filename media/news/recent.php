@@ -1,3 +1,4 @@
+<p class="align-right">6 November 2009</p>
 	<li><a href="/media/news/Whisky_Retreat_5">Whisky Retreat V</a></li>
 <p class="align-right">17 March 2009</p>
 <li><a href="/media/news/BH-to-GRB-SiCortex">
