@@ -2,7 +2,7 @@
 <?php $title='Thorn Documentation';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<ol>
+<ul>
 <?php
 $files = array();
 $dd = opendir(".");
@@ -13,10 +13,19 @@ while($file = readdir($dd)) {
 }
 closedir($dd);
 sort($files);
+$arrangement="";
 foreach($files as $file) {
-    echo "<li><a href='$file'>$file</li>\n";
+    $parts=explode("-", $file, 2);
+    if ($parts[0] != $arrangement) {
+      if ($arrangement != "") print "   </li>\n  </ul>\n </li>\n";
+      echo " <li>".$parts[0]."\n  <ul>\n";
+    }
+    echo "    <li><a href='".$parts[1]."'>$file</li>\n";
 }
 ?>
-</ol>
+   </li>
+  </ul>
+ </li>
+</ul>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
