@@ -21,7 +21,7 @@ foreach($files as $file) {
       $arrangement = $parts[0];
       echo " <li>".$parts[0]."\n  <ul>\n";
     }
-    echo "    <li><a href='$file'>".$parts[1]."</li>\n";
+    echo "    <li><a href='$file'>".$parts[1]."</a></li>\n";
 }
 ?>
    </li>
