@@ -1,5 +1,6 @@
 <?php $title='Presentations';
-include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
+include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
+$section='media';?>
 
 <h1>Posters and Videos</h1>
 

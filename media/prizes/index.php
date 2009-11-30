@@ -1,5 +1,6 @@
 <?php $title='Cactus Prizes and Major Achievements';
-include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
+include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
+$section='media';?>
 
 <p>
 Over the years, Cactus and its developers have won some of high performance computing's most prestigious awards.  Several are presented on this page.
