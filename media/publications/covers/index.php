@@ -1,4 +1,4 @@
-<?php $title='Presentations';
+<?php $title='Publication covers';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 $section='media';?>
 
@@ -13,6 +13,14 @@ Software Credits:
 <p>
 
 <table  border="0">
+
+<tr>  
+<td><a href="TGHighlights.jpg"><img src="TGHighlights.jpg" width="120"></a></td>
+<td align="justified"> 
+Erik Schnetter, <i>Catching Waves</i>, TeraGrid Science Highlights 2009
+</td>
+</tr>
+
 
 <tr>  
 <td><a href="PetascaleComputingBook.jpg"><img src="PetascaleComputingBook.jpg" width="120"></a></td>
