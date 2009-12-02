@@ -1,7 +1,7 @@
 <?php $title='Soon-Heum Ko';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<p><img class="float-right" width="150" src="sko.jpg" alt="Photo of Soon-Heum Ko"/></p>
+<p><img class="float-right" width="150" src="sko-photo.jpg" alt="Photo of Soon-Heum Ko"/></p>
 
 <h3>Position</h3>
 <ul>

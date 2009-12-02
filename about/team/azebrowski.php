@@ -1,7 +1,7 @@
 <?php $title='Ashley Zebrowski';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<p><img class="float-right" width="150" src="azebrowski.png" alt="Photo of Ashley Zebrowski"/></p>
+<p><img class="float-right" width="150" src="azebrowski-photo.png" alt="Photo of Ashley Zebrowski"/></p>
 
 <h3>Position</h3>
 <ul>

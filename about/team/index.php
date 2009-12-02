@@ -37,7 +37,7 @@ team:
 <br />Postdoc researcher at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
 
-<li><a href="okorobkin">Oleg Korobkin</a>
+<li><!--<a href="okorobkin">-->Oleg Korobkin<!--</a>-->
 <br />Graduate student at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> and the <a href="http://www.phys.lsu.edu/">Department of Physics &amp; Astronomy</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
 

@@ -1,7 +1,7 @@
 <?php $title='Eloisa Bentivegna';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<p><img class="float-right" width="150" src="bentivegna.png" alt="Photo of Eloisa Bentivegna"/></p>
+<p><img class="float-right" width="150" src="bentivegna-photo.png" alt="Photo of Eloisa Bentivegna"/></p>
 
 <h3>Position</h3>
 <ul>
