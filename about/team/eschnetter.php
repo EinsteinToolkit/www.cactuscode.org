@@ -1,7 +1,7 @@
 <?php $title='Erik Schnetter';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<p><img class="float-right" width="150" src="eschnetter.jpg" alt="Photo of Erik Schnetter"/></p>
+<p><img class="float-right" width="150" src="eschnetter-photo.jpg" alt="Photo of Erik Schnetter"/></p>
 
 <h3>Position</h3>
 <ul>

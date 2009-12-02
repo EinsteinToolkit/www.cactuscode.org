@@ -1,7 +1,7 @@
 <?php $title='Yaakoub El-Khamra';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<p><img class="float-right" width="150" src="yelkhamra.png" alt="Photo of Yaakoub El-Khamra"/></p>
+<p><img class="float-right" width="150" src="yelkhamra-photo.png" alt="Photo of Yaakoub El-Khamra"/></p>
 
 <h3>Position</h3>
 <ul>
