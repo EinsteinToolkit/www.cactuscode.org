@@ -24,7 +24,7 @@
 	</div> <!-- closing footer div -->
 </div> <!-- wrap ends here -->
 
-<!-- Template provided generously by http://styleshout.com/ under a creative commons attritbution license-->
+<!-- Original template design provided generously by http://styleshout.com/ under a creative commons attritbution license-->
 
 </body>
 </html>

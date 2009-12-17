@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="/global/style.css" type="text/css" />
 <style type="text/css"><?php
 
-  $path_all=explode("/",$_SERVER["PHP_SELF"]);		
+  $path_all=explode("/",$_SERVER["PHP_SELF"]);
   $category=$path_all[1]; //set to the top level directory
   
   //find the lowest directory ignoring filename and any extra slashes
@@ -51,7 +51,7 @@
 		<li id="download"><a href="/download/">Download</a></li>
 		<li id="documentation"><a href="/documentation/">Documentation</a></li>
 		<li id="community"><a href="/community/">Community</a></li>
-		<li id="internal"><a href="/internal/">Internal</a></li>
+		<li id="internal"><a href="https://wiki.cct.lsu.edu/frameworks">Internal</a></li>
 	</ul></div>
 
 	<!-- content-wrap starts here -->
