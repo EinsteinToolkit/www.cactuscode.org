@@ -2,13 +2,6 @@
 <?php $title='Visualization Packages and Data Output Formats';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<h3> VizLauncher </h3>
-   <p>
- VizLauncher is a freely available for viewing Cactus output files using the most appropriate tools available on your local machine.</p>
-
-   <p>
-<a href="vizLauncher">VizLauncher</a> can be applied to files in your local file system, as well as output files advertised on the Files page of the Cactus simulation web browser. </p>
-
 <h3> xgraph: Animated, Easy Client for 1D Line Plots </h3>
    <p><a href="xGraph">xGraph</a> is a freely available, lightweight and easy to use visualization client for viewing 1D data files. It includes features for animation, zooming and saving to postscript. </p> 
 
