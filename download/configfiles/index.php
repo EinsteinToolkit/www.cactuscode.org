@@ -33,7 +33,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   
   <!-- damiana -->
   <tr>
-    <td><a href="http://supercomputers.aei.mpg.de/damiana">Damiana</a></td>
+    <td><a href="http://supercomputers.aei.mpg.de">Damiana</a></td>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/damiana.cfg">damiana</a></td>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/damiana.sh">damiana</td>
     <td>AEI</td>
