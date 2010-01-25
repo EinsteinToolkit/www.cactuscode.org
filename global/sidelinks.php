@@ -78,7 +78,6 @@ echo '
 	<li><a href="/documentation/visualization/IsoView/">IsoView</a></li>
 	<li><a href="/documentation/visualization/openDX/">openDX</a></li>
 	<li><a href="/documentation/visualization/VisIt/">VisIt</a></li>
-	<li><a href="/documentation/visualization/vizLauncher/">vizLauncher</a></li>
 	<li><a href="/documentation/visualization/xGraph/">xGraph</a></li>
 	<li><a href="/documentation/visualization/yGraph/">yGraph</a></li>
 </ul>';
