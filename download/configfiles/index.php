@@ -63,6 +63,15 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters</td>
   </tr>
   
+    <!-- philip -->
+<tr>
+    <td><a href="http://www.hpc.lsu.edu/systems/system.php?system=Philip">Philip</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/philip-mpich.cfg">philip-mpich</a></td>
+    <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/philip-mpich.sh">philip-mpich</a></td>
+    <td>LSU</td>
+    <td><a href="http://en.wikipedia.org/wiki/Linux">Linux</a> Clusters</td>
+  </tr>
+  
   <!-- ranger -->
   <tr>
     <td><a href="http://www.tacc.utexas.edu/services/userguides/ranger/">Ranger</a></td>
