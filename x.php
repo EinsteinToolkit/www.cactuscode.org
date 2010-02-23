@@ -15,6 +15,7 @@ if(isset($_GET['golive']))
   echo '<p>'.exec('/var/www/golive').'</p>';
   echo '<p>The Live site is now current.</p><br />';
   echo '<p>&lang; <a href="/x">back to updates interface</a></p>';
+  echo '<p><a href="http://cactuscode.org">visit the live site</a></p>';
 }
 elseif(isset($_GET['updatesvn']))
 {
@@ -22,6 +23,7 @@ elseif(isset($_GET['updatesvn']))
   echo '<p>'.exec('/var/www/updatesvn').'</p>';
   echo '<p>The preview site is now current.</p><br />';
   echo '<p>&lang; <a href="/x">back to updates interface</a></p>';
+  echo '<p><a href="http://preview.cactuscode.org">visit the preview site</a></p>';
 }
 else
 {
