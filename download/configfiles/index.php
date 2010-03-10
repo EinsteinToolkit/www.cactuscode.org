@@ -95,13 +95,17 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
       (CNL)</td>
   </tr>
   
+  
+  
+  <!-- Cray XT5 -->
+  
   <!-- kraken -->
   <tr>
     <td><a href="http://www.nics.tennessee.edu/computing-resources/kraken">Kraken</a></td>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/optionlists/kraken.cfg">kraken</a></td>
     <td><a href="https://svn.cct.lsu.edu/repos/numrel/simfactory/scriptfiles/kraken.sh">kraken</a></td>
     <td>NICS</td>
-    <td><a href="http://en.wikipedia.org/wiki/Cray_XT4">Cray XT4</a>
+    <td><a href="http://en.wikipedia.org/wiki/Cray_XT5">Cray XT5</a>
       (CNL)</td>
   </tr>
   
