@@ -14,23 +14,23 @@ if(isset($_GET['golive']))
   echo '<h3>Updating the Live site...</h3>';
   echo '<p>'.exec('/var/www/golive').'</p>';
   echo '<p>The Live site is now current.</p><br />';
-  echo '<p>&lang; <a href="/x">back to updates interface</a></p>';
-  echo '<p><a href="http://cactuscode.org">visit the live site</a></p>';
+  echo '<p>&lang; Go back to <a href="/x">updates interface</a></p>';
+  echo '<p>Visit the <a href="http://cactuscode.org">live site</a></p>';
 }
 elseif(isset($_GET['updatesvn']))
 {
   echo '<h3>Updating the Preview site...</h3>';
   echo '<p>'.exec('/var/www/updatesvn').'</p>';
   echo '<p>The preview site is now current.</p><br />';
-  echo '<p>&lang; <a href="/x">back to updates interface</a></p>';
-  echo '<p><a href="http://preview.cactuscode.org">visit the preview site</a></p>';
+  echo '<p>&lang; Go back to <a href="/x">updates interface</a></p>';
+  echo '<p>Visit the <a href="http://preview.cactuscode.org">preview site</a></p>';
 }
 else
 {
   echo '<table>
 <tr>
-<th>Live Site</th>
-<th>Preview Site</th>
+<th><a href="http://cactuscode.org">Live Site</a></th>
+<th><a href="http://preview.cactuscode.org">Preview Site</a></th>
 </tr>
 <tr>
 
