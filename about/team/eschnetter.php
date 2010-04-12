@@ -9,13 +9,18 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   Technology and the Department of Physics &amp; Astronomy at LSU</li>
 </ul>
 
+<!--
 <h3>Background</h3>
 <ul>
-<li></li>
+  <li></li>
 </ul>
+-->
 
 <h3>Research</h3>
-Go to my <a href="http://www.cct.lsu.edu/~eschnett/">home page</a>
+<ul>
+  <li>Go to my <a href="http://www.cct.lsu.edu/~eschnett/">home
+  page</a></li>
+</ul>
 <p></p>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
