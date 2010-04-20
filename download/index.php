@@ -28,10 +28,9 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <p>
   Save the <a href="GetComponents">checkout script</a> with the
   name <kbd>GetComponents</kbd> and make it executable.
-</p>
-
 <code>wget http://www.cactuscode.org/download/GetComponents</code>
 <code>chmod a+x GetComponents</code>
+</p>
 
 <p>
   To checkout an application version of Cactus, choose and save
@@ -42,7 +41,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   the <kbd>GetComponents</kbd> script with a new Thorn List, or use the
   below make target from within the Cactus distribution.
   (Using <kbd>GetComponents</kbd> is preferred).
-<code>gmake checkout</code>
+<code>gmake checkout</code> (or <code>make checkout</code>)
 </p>
 
 <h3>Subversion Repositories</h3>
