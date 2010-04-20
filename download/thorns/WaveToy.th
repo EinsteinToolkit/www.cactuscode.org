@@ -5,31 +5,25 @@
 
 # Cactus Flesh
 !TARGET   = $ROOT
-!TYPE     = cvs
-!AUTH_URL = :pserver:cvs.cactuscode.org/cactusdevcvs
-!URL      = :pserver:cvs.cactuscode.org/cactusdevcvs
-!ANON_USER= cvs_anon
-!ANON_PASS= anon
+!TYPE     = svn
+!AUTH_URL = https://svn.cactuscode.org/flesh/trunk
+!URL      = http://svn.cactuscode.org/flesh/trunk
 !CHECKOUT = Cactus
 !NAME     = .
 
 # Cactus utilities, including the GetComponents script
 !TARGET   = $ROOT
-!TYPE     = cvs
-!AUTH_URL = :pserver:cvs.cactuscode.org/cactus
-!URL      = :pserver:cvs.cactuscode.org/cactus
-!ANON_USER= cvs_anon
-!ANON_PASS= anon
-!CHECKOUT = Utilities
+!TYPE     = svn
+!AUTH_URL = https://svn.cactuscode.org/Utilities/trunk
+!URL      = http://svn.cactuscode.org/Utilities/trunk
+!CHECKOUT = .
 !NAME     = utils
 
 # Basic Cactus thorns
 !TARGET   = $ARR
-!TYPE     = cvs
-!AUTH_URL = :pserver:cvs.cactuscode.org/cactusdevcvs
-!URL      = :pserver:cvs.cactuscode.org/cactusdevcvs
-!ANON_USER= cvs_anon
-!ANON_PASS= anon
+!TYPE     = svn
+!AUTH_URL = https://svn.cactuscode.org/arrangements/$1/$2/trunk
+!URL      = http://svn.cactuscode.org/arrangements/$1/$2/trunk
 !CHECKOUT =
 CactusWave/WaveToyC        
 CactusWave/WaveToyF77      
