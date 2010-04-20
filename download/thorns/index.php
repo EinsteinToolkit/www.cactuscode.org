@@ -11,8 +11,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
       <p>
 
         For information on using a ThornList for checking out thorns, please see the <a
-        href="/documentation/tutorials/managementHowTo.txt">Management-HOWTO</a>. The
-<a href="MakeThornList">MakeThornList</a> script can be used to generate a ThornList for a specific parameter file.   
+        href="/documentation/tutorials/managementHowTo.txt">Management-HOWTO</a> (but now outdated). The
+<a href="MakeThornList">MakeThornList</a> script can be used to generate a ThornList for a specific parameter file. (But note that up to now this will generate an old-style ThornList for use with GetCactus and not GetComponents.)
       </p>
 
       <p>
