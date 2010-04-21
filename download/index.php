@@ -41,7 +41,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   the <kbd>GetComponents</kbd> script with a new Thorn List, or use the
   below make target from within the Cactus distribution.
   (Using <kbd>GetComponents</kbd> is preferred).
-<code>gmake checkout</code> (or <code>make checkout</code>)
+<code>gmake checkout</code> or <code>make checkout</code>
 </p>
 
 <h3>Subversion Repositories</h3>
