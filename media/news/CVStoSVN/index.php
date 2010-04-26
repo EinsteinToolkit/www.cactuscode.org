@@ -118,10 +118,11 @@ thorns also changed their name, als also indicated in this table.
 <tr><td>Waves           </td><td>Multipole               </td><td>EinsteinAnalysis</td></tr>
 <tr><td>Waves           </td><td>WeylScal4               </td><td>EinsteinAnalysis</td></tr>
 </table>
-<h3><a name="GetComponents"></a></h3><p>
+<h3><a name="GetComponents"></a>GetComponents</h3><p>
 The third change within the CactusCode project is the move from the
-GetCactus script to obtain a complete checkout to a new script, called
-GetComponents. The new thorn list layout is not very different from the
+GetCactus script to obtain a complete checkout to a new script:
+<a href="https://svn.cactuscode.org/Utilities/trunk/Scripts/GetComponents">GetComponents</a>
+. The new thorn list layout is not very different from the
 old, but it now directly contains information about the flesh and can
 include non-thorn utilities like simfactory. One (short) example would
 look like this:</p>
