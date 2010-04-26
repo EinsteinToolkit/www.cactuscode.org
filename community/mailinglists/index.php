@@ -65,7 +65,7 @@ The <strong>news</strong> list is used to broadcast Cactus related events, inter
   <br />
   <dt><h4>Commit message list:</h4></dt>
   <li>
-  	<a href="mailto:commits@cactuscode.org" >flesh-cvs@cactuscode.org</a>
+  	<a href="mailto:commits@cactuscode.org" >commits@cactuscode.org</a>
   	<br />
     [<a href="http://cactuscode.org/mailman/listinfo/commits">subscribe</a>] 
   </li>
