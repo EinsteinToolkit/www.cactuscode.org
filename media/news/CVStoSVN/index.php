@@ -101,7 +101,7 @@ thorns also changed their name, als also indicated in this table.
 <tr><td>CactusEOS       </td><td>EOSG_IdealFluid         </td><td>EinsteinEOS</td></tr>
 <tr><td>CactusEOS       </td><td>EOSG_Polytrope          </td><td>EinsteinEOS</td></tr>
 <tr><td>CactusEOS       </td><td>EOS_Hybrid              </td><td>EinsteinEOS</td></tr>
-<tr><td>CactusEOS       </td><td>EOS_IdealFluid          </td><td>EinsteinEOS</td></tr>
+<tr><td>CactusEOS       </td><td>EOS_Ideal_Fluid          </td><td>EinsteinEOS (EOS_IdealFluid)</td></tr>
 <tr><td>CactusEOS       </td><td>EOS_Polytrope           </td><td>EinsteinEOS</td></tr>
 <tr><td>CIGR            </td><td>Hydro_Analysis          </td><td>EinsteinAnalysis</td></tr>
 <tr><td>CIGR            </td><td>Whisky                  </td><td>EinsteinEvolve (GRHydro)</td></tr>
