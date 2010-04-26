@@ -63,25 +63,19 @@ The <strong>news</strong> list is used to broadcast Cactus related events, inter
   <p>For more information on how to use this list, please read the <a href="/community/mailinglists/patches" >patches  information</a> page.</p>
 
   <br />
-  <dt><h4>Flesh CVS list:</h4></dt>
+  <dt><h4>Commit message list:</h4></dt>
   <li>
-  	<a href="mailto:flesh-cvs@cactuscode.org" >flesh-cvs@cactuscode.org</a>
+  	<a href="mailto:commits@cactuscode.org" >flesh-cvs@cactuscode.org</a>
   	<br />
-    [<a href="http://cactuscode.org/mailman/listinfo/flesh-cvs">subscribe</a>] 
+    [<a href="http://cactuscode.org/mailman/listinfo/commits">subscribe</a>] 
   </li>
 
-  <br />
-  <dt><h4>Cactus Thorns CVS list:</h4></dt>
-  <li>
-  	<a href="mailto:cactus-thorns-cvs@cactuscode.org" >cactus-thorns-cvs@cactuscode.org</a>
-  	<br />
-    [<a href="http://cactuscode.org/mailman/listinfo/cactus-thorns-cvs">subscribe</a>] 
-  </li>
-  <p>These two mailing lists carry the CVS commit messages from
-  cvs.cactuscode.org.  You can subscribe to them if you want to stay
+  <p>This mailing list carries the commit messages from
+  svn.cactuscode.org.  You can subscribe to them if you want to stay
   up to date with Cactus development.  These lists are not meant for
   posting.  If you are interested in past commit messages, you can
-  query the CVS server.</p>
+  query the Subversion server, or also look at the
+  [<a href="http://cactuscode.org/pipermail/commits" >archives</a>].</p>
 
 <ul>
 
