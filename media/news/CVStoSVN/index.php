@@ -11,7 +11,7 @@ main changes were:
  <li><a href="#thorns">Thorns moving</a></li>
  <li><a href="#GetComponents">GetCactus to GetComponents</a></li>
 </ul>
-</p><p><a name="svn"></a><h3>CVS to Subversion</h3>
+</p><a name="svn"></a><h3>CVS to Subversion</h3><p>
 The Cactus code was stored in CVS repositories for more than a decade.
 CVS itself is getting old and better methods have been developed. One
 of the closest alternatives to CVS is Subversion.
@@ -37,11 +37,11 @@ as described for the flesh before.
 Projects which are not directly maintained by the Cactus team but are hosted
 on the cactuscode server (found under /arrangements in CVS) can be found under
 <pre>https://svn.cactuscode.org/projects/</pre>
-</p><p><a name="commits"></a><h3>Commit messages</h3>
+</p><a name="commits"></a><h3>Commit messages</h3><p>
 Commit messages will in the future go to the mailing list
 <pre>commits@cactuscode.org</pre>
 Subscribed users to the old lists have been copied over to this new list.
-</p><p><a name="thorns"></a><h3>Thorns moving</h3>
+</p><a name="thorns"></a><h3>Thorns moving</h3><p>
 At the same time as the move from CVS to Subversion, some external thorns
 have been included into Cactus, and some former Cactus thorns (CactusEinstein)
 were moved to a separate project (the EinsteinToolkit). The following table
@@ -116,7 +116,7 @@ thorns also changed their name, als also indicated in this table.
 <tr><td>Waves           </td><td>Multipole               </td><td>EinsteinAnalysis</td></tr>
 <tr><td>Waves           </td><td>WeylScal4               </td><td>EinsteinAnalysis</td></tr>
 </table>
-<p><a name="GetComponents"></a>
+<h3><a name="GetComponents"></a></h3><p>
 The third change within the CactusCode project is the move from the
 GetCactus script to obtain a complete checkout to a new script, called
 GetComponents. The new thorn list layout is not very different from the
@@ -151,6 +151,7 @@ CactusBase/CoordBase
 CactusBase/IOASCII
 CactusBase/IOBasic
 </pre>
+</p>
 
 <h3 class="align-right">Apr 26 2010 — knarf</h3>
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
