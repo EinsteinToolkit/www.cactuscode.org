@@ -22,6 +22,11 @@ The command line tool 'svn' has similar sub-commands to cvs, e.g.</p>
 <pre>svn diff</pre>
 <pre>svn update</pre>
 <pre>svn commit</pre>
+<p>The server cvs.cactuscode.org will not be used in the future. All
+repositories have been transfered to the new server svn.cactuscode.org.
+This can be accessed using a Subversion client or viewed using a web client,
+pointed at <a href="https://svn.cactuscode.org/">this page</a>. Read-only
+access to some of the repositories is also available using http.</p>
 <p>The Cactus flesh can now be found using the URL</p>
 <pre>https://svn.cactuscode.org/flesh/VERSION/</pre><p>where</p>
 <pre>VERSION</pre><p>can be either</p><pre>trunk</pre>
