@@ -68,6 +68,8 @@ The <strong>news</strong> list is used to broadcast Cactus related events, inter
   	<a href="mailto:commits@cactuscode.org" >commits@cactuscode.org</a>
   	<br />
     [<a href="http://cactuscode.org/mailman/listinfo/commits">subscribe</a>] 
+    &nbsp;
+    [<a href="http://cactuscode.org/pipermail/commits" >archives</a>]
   </li>
 
   <p>This mailing list carries the commit messages from
@@ -75,7 +77,7 @@ The <strong>news</strong> list is used to broadcast Cactus related events, inter
   up to date with Cactus development.  These lists are not meant for
   posting.  If you are interested in past commit messages, you can
   query the Subversion server, or also look at the
-  [<a href="http://cactuscode.org/pipermail/commits" >archives</a>].</p>
+  <a href="http://cactuscode.org/pipermail/commits" >archives</a>.</p>
 
 <ul>
 
