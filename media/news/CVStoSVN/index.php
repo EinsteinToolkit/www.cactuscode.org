@@ -15,34 +15,31 @@ main changes were:
 The Cactus code was stored in CVS repositories for more than a decade.
 CVS itself is getting old and better methods have been developed. One
 of the closest alternatives to CVS is Subversion.
-</p>
-<p>
+</p><p>
 Like CVS, Subversion has the concept of a single, central repository.
-The command line tool 'svn' has similar sub-commands to cvs, e.g.
+The command line tool 'svn' has similar sub-commands to cvs, e.g.</p>
 <pre>svn checkout</pre>
 <pre>svn diff</pre>
 <pre>svn update</pre>
 <pre>svn commit</pre>
-</p><p>
-The Cactus flesh can now be found using the URL
-<pre>https://svn.cactuscode.org/flesh/VERSION/</pre>
-where <pre>VERSION</pre> can be either <pre>trunk</pre> for the development
-version or <pre>branches/RELEASE</pre> for future Cactus releases.
-</p><p>
-The Cactus arrangements can be found using
-<pre>https://svn.cactuscode.org/arrangements/ARRANGEMENT/THORN/VERSION</pre>
+<p>The Cactus flesh can now be found using the URL</p>
+<pre>https://svn.cactuscode.org/flesh/VERSION/</pre><p>where</p>
+<pre>VERSION</pre><p>can be either</p><pre>trunk</pre>
+<p>for the development version or </p><pre>branches/RELEASE</pre>
+<p>for future Cactus releases.</p>
+<p>The Cactus arrangements can be found using</p>
+<pre>https://svn.cactuscode.org/arrangements/ARRANGEMENT/THORN/VERSION</pre><p>
 where ARRANGEMENT/THORN could e.g. be CactusBase/Time and VERSION is a string
-as described for the flesh before.
-</p><p>
-Projects which are not directly maintained by the Cactus team but are hosted
-on the cactuscode server (found under /arrangements in CVS) can be found under
+as described for the flesh before.</p>
+<p>Projects which are not directly maintained by the Cactus team but are hosted
+on the cactuscode server (found under /arrangements in CVS) can be found under</p>
 <pre>https://svn.cactuscode.org/projects/</pre>
-</p><a name="commits"></a><h3>Commit messages</h3><p>
-Commit messages will in the future go to the mailing list
+<a name="commits"></a><h3>Commit messages</h3>
+<p>Commit messages will in the future go to the mailing list</p>
 <pre>commits@cactuscode.org</pre>
-Subscribed users to the old lists have been copied over to this new list.
-</p><a name="thorns"></a><h3>Thorns moving</h3><p>
-At the same time as the move from CVS to Subversion, some external thorns
+<p>Subscribed users to the old lists have been copied over to this new list.</p>
+<a name="thorns"></a><h3>Thorns moving</h3>
+<p>At the same time as the move from CVS to Subversion, some external thorns
 have been included into Cactus, and some former Cactus thorns (CactusEinstein)
 were moved to a separate project (the EinsteinToolkit). The following table
 summarizes the old and new locations of thorns which have been moved, and
@@ -122,7 +119,7 @@ GetCactus script to obtain a complete checkout to a new script, called
 GetComponents. The new thorn list layout is not very different from the
 old, but it now directly contains information about the flesh and can
 include non-thorn utilities like simfactory. One (short) example would
-look like this:
+look like this:</p>
 <pre>
 !CRL_VERSION = 1.0
 !DEFINE ROOT = Cactus
@@ -151,7 +148,6 @@ CactusBase/CoordBase
 CactusBase/IOASCII
 CactusBase/IOBasic
 </pre>
-</p>
 
 <h3 class="align-right">Apr 26 2010 — knarf</h3>
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
