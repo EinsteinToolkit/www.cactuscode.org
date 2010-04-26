@@ -35,9 +35,9 @@ as described for the flesh before.</p>
 on the cactuscode server (found under /arrangements in CVS) can be found under</p>
 <pre>https://svn.cactuscode.org/projects/</pre>
 <a name="commits"></a><h3>Commit messages</h3>
-<p>Commit messages will in the future go to the mailing list</p>
-<pre>commits@cactuscode.org</pre>
-<p>Subscribed users to the old lists have been copied over to this new list.</p>
+<p>Commit messages will in the future go to the mailing list
+<a href="http://cactuscode.org/mailman/listinfo/commits">commits@cactuscode.org</a>.
+Subscribed users to the old lists have been copied over to this new list.</p>
 <a name="thorns"></a><h3>Thorns moving</h3>
 <p>At the same time as the move from CVS to Subversion, some external thorns
 have been included into Cactus, and some former Cactus thorns (CactusEinstein)
