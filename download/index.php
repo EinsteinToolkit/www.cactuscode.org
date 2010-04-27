@@ -21,34 +21,28 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   using <a href="http://subversion.apache.org/">Subversion</a>.
   The preferred method is to use
   the <kbd>GetComponents</kbd> script along with a thornlist as described
-  below.  We maintain a <a href="/download/thorns/">page of basic
+  below.  We maintain a <a href="/download/thorns/"> page of basic
   thornlists</a>, or you can use your own customized thornlist.
 </p>
 
 <p>
-  Save the <a href="GetComponents">checkout script</a> with the
-  name <kbd>GetComponents</kbd> and make it executable.
+Download <a href="GetComponents">GetComponents</a> 
+and make sure it is executable.
 <code>wget http://www.cactuscode.org/download/GetComponents</code>
 <code>chmod a+x GetComponents</code>
 </p>
 
 <p>
-  To checkout an application version of Cactus, choose and save
-  a <a href="thorns">ThornList</a>, or provide one to
-  your own needs, and issue the command:
+  To checkout the Cactus flesh and required thorns, choose and save
+  one of our <a href="thorns">ThornLists</a>, or provide your own, 
+and issue the command:
 <code>./GetComponents &lt;<var>thornlist-name</var>&gt;</code>
-  To add more Thorns to your Cactus, either use
-  the <kbd>GetComponents</kbd> script with a new Thorn List, or use the
-  below make target from within the Cactus distribution.
-  (Using <kbd>GetComponents</kbd> is preferred).
-<code>gmake checkout</code> or <code>make checkout</code>
-</p>
 
 <h3>Subversion Repositories</h3>
 
 <p>
   Instead of using the <kbd>GetComponents</kbd> script, you can also check
-  out Cactus using <kbd>svn</kbd> commands or another Subversion client.
+  out Cactus and the Cactus Computational Toolkit using <kbd>svn</kbd> commands or another Subversion client.
   The main Cactus Subversion Server (<kbd>svn.cactuscode.org</kbd>) hosts
   several different repositories
 <!--  (explained <a href="/documentation/tutorials/CactusRepositories-HOWTO.txt">CactusRepositories-HOWTO</a>),-->
