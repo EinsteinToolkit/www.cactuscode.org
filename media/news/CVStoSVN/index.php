@@ -3,20 +3,57 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
 <p>
-The Cactus Code  in April 2010 made some organization changes. The 
+In April 2010 several organization changes were made for the distribution of the Cactus Code. The 
 main changes are:
 <ul>
+ <li><a href="#GetComponents">Changing from GetCactus to GetComponents</a></li>
  <li><a href="#svn">Move from CVS to Subversion</a></li>
  <li><a href="#commit">Mail list for commit messages</a></li>
  <li><a href="#thorns">Thorns moving between arrangements</a></li>
- <li><a href="#GetComponents">Changing from GetCactus to GetComponents</a></li>
 </ul>
+
+
+<h3><a name="GetComponents"></a>GetComponents</h3><p>
+Cactus has moved from using
+GetCactus for checking out Cactus to a new tool:
+<a href="http://cactuscode.org/documentation/GetComponents.php">GetComponents</a>. The new thorn list language is not very different from the
+old, but it now directly contains information about the flesh and can
+   include non-thorn utilities (e.g. SimFactory). One (short) example of notation is:
+<code>
+!CRL_VERSION = 1.0
+!DEFINE ROOT = Cactus
+
+# Cactus Flesh
+!TARGET   = $ROOT
+!TYPE     = svn
+!URL      = http://svn.cactuscode.org/flesh/trunk
+!CHECKOUT = Cactus
+!NAME     = .
+
+# Simulation Factory
+!TARGET   = $ROOT
+!TYPE     = svn
+!URL      = https://svn.cct.lsu.edu/repos/numrel/$1
+!CHECKOUT = simfactory
+
+# Cactus thorns
+!TARGET   = $ROOT/arrangements
+!TYPE     = svn
+!URL      = http://svn.cactuscode.org/arrangements/$1/$2/trunk
+!CHECKOUT = 
+CactusBase/Boundary
+CactusBase/CartGrid3D
+CactusBase/CoordBase
+CactusBase/IOASCII
+CactusBase/IOBasic
+</code>
+</p>
 
 </p><a name="svn"></a><h3>CVS to Subversion</h3>
 <p>
-The Cactus Code was used CVS for code development and distribution
-for over a decade. To be able to take advantage of a new system with additional
-cabilities we have migrated to using Subversion. 
+After using CVS for code development and distribution
+  for over a decade, we have migrated to  Subversion to take advantage of
+more capabilties. 
 As with CVS, Subversion has the concept of a single, central repository.
 </p>
 
@@ -36,20 +73,16 @@ repositories hosted at this server have been migrated to
 access to some of the repositories is also available using http.</p>
 
 <p>The Cactus flesh can now be found using the URL
-<code>https://svn.cactuscode.org/flesh/VERSION/</code>
+<code>https://svn.cactuscode.org/flesh/trunk/</code>
 </p>
-<p>where
-<code>VERSION</code> can be either <code>trunk</code>
-for the development version or <code>branches/RELEASE</code>
-for future Cactus releases.</p>
 
 <p>The Cactus arrangements can be found using
-<code>https://svn.cactuscode.org/arrangements/ARRANGEMENT/THORN/VERSION</code>
-where ARRANGEMENT/THORN could e.g. be CactusBase/Time and VERSION is a string
-as described for the flesh before.</p>
+<code>https://svn.cactuscode.org/arrangements/ARRANGEMENT/THORN/trunk</code>
+where ARRANGEMENT/THORN could e.g. be CactusBase/Time.</p>
+
 <p>Projects which are not directly maintained by the Cactus team but are hosted
 on the cactuscode server (found under /arrangements in CVS) can be found under
-<code>https://svn.cactuscode.org/projects/</code>
+<code><a href="https://svn.cactuscode.org/projects/">https://svn.cactuscode.org/projects/</a></code>
 </p>
 
 <a name="commits"></a><h3>Commit messages</h3>
@@ -137,41 +170,6 @@ thorns  changed  name,  also indicated in this table.
 </table>
 
 
-<h3><a name="GetComponents"></a>GetComponents</h3><p>
-The final organizational change  is the move from using
-GetCactus for checking out Cactus to a new tool:
-<a href="http://cactuscode.org/documentation/GetComponents.php">GetComponents</a>. The new thorn list language is not very different from the
-old, but it now directly contains information about the flesh and can
-   include non-thorn utilities (e.g. SimFactory). One (short) example of notation is:
-<code>
-!CRL_VERSION = 1.0
-!DEFINE ROOT = Cactus
-
-# Cactus Flesh
-!TARGET   = $ROOT
-!TYPE     = svn
-!URL      = http://svn.cactuscode.org/flesh/trunk
-!CHECKOUT = Cactus
-!NAME     = .
-
-# Simulation Factory
-!TARGET   = $ROOT
-!TYPE     = svn
-!URL      = https://svn.cct.lsu.edu/repos/numrel/$1
-!CHECKOUT = simfactory
-
-# Cactus thorns
-!TARGET   = $ROOT/arrangements
-!TYPE     = svn
-!URL      = http://svn.cactuscode.org/arrangements/$1/$2/trunk
-!CHECKOUT = 
-CactusBase/Boundary
-CactusBase/CartGrid3D
-CactusBase/CoordBase
-CactusBase/IOASCII
-CactusBase/IOBasic
-</code>
-</p>
 
 <h3 class="align-right">Apr 26 2010 — knarf</h3>
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
