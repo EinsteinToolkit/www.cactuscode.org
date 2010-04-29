@@ -3,53 +3,70 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
 <p>
-The Cactus Code was recently undergoing several changes. The three
-main changes were:
+The Cactus Code  in April 2010 made some organization changes. The 
+main changes are:
 <ul>
- <li><a href="#svn">CVS to Subversion</a></li>
- <li><a href="#commit">Commit messages</a></li>
- <li><a href="#thorns">Thorns moving</a></li>
- <li><a href="#GetComponents">GetCactus to GetComponents</a></li>
+ <li><a href="#svn">Move from CVS to Subversion</a></li>
+ <li><a href="#commit">Mail list for commit messages</a></li>
+ <li><a href="#thorns">Thorns moving between arrangements</a></li>
+ <li><a href="#GetComponents">Changing from GetCactus to GetComponents</a></li>
 </ul>
-</p><a name="svn"></a><h3>CVS to Subversion</h3><p>
-The Cactus code was stored in CVS repositories for more than a decade.
-CVS itself is getting old and better methods have been developed. One
-of the closest alternatives to CVS is Subversion.
-</p><p>
-Like CVS, Subversion has the concept of a single, central repository.
-The command line tool 'svn' has similar sub-commands to cvs, e.g.</p>
-<pre>svn checkout</pre>
-<pre>svn diff</pre>
-<pre>svn update</pre>
-<pre>svn commit</pre>
+
+</p><a name="svn"></a><h3>CVS to Subversion</h3>
+<p>
+The Cactus Code was used CVS for code development and distribution
+for over a decade. To be able to take advantage of a new system with additional
+cabilities we have migrated to using Subversion. 
+As with CVS, Subversion has the concept of a single, central repository.
+</p>
+
+<p>
+The command line tool 'svn' has similar sub-commands to cvs, e.g.
+<code>svn checkout
+svn diff
+svn update
+svn commit</code>
+</p>
+
 <p>The server cvs.cactuscode.org will not be used in the future. All
-repositories have been transfered to the new server svn.cactuscode.org.
-This can be accessed using a Subversion client or viewed using a web client,
-pointed at <a href="https://svn.cactuscode.org/">this page</a>. Read-only
+repositories hosted at this server have been migrated to 
+ svn.cactuscode.org. This new server 
+ can be accessed using a Subversion client or viewed using a web client 
+  (pointed to <a href="https://svn.cactuscode.org/">https://svn.cactuscode.org</a>). Read-only
 access to some of the repositories is also available using http.</p>
-<p>The Cactus flesh can now be found using the URL</p>
-<pre>https://svn.cactuscode.org/flesh/VERSION/</pre><p>where</p>
-<pre>VERSION</pre><p>can be either</p><pre>trunk</pre>
-<p>for the development version or </p><pre>branches/RELEASE</pre>
-<p>for future Cactus releases.</p>
-<p>The Cactus arrangements can be found using</p>
-<pre>https://svn.cactuscode.org/arrangements/ARRANGEMENT/THORN/VERSION</pre><p>
+
+<p>The Cactus flesh can now be found using the URL
+<code>https://svn.cactuscode.org/flesh/VERSION/</code>
+</p>
+<p>where
+<code>VERSION</code> can be either <code>trunk</code>
+for the development version or <code>branches/RELEASE</code>
+for future Cactus releases.</p>
+
+<p>The Cactus arrangements can be found using
+<code>https://svn.cactuscode.org/arrangements/ARRANGEMENT/THORN/VERSION</code>
 where ARRANGEMENT/THORN could e.g. be CactusBase/Time and VERSION is a string
 as described for the flesh before.</p>
 <p>Projects which are not directly maintained by the Cactus team but are hosted
-on the cactuscode server (found under /arrangements in CVS) can be found under</p>
-<pre>https://svn.cactuscode.org/projects/</pre>
+on the cactuscode server (found under /arrangements in CVS) can be found under
+<code>https://svn.cactuscode.org/projects/</code>
+</p>
+
 <a name="commits"></a><h3>Commit messages</h3>
+
 <p>Commit messages will in the future go to the mailing list
 <a href="http://cactuscode.org/mailman/listinfo/commits">commits@cactuscode.org</a>.
-Subscribed users to the old lists have been copied over to this new list.</p>
+Subscribed users to old lists have been copied over to this new list.</p>
+
+
 <a name="thorns"></a><h3>Thorns moving</h3>
-<p>At the same time as the move from CVS to Subversion, some external thorns
+<p>Some previously external thorns
 have been included into Cactus, and some former Cactus thorns (CactusEinstein)
-were moved to a separate project (the EinsteinToolkit). The following table
-summarizes the old and new locations of thorns which have been moved, and
-also includes thorns moving into the EinsteinToolkit. Some, but very few
-thorns also changed their name, als also indicated in this table.
+have been moved to a separate project (<a href="http://www.einsteintoolkit.org">EinsteinToolkit</a>). 
+The following table
+summarizes the old and new locations of thorns which have  moved, and
+ includes thorns moving into the Einstein Toolkit. A very small number
+thorns  changed  name,  also indicated in this table.
 </p>
 <table border="1">
 <tr><th>Old arrangement</th><th>Thorn</th><th>New arrangement (New thorn name)</th></tr>
@@ -118,15 +135,16 @@ thorns also changed their name, als also indicated in this table.
 <tr><td>Waves           </td><td>Multipole               </td><td>EinsteinAnalysis</td></tr>
 <tr><td>Waves           </td><td>WeylScal4               </td><td>EinsteinAnalysis</td></tr>
 </table>
+
+
 <h3><a name="GetComponents"></a>GetComponents</h3><p>
-The third change within the CactusCode project is the move from the
-GetCactus script to obtain a complete checkout to a new script:
+The final organizational change  is the move from using
+GetCactus for checking out Cactus to a new tool:
 <a href="https://svn.cactuscode.org/Utilities/trunk/Scripts/GetComponents">GetComponents</a>
 . The new thorn list layout is not very different from the
 old, but it now directly contains information about the flesh and can
-include non-thorn utilities like simfactory. One (short) example would
-look like this:</p>
-<pre>
+   include non-thorn utilities (e.g. SimFactory). One (short) example of notation is:
+<code>
 !CRL_VERSION = 1.0
 !DEFINE ROOT = Cactus
 
@@ -153,7 +171,8 @@ CactusBase/CartGrid3D
 CactusBase/CoordBase
 CactusBase/IOASCII
 CactusBase/IOBasic
-</pre>
+</code>
+</p>
 
 <h3 class="align-right">Apr 26 2010 — knarf</h3>
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
