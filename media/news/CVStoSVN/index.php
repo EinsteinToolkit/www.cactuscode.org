@@ -140,8 +140,7 @@ thorns  changed  name,  also indicated in this table.
 <h3><a name="GetComponents"></a>GetComponents</h3><p>
 The final organizational change  is the move from using
 GetCactus for checking out Cactus to a new tool:
-<a href="https://svn.cactuscode.org/Utilities/trunk/Scripts/GetComponents">GetComponents</a>
-. The new thorn list layout is not very different from the
+<a href="http://cactuscode.org/documentation/GetComponents.php">GetComponents</a>. The new thorn list language is not very different from the
 old, but it now directly contains information about the flesh and can
    include non-thorn utilities (e.g. SimFactory). One (short) example of notation is:
 <code>
