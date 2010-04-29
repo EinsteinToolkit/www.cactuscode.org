@@ -18,8 +18,12 @@ Cactus has moved from using
 GetCactus for checking out Cactus to a new tool:
 <a href="http://cactuscode.org/documentation/GetComponents.php">GetComponents</a>. The new thorn list language is not very different from the
 old, but it now directly contains information about the flesh and can
-   include non-thorn utilities (e.g. SimFactory). One (short) example of notation is:
-<code>
+   include non-thorn utilities (e.g. SimFactory). </p>
+<p>
+  See the <a href="http://cactuscode.org/documentation/GetComponents.php">documentation page</a> for a full description. Example new format thornlists are provided for the Cactus Computational Toolkit (<a href="http://www.cactuscode.org/download/thorns/ComputationalToolkit.th">ComputationalToolkit.th</a>) and the Einstein Toolkit (<a href="https://svn.einsteintoolkit.org/manifest/einsteintoolkit.th">einsteintoolkit.th</a>).
+</p>
+
+<!--<code>
 !CRL_VERSION = 1.0
 !DEFINE ROOT = Cactus
 
@@ -46,8 +50,8 @@ CactusBase/CartGrid3D
 CactusBase/CoordBase
 CactusBase/IOASCII
 CactusBase/IOBasic
-</code>
-</p>
+</code>>
+</p>-->
 
 </p><a name="svn"></a><h3>CVS to Subversion</h3>
 <p>
@@ -81,8 +85,8 @@ access to some of the repositories is also available using http.</p>
 where ARRANGEMENT/THORN could e.g. be CactusBase/Time.</p>
 
 <p>Projects which are not directly maintained by the Cactus team but are hosted
-on the cactuscode server (found under /arrangements in CVS) can be found under
-<code><a href="https://svn.cactuscode.org/projects/">https://svn.cactuscode.org/projects/</a></code>
+on the cactuscode server (found under /arrangements in CVS) can be found at
+<code>https://svn.cactuscode.org/projects/</code>
 </p>
 
 <a name="commits"></a><h3>Commit messages</h3>
