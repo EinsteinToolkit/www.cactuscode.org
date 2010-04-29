@@ -26,28 +26,59 @@
 !URL      = http://svn.cactuscode.org/arrangements/$1/$2/trunk
 !CHECKOUT =
 CactusBase/Boundary                
-CactusBase/CoordBase
 CactusBase/CartGrid3D              
+CactusBase/CoordBase
+CactusBase/Fortran
 CactusBase/IOASCII
 CactusBase/IOBasic                 
 CactusBase/IOUtil  
-CactusBase/LocalInterp                
+CactusBase/LocalInterp  
+CactusBase/LocalReduce              
 CactusBase/SymBase
 CactusBase/Time 
-CactusBase/LocalReduce 
        
 CactusConnect/HTTPD
 CactusConnect/HTTPDExtra
 CactusConnect/Socket
            
 CactusElliptic/EllBase             
+CactusElliptic/EllPETSc
 CactusElliptic/EllSOR              
-CactusElliptic/EllTest 
 
+CactusExternal/BLAS
+CactusExternal/FFTWlib
 CactusExternal/FlexIO
+CactusExternal/GSL
+CactusExternal/HDF5
+CactusExternal/LAPACK
+CactusExternal/LORENE
+CactusExternal/OpenSSL
+CactusExternal/PAPI
+CactusExternal/PETSc
+CactusExternal/SDF
+CactusExternal/curl
+CactusExternal/flickcurl
 CactusExternal/jpeg6b
-            
+CactusExternal/libcurl
+CactusExternal/libxml2
+  
 CactusIO/IOJpeg
+CactusIO/IOSDF
+
+CactusNumerical/Cartoon2D
+CactusNumerical/Dissipation
+CactusNumerical/InterpToArray
+CactusNumerical/MoL
+CactusNumerical/Noise
+CactusNumerical/Norms
+CactusNumerical/Periodic
+CactusNumerical/ReflectionSymmetry
+CactusNumerical/RotatingSymmetry180
+CactusNumerical/RotatingSymmetry90
+CactusNumerical/Slab
+CactusNumerical/SlabTest
+CactusNumerical/SpaceMask
+CactusNumerical/SphericalSurface
 
 CactusPUGH/PUGH                    
 CactusPUGH/PUGHInterp                  
@@ -61,6 +92,9 @@ CactusPUGHIO/IOPanda
 CactusPUGHIO/IOStreamedHDF5
 CactusPUGHIO/IsoSurfacer
 
-CactusUtils/NaNChecker		   
+CactusUtils/Formaline
+CactusUtils/NaNChecker
+CactusUtils/Nice
+CactusUtils/TerminationTrigger		   
 CactusUtils/TimerReport
 
