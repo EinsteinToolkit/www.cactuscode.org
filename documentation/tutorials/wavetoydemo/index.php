@@ -14,35 +14,35 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <p> The application we are using is the simulation of the 3D scalar field produced by two orbiting sources. The solution is found by finite differencing a hyperbolic partial differential equation for the scalar field.  This is a very simple application, however it is representative of a large class of more complex systems, including Einstein's Equations, Maxwell's Equations, or the Navier-Stokes Equations. We use it for demonstrations since the simulation is not computationally intensive, is very robust, has simple parameter choices, and has reasonable graphics. </p>
 <p> We are not going to describe completely here how to checkout and compile this Cactus application ... for this see the information on the <a href="/download/">Download</a> page, the <a href="/documentation/tutorials/">HOWTOs</a> or the <a href="/documentation/guides/">Users  Guide</a>. We assume that you are checking out Cactus using CVS, and that you know the configuration line needed, or have a configuration file, for compiling Cactus --- but even if you don't have a go, hopefully the default configuration will work for you! </p>
 <h2>Demo with Web Server and Streaming IsoSurfaces</h2>
-<!-- Add cactusdev links here -->
-<p>Before you start, make sure you have the following items:</p>
-<ul>
-  <li> <a href="/download/GetCactus">GetCactus</a> the perl script for easily checking a Cactus application out from our CVS server. </li>
-  <li> <a href="WaveDemo.th">WaveDemo.th</a> the ThornList for the demo, this is used to tell GetCactus which thorns to get. </li>
-  <li> <a href="WaveDemo.par">WaveDemo.par</a> a parameter file for running the demonstration. </li>
-  <li> <a href="/documentation/guides/visualization/IsoView">IsoView</a> the isosurface visualization client. </li>
-  <li> A web browser. </li>
-  <li> Note that you'll need a live network connection to checkout the code, but you can run the demo on a single machine, the remote tools will look more impressive though if you use two networked machines, preferably a long way apart. </li>
-</ul>
+
+ 
 <h3>Check out and compile</h3>
-<p> Checkout the source code using the GetCactus script. Make sure to include the WaveToy thornlist so that all necessary thorns are also downloaded.
-<pre><code>chmod u+x GetCactus
-./GetCactus WaveDemo.th</code></pre>
-You should be able to use the default answers for all the questions. </p>
+<p> Checkout the source code using the GetComponents script. 
+<code>wget http://www.cactuscode.org/download/GetComponents
+chmod 755 GetComponents
+./GetComponents http://www.cactuscode.org/documentation/tutorials/wavetoydemo/WaveDemo.th</code>
+</p>
+
 <p> Once the checkout has completed, move into the Cactus directory and compile the application.
-<pre><code>cd Cactus
+<code>cd Cactus
 gmake WaveDemo-config
-gmake WaveDemo</code></pre>
-Hopefully that went OK, and you now have an executable, <code>exe/cactus_WaveDemo</code>. Check it really worked by running the testsuites, just type </p>
-<pre><code>gmake WaveDemo-testsuite</code></pre>
-<p> and use the default answers to each question. </p>
+gmake WaveDemo</code>
+Hopefully that went OK, and you now have an executable, <code>exe/cactus_WaveDemo</code>. Check it really worked by running the testsuites, just type 
+<code>gmake WaveDemo-testsuite</code>
+ and use the default answers to each question. </p>
+
+
 <h3> Run the demo </h3>
-<p> Move the downloaded demo parameter file into the Cactus directory.  To start the simulation, run your new executable with the demo parameter file, if you have a single processor executable </p>
-<pre><code>mv ../WaveDemo.par .
-./exe/cactus_WaveDemo WaveDemo.par</code></pre>
+
+<p>Download the demo parameter file
+<code>wget http://www.cactuscode.org/documentation/tutorials/wavetoydemo/WaveDemo.par</code></p>
+
+<p>To start the simulation, run your new executable with the demo parameter file, if you have a single processor executable 
+<code>./exe/cactus_WaveDemo WaveDemo.par</code></p>
+
 <p> If you compiled with MPI and have a multiprocessor version, you will need to use the appropriate mpi command for running. </p>
-<p> When the simulation starts, you will see output describing for example the activated thorns and the scheduling tree. </p>
-<pre><code>tg-c305 dstark/Cactus&gt; ./exe/cactus_WaveDemo parfiles/WaveDemo.par 
+<p> When the simulation starts, you will see output describing for example the activated thorns and the scheduling tree. 
+<code>tg-c305 dstark/Cactus&gt; ./exe/cactus_WaveDemo parfiles/WaveDemo.par 
 --------------------------------------------------------------------------------
 
        10                                  
@@ -174,19 +174,19 @@ INFO (IOBasic): Periodic info output requested for 'WAVETOY::phi'
     90 |    0.584 |  -0.00000002 |   2.38045481 |
    100 |    0.649 |-9.382595e-09 |   2.37422575 |
 
-  . . .</code></pre>
-<p> If you have the simple visualization client <code>xgraph</code> installed, you can look at the 1D output </p>
-<pre><code>xgraph WaveDemo/phi_x_[20][20].xg</code></pre>
+  . . .</code></p>
+<p> If you have the simple visualization client <code>xgraph</code> installed, you can look at the 1D output
+<code>xgraph WaveDemo/phi_x_[20][20].xg</code></p>
 <center>
   <img src="xgraph.gif" alt="xgraph" width="400" />
 </center>
 <h3>Connecting with a web browser</h3>
 <p> To connect to the simulation, move to another machine if you have one, and start up a web browser. Connect to
-<pre><code>http://&lt;machine name&gt;:5555</code></pre>
+<code>http://&lt;machine name&gt;:5555</code>
 where
-<pre><code>&lt;machine name&gt;:5555</code></pre>
+<code>&lt;machine name&gt;:5555</code>
 is the name of the machine where the simulation is running. Note that this information was part of the standard output when the simulation started for example
-<pre><code>Server started on http://tg-c305.ncsa.teragrid.org:5555/</code></pre></p>
+<code>Server started on http://tg-c305.ncsa.teragrid.org:5555/</code></p>
 <p> Now you should see a screen with information about the simulation. </p>
 <center>
   <img src="http1.jpg" alt="screenshot 1" width="400" />
@@ -198,11 +198,13 @@ is the name of the machine where the simulation is running. Note that this infor
   <img src="http2.jpg" alt="screenshot 2" width="400" />
 </center>
 <h3>Viewing IsoSurfaces</h3>
-<p> Start up the IsoView client, using </p>
-<pre><code>IsoView -h &lt;machine name&gt; -dp 7051 -cp 7050</code></pre>
+<p>Download  <a href="/documentation/guides/visualization/IsoView">IsoView</a> the isosurface visualization client. </p>
+
+<p> Start up  IsoView, using 
+<code>IsoView -h &lt;machine name&gt; -dp 7051 -cp 7050</code></p>
 <p> Again, this information can be found in the standard output, for example </p>
-<pre><code>INFO (IsoSurfacer): Isosurfacer listening for connections
-                   host 'GridRebels-MacBook-Pro.local' control port 7050 data port 7051</code></pre>
+<code>INFO (IsoSurfacer): Isosurfacer listening for connections
+                   host 'GridRebels-MacBook-Pro.local' control port 7050 data port 7051</code></p>
 <p> You should now see rotating blobs appearing in the client, looking something like this </p>
 <center>
   <img src="iso1.gif" alt="surface 1" />
