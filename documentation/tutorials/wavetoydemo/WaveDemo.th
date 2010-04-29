@@ -1,20 +1,30 @@
-# $Id:
-#2
+!CRL_VERSION = 1.0
+
 !DESC "Demo Parameter File Using WaveToy Application With Cool Tools (Development)"
 
-!REPOSITORY_TYPE pserver
-!REPOSITORY_LOCATION cvs.cactuscode.org
-!REPOSITORY_NAME /cactus
+!DEFINE ROOT = Cactus
 
+# Cactus Flesh
+!TARGET   = $ROOT
+!TYPE     = svn
+!URL      = http://svn.cactuscode.org/flesh/trunk
+!CHECKOUT = Cactus
+!NAME     = .
+
+# Cactus thorns
+!TARGET   = Cactus/arrangements
+!TYPE     = svn
+!URL      = http://svn.cactuscode.org/arrangements/$1/$2/trunk
+!CHECKOUT = 
 CactusBase/Boundary        
 CactusBase/CoordBase
-CactusBase/SymBase
 CactusBase/CartGrid3D      
+CactusBase/IOASCII      
 CactusBase/IOUtil          
 CactusBase/IOBasic         
-CactusBase/Time 
 CactusBase/LocalReduce           
-CactusBase/IOASCII      
+CactusBase/SymBase
+CactusBase/Time 
 CactusConnect/HTTPD
 CactusConnect/HTTPDExtra 
 CactusConnect/Socket
