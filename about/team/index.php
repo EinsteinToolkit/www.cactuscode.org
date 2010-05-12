@@ -22,11 +22,11 @@ team:
 <br />
 
 <li><a href="rcross">Robert Cross</a>
-<br />TITLE at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
+<br />Undergraduate student at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
 
 <li><a href="ljiang">Lei Jiang</a>
-<br />TITLE at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
+<br />Graduate student in Computer Science at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
 
 <li><a href="cjordan">Colby Jordan</a>
@@ -52,6 +52,13 @@ team:
 <li><a href="eschnetter">Erik Schnetter</a>
 <br />Scientist in the <a href="http://www.cct.lsu.edu/numerical/">Numerical Relativity Group</a> at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> and the <a href="http://www.phys.lsu.edu/">Department of Physics &amp; Astronomy</a> at <a href="http://www.lsu.edu/">LSU</a></li>
 <br />
+
+
+
+<li><a href="ericseidel">Eric Seidel</a>
+	   <br />Undergraduate student in computer science at City College, City University of New York</li>
+<br />
+
 
 <li><a href="jtao">Jian Tao</a>
 <br />Postdoc researcher at the <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at <a href="http://www.lsu.edu/">LSU</a></li>
