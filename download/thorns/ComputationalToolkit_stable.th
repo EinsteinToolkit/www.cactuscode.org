@@ -1,0 +1,67 @@
+!CRL_VERSION = 1.0
+
+!DEFINE ROOT = Cactus_stable
+!DEFINE ARR  = $ROOT/arrangements
+
+!DEFINE CACTUSVERSION = tags/Cactus_4_0_Beta_16
+
+# Cactus Flesh
+!TARGET   = $ROOT
+!TYPE     = svn
+!AUTH_URL = https://svn.cactuscode.org/arrangements/CactusArchive/cvs_cactus/$CACTUSVERSION/Cactus
+!URL      = http://svn.cactuscode.org/arrangements/CactusArchive/cvs_cactus/$CACTUSVERSION/Cactus
+!CHECKOUT = Cactus
+!NAME     = .
+
+# Cactus utilities, including the GetComponents script
+!TARGET   = $ROOT
+!TYPE     = svn
+!AUTH_URL = https://svn.cactuscode.org/Utilities/trunk
+!URL      = http://svn.cactuscode.org/Utilities/trunk
+!CHECKOUT = .
+!NAME     = utils
+
+# Basic Cactus thorns
+!TARGET   = $ARR
+!TYPE     = svn
+!AUTH_URL = https://svn.cactuscode.org/arrangements/CactusArchive/cvs_cactus/$CACTUSVERSION/$1/$2
+!URL      = http://svn.cactuscode.org/arrangements/CactusArchive/cvs_cactus/$CACTUSVERSION/$1/$2
+!CHECKOUT =
+CactusBase/Boundary                
+CactusBase/CoordBase
+CactusBase/CartGrid3D              
+CactusBase/IOASCII
+CactusBase/IOBasic                 
+CactusBase/IOUtil  
+CactusBase/LocalInterp                
+CactusBase/SymBase
+CactusBase/Time 
+CactusBase/LocalReduce 
+       
+CactusConnect/HTTPD
+CactusConnect/HTTPDExtra
+CactusConnect/Socket
+           
+CactusElliptic/EllBase             
+CactusElliptic/EllSOR              
+
+CactusExternal/FlexIO
+CactusExternal/jpeg6b
+            
+CactusIO/IOJpeg
+
+CactusPUGH/PUGH                    
+CactusPUGH/PUGHInterp                  
+CactusPUGH/PUGHReduce
+CactusPUGH/PUGHSlab
+
+CactusPUGHIO/IOFlexIO              
+CactusPUGHIO/IOHDF5
+CactusPUGHIO/IOHDF5Util
+CactusPUGHIO/IOPanda
+CactusPUGHIO/IOStreamedHDF5
+CactusPUGHIO/IsoSurfacer
+
+CactusUtils/NaNChecker		   
+CactusUtils/TimerReport
+
