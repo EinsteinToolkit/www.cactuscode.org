@@ -117,12 +117,11 @@ binary distribution doesn't work for you, you can also download the sources and
 build VisIt yourself. Please read the README and INSTALL files in the source 
 distribution and follow the instructions given therein.
 </p><p>
-The visitCarpetHDF5 package can be obtained from the Cactus CVS server via 
+The visitCarpetHDF5 package can be obtained from the Cactus Subversion server via 
 anonymous checkout:
 </p>
 <code>
-  cvs -d :pserver:cvs_anon@cvs.cactuscode.org:/cactus login    # password is 'anon'
-  cvs -d :pserver:cvs_anon@cvs.cactuscode.org:/cactus checkout VizTools/visitCarpetHDF5
+  svn co https://svn.cactuscode.org/VizTools/visitCarpetHDF5/trunk/ visitCarpetHDF5
 </code>
 <p>
 In order to build the visitCarpetHDF5 plugin you need to have HDF5 (with C++ bindings) and a 
