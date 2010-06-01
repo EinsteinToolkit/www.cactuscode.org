@@ -114,6 +114,7 @@ echo '
 	<li><a href="/media/presentations/">Presentations</a></li>
 	<li><a href="/media/prizes/">Prizes</a></li>
 	<li><a href="/media/publications/">Publications</a></li>
+	<li><a href="/media/tutorials/">Tutorials</a></li>
 </ul>
 ';
 break;
