@@ -37,7 +37,7 @@ else
 <td>
 <p>
 The live site is currently at version <strong>'
-.exec('ls -la /var/www/einstein/update | tr \'\n\' \' \'')
+.exec('/var/www/einstein/update')
 .'</strong>. 
 <br /><br />
 <input class="button" type="button" value="Make Recent Changes Live" onclick="window.location.href=\'/x?golive\'" />
