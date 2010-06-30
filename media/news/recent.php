@@ -1,3 +1,5 @@
+	<li><a href="/media/news/EinsteinToolkit/index.php">Cactus included in Einstein Toolkit release</a></li>
+	<li><a href="/media/news/http://www.cactuscode.org/media/news/EinsteinToolkit/">Cactus included in Einstein Toolkit release</a></li>
 <p class="align-right">3 May 2010</p>
 	<li><a href="/media/news/CVStoSVN">Cactus moves from CVS to Subversion</a></li>
 <p class="align-right">7 November 2009</p>
