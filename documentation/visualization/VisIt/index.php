@@ -126,7 +126,7 @@ anonymous checkout:
 <p>
 In order to build the visitCarpetHDF5 plugin you need to have HDF5 (with C++ bindings) and a 
 standard distribution of VisIt installed on your system. For details where to 
-obtain and how to install HDF5 please refer to the Cactus <a href="../Documentation/hdf5HowTo.txt">HDF5 HOWTO</a> Page.
+obtain and how to install HDF5 please refer to the Cactus <a href="/documentation/tutorials/hdf5HowTo.txt">HDF5 HOWTO</a> Page.
 </p><p>
 To install the package, simply execute the install script contained in the 
 visitCarpetHDF5 package. If VisIt was properly installed, a window will pop-up. 
