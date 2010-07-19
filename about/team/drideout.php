@@ -22,6 +22,9 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <li>Cactus</li>
 <li>Numerical Relativity</li>
 </ul>
-<p></p>
+<p>The main thrust of my research program involves using high performance computing and the Cactus framework to address questions in discrete quantum gravity.</p>
+
+<p>
+<a href="http://www.phy.syr.edu/~rideout/">More details available at my main page</a>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
