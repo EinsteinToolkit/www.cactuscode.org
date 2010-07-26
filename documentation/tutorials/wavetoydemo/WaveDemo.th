@@ -7,6 +7,7 @@
 # Cactus Flesh
 !TARGET   = $ROOT
 !TYPE     = svn
+!AUTH_URL = https://svn.cactuscode.org/flesh/trunk
 !URL      = http://svn.cactuscode.org/flesh/trunk
 !CHECKOUT = Cactus
 !NAME     = .
@@ -14,6 +15,7 @@
 # Cactus thorns
 !TARGET   = Cactus/arrangements
 !TYPE     = svn
+!AUTH_URL = https://svn.cactuscode.org/arrangements/$1/$2/trunk
 !URL      = http://svn.cactuscode.org/arrangements/$1/$2/trunk
 !CHECKOUT = 
 CactusBase/Boundary        
