@@ -8,6 +8,6 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <!-- SCREENSHOT -->
 <h4><em>Viewport example screenshot:</em> <br /><img src="viewport.png" /></h4>
 
-<h3>Continue to the live <a href="http://cactuscode.org:5555/">WaveToy Demonstration</a></h3>
+<h3>Continue to the live <a href="http://cactuscode.org:8080/">WaveToy Demonstration</a></h3>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
