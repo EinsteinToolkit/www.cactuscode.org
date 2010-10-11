@@ -30,7 +30,6 @@ CactusBase/Time
 CactusConnect/HTTPD
 CactusConnect/HTTPDExtra 
 CactusConnect/Socket
-CactusExternal/jpeg6b
 CactusPUGH/PUGH            
 CactusPUGH/PUGHSlab
 CactusPUGH/PUGHReduce
@@ -39,4 +38,12 @@ CactusIO/IOJpeg
 CactusWave/WaveToyC        
 CactusWave/IDScalarWaveC   
 CactusWave/WaveBinarySource   
+
+# Additional Cactus thorns
+!TARGET   = $ARR
+!TYPE     = svn
+!AUTH_URL = https://svn.cactuscode.org/projects/$1/$2/trunk
+!URL      = http://svn.cactuscode.org/projects/$1/$2/trunk
+!CHECKOUT =
+ExternalLibraries/libjpeg
 
