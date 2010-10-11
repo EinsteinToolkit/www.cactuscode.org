@@ -20,7 +20,7 @@ GetCactus for checking out Cactus to a new tool:
 old, but it now directly contains information about the flesh and can
    include non-thorn utilities (e.g. SimFactory). </p>
 <p>
-  See the <a href="http://cactuscode.org/documentation/GetComponents.php">documentation page</a> for a full description. Example new format thornlists are provided for the Cactus Computational Toolkit (<a href="http://www.cactuscode.org/download/thorns/ComputationalToolkit.th">ComputationalToolkit.th</a>) and the Einstein Toolkit (<a href="https://svn.einsteintoolkit.org/manifest/einsteintoolkit.th">einsteintoolkit.th</a>).
+  See the <a href="http://cactuscode.org/documentation/GetComponents.php">documentation page</a> for a full description. Example new format thornlists are provided for the Cactus Computational Toolkit (<a href="http://www.cactuscode.org/download/thorns/ComputationalToolkit.th">ComputationalToolkit.th</a>) and the Einstein Toolkit (<a href="https://svn.einsteintoolkit.org/manifest/branches/ET_2010_06/einsteintoolkit.th">einsteintoolkit.th</a>).
 </p>
 
 <!--<code>
