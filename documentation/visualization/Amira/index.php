@@ -63,7 +63,7 @@ $section='visualization';?>
 		  <br>
 		  A free time-limited, but renewable demo version is
 	          available for
-		  <A href="http://amira.zib.de/download.html">downloading
+		  <A href="http://amira.zib.de/download/">downloading
 		    from ZIB</A> after registration.
 		  In addition you need the (free)
 		  Numerical Relativity extension for handling Cactus data.
