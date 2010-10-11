@@ -31,7 +31,7 @@ $section='visualization';?>
 	    <tr>
 	      <td colspan=2>
 		<p>
-		  Amira can be used to view 3D data of scalar fields, vector fields, tensor fields, apparent horizon multipole expansions and gaussian curvature data, embedding coefficients, remotely computed isosurfaces (similarly to <A href="../Visualization/IsoView">IsoView</A>), geodesics, and more.  For remote visualization a remote control interface
+		  Amira can be used to view 3D data of scalar fields, vector fields, tensor fields, apparent horizon multipole expansions and gaussian curvature data, embedding coefficients, remotely computed isosurfaces (similarly to <A href="../IsoView/">IsoView</A>), geodesics, and more.  For remote visualization a remote control interface
 		  for steering Cactus
 		  simulations is also available.
 		</p>
