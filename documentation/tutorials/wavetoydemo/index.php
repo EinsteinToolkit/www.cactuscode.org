@@ -1,7 +1,7 @@
 <?php $title='WaveToy Demo';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
-<p>Connect to our <a href="http://www.cactuscode.org:5555/">Cactus Demo</a> to see the simple WaveToy example in action. </p>
+<p>Connect to our <a href="http://www.cactuscode.org:8080/">Cactus Demo</a> to see the simple WaveToy example in action. </p>
 <h2>Setting up the WaveToy Demo</h2>
 <p> On this page we describe one of our standard demonstrations, which includes various tools which can be used with your own application, including </p>
 <ul>
