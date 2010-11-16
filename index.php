@@ -37,6 +37,14 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 </p>
 
 <p>
+  The Cactus user community has created and is maintaining toolkits
+  for several research fields.
+  The <a href="http://einsteintoolkit.org/">Einstein Toolkit</a>
+  addresses computational relativistic astrophysics, supporting
+  simulations of black holes, neutron stars, and related systems.
+</p>
+
+<p>
   Connect to our <a href="/demo">Cactus
   demo</a> to see the simple WaveToy example in action, and read
   the <a href="/documentation/tutorials/wavetoydemo/">demo guide</a>.
