@@ -1,7 +1,8 @@
-	<li><a href="/media/news/EinsteinToolkit_2010_11">New Einstein Toolkit Release</a></li>
 <p class="align-right">23 November 2010</p>
-	<li><a href="/media/news/EinsteinToolkit">Cactus included in Einstein Toolkit release</a></li>
+	<li><a href="/media/news/EinsteinToolkit_2010_11">New Einstein Toolkit Release</a></li>
 <p class="align-right">17 June 2010</p>
+	<li><a href="/media/news/EinsteinToolkit">Cactus included in Einstein Toolkit release</a></li>
+<p class="align-right">April 2010</p>
 	<li><a href="/media/news/CVStoSVN">Cactus moves from CVS to Subversion</a></li>
 <p class="align-right">7 November 2009</p>
 	<li><a href="/media/news/Whisky_Retreat_5">Whisky Retreat V</a></li>
