@@ -44,11 +44,11 @@
 	</div>
 
   <div id="warning">
-   <h3>Warning</h3>
-   <p>We currently have trouble with the cactuscode.org domain. Please use the following temporary
+   <p>Warning: We currently have trouble with the cactuscode.org domain. Please use the
+      following temporary
       hostnames until this is resolved. Note that ssl mismatches are to be expected, and email
-      lists will probably not get restored temporarily. Follow this page for updates.</p>
-   <p>www: <a href="http://cactuscode.dyndns.org/">http://cactuscode.dyndns.org/</a>,
+      lists will probably not get restored temporarily. Follow this page for updates.
+      www: <a href="http://cactuscode.dyndns.org/">http://cactuscode.dyndns.org/</a>,
       svn: <a href="http://svn-cactuscode.dyndns.org/">http://svn-cactuscode.dyndns.org/</a></p>
   </div>
 	<!-- navigation -->
