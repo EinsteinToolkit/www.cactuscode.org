@@ -302,9 +302,9 @@ input.button
   clear: both;
   margin: 0 auto; padding: 0;
   background: #81C524 url(images/warning.jpg) no-repeat;
-  font: bold 16px/30px Century Gothic, Arial, Tahoma, Sans-serif;
+  font: bold 16px/20px Century Gothic, Arial, Tahoma, Sans-serif;
   color: #000000;
-  height: 120px;
+  height: 80px;
   width: 790px;
   }
 
