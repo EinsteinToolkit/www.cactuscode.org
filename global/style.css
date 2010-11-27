@@ -297,6 +297,16 @@ input.button
 	color: #D4FF55;	
 	}
 
+#warning
+  {
+  clear: both;
+  margin: 0 auto; padding: 0;
+  background: #81C524 url(images/warning.jpg) no-repeat;
+  font: bold 16px/40px Century Gothic, Arial, Tahoma, Sans-serif;
+  height: 40px;
+  width: 790px;
+  }
+
 /* navigation */
 #menu
 	{
