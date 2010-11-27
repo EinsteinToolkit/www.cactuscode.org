@@ -49,7 +49,7 @@
       hostnames until this is resolved. Note that ssl mismatches are to be expected, and email
       lists will probably not get restored temporarily. Follow this page for updates.<br/>
       www: <a href="http://cactuscode.dyndns.org/">http://cactuscode.dyndns.org/</a>,
-      svn: <a href="http://svn-cactuscode.dyndns.org/">http://svn-cactuscode.dyndns.org/</a></p>
+      svn: <a href="http://svn-cactuscode.dyndns.org/">http(s)://svn-cactuscode.dyndns.org/</a></p>
   </div>
 	<!-- navigation -->
 	<div id="menu"><ul>
