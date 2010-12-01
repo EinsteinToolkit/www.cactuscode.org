@@ -6,7 +6,7 @@ $section='media';?>
 
 <table>
  <tr><th>Date</th><th>Title</th><th>Location</th><th>Presenter</th></tr>
- <tr><td nowrap>Oct 04 2010</td><td>Introduction to the Cactus Framework</td><td>Loni/HPC tutorial series, CCT (LSU)</td><td>Frank Löffler, TBA</td></tr>
+ <tr><td nowrap>Oct 04 2010</td><td>Introduction to the Cactus Framework</td><td>Loni/HPC tutorial series, CCT (LSU)</td><td>Frank Löffler, Oleg Korobkin</td></tr>
  <tr><td nowrap>Aug 02 2010</td><td>Introduction to the Cactus Framework</td><td>TeraGrid10 conference, student tutorial</td><td>Erik Schnetter</td></tr>
  <tr><td nowrap>Apr 21 2010</td><td>Introduction to the Cactus Framework</td><td>Loni/HPC tutorial series, CCT (LSU)</td><td>Frank Löffler, Tyler Landis</td></tr>
  <tr><td nowrap>Oct 19 2009</td><td>Introduction to the Cactus Framework</td><td>Loni/HPC tutorial series, CCT (LSU)</td><td>Frank Löffler, Tyler Landis</td></tr>
