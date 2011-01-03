@@ -63,4 +63,3 @@ The preview site is currently at version <strong>'
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');
 ?>
-
