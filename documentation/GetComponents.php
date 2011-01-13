@@ -38,7 +38,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <li> component lists can be remote (URL)
 </ul>
 
-<p>More information about GetComponents is provided on its <a href="http://eseidel.org/projects/getcomponents/">home page</a>,
+<p>More information about GetComponents is provided on its <a href="http://eseidel.org/projects/GetComponents/">home page</a>,
   summaries relevant for Cactus work are provided below</p>
 
 
