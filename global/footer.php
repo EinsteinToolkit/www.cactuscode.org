@@ -21,7 +21,7 @@
 
 	<div id="footer">
 		<p>
-			<strong>cactuscode.org</strong> 1998&endash;<?php echo date("Y"); ?> | Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a>/<a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>
+			<strong>cactuscode.org</strong> 1998&ndash;<?php echo date("Y"); ?> | Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a>/<a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>
 		</p>
 	</div> <!-- closing footer div -->
 
