@@ -5,11 +5,14 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <p>
 <ul>
 
-  <li><a href="UsersGuide.pdf">User's Guide (PDF)</a> </li>
+  <li>User's Guide (<a href="userguide/UsersGuide.pdf">PDF</a>, 
+  <a href="userguide/UsersGuide.html">HTML</a>) </li>
     <ul> The User's Guide is for those new to Cactus. It details the
     process of installing and compiling Cactus, running applications, thorn
     wrting, utility routines, and thorn infrastructure. <br></ul>
-  <li><a href="ReferenceManual.pdf">Reference Manual (PDF)</a> </li>
+  <li>
+  Reference Manual (<a href="reference/ReferenceManual.pdf">PDF</a>,
+  <a href="reference/ReferenceManual.html">HTML</a>) </li>
     <ul> The Reference Manual gives a list of thorns, CCTK_* functions, Util_* functions,
     and in addition explains configuration file syntax, schedule bins, and CVS commands for
     checkout and commit procedures. <br></ul>
