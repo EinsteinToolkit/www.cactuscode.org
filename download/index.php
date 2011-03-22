@@ -28,7 +28,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <p>
 Download <a href="GetComponents">GetComponents</a> 
 and make sure it is executable.
-<code>wget http://www.cactuscode.org/download/GetComponents</code>
+<code> wget https://github.com/gridaphobe/CRL/raw/master/GetComponents </code>
 <code>chmod a+x GetComponents</code>
 </p>
 
