@@ -3,7 +3,7 @@
 !DESC "Demo Parameter File Using WaveToy Application With Cool Tools (Development)"
 
 !DEFINE ROOT = Cactus
-!DEFINE ARR  = $ROOT/arrangement
+!DEFINE ARR  = $ROOT/arrangements
 
 # Cactus Flesh
 !TARGET   = $ROOT
