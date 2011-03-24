@@ -126,31 +126,21 @@ xgraph xgraph.dat -lw 2 -P -t "Easy Plot"</pre>
 		    http://jean-luc.aei.mpg.de/Codes/xgraph/">available</a>
 		</p>
 		<p>
+		  <strong>Source Code from SVN Repository</strong>
+		  <br>
 
-		  <strong>Source Code from Tarfile</strong>
-		  <br>
-		  A tarfile containing the source code for the latest 
-		  distribution will soon be made available.
-		</p>
-		
-		<p>
-		  <strong>Source Code from CVS Repository</strong>
-		  <br>
-		  Checking out from the Cactus CVS Repository allows you 
-		  to easily 
-		  update your code to obtain bug fixes or enhancements or to 
-		  contribute back to us your own improvements. If you are 
-		  choosing
-		  this option, you may wish to get update messages for any 
-		  commits to the repository, if so, please contact us.
+		  Checking out from the Cactus SVN repository allows you to
+		  easily update your code to obtain bug fixes or enhancements
+		  or to contribute back to us your own improvements. If you 
+		  choose this option, you may wish to get update messages for
+		  any commits to the repository; if so, please contact us.
+                  To checkout from the repository, issue from a terminal:
+
 		</p>
 
 		<p>
-		  <tt><pre>
-cvs -d :pserver:cvs_anon@cvs.cactuscode.org:/cactus login
-CVS password: anon
-cvs -d :pserver:cvs_anon@cvs.cactuscode.org:/cactus co -d \
-           xgraph VizTools/xgraph</pre>
+		  <b>svn checkout https://svn.cactuscode.org/VizTools/xgraph</b>
+                </p>
 	      </tt>
 	      </p>
 	      </td>
