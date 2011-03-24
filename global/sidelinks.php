@@ -3,8 +3,7 @@
 //choose side links block
 switch ($section)
 {
-case 'about':
-echo '
+case 'about': echo '
 <h2>About</h2>
 <ul class="sidemenu">
 	<li><a href="/about/contact">Contact</a></li>
@@ -12,12 +11,10 @@ echo '
 	<li><a href="/about/history">History</a></li>
 	<li><a href="/about/team/">Team</a></li>
 </ul>
-';
-break;
+'; break;
 
 
-case 'community':
-echo '
+case 'community': echo '
 <h2>Community</h2>
 <ul class="sidemenu">
 	<li><a href="/community/benchmarks/">Benchmarks</a></li>
@@ -27,11 +24,9 @@ echo '
 	<li><a href="/community/projects/">Projects</a></li>
 	<li><a href="/community/regressiontests/">Regression Tests</a></li>
 </ul>
-';
-break;
+'; break;
 
-case 'benchmarks':
-echo '
+case 'benchmarks': echo '
 <h2>Benchmarks</h2>
 <ul class="sidemenu">
 	<li><a href="/community/benchmarks/tutorial/">Tutorial</a></li>	
@@ -41,18 +36,15 @@ echo '
 	<li><a href="/community/benchmarks/benchio_flexio/">IO FlexIO</a></li>
 	<li><a href="/community/benchmarks/benchio_hdf5/">IO HDF5</a></li>
 </ul>
-';
-break;
+'; break;
 
-case 'partners':
-echo '
+case 'partners': echo '
 <h2>Community</h2>
 <ul class="sidemenu">
 	<li><a href="/community/partners/AEI">AEI</a></li>
 	<li><a href="/community/partners/LSU">LSU</a></li>
 </ul>
-';
-break;
+'; break;
 
 
 /*
@@ -70,8 +62,7 @@ echo '
 break;
 */
 
-case 'visualization':
-echo '
+case 'visualization': echo '
 <h2>Visualization</h2>
 <ul class="sidemenu">
 	<li><a href="/documentation/visualization/Amira/">Amira</a></li>
@@ -82,18 +73,14 @@ echo '
 	<li><a href="/documentation/visualization/VisIt/">VisIt</a></li>
 	<li><a href="/documentation/visualization/xGraph/">xGraph</a></li>
 	<li><a href="/documentation/visualization/yGraph/">yGraph</a></li>
-</ul>';
-break;
+</ul>'; break;
 
 
-case '_':
-echo '
-';
-break;
+case '_': echo '
+'; break;
 
 
-case 'download':
-echo '
+case 'download': echo '
 <h2>Download</h2>
 <ul class="sidemenu">
 	<li><a href="/download/configfiles/">Configuration Files</a></li>
@@ -102,26 +89,15 @@ echo '
 	<li><a href="http://einsteintoolkit.org/">Einstein Toolkit</a></li>
 	<li><a href="/documentation/tutorials/wavetoydemo/">WaveToy Demo</a></li>
 </ul>
-';
-break;
+'; break;
 
 
 //internal sidebar?
 
-
-case 'media':
-echo '
-<h2>Media</h2>
-<ul class="sidemenu">
-	<li><a href="/media/news/">News</a></li>
-	<li><a href="/media/presentations/">Presentations</a></li>
-	<li><a href="/media/prizes/">Prizes</a></li>
-	<li><a href="/media/publications/">Publications</a></li>
-	<li><a href="/media/tutorials/">Tutorials</a></li>
-</ul>
-';
-break;
-
+/*
+case 'media': echo '
+'; break;
+*/
 
 case 'search':
 echo 'search again';
@@ -129,15 +105,13 @@ break;
 
 
 //make this dynamic as part of the news system
-default:
-echo '
-<h2>Recent News</h2>
+default: echo '
+<h2>Project Timeline</h2>
 <ul class="sidenews">
 ';
 include_once($_SERVER['DOCUMENT_ROOT'].'/media/news/recent.php');
 echo '<li class="align-right"><a href="/media/news/">More...</a></li>
 </ul>
-';
-break;
+'; break;
 }
 ?>

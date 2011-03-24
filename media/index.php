@@ -7,7 +7,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 
 <br />
 
-<h4>Recent News</h4>
+<h4>History</h4>
 <ul>
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/media/news/recent.php');
