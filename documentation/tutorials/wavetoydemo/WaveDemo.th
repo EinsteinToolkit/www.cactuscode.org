@@ -3,6 +3,7 @@
 !DESC "Demo Parameter File Using WaveToy Application With Cool Tools (Development)"
 
 !DEFINE ROOT = Cactus
+!DEFINE ARR  = $ROOT/arrangement
 
 # Cactus Flesh
 !TARGET   = $ROOT
@@ -13,7 +14,7 @@
 !NAME     = .
 
 # Cactus thorns
-!TARGET   = Cactus/arrangements
+!TARGET   = $ARR
 !TYPE     = svn
 !AUTH_URL = https://svn.cactuscode.org/arrangements/$1/$2/trunk
 !URL      = http://svn.cactuscode.org/arrangements/$1/$2/trunk
