@@ -1,6 +1,6 @@
 !DESC "Demo WaveToy with Cool Tools"
 
-ActiveThorns = "coordbase localreduce symbase pugh pughslab pughreduce isosurfacer iojpeg jpeg6b ioutil ioascii iobasic time wavetoyc cartgrid3d boundary idscalarwavec wavebinarysource httpd httpdextra socket"
+ActiveThorns = "coordbase localreduce symbase pugh pughslab pughreduce isosurfacer iojpeg libjpeg ioutil ioascii iobasic time wavetoyc cartgrid3d boundary idscalarwavec wavebinarysource httpd httpdextra socket"
 
 # HTTPD
 
