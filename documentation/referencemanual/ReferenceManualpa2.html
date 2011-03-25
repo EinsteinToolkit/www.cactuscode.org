@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>B Util_* Functions Reference</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,fn-in --> 
+<meta name="src" content="ReferenceManual.tex"> 
+<meta name="date" content="2011-03-25 09:47:00"> 
+<link rel="stylesheet" type="text/css" href="ReferenceManual.css"> 
+</head><body 
+>
+<!--l. 14--><div class="crosslinks"><p class="noindent">[<a 
+href="ReferenceManualpa3.html" >next</a>] [<a 
+href="ReferenceManualpa1.html" >prev</a>] [<a 
+href="ReferenceManualpa1.html#tailReferenceManualpa1.html" >prev-tail</a>] [<a 
+href="#tailReferenceManualpa2.html">tail</a>] [<a 
+href="ReferenceManual.html#ReferenceManualpa2.html" >up</a>] </p></div>
+<h1 class="partHead"><span class="titlemark">Part&#x00A0;B<br /></span><a 
+ id="x5-207000B"></a><span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_* </span>Functions Reference</h1>
+<!--l. 22--><p class="noindent" >In this chapter all <span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_*() </span>Cactus utility functions are described. These are low-level functions mainly for more
+complicated programming, which are used by the rest of Cactus, but don&#8217;t depend heavily on it. Some of them
+are callable from Fortran or C, but many are C-only.
+                                                                                       
+                                                                                       
+<div class="chapterTOCS">
+<span class="chapterToc" >B1 <a 
+href="ReferenceManualch3.html#x6-208000B1">Functions Alphabetically</a></span>
+<br />&#x00A0;<span class="sectionToc" >B1.1 <a 
+href="ReferenceManualch3.html#x6-209000B1.1">Miscellaneous Functions</a></span>
+<br />&#x00A0;<span class="sectionToc" >B1.2 <a 
+href="ReferenceManualch3.html#x6-210000B1.2">String Functions</a></span>
+<br />&#x00A0;<span class="sectionToc" >B1.3 <a 
+href="ReferenceManualch3.html#x6-211000B1.3">Table Functions</a></span>
+<br /><span class="chapterToc" >B2 <a 
+href="ReferenceManualch4.html#x7-212000B2">Full Descriptions of Miscellaneous Functions</a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch4.html#x7-213000B2"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_CurrentDate</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch4.html#x7-214000B2"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_CurrentDateTime</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch4.html#x7-215000B2"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_CurrentTime</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch4.html#x7-216000B2"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_snprintf</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch4.html#x7-217000B2"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_vsnprintf</span></a></span>
+<br /><span class="chapterToc" >B3 <a 
+href="ReferenceManualch5.html#x8-218000B3">Full Descriptions of String Functions</a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch5.html#x8-219000B3"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_StrCmpi</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch5.html#x8-220000B3"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_Strdup</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch5.html#x8-221000B3"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_Strlcat</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch5.html#x8-222000B3"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_Strlcpy</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch5.html#x8-223000B3"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_StrSep</span></a></span>
+<br /><span class="chapterToc" >B4 <a 
+href="ReferenceManualch6.html#x9-224000B4">Full Descriptions of Table Functions</a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-225000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableClone</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-226000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableCreate</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-227000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableCreateFromString</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-228000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableDeleteKey</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-229000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableDestroy</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-230000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableGet*</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-231000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableGet*Array</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-232000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableGetGeneric</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-233000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableGetGenericArray</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-234000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableGetString</span></a></span>
+                                                                                       
+                                                                                       
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-235000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItAdvance</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-236000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItClone</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-237000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItCreate</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-238000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItDestroy</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-239000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItQueryIsNonNull</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-240000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItQueryIsNull</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-241000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItQueryKeyValueInfo</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-242000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItQueryTableHandle</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-243000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItResetToStart</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-244000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItSetToKey</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-245000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItSetToNull</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-246000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableQueryFlags</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-247000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableQueryValueInfo</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-248000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableQueryMaxKeyLength</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-249000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableQueryNKeys</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-250000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableSet*</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-251000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableSet*Array</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-252000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableSetFromString</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-253000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableSetGeneric</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-254000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableSetGenericArray</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-255000B4"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableSetString</span></a></span>
+</div>
+                                                                                       
+                                                                                       
+
+                                                                                       
+                                                                                       
+
+                                                                                       
+                                                                                       
+
+                                                                                       
+                                                                                       
+<!--l. 11--><div class="crosslinks"><p class="noindent">[<a 
+href="ReferenceManualpa3.html" >next</a>] [<a 
+href="ReferenceManualpa1.html" >prev</a>] [<a 
+href="ReferenceManualpa1.html#tailReferenceManualpa1.html" >prev-tail</a>] [<a 
+href="ReferenceManualpa2.html" >front</a>] [<a 
+href="ReferenceManual.html#ReferenceManualpa2.html" >up</a>] </p></div>
+<!--l. 11--><p class="noindent" ><a 
+ id="tailReferenceManualpa2.html"></a> 
+</body></html> 

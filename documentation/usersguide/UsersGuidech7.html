@@ -1,0 +1,603 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>B3 Runtime options</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,fn-in --> 
+<meta name="src" content="UsersGuide.tex"> 
+<meta name="date" content="2011-03-25 09:47:00"> 
+<link rel="stylesheet" type="text/css" href="UsersGuide.css"> 
+</head><body 
+>
+<!--l. 1085--><div class="crosslinks"><p class="noindent">[<a 
+href="UsersGuidech8.html" >next</a>] [<a 
+href="UsersGuidech6.html" >prev</a>] [<a 
+href="UsersGuidech6.html#tailUsersGuidech6.html" >prev-tail</a>] [<a 
+href="#tailUsersGuidech7.html">tail</a>] [<a 
+href="UsersGuidepa2.html#UsersGuidech7.html" >up</a>] </p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;B3</span><br /><a 
+ id="x10-35000B3"></a>Runtime options</h2>
+<!--l. 1087--><p class="noindent" >This chapter covers all aspects for running your Cactus executable. These include: command-line options,
+parameter file syntax, understanding screen output, environment variables, and creating thorn
+documentation.
+<h3 class="sectionHead"><span class="titlemark">B3.1   </span> <a 
+ id="x10-36000B3.1"></a>Command-Line Options</h3>
+<!--l. 1095--><p class="noindent" >Cactus uses the standard GNU style of long-named command-line options; many of these options also have
+traditional Unix single-letter short forms. The options follow the usual GNU rules:
+     <ul class="itemize1">
+     <li class="itemize">A long-named option <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">--foo</span></span></span> which takes an argument <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">bar</span></span></span> may be written as either <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">--foo</span><span 
+class="cmtt-10">&#x00A0;bar</span></span></span> or
+     as <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">--foo=bar</span></span></span>.
+     </li>
+     <li class="itemize">A long-named option may be abbreviated, so long as the abbreviation is unambiguous.
+     </li>
+     <li class="itemize">The preferred way of spelling a long-named option is <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">--foo</span></span></span>, but <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">-foo</span></span></span> also accepted, though this is
+     deprecated.
+     </li>
+     <li class="itemize">A short option, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">-X</span></span></span>, which takes an argument <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">bar</span></span></span> may be written as either <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">-Xbar</span></span></span> or as <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">-X=bar</span></span></span>.
+     </li>
+     <li class="itemize">An option which can be interpreted as either a short option, or as an abbreviated <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">-foo</span></span></span>-style
+     long option, is interpreted as the former. In particular, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">-re</span></span></span> is interpreted as an abbreviation for
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">-redirect</span></span></span>, rather than as <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">-r=e</span></span></span>.</li></ul>
+<!--l. 1113--><p class="noindent" >The Cactus command-line options are specified in Table&#x00A0;<a 
+href="#x10-360011">B3.1<!--tex4ht:ref: tab:command-line-options --></a>, and are as follows:
+<div class="table">
+                                                                                       
+                                                                                       
+<!--l. 1118--><p class="noindent" ><a 
+ id="x10-360011"></a><hr class="float"><div class="float" 
+><table class="float"><tr class="float"><td class="float" 
+>
+                                                                                       
+                                                                                       
+<!--tex4ht:inline--><div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><colgroup id="TBL-1-2g"><col 
+id="TBL-1-2"></colgroup><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td11"><span 
+class="cmtt-10">Short Version       </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-2"  
+class="td11"><span 
+class="cmtt-10">Long Version                             </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td11"><span 
+class="cmtt-10">-O[v]                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-2"  
+class="td11"><span 
+class="cmtt-10">--describe-all-parameters                </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td11"><span 
+class="cmtt-10">-o&#x003C;</span><span 
+class="cmsltt-10">param</span><span 
+class="cmtt-10">&#x003E;            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-2"  
+class="td11"><span 
+class="cmtt-10">--describe-parameter=&#x003C;</span><span 
+class="cmsltt-10">param</span><span 
+class="cmtt-10">&#x003E;             </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td11"><span 
+class="cmtt-10">-S                   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-2"  
+class="td11"><span 
+class="cmtt-10">--print-schedule                         </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td11"><span 
+class="cmtt-10">-T                   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-2"  
+class="td11"><span 
+class="cmtt-10">--list-thorns                            </span></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td11"><span 
+class="cmtt-10">-t&#x003C;</span><span 
+class="cmsltt-10">arrangement/thorn</span><span 
+class="cmtt-10">&#x003E;</span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-2"  
+class="td11"><span 
+class="cmtt-10">--test-thorn-compiled=&#x003C;</span><span 
+class="cmsltt-10">arrangement/thorn</span><span 
+class="cmtt-10">&#x003E;</span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td11"><span 
+class="cmtt-10">-h,-?                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-2"  
+class="td11"><span 
+class="cmtt-10">--help                                   </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-8-1"  
+class="td11"><span 
+class="cmtt-10">-v                   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-8-2"  
+class="td11"><span 
+class="cmtt-10">--version                                </span></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-9-1"  
+class="td11"><span 
+class="cmtt-10">-L&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E; </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-9-2"  
+class="td11"><span 
+class="cmtt-10">--logging-level=&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E;</span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-10-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-10-1"  
+class="td11"><span 
+class="cmtt-10">-W&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E;            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-10-2"  
+class="td11"><span 
+class="cmtt-10">--warning-level=&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E;                  </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-11-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-11-1"  
+class="td11"><span 
+class="cmtt-10">-E&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E;            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-11-2"  
+class="td11"><span 
+class="cmtt-10">--error-level=&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E;                    </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-12-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-12-1"  
+class="td11"><span 
+class="cmtt-10">-r[o|e|oe|eo]        </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-12-2"  
+class="td11"><span 
+class="cmtt-10">--redirect=[o|e|oe|eo]                   </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-13-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-13-1"  
+class="td11">                     </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-13-2"  
+class="td11"><span 
+class="cmtt-10">--logdir=&#x003C;</span><span 
+class="cmsltt-10">directory</span><span 
+class="cmtt-10">&#x003E;                     </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-14-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-14-1"  
+class="td11"><span 
+class="cmtt-10">-b[no|line|full]     </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-14-2"  
+class="td11"><span 
+class="cmtt-10">--buffering=[no|line|full]               </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-15-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-15-1"  
+class="td11">                     </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-15-2"  
+class="td11"><span 
+class="cmtt-10">--parameter-level=&#x003C;strict|normal|relaxed&#x003E;</span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-16-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-16-1"  
+class="td11"><span 
+class="cmtt-10">-i                   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-16-2"  
+class="td11"><span 
+class="cmtt-10">--ignore-next                            </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-17-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-17-1"  
+class="td11">                     </td></tr></table></div>
+<br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Table&#x00A0;B3.1: </td><td  
+class="content">This table shows all the Cactus command-line options.</td></tr></table><!--tex4ht:label?: x10-360011 -->
+                                                                                       
+                                                                                       
+</td></tr></table></div><hr class="endfloat" />
+</div>
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">-O </span><span 
+class="cmss-10">or </span><span 
+class="cmtt-10">--describe-all-parameters</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1166--><p class="noindent" >Prints a full list of all parameters from all thorns which were compiled, along with
+                  descriptions and allowed values. This can take an optional extra parameter <span 
+class="cmtt-10">v </span>(i.e.
+                  <span 
+class="cmtt-10">-Ov </span>to give verbose information about all parameters).
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">-o&#x003C;</span><span 
+class="cmsltt-10">param</span><span 
+class="cmtt-10">&#x003E; </span><span 
+class="cmss-10">or </span><span 
+class="cmtt-10">--describe-parameter=&#x003C;</span><span 
+class="cmsltt-10">param</span><span 
+class="cmtt-10">&#x003E;</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1172--><p class="noindent" >Prints  the  description  and  allowed  values  for  a  given  parameter&#8212;takes  one
+                  argument.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">-S </span><span 
+class="cmss-10">or </span><span 
+class="cmtt-10">--print-schedule</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1176--><p class="noindent" >Print only the schedule tree.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">-T </span><span 
+class="cmss-10">or </span><span 
+class="cmtt-10">--list-thorns</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1179--><p class="noindent" >Prints a list of all the thorns which were compiled in.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">-t&#x003C;</span><span 
+class="cmsltt-10">arrangement or thorn</span><span 
+class="cmtt-10">&#x003E; </span><span 
+class="cmss-10">or </span><span 
+class="cmtt-10">--test-thorn-compiled=&#x003C;</span><span 
+class="cmsltt-10">arrangement or thorn&#x003E;</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1182--><p class="noindent" >Checks if a given thorn was compiled in&#8212;takes one argument.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">-h</span><span 
+class="cmss-10">, </span><span 
+class="cmtt-10">-? </span><span 
+class="cmss-10">or </span><span 
+class="cmtt-10">--help</span>    </dt><dd 
+class="list">
+                  <!--l. 1185--><p class="noindent" >Prints a help message.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">-v </span><span 
+class="cmss-10">or </span><span 
+class="cmtt-10">--version</span>    </dt><dd 
+class="list">
+                  <!--l. 1188--><p class="noindent" >Prints version information of the code.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">-L&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E; </span><span 
+class="cmss-10">or </span><span 
+class="cmtt-10">--logging-level=&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E;</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1196--><p class="noindent" >Sets the logging level of the code. All warning messages are given a level&#8212;the lower
+                  the level the greater the severity. This parameter <span 
+class="cmtt-10">-L </span>controls the level of messages
+                  to be seen, with all warnings of level <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E; </span>printed to standard output. The
+                  default is a logging level of&#x00A0;0, meaning that only level&#x00A0;0 messages should be printed
+                  to standard output.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">-W&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E; </span><span 
+class="cmss-10">or </span><span 
+class="cmtt-10">--warning-level=&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E;</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1204--><p class="noindent" >Similar to <span 
+class="cmtt-10">-W</span>, but for standard error instead of standard output. All warnings of
+                  level <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E; </span>are printed to standard error. The default is a warning level of&#x00A0;1,
+                  meaning that level&#x00A0;0 and level&#x00A0;1 messages should be printed to standard error.
+                                                                                       
+                                                                                       
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">-E&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E; </span><span 
+class="cmss-10">or </span><span 
+class="cmtt-10">--error-level=&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E;</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1211--><p class="noindent" >Similar to <span 
+class="cmtt-10">-W</span>, but for fatal errors: Cactus treats all warnings with level <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">level</span><span 
+class="cmtt-10">&#x003E;</span>
+                  as fatal errors, and aborts the Cactus run immediately (after printing the warning
+                  message<span class="footnote-mark"><a 
+href="#fn1x7" id="fn1x7-bk"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x10-36002f1"></a>).
+                  The default value is zero, i.e. only level&#x00A0;0 warnings will abort the Cactus run.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">-r[o|e|oe|eo] </span><span 
+class="cmss-10">or </span><span 
+class="cmtt-10">--redirect=[o|e|oe|eo]</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1223--><p class="noindent" >Redirects the standard output (&#8216;<span 
+class="cmtt-10">o</span>&#8217;) and/or standard error (&#8216;<span 
+class="cmtt-10">e</span>&#8217;) of each processor
+                  to a file. By default, the standard outputs from processors other than processor 0
+                  are discarded.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">--logdir=&#x003C;</span><span 
+class="cmsltt-10">directory</span><span 
+class="cmtt-10">&#x003E;</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1228--><p class="noindent" >Sets the output directory for logfiles created by the <span 
+class="cmtt-10">-r </span>option. If the directory
+                  doesn&#8217;t exist yet, it will be created by Cactus.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">-b[no|line|full] </span><span 
+class="cmss-10">or </span><span 
+class="cmtt-10">--buffering=[no|line|full]</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1232--><p class="noindent" >Set the <span 
+class="cmtt-10">stdout </span>buffering mode. Buffered I/O is a standard feature of C programmes.
+                  This  delays  writing  the  actual  output;  instead,  the  output  is  collected  into  an
+                  internal buffer, and is then written in large chunks. This improves performance
+                  considerably.  Line  buffering  means  that  output  is  written  whenever  a  newline
+                  character is encountered; full buffering means that output is written, say, once 1000
+                  characters have accmulated. The default setting is line buffering for I/O that goes
+                  to a terminal, and full buffering for I/O that goes to a file. For debugging purposes,
+                  it is sometimes useful to reduce the amount of buffering. Error messages, i.e.&#x00A0;the
+                  <span 
+class="cmtt-10">stderr </span>stream, is always unbuffered (and hence usually slower than <span 
+class="cmtt-10">stdout</span>).
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">--parameter-level=&#x003C;strict|normal|relaxed&#x003E;</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1246--><p class="noindent" >Sets the level of parameter checking to be used, one of <span 
+class="cmtt-10">strict </span>(the default), <span 
+class="cmtt-10">normal</span>,
+                  or <span 
+class="cmtt-10">relaxed</span>. See Section&#x00A0;<a 
+href="#x10-37000B3.2">B3.2<!--tex4ht:ref: sec:Parameter_File --></a> for details.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">-i </span><span 
+class="cmss-10">or </span><span 
+class="cmtt-10">--ignore-next</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1251--><p class="noindent" >Causes the next argument on the command line to be ignored.</dd></dl>
+<!--l. 1255--><p class="noindent" >A dash (&#8220;<span 
+class="cmtt-10">-</span>&#8221;) appended at the end of the command line like this:
+<!--l. 1257--><p class="noindent" ><span 
+class="cmtt-10">./cactus</span><span 
+class="cmtt-10">_&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E; [</span><span 
+class="cmsltt-10">command-line options</span><span 
+class="cmtt-10">] -</span>
+<!--l. 1259--><p class="noindent" >lets the user specify parameter values from standard input rather than from a parameter file.
+                                                                                       
+                                                                                       
+<h3 class="sectionHead"><span class="titlemark">B3.2   </span> <a 
+ id="x10-37000B3.2"></a>Parameter File Syntax</h3>
+<!--l. 1268--><p class="noindent" >A <span 
+class="cmti-10">parameter file </span>(or <span 
+class="cmti-10">par file</span>) is used to control the behaviour of a Cactus executable. It specifies initial values for
+parameters as defined in the various thorns&#8217; <span 
+class="cmtt-10">param.ccl </span>files (see Chapter&#x00A0;<a 
+href="UsersGuidech9.html#x13-72000C1.4">C1.4<!--tex4ht:ref: chap:Cactus_parameters --></a>). The name of a parameter file is
+often given the suffix <span 
+class="cmtt-10">.par</span>, but this is not mandatory.
+<!--l. 1275--><p class="noindent" >A parameter file is a text file whose lines are either comments or parameter statements. Comments are blank
+lines or lines that begin with either &#8216;<span 
+class="cmtt-10">#</span>&#8217; or &#8216;<span 
+class="cmtt-10">!</span>&#8217;. A parameter statement consists of one or more parameter names,
+followed by an &#8216;<span 
+class="cmtt-10">=</span>&#8217;, followed by the value(s) for this (these) parameter(s). Note that all string parameters are case
+insensitive.
+<!--l. 1284--><p class="noindent" >The first parameter statement in any parameter file should set <span 
+class="cmtt-10">ActiveThorns</span>, which is a special parameter that
+tells the program which <span 
+class="cmti-10">thorns </span>are to be activated. Only parameters from active thorns can be set (and only
+those routines <span 
+class="cmti-10">scheduled </span>by active thorns are run). By default, all thorns are inactive. For example, the first
+entry in a parameter file which is using just the two thorns <span 
+class="cmtt-10">CactusPUGH/PUGH </span>and <span 
+class="cmtt-10">CactusBase/CartGrid3D</span>
+should be
+<!--l. 1292--><p class="noindent" ><span 
+class="cmtt-10">ActiveThorns = "PUGH CartGrid3D"</span>
+<!--l. 1294--><p class="noindent" >All parameters following the <span 
+class="cmtt-10">ActiveThorns </span>parameter all have names whose syntax depends on the scope (see
+Section&#x00A0;<a 
+href="UsersGuidech9.html#x13-79000C1.4.2">C1.4.2<!--tex4ht:ref: sec:Cactus_parameters.scope --></a>) of the parameter:
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">Global parameters</span> </dt><dd 
+class="list">
+                  <!--l. 1299--><p class="noindent" >Just the name of the parameter itself. Global parameters are to be avoided; there
+                  are none in the flesh and Cactus Toolkits.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">Restricted parameters</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1302--><p class="noindent" >The name of the <span 
+class="cmti-10">implementation </span>which defined the parameter, followed by two
+                  colons, then the name of the parameter&#8212;e.g. <span 
+class="cmtt-10">driver::global</span><span 
+class="cmtt-10">_nx</span>.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">Private parameters</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1306--><p class="noindent" >The name of the <span 
+class="cmti-10">thorn </span>which defined the parameter, two colons, and the name of
+                  the parameter&#8212;e.g. <span 
+class="cmtt-10">wavetoyF77::amplitude</span>.</dd></dl>
+<!--l. 1311--><p class="noindent" >This notation is not currently strictly enforced in the code. It is sufficient to specify the first part of the
+parameter name using either the implementation name, or the thorn name. However, we recommend that the
+above convention be followed.
+<!--l. 1316--><p class="noindent" >The Cactus flesh performs checks for consistency and range of parameters. The severity of these checks
+is controlled by the command-line argument <span 
+class="cmtt-10">--parameter-level</span>, which can take the following
+values
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">relaxed</span>           </dt><dd 
+class="list">
+                  <!--l. 1320--><p class="noindent" >Cactus will issue a level 0 warning (that is, the default behaviour will be to terminate)
+                  if
+                                                                                       
+                                                                                       
+                      <ul class="itemize1">
+                      <li class="itemize"> The specified parameter value is outside of the allowed range.</li></ul>
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">normal</span>            </dt><dd 
+class="list">
+                  <!--l. 1326--><p class="noindent" >This is the default, and provides the same warnings as the <span 
+class="cmtt-10">relaxed </span>level, with the addition
+                  of a level 0 warning issued for
+                      <ul class="itemize1">
+                      <li class="itemize"> An implementation and/or thorn <span 
+class="cmtt-10">foo </span>is active, but the parameter <span 
+class="cmtt-10">foo::bar</span>
+                      was not defined.
+                      </li>
+                      <li class="itemize">   The   parameter   <span 
+class="cmtt-10">foo::bar  </span>was   successfully   set   for   both   an   active
+                      implementation <span 
+class="cmtt-10">foo </span>not implemented by a thorn <span 
+class="cmtt-10">foo</span>, and to a thorn <span 
+class="cmtt-10">foo</span>.</li></ul>
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">strict</span>            </dt><dd 
+class="list">
+                  <!--l. 1337--><p class="noindent" >This provides the same warnings as the <span 
+class="cmtt-10">normal </span>level, with the addition of a level 0 warning
+                  issued for
+                      <ul class="itemize1">
+                      <li class="itemize">  The  parameter  <span 
+class="cmtt-10">foo::bar </span>is  specified  in  the  parameter  file,  but  no
+                      implementation or thorn with the name <span 
+class="cmtt-10">bar </span>is active.</li></ul>
+                  </dd></dl>
+<!--l. 1346--><p class="noindent" >Notes:
+     <ul class="itemize1">
+     <li class="itemize"> You can obtain lists of the parameters associated with each thorn using the command-line options
+     <span 
+class="cmtt-10">-o </span>and <span 
+class="cmtt-10">-O </span>(Section&#x00A0;<a 
+href="#x10-36000B3.1">B3.1<!--tex4ht:ref: sec:command_line_options --></a>).
+     </li>
+     <li class="itemize"> The parameter file is read <span 
+class="cmti-10">sequentially </span>from top to bottom, this means that if you set the value of a
+     parameter twice in the parameter file, the second value will be used. (This is why the <span 
+class="cmtt-10">ActiveThorns</span>
+     parameter is always first in the file).
+     </li>
+     <li class="itemize"> String parameter values can be specified either as unquoted tokens (not containing any whitespace),
+     or  as  quoted  values.  If  a  quoted  string  parameter  value  spans  multiple  lines,  all  whitespaces,
+     including newline characters, are preserved.
+     </li>
+     <li class="itemize"> Some parameters are <span 
+class="cmti-10">steerable</span>, and can be changed during the execution of a Cactus program using
+     parameter steering interfaces, for example, thorn <span 
+class="cmtt-10">CactusConnect/HTTPD</span>, or using a parameter file
+     when recovering from a checkpoint file.
+     </li>
+     <li class="itemize"> For examples of parameter files, look in the <span 
+class="cmtt-10">par </span>directory contained in most thorns.
+     </li></ul>
+                                                                                       
+                                                                                       
+<!--l. 1374--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">B3.3   </span> <a 
+ id="x10-38000B3.3"></a>Thorn Documentation</h3>
+<!--l. 1377--><p class="noindent" >The Cactus make system provides a mechanism for generating a <span 
+class="cmti-10">Thorn Guide </span>containing separate chapters for
+each thorn and arrangement in your configuration. The documentation provided for an individual
+thorn, obviously depends on what the thorn authors added, but the Thorn Guide is a good place to
+first look for special instructions on how to run and interpret the output from a thorn. Details
+about parameters, grid variables and scheduling are automatically read from a thorn&#8217;s CCL files
+and included in the Thorn Guide. To construct a Thorn Guide for the configuration <span 
+class="cmmi-10">&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmmi-10">&#x003E;</span>
+use
+<!--l. 1388--><p class="noindent" ><span 
+class="cmtt-10">gmake </span><span 
+class="cmmi-10">&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmmi-10">&#x003E;</span><span 
+class="cmtt-10">-ThornGuide</span>
+<!--l. 1390--><p class="noindent" >or to make a Thorn Guide for all the thorns in the <span 
+class="cmtt-10">arrangements </span>directory
+<!--l. 1392--><p class="noindent" ><span 
+class="cmtt-10">gmake </span><span 
+class="cmmi-10">&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmmi-10">&#x003E;</span>.
+<!--l. 1394--><p class="noindent" >See Section&#x00A0;<a 
+href="UsersGuidech9.html#x13-121000C1.8.4">C1.8.4<!--tex4ht:ref: sec:Adding_documentation --></a> for a guide to adding documentation to your own thorns.
+                                                                                       
+                                                                                       
+<div class="footnotes"><!--l. 1219--><p class="noindent" ><span class="footnote-mark"><a 
+href="#fn1x7-bk" id="fn1x7"><sup class="textsuperscript">1</sup></a></span><span 
+class="cmr-8">Cactus imposes the constraint,</span> <span 
+class="cmtt-8">-W </span><span 
+class="cmr-8">level</span> <span 
+class="cmsy-8">&#x2265;</span> <span 
+class="cmtt-8">-E </span><span 
+class="cmr-8">level</span> <span 
+class="cmsy-8">&#x2265; </span><span 
+class="cmr-8">0, so any fatal-error message will always be printed (first).</span>     </div> <!--l. 1402--><div class="crosslinks"><p class="noindent">[<a 
+href="UsersGuidech8.html" >next</a>]
+[<a 
+href="UsersGuidech6.html" >prev</a>] [<a 
+href="UsersGuidech6.html#tailUsersGuidech6.html" >prev-tail</a>] [<a 
+href="UsersGuidech7.html" >front</a>] [<a 
+href="UsersGuidepa2.html#UsersGuidech7.html" >up</a>] </p></div>
+<!--l. 1402--><p class="noindent" ><a 
+ id="tailUsersGuidech7.html"></a>  
+</body></html> 

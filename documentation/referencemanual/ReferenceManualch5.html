@@ -1,0 +1,782 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>B3 Full Descriptions of String Functions</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,fn-in --> 
+<meta name="src" content="ReferenceManual.tex"> 
+<meta name="date" content="2011-03-25 09:47:00"> 
+<link rel="stylesheet" type="text/css" href="ReferenceManual.css"> 
+</head><body 
+>
+<!--l. 646--><div class="crosslinks"><p class="noindent">[<a 
+href="ReferenceManualch6.html" >next</a>] [<a 
+href="ReferenceManualch4.html" >prev</a>] [<a 
+href="ReferenceManualch4.html#tailReferenceManualch4.html" >prev-tail</a>] [<a 
+href="#tailReferenceManualch5.html">tail</a>] [<a 
+href="ReferenceManualpa2.html#ReferenceManualch5.html" >up</a>] </p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;B3</span><br /><a 
+ id="x8-218000B3"></a>Full Descriptions of String Functions</h2>
+<!--l. 651--><p class="noindent" ><div class="functiondescription">
+<h3 class="likesectionHead"><a 
+ id="x8-219000B3"></a><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_StrCmpi</span></h3>
+<!--l. 651--><p class="noindent" ></div> <div class="functiondescriptioncontent">
+<!--l. 653--><p class="noindent" >Compare two strings, ignoring upper/lower case.
+<!--l. 655--><p class="noindent" ><span 
+class="cmbx-10">Synopsis</span>
+<!--l. 656--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"util_String.h"
+&#x00A0;<br />int&#x00A0;cmp&#x00A0;=&#x00A0;Util_StrCmpi(const&#x00A0;char&#x00A0;*str1,&#x00A0;const&#x00A0;char&#x00A0;*str2);
+</div>
+<!--l. 660--><p class="nopar" > </div><br style="clear: both;"/>
+<!--l. 664--><p class="noindent" ><span 
+class="cmbx-10">Result</span>
+<!--l. 665--><p class="noindent" ><span 
+class="cmtt-10">cmp </span>An integer which is:<br 
+class="newline" /><!--tex4ht:inline--><div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"><col 
+id="TBL-1-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-1"  
+class="td01"><span 
+class="cmmi-10">&#x003C; </span>0</td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-2"  
+class="td11">if <span 
+class="cmtt-10">str1</span> <span 
+class="cmmi-10">&#x003C;</span> <span 
+class="cmtt-10">str2</span> in lexicographic order ignoring upper/lower case distinctions</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-1"  
+class="td01">   0</td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-2"  
+class="td11">if <span 
+class="cmtt-10">str1</span> = <span 
+class="cmtt-10">str2</span> ignoring upper/lower case distinctions                             </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-1"  
+class="td01"> <span 
+class="cmmi-10">&#x003E; </span>0</td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-2"  
+class="td11">if <span 
+class="cmtt-10">str1</span> <span 
+class="cmmi-10">&#x003E;</span> <span 
+class="cmtt-10">str2</span> in lexicographic order ignoring upper/lower case distinctions</td>
+</tr></table></div> <br/>
+<!--l. 678--><p class="noindent" ><span 
+class="cmbx-10">Parameters</span>
+<!--l. 679--><p class="noindent" ><span 
+class="cmtt-10">str1 </span>A non-NULL pointer to a (C-style NUL-terminated) string to be compared. <br/>
+<span 
+class="cmtt-10">str2 </span>A non-NULL pointer to a (C-style NUL-terminated) string to be compared. <br/>
+<!--l. 687--><p class="noindent" ><span 
+class="cmbx-10">Discussion</span>
+<!--l. 688--><p class="noindent" >The standard C library <span 
+class="cmtt-10">strcmp() </span>function does a <span 
+class="cmti-10">case-sensitive </span>string comparison, i.e.&#x00A0;<span 
+class="cmtt-10">strcmp("cactus",</span>
+<span 
+class="cmtt-10">"Cactus") </span>will find the two strings not equal. Sometimes it&#8217;s useful to do <span 
+class="cmti-10">case-insensitive </span>string comparison,
+where upper/lower case distinctions are ignored. Many systems provide a <span 
+class="cmtt-10">strcasecmp() </span>or <span 
+class="cmtt-10">strcmpi() </span>function
+to do this, but some systems don&#8217;t, and even on those that do, the name isn&#8217;t standardised. So, Cactus provides
+its own version, <span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_StrCmpi()</span>.
+<!--l. 697--><p class="noindent" >Notice that the return value of <span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_StrCmpi()</span>, like that of <span 
+class="cmtt-10">strcmp()</span>, is zero (logical &#8220;false&#8221; in C) for equal
+strings, and nonzero (logical &#8220;true&#8221; in C) for non-equal strings. Code of the form
+                                                                                       
+                                                                                       
+<div class="verbatim">
+if&#x00A0;(Util_StrCmpi(str1,&#x00A0;str2))
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{&#x00A0;/*&#x00A0;strings&#x00A0;differ&#x00A0;*/&#x00A0;}
+</div>
+<!--l. 704--><p class="nopar" > or
+                                                                                       
+                                                                                       
+<div class="verbatim">
+if&#x00A0;(!Util_StrCmpi(str1,&#x00A0;str2))
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{&#x00A0;/*&#x00A0;strings&#x00A0;are&#x00A0;identical&#x00A0;apart&#x00A0;from&#x00A0;case&#x00A0;distinctions&#x00A0;*/&#x00A0;}
+</div>
+<!--l. 709--><p class="nopar" > may be confusing to readers, because the sense of the comparison isn&#8217;t immediately obvious. Writing an explicit
+comparison against zero make make things clearer:
+                                                                                       
+                                                                                       
+<div class="verbatim">
+if&#x00A0;(Util_StrCmpi(str1,&#x00A0;str2)&#x00A0;!=&#x00A0;0)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{&#x00A0;/*&#x00A0;strings&#x00A0;differ&#x00A0;*/&#x00A0;}
+</div>
+<!--l. 716--><p class="nopar" > or
+                                                                                       
+                                                                                       
+<div class="verbatim">
+if&#x00A0;(Util_StrCmpi(str1,&#x00A0;str2)&#x00A0;==&#x00A0;0)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{&#x00A0;/*&#x00A0;strings&#x00A0;are&#x00A0;identical&#x00A0;apart&#x00A0;from&#x00A0;case&#x00A0;distinctions&#x00A0;*/&#x00A0;}
+</div>
+<!--l. 721--><p class="nopar" >
+<!--l. 723--><p class="noindent" >Unfortunately, the basic concept of &#8220;case-insensitive&#8221; string operations doesn&#8217;t generalize well to non-English character
+sets,<span class="footnote-mark"><a 
+href="#fn1x5" id="fn1x5-bk"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x8-219001f1"></a>
+where lower-case <span 
+class="cmsy-10">&#x2194; </span>upper-case mappings may be context-dependent, many-to-one, and/or
+time-dependent.<span class="footnote-mark"><a 
+href="#fn2x5" id="fn2x5-bk"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x8-219002f2"></a>
+At present Cactus basically ignores these issues. :(
+<!--l. 762--><p class="noindent" ><span 
+class="cmbx-10">See Also</span>
+<!--l. 763--><p class="noindent" ><span 
+class="cmtt-10">strcmp() </span>Standard C library function (prototype in <span 
+class="cmtt-10">&#x003C;string.h&#x003E;</span>) to compare two strings. <br/>
+<!--l. 769--><p class="noindent" ><span 
+class="cmbx-10">Examples</span>
+<!--l. 770--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"util_String.h"
+&#x00A0;<br />
+&#x00A0;<br />/*&#x00A0;does&#x00A0;the&#x00A0;Cactus&#x00A0;parameter&#x00A0;&#x00A0;driver&#x00A0;&#x00A0;specify&#x00A0;the&#x00A0;PUGH&#x00A0;driver?&#x00A0;*/
+&#x00A0;<br />/*&#x00A0;(Cactus&#x00A0;parameters&#x00A0;are&#x00A0;supposed&#x00A0;to&#x00A0;be&#x00A0;case-insensitive)&#x00A0;*/
+&#x00A0;<br />if&#x00A0;(Util_StrCmpi(driver,&#x00A0;"pugh")&#x00A0;==&#x00A0;0)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{&#x00A0;/*&#x00A0;PUGH&#x00A0;code&#x00A0;*/&#x00A0;}
+&#x00A0;<br />else
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{&#x00A0;/*&#x00A0;non-PUGH&#x00A0;code&#x00A0;*/&#x00A0;}
+</div>
+<!--l. 780--><p class="nopar" > </div><br style="clear: both;"/>
+</div>
+
+<!--l. 788--><p class="noindent" ><div class="functiondescription">
+<h3 class="likesectionHead"><a 
+ id="x8-220000B3"></a><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_Strdup</span></h3>
+<!--l. 788--><p class="noindent" ></div> <div class="functiondescriptioncontent">
+<!--l. 790--><p class="noindent" >&#8220;Duplicate&#8221; a string, i.e.&#x00A0;copy it to a newly&#8211;<span 
+class="cmtt-10">malloc</span>ed buffer.
+<!--l. 792--><p class="noindent" ><span 
+class="cmbx-10">Synopsis</span>
+<!--l. 793--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"util_String.h"
+&#x00A0;<br />char*&#x00A0;copy&#x00A0;=&#x00A0;Util_Strdup(const&#x00A0;char&#x00A0;*str);
+</div>
+<!--l. 797--><p class="nopar" > </div><br style="clear: both;"/>
+<!--l. 801--><p class="noindent" ><span 
+class="cmbx-10">Result</span>
+<!--l. 802--><p class="noindent" ><span 
+class="cmtt-10">copy </span>A pointer to a buffer obtained from <span 
+class="cmtt-10">malloc()</span>, which this function sets to a copy of the (C-style
+NUL-terminated) string <span 
+class="cmtt-10">str</span>. This buffer should be freed with <span 
+class="cmtt-10">free() </span>when it&#8217;s not needed any more. <br/>
+<!--l. 810--><p class="noindent" ><span 
+class="cmbx-10">Parameters</span>
+<!--l. 811--><p class="noindent" ><span 
+class="cmtt-10">str </span>A non-NULL pointer to a (C-style NUL-terminated) string. <br/>
+<!--l. 816--><p class="noindent" ><span 
+class="cmbx-10">Discussion</span>
+<!--l. 817--><p class="noindent" >Many systems have a C library function <span 
+class="cmtt-10">strdup()</span>, which <span 
+class="cmtt-10">malloc</span>s sufficient memory for a copy of its argument
+string, does the copy, and returns a pointer to the copy. However, some systems lack this function, so Cactus
+provides its own version, <span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_Strdup()</span>.
+<!--l. 824--><p class="noindent" ><span 
+class="cmbx-10">See Also</span>
+<!--l. 825--><p class="noindent" ><span 
+class="cmtt-10">&#x003C;stdlib.h&#x003E; </span>System header file containing prototypes for <span 
+class="cmtt-10">malloc() </span>and <span 
+class="cmtt-10">free</span>. <br/>
+<span 
+class="cmtt-10">strcpy() </span>Standard C library function (prototype in <span 
+class="cmtt-10">&#x003C;string.h&#x003E;</span>) to copy a string to a buffer. <span 
+class="cmti-10">This does not</span>
+<span 
+class="cmti-10">check that the buffer is big enough to hold the string, and is thus very dangerous. Use </span><span 
+class="cmitt-10">Util</span><span 
+class="cmitt-10">_Strlcpy() </span><span 
+class="cmti-10">instead!</span>
+<br/>
+<span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_Strlcpy() </span>[<a 
+href="#x8-222000B3">B40<!--tex4ht:ref: Util-Strlcpy --></a>] Safely copy a string. <br/>
+<!--l. 840--><p class="noindent" ><span 
+class="cmbx-10">Errors</span>
+<!--l. 841--><p class="noindent" ><span 
+class="cmtt-10">NULL malloc() </span>was unable to allocate memory for the buffer. <br/>
+                                                                                       
+                                                                                       
+<!--l. 846--><p class="noindent" ><span 
+class="cmbx-10">Examples</span>
+<!--l. 847--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"util_String.h"
+&#x00A0;<br />
+&#x00A0;<br />/*
+&#x00A0;<br />&#x00A0;*&#x00A0;return&#x00A0;the&#x00A0;(positive)&#x00A0;answer&#x00A0;to&#x00A0;a&#x00A0;question,
+&#x00A0;<br />&#x00A0;*&#x00A0;or&#x00A0;negative&#x00A0;if&#x00A0;an&#x00A0;error&#x00A0;occured
+&#x00A0;<br />&#x00A0;*/
+&#x00A0;<br />int&#x00A0;answer_question(const&#x00A0;char*&#x00A0;question)
+&#x00A0;<br />{
+&#x00A0;<br />/*
+&#x00A0;<br />&#x00A0;*&#x00A0;we&#x00A0;need&#x00A0;to&#x00A0;modify&#x00A0;the&#x00A0;question&#x00A0;string&#x00A0;in&#x00A0;the&#x00A0;process&#x00A0;of&#x00A0;parsing&#x00A0;it
+&#x00A0;<br />&#x00A0;*&#x00A0;but&#x00A0;we&#x00A0;must&#x00A0;not&#x00A0;destroy&#x00A0;the&#x00A0;input&#x00A0;==&#x003E;&#x00A0;copy&#x00A0;it&#x00A0;and&#x00A0;modify&#x00A0;the&#x00A0;copy
+&#x00A0;<br />&#x00A0;*
+&#x00A0;<br />&#x00A0;*&#x00A0;...&#x00A0;note&#x00A0;the&#x00A0;const&#x00A0;qualifier&#x00A0;on&#x00A0;&#x00A0;question_copy&#x00A0;&#x00A0;says&#x00A0;that
+&#x00A0;<br />&#x00A0;*&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;the&#x00A0;pointer&#x00A0;&#x00A0;question_copy&#x00A0;&#x00A0;won&#8217;t&#x00A0;itself&#x00A0;change,&#x00A0;but
+&#x00A0;<br />&#x00A0;*&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;we&#x00A0;can&#x00A0;modify&#x00A0;the&#x00A0;string&#x00A0;that&#x00A0;it&#x00A0;points&#x00A0;to
+&#x00A0;<br />&#x00A0;*/
+&#x00A0;<br />char*&#x00A0;const&#x00A0;question_copy&#x00A0;=&#x00A0;Util_Strdup(question);
+&#x00A0;<br />if&#x00A0;(question_copy&#x00A0;==&#x00A0;NULL)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{&#x00A0;return&#x00A0;-1;&#x00A0;}&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/*&#x00A0;couldn&#8217;t&#x00A0;get&#x00A0;memory&#x00A0;for&#x00A0;copy&#x00A0;buffer&#x00A0;*/
+&#x00A0;<br />
+&#x00A0;<br />/*&#x00A0;code&#x00A0;that&#x00A0;will&#x00A0;modify&#x00A0;&#x00A0;question_copy&#x00A0;*/
+&#x00A0;<br />
+&#x00A0;<br />free(question_copy);
+&#x00A0;<br />return&#x00A0;42;
+&#x00A0;<br />}
+</div>
+<!--l. 874--><p class="nopar" > </div><br style="clear: both;"/>
+</div>
+
+<!--l. 882--><p class="noindent" ><div class="functiondescription">
+<h3 class="likesectionHead"><a 
+ id="x8-221000B3"></a><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_Strlcat</span></h3>
+<!--l. 882--><p class="noindent" ></div> <div class="functiondescriptioncontent">
+<!--l. 884--><p class="noindent" >Concatenate strings safely.
+<!--l. 886--><p class="noindent" ><span 
+class="cmbx-10">Synopsis</span>
+<!--l. 887--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"util_String.h"
+&#x00A0;<br />size_t&#x00A0;result_len&#x00A0;=&#x00A0;Util_Strlcat(char&#x00A0;*dst,&#x00A0;const&#x00A0;char&#x00A0;*src,&#x00A0;size_t&#x00A0;size);
+</div>
+<!--l. 891--><p class="nopar" > </div><br style="clear: both;"/>
+<!--l. 895--><p class="noindent" ><span 
+class="cmbx-10">Result</span>
+<!--l. 896--><p class="noindent" ><span 
+class="cmtt-10">result</span><span 
+class="cmtt-10">_len </span>The size of the string the function tried to create, i.e.&#x00A0;the initial <span 
+class="cmtt-10">strlen(dst) </span>plus <span 
+class="cmtt-10">strlen(src)</span>. <br/>
+<!--l. 902--><p class="noindent" ><span 
+class="cmbx-10">Parameters</span>
+<!--l. 903--><p class="noindent" ><span 
+class="cmtt-10">dst </span>A non-NULL pointer to the (C-style NUL-terminated) destination string. <br/>
+<span 
+class="cmtt-10">src </span>A non-NULL pointer to the (C-style NUL-terminated) source string. <br/>
+<span 
+class="cmtt-10">size </span>The size of the destination buffer. <br/>
+<!--l. 914--><p class="noindent" ><span 
+class="cmbx-10">Discussion</span>
+<!--l. 915--><p class="noindent" >The standard <span 
+class="cmtt-10">strcat() </span>and <span 
+class="cmtt-10">strcpy() </span>functions provide no way to specify the size of the destination buffer, so
+code using these functions is often vulnerable to buffer overflows. The standard <span 
+class="cmtt-10">strncat() </span>and <span 
+class="cmtt-10">strncpy()</span>
+functions can be used to write safe code, but their API is cumbersome, error-prone, and sometimes surprisingly
+inefficient:
+     <ul class="itemize1">
+     <li class="itemize">Their <span 
+class="cmtt-10">size </span>arguments are the number of characters <span 
+class="cmti-10">remaining </span>in the destination buffer, which must
+     often be calculated at run-time, and is prone to off-by-one errors.
+     </li>
+     <li class="itemize"><span 
+class="cmtt-10">strncpy() </span>doesn&#8217;t always NUL-terminate the destination string.
+     </li>
+     <li class="itemize"><span 
+class="cmtt-10">strncpy() </span>NUL-fills the remainder of the buffer not used for the source string; this NUL-filling can
+     be <span 
+class="cmti-10">very </span>expensive.</li></ul>
+<!--l. 932--><p class="noindent" >To solve these problems, the OpenBSD project developed the <span 
+class="cmtt-10">strlcat() </span>and <span 
+class="cmtt-10">strlcpy() </span>functions. See
+<a 
+href="http://www.openbsd.org/papers/strlcpy-paper.ps" class="url" ><span 
+class="cmtt-10">http://www.openbsd.org/papers/strlcpy-paper.ps</span></a> for a history and general discussion of these functions.
+Some other Unix systems (notably Solaris) now provide these, but many don&#8217;t, so Cactus provides its own
+versions, <span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_Strlcat() </span>and <span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_Strlcpy()</span>.
+                                                                                       
+                                                                                       
+<!--l. 940--><p class="noindent" ><span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_Strlcat() </span>appends the NUL-terminated string <span 
+class="cmtt-10">src </span>to the end of the NUL-terminated string <span 
+class="cmtt-10">dst</span>. It will
+append at most <span 
+class="cmtt-10">size - strlen(dst) - 1 </span>characters (hence it never overflows the destination buffer), and it
+always leaves <span 
+class="cmtt-10">dst </span>string NUL-terminated.
+<!--l. 946--><p class="noindent" ><span 
+class="cmbx-10">See Also</span>
+<!--l. 947--><p class="noindent" ><span 
+class="cmtt-10">strcat() </span>Standard C library function (prototype in <span 
+class="cmtt-10">&#x003C;string.h&#x003E;</span>) to concatenate two strings. <span 
+class="cmti-10">This does not</span>
+<span 
+class="cmti-10">check that the buffer is big enough to hold the result, and is thus very dangerous. Use </span><span 
+class="cmitt-10">Util</span><span 
+class="cmitt-10">_Strlcat() </span><span 
+class="cmti-10">instead!</span>
+<br/>
+<span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_Strlcpy() </span>[<a 
+href="#x8-222000B3">B40<!--tex4ht:ref: Util-Strlcpy --></a>] Safely copy a string. <br/>
+<!--l. 958--><p class="noindent" ><span 
+class="cmbx-10">Examples</span>
+<!--l. 959--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"util_String.h"
+&#x00A0;<br />
+&#x00A0;<br />/*
+&#x00A0;<br />&#x00A0;*&#x00A0;safely&#x00A0;concatenate&#x00A0;strings&#x00A0;s1,s2,s3&#x00A0;into&#x00A0;buffer:
+&#x00A0;<br />&#x00A0;*&#x00A0;...&#x00A0;this&#x00A0;code&#x00A0;is&#x00A0;safe&#x00A0;(it&#x00A0;will&#x00A0;never&#x00A0;overflow&#x00A0;the&#x00A0;buffer),&#x00A0;but
+&#x00A0;<br />&#x00A0;*&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;quick-n-dirty&#x00A0;in&#x00A0;that&#x00A0;it&#x00A0;doesn&#8217;t&#x00A0;give&#x00A0;any&#x00A0;error&#x00A0;indication
+&#x00A0;<br />&#x00A0;*&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;if&#x00A0;the&#x00A0;result&#x00A0;is&#x00A0;truncated&#x00A0;to&#x00A0;fit&#x00A0;in&#x00A0;the&#x00A0;buffer
+&#x00A0;<br />&#x00A0;*/
+&#x00A0;<br />#define&#x00A0;BUFFER_SIZE&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1024
+&#x00A0;<br />char&#x00A0;buffer[BUFFER_SIZE];
+&#x00A0;<br />
+&#x00A0;<br />Util_Strlcpy(buffer,&#x00A0;s1,&#x00A0;sizeof(buffer));
+&#x00A0;<br />Util_Strlcat(buffer,&#x00A0;s2,&#x00A0;sizeof(buffer));
+&#x00A0;<br />Util_Strlcat(buffer,&#x00A0;s3,&#x00A0;sizeof(buffer));
+</div>
+<!--l. 975--><p class="nopar" > </div><br style="clear: both;"/>
+<!--l. 977--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"util_String.h"
+&#x00A0;<br />
+&#x00A0;<br />#define&#x00A0;OK&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0
+&#x00A0;<br />#define&#x00A0;ERROR_TRUNC&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1
+&#x00A0;<br />
+&#x00A0;<br />/*
+&#x00A0;<br />&#x00A0;*&#x00A0;safely&#x00A0;concatenate&#x00A0;strings&#x00A0;s1,s2,s3&#x00A0;into&#x00A0;buffer[N_buffer];
+&#x00A0;<br />&#x00A0;*&#x00A0;return&#x00A0;OK&#x00A0;if&#x00A0;ok,&#x00A0;ERROR_TRUNC&#x00A0;if&#x00A0;result&#x00A0;was&#x00A0;truncated&#x00A0;to&#x00A0;fit&#x00A0;in&#x00A0;buffer
+&#x00A0;<br />&#x00A0;*/
+&#x00A0;<br />int&#x00A0;cat3(int&#x00A0;N_buffer,&#x00A0;char&#x00A0;buffer[],
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;const&#x00A0;char&#x00A0;s1[],&#x00A0;const&#x00A0;char&#x00A0;s2[],&#x00A0;const&#x00A0;char&#x00A0;s3[])
+&#x00A0;<br />{
+&#x00A0;<br />int&#x00A0;length;
+&#x00A0;<br />
+&#x00A0;<br />length&#x00A0;=&#x00A0;Util_Strlcpy(buffer,&#x00A0;s1,&#x00A0;N_buffer);
+&#x00A0;<br />if&#x00A0;(length&#x00A0;&#x003E;=&#x00A0;N_buffer)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;return&#x00A0;ERROR_TRUNC;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/***&#x00A0;ERROR&#x00A0;EXIT&#x00A0;***/
+&#x00A0;<br />
+&#x00A0;<br />length&#x00A0;=&#x00A0;Util_Strlcat(buffer,&#x00A0;s2,&#x00A0;N_buffer);
+&#x00A0;<br />if&#x00A0;(length&#x00A0;&#x003E;=&#x00A0;N_buffer)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;return&#x00A0;ERROR_TRUNC;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/***&#x00A0;ERROR&#x00A0;EXIT&#x00A0;***/
+&#x00A0;<br />
+&#x00A0;<br />length&#x00A0;=&#x00A0;Util_Strlcat(buffer,&#x00A0;s3,&#x00A0;N_buffer);
+&#x00A0;<br />if&#x00A0;(length&#x00A0;&#x003E;=&#x00A0;N_buffer)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;return&#x00A0;ERROR_TRUNC;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/***&#x00A0;ERROR&#x00A0;EXIT&#x00A0;***/
+&#x00A0;<br />
+&#x00A0;<br />return&#x00A0;OK;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/***&#x00A0;NORMAL&#x00A0;RETURN&#x00A0;***/
+&#x00A0;<br />}
+</div>
+<!--l. 1007--><p class="nopar" > </div><br style="clear: both;"/>
+</div>
+
+<!--l. 1015--><p class="noindent" ><div class="functiondescription">
+<h3 class="likesectionHead"><a 
+ id="x8-222000B3"></a><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_Strlcpy</span></h3>
+<!--l. 1015--><p class="noindent" ></div> <div class="functiondescriptioncontent">
+<!--l. 1017--><p class="noindent" >Copies a string safely.
+<!--l. 1019--><p class="noindent" ><span 
+class="cmbx-10">Synopsis</span>
+                                                                                       
+                                                                                       
+<!--l. 1020--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"util_String.h"
+&#x00A0;<br />size_t&#x00A0;result_len&#x00A0;=&#x00A0;Util_Strlcpy(char&#x00A0;*dst,&#x00A0;const&#x00A0;char&#x00A0;*src,&#x00A0;size_t&#x00A0;size);
+</div>
+<!--l. 1024--><p class="nopar" > </div><br style="clear: both;"/>
+<!--l. 1028--><p class="noindent" ><span 
+class="cmbx-10">Result</span>
+<!--l. 1029--><p class="noindent" ><span 
+class="cmtt-10">result</span><span 
+class="cmtt-10">_len </span>The size of the string the function tried to create, i.e.&#x00A0;<span 
+class="cmtt-10">strlen(src)</span>. <br/>
+<!--l. 1035--><p class="noindent" ><span 
+class="cmbx-10">Parameters</span>
+<!--l. 1036--><p class="noindent" ><span 
+class="cmtt-10">dst </span>A non-NULL pointer to the (C-style NUL-terminated) destination string. <br/>
+<span 
+class="cmtt-10">src </span>A non-NULL pointer to the (C-style NUL-terminated) source string. <br/>
+<span 
+class="cmtt-10">size </span>The size of the destination buffer. <br/>
+<!--l. 1047--><p class="noindent" ><span 
+class="cmbx-10">Discussion</span>
+<!--l. 1048--><p class="noindent" >The standard <span 
+class="cmtt-10">strcat() </span>and <span 
+class="cmtt-10">strcpy() </span>functions provide no way to specify the size of the destination buffer, so
+code using these functions is often vulnerable to buffer overflows. The standard <span 
+class="cmtt-10">strncat() </span>and <span 
+class="cmtt-10">strncpy()</span>
+functions can be used to write safe code, but their API is cumbersome, error-prone, and sometimes surprisingly
+inefficient:
+     <ul class="itemize1">
+     <li class="itemize">Their <span 
+class="cmtt-10">size </span>arguments are the number of characters <span 
+class="cmti-10">remaining </span>in the destination buffer, which must
+     often be calculated at run-time, and is prone to off-by-one errors.
+     </li>
+     <li class="itemize"><span 
+class="cmtt-10">strncpy() </span>doesn&#8217;t always NUL-terminate the destination string.
+     </li>
+     <li class="itemize"><span 
+class="cmtt-10">strncpy() </span>NUL-fills the remainder of the buffer not used for the source string; this NUL-filling can
+     be <span 
+class="cmti-10">very </span>expensive.</li></ul>
+<!--l. 1065--><p class="noindent" >To solve these problems, the OpenBSD project developed the <span 
+class="cmtt-10">strlcat() </span>and <span 
+class="cmtt-10">strlcpy() </span>functions. See
+<a 
+href="http://www.openbsd.org/papers/strlcpy-paper.ps" class="url" ><span 
+class="cmtt-10">http://www.openbsd.org/papers/strlcpy-paper.ps</span></a> for a history and general discussion of these functions.
+Some other Unix systems (notably Solaris) now provide these, but many don&#8217;t, so Cactus provides its own
+versions, <span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_Strlcat() </span>and <span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_Strlcpy()</span>.
+<!--l. 1073--><p class="noindent" ><span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_Strlcpy() </span>copies up to <span 
+class="cmtt-10">size-1 </span>characters from the source string to the destination string, followed by a
+                                                                                       
+                                                                                       
+NUL character (so <span 
+class="cmtt-10">dst </span>is always NUL-terminated). Unlike <span 
+class="cmtt-10">strncpy()</span>, <span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_Strlcpy() </span>does <span 
+class="cmti-10">not </span>fill any
+left-over space at the end of the destination buffer with NUL characters.
+<!--l. 1080--><p class="noindent" ><span 
+class="cmbx-10">See Also</span>
+<!--l. 1081--><p class="noindent" ><span 
+class="cmtt-10">strcpy() </span>Standard C library function (prototype in <span 
+class="cmtt-10">&#x003C;string.h&#x003E;</span>) to copy a string to a buffer. <span 
+class="cmti-10">This does not</span>
+<span 
+class="cmti-10">check that the buffer is big enough to hold the string, and is thus very dangerous. Use </span><span 
+class="cmitt-10">Util</span><span 
+class="cmitt-10">_Strlcpy() </span><span 
+class="cmti-10">instead!</span>
+<br/>
+<span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_Strdup() </span>[<a 
+href="#x8-220000B3">B33<!--tex4ht:ref: Util-Strdup --></a>] &#8220;Duplicate&#8221; a string, i.e.&#x00A0;copy it to a newly-<span 
+class="cmtt-10">malloc</span>ed buffer. <br/>
+<span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_Strlcat() </span>[<a 
+href="#x8-221000B3">B36<!--tex4ht:ref: Util-Strlcat --></a>] Safely concatenates two strings. <br/>
+<!--l. 1095--><p class="noindent" ><span 
+class="cmbx-10">Examples</span>
+<!--l. 1096--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"util_String.h"
+&#x00A0;<br />
+&#x00A0;<br />/*
+&#x00A0;<br />&#x00A0;*&#x00A0;safely&#x00A0;concatenate&#x00A0;strings&#x00A0;s1,s2,s3&#x00A0;into&#x00A0;buffer:
+&#x00A0;<br />&#x00A0;*&#x00A0;...&#x00A0;this&#x00A0;code&#x00A0;is&#x00A0;safe&#x00A0;(it&#x00A0;will&#x00A0;never&#x00A0;overflow&#x00A0;the&#x00A0;buffer),&#x00A0;but
+&#x00A0;<br />&#x00A0;*&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;quick-n-dirty&#x00A0;in&#x00A0;that&#x00A0;it&#x00A0;doesn&#8217;t&#x00A0;give&#x00A0;any&#x00A0;error&#x00A0;indication
+&#x00A0;<br />&#x00A0;*&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;if&#x00A0;the&#x00A0;result&#x00A0;is&#x00A0;truncated&#x00A0;to&#x00A0;fit&#x00A0;in&#x00A0;the&#x00A0;buffer
+&#x00A0;<br />&#x00A0;*/
+&#x00A0;<br />#define&#x00A0;BUFFER_SIZE&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1024
+&#x00A0;<br />char&#x00A0;buffer[BUFFER_SIZE];
+&#x00A0;<br />
+&#x00A0;<br />Util_Strlcpy(buffer,&#x00A0;s1,&#x00A0;sizeof(buffer));
+&#x00A0;<br />Util_Strlcat(buffer,&#x00A0;s2,&#x00A0;sizeof(buffer));
+&#x00A0;<br />Util_Strlcat(buffer,&#x00A0;s3,&#x00A0;sizeof(buffer));
+</div>
+<!--l. 1112--><p class="nopar" > </div><br style="clear: both;"/>
+<!--l. 1114--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"util_String.h"
+&#x00A0;<br />
+&#x00A0;<br />#define&#x00A0;OK&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0
+&#x00A0;<br />#define&#x00A0;ERROR_TRUNC&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1
+&#x00A0;<br />
+&#x00A0;<br />/*
+&#x00A0;<br />&#x00A0;*&#x00A0;safely&#x00A0;concatenate&#x00A0;strings&#x00A0;s1,s2,s3&#x00A0;into&#x00A0;buffer[N_buffer];
+&#x00A0;<br />&#x00A0;*&#x00A0;return&#x00A0;OK&#x00A0;if&#x00A0;ok,&#x00A0;ERROR_TRUNC&#x00A0;if&#x00A0;result&#x00A0;was&#x00A0;truncated&#x00A0;to&#x00A0;fit&#x00A0;in&#x00A0;buffer
+&#x00A0;<br />&#x00A0;*/
+&#x00A0;<br />int&#x00A0;cat3(int&#x00A0;N_buffer,&#x00A0;char&#x00A0;buffer[],
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;const&#x00A0;char&#x00A0;s1[],&#x00A0;const&#x00A0;char&#x00A0;s2[],&#x00A0;const&#x00A0;char&#x00A0;s3[])
+&#x00A0;<br />{
+&#x00A0;<br />int&#x00A0;length;
+&#x00A0;<br />
+&#x00A0;<br />length&#x00A0;=&#x00A0;Util_Strlcpy(buffer,&#x00A0;s1,&#x00A0;N_buffer);
+&#x00A0;<br />if&#x00A0;(length&#x00A0;&#x003E;=&#x00A0;N_buffer)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;return&#x00A0;ERROR_TRUNC;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/***&#x00A0;ERROR&#x00A0;EXIT&#x00A0;***/
+&#x00A0;<br />
+&#x00A0;<br />length&#x00A0;=&#x00A0;Util_Strlcat(buffer,&#x00A0;s2,&#x00A0;N_buffer);
+&#x00A0;<br />if&#x00A0;(length&#x00A0;&#x003E;=&#x00A0;N_buffer)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;return&#x00A0;ERROR_TRUNC;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/***&#x00A0;ERROR&#x00A0;EXIT&#x00A0;***/
+&#x00A0;<br />
+&#x00A0;<br />length&#x00A0;=&#x00A0;Util_Strlcat(buffer,&#x00A0;s3,&#x00A0;N_buffer);
+&#x00A0;<br />if&#x00A0;(length&#x00A0;&#x003E;=&#x00A0;N_buffer)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;return&#x00A0;ERROR_TRUNC;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/***&#x00A0;ERROR&#x00A0;EXIT&#x00A0;***/
+&#x00A0;<br />
+&#x00A0;<br />return&#x00A0;OK;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/***&#x00A0;NORMAL&#x00A0;RETURN&#x00A0;***/
+&#x00A0;<br />}
+</div>
+<!--l. 1144--><p class="nopar" > </div><br style="clear: both;"/>
+</div>
+
+<!--l. 1152--><p class="noindent" ><div class="functiondescription">
+<h3 class="likesectionHead"><a 
+ id="x8-223000B3"></a><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_StrSep</span></h3>
+<!--l. 1152--><p class="noindent" ></div> <div class="functiondescriptioncontent">
+<!--l. 1154--><p class="noindent" >Separate off the first token from a string.
+<!--l. 1156--><p class="noindent" ><span 
+class="cmbx-10">Synopsis</span>
+                                                                                       
+                                                                                       
+<!--l. 1157--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"util_String.h"
+&#x00A0;<br />char*&#x00A0;token&#x00A0;=&#x00A0;Util_StrSep(const&#x00A0;char**&#x00A0;string_ptr,&#x00A0;const&#x00A0;char*&#x00A0;delim_set);
+</div>
+<!--l. 1161--><p class="nopar" > </div><br style="clear: both;"/>
+<!--l. 1165--><p class="noindent" ><span 
+class="cmbx-10">Result</span>
+<!--l. 1166--><p class="noindent" ><span 
+class="cmtt-10">token </span>This function returns the original value of <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">*string_ptr</span></span></span>, or NULL if the end of the string is reached. <br/>
+<!--l. 1172--><p class="noindent" ><span 
+class="cmbx-10">Parameters</span>
+<!--l. 1173--><p class="noindent" ><span 
+class="cmtt-10">string</span><span 
+class="cmtt-10">_ptr </span>A non-NULL pointer to a (modifyable) non-NULL pointer to the (C-style NUL-terminated) string
+to operate on. <br/>
+<span 
+class="cmtt-10">delim</span><span 
+class="cmtt-10">_set </span>A non-NULL pointer to a (C-style NUL-terminated) string representing a set of delimiter characters
+(the order of these characters doesn&#8217;t matter). <br/>
+<!--l. 1183--><p class="noindent" ><span 
+class="cmbx-10">Discussion</span>
+<!--l. 1184--><p class="noindent" >Many Unix systems define a function <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">strsep()</span></span></span> which provides a clean way of splitting a string into &#8220;words&#8221;.
+However, some systems only provide the older (and inferior-in-several-ways) <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">strtok()</span></span></span> function, so Cactus
+implements its own <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">strsep()</span></span></span> function, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">Util_StrSep()</span></span></span>.
+<!--l. 1190--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">Util_StrSep()</span></span></span> finds the first occurence in the string pointed to by <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">*string_ptr</span></span></span> of any character in the string
+pointed to by <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">delim_set</span></span></span> (or the terminating NUL if there is no such character), and replaces this by NUL. The
+location of the next character after the NUL character just stored (or NULL, if the end of the string was
+reached) is stored in <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">*string_ptr</span></span></span>.
+<!--l. 1197--><p class="noindent" >An &#8220;empty&#8221; field, i.e.&#x00A0;one caused by two adjacent delimiter characters, can be detected (after <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">Util_StrSep()</span></span></span>
+returns) by the test <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">**string_ptr</span><span 
+class="cmtt-10">&#x00A0;==</span><span 
+class="cmtt-10">&#x00A0;&#8217;\0&#8217;</span></span></span>, or equivalently <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">strlen(*string_ptr)</span><span 
+class="cmtt-10">&#x00A0;==</span><span 
+class="cmtt-10">&#x00A0;0</span></span></span>.
+<!--l. 1201--><p class="noindent" >See the example section below for the typical usage of <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">Util_StrSep()</span></span></span>.
+<!--l. 1204--><p class="noindent" ><span 
+class="cmbx-10">See Also</span>
+<!--l. 1205--><p class="noindent" ><span 
+class="cmtt-10">strsep() </span>Some systems provide this in the standard C library (prototype in <span 
+class="cmtt-10">&#x003C;string.h&#x003E;</span>); <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">Util_StrSep()</span></span></span> is a
+clone of this. <br/>
+                                                                                       
+                                                                                       
+<span 
+class="cmtt-10">strtok() </span>Inferior API for splitting a string into tokens (defined by the ANSI/ISO C standard). <br/>
+<!--l. 1215--><p class="noindent" ><span 
+class="cmbx-10">Examples</span>
+<!--l. 1216--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;&#x003C;stdio.h&#x003E;
+&#x00A0;<br />#include&#x00A0;&#x003C;stdlib.h&#x003E;
+&#x00A0;<br />#include&#x00A0;"util_String.h"
+&#x00A0;<br />
+&#x00A0;<br />/*&#x00A0;prototypes&#x00A0;*/
+&#x00A0;<br />int&#x00A0;parse_string(char*&#x00A0;string,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;int&#x00A0;N_argv,&#x00A0;char*&#x00A0;argv[]);
+&#x00A0;<br />
+&#x00A0;<br />/*
+&#x00A0;<br />&#x00A0;*&#x00A0;Suppose&#x00A0;we&#x00A0;have&#x00A0;a&#x00A0;Cactus&#x00A0;parameter&#x00A0;&#x00A0;gridfn_list&#x00A0;&#x00A0;containing&#x00A0;a
+&#x00A0;<br />&#x00A0;*&#x00A0;whitespace-separated&#x00A0;list&#x00A0;of&#x00A0;grid&#x00A0;functions.&#x00A0;&#x00A0;This&#x00A0;function
+&#x00A0;<br />&#x00A0;*&#x00A0;"processes"&#x00A0;(here&#x00A0;just&#x00A0;prints&#x00A0;the&#x00A0;name&#x00A0;of)&#x00A0;each&#x00A0;grid&#x00A0;function.
+&#x00A0;<br />&#x00A0;*/
+&#x00A0;<br />void&#x00A0;process_gridfn_list(const&#x00A0;char*&#x00A0;gridfn_list)
+&#x00A0;<br />{
+&#x00A0;<br />#define&#x00A0;MAX_N_GRIDFNS&#x00A0;&#x00A0;&#x00A0;100
+&#x00A0;<br />int&#x00A0;N_gridfns;
+&#x00A0;<br />int&#x00A0;i;
+&#x00A0;<br />char*&#x00A0;copy_of_gridfn_list;
+&#x00A0;<br />char*&#x00A0;gridfn[MAX_N_GRIDFNS];
+&#x00A0;<br />
+&#x00A0;<br />copy_of_gridfn_list&#x00A0;=&#x00A0;Util_Strdup(gridfn_list);
+&#x00A0;<br />N_gridfns&#x00A0;=&#x00A0;parse_string(copy_of_gridfn_list,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;MAX_N_GRIDFNS,&#x00A0;gridfn);
+&#x00A0;<br />
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;for&#x00A0;(i&#x00A0;=&#x00A0;0&#x00A0;;&#x00A0;i&#x00A0;&#x003C;&#x00A0;N_gridfns&#x00A0;;&#x00A0;++i)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/*&#x00A0;"process"&#x00A0;(here&#x00A0;just&#x00A0;print&#x00A0;the&#x00A0;name&#x00A0;of)&#x00A0;each&#x00A0;gridfn&#x00A0;*/
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;printf("grid&#x00A0;function&#x00A0;%d&#x00A0;is&#x00A0;\"%s\"\n",&#x00A0;i,&#x00A0;gridfn[i]);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />
+&#x00A0;<br />free(copy_of_gridfn_list);
+&#x00A0;<br />}
+&#x00A0;<br />
+&#x00A0;<br />/*
+&#x00A0;<br />&#x00A0;*&#x00A0;This&#x00A0;function&#x00A0;parses&#x00A0;a&#x00A0;string&#x00A0;containing&#x00A0;whitespace-separated
+&#x00A0;<br />&#x00A0;*&#x00A0;tokens&#x00A0;into&#x00A0;a&#x00A0;main()-style&#x00A0;argument&#x00A0;vector&#x00A0;(of&#x00A0;size&#x00A0;&#x00A0;N_argv&#x00A0;).
+&#x00A0;<br />&#x00A0;*&#x00A0;This&#x00A0;function&#x00A0;returns&#x00A0;the&#x00A0;number&#x00A0;of&#x00A0;pointers&#x00A0;stored&#x00A0;into&#x00A0;&#x00A0;argv[]&#x00A0;.
+&#x00A0;<br />&#x00A0;*
+&#x00A0;<br />&#x00A0;*&#x00A0;Adjacent&#x00A0;sequences&#x00A0;of&#x00A0;whitespace&#x00A0;are&#x00A0;treated&#x00A0;the&#x00A0;same&#x00A0;as&#x00A0;single
+&#x00A0;<br />&#x00A0;*&#x00A0;whitespace&#x00A0;characters.
+&#x00A0;<br />&#x00A0;*
+&#x00A0;<br />&#x00A0;*&#x00A0;Note&#x00A0;that&#x00A0;this&#x00A0;function&#x00A0;this&#x00A0;modifies&#x00A0;its&#x00A0;input&#x00A0;string;&#x00A0;see
+&#x00A0;<br />&#x00A0;*&#x00A0;Util_Strdup()&#x00A0;&#x00A0;if&#x00A0;this&#x00A0;is&#x00A0;a&#x00A0;problem
+&#x00A0;<br />&#x00A0;*/
+&#x00A0;<br />int&#x00A0;parse_string(char*&#x00A0;string,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;int&#x00A0;N_argv,&#x00A0;char*&#x00A0;argv[])
+                                                                                       
+                                                                                       
+&#x00A0;<br />{
+&#x00A0;<br />int&#x00A0;i;
+&#x00A0;<br />
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;for&#x00A0;(i&#x00A0;=&#x00A0;0&#x00A0;;&#x00A0;i&#x00A0;&#x003C;&#x00A0;N_argv&#x00A0;;&#x00A0;)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;argv[i]&#x00A0;=&#x00A0;Util_StrSep(&amp;string,&#x00A0;"&#x00A0;\t\n\r\v");
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;if&#x00A0;(argv[i]&#x00A0;==&#x00A0;NULL)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{&#x00A0;break;&#x00A0;}&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/*&#x00A0;reached&#x00A0;end-of-string&#x00A0;*/
+&#x00A0;<br />
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;if&#x00A0;(*argv[i]&#x00A0;==&#x00A0;&#8217;\0&#8217;)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/*
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*&#x00A0;found&#x00A0;a&#x00A0;0-length&#x00A0;"token"&#x00A0;(a&#x00A0;sequence&#x00A0;of
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*&#x00A0;two&#x00A0;or&#x00A0;more&#x00A0;adjacent&#x00A0;whitespace&#x00A0;characters)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*&#x00A0;==&#x003E;&#x00A0;skip&#x00A0;this&#x00A0;"token"&#x00A0;(don&#8217;t&#x00A0;store&#x00A0;it)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*&#x00A0;==&#x003E;&#x00A0;no-op&#x00A0;here
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*/
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;else&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/*&#x00A0;token&#x00A0;has&#x00A0;length&#x00A0;&#x003E;&#x00A0;0&#x00A0;==&#x003E;&#x00A0;store&#x00A0;it&#x00A0;*/
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;++i;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}
+&#x00A0;<br />
+&#x00A0;<br />return&#x00A0;i;
+&#x00A0;<br />}
+</div>
+<!--l. 1291--><p class="nopar" > </div><br style="clear: both;"/>
+</div>
+                                                                                       
+                                                                                       
+<div class="footnotes"><!--l. 729--><p class="noindent" ><span class="footnote-mark"><a 
+href="#fn1x5-bk" id="fn1x5"><sup class="textsuperscript">1</sup></a></span><span 
+class="cmr-8">Hawaiian and Swahili are apparently the only other living languages that use solely the 26-letter &#8220;English&#8221; Latin</span>
+<span 
+class="cmr-8">alphabet.</span>
+<!--l. 758--><p class="noindent" ><span class="footnote-mark"><a 
+href="#fn2x5-bk" id="fn2x5"><sup class="textsuperscript">2</sup></a></span><span 
+class="cmr-8">For example, the (lower-case) German &#8220;ß&#8221; doesn&#8217;t have a unique upper-case equivalent: &#8220;ß&#8221; usually maps to &#8220;SS&#8221; (for</span>
+<span 
+class="cmr-8">example &#8220;groß&#8221; </span><span 
+class="cmsy-8">&#x2194; </span><span 
+class="cmr-8">&#8220;GROSS&#8221;), </span><span 
+class="cmti-8">but </span><span 
+class="cmr-8">if that would conflict with another word, then &#8220;ß&#8221; maps to &#8220;SZ&#8221; (for example</span>
+<span 
+class="cmr-8">&#8220;maße&#8221; </span><span 
+class="cmsy-8">&#x2194; </span><span 
+class="cmr-8">&#8220;MASZE&#8221; because there&#8217;s a different word &#8220;MASSE&#8221;). Or at least that&#8217;s the way it was prior to 1998. The</span>
+<span 
+class="cmr-8">1998 revisions to German orthography removed the SZ rule, so now (post-1998) the two distinct German words</span>
+<span 
+class="cmr-8">&#8220;masse&#8221; (English &#8220;mass&#8221;) and &#8220;maße&#8221; (&#8220;measures&#8221;) have identical upper-case forms &#8220;MASSE&#8221;. To further complicate</span>
+<span 
+class="cmr-8">matters, (the German-speaking parts of) Switzerland have a slightly different orthography, which never had the SZ</span>
+<span 
+class="cmr-8">rule.</span>
+<!--l. 758--><p class="indent" >  <span 
+class="cmr-8">French provides another tricky example: In France &#8220;</span><span 
+class="cmr-8">é&#8221; </span><span 
+class="cmsy-8">&#x2194; </span><span 
+class="cmr-8">&#8220;</span><span 
+class="cmr-8">É&#8221; and &#8220;</span><span 
+class="cmr-8">è&#8221; </span><span 
+class="cmsy-8">&#x2194; </span><span 
+class="cmr-8">&#8220;</span><span 
+class="cmr-8">È&#8221;, whereas in (the French-speaking parts of) Canada</span>
+<span 
+class="cmr-8">there are no accents on upper-case letters, so &#8220;</span><span 
+class="cmr-8">é&#8221; </span><span 
+class="cmsy-8">&#x2194; </span><span 
+class="cmr-8">&#8220;E&#8221; and &#8220;</span><span 
+class="cmr-8">è&#8221; </span><span 
+class="cmsy-8">&#x2194; </span><span 
+class="cmr-8">&#8220;E&#8221;.</span>                                  </div> <!--l. 1298--><div class="crosslinks"><p class="noindent">[<a 
+href="ReferenceManualch6.html" >next</a>]
+[<a 
+href="ReferenceManualch4.html" >prev</a>] [<a 
+href="ReferenceManualch4.html#tailReferenceManualch4.html" >prev-tail</a>] [<a 
+href="ReferenceManualch5.html" >front</a>] [<a 
+href="ReferenceManualpa2.html#ReferenceManualch5.html" >up</a>] </p></div>
+<!--l. 1298--><p class="noindent" ><a 
+ id="tailReferenceManualch5.html"></a>  
+</body></html> 

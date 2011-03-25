@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,fn-in --> 
+<meta name="src" content="UsersGuide.tex"> 
+<meta name="date" content="2011-03-25 09:47:00"> 
+<link rel="stylesheet" type="text/css" href="UsersGuide.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 53--><p class="noindent" >
+<!--l. 53--><p class="noindent" ><span 
+class="cmr-17x-x-143">Cactus 4.0</span><br />
+<span 
+class="cmr-17x-x-143">Users&#8217; Guide</span>
+<!--l. 53--><p class="noindent" ><img 
+src="UsersGuide0x.png" alt="PIC" class="graphics" width="85.35826pt" height="176.8938pt" ><!--tex4ht:graphics  
+name="UsersGuide0x.png" src="bincactus2.ps"  
+-->
+<!--l. 53--><p class="noindent" >Revision: 4621 <br />
+Date: 2010-06-03 15:31:49 -0500 (Thu, 03 Jun 2010) </div>
+<!--l. 75--><p class="noindent" >
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+<!--l. 20--><p class="noindent" ><span 
+class="cmbx-12">Preface</span> <a 
+ id="x1-1doc"></a>
+<!--l. 25--><p class="noindent" >This document contains a quick-start guide to installing and running a Cactus application. In subsequent
+chapters, it provides more detailed information on advanced user&#8217;s topics, as well as an introduction
+to thorn writing. Please report omissions, errors, or suggestions to any of our contact addresses
+below.
+<!--l. 34--><p class="noindent" ><span 
+class="cmbx-10">Overview of documentation</span>
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmssbx-10">Part</span><span 
+class="cmssbx-10">&#x00A0;</span><a 
+href="UsersGuidepa1.html#x2-1000A"><span 
+class="cmssbx-10">A</span><!--tex4ht:ref: part:Introduction --></a><span 
+class="cmssbx-10">: Introduction to Cactus.</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 38--><p class="noindent" >A guide through the process of obtaining and installing Cactus and running a simple
+                  example application with it.
+                  </dd><dt class="list">
+<span 
+class="cmssbx-10">Part</span><span 
+class="cmssbx-10">&#x00A0;</span><a 
+href="UsersGuidepa2.html#x7-13000B"><span 
+class="cmssbx-10">B</span><!--tex4ht:ref: part:Notes --></a><span 
+class="cmssbx-10">: Additional Notes.</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 42--><p class="noindent" >A  more  in-depth  description  of  required  hardware  and  software,  along  with
+                  configuration,  installation  and  running  options.  Describes  how  to  check  the
+                  installation with Cactus test suites.
+                  </dd><dt class="list">
+<span 
+class="cmssbx-10">Part</span><span 
+class="cmssbx-10">&#x00A0;</span><a 
+href="UsersGuidepa3.html#x12-42000C"><span 
+class="cmssbx-10">C</span><!--tex4ht:ref: part:ThornWriting --></a><span 
+class="cmssbx-10">: Thorn Writing.</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 47--><p class="noindent" >An introduction to thorn concepts and description of how to create, write and
+                  maintain  application  thorns.  Explanation  of  use  of  the  programming  interface
+                  to  take  advantage  of  parallelism  and  modularity.  This  is  followed  by  a  more
+                  advanced  discussion  of  user  supplied  infrastructure  routines  such  as  additional
+                  <span 
+class="cmti-10">output routines</span>, <span 
+class="cmti-10">drivers</span>, etc.
+                  </dd><dt class="list">
+<span 
+class="cmssbx-10">Part</span><span 
+class="cmssbx-10">&#x00A0;</span><a 
+href="UsersGuidepa4.html#x15-182000D"><span 
+class="cmssbx-10">D</span><!--tex4ht:ref: part:Appendices --></a><span 
+class="cmssbx-10">: Appendices.</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 55--><p class="noindent" >These contain a glossary, a description of the Cactus Configuration Language, the
+                  Utility routines and other odds and ends, such as how to use GNATS and TAGS.
+                  </dd></dl>
+<!--l. 62--><p class="noindent" >Related topics are discussed in separate documents including:
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmssbx-10">Reference Manual</span>  </dt><dd 
+class="list">
+                  <!--l. 66--><p class="noindent" >Contains detailed descriptions of the functions provided by the Cactus flesh API,
+                  along with other reference material.
+                  </dd></dl>
+<!--l. 85--><p class="noindent" ><span 
+class="cmbx-10">Typographical Conventions</span>
+                                                                                       
+                                                                                       
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">Typewriter</span>        </dt><dd 
+class="list">
+                  <!--l. 89--><p class="noindent" >Is currently used for everything you type, for program names, and code extracts.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">&#x003C; ... &#x003E;</span>           </dt><dd 
+class="list">
+                  <!--l. 91--><p class="noindent" >Indicates a compulsory argument.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">[ ... ]</span>           </dt><dd 
+class="list">
+                  <!--l. 92--><p class="noindent" >Indicates an optional argument.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">|</span>                 </dt><dd 
+class="list">
+                  <!--l. 93--><p class="noindent" >Indicates an exclusive or.
+                  </dd></dl>
+<!--l. 99--><p class="noindent" ><span 
+class="cmbx-10">How to Contact Us</span>
+<!--l. 103--><p class="noindent" >Please let us know of any errors or omissions in this guide, as well as suggestions for future editions.
+These can be reported via our bug tracking system at <a 
+href="http://www.cactuscode.org" class="url" ><span 
+class="cmtt-10">http://www.cactuscode.org</span></a>, or via email to
+<span 
+class="cmtt-10">cactusmaint@cactuscode.org</span>. Alternatively, you can write to us at
+<!--l. 109--><p class="noindent" >The Cactus Team<br 
+class="newline" />Center for Computation &amp; Technology<br 
+class="newline" />216 Johnston Hall<br 
+class="newline" />Louisiana State University<br 
+class="newline" />Baton Rouge, LA 70803<br 
+class="newline" />USA
+<!--l. 119--><p class="noindent" ><span 
+class="cmbx-10">Acknowledgements</span>
+<!--l. 123--><p class="noindent" >Hearty thanks to all those who have helped with documentation for the Cactus Code. Special thanks to those
+who struggled with the earliest sparse versions of this guide and sent in mistakes and suggestions, in particular
+John Baker, Carsten Gundlach, Ginny Hudak-David, Sai Iyer, Paul Lamping, Nancy Tran and Ed
+Seidel.
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+<!--l. 11--><p class="noindent" >
+                                                                                       
+                                                                                       
+<div class="tableofcontents">
+<span class="partToc" >A&#x00A0;&#x00A0;<a 
+href="UsersGuidepa1.html#x2-1000A" id="QQ2-2-1">Introduction</a></span>
+<br /><span class="chapterToc" >A1 <a 
+href="UsersGuidech1.html#x3-2000A1" id="QQ2-3-2">Getting Started</a></span>
+<br />&#x00A0;<span class="sectionToc" >A1.1 <a 
+href="UsersGuidech1.html#x3-3000A1.1" id="QQ2-3-3">Obtaining Cactus</a></span>
+<br />&#x00A0;<span class="sectionToc" >A1.2 <a 
+href="UsersGuidech1.html#x3-5000A1.2" id="QQ2-3-5">Compiling a Cactus application</a></span>
+<br />&#x00A0;<span class="sectionToc" >A1.3 <a 
+href="UsersGuidech1.html#x3-7000A1.3" id="QQ2-3-7">Running a Cactus application</a></span>
+<br /><span class="chapterToc" >A2 <a 
+href="UsersGuidech2.html#x4-8000A2" id="QQ2-4-8">Getting and looking at output</a></span>
+<br />&#x00A0;<span class="sectionToc" >A2.1 <a 
+href="UsersGuidech2.html#x4-9000A2.1" id="QQ2-4-9">Screen output</a></span>
+<br />&#x00A0;<span class="sectionToc" >A2.2 <a 
+href="UsersGuidech2.html#x4-10000A2.2" id="QQ2-4-10">File output</a></span>
+<br /><span class="chapterToc" >A3 <a 
+href="UsersGuidech3.html#x5-11000A3" id="QQ2-5-11">Checkpointing/Recovery</a></span>
+<br /><span class="chapterToc" >A4 <a 
+href="UsersGuidech4.html#x6-12000A4" id="QQ2-6-12">Reporting bugs</a></span>
+<br /><span class="partToc" >B&#x00A0;&#x00A0;<a 
+href="UsersGuidepa2.html#x7-13000B" id="QQ2-7-13">Additional notes</a></span>
+<br /><span class="chapterToc" >B1 <a 
+href="UsersGuidech5.html#x8-14000B1" id="QQ2-8-14">Installation</a></span>
+<br />&#x00A0;<span class="sectionToc" >B1.1 <a 
+href="UsersGuidech5.html#x8-15000B1.1" id="QQ2-8-15">Required Software</a></span>
+<br />&#x00A0;<span class="sectionToc" >B1.2 <a 
+href="UsersGuidech5.html#x8-16000B1.2" id="QQ2-8-16">Supported Architectures</a></span>
+<br /><span class="chapterToc" >B2 <a 
+href="UsersGuidech6.html#x9-18000B2" id="QQ2-9-18">Compilation</a></span>
+<br />&#x00A0;<span class="sectionToc" >B2.1 <a 
+href="UsersGuidech6.html#x9-19000B2.1" id="QQ2-9-19">Configuration Options</a></span>
+<br />&#x00A0;<span class="sectionToc" >B2.2 <a 
+href="UsersGuidech6.html#x9-21000B2.2" id="QQ2-9-21">Compiling with Extra Packages</a></span>
+<br />&#x00A0;<span class="sectionToc" >B2.3 <a 
+href="UsersGuidech6.html#x9-27000B2.3" id="QQ2-9-27">File Layout</a></span>
+<br />&#x00A0;<span class="sectionToc" >B2.4 <a 
+href="UsersGuidech6.html#x9-28000B2.4" id="QQ2-9-28">Building and Administering a Configuration</a></span>
+<br />&#x00A0;<span class="sectionToc" >B2.5 <a 
+href="UsersGuidech6.html#x9-33000B2.5" id="QQ2-9-33">Other gmake Targets</a></span>
+<br />&#x00A0;<span class="sectionToc" >B2.6 <a 
+href="UsersGuidech6.html#x9-34000B2.6" id="QQ2-9-34">Testing</a></span>
+<br /><span class="chapterToc" >B3 <a 
+href="UsersGuidech7.html#x10-35000B3" id="QQ2-10-35">Runtime options</a></span>
+<br />&#x00A0;<span class="sectionToc" >B3.1 <a 
+href="UsersGuidech7.html#x10-36000B3.1" id="QQ2-10-36">Command-Line Options</a></span>
+<br />&#x00A0;<span class="sectionToc" >B3.2 <a 
+href="UsersGuidech7.html#x10-37000B3.2" id="QQ2-10-38">Parameter File Syntax</a></span>
+<br />&#x00A0;<span class="sectionToc" >B3.3 <a 
+href="UsersGuidech7.html#x10-38000B3.3" id="QQ2-10-39">Thorn Documentation</a></span>
+<br /><span class="chapterToc" >B4 <a 
+href="UsersGuidech8.html#x11-39000B4" id="QQ2-11-40">Getting and Looking at Output</a></span>
+<br />&#x00A0;<span class="sectionToc" >B4.1 <a 
+href="UsersGuidech8.html#x11-40000B4.1" id="QQ2-11-41">Screen Output</a></span>
+                                                                                       
+                                                                                       
+<br />&#x00A0;<span class="sectionToc" >B4.2 <a 
+href="UsersGuidech8.html#x11-41000B4.2" id="QQ2-11-42">Output</a></span>
+<br /><span class="partToc" >C&#x00A0;&#x00A0;<a 
+href="UsersGuidepa3.html#x12-42000C" id="QQ2-12-43">Thorn Writing</a></span>
+<br /><span class="chapterToc" >C1 <a 
+href="UsersGuidech9.html#x13-43000C1" id="QQ2-13-44">Application thorns</a></span>
+<br />&#x00A0;<span class="sectionToc" >C1.1 <a 
+href="UsersGuidech9.html#x13-44000C1.1" id="QQ2-13-45">Thorn Concepts</a></span>
+<br />&#x00A0;<span class="sectionToc" >C1.2 <a 
+href="UsersGuidech9.html#x13-48000C1.2" id="QQ2-13-49">Anatomy of a Thorn</a></span>
+<br />&#x00A0;<span class="sectionToc" >C1.3 <a 
+href="UsersGuidech9.html#x13-63000C1.3" id="QQ2-13-64">Cactus Variables</a></span>
+<br />&#x00A0;<span class="sectionToc" >C1.4 <a 
+href="UsersGuidech9.html#x13-72000C1.4" id="QQ2-13-76">Cactus Parameters</a></span>
+<br />&#x00A0;<span class="sectionToc" >C1.5 <a 
+href="UsersGuidech9.html#x13-81000C1.5" id="QQ2-13-85">Scheduling</a></span>
+<br />&#x00A0;<span class="sectionToc" >C1.6 <a 
+href="UsersGuidech9.html#x13-87000C1.6" id="QQ2-13-91">Writing a Thorn</a></span>
+<br />&#x00A0;<span class="sectionToc" >C1.7 <a 
+href="UsersGuidech9.html#x13-110000C1.7" id="QQ2-13-116">Cactus Application Interfaces</a></span>
+<br />&#x00A0;<span class="sectionToc" >C1.8 <a 
+href="UsersGuidech9.html#x13-117000C1.8" id="QQ2-13-123">Completing a Thorn</a></span>
+<br />&#x00A0;<span class="sectionToc" >C1.9 <a 
+href="UsersGuidech9.html#x13-126000C1.9" id="QQ2-13-132">Advanced Thorn Writing</a></span>
+<br />&#x00A0;<span class="sectionToc" >C1.10 <a 
+href="UsersGuidech9.html#x13-150000C1.10" id="QQ2-13-156">Telling the Make system What to Do</a></span>
+<br /><span class="chapterToc" >C2 <a 
+href="UsersGuidech10.html#x14-155000C2" id="QQ2-14-161">Infrastructure Thorns</a></span>
+<br />&#x00A0;<span class="sectionToc" >C2.1 <a 
+href="UsersGuidech10.html#x14-156000C2.1" id="QQ2-14-162">Concepts and Terminology</a></span>
+<br />&#x00A0;<span class="sectionToc" >C2.2 <a 
+href="UsersGuidech10.html#x14-162000C2.2" id="QQ2-14-168">GH Extensions</a></span>
+<br />&#x00A0;<span class="sectionToc" >C2.3 <a 
+href="UsersGuidech10.html#x14-163000C2.3" id="QQ2-14-169">Overloadable and Registerable Functions in Main</a></span>
+<br />&#x00A0;<span class="sectionToc" >C2.4 <a 
+href="UsersGuidech10.html#x14-164000C2.4" id="QQ2-14-170">Overloadable and Registerable Functions in Comm</a></span>
+<br />&#x00A0;<span class="sectionToc" >C2.5 <a 
+href="UsersGuidech10.html#x14-165000C2.5" id="QQ2-14-171">Overloadable and Registerable Functions in I/O</a></span>
+<br />&#x00A0;<span class="sectionToc" >C2.6 <a 
+href="UsersGuidech10.html#x14-166000C2.6" id="QQ2-14-172">Drivers</a></span>
+<br />&#x00A0;<span class="sectionToc" >C2.7 <a 
+href="UsersGuidech10.html#x14-173000C2.7" id="QQ2-14-179">I/O Methods</a></span>
+<br />&#x00A0;<span class="sectionToc" >C2.8 <a 
+href="UsersGuidech10.html#x14-178000C2.8" id="QQ2-14-184">Checkpointing/Recovery Methods</a></span>
+<br />&#x00A0;<span class="sectionToc" >C2.9 <a 
+href="UsersGuidech10.html#x14-181000C2.9" id="QQ2-14-187">Clocks for Timing</a></span>
+<br /><span class="partToc" >D&#x00A0;&#x00A0;<a 
+href="UsersGuidepa4.html#x15-182000D" id="QQ2-15-188">Appendices</a></span>
+<br /><span class="chapterToc" >D1 <a 
+href="UsersGuidech11.html#x16-183000D1" id="QQ2-16-189">Glossary</a></span>
+<br /><span class="chapterToc" >D2 <a 
+href="UsersGuidech12.html#x17-184000D2" id="QQ2-17-190">Configuration File Syntax</a></span>
+<br />&#x00A0;<span class="sectionToc" >D2.1 <a 
+href="UsersGuidech12.html#x17-185000D2.1" id="QQ2-17-191">General Concepts</a></span>
+<br />&#x00A0;<span class="sectionToc" >D2.2 <a 
+href="UsersGuidech12.html#x17-186000D2.2" id="QQ2-17-192">interface.ccl</a></span>
+                                                                                       
+                                                                                       
+<br />&#x00A0;<span class="sectionToc" >D2.3 <a 
+href="UsersGuidech12.html#x17-191000D2.3" id="QQ2-17-197">param.ccl</a></span>
+<br />&#x00A0;<span class="sectionToc" >D2.4 <a 
+href="UsersGuidech12.html#x17-194000D2.4" id="QQ2-17-200">schedule.ccl</a></span>
+<br />&#x00A0;<span class="sectionToc" >D2.5 <a 
+href="UsersGuidech12.html#x17-199000D2.5" id="QQ2-17-205">configuration.ccl</a></span>
+<br /><span class="chapterToc" >D3 <a 
+href="UsersGuidech13.html#x18-201000D3" id="QQ2-18-207">Utility Routines</a></span>
+<br />&#x00A0;<span class="sectionToc" >D3.1 <a 
+href="UsersGuidech13.html#x18-202000D3.1" id="QQ2-18-208">Introduction</a></span>
+<br />&#x00A0;<span class="sectionToc" >D3.2 <a 
+href="UsersGuidech13.html#x18-203000D3.2" id="QQ2-18-209">Key/Value Tables</a></span>
+<br /><span class="chapterToc" >D4 <a 
+href="UsersGuidech14.html#x19-213000D4" id="QQ2-19-219">Schedule Bins</a></span>
+<br /><span class="chapterToc" >D5 <a 
+href="UsersGuidech15.html#x20-214000D5" id="QQ2-20-220">Flesh Parameters</a></span>
+<br />&#x00A0;<span class="sectionToc" >D5.1 <a 
+href="UsersGuidech15.html#x20-215000D5.1" id="QQ2-20-221">Private Parameters</a></span>
+<br />&#x00A0;<span class="sectionToc" >D5.2 <a 
+href="UsersGuidech15.html#x20-216000D5.2" id="QQ2-20-222">Restricted Parameters</a></span>
+<br /><span class="chapterToc" >D6 <a 
+href="UsersGuidech16.html#x21-217000D6" id="QQ2-21-223">Using GNATS</a></span>
+<br /><span class="chapterToc" >D7 <a 
+href="UsersGuidech17.html#x22-218000D7" id="QQ2-22-224">Using CVS</a></span>
+<br />&#x00A0;<span class="sectionToc" >D7.1 <a 
+href="UsersGuidech17.html#x22-219000D7.1" id="QQ2-22-225">Essential CVS Commands</a></span>
+<br />&#x00A0;<span class="sectionToc" >D7.2 <a 
+href="UsersGuidech17.html#x22-220000D7.2" id="QQ2-22-226">CVS Options</a></span>
+<br />&#x00A0;<span class="sectionToc" >D7.3 <a 
+href="UsersGuidech17.html#x22-221000D7.3" id="QQ2-22-227">CVS Examples</a></span>
+<br />&#x00A0;<span class="sectionToc" >D7.4 <a 
+href="UsersGuidech17.html#x22-222000D7.4" id="QQ2-22-228">Checking Out Flesh and Thorns with CVS</a></span>
+<br /><span class="chapterToc" >D8 <a 
+href="UsersGuidech18.html#x23-223000D8" id="QQ2-23-229">Using Tags</a></span>
+<br />&#x00A0;<span class="sectionToc" >D8.1 <a 
+href="UsersGuidech18.html#x23-224000D8.1" id="QQ2-23-230">Tags with Emacs</a></span>
+<br />&#x00A0;<span class="sectionToc" >D8.2 <a 
+href="UsersGuidech18.html#x23-225000D8.2" id="QQ2-23-231">Tags with <span 
+class="cmtt-10">vi</span></a></span>
+<br /><span class="chapterToc" >D9 <a 
+href="UsersGuidech19.html#x24-226000D9" id="QQ2-24-232">ThornLists</a></span>
+</div>
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+ 
+</body></html> 
+
+                                                                                       
+
+

@@ -1,0 +1,540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>C7 Using CVS</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,fn-in --> 
+<meta name="src" content="ReferenceManual.tex"> 
+<meta name="date" content="2011-03-25 09:47:00"> 
+<link rel="stylesheet" type="text/css" href="ReferenceManual.css"> 
+</head><body 
+>
+<!--l. 1962--><div class="crosslinks"><p class="noindent">[<a 
+href="ReferenceManualch14.html" >next</a>] [<a 
+href="ReferenceManualch12.html" >prev</a>] [<a 
+href="ReferenceManualch12.html#tailReferenceManualch12.html" >prev-tail</a>] [<a 
+href="#tailReferenceManualch13.html">tail</a>] [<a 
+href="ReferenceManualpa3.html#ReferenceManualch13.html" >up</a>] </p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;C7</span><br /><a 
+ id="x17-292000C7"></a>Using CVS</h2>
+<!--l. 1964--><p class="noindent" >CVS is a version control system, which allows you to keep old versions of files (usually source code), log
+of when, and why changes occurred, and who made them, etc. Unlike the simpler systems, CVS
+does not just operate on one file at a time or one directory at a time, but operates on hierarchical
+collections of directories consisting of version controlled files. CVS helps to manage releases and to
+control the concurrent editing of source files among multiple authors. CVS can be obtained from
+<a 
+href="http://www.cyclic.com" class="url" ><span 
+class="cmtt-10">http://www.cyclic.com</span></a>.
+<!--l. 1975--><p class="noindent" >A CVS <span 
+class="cmti-10">repository </span>located on a <span 
+class="cmti-10">server </span>may consist of an arbitrary number of <span 
+class="cmti-10">modules</span>, which can be checked out
+(that is downloaded) independently. The Cactus flesh and the Cactus arrangements are organized as modules,
+their CVS <span 
+class="cmti-10">server </span>is <span 
+class="cmtt-10">cvs.cactuscode.org</span>.
+<h3 class="sectionHead"><span class="titlemark">C7.1   </span> <a 
+ id="x17-293000C7.1"></a>Essential CVS Commands</h3>
+<!--l. 1982--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmbx-10">cvs login</span>          </dt><dd 
+class="list">
+                  <!--l. 1983--><p class="noindent" >Logs into the repository. You will be prompted for a <span 
+class="cmti-10">password</span>. This CVS command
+                  leaves a file <span 
+class="cmtt-10">.cvspass </span>in your home directory. There is no need to login every time
+                  you issue a CVS command, as long as this file exists. For a Cactus checkout, you
+                  have to log into the CVS server, using the CVS option <span 
+class="cmtt-10">-d </span>to specify <span 
+class="cmtt-10">CVSROOT</span>:<br 
+class="newline" /><span 
+class="cmtt-10">cvs -d :pserver:cvs</span><span 
+class="cmtt-10">_anon@cvs.cactuscode.org:/cactus login</span>
+                  <!--l. 1991--><p class="noindent" ><span 
+class="cmti-10">Note</span>: that there is no &#8220;logout&#8221; command: if you log in with administrative rights
+                  from an arbitrary account, you should be aware that the password file enables
+                  subsequent administrative logins from that account. <span 
+class="cmti-10">Delete the file if necessary</span>.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">cvs checkout </span><span 
+class="cmssi-10">modules </span><span 
+class="cmss-10">&#x2026;</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1996--><p class="noindent" >This command creates your private copy of the source for <span 
+class="cmti-10">modules</span>. You can work
+                  with this copy without interfering with others&#8217; work. At least one subdirectory
+                  level is always created: it does not write all files into your current directory but
+                  creates a directory. For Cactus, you need to either include the <span 
+class="cmtt-10">-d </span>options to specify
+                  the <span 
+class="cmtt-10">CVSROOT </span>directory and the CVS server, or specify them with an environment
+                  variable (see below). Once you have checked out the repository there is no need to
+                  include the <span 
+class="cmtt-10">-d </span>option and its rather lengthy argument: the necessary information
+                  is contained in the local <span 
+class="cmtt-10">CVS/ </span>directories.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">cvs update</span>        </dt><dd 
+class="list">
+                  <!--l. 2009--><p class="noindent" >Execute this command from <span 
+class="cmti-10">within </span>your private source directory when you wish to
+                  update your copies of source files from changes that other developers have made
+                  to the source in the repository. Merges are performed automatically when possible,
+                  a warning is issued if manual resolution is required for conflicting changes. If your
+                                                                                       
+                                                                                       
+                  local copy is several versions behind the actual repository copy, CVS will <span 
+class="cmti-10">refetch</span>
+                  the whole file instead of applying multiple patches.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">cvs add </span><span 
+class="cmtt-10">file</span>      </dt><dd 
+class="list">
+                  <!--l. 2020--><p class="noindent" >Use this command to enroll new files in CVS records of your working directory. The
+                  files will be added to the repository the next time you run &#8216;<span 
+class="cmtt-10">cvs commit</span>&#8217;.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">cvs commit </span><span 
+class="cmtt-10">file</span>   </dt><dd 
+class="list">
+                  <!--l. 2026--><p class="noindent" >Use this command to add your local changes to the source to the repository and,
+                  thereby, making it publically available to checkouts and updates by other users.
+                  You cannot commit a newly created file unless you have <span 
+class="cmti-10">added </span>it.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">cvs diff </span><span 
+class="cmtt-10">file</span>       </dt><dd 
+class="list">
+                  <!--l. 2032--><p class="noindent" >Show differences between a file in your working directory and a file in the source
+                  repository, or between two revisions in source repository. (Does not change either
+                  repository or working directory.) For example, to see the difference between versions
+                  <span 
+class="cmtt-10">1.8 </span>and <span 
+class="cmtt-10">1.9 </span>of a file <span 
+class="cmtt-10">foobar.c</span>:
+                                                                                       
+                                                                                       
+                  <div class="verbatim">
+                  cvs&#x00A0;diff&#x00A0;-r&#x00A0;1.8&#x00A0;1.9&#x00A0;foobar.c
+</div>
+                  <!--l. 2042--><p class="nopar" >
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">cvs remove </span><span 
+class="cmtt-10">file</span>   </dt><dd 
+class="list">
+                  <!--l. 2045--><p class="noindent" >Remove files from the source repository, pending a <span 
+class="cmtt-10">cvs commit </span>on the same files.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">cvs status </span><span 
+class="cmss-10">[file]</span>     </dt><dd 
+class="list">
+                  <!--l. 2049--><p class="noindent" >This  command  returns  the  current  status  of  your  local  copy  relative  to  the
+                  repository: e.g.&#x00A0;it indicates local modifications and possible updates.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">cvs import </span><span 
+class="cmtt-10">repository tag1 tag2</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 2054--><p class="noindent" >Import adds an entire source distribution (starting from the directory you issue
+                  the  command  in)  to  the  repository  directory.  Use  this  command  to  add  new
+                  arrangements to the Cactus 4.0 repository. The <span 
+class="cmtt-10">repository </span>argument is a directory
+                  name (or a path to a directory) and the CVS root directory for repositories; to
+                  obtain this directory on the CVS server, send a request to <span 
+class="cmtt-10">cactus@cactuscode.org</span>.
+                  <span 
+class="cmtt-10">tag1 </span>and <span 
+class="cmtt-10">tag2 </span>are two tags (vendor and release tags) that have to be supplied. For
+                  example, to add <span 
+class="cmtt-10">MyThorn </span>to the <span 
+class="cmtt-10">MyArrangement </span>arrangement, which may or may
+                  not already exist on the CVS repository
+                                                                                       
+                                                                                       
+                  <div class="verbatim">
+                  cvs&#x00A0;-d&#x00A0;:pserver:&#x003C;name&#x003E;@cvs.cactuscode.org:/cactus&#x00A0;import&#x00A0;MyArrangement/MyThorn
+                  &#x00A0;<br />start&#x00A0;v1
+</div>
+                  <!--l. 2070--><p class="nopar" >
+                  <!--l. 2073--><p class="noindent" >After you import a thorn, you should check it out from the repository straight away,
+                  and only edit this version.
+                  </dd></dl>
+<!--l. 2078--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">C7.2   </span> <a 
+ id="x17-294000C7.2"></a>CVS Options</h3>
+<!--l. 2079--><p class="noindent" >The CVS command line can include the following:
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmbx-10">cvs options</span>       </dt><dd 
+class="list">
+                  <!--l. 2081--><p class="noindent" >which apply to the overall CVS program
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">a cvs command</span>   </dt><dd 
+class="list">
+                  <!--l. 2082--><p class="noindent" >which defines a particular task carried out by CVS
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">command options</span> </dt><dd 
+class="list">
+                  <!--l. 2084--><p class="noindent" >to specify certain working modes for the CVS command.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">command arguments</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 2086--><p class="noindent" >to specify which file to act on.</dd></dl>
+<!--l. 2089--><p class="noindent" >The options must be put <span 
+class="cmti-10">relative </span>to the CVS <span 
+class="cmti-10">command </span>as the same option name can mean different things: CVS
+<span 
+class="cmti-10">options </span>go to the <span 
+class="cmti-10">left </span>of the CVS command, <span 
+class="cmti-10">command options </span>go to the <span 
+class="cmti-10">right </span>of the CVS command. Here is a
+list of essential CVS options:
+<!--l. 2094--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmbx-10">-d </span><span 
+class="cmssi-10">cvs</span><span 
+class="cmssi-10">_root</span><span 
+class="cmssi-10">_directory</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 2096--><p class="noindent" >Use  <span 
+class="cmti-10">cvs</span><span 
+class="cmti-10">_root</span><span 
+class="cmti-10">_directory  </span>as  the  root  directory  pathname  of  the  master  source
+                  repository. Overrides the setting of the <span 
+class="cmtt-10">CVSROOT </span>environment variable. This value
+                  should be specified as an absolute pathname. In the Cactus checkout procedure,
+                  you specify the Cactus CVS server:<br 
+class="newline" /><span 
+class="cmtt-10">-d :pserver:cvs</span><span 
+class="cmtt-10">_anon@cvs.cactuscode.org:/cactus/</span>
+                                                                                       
+                                                                                       
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">-z </span><span 
+class="cmssi-10">compression-level</span>  </dt><dd 
+class="list">
+                  <!--l. 2104--><p class="noindent" >When  transferring  files  across  the  network  use  <span 
+class="cmtt-10">gzip </span>with  compression  level
+                  <span 
+class="cmti-10">compression-level </span>to compress and decompress data as it is transferred. Requires
+                  the presence of the GNU <span 
+class="cmtt-10">gzip </span>program in the current search path at both ends of
+                  the link.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">-n</span>                </dt><dd 
+class="list">
+                  <!--l. 2111--><p class="noindent" >Do not change any file. Attempt to execute the CVS <span 
+class="cmti-10">command </span>but only to issue
+                  reports. Does not remove, update, etc., any files. Very effective for testing.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">-v</span>                </dt><dd 
+class="list">
+                  <!--l. 2116--><p class="noindent" >Displays version information of the installed CVS.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">-H </span><span 
+class="cmssi-10">cvs-command</span>    </dt><dd 
+class="list">
+                  <!--l. 2119--><p class="noindent" >Displays   usage   information   about   the   specified   CVS   command.   Without
+                  <span 
+class="cmti-10">cvs-command</span>, a list of all available commands is returned.</dd></dl>
+<!--l. 2124--><p class="noindent" >Here is a list of essential command options with the commands they are used with. They go after the CVS
+command. For a more complete list of all options, please refer to the manual page.
+<!--l. 2128--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmbx-10">-P</span>                </dt><dd 
+class="list">
+                  <!--l. 2130--><p class="noindent" >Prune (remove) directories that are empty after being updated, on <span 
+class="cmtt-10">checkout</span>, or
+                  <span 
+class="cmtt-10">update</span>. Normally, an empty directory (one that is void of revision controlled files)
+                  is left alone. Specifying <span 
+class="cmtt-10">-P </span>will cause these directories to be silently removed from
+                  the sources you have checked out. This does not remove the directory from the
+                  repository, only from your checked out copy.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">-m </span><span 
+class="cmssi-10">&#8221;Text&#8221;</span>         </dt><dd 
+class="list">
+                  <!--l. 2138--><p class="noindent" >Specify a logging message explaining changes, etc., on <span 
+class="cmtt-10">commit</span>, <span 
+class="cmtt-10">import</span>. If you do
+                  not specify a message, your default editor is invoked to allow you to enter one.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">-d</span>                </dt><dd 
+class="list">
+                  <!--l. 2143--><p class="noindent" >Use this option with the <span 
+class="cmtt-10">update </span>command to create any directories if they are
+                  missing from your local copy. This is normally the case if another user has added
+                  files or directories to the repository. By default, the <span 
+class="cmtt-10">update </span>command only acts
+                  on files in your local copy. Note that omitting this option is a frequent cause of
+                  files missing during compilation. (You can change this default behavior of CVS by
+                  putting a <span 
+class="cmtt-10">.cvsrc </span>in your home directory with the contents &#8220;<span 
+class="cmtt-10">update -d</span>&#8221;.)
+                  </dd></dl>
+                                                                                       
+                                                                                       
+<!--l. 2155--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">C7.3   </span> <a 
+ id="x17-295000C7.3"></a>CVS Examples</h3>
+<!--l. 2156--><p class="noindent" >We list some sample CVS commands to treat the most typical Cactus 4.0 CVS situations.
+     <dl class="description"><dt class="description">
+ </dt><dd 
+class="description"><span 
+class="cmbx-10">Logging into the server</span><br 
+class="newline" /><span 
+class="cmtt-10">cvs -d :pserver:cvs</span><span 
+class="cmtt-10">_anon@cvs.cactuscode.org:/cactus login </span><br 
+class="newline" />You will be asked for the password for user <span 
+class="cmti-10">cvs</span><span 
+class="cmti-10">_anon</span>, which is <span 
+class="cmtt-10">anon</span>.
+     </dd><dt class="description">
+ </dt><dd 
+class="description"><span 
+class="cmbx-10">Checking out the code</span><br 
+class="newline" /><span 
+class="cmtt-10">cvs -d :pserver:cvs</span><span 
+class="cmtt-10">_anon@cvs.cactuscode.org:/cactus checkout Cactus</span><br 
+class="newline" />check out a CVS module named &#8220;Cactus&#8221;, in this case it checks out the Cactus Computational
+     Toolkit. A directory <span 
+class="cmtt-10">./Cactus </span>is created if it doesn&#8217;t already exist. If you perform a checkout on
+     an already existing and locally modified copy of the module, CVS will try to merge the files with
+     your local copy.
+     </dd><dt class="description">
+ </dt><dd 
+class="description"><span 
+class="cmbx-10">Updating a file or directory</span><br 
+class="newline" />Assuming that you have a file <span 
+class="cmtt-10">./foobar </span>in your checked out copy, you may perform a <br 
+class="newline" /><span 
+class="cmtt-10">cvs status ./foobar</span><br 
+class="newline" />to inform yourself about the necessary updates, etc. To update the file issue <br 
+class="newline" /><span 
+class="cmtt-10">cvs update ./foobar</span><br 
+class="newline" />If that was file was locally modified, CVS will try to merge the changes. Manual merging might be
+     necessary and will be indicated by a CVS warning.
+     </dd><dt class="description">
+ </dt><dd 
+class="description"><span 
+class="cmbx-10">Updating a directory</span><br 
+class="newline" />To recursively update the current directory and all subdirectories, type<br 
+class="newline" /><span 
+class="cmtt-10">cvs update .</span><br 
+class="newline" />To update a directory <span 
+class="cmtt-10">./mysources</span>, type<br 
+class="newline" /><span 
+class="cmtt-10">cvs update ./path/to/mysources</span>
+     </dd><dt class="description">
+ </dt><dd 
+class="description"><span 
+class="cmbx-10">Committing a changed file</span><br 
+class="newline" />To commit changes you have applied to your local copy, your file must be in sync with the repository:
+     your changes must be done to the latest version, otherwise CVS will instruct you to perform an
+     <span 
+class="cmtt-10">update </span>first. To commit changes made to a file <span 
+class="cmtt-10">./foobar</span>, type<br 
+class="newline" /><span 
+class="cmtt-10">cvs commit -m "Reason for the change" ./foobar</span><br 
+class="newline" />You may specify several files to commit.
+     </dd><dt class="description">
+ </dt><dd 
+class="description"><span 
+class="cmbx-10">Adding and committing a new file</span><br 
+class="newline" />Adding a new file to the repository is a two fold procedure you first schedule the file for addition,
+     then you commit it:<br 
+class="newline" /><span 
+class="cmtt-10">cvs add ./newfoo</span><br 
+class="newline" /><span 
+class="cmtt-10">cvs commit -m "new few message" ./newfoo</span>
+     </dd><dt class="description">
+ </dt><dd 
+class="description"><span 
+class="cmbx-10">Creating a new thorn</span><br 
+class="newline" />
+                                                                                       
+                                                                                       
+     <!--l. 2206--><p class="noindent" >To add a new <span 
+class="cmti-10">module  </span>(e.g.&#x00A0;an arrangement) to a Cactus repository, we first have to create a
+     directory for you with the right permissions. Please contact <span 
+class="cmtt-10">cactus@cactuscode.org </span>providing the
+     name of the requested module, and who should be able to commit changes to the module.
+     <!--l. 2211--><p class="noindent" >To add the new module, change directory so that you are in the first directory that you want to
+     commit to the repository. (For example,&#x00A0;if you want to commit a new arrangement called <span 
+class="cmtt-10">MyArrange</span>
+     then change directory to <span 
+class="cmtt-10">MyArrange</span>). Then type<br 
+class="newline" /><span 
+class="cmtt-10">cvs -d :pserver:</span><span 
+class="cmti-10">your</span><span 
+class="cmti-10">_login</span><span 
+class="cmtt-10">@cvs.cactuscode.org:&#x003C;repository name&#x003E;  </span>import  <span 
+class="cmti-10">module</span><span 
+class="cmti-10">_name</span>
+     <span 
+class="cmtt-10">start V1</span><br 
+class="newline" />(where  <span 
+class="cmtt-10">start </span>and  <span 
+class="cmtt-10">V1 </span>are  the  vendor  and  release  tags,  which  you  could  change  to  something
+     different).
+     <!--l. 2219--><p class="noindent" >To add a new <span 
+class="cmti-10">directory </span><span 
+class="cmtt-10">&#x003C;new dir&#x003E; </span>to an existing module (that you have write permissions for),
+     either add the directory using<br 
+class="newline" /><span 
+class="cmtt-10">cvs add &#x003C;new dir&#x003E;</span><br 
+class="newline" />and then recursing down adding all the new files and directories contained inside, or import the
+     directory by changing directory to sit inside it, and then using<br 
+class="newline" /><span 
+class="cmtt-10">cvs -d :pserver:</span><span 
+class="cmti-10">your</span><span 
+class="cmti-10">_login</span><span 
+class="cmtt-10">@cvs.cactuscode.org:&#x003C;repository</span><span 
+class="cmtt-10">_name&#x003E;   </span>import    <span 
+class="cmtt-10">&#x003C;relative</span>
+     <span 
+class="cmtt-10">name&#x003E; start V1</span><br 
+class="newline" />Where <span 
+class="cmtt-10">&#x003C;relative name&#x003E; </span>means the position of the directory within the module. (For example, if
+     you have a module called <span 
+class="cmti-10">AMod </span>which contains a directory <span 
+class="cmti-10">BMod</span>, and you want to add <span 
+class="cmti-10">CMod</span>
+     inside <span 
+class="cmti-10">BMod</span>, then change directory to <span 
+class="cmti-10">BMod</span>, and use <span 
+class="cmti-10">AMod/BMod </span>for the <span 
+class="cmti-10">relative name</span>).
+     </dd></dl>
+<!--l. 2231--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">C7.4   </span> <a 
+ id="x17-296000C7.4"></a>Checking Out Flesh and Thorns with CVS</h3>
+<!--l. 2233--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmbx-10">Login</span>             </dt><dd 
+class="list">
+                  <!--l. 2234--><p class="noindent" >Prior to any CVS operation, you need to log into the Cactus repository. For an
+                  anonymous checkout, type:<br 
+class="newline" /><span 
+class="cmtt-10">cvs -d :pserver:cvs</span><span 
+class="cmtt-10">_anon@cvs.cactuscode.org:/cactus login </span><br 
+class="newline" />You will be prompted for a password, which is <span 
+class="cmtt-10">anon</span>.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">Checkout</span>         </dt><dd 
+class="list">
+                  <!--l. 2240--><p class="noindent" >To obtain a fresh copy of Cactus, move to a directory which does not contain a
+                  previously checked out version, and type <span class="obeylines-h">
+                  <span 
+class="cmtt-10">cvs -d :pserver:cvs</span><span 
+class="cmtt-10">_anon@cvs.cactuscode.org:/cactus checkout Cactus</span></span>
+                  <!--l. 2245--><p class="noindent" >The CVS checkout procedure will create a directory called <span 
+class="cmtt-10">Cactus </span>and install the
+                  code inside this directory. From now, on we will reference all directory names relative
+                  to <span 
+class="cmtt-10">Cactus</span>.
+                  <!--l. 2249--><p class="noindent" >If you want to compile Cactus with thorns, you now need to checkout separately
+                  the required arrangement (or <span 
+class="cmti-10">arrangements</span>) into the <span 
+class="cmtt-10">arrangements </span>directory. To
+                  see the available Cactus arrangements and thorns type <span class="obeylines-h">
+                                                                                       
+                                                                                       
+                  <span 
+class="cmtt-10">cvs -d :pserver:cvs</span><span 
+class="cmtt-10">_anon@cvs.cactuscode.org:/cactus checkout -s</span></span>
+                  <!--l. 2257--><p class="noindent" >To  check  out  an  arrangement  or  thorn,  go  to  the  arrangements  directory,  <span class="obeylines-h"><span 
+class="cmtt-10">cd</span>
+                  <span 
+class="cmtt-10">arrangements</span></span>, and for an arrangement type <span class="obeylines-h">
+                  <span 
+class="cmtt-10">cvs checkout &#x003C;arrangement</span><span 
+class="cmtt-10">_name&#x003E;</span></span>
+                  <!--l. 2262--><p class="noindent" >or for just one thorn <span class="obeylines-h">
+                  <span 
+class="cmtt-10">cvs checkout &#x003C;arrangement</span><span 
+class="cmtt-10">_name/thorn</span><span 
+class="cmtt-10">_name&#x003E;</span></span>
+                  <!--l. 2267--><p class="noindent" >To  simplify  this  procedure,  you  may  use  <span class="obeylines-h"><span 
+class="cmtt-10">gmake checkout</span></span> in  the  Cactus  home
+                  directory which provides menus to pick arrangements and thorns from.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">Update</span>           </dt><dd 
+class="list">
+                  <!--l. 2271--><p class="noindent" >To update an existing Cactus checkout (to patch in possible changes, etc.), do the
+                  following <span 
+class="cmti-10">within </span>the <span 
+class="cmtt-10">Cactus </span>directory. <span class="obeylines-h">
+                  <span 
+class="cmtt-10">cvs update</span></span>
+                  <!--l. 2276--><p class="noindent" >The update process will operate recursively downwards from your current position
+                  within the Cactus tree. To update only on certain directories, change into these
+                  directories and issue the update command.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">CVS status</span>       </dt><dd 
+class="list">
+                  <!--l. 2279--><p class="noindent" >To obtain a status report on the &#8220;age&#8221; of your Cactus or arrangement routines
+                  (from your current directory position downward), type <span class="obeylines-h">
+                  <span 
+class="cmtt-10">cvs status</span></span>
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">non-anonymous CVS</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 2285--><p class="noindent" >If you have an account at the central repository (<span 
+class="cmtt-10">cvs.cactuscode.org</span>) and would
+                  like to perform any of the operation above <span 
+class="cmti-10">non-anonymously</span>, replace <span 
+class="cmtt-10">cvs</span><span 
+class="cmtt-10">_anon</span>
+                  by your login name and provide the appropriate password during the CVS login
+                  process. Depending on your permissions, you may then make commits to Cactus or
+                  its arrangements.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">Commits</span>         </dt><dd 
+class="list">
+                  <!--l. 2292--><p class="noindent" >You need to perform a personalized login and have proper permissions to commit
+                  code to the repository.</dd></dl>
+                                                                                       
+                                                                                       
+<!--l. 2300--><div class="crosslinks"><p class="noindent">[<a 
+href="ReferenceManualch14.html" >next</a>] [<a 
+href="ReferenceManualch12.html" >prev</a>] [<a 
+href="ReferenceManualch12.html#tailReferenceManualch12.html" >prev-tail</a>] [<a 
+href="ReferenceManualch13.html" >front</a>] [<a 
+href="ReferenceManualpa3.html#ReferenceManualch13.html" >up</a>] </p></div>
+<!--l. 2300--><p class="noindent" ><a 
+ id="tailReferenceManualch13.html"></a>  
+</body></html> 

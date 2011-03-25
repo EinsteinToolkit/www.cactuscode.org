@@ -1,0 +1,1967 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>C2 Configuration File Syntax</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,fn-in --> 
+<meta name="src" content="ReferenceManual.tex"> 
+<meta name="date" content="2011-03-25 09:47:00"> 
+<link rel="stylesheet" type="text/css" href="ReferenceManual.css"> 
+</head><body 
+>
+<!--l. 375--><div class="crosslinks"><p class="noindent">[<a 
+href="ReferenceManualch9.html" >next</a>] [<a 
+href="ReferenceManualch7.html" >prev</a>] [<a 
+href="ReferenceManualch7.html#tailReferenceManualch7.html" >prev-tail</a>] [<a 
+href="#tailReferenceManualch8.html">tail</a>] [<a 
+href="ReferenceManualpa3.html#ReferenceManualch8.html" >up</a>] </p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;C2</span><br /><a 
+ id="x12-258000C2"></a>Configuration File Syntax</h2>
+<h3 class="sectionHead"><span class="titlemark">C2.1   </span> <a 
+ id="x12-259000C2.1"></a>General Concepts</h3>
+<!--l. 380--><p class="noindent" >Each thorn is configured by three compulsory and one optional files in the top level thorn directory:
+     <ul class="itemize1">
+     <li class="itemize"> <span 
+class="cmtt-10">interface.ccl</span>
+     </li>
+     <li class="itemize"> <span 
+class="cmtt-10">param.ccl</span>
+     </li>
+     <li class="itemize"> <span 
+class="cmtt-10">schedule.ccl</span>
+     </li>
+     <li class="itemize"> <span 
+class="cmtt-10">configuration.ccl </span>(optional)</li></ul>
+<!--l. 388--><p class="noindent" >These files are written in the <span 
+class="cmti-10">Cactus Configuration Language </span>which is case insensitive.
+<!--l. 397--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">C2.2   </span> <a 
+ id="x12-260000C2.2"></a>interface.ccl</h3>
+<!--l. 400--><p class="noindent" >The interface configuration file consists of:
+     <ul class="itemize1">
+     <li class="itemize">A header block giving details of the thorn&#8217;s relationship with other thorns.
+     </li>
+     <li class="itemize">A block detailing which include files are used from other thorns, and which include files are provided
+     by this thorn.
+     </li>
+     <li class="itemize">Blocks detailing aliased functions provided or used by this thorn.
+     </li>
+     <li class="itemize">A series of blocks listing the thorn&#8217;s global variables.</li></ul>
+                                                                                       
+                                                                                       
+<!--l. 412--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">C2.2.1   </span> <a 
+ id="x12-261000C2.2.1"></a>Header Block</h4>
+<!--l. 413--><p class="noindent" >The header block has the form: <div class="alltt">
+<!--l. 414--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">implements:</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">implementation</span><span 
+class="cmtt-10">&#x003E;</span>
+<br /><span 
+class="cmtt-10">inherits:</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">implementation</span><span 
+class="cmtt-10">&#x003E;,</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">implementation</span><span 
+class="cmtt-10">&#x003E;</span>
+<br /><span 
+class="cmtt-10">friend:</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">implementation</span><span 
+class="cmtt-10">&#x003E;,</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">implementation</span><span 
+class="cmtt-10">&#x003E;</span>
+</div>
+</div> where
+     <ul class="itemize1">
+     <li class="itemize"> The implementation name must be unique among all thorns, except between thorns which have
+     the same public and protected variables and global and restricted parameters.
+     </li>
+     <li class="itemize"> Inheriting from another implementation makes all that implementation&#8217;s public variables available
+     to your thorn. At least one thorn providing any inherited implementation must be present at compile
+     time. A thorn cannot inherit from itself. Inheritance is transitive (if <span 
+class="cmmi-10">A </span>inherits from <span 
+class="cmmi-10">B</span>, and <span 
+class="cmmi-10">B</span>
+     inherits from <span 
+class="cmmi-10">C</span>, then <span 
+class="cmmi-10">A </span>also implicitly inherits from <span 
+class="cmmi-10">C</span>), but not commutative.
+     </li>
+     <li class="itemize"> Being a friend of another implementation makes all that implementation&#8217;s protected variables
+     available to your thorn. At least one thorn providing an implementation for each friend must be
+     present at compile time. A thorn cannot be its own friend. Friendship is associative, commutative
+     and transitive (i.e.&#x00A0;if <span 
+class="cmmi-10">A </span>is a friend of <span 
+class="cmmi-10">B</span>, and <span 
+class="cmmi-10">B </span>is a friend of <span 
+class="cmmi-10">C</span>, then <span 
+class="cmmi-10">A </span>is implicitly a friend of <span 
+class="cmmi-10">C</span>).</li></ul>
+<!--l. 448--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">C2.2.2   </span> <a 
+ id="x12-262000C2.2.2"></a>Include Files</h4>
+<!--l. 449--><p class="noindent" >The include file section has the form: <div class="alltt">
+<!--l. 450--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">USES</span><span 
+class="cmtt-10">&#x00A0;INCLUDE</span><span 
+class="cmtt-10">&#x00A0;[SOURCE|HEADER]:</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">file_name</span><span 
+class="cmtt-10">&#x003E;</span>
+<br /><span 
+class="cmtt-10">INCLUDE[S]</span><span 
+class="cmtt-10">&#x00A0;[SOURCE|HEADER]:</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">file_to_include</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">file_name</span><span 
+class="cmtt-10">&#x003E;</span>
+</div>
+</div> The former is used when a thorn wishes to use an include file from another thorn. The latter indicates that this
+thorn adds the code in <span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">file</span><span 
+class="cmsltt-10">_to</span><span 
+class="cmsltt-10">_include</span><span 
+class="cmtt-10">&#x003E; </span>to the include file <span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">file</span><span 
+class="cmsltt-10">_name</span><span 
+class="cmtt-10">&#x003E;</span>. If the include file is
+described as <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">SOURCE</span></span></span>, the included code is only executed if the providing thorn is active. Both default to
+<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">HEADER</span></span></span>.
+                                                                                       
+                                                                                       
+<!--l. 461--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">C2.2.3   </span> <a 
+ id="x12-263000C2.2.3"></a>Function Aliasing</h4>
+<!--l. 463--><p class="noindent" >If any aliased function is to be used or provided by the thorn, then the prototype must be declared with the
+form: <div class="alltt">
+<!--l. 465--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">return_type</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;FUNCTION</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">alias</span><span 
+class="cmtt-10">&#x003E;(&#x003C;</span><span 
+class="cmsltt-10">arg1_type</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">intent1</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;[ARRAY]</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">arg1</span><span 
+class="cmtt-10">&#x003E;,</span><span 
+class="cmtt-10">&#x00A0;...)</span>
+</div>
+</div> The <span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">return</span><span 
+class="cmsltt-10">_type</span><span 
+class="cmtt-10">&#x003E; </span>must be either <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">void</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">CCTK_INT</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">CCTK_REAL</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">CCTK_COMPLEX</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">CCTK_POINTER</span></span></span>, or
+<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">CCTK_POINTER_TO_CONST</span></span></span>. The keyword <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">SUBROUTINE</span></span></span> is equivalent to <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">void</span><span 
+class="cmtt-10">&#x00A0;FUNCTION</span></span></span>. The name of the aliased
+function <span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">alias</span><span 
+class="cmtt-10">&#x003E; </span>must contain at least one uppercase and one lowercase letter and follow the C standard for
+function names. The type of each argument, <span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">arg*</span><span 
+class="cmsltt-10">_type</span><span 
+class="cmtt-10">&#x003E;</span>, must be either <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">CCTK_INT</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">CCTK_REAL</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">CCTK_COMPLEX</span></span></span>,
+<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">CCTK_POINTER</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">CCTK_POINTER_TO_CONST</span></span></span>, or <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">STRING</span></span></span>. All string arguments must be the last arguments in the
+list. The intent of each argument, <span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">intent*</span><span 
+class="cmtt-10">&#x003E;</span>, must be either <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">IN</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">OUT</span></span></span>, or <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">INOUT</span></span></span>. An argument may only be
+modified if it is declared to have intent <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">OUT</span></span></span> or <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">INOUT</span></span></span>. If the argument is an array then the prefix <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">ARRAY</span></span></span> must
+also be given.
+<!--l. 484--><p class="noindent" >If the argument <span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">arg*</span><span 
+class="cmtt-10">&#x003E; </span>is a function pointer, then the argument itself (which will preceded by the return type)
+should be <div class="alltt">
+<!--l. 486--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">CCTK_FPOINTER</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">function_arg1</span><span 
+class="cmtt-10">&#x003E;(&#x003C;</span><span 
+class="cmsltt-10">arg1_type</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">intent1</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">arg1</span><span 
+class="cmtt-10">&#x003E;,</span><span 
+class="cmtt-10">&#x00A0;...)</span>
+</div>
+</div> Function pointers may not be nested.
+<!--l. 491--><p class="noindent" >If an aliased function is to be required, then the block <div class="alltt">
+<!--l. 492--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">REQUIRES</span><span 
+class="cmtt-10">&#x00A0;FUNCTION</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">alias</span><span 
+class="cmtt-10">&#x003E;</span>
+</div>
+</div> is required.
+<!--l. 497--><p class="noindent" >If an aliased function is to be (optionally) used, then the block <div class="alltt">
+                                                                                       
+                                                                                       
+<!--l. 498--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">USES</span><span 
+class="cmtt-10">&#x00A0;FUNCTION</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">alias</span><span 
+class="cmtt-10">&#x003E;</span>
+</div>
+</div> is required.
+<!--l. 503--><p class="noindent" >If a function is provided, then the block <div class="alltt">
+<!--l. 504--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">PROVIDES</span><span 
+class="cmtt-10">&#x00A0;FUNCTION</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">alias</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;WITH</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">provider</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;LANGUAGE</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">providing_language</span><span 
+class="cmtt-10">&#x003E;</span>
+</div>
+</div> is required. As with the alias name, <span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">provider</span><span 
+class="cmtt-10">&#x003E; </span>must contain at least one uppercase and one lowercase letter,
+and follow the C standard for function names. Currently, the only supported values of <span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">providing</span><span 
+class="cmsltt-10">_language</span><span 
+class="cmtt-10">&#x003E;</span>
+are <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">C</span></span></span> and <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">Fortran</span></span></span>.
+<!--l. 513--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">C2.2.4   </span> <a 
+ id="x12-264000C2.2.4"></a>Variable Blocks</h4>
+<!--l. 515--><p class="noindent" >The thorn&#8217;s variables are collected into groups. This is not only for convenience, but for collecting like variables
+together. Storage assignment, communication assignment, and ghostzone synchronization take place for groups
+only.
+<!--l. 520--><p class="noindent" >The thorn&#8217;s variables are defined by:
+<div class="alltt">
+<!--l. 522--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">[&#x003C;</span><span 
+class="cmsltt-10">access</span><span 
+class="cmtt-10">&#x003E;:]</span>
+<br />
+<br /><span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">data_type</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">group_name</span><span 
+class="cmtt-10">&#x003E;[[&#x003C;</span><span 
+class="cmsltt-10">number</span><span 
+class="cmtt-10">&#x003E;]]</span><span 
+class="cmtt-10">&#x00A0;[TYPE=&#x003C;</span><span 
+class="cmsltt-10">group_type</span><span 
+class="cmtt-10">&#x003E;]</span><span 
+class="cmtt-10">&#x00A0;[DIM=&#x003C;</span><span 
+class="cmsltt-10">dim</span><span 
+class="cmtt-10">&#x003E;]</span>
+<br /><span 
+class="cmtt-10">[TIMELEVELS=&#x003C;</span><span 
+class="cmsltt-10">num</span><span 
+class="cmtt-10">&#x003E;]</span>
+<br /><span 
+class="cmtt-10">[SIZE=&#x003C;</span><span 
+class="cmsltt-10">size</span><span 
+class="cmsltt-10">&#x00A0;in</span><span 
+class="cmsltt-10">&#x00A0;each</span><span 
+class="cmsltt-10">&#x00A0;direction</span><span 
+class="cmtt-10">&#x003E;]</span><span 
+class="cmtt-10">&#x00A0;[DISTRIB=&#x003C;</span><span 
+class="cmsltt-10">distribution_type</span><span 
+class="cmtt-10">&#x003E;]</span>
+<br /><span 
+class="cmtt-10">[GHOSTSIZE=&#x003C;</span><span 
+class="cmsltt-10">ghostsize</span><span 
+class="cmtt-10">&#x003E;]</span><span 
+class="cmtt-10">&#x00A0;[STAGGER=&#x003C;</span><span 
+class="cmsltt-10">stagger-specification</span><span 
+class="cmtt-10">&#x003E;]</span>
+<br /><span 
+class="cmtt-10">[TAGS=&#x003C;</span><span 
+class="cmsltt-10">string</span><span 
+class="cmtt-10">&#x003E;]</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;["&#x003C;</span><span 
+class="cmsltt-10">group_description</span><span 
+class="cmtt-10">&#x003E;"]</span>
+<br /><span 
+class="cmtt-10">[</span><span 
+class="cmsy-10">{</span>
+<br /><span 
+class="cmtt-10">&#x00A0;[</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">variable_name</span><span 
+class="cmtt-10">&#x003E;[,]&#x003C;</span><span 
+class="cmsltt-10">variable_name</span><span 
+class="cmtt-10">&#x003E;</span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">variable_name</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;]</span>
+<br /><span 
+class="cmsy-10">}</span><span 
+class="cmtt-10">&#x00A0;["&#x003C;</span><span 
+class="cmsltt-10">group_description</span><span 
+class="cmtt-10">&#x003E;"]</span><span 
+class="cmtt-10">&#x00A0;]</span>
+</div>
+</div> (The options <span class="obeylines-h"><span 
+class="cmtt-10">TYPE</span></span>, <span class="obeylines-h"><span 
+class="cmtt-10">DIM</span></span>, etc.,&#x00A0;following <span class="obeylines-h"><span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">group</span><span 
+class="cmsltt-10">_name</span><span 
+class="cmtt-10">&#x003E;</span></span> must all appear on one line.) Note that the
+beginning brace (<span 
+class="cmsy-10">{</span>) must sit on a line by itself; the ending brace (<span 
+class="cmsy-10">}</span>) must be preceded by a carriage
+return.
+                                                                                       
+                                                                                       
+     <ul class="itemize1">
+     <li class="itemize"> <span class="obeylines-h"><span 
+class="cmsltt-10">access</span></span> defines which thorns can use the following groups of variables. <span class="obeylines-h"><span 
+class="cmsltt-10">access</span></span> can be either <span class="obeylines-h"><span 
+class="cmtt-10">public</span></span>,
+     <span class="obeylines-h"><span 
+class="cmtt-10">protected</span></span> or <span class="obeylines-h"><span 
+class="cmtt-10">private</span></span>.
+     </li>
+     <li class="itemize"> <span class="obeylines-h"><span 
+class="cmsltt-10">data</span><span 
+class="cmsltt-10">_type</span></span> defines the data type of the variables in the group. Supported data types are <span class="obeylines-h"><span 
+class="cmtt-10">CHAR</span></span>,
+     <span class="obeylines-h"><span 
+class="cmtt-10">BYTE</span></span>, <span class="obeylines-h"><span 
+class="cmtt-10">INT</span></span>, <span class="obeylines-h"><span 
+class="cmtt-10">REAL</span></span>, and <span class="obeylines-h"><span 
+class="cmtt-10">COMPLEX</span></span>.
+     </li>
+     <li class="itemize"> <span class="obeylines-h"><span 
+class="cmsltt-10">group</span><span 
+class="cmsltt-10">_name</span></span> must be an alphanumeric name (which may also contain underscores) which is unique
+     across group and variable names within the scope of the thorn. A group name is compulsory.
+     </li>
+     <li class="itemize"> <span class="obeylines-h"><span 
+class="cmtt-10">[</span><span 
+class="cmsltt-10">number</span><span 
+class="cmtt-10">]</span></span>, if present, indicates that this is a <span 
+class="cmti-10">vector </span>group. The number can be any valid arithmetical
+     expression consisting of integers or integer-valued parameters. Each variable in that group appears
+     as a one-dimensional array of grid variables. When the variable is accessed in the code, then the
+     last index is the member-index, and any other indices are the normal spatial indices for a group of
+     this type and dimension.
+     </li>
+     <li class="itemize"> <span class="obeylines-h"><span 
+class="cmtt-10">TYPE</span></span> designates the kind of variables held by the group. The choices are <span class="obeylines-h"><span 
+class="cmtt-10">GF</span></span>, <span class="obeylines-h"><span 
+class="cmtt-10">ARRAY</span></span> or <span class="obeylines-h"><span 
+class="cmtt-10">SCALAR</span></span>. This
+     field is optional, with the default variable type being <span class="obeylines-h"><span 
+class="cmtt-10">SCALAR</span></span>.
+     </li>
+     <li class="itemize"> <span class="obeylines-h"><span 
+class="cmtt-10">DIM</span></span> defines the spatial dimension of the <span class="obeylines-h"><span 
+class="cmtt-10">ARRAY</span></span> or <span class="obeylines-h"><span 
+class="cmtt-10">GF</span></span>. The default value is <span class="obeylines-h"><span 
+class="cmtt-10">DIM=3</span></span>.
+     </li>
+     <li class="itemize"> <span class="obeylines-h"><span 
+class="cmtt-10">TIMELEVELS</span></span> defines the number of timelevels a group has if the group is of type <span class="obeylines-h"><span 
+class="cmtt-10">ARRAY</span></span> or <span class="obeylines-h"><span 
+class="cmtt-10">GF</span></span>, and
+     can take any positive value. The default is one timelevel.
+     </li>
+     <li class="itemize">  <span class="obeylines-h"><span 
+class="cmtt-10">SIZE</span></span> defines  the  number  grid-points  an  <span 
+class="cmtt-10">ARRAY </span>has  in  each  direction.  This  should  be  a
+     comma-separated  list  of  valid  arithmetical  expressions  consisting  of  integers  or  integer-valued
+     parameters.
+     </li>
+     <li class="itemize"> <span class="obeylines-h"><span 
+class="cmtt-10">DISTRIB</span></span> defines the processor decomposition of an <span 
+class="cmtt-10">ARRAY</span>. <span 
+class="cmtt-10">DISTRIB=DEFAULT </span>distributes <span 
+class="cmtt-10">SIZE</span>
+     grid-points  across  all  processors.  <span 
+class="cmtt-10">DISTRIB=CONSTANT </span>implies  that  <span 
+class="cmtt-10">SIZE </span>grid-points  should  be
+     allocated on each processor. The default value is <span 
+class="cmtt-10">DISTRIB=DEFAULT</span>.
+     </li>
+     <li class="itemize"> <span class="obeylines-h"><span 
+class="cmtt-10">GHOSTSIZE</span></span> defines number of ghost zones in each dimension of an <span 
+class="cmtt-10">ARRAY</span>.
+     </li>
+     <li class="itemize"> <span class="obeylines-h"><span 
+class="cmtt-10">STAGGER</span></span> defines position of grid-points of a <span 
+class="cmtt-10">GF </span>with respect to the underlying grid. It consists of
+     a string made up of a combination <span 
+class="cmtt-10">DIM </span>of the letters <span 
+class="cmtt-10">M</span>, <span 
+class="cmtt-10">C</span>, <span 
+class="cmtt-10">P</span>, depending on whether the layout in
+     that direction is on the <span 
+class="cmtt-10">M</span>inus face, <span 
+class="cmtt-10">C</span>entre, or <span 
+class="cmtt-10">P</span>lus face of the cell in that dimension.
+     </li>
+     <li class="itemize"> <span class="obeylines-h"><span 
+class="cmtt-10">TAGS</span></span> defines an optional string which is used to create a set of key-value pairs associated with
+     the group. The keys are case independent. The string (which must be deliminated by single or
+     double quotes) is interpreted by the function <span class="obeylines-h"><span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_TableSetFromString()</span></span>, which is described in
+     the Reference Manual.<br 
+class="newline" />Currently the CST parser and the flesh do not evaluate any information passed in an optional
+     <span class="obeylines-h"><span 
+class="cmtt-10">TAGS</span></span> string.  Thorns  may  do  so  by  querying  the  key/value  table  information  for  a  group  by
+     using <span class="obeylines-h"><span 
+class="cmtt-10">CCTK</span><span 
+class="cmtt-10">_GroupTagsTable()</span></span> and the appropriate <span class="obeylines-h"><span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_TableGet*()</span></span> utility functions (see the
+                                                                                       
+                                                                                       
+     ReferenceManual for detailed descriptions).<br 
+class="newline" />For a list of currently supported <span class="obeylines-h"><span 
+class="cmtt-10">TAGS</span></span> key-value table information, please refer to the corresponding
+     chapter in the documentation of the <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">CactusDoc</span></span></span> arrangement.
+     </li>
+     <li class="itemize"> The (optional) block following the group declaration line, contains a list of variables contained in the
+     group. All variables in a group have the same data type, variable type, dimension and distribution.
+     The list can be separated by spaces, commas, or new lines. The variable names must be unique
+     within the scope of the thorn. A variable can only be a member of one group. The block must be
+     delimited by brackets on new lines. If no block is given after a group declaration line, a variable
+     with the same name as the group is created. Apart from this case, a group name cannot be the
+     same as the name of any variable seen by this thorn.
+     </li>
+     <li class="itemize"> An optional description of the group can be given on the last line. If the variable block is omitted,
+     this description can be given at the end of the declaration line.</li></ul>
+<!--l. 617--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">C2.3   </span> <a 
+ id="x12-265000C2.3"></a>param.ccl</h3>
+<!--l. 620--><p class="noindent" >The parameter configuration file consists of a list of <span 
+class="cmti-10">parameter object specification items </span>(OSIs) giving the type
+and range of the parameter separated by optional <span 
+class="cmti-10">parameter data scoping items </span>(DSIs), which detail access to
+the parameter.
+<!--l. 627--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">C2.3.1   </span> <a 
+ id="x12-266000C2.3.1"></a>Parameter Data Scoping Items</h4>
+<div class="alltt">
+<!--l. 629--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">access</span><span 
+class="cmtt-10">&#x003E;:</span>
+</div>
+</div>
+<!--l. 633--><p class="noindent" >The keyword <span class="obeylines-h"><span 
+class="cmsltt-10">access</span></span> designates that all parameter object specification items, up to the next parameter data
+scoping item, are in the same protection or scoping class. <span 
+class="cmsltt-10">access </span>can take the values:
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">global</span>            </dt><dd 
+class="list">
+                  <!--l. 637--><p class="noindent" >all thorns have access to global parameters
+                                                                                       
+                                                                                       
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">restricted</span>        </dt><dd 
+class="list">
+                  <!--l. 638--><p class="noindent" >other thorns can have access to these parameters, if they specifically request it in
+                  their own param.ccl
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">private</span>           </dt><dd 
+class="list">
+                  <!--l. 641--><p class="noindent" >only your thorn has access to private parameters
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">shares</span>            </dt><dd 
+class="list">
+                  <!--l. 642--><p class="noindent" >in this case, an <span class="obeylines-h"><span 
+class="cmtt-10">implementation</span></span> name must follow the colon. It declares that all the
+                  parameters in the following scoping block are restricted variables from the specified
+                  <span 
+class="cmtt-10">implementation</span>. (Note: only one implementation can be specified on this line.)</dd></dl>
+<!--l. 650--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">C2.3.2   </span> <a 
+ id="x12-267000C2.3.2"></a>Parameter Object Specification Items</h4>
+<div class="alltt">
+<!--l. 653--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">[EXTENDS|USES]</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">parameter</span><span 
+class="cmsltt-10">&#x00A0;type</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">parameter</span><span 
+class="cmsltt-10">&#x00A0;name</span><span 
+class="cmtt-10">&#x003E;[[&#x003C;</span><span 
+class="cmsltt-10">len</span><span 
+class="cmtt-10">&#x003E;]]</span><span 
+class="cmtt-10">&#x00A0;"&#x003C;</span><span 
+class="cmsltt-10">parameter</span><span 
+class="cmsltt-10">&#x00A0;description</span><span 
+class="cmtt-10">&#x003E;"</span>
+<br /><span 
+class="cmtt-10">[AS</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">alias</span><span 
+class="cmtt-10">&#x003E;]</span><span 
+class="cmtt-10">&#x00A0;[STEERABLE=&#x003C;NEVER|ALWAYS|RECOVER&#x003E;]</span>
+<br /><span 
+class="cmtt-10">[ACCUMULATOR=&#x003C;</span><span 
+class="cmsltt-10">expression</span><span 
+class="cmtt-10">&#x003E;]</span><span 
+class="cmtt-10">&#x00A0;[ACCUMULATOR-BASE=&#x003C;</span><span 
+class="cmsltt-10">parameter</span><span 
+class="cmsltt-10">&#x00A0;name</span><span 
+class="cmtt-10">&#x003E;]</span>
+<br /><span 
+class="cmsy-10">{</span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">parameter</span><span 
+class="cmsltt-10">&#x00A0;values</span><span 
+class="cmtt-10">&#x003E;</span>
+<br /><span 
+class="cmsy-10">}</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">default</span><span 
+class="cmsltt-10">&#x00A0;value</span><span 
+class="cmtt-10">&#x003E;</span>
+</div>
+</div> where the options <span class="obeylines-h"><span 
+class="cmtt-10">AS</span></span>, <span class="obeylines-h"><span 
+class="cmtt-10">STEERABLE</span></span>, etc., following <span class="obeylines-h"><span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">parameter description</span><span 
+class="cmtt-10">&#x003E;</span></span>, must all appear in one line. Note
+that the beginning brace (<span class="obeylines-h"><span 
+class="cmsy-10">{</span></span>) must sit on a line by itself; the ending brace (<span class="obeylines-h"><span 
+class="cmsy-10">}</span></span>) must be at the beginning of a line
+followed by <span 
+class="cmsltt-10">&#x003C;default value&#x003E; </span>on that same line.
+     <ul class="itemize1">
+     <li class="itemize">The <span 
+class="cmsltt-10">parameter values </span>depend on the <span 
+class="cmsltt-10">parameter type</span>, which may be one of the following:
+                       <dl class="list2"><dt class="list">
+     <span class="obeylines-h"><span 
+class="cmtt-10">INT</span></span>               </dt><dd 
+class="list">
+                       <!--l. 672--><p class="noindent" >The specification of <span 
+class="cmsltt-10">parameter value</span>s takes the form of one or more lines, each of
+                       the form <div class="alltt">
+                                                                                       
+                                                                                       
+                       <!--l. 675--><p class="noindent" ><div class="obeylines-v">
+                       <span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;range</span><span 
+class="cmsltt-10">&#x00A0;description&#x003E;</span><span 
+class="cmtt-10">&#x00A0;[::"</span><span 
+class="cmsltt-10">&#x003C;comment</span><span 
+class="cmsltt-10">&#x00A0;describing</span><span 
+class="cmsltt-10">&#x00A0;this</span><span 
+class="cmsltt-10">&#x00A0;range&#x003E;</span><span 
+class="cmtt-10">"]</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span>
+</div>
+                       </div> Here, a <span 
+class="cmsltt-10">&#x003C;range description&#x003E; </span>specifies a set of integers, and has one of the
+                       following forms: <div class="alltt">
+                       <!--l. 680--><p class="noindent" ><div class="obeylines-v">
+                       <span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;*</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;means</span><span 
+class="cmtt-10">&#x00A0;any</span><span 
+class="cmtt-10">&#x00A0;integer</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;integer&#x003E;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;means</span><span 
+class="cmtt-10">&#x00A0;only</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;integer&#x003E;</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;lower</span><span 
+class="cmsltt-10">&#x00A0;bound&#x003E;</span><span 
+class="cmtt-10">:</span><span 
+class="cmsltt-10">&#x003C;upper</span><span 
+class="cmsltt-10">&#x00A0;bound&#x003E;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;means</span><span 
+class="cmtt-10">&#x00A0;all</span><span 
+class="cmtt-10">&#x00A0;integers</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;range</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;from</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;lower</span><span 
+class="cmsltt-10">&#x00A0;bound&#x003E;</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;upper</span><span 
+class="cmsltt-10">&#x00A0;bound&#x003E;</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;lower</span><span 
+class="cmsltt-10">&#x00A0;bound&#x003E;</span><span 
+class="cmtt-10">:</span><span 
+class="cmsltt-10">&#x003C;upper</span><span 
+class="cmsltt-10">&#x00A0;bound&#x003E;</span><span 
+class="cmtt-10">:</span><span 
+class="cmsltt-10">&#x003C;positive</span><span 
+class="cmsltt-10">&#x00A0;step&#x003E;</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;means</span><span 
+class="cmtt-10">&#x00A0;all</span><span 
+class="cmtt-10">&#x00A0;integers</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;the</span><span 
+class="cmtt-10">&#x00A0;range</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;from</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;lower</span><span 
+class="cmsltt-10">&#x00A0;bound&#x003E;</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;upper</span><span 
+class="cmsltt-10">&#x00A0;bound&#x003E;</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;steps</span><span 
+class="cmtt-10">&#x00A0;of</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;positive</span><span 
+class="cmsltt-10">&#x00A0;step&#x003E;</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span>
+</div>
+                       </div> where <span 
+class="cmsltt-10">&#x003C;lower bound&#x003E; </span>has one of the forms <div class="alltt">
+                       <!--l. 691--><p class="noindent" ><div class="obeylines-v">
+                       <span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;empty</span><span 
+class="cmsltt-10">&#x00A0;field&#x003E;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;means</span><span 
+class="cmtt-10">&#x00A0;no</span><span 
+class="cmtt-10">&#x00A0;lower</span><span 
+class="cmtt-10">&#x00A0;limit</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;*</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;means</span><span 
+class="cmtt-10">&#x00A0;no</span><span 
+class="cmtt-10">&#x00A0;lower</span><span 
+class="cmtt-10">&#x00A0;limit</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;integer&#x003E;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;means</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;closed</span><span 
+class="cmtt-10">&#x00A0;interval</span><span 
+class="cmtt-10">&#x00A0;starting</span><span 
+class="cmtt-10">&#x00A0;at</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;integer&#x003E;</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;[</span><span 
+class="cmsltt-10">&#x003C;integer&#x003E;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;also</span><span 
+class="cmtt-10">&#x00A0;means</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;closed</span><span 
+class="cmtt-10">&#x00A0;interval</span><span 
+class="cmtt-10">&#x00A0;starting</span><span 
+class="cmtt-10">&#x00A0;at</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;integer&#x003E;</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;(</span><span 
+class="cmsltt-10">&#x003C;integer&#x003E;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;means</span><span 
+class="cmtt-10">&#x00A0;an</span><span 
+class="cmtt-10">&#x00A0;open</span><span 
+class="cmtt-10">&#x00A0;interval</span><span 
+class="cmtt-10">&#x00A0;starting</span><span 
+class="cmtt-10">&#x00A0;at</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;integer&#x003E;</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span>
+</div>
+                       </div> and <span 
+class="cmsltt-10">&#x003C;upper bound&#x003E; </span>has one of the forms <div class="alltt">
+                       <!--l. 699--><p class="noindent" ><div class="obeylines-v">
+                       <span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;empty</span><span 
+class="cmsltt-10">&#x00A0;field&#x003E;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;means</span><span 
+class="cmtt-10">&#x00A0;no</span><span 
+class="cmtt-10">&#x00A0;upper</span><span 
+class="cmtt-10">&#x00A0;limit</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;*</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;means</span><span 
+class="cmtt-10">&#x00A0;no</span><span 
+class="cmtt-10">&#x00A0;upper</span><span 
+class="cmtt-10">&#x00A0;limit</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;integer&#x003E;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;means</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;closed</span><span 
+class="cmtt-10">&#x00A0;interval</span><span 
+class="cmtt-10">&#x00A0;ending</span><span 
+class="cmtt-10">&#x00A0;at</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;integer&#x003E;</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;integer&#x003E;</span><span 
+class="cmtt-10">]</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;also</span><span 
+class="cmtt-10">&#x00A0;means</span><span 
+class="cmtt-10">&#x00A0;a</span><span 
+class="cmtt-10">&#x00A0;closed</span><span 
+class="cmtt-10">&#x00A0;interval</span><span 
+class="cmtt-10">&#x00A0;ending</span><span 
+class="cmtt-10">&#x00A0;at</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;integer&#x003E;</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;integer&#x003E;</span><span 
+class="cmtt-10">)</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;#</span><span 
+class="cmtt-10">&#x00A0;means</span><span 
+class="cmtt-10">&#x00A0;an</span><span 
+class="cmtt-10">&#x00A0;open</span><span 
+class="cmtt-10">&#x00A0;interval</span><span 
+class="cmtt-10">&#x00A0;ending</span><span 
+class="cmtt-10">&#x00A0;at</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmsltt-10">&#x003C;integer&#x003E;</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span>
+</div>
+                       </div>
+                       </dd><dt class="list">
+     <span class="obeylines-h"><span 
+class="cmtt-10">REAL</span></span>              </dt><dd 
+class="list">
+                       <!--l. 707--><p class="noindent" >The range specification is the same as with integers, except that here, no <span 
+class="cmsltt-10">step</span>
+                       implies a continuum of values. Note that numeric constants should be expressed as in
+                       C (e.g.&#x00A0;<span class="obeylines-h"><span 
+class="cmtt-10">1e-10</span></span>). Note also that one cannot use the Cactus types such as <span class="obeylines-h"><span 
+class="cmtt-10">CCTK</span><span 
+class="cmtt-10">_REAL4</span></span>
+                       to specify the precision of the parameter; parameters always have the default
+                       precision.
+                       </dd><dt class="list">
+     <span class="obeylines-h"><span 
+class="cmtt-10">KEYWORD</span></span>           </dt><dd 
+class="list">
+                                                                                       
+                                                                                       
+                       <!--l. 715--><p class="noindent" >Each entry in the list of acceptable values for a keyword has the form
+                       <div class="alltt">
+                       <!--l. 718--><p class="noindent" ><div class="obeylines-v">
+                       <span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">keyword</span><span 
+class="cmsltt-10">&#x00A0;value</span><span 
+class="cmtt-10">&#x003E;,</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">keyword</span><span 
+class="cmsltt-10">&#x00A0;value</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;::</span><span 
+class="cmtt-10">&#x00A0;"&#x003C;</span><span 
+class="cmsltt-10">description</span><span 
+class="cmtt-10">&#x003E;"</span>
+                       <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span>
+</div>
+                       </div> Keyword values should be enclosed in double quotes. The double quotes are
+                       mandatory if the keyword contains spaces.
+                       </dd><dt class="list">
+     <span class="obeylines-h"><span 
+class="cmtt-10">STRING</span></span>            </dt><dd 
+class="list">
+                       <!--l. 724--><p class="noindent" >Allowed values for strings should be specified using regular expressions. To allow any
+                       string, the regular expression <span 
+class="cmtt-10">"" </span>should be used. (An empty regular expression
+                       matches anything.) Regular expressions and string values should be enclosed in
+                       double quotes. The double quotes are mandatory if the regular expression or the
+                       string value is empty or contains spaces.
+                       </dd><dt class="list">
+     <span class="obeylines-h"><span 
+class="cmtt-10">BOOLEAN</span></span>           </dt><dd 
+class="list">
+                       <!--l. 732--><p class="noindent" >No <span 
+class="cmsltt-10">parameter values </span>should be specified for a boolean parameter. The default
+                       value for a boolean can be
+                          <ul class="itemize2">
+                          <li class="itemize">True: <span class="obeylines-h"><span 
+class="cmtt-10">1</span></span>, <span class="obeylines-h"><span 
+class="cmtt-10">yes</span></span>, <span class="obeylines-h"><span 
+class="cmtt-10">y</span></span>, <span class="obeylines-h"><span 
+class="cmtt-10">t</span></span>, <span class="obeylines-h"><span 
+class="cmtt-10">true</span></span>
+                          </li>
+                          <li class="itemize">False: <span class="obeylines-h"><span 
+class="cmtt-10">0</span></span>, <span class="obeylines-h"><span 
+class="cmtt-10">no</span></span>, <span class="obeylines-h"><span 
+class="cmtt-10">n</span></span>, <span class="obeylines-h"><span 
+class="cmtt-10">f</span></span>, <span class="obeylines-h"><span 
+class="cmtt-10">false</span></span></li></ul>
+                       <!--l. 739--><p class="noindent" >Boolean values may optionally be enclosed in double quotes.
+                       </dd></dl>
+     </li>
+     <li class="itemize">The <span 
+class="cmsltt-10">parameter name </span>must be unique within the scope of the thorn.
+     </li>
+     <li class="itemize">The <span 
+class="cmsltt-10">default value </span>must match one of the ranges given in the <span 
+class="cmsltt-10">parameter type</span>
+     </li>
+     <li class="itemize">A thorn can declare that it <span class="obeylines-h"><span 
+class="cmtt-10">EXTENDS</span></span> a parameter of another thorn. This allows it to declare additional
+     acceptable values. By default, it is acceptable for two thorns to declare the same value as
+     acceptable.
+     </li>
+     <li class="itemize">If the thorn wants to simply use a parameter from another thorn, without declaring additional values, use
+     <span class="obeylines-h"><span 
+class="cmtt-10">USES</span></span> instead.
+     </li>
+     <li class="itemize"><span 
+class="cmtt-10">[</span><span 
+class="cmsltt-10">len</span><span 
+class="cmtt-10">] </span>(where <span 
+class="cmsltt-10">len </span>is an integer), if present, indicates that this is an <span 
+class="cmti-10">array </span>parameter of <span 
+class="cmsltt-10">len </span>values of the
+     specified type. (Note that the notation used above for the parameter specification breaks down here, as
+     there must be square brackets around the length).
+     </li>
+     <li class="itemize"><span 
+class="cmsltt-10">alias </span>allows a parameter to appear under a different name in this thorn, other than its original name in
+     another thorn. The name, as seen in the parameter file, is unchanged.
+                                                                                       
+                                                                                       
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span 
+class="cmtt-10">STEERABLE</span></span> specifies when a parameter value may be changed. By default, parameters may not be
+     changed after the parameter file has been read, or on restarting from checkpoint. This option
+     relaxes this restriction, specifying that the parameter may be changed at recovery time from a
+     parameter file or at any time using the flesh routine <span 
+class="cmtt-10">CCTK</span><span 
+class="cmtt-10">_ParameterSet</span>&#8212;see the Reference
+     Guide.
+     <!--l. 781--><p class="noindent" >The value <span 
+class="cmtt-10">RECOVERY </span>is used in checkpoint/recovery situations, and indicates that the parameter may be
+     altered until the value is read in from a recovery par file, but not after.
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span 
+class="cmtt-10">ACCUMULATOR</span></span> specifies that this is an <span 
+class="cmti-10">accumulator </span>parameter. Such parameters cannot be set directly, but
+     are set by other parameters who specify this one as an <span 
+class="cmtt-10">ACCUMULATOR-BASE</span>. The expression is a
+     two-parameter arithmetical expression of <span 
+class="cmmi-10">x </span>and <span 
+class="cmmi-10">y</span>. Setting the parameter consists of evaluating this
+     expression successively, with <span 
+class="cmmi-10">x </span>being the current value of the parameter (at the first iteration this
+     is the default value), and <span 
+class="cmmi-10">y </span>the value of the setting parameter. This procedure is repeated,
+     starting from the default value of the parameter, each time one of the setting parameters
+     changes.
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span 
+class="cmtt-10">ACCUMULATOR-BASE</span></span> specifies the name of an <span 
+class="cmtt-10">ACCUMULATOR </span>parameter which this parameter
+     sets.
+     </li></ul>
+<!--l. 803--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">C2.4   </span> <a 
+ id="x12-268000C2.4"></a>schedule.ccl</h3>
+<!--l. 808--><p class="noindent" >A schedule configuration file consists of:
+     <ul class="itemize1">
+     <li class="itemize"> <span 
+class="cmti-10">Assignment statements </span>to switch on storage for grid variables for the entire duration of program
+     execution.
+     </li>
+     <li class="itemize"> <span 
+class="cmti-10">Schedule blocks </span>to schedule a subroutine from a thorn to be called at specific times during program
+     execution in a given manner.
+     </li>
+     <li class="itemize"> <span 
+class="cmti-10">Conditional statements </span>for both assignment statements and schedule blocks to allow them to be
+     processed depending on parameter values.
+     </li></ul>
+<!--l. 822--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">C2.4.1   </span> <a 
+ id="x12-269000C2.4.1"></a>Assignment Statements</h4>
+                                                                                       
+                                                                                       
+<!--l. 824--><p class="noindent" ><span 
+class="cmti-10">Assignment statements</span>, currently only assign storage.
+<!--l. 826--><p class="noindent" >These lines have the form: <div class="alltt">
+<!--l. 827--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">[STORAGE:</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">group</span><span 
+class="cmtt-10">&#x003E;[</span><span 
+class="cmsltt-10">timelevels</span><span 
+class="cmtt-10">],</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">group</span><span 
+class="cmtt-10">&#x003E;[</span><span 
+class="cmsltt-10">timelevels</span><span 
+class="cmtt-10">]]</span>
+</div>
+</div>
+<!--l. 831--><p class="noindent" >If the thorn is active, storage will be allocated, for the given groups, for the duration of program
+execution (unless storage is explicitly switched off by some call to <span 
+class="cmtt-10">CCTK</span><span 
+class="cmtt-10">_DisableGroupStorage </span>within a
+thorn).
+<!--l. 836--><p class="noindent" >The storage line includes the number of timelevels to activate storage for, this number can be from 1 up to the
+maximum number or timelevels for the group, as specified in the defining <span 
+class="cmtt-10">interface.ccl </span>file. If the maximum
+number of timelevels is 1 (the default), this number may be omitted.
+<!--l. 842--><p class="noindent" >The behaviour of an assignment statement is independent of its position in the schedule file (so long as it is
+outside a schedule block).
+<!--l. 846--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">C2.4.2   </span> <a 
+ id="x12-270000C2.4.2"></a>Schedule Blocks</h4>
+<!--l. 848--><p class="noindent" >Each <span 
+class="cmti-10">schedule block </span>in the file <span class="obeylines-h"><span 
+class="cmtt-10">schedule.ccl</span></span> must have the syntax
+<div class="alltt">
+<!--l. 850--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">schedule</span><span 
+class="cmtt-10">&#x00A0;[GROUP]</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">function</span><span 
+class="cmsltt-10">&#x00A0;name</span><span 
+class="cmtt-10">|</span><span 
+class="cmsltt-10">group</span><span 
+class="cmsltt-10">&#x00A0;name</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;AT|IN</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">time</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;</span><span class="verb"><span 
+class="cmtt-10">\</span></span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;[AS</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">alias</span><span 
+class="cmtt-10">&#x003E;]</span><span 
+class="cmtt-10">&#x00A0;</span><span class="verb"><span 
+class="cmtt-10">\</span></span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;[WHILE</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">variable</span><span 
+class="cmtt-10">&#x003E;]</span><span 
+class="cmtt-10">&#x00A0;[IF</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">variable</span><span 
+class="cmtt-10">&#x003E;]</span><span 
+class="cmtt-10">&#x00A0;</span><span class="verb"><span 
+class="cmtt-10">\</span></span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;[BEFORE|AFTER</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">function</span><span 
+class="cmsltt-10">&#x00A0;name</span><span 
+class="cmtt-10">&#x003E;|(&#x003C;</span><span 
+class="cmsltt-10">function</span><span 
+class="cmsltt-10">&#x00A0;name</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">function</span><span 
+class="cmsltt-10">&#x00A0;name</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;...)]</span><span 
+class="cmtt-10">&#x00A0;</span><span class="verb"><span 
+class="cmtt-10">\</span></span>
+<br /><span 
+class="cmsy-10">{</span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;[LANG:</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">language</span><span 
+class="cmtt-10">&#x003E;]</span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;[STORAGE:</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">group</span><span 
+class="cmtt-10">&#x003E;[</span><span 
+class="cmsltt-10">timelevels</span><span 
+class="cmtt-10">],&#x003C;</span><span 
+class="cmsltt-10">group</span><span 
+class="cmtt-10">&#x003E;[</span><span 
+class="cmsltt-10">timelevels</span><span 
+class="cmtt-10">]...]</span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;[TRIGGER:</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">group</span><span 
+class="cmtt-10">&#x003E;,&#x003C;</span><span 
+class="cmsltt-10">group</span><span 
+class="cmtt-10">&#x003E;...]</span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;[SYNCHRONISE:</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">group</span><span 
+class="cmtt-10">&#x003E;,&#x003C;</span><span 
+class="cmsltt-10">group</span><span 
+class="cmtt-10">&#x003E;...]</span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;[OPTIONS:</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">option</span><span 
+class="cmtt-10">&#x003E;,&#x003C;</span><span 
+class="cmsltt-10">option</span><span 
+class="cmtt-10">&#x003E;...]</span>
+<br /><span 
+class="cmsy-10">}</span><span 
+class="cmtt-10">&#x00A0;"</span><span 
+class="cmsltt-10">Description</span><span 
+class="cmsltt-10">&#x00A0;of</span><span 
+class="cmsltt-10">&#x00A0;function</span><span 
+class="cmtt-10">"</span>
+</div>
+</div>
+<!--l. 864--><p class="noindent" >
+                                                                                       
+                                                                                       
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">GROUP</span>             </dt><dd 
+class="list">
+                  <!--l. 865--><p class="noindent" >Schedule  a  schedule  group  with  the  same  options  as  a  schedule  function.  The
+                  schedule group will be created if it doesn&#8217;t exist.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">function name</span><span 
+class="cmtt-10">|</span><span 
+class="cmsltt-10">group name</span><span 
+class="cmtt-10">&#x003E;</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 868--><p class="noindent" >The name of a function or a schedule group to be scheduled. Function and schedule
+                  group names are case sensitive.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">group</span><span 
+class="cmtt-10">&#x003E;</span>           </dt><dd 
+class="list">
+                  <!--l. 872--><p class="noindent" >A group of grid variables. Variable groups inherited from other thorns may be used,
+                  but they must then be fully qualified with the implementation name.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">AT</span>                </dt><dd 
+class="list">
+                  <!--l. 876--><p class="noindent" >Functions  can  be  scheduled  to  run  at  the  Cactus  schedule  bins,  for  example,
+                  <span 
+class="cmtt-10">CCTK</span><span 
+class="cmtt-10">_EVOL</span>, and <span 
+class="cmtt-10">CCTK</span><span 
+class="cmtt-10">_STARTUP</span>. A complete list and description of these is provided
+                  in Appendix&#x00A0;<a 
+href="ReferenceManualch10.html#x14-287000C4">C4<!--tex4ht:ref: sec:Appendix.schedule_bins --></a>. The initial letters <span 
+class="cmtt-10">CCTK</span><span 
+class="cmtt-10">_ </span>are optional. Grid variables cannot be
+                  used in the <span 
+class="cmtt-10">CCTK</span><span 
+class="cmtt-10">_STARTUP </span>and <span 
+class="cmtt-10">CCTK</span><span 
+class="cmtt-10">_SHUTDOWN </span>timebins.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">IN</span>                </dt><dd 
+class="list">
+                  <!--l. 883--><p class="noindent" >Schedules a function or schedule group to run in a schedule group, rather than in
+                  a Cactus timebin.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">AS</span>                </dt><dd 
+class="list">
+                  <!--l. 886--><p class="noindent" >Provides  an  alias  for  a  function  or  schedule  group  which  should  be  used  for
+                  scheduling before, after or in. This can be used to provide thorn independence for
+                  other thorns scheduling functions, or schedule groups relative to this one.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">WHILE</span>             </dt><dd 
+class="list">
+                  <!--l. 891--><p class="noindent" >Executes a function or schedule group until the given variable (which must be a
+                  fully qualified integer grid scalar) has the value zero.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">IF</span>                </dt><dd 
+class="list">
+                  <!--l. 895--><p class="noindent" >Executes a function or schedule group only if the given variable (which must be a
+                  fully qualified integer grid scalar) has a non-zero value.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">BEFORE/AFTER</span>      </dt><dd 
+class="list">
+                  <!--l. 899--><p class="noindent" >Takes  a  function  name,  a  function  alias,  a  schedule  group  name,  or  a
+                  parentheses-enclosed whitespace-separated list of these. (Any names that are not
+                  provided by an active thorn are ignored.) Note that a single schedule block may
+                  have multiple <span 
+class="cmtt-10">BEFORE/AFTER </span>clauses.
+                                                                                       
+                                                                                       
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">LANG</span>              </dt><dd 
+class="list">
+                  <!--l. 908--><p class="noindent" >The code language for the function (either <span 
+class="cmtt-10">C </span>or <span 
+class="cmtt-10">FORTRAN</span>). No language should be
+                  specified for a schedule group.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">STORAGE</span>           </dt><dd 
+class="list">
+                  <!--l. 911--><p class="noindent" >List of variable groups which should have storage switched on for the duration of
+                  the function or schedule group. Each group must specify how many timelevels to
+                  activate storage for, from 1 up to the maximum number for the group as specified
+                  in the defining <span 
+class="cmtt-10">interface.ccl </span>file. If the maximum is 1 (the default) this number
+                  may be omitted.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">TRIGGER</span>           </dt><dd 
+class="list">
+                  <!--l. 918--><p class="noindent" >List of grid variables or groups to be used as triggers for causing an <span 
+class="cmtt-10">ANALYSIS</span>
+                  function or group to be executed. Any schedule block for an analysis function or
+                  analysis group may contain a <span 
+class="cmtt-10">TRIGGER </span>line.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">SYNCHRONISE</span>       </dt><dd 
+class="list">
+                  <!--l. 923--><p class="noindent" >List of groups to be synchronised, as soon as the function or schedule group is
+                  exited.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">OPTIONS</span>           </dt><dd 
+class="list">
+                  <!--l. 926--><p class="noindent" >List  of  additional  options  (see  below)  for  the  scheduled  function  or  group  of
+                  functions
+                  </dd></dl>
+<!--l. 930--><p class="noindent" >
+<h5 class="subsubsectionHead"><a 
+ id="x12-271000C2.4.2"></a>Allowed Options</h5>
+<!--l. 934--><p class="noindent" >Cactus understands the following options. These options are interpreted by the driver, not by Cactus. The
+current set of options is useful for Berger-Oliger mesh refinement which has subcycling in time, and for
+multi-patch simulations in which the domain is split into several distinct patches. Given this, the meanings of the
+options below is only tentative, and their exact meaning needs to be obtained from the driver documentation.
+The standard driver PUGH ignores all options.
+<!--l. 943--><p class="noindent" >Option names are case-insensitive. There can be several options given at the same time.
+<!--l. 946--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">META</span>              </dt><dd 
+class="list">
+                  <!--l. 948--><p class="noindent" >This routine will only be called once, even if several simulations are performed at
+                  the same time. This can be used, for example, to initialise external libraries, or to
+                  set up data structures that live in global variables.
+                                                                                       
+                                                                                       
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">GLOBAL</span>            </dt><dd 
+class="list">
+                  <!--l. 953--><p class="noindent" >This routine will only be called once on a grid hierarchy, not for all subgrids making
+                  up the hierarchy. This can be used, for example, for analysis routines which use
+                  global reduction or interpolation routines, rather than the local subgrid passed to
+                  them, and hence should only be called once.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">LEVEL</span>             </dt><dd 
+class="list">
+                  <!--l. 959--><p class="noindent" >This routine will only be called once on any &#8220;level&#8221; of the grid hierarchy. That is, it
+                  will only be called once for any set of sub-grids which have the same <span 
+class="cmtt-10">cctk</span><span 
+class="cmtt-10">_levfac</span>
+                  numbers.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">SINGLEMAP</span>         </dt><dd 
+class="list">
+                  <!--l. 964--><p class="noindent" >This routine will only be called once on any of the &#8220;patches&#8221; that form a &#8220;level&#8221; of
+                  the grid hierarchy.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">LOCAL </span><span 
+class="cmss-10">(this is the default)</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 967--><p class="noindent" >This routine will be called on every &#8220;component&#8221;.
+                  </dd></dl>
+<!--l. 972--><p class="noindent" >When the above options are used, it is often the case that a certain routine should, e.g.&#x00A0;be called at the time for
+a <span 
+class="cmtt-10">GLOBAL </span>routine, but should actually loop over all &#8220;components&#8221;. The following set of options allows
+this:
+<!--l. 977--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">LOOP-META</span>         </dt><dd 
+class="list">
+                  <!--l. 979--><p class="noindent" >Loop once.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">LOOP-GLOBAL</span>       </dt><dd 
+class="list">
+                  <!--l. 981--><p class="noindent" >Loop over all simulations.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">LOOP-LEVEL</span>        </dt><dd 
+class="list">
+                  <!--l. 983--><p class="noindent" >Loop over all &#8220;levels&#8221;.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">LOOP-SINGLEMAP</span>    </dt><dd 
+class="list">
+                  <!--l. 985--><p class="noindent" >Loop over all &#8220;patches&#8221;.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">LOOP-LOCAL</span>        </dt><dd 
+class="list">
+                  <!--l. 987--><p class="noindent" >Loop over all &#8220;components&#8221;.
+                  </dd></dl>
+                                                                                       
+                                                                                       
+<!--l. 991--><p class="noindent" >For example, the specification <div class="alltt">
+<!--l. 992--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;OPTIONS:</span><span 
+class="cmtt-10">&#x00A0;global</span><span 
+class="cmtt-10">&#x00A0;loop-local</span>
+</div>
+</div> schedules a routine at the time when a <span 
+class="cmtt-10">GLOBAL </span>routine is scheduled, and then calls the routine in a loop over all
+&#8220;components&#8221;.
+<!--l. 1000--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">C2.4.3   </span> <a 
+ id="x12-272000C2.4.3"></a>Conditional Statements</h4>
+<!--l. 1002--><p class="noindent" >Any schedule block or assignment statements can be optionally surrounded by conditional <span class="obeylines-h"><span 
+class="cmtt-10">if-elseif-else</span></span>
+constructs using the parameter data base. These can be nested, and have the general form:
+<div class="alltt">
+<!--l. 1007--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">if</span><span 
+class="cmtt-10">&#x00A0;(CCTK_Equals(&#x003C;</span><span 
+class="cmsltt-10">parameter</span><span 
+class="cmtt-10">&#x003E;,&#x003C;</span><span 
+class="cmsltt-10">string</span><span 
+class="cmtt-10">&#x003E;))</span>
+<br /><span 
+class="cmsy-10">{</span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;[&#x003C;</span><span 
+class="cmsltt-10">assignments</span><span 
+class="cmtt-10">&#x003E;]</span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;[&#x003C;</span><span 
+class="cmsltt-10">schedule</span><span 
+class="cmsltt-10">&#x00A0;blocks</span><span 
+class="cmtt-10">&#x003E;]</span>
+<br /><span 
+class="cmsy-10">}</span>
+</div>
+</div>
+<!--l. 1014--><p class="noindent" >Such conditionals are evaluated only at program startup, and are used to pick between different static schedule
+options. For dynamic scheduling, the <span 
+class="cmtt-10">SCHEDULE WHILE </span>construction should be used.
+<!--l. 1018--><p class="noindent" >Conditional constructs cannot be used inside a schedule block.
+<!--l. 1022--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">C2.5   </span> <a 
+ id="x12-273000C2.5"></a>configuration.ccl</h3>
+<!--l. 1025--><p class="noindent" >[<span 
+class="cmbx-10">NOTE: </span>The configuration.ccl is still relatively new, and not all features listed below may be fully implemented
+or functional.]
+<!--l. 1028--><p class="noindent" >A configuration.ccl file defines <span 
+class="cmbx-10">capabilities </span>which a thorn either provides or requires, or may use if available.
+Unlike <span 
+class="cmbx-10">implementations</span>, only one thorn providing a particular capability may be compiled into a
+                                                                                       
+                                                                                       
+configuration at one time. Thus, this mechanism may be used to, for example: provide access to external
+libraries; provide access to functions which other thorns must call, but are too complex for function
+aliasing; or to split a thorn into several thorns, all of which require some common (not aliased)
+functions.
+<!--l. 1037--><p class="noindent" >A configuration options file can contain any number of the following sections:
+     <ul class="itemize1">
+     <li class="itemize">
+     <div class="alltt">
+     <!--l. 1044--><p class="noindent" ><div class="obeylines-v">
+     <span 
+class="cmtt-10">PROVIDES</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">Capability</span><span 
+class="cmtt-10">&#x003E;</span>
+     <br /><span 
+class="cmsy-10">{</span>
+     <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;SCRIPT</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">Configuration</span><span 
+class="cmsltt-10">&#x00A0;script</span><span 
+class="cmtt-10">&#x003E;</span>
+     <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;LANG</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">Language</span><span 
+class="cmtt-10">&#x003E;</span>
+     <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;[OPTIONS</span><span 
+class="cmtt-10">&#x00A0;[&#x003C;option&#x003E;[,&#x003C;option&#x003E;]...]]</span>
+     <br /><span 
+class="cmsy-10">}</span>
+</div>
+     </div>
+     <!--l. 1053--><p class="noindent" >Informs the CST that this thorn provides a given capability, and that this capability has a given detection
+     script which may be used to configure it (e.g. running an autoconf script or detecting an
+     external library&#8217;s location). The script should output configuration information on its standard
+     output&#8212;the syntax is described below in Section <a 
+href="#x12-274000C2.5.1">C2.5.1<!--tex4ht:ref: sec:Appendix.configuration.ccl.configscript --></a>. The script may also indicate the failure to
+     detect a capability by returning a non-zero exit code; this will stop the build after the CST
+     stage.
+     <!--l. 1063--><p class="noindent" >Scripts can be in any language. If an interpreter is needed to run the script, for example <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">Perl</span></span></span>, this should
+     be indicated by the <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">LANG</span></span></span> option.
+     <!--l. 1067--><p class="noindent" >The specified options are checked for in the original configuration, and any options passed on the
+     command line (including an &#8216;options&#8217; file) at compile time when the thorn is added, or if
+     the CST is rerun. These options need be set only once, and will be remembered between
+     builds.
+     </li>
+     <li class="itemize">
+     <div class="alltt">
+     <!--l. 1075--><p class="noindent" ><div class="obeylines-v">
+     <span 
+class="cmtt-10">REQUIRES</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">Capability</span><span 
+class="cmtt-10">&#x003E;</span>
+</div>
+     </div>
+     <!--l. 1079--><p class="noindent" >Informs the CST that this thorn requires a certain capability to be present. If no thorn providing the
+     capability is in the ThornList, the build will stop after the CST stage.
+     <div class="alltt">
+                                                                                       
+                                                                                       
+     <!--l. 1083--><p class="noindent" ><div class="obeylines-v">
+     <span 
+class="cmtt-10">OPTIONAL</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">Capability</span><span 
+class="cmtt-10">&#x003E;</span>
+     <br /><span 
+class="cmsy-10">{</span>
+     <br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;DEFINE</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">macro</span><span 
+class="cmtt-10">&#x003E;</span>
+     <br /><span 
+class="cmsy-10">}</span>
+</div>
+     </div>
+     <!--l. 1090--><p class="noindent" >Informs the CST that this thorn may use a certain capability, if a thorn providing it is in the
+     ThornList. If present, the preprocessor macro, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">macro</span></span></span>, will be defined and given the value
+     &#8220;1&#8221;.
+     </li></ul>
+<!--l. 1096--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">C2.5.1   </span> <a 
+ id="x12-274000C2.5.1"></a>Configuration Scripts</h4>
+<!--l. 1099--><p class="noindent" >The configuration script may tell the CST to add certain features to the Cactus environment&#8212;either to the
+make system or to header files included by thorns. It does this by outputting lines to its standard
+output:
+     <ul class="itemize1">
+     <li class="itemize">
+     <div class="alltt">
+     <!--l. 1110--><p class="noindent" ><div class="obeylines-v">
+     <span 
+class="cmtt-10">BEGIN</span><span 
+class="cmtt-10">&#x00A0;DEFINE</span>
+     <br /><span 
+class="cmtt-10">&#x003C;text&#x003E;</span>
+     <br /><span 
+class="cmtt-10">END</span><span 
+class="cmtt-10">&#x00A0;DEFINE</span>
+</div>
+     </div>
+     <!--l. 1116--><p class="noindent" >Places a set of definitions in a header file which will be included by all thorns using this capability (either
+     through an OPTIONAL or REQUIRES entry in their configuration.ccl files).
+     </li>
+     <li class="itemize">
+     <div class="alltt">
+     <!--l. 1122--><p class="noindent" ><div class="obeylines-v">
+     <span 
+class="cmtt-10">INCLUDE_DIRECTORY</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;&#x003C;directory&#x003E;</span>
+                                                                                       
+                                                                                       
+</div>
+     </div>
+     <!--l. 1126--><p class="noindent" >Adds a directory to the include path used for compiling files in thorns using this capability.
+     </li>
+     <li class="itemize">
+     <div class="alltt">
+     <!--l. 1131--><p class="noindent" ><div class="obeylines-v">
+     <span 
+class="cmtt-10">BEGIN</span><span 
+class="cmtt-10">&#x00A0;MAKE_DEFINITION</span>
+     <br /><span 
+class="cmtt-10">&#x003C;text&#x003E;</span>
+     <br /><span 
+class="cmtt-10">END</span><span 
+class="cmtt-10">&#x00A0;MAKE_DEFINITION</span>
+</div>
+     </div>
+     <!--l. 1137--><p class="noindent" >Adds a makefile definition into the compilation of all thorns using this capability.
+     </li>
+     <li class="itemize">
+     <div class="alltt">
+     <!--l. 1142--><p class="noindent" ><div class="obeylines-v">
+     <span 
+class="cmtt-10">BEGIN</span><span 
+class="cmtt-10">&#x00A0;MAKE_DEPENDENCY</span>
+     <br /><span 
+class="cmtt-10">&#x003C;text&#x003E;</span>
+     <br /><span 
+class="cmtt-10">END</span><span 
+class="cmtt-10">&#x00A0;MAKE_DEPENDENCY</span>
+</div>
+     </div>
+     <!--l. 1148--><p class="noindent" >Adds makefile dependency information into the compilation of all thorns using this capability.
+     </li>
+     <li class="itemize">
+     <div class="alltt">
+     <!--l. 1153--><p class="noindent" ><div class="obeylines-v">
+     <span 
+class="cmtt-10">LIBRARY</span><span 
+class="cmtt-10">&#x00A0;&#x003C;library&#x003E;</span>
+</div>
+     </div>
+     <!--l. 1157--><p class="noindent" >Adds a library to the final cactus link.
+     </li>
+     <li class="itemize">
+     <div class="alltt">
+     <!--l. 1161--><p class="noindent" ><div class="obeylines-v">
+     <span 
+class="cmtt-10">LIBRARY_DIRECTORY</span><span 
+class="cmtt-10">&#x00A0;&#x003C;library&#x003E;</span>
+                                                                                       
+                                                                                       
+</div>
+     </div>
+     <!--l. 1165--><p class="noindent" >Adds a directory to the list of directories searched for libraries at link time.
+     </li></ul>
+<!--l. 1170--><p class="noindent" >No other lines should be output by the script.
+                                                                                       
+                                                                                       
+<!--l. 1176--><div class="crosslinks"><p class="noindent">[<a 
+href="ReferenceManualch9.html" >next</a>] [<a 
+href="ReferenceManualch7.html" >prev</a>] [<a 
+href="ReferenceManualch7.html#tailReferenceManualch7.html" >prev-tail</a>] [<a 
+href="ReferenceManualch8.html" >front</a>] [<a 
+href="ReferenceManualpa3.html#ReferenceManualch8.html" >up</a>] </p></div>
+<!--l. 1176--><p class="noindent" ><a 
+ id="tailReferenceManualch8.html"></a>   
+</body></html> 

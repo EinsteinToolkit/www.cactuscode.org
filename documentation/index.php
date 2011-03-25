@@ -12,7 +12,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     wrting, utility routines, and thorn infrastructure. <br></ul>
   <li>
   Reference Manual (<a href="refmanual/ReferenceManual.pdf">PDF</a>,
-  <a href="refmanual/ReferenceManual.html">HTML</a>) </li>
+  <a href="referencemanual/ReferenceManual.html">HTML</a>) </li>
     <ul> The Reference Manual gives a list of thorns, CCTK_* functions, Util_* functions,
     and in addition explains configuration file syntax, schedule bins, and CVS commands for
     checkout and commit procedures. <br></ul>
