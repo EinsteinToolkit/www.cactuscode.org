@@ -3,16 +3,25 @@ $title='Media and News';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
-<p>Use the links on the right to check out the media subections for <a href="news">news</a>, <a href="presentations">presentations</a>, <a href="publications">publications</a>, <a href="prizes">prizes</a>, where you can find out more about the history and accomplishments of the Cactus Code project.</p>
+<p> Here you can learn more about the history, progress, and accomplishments
+of the Cactus project. </p> 
 
-<br />
+ <ul><br><li><a href="news">news</a></li><ul>
+    A list of milestones and major events in Cactus history. 
 
-<h4>History</h4>
-<ul>
+</ul><br><li><a href="presentations">presentations</a></li><ul>
+    Posters and videos presented at conferences and meetings. 
+
+</ul><br><li><a href="publications">publications</a> </li><ul>
+    References to hundreds of publications involving Cactus. 
+
+</ul><br><li><a href="prizes">prizes</a> </li><ul>
+    A summary of prizes awarded to Cactus. 
+
+</ul></ul>
+
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/media/news/recent.php');
 ?>
-</ul>
 
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');
