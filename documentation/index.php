@@ -11,12 +11,12 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     process of installing and compiling Cactus, running applications, thorn
     wrting, utility routines, and thorn infrastructure. <br></ul>
   <li>
-  Reference Manual (<a href="reference/ReferenceManual.pdf">PDF</a>,
-  <a href="reference/ReferenceManual.html">HTML</a>) </li>
+  Reference Manual (<a href="refmanual/ReferenceManual.pdf">PDF</a>,
+  <a href="refmanual/ReferenceManual.html">HTML</a>) </li>
     <ul> The Reference Manual gives a list of thorns, CCTK_* functions, Util_* functions,
     and in addition explains configuration file syntax, schedule bins, and CVS commands for
     checkout and commit procedures. <br></ul>
-  <li><a href="AdvancedConcepts.pdf">Advanced Concepts (PDF)</a> </li>
+  <li><a href="CoreDoc.pdf">Advanced Concepts (PDF)</a> </li>
     <ul> This document concisely explains concepts that span multiple thorns but which
     are not part of the flesh, namely tag tables and the post-processing of data from the 
     CactusEinstein infrastructure. <br></ul> 
