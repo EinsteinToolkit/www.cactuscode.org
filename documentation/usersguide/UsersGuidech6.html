@@ -1,0 +1,1813 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>B2 Compilation</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,fn-in --> 
+<meta name="src" content="UsersGuide.tex"> 
+<meta name="date" content="2011-03-25 09:47:00"> 
+<link rel="stylesheet" type="text/css" href="UsersGuide.css"> 
+</head><body 
+>
+<!--l. 155--><div class="crosslinks"><p class="noindent">[<a 
+href="UsersGuidech7.html" >next</a>] [<a 
+href="UsersGuidech5.html" >prev</a>] [<a 
+href="UsersGuidech5.html#tailUsersGuidech5.html" >prev-tail</a>] [<a 
+href="#tailUsersGuidech6.html">tail</a>] [<a 
+href="UsersGuidepa2.html#UsersGuidech6.html" >up</a>] </p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;B2</span><br /><a 
+ id="x9-18000B2"></a>Compilation</h2>
+<h3 class="sectionHead"><span class="titlemark">B2.1   </span> <a 
+ id="x9-19000B2.1"></a>Configuration Options</h3>
+<!--l. 162--><p class="noindent" >There are four ways to pass options to the configuration process.
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x9-19001xB2.1"> Pass options individually in shell environment variables:
+     <!--l. 168--><p class="noindent" ><span 
+class="cmtt-10">export &#x003C;option name&#x003E;=&#x003C;chosen value&#x003E; # for bash</span><br 
+class="newline" /><span 
+class="cmtt-10">setenv &#x003C;option name&#x003E; &#x003C;chosen value&#x003E; # for (t)csh</span><br 
+class="newline" /><span 
+class="cmtt-10">gmake &#x003C;configuration name&#x003E;-config</span>
+     </li>
+     <li 
+  class="enumerate" id="x9-19002xB2.1"> Either: create a default configuration file <span 
+class="cmtt-10">$</span><span 
+class="cmsy-10">{</span><span 
+class="cmtt-10">HOME</span><span 
+class="cmsy-10">}</span><span 
+class="cmtt-10">/.cactus/config</span>.
+     <!--l. 175--><p class="noindent" >All available configuration options may be set in a default options file <span 
+class="cmtt-10">$</span><span 
+class="cmsy-10">{</span><span 
+class="cmtt-10">HOME</span><span 
+class="cmsy-10">}</span><span 
+class="cmtt-10">/.cactus/config</span>,
+     any option which are not set will take a default value. The file should contain lines of the form:
+     <!--l. 179--><p class="noindent" ><span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">option</span><span 
+class="cmtt-10">&#x003E; [=] ...</span>
+     <!--l. 181--><p class="noindent" >The equals sign is optional. Spaces are allowed everywhere. Text starting wit a <span 
+class="cmtt-10">&#8217;#&#8217; </span>character will
+     be ignored as a comment.
+     </li>
+     <li 
+  class="enumerate" id="x9-19003xB2.1"> Or: list your Cactus configuration files in an environment variable <span 
+class="cmtt-10">CACTUS</span><span 
+class="cmtt-10">_CONFIG</span><span 
+class="cmtt-10">_FILES</span>:
+     <!--l. 189--><p class="noindent" ><span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config name</span><span 
+class="cmtt-10">&#x003E;-config CACTUS</span><span 
+class="cmtt-10">_CONFIG</span><span 
+class="cmtt-10">_FILES=</span><span 
+class="cmmi-10">&#x003C;</span><span 
+class="cmsltt-10">list of config files</span><span 
+class="cmmi-10">&#x003E;</span>
+     <!--l. 191--><p class="noindent" >Multiple configuration files, with their file names separated by a <span 
+class="cmtt-10">&#8217;:&#8217; </span>character, will be processed
+     in  order.  Each  file  should  be  given  by  its  full  path.  The  options  file  has  the  same  format  as
+     <span 
+class="cmtt-10">$</span><span 
+class="cmsy-10">{</span><span 
+class="cmtt-10">HOME</span><span 
+class="cmsy-10">}</span><span 
+class="cmtt-10">/.cactus/config</span>.
+     </li>
+     <li 
+  class="enumerate" id="x9-19004xB2.1"> Add the options to a configuration file and use,
+     <!--l. 199--><p class="noindent" ><span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config name</span><span 
+class="cmtt-10">&#x003E;-config options=&#x003C;</span><span 
+class="cmsltt-10">filename</span><span 
+class="cmtt-10">&#x003E;</span>
+     <!--l. 201--><p class="noindent" >The options file has the same format as <span 
+class="cmtt-10">$</span><span 
+class="cmsy-10">{</span><span 
+class="cmtt-10">HOME</span><span 
+class="cmsy-10">}</span><span 
+class="cmtt-10">/.cactus/config</span>. (Note that these options are
+     <span 
+class="cmti-10">added </span>to those from the <span 
+class="cmtt-10">$</span><span 
+class="cmsy-10">{</span><span 
+class="cmtt-10">HOME</span><span 
+class="cmsy-10">}</span><span 
+class="cmtt-10">/.cactus/config </span>file.)
+     </li>
+     <li 
+  class="enumerate" id="x9-19005xB2.1"> Pass the options individually on the command line,
+     <!--l. 209--><p class="noindent" ><span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config name</span><span 
+class="cmtt-10">&#x003E;-config &#x003C;</span><span 
+class="cmsltt-10">option name</span><span 
+class="cmtt-10">&#x003E;=&#x003C;</span><span 
+class="cmsltt-10">chosen value</span><span 
+class="cmtt-10">&#x003E;, ...</span>
+     <!--l. 211--><p class="noindent" >Not all configuration options can be set on the command line. Those that can be set are indicated
+     in the table below.</li></ol>
+<!--l. 215--><p class="noindent" >The options are listed here in order of increasing precedence, e.g. options set on the command line will take
+priority over (potentially conflicting) options set in <span 
+class="cmtt-10">$</span><span 
+class="cmsy-10">{</span><span 
+class="cmtt-10">HOME</span><span 
+class="cmsy-10">}</span><span 
+class="cmtt-10">/.cactus/config </span>or other Cactus configuration
+files. Default options from <span 
+class="cmtt-10">$</span><span 
+class="cmsy-10">{</span><span 
+class="cmtt-10">HOME</span><span 
+class="cmsy-10">}</span><span 
+class="cmtt-10">/.cactus/config </span>will only be read if the environment variable
+<span 
+class="cmtt-10">CACTUS</span><span 
+class="cmtt-10">_CONFIG</span><span 
+class="cmtt-10">_FILES </span>is not set.
+                                                                                       
+                                                                                       
+<!--l. 222--><p class="noindent" >It is important to note that these methods cannot be used to, for example, add options to the default values for
+<span 
+class="cmtt-10">CFLAGS</span>. Setting any variable in the configuration file or the command line will overwrite completely the default
+values.
+<!--l. 227--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B2.1.1   </span> <a 
+ id="x9-20000B2.1.1"></a>Available Options</h4>
+<!--l. 230--><p class="noindent" >There is a plethora of available options.
+     <ul class="itemize1">
+     <li class="itemize">Cross compiling
+     <!--l. 236--><p class="noindent" >If you are compiling on an architecture other than the one you are producing an executable for,
+     you will need to pass the
+     <!--l. 239--><p class="noindent" >
+                       <dl class="list2"><dt class="list">
+     <span 
+class="cmtt-10">HOST</span><span 
+class="cmtt-10">_MACHINE=</span><span 
+class="cmsltt-10">x-x-x</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                       <!--l. 240--><p class="noindent" ></dd></dl>
+     <!--l. 242--><p class="noindent" >option, where <span 
+class="cmsltt-10">x-x-x </span>is the canonical name of the architecture you are compiling for, such as
+     <span 
+class="cmtt-10">sx6-nec-superux</span>; the format is <span 
+class="cmsltt-10">processor</span><span 
+class="cmtt-10">-</span><span 
+class="cmsltt-10">vendor</span><span 
+class="cmtt-10">-</span><span 
+class="cmsltt-10">OS</span>.
+     </li>
+     <li class="itemize">Compiled thorns
+     <!--l. 248--><p class="noindent" >These specify the chosen set of thorns for compilation. If the thorn choice is not provided during
+     configuration, a list containing all thorns in the <span 
+class="cmtt-10">arrangements </span>directory is automatically created, and the
+     user is prompted for any changes.
+     <!--l. 253--><p class="noindent" >
+                       <dl class="list2"><dt class="list">
+     <span 
+class="cmtt-10">THORNLIST</span>         </dt><dd 
+class="list">
+                       <!--l. 255--><p class="noindent" >Name  of  file  containing  a  list  of  thorns  with  the  syntax  <span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">arrangement</span>
+                       <span 
+class="cmsltt-10">name</span><span 
+class="cmtt-10">&#x003E;/&#x003C;</span><span 
+class="cmsltt-10">thorn name</span><span 
+class="cmtt-10">&#x003E;</span>. Lines beginning with <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">#</span></span></span> or <span 
+class="cmtt-10">! </span>are ignored.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">THORNLIST</span><span 
+class="cmtt-10">_DIR</span>     </dt><dd 
+class="list">
+                       <!--l. 259--><p class="noindent" >Location  of  directory  containing  <span 
+class="cmtt-10">THORNLIST</span>.  This  defaults  to  the  current
+                       working directory.
+                       </dd></dl>
+     </li>
+     <li class="itemize">Compiler and tool specification
+     <!--l. 268--><p class="noindent" >These are used to specify which compilers and other tools to use. Entries followed by * may be specified on
+     the command line.
+     <!--l. 271--><p class="noindent" >
+                                                                                       
+                                                                                       
+                       <dl class="list2"><dt class="list">
+     <span 
+class="cmtt-10">CC</span>                </dt><dd 
+class="list">
+                       <!--l. 272--><p class="noindent" >* The C compiler.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">CXX</span>               </dt><dd 
+class="list">
+                       <!--l. 273--><p class="noindent" >The C++ compiler.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F90</span>               </dt><dd 
+class="list">
+                       <!--l. 274--><p class="noindent" >* The Fortran 90 compiler.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F77</span>               </dt><dd 
+class="list">
+                       <!--l. 275--><p class="noindent" >* The Fortran 77 compiler.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">CPP</span>               </dt><dd 
+class="list">
+                       <!--l. 276--><p class="noindent" >The preprocessor used to generate dependencies for and to preprocess C and
+                       C++ code.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">FPP</span>               </dt><dd 
+class="list">
+                       <!--l. 278--><p class="noindent" >The preprocessor used to generate dependencies for and to preprocess Fortran
+                       code.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">LD</span>                </dt><dd 
+class="list">
+                       <!--l. 280--><p class="noindent" >* The linker.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">AR</span>                </dt><dd 
+class="list">
+                       <!--l. 281--><p class="noindent" >The archiver used for generating libraries.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">RANLIB</span>            </dt><dd 
+class="list">
+                       <!--l. 282--><p class="noindent" >The archive indexer to use.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">MKDIR</span>             </dt><dd 
+class="list">
+                       <!--l. 283--><p class="noindent" >The program to use to create a directory.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">PERL</span>              </dt><dd 
+class="list">
+                       <!--l. 284--><p class="noindent" >The name of the Perl executable.</dd></dl>
+     </li>
+     <li class="itemize">Compilation and tool flags
+     <!--l. 289--><p class="noindent" >Flags which are passed to the compilers and the tools.
+     <!--l. 291--><p class="noindent" >
+                       <dl class="list2"><dt class="list">
+     <span 
+class="cmtt-10">CFLAGS</span>            </dt><dd 
+class="list">
+                       <!--l. 292--><p class="noindent" >Flags for the C compiler.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">CXXFLAGS</span>          </dt><dd 
+class="list">
+                       <!--l. 295--><p class="noindent" >Flags for the C++ compiler.
+                                                                                       
+                                                                                       
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F90FLAGS</span>          </dt><dd 
+class="list">
+                       <!--l. 298--><p class="noindent" >* Flags for the Fortran 90 compiler.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F77FLAGS</span>          </dt><dd 
+class="list">
+                       <!--l. 301--><p class="noindent" >* Flags for the Fortran 77 compiler.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">CPPFLAGS</span>          </dt><dd 
+class="list">
+                       <!--l. 304--><p class="noindent" >Flags for the preprocessor (used to generate compilation dependencies for and
+                       preprocess C and C++ code).
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">FPPFLAGS</span>          </dt><dd 
+class="list">
+                       <!--l. 308--><p class="noindent" >Flags for the preprocessor (used to generate compilation dependencies for and
+                       preprocess Fortran code).
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">MKDIRFLAGS</span>        </dt><dd 
+class="list">
+                       <!--l. 312--><p class="noindent" >Flags for <span 
+class="cmtt-10">MKDIR</span>, so that no error is given if the directory exists.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">LDFLAGS</span>           </dt><dd 
+class="list">
+                       <!--l. 315--><p class="noindent" >* Flags for the linker. <span 
+class="cmti-10">Warning: </span>This variable is ignored while the compilers
+                       and linkers are autodetected. This can lead to strange errors while configuring.
+                       You can pass the linker flags in the variable <span 
+class="cmtt-10">LD </span>instead.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">ARFLAGS</span>           </dt><dd 
+class="list">
+                       <!--l. 321--><p class="noindent" >Flags for the archiver.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">C</span><span 
+class="cmtt-10">_LINE</span><span 
+class="cmtt-10">_DIRECTIVES</span> </dt><dd 
+class="list">
+                       <!--l. 324--><p class="noindent" >Whether error messages and debug information in the compiled C and C++
+                       files should point to the original source file or to an internal file created by
+                       Cactus. The only options available are <span 
+class="cmtt-10">yes </span>and <span 
+class="cmtt-10">no</span>, the default is <span 
+class="cmtt-10">yes</span>. Set this
+                       to <span 
+class="cmtt-10">no </span>if your compiler reports error messages about unrecognised <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">#</span></span></span> directives.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F</span><span 
+class="cmtt-10">_LINE</span><span 
+class="cmtt-10">_DIRECTIVES</span> </dt><dd 
+class="list">
+                       <!--l. 331--><p class="noindent" >Whether error messages and debug information in the compiled Fortran files
+                       should point to the original source file or to an internal file created by Cactus.
+                       The only options available are <span 
+class="cmtt-10">yes </span>and <span 
+class="cmtt-10">no</span>, the default is <span 
+class="cmtt-10">yes</span>. Set this to <span 
+class="cmtt-10">no</span>
+                       if your compiler reports error messages about unrecognised <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">#</span></span></span> directives.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">CROSS</span><span 
+class="cmtt-10">_COMPILE</span>     </dt><dd 
+class="list">
+                       <!--l. 338--><p class="noindent" >Enables cross compilation. Available options are <span 
+class="cmtt-10">yes </span>and <span 
+class="cmtt-10">no</span>, the default is <span 
+class="cmtt-10">no</span>.
+                       To create a cross-compiled configuration one must explicitly set this option
+                       to <span 
+class="cmtt-10">yes</span>.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">DISABLE</span><span 
+class="cmtt-10">_REAL16</span>    </dt><dd 
+class="list">
+                       <!--l. 342--><p class="noindent" >Disable support for the data type <span 
+class="cmtt-10">CCTK</span><span 
+class="cmtt-10">_REAL16</span>. The only options available
+                       are <span 
+class="cmtt-10">yes </span>and <span 
+class="cmtt-10">no</span>, the default is <span 
+class="cmtt-10">no</span>. Cactus autodetects this data type only for
+                       C. If the C compiler supports it, but the Fortran compiler does not, it may
+                       be necessary to disable <span 
+class="cmtt-10">CCTK</span><span 
+class="cmtt-10">_REAL16 </span>altogether, since Cactus assumes that
+                       data types are fully supported if they exist.
+                                                                                       
+                                                                                       
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">DEBUG</span>             </dt><dd 
+class="list">
+                       <!--l. 350--><p class="noindent" >*  Specifies  what  type  of  debug  mode  should  be  used,  the  default  is  no
+                       debugging. Current options are <span 
+class="cmtt-10">yes</span>, <span 
+class="cmtt-10">no</span>, or <span 
+class="cmtt-10">memory</span>. The option <span 
+class="cmtt-10">yes </span>switches
+                       on  all  debugging  features,  whereas  <span 
+class="cmtt-10">memory </span>just  employs  memory  tracing
+                       (Section <a 
+href="UsersGuidech9.html#x13-133000C1.9.3">C1.9.3<!--tex4ht:ref: sec:metr --></a>).
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">C</span><span 
+class="cmtt-10">_DEBUG</span><span 
+class="cmtt-10">_FLAGS</span>     </dt><dd 
+class="list">
+                       <!--l. 357--><p class="noindent" >Debug flags for the C compiler, their use depends on the type of debugging
+                       being used.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">CXX</span><span 
+class="cmtt-10">_DEBUG</span><span 
+class="cmtt-10">_FLAGS</span>   </dt><dd 
+class="list">
+                       <!--l. 361--><p class="noindent" >Debug flags for the C++ compiler, their use depends on the type of debugging
+                       being used.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F90</span><span 
+class="cmtt-10">_DEBUG</span><span 
+class="cmtt-10">_FLAGS</span>   </dt><dd 
+class="list">
+                       <!--l. 365--><p class="noindent" >Debug flags for the Fortran 90 compiler, their use depends on the type of
+                       debugging being used.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F77</span><span 
+class="cmtt-10">_DEBUG</span><span 
+class="cmtt-10">_FLAGS</span>   </dt><dd 
+class="list">
+                       <!--l. 369--><p class="noindent" >Debug flags for the Fortran 77 compiler, their use depends on the type of
+                       debugging being used.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">OPTIMISE, OPTIMIZE</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                       <!--l. 373--><p class="noindent" >*  Specifies  what  type  of  optimisation  should  be  used.  The  only  options
+                       currently available are <span 
+class="cmtt-10">yes </span>and <span 
+class="cmtt-10">no</span>. The default is to use optimisation.<br 
+class="newline" />Note that the British spelling <span 
+class="cmtt-10">OPTIMISE </span>will be checked first and, if set, will
+                       override any setting of the American-spelled <span 
+class="cmtt-10">OPTIMIZE</span>.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">C</span><span 
+class="cmtt-10">_OPTIMISE</span><span 
+class="cmtt-10">_FLAGS</span>  </dt><dd 
+class="list">
+                       <!--l. 379--><p class="noindent" >Optimisation  flags  for  the  C  compiler,  their  use  depends  on  the  type  of
+                       optimisation being used.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">CXX</span><span 
+class="cmtt-10">_OPTIMISE</span><span 
+class="cmtt-10">_FLAGS</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                       <!--l. 383--><p class="noindent" >Optimisation flags for the C++ compiler, their use depends on the type of
+                       optimisation being used.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F90</span><span 
+class="cmtt-10">_OPTIMISE</span><span 
+class="cmtt-10">_FLAGS</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                       <!--l. 387--><p class="noindent" >Optimisation flags for the Fortran 90 compiler, their use depends on the type
+                       of optimisation being used.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F77</span><span 
+class="cmtt-10">_OPTIMISE</span><span 
+class="cmtt-10">_FLAGS</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                       <!--l. 391--><p class="noindent" >Optimisation flags for the Fortran 77 compiler, their use depends on the type
+                       of optimisation being used.
+                                                                                       
+                                                                                       
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">C</span><span 
+class="cmtt-10">_NO_OPTIMISE</span><span 
+class="cmtt-10">_FLAGS</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                       <!--l. 395--><p class="noindent" >
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">CXX</span><span 
+class="cmtt-10">_NO</span><span 
+class="cmtt-10">_OPTIMISE</span><span 
+class="cmtt-10">_FLAGS</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                       <!--l. 397--><p class="noindent" >
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F90</span><span 
+class="cmtt-10">_NO</span><span 
+class="cmtt-10">_OPTIMISE</span><span 
+class="cmtt-10">_FLAGS</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                       <!--l. 399--><p class="noindent" >
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F77</span><span 
+class="cmtt-10">_NO</span><span 
+class="cmtt-10">_OPTIMISE</span><span 
+class="cmtt-10">_FLAGS</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                       <!--l. 401--><p class="noindent" >Optimisation flags used to indicate that no optimisation should be performed.
+                       These are invoked when OPTIMISE=no is used.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">PROFILE</span>           </dt><dd 
+class="list">
+                       <!--l. 405--><p class="noindent" >* Specifies what type of profiling should be used. The only options currently
+                       available are <span 
+class="cmtt-10">yes </span>and <span 
+class="cmtt-10">no</span>. The default is to use no profiling.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">C</span><span 
+class="cmtt-10">_PROFILE</span><span 
+class="cmtt-10">_FLAGS</span>   </dt><dd 
+class="list">
+                       <!--l. 410--><p class="noindent" >Profile flags for the C compiler, their use depends on the type of profiling
+                       being used.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">CXX</span><span 
+class="cmtt-10">_PROFILE</span><span 
+class="cmtt-10">_FLAGS</span> </dt><dd 
+class="list">
+                       <!--l. 414--><p class="noindent" >Profile flags for the C++ compiler, their use depends on the type of profiling
+                       being used.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F90</span><span 
+class="cmtt-10">_PROFILE</span><span 
+class="cmtt-10">_FLAGS</span> </dt><dd 
+class="list">
+                       <!--l. 418--><p class="noindent" >Profile flags for the Fortran 90 compiler, their use depends on the type of
+                       profiling being used.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F77</span><span 
+class="cmtt-10">_PROFILE</span><span 
+class="cmtt-10">_FLAGS</span> </dt><dd 
+class="list">
+                       <!--l. 422--><p class="noindent" >Profile flags for the Fortran 77 compiler, their use depends on the type of
+                       profiling being used.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">WARN</span>              </dt><dd 
+class="list">
+                       <!--l. 426--><p class="noindent" >* Specifies what type of build warnings should be used. The only options
+                       currently available are <span 
+class="cmtt-10">yes </span>and <span 
+class="cmtt-10">no</span>. The default is to produce no warnings.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">C</span><span 
+class="cmtt-10">_WARN</span><span 
+class="cmtt-10">_FLAGS</span>      </dt><dd 
+class="list">
+                       <!--l. 431--><p class="noindent" >Warning flags for the C compiler, their use depends on the type of warnings
+                       used during compilation (Section <a 
+href="#x9-32000B2.4.4">B2.4.4<!--tex4ht:ref: sec:gmopfobuco --></a>).
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">CXX</span><span 
+class="cmtt-10">_WARN</span><span 
+class="cmtt-10">_FLAGS</span>    </dt><dd 
+class="list">
+                       <!--l. 435--><p class="noindent" >Warning flags for the C++ compiler, their use depends on the type of warnings
+                       used during compilation (Section <a 
+href="#x9-32000B2.4.4">B2.4.4<!--tex4ht:ref: sec:gmopfobuco --></a>).
+                                                                                       
+                                                                                       
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F90</span><span 
+class="cmtt-10">_WARN</span><span 
+class="cmtt-10">_FLAGS</span>    </dt><dd 
+class="list">
+                       <!--l. 439--><p class="noindent" >Warning flags for the Fortran 90 compiler, their use depends on the type of
+                       warnings used during compilation (Section <a 
+href="#x9-32000B2.4.4">B2.4.4<!--tex4ht:ref: sec:gmopfobuco --></a>).
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">F77</span><span 
+class="cmtt-10">_WARN</span><span 
+class="cmtt-10">_FLAGS</span>    </dt><dd 
+class="list">
+                       <!--l. 443--><p class="noindent" >Warning flags for the Fortran 77 compiler, their use depends on the type of
+                       warnings used during compilation (Section <a 
+href="#x9-32000B2.4.4">B2.4.4<!--tex4ht:ref: sec:gmopfobuco --></a>).
+                       </dd></dl>
+     </li>
+     <li class="itemize">Architecture-specific flags
+     <!--l. 451--><p class="noindent" >
+                       <dl class="list2"><dt class="list">
+     <span 
+class="cmtt-10">IRIX</span><span 
+class="cmtt-10">_BITS=32|64</span>   </dt><dd 
+class="list">
+                       <!--l. 452--><p class="noindent" >For Irix SGI systems: whether to build a 32- or 64-bit configuration.</dd></dl>
+     <!--l. 455--><p class="noindent" >
+                       <dl class="list2"><dt class="list">
+     <span 
+class="cmtt-10">AIX</span><span 
+class="cmtt-10">_BITS=32|64</span>    </dt><dd 
+class="list">
+                       <!--l. 456--><p class="noindent" >For IBM SP systems: whether to build a 32- or 64-bit configuration.</dd></dl>
+     </li>
+     <li class="itemize">Library flags
+     <!--l. 461--><p class="noindent" >Used to specify auxiliary libraries and directories to find them in.
+     <!--l. 463--><p class="noindent" >
+                       <dl class="list2"><dt class="list">
+     <span 
+class="cmtt-10">LIBS</span>              </dt><dd 
+class="list">
+                       <!--l. 464--><p class="noindent" >Additional  libraries.  This  variable  can  also  contain  linker  options,  e.g.&#x00A0;to
+                       switch between static and dynamic linking. (Cactus adds a <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">-l</span></span></span> prefix to library
+                       names, but does not modify linker options.) <span 
+class="cmti-10">Warning: </span>This variable is ignored
+                       while the compilers and linkers are autodetected. This can lead to strange
+                       errors while configuring. You can pass the additional libraries in the variable
+                       <span 
+class="cmtt-10">LD </span>instead.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">LIBDIRS</span>           </dt><dd 
+class="list">
+                       <!--l. 474--><p class="noindent" >Any other library directories. This variable can also contain linker options.
+                       (Cactus adds an <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">-L</span></span></span> prefix to library directories, but does not modify linker
+                       options.)</dd></dl>
+     </li>
+     <li class="itemize">Extra include directories
+     <!--l. 482--><p class="noindent" >
+                       <dl class="list2"><dt class="list">
+     <span 
+class="cmtt-10">SYS</span><span 
+class="cmtt-10">_INC</span><span 
+class="cmtt-10">_DIRS</span>      </dt><dd 
+class="list">
+                       <!--l. 483--><p class="noindent" >Used to specify any additional directories for system include files.</dd></dl>
+                                                                                       
+                                                                                       
+     </li>
+     <li class="itemize">Precision options
+     <!--l. 490--><p class="noindent" >Used to specify the precision of the default real and integer data types, by the number of bytes the data
+     takes up. Note that not all values will be valid on all architectures.
+     <!--l. 494--><p class="noindent" >
+                       <dl class="list2"><dt class="list">
+     <span 
+class="cmtt-10">REAL</span><span 
+class="cmtt-10">_PRECISION</span>    </dt><dd 
+class="list">
+                       <!--l. 496--><p class="noindent" >* Allowed values are <span 
+class="cmtt-10">16, 8, 4</span>.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">INTEGER</span><span 
+class="cmtt-10">_PRECISION</span> </dt><dd 
+class="list">
+                       <!--l. 499--><p class="noindent" >* Allowed values are <span 
+class="cmtt-10">8, 4, 2</span>.
+                       </dd></dl>
+     </li>
+     <li class="itemize">Executable name
+     <!--l. 506--><p class="noindent" >
+                       <dl class="list2"><dt class="list">
+     <span 
+class="cmtt-10">EXEDIR</span>            </dt><dd 
+class="list">
+                       <!--l. 507--><p class="noindent" >The directory in which to place the executable.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">EXE</span>               </dt><dd 
+class="list">
+                       <!--l. 508--><p class="noindent" >The name of the executable.</dd></dl>
+     </li>
+     <li class="itemize">Extra packages
+     <!--l. 513--><p class="noindent" >Compiling with extra packages is described fully in Section <a 
+href="#x9-21000B2.2">B2.2<!--tex4ht:ref: subsec:cowiexpa --></a>, which should be consulted for the full
+     range of configuration options.
+     <!--l. 517--><p class="noindent" >
+                       <dl class="list2"><dt class="list">
+     <span 
+class="cmtt-10">MPI</span>               </dt><dd 
+class="list">
+                       <!--l. 518--><p class="noindent" >* The MPI package to use, if required. Supported values are <span 
+class="cmtt-10">CUSTOM</span>, <span 
+class="cmtt-10">NATIVE</span>,
+                       <span 
+class="cmtt-10">MPICH</span>, or <span 
+class="cmtt-10">LAM</span>.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">HDF5</span>              </dt><dd 
+class="list">
+                       <!--l. 521--><p class="noindent" >Supported values are <span 
+class="cmtt-10">yes</span>, and <span 
+class="cmtt-10">no</span>. A blank value is taken as <span 
+class="cmtt-10">no</span>.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">LAPACK</span>            </dt><dd 
+class="list">
+                       <!--l. 524--><p class="noindent" >Supported values are <span 
+class="cmtt-10">yes</span>, and <span 
+class="cmtt-10">no</span>. A blank value is taken as <span 
+class="cmtt-10">no</span>.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">PETSC</span>             </dt><dd 
+class="list">
+                       <!--l. 527--><p class="noindent" >Supported values are <span 
+class="cmtt-10">yes</span>, and <span 
+class="cmtt-10">no</span>. A blank value is taken as <span 
+class="cmtt-10">no</span>.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">PTHREADS</span>          </dt><dd 
+class="list">
+                       <!--l. 530--><p class="noindent" >Supported values are <span 
+class="cmtt-10">yes</span>, and <span 
+class="cmtt-10">no</span>. A blank value is taken as <span 
+class="cmtt-10">no</span>.
+                       </dd></dl>
+                                                                                       
+                                                                                       
+     </li>
+     <li class="itemize">Miscellaneous
+     <!--l. 537--><p class="noindent" >
+                       <dl class="list2"><dt class="list">
+     <span 
+class="cmtt-10">PROMPT</span>            </dt><dd 
+class="list">
+                       <!--l. 538--><p class="noindent" >Setting this to <span 
+class="cmtt-10">no </span>turns off all prompts from the make system.
+                       </dd><dt class="list">
+     <span 
+class="cmtt-10">SILENT</span>            </dt><dd 
+class="list">
+                       <!--l. 540--><p class="noindent" >Setting this to <span 
+class="cmtt-10">no </span>instructs <span 
+class="cmtt-10">gmake </span>to print the commands that it is executing.</dd></dl>
+     </li></ul>
+<!--l. 550--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">B2.2   </span> <a 
+ id="x9-21000B2.2"></a>Compiling with Extra Packages</h3>
+<!--l. 554--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B2.2.1   </span> <a 
+ id="x9-22000B2.2.1"></a>MPI: Message Passing Interface</h4>
+<!--l. 557--><p class="noindent" >The <span 
+class="cmti-10">Message Passing Interface </span>(MPI) provides inter-processor communication. It can either be implemented
+natively on a machine (this is usual on most supercomputers), or through a standard package such as MPICH,
+LAM, WMPI, or PACX.
+<!--l. 562--><p class="noindent" >To compile with MPI, the configure option is
+<!--l. 564--><p class="noindent" ><span 
+class="cmtt-10">MPI = &#x003C;</span><span 
+class="cmsltt-10">MPI</span><span 
+class="cmsltt-10">_TYPE</span><span 
+class="cmtt-10">&#x003E;</span>,
+<!--l. 566--><p class="noindent" >where <span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">MPI</span><span 
+class="cmsltt-10">_TYPE</span><span 
+class="cmtt-10">&#x003E; </span>can take the values (entries followed by * may be specified on the configuration command
+line):
+<!--l. 569--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">CUSTOM</span>            </dt><dd 
+class="list">
+                  <!--l. 571--><p class="noindent" >For a custom MPI configuration set the variables
+                                    <dl class="list2"><dt class="list">
+                  <span 
+class="cmtt-10">MPI</span><span 
+class="cmtt-10">_LIBS</span>          </dt><dd 
+class="list">
+                                    <!--l. 573--><p class="noindent" >* libraries.
+                                    </dd><dt class="list">
+                  <span 
+class="cmtt-10">MPI</span><span 
+class="cmtt-10">_LIB</span><span 
+class="cmtt-10">_DIRS</span>      </dt><dd 
+class="list">
+                                    <!--l. 574--><p class="noindent" >* library directories.
+                                                                                       
+                                                                                       
+                                    </dd><dt class="list">
+                  <span 
+class="cmtt-10">MPI</span><span 
+class="cmtt-10">_INC</span><span 
+class="cmtt-10">_DIRS</span>      </dt><dd 
+class="list">
+                                    <!--l. 575--><p class="noindent" >* include file directories.</dd></dl>
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">NATIVE</span>            </dt><dd 
+class="list">
+                  <!--l. 578--><p class="noindent" >Use the native MPI for this machine, as indicated in the <span 
+class="cmtt-10">known-architectures </span>directory
+                  (<span 
+class="cmtt-10">lib/make/known-architectures</span>).
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">MPICH</span>             </dt><dd 
+class="list">
+                  <!--l. 582--><p class="noindent" >Use MPICH (<a 
+href="http://www-unix.mcs.anl.gov/mpi/mpich" class="url" ><span 
+class="cmtt-10">http://www-unix.mcs.anl.gov/mpi/mpich</span></a>). This is controlled by the
+                  options
+                                    <dl class="list2"><dt class="list">
+                  <span 
+class="cmtt-10">MPICH</span><span 
+class="cmtt-10">_ARCH</span>        </dt><dd 
+class="list">
+                                    <!--l. 586--><p class="noindent" >* machine architecture.
+                                    </dd><dt class="list">
+                  <span 
+class="cmtt-10">MPICH</span><span 
+class="cmtt-10">_DIR</span>         </dt><dd 
+class="list">
+                                    <!--l. 587--><p class="noindent" >* directory in which MPICH is installed. If this option is not
+                                    defined, it will be searched for.
+                                    </dd><dt class="list">
+                  <span 
+class="cmtt-10">MPICH</span><span 
+class="cmtt-10">_DEVICE</span>      </dt><dd 
+class="list">
+                                    <!--l. 589--><p class="noindent" >* the device used by MPICH. If not defined, the configuration
+                                    process will search for this in a few defined places. Supported
+                                    devices are currently <span 
+class="cmtt-10">ch</span><span 
+class="cmtt-10">_p4</span>, <span 
+class="cmtt-10">ch</span><span 
+class="cmtt-10">_shmem</span>, <span 
+class="cmtt-10">globus </span>and <span 
+class="cmtt-10">myrinet</span>.
+                                    For  versions  of  MPICH  prior  to  1.2.0,  the  devices  are
+                                    searched for in this order, for 1.2.0 you may need to specify
+                                    <span 
+class="cmtt-10">MPICH</span><span 
+class="cmtt-10">_DEVICE</span>, depending on the installation.</dd></dl>
+                  <!--l. 599--><p class="noindent" >If <span 
+class="cmtt-10">MPICH</span><span 
+class="cmtt-10">_DEVICE </span>is chosen to be <span 
+class="cmtt-10">globus </span>(<a 
+href="http://www.globus.org" class="url" ><span 
+class="cmtt-10">http://www.globus.org</span></a>), an additional variable
+                  must be set
+                                    <dl class="list2"><dt class="list">
+                  <span 
+class="cmtt-10">GLOBUS</span><span 
+class="cmtt-10">_LOCATION</span>   </dt><dd 
+class="list">
+                                    <!--l. 602--><p class="noindent" >* directory in which Globus is installed.</dd></dl>
+                  <!--l. 604--><p class="noindent" >The Globus flavor may be chosen optionally
+                                    <dl class="list2"><dt class="list">
+                  <span 
+class="cmtt-10">GLOBUS</span><span 
+class="cmtt-10">_FLAVOR</span>     </dt><dd 
+class="list">
+                                    <!--l. 606--><p class="noindent" >* Globus flavor to build Cactus with.</dd></dl>
+                  <!--l. 608--><p class="noindent" >If it is not set, the first Globus flavor found will be used.
+                  <!--l. 610--><p class="noindent" >If <span 
+class="cmtt-10">MPICH</span><span 
+class="cmtt-10">_DEVICE </span>is chosen to be <span 
+class="cmtt-10">ch</span><span 
+class="cmtt-10">_gm</span>, (<a 
+href="http://www.myri.com" class="url" ><span 
+class="cmtt-10">http://www.myri.com</span></a>), an additional variable
+                  must be set
+                                    <dl class="list2"><dt class="list">
+                  <span 
+class="cmtt-10">MYRINET</span><span 
+class="cmtt-10">_DIR</span>       </dt><dd 
+class="list">
+                                    <!--l. 613--><p class="noindent" >* directory in which Myrinet libraries are installed.</dd></dl>
+                                                                                       
+                                                                                       
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">LAM</span>               </dt><dd 
+class="list">
+                  <!--l. 616--><p class="noindent" >Use <span 
+class="cmtt-10">LAM </span>(<span 
+class="cmti-10">Local Area Multicomputer</span>, <a 
+href="http://www.lam-mpi.org/" class="url" ><span 
+class="cmtt-10">http://www.lam-mpi.org/</span></a>). This is controlled by the
+                  variables
+                                    <dl class="list2"><dt class="list">
+                  <span 
+class="cmtt-10">LAM</span><span 
+class="cmtt-10">_DIR</span>           </dt><dd 
+class="list">
+                                    <!--l. 620--><p class="noindent" >* directory in which LAM is installed. This will be searched
+                                    for in a few provided places if not given.</dd></dl>
+                  <!--l. 623--><p class="noindent" >If the <span 
+class="cmtt-10">LAM </span>installation splits libraries and include files into different directories, instead of
+                  setting <span 
+class="cmtt-10">LAM</span><span 
+class="cmtt-10">_DIR </span>set the two variables
+                                    <dl class="list2"><dt class="list">
+                  <span 
+class="cmtt-10">LAM</span><span 
+class="cmtt-10">_LIB</span><span 
+class="cmtt-10">_DIR</span>       </dt><dd 
+class="list">
+                                    <!--l. 626--><p class="noindent" >* directory in which LAM libraries are installed.
+                                    </dd><dt class="list">
+                  <span 
+class="cmtt-10">LAM</span><span 
+class="cmtt-10">_INC</span><span 
+class="cmtt-10">_DIR</span>       </dt><dd 
+class="list">
+                                    <!--l. 627--><p class="noindent" >* directory in which LAM include files are installed.</dd></dl>
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">WMPI</span>              </dt><dd 
+class="list">
+                  <!--l. 631--><p class="noindent" >Use WMPI (<span 
+class="cmti-10">Win32 Message Passing Interface</span>, <a 
+href="http://dsg.dei.uc.pt/w32mpi/intro.html" class="url" ><span 
+class="cmtt-10">http://dsg.dei.uc.pt/w32mpi/intro.html</span></a>).
+                  This is controlled by the variable
+                                    <dl class="list2"><dt class="list">
+                  <span 
+class="cmtt-10">WMPI</span><span 
+class="cmtt-10">_DIR</span>          </dt><dd 
+class="list">
+                                    <!--l. 634--><p class="noindent" >* directory in which WMPI is installed.</dd></dl>
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">HPVM</span>              </dt><dd 
+class="list">
+                  <!--l. 637--><p class="noindent" >Use HPVM (<span 
+class="cmti-10">High Performance Virtual Machine</span>, (<a 
+href="http://www-csag.ucsd.edu/projects/hpvm.html" class="url" ><span 
+class="cmtt-10">http://www-csag.ucsd.edu/projects/hpvm.html</span></a>).
+                  This is controlled by the variable
+                                    <dl class="list2"><dt class="list">
+                  <span 
+class="cmtt-10">HPVM</span><span 
+class="cmtt-10">_DIR</span>          </dt><dd 
+class="list">
+                                    <!--l. 642--><p class="noindent" >* directory in which HPVM is installed.</dd></dl>
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">MPIPro</span>            </dt><dd 
+class="list">
+                  <!--l. 645--><p class="noindent" >Use MPIPro (<a 
+href="http://www.mpi-softtech.com/" class="url" ><span 
+class="cmtt-10">http://www.mpi-softtech.com/</span></a>).
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">PACX</span>              </dt><dd 
+class="list">
+                  <!--l. 648--><p class="noindent" >Use the PACX Metacomputing package (<span 
+class="cmti-10">PArallel Computer eXtension</span>,<br 
+class="newline" /><a 
+href="http://www.hlrs.de/structure/organisation/par/projects/pacx-mpi/" class="url" ><span 
+class="cmtt-10">http://www.hlrs.de/structure/organisation/par/projects/pacx-mpi/</span></a>). This is
+                  controlled by the variables
+                                    <dl class="list2"><dt class="list">
+                  <span 
+class="cmtt-10">PACX</span><span 
+class="cmtt-10">_DIR</span>          </dt><dd 
+class="list">
+                                    <!--l. 652--><p class="noindent" >* directory in which PACX is installed. If this option is not
+                                    defined, it will be searched for.
+                                                                                       
+                                                                                       
+                                    </dd><dt class="list">
+                  <span 
+class="cmtt-10">PACX</span><span 
+class="cmtt-10">_MPI</span>          </dt><dd 
+class="list">
+                                    <!--l. 654--><p class="noindent" >* the MPI package PACX uses node-local communication.
+                                    This can be any of the above MPI packages.</dd></dl>
+                  </dd></dl>
+<!--l. 660--><p class="noindent" >Note that the searches for libraries, etc. mentioned above use the locations given in the files in
+<span 
+class="cmtt-10">lib/make/extras/MPI</span>.
+<!--l. 663--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B2.2.2   </span> <a 
+ id="x9-23000B2.2.2"></a>HDF5: Hierarchical Data Format version 5</h4>
+<!--l. 666--><p class="noindent" >To compile with HDF5 (<a 
+href="http://hdf.ncsa.uiuc.edu/whatishdf5.html" class="url" ><span 
+class="cmtt-10">http://hdf.ncsa.uiuc.edu/whatishdf5.html</span></a>), the configure options
+are
+<!--l. 669--><p class="noindent" ><span 
+class="cmtt-10">HDF5 = yes/no [HDF5</span><span 
+class="cmtt-10">_DIR = &#x003C;</span><span 
+class="cmsltt-10">dir</span><span 
+class="cmtt-10">&#x003E;] [LIBZ</span><span 
+class="cmtt-10">_DIR = &#x003C;</span><span 
+class="cmsltt-10">dir</span><span 
+class="cmtt-10">&#x003E;] [LIBSZ</span><span 
+class="cmtt-10">_DIR = &#x003C;</span><span 
+class="cmsltt-10">dir</span><span 
+class="cmtt-10">&#x003E;]</span>
+<!--l. 671--><p class="noindent" >If <span 
+class="cmtt-10">HDF5</span><span 
+class="cmtt-10">_DIR </span>is not given, the configuration process will search for an installed HDF5 package in some standard
+places (defined in <span 
+class="cmtt-10">lib/make/extras/HDF5</span>). If the found HDF5 library was built with the external deflate I/O
+filter, the configuration process also searches for the <span 
+class="cmtt-10">libz </span>library and adds it to the linker flags. You may also
+point directly to the location of <span 
+class="cmtt-10">libz.a </span>by setting <span 
+class="cmtt-10">LIBZ</span><span 
+class="cmtt-10">_DIR</span>. If the found HDF5 library was built
+with the external <span 
+class="cmtt-10">szlib </span>I/O filter, the configuration process also searches for the <span 
+class="cmtt-10">szlib </span>library
+and adds it to the linker flags. You may also point directly to the location of <span 
+class="cmtt-10">libsz.a </span>by setting
+<span 
+class="cmtt-10">LIBSZ</span><span 
+class="cmtt-10">_DIR</span>.
+<!--l. 684--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B2.2.3   </span> <a 
+ id="x9-24000B2.2.3"></a>LAPACK: Linear Algebra PACKage</h4>
+<!--l. 686--><p class="noindent" >To compile with LAPACK (<a 
+href="http://www.netlib.org/lapack/" class="url" ><span 
+class="cmtt-10">http://www.netlib.org/lapack/</span></a>), the configure options are
+<div class="alltt">
+<!--l. 689--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">LAPACK</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;yes</span><span 
+class="cmtt-10">&#x00A0;|</span><span 
+class="cmtt-10">&#x00A0;no</span><span 
+class="cmtt-10">&#x00A0;|</span><span 
+class="cmtt-10">&#x00A0;&#x003C;blank&#x003E;</span>
+<br /><span 
+class="cmtt-10">[</span><span 
+class="cmtt-10">&#x00A0;LAPACK</span><span 
+class="cmtt-10">_DIR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">dir</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;|</span><span 
+class="cmtt-10">&#x00A0;none</span><span 
+class="cmtt-10">&#x00A0;]</span>
+<br /><span 
+class="cmtt-10">[</span><span 
+class="cmtt-10">&#x00A0;LAPACK</span><span 
+class="cmtt-10">_EXTRA</span><span 
+class="cmtt-10">_LIBS</span><span 
+class="cmtt-10">_DIRS</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">dir</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;]</span>
+<br /><span 
+class="cmtt-10">[</span><span 
+class="cmtt-10">&#x00A0;LAPACK</span><span 
+class="cmtt-10">_LIBS</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">libs</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;]</span>
+<br /><span 
+class="cmtt-10">[</span><span 
+class="cmtt-10">&#x00A0;LAPACK</span><span 
+class="cmtt-10">_EXTRA</span><span 
+class="cmtt-10">_LIBS</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">libs</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;]</span>
+</div>
+</div>
+                                                                                       
+                                                                                       
+<!--l. 697--><p class="noindent" >If <span 
+class="cmtt-10">LAPACK</span><span 
+class="cmtt-10">_DIR </span>is not given, the configuration process will search for a LAPACK library <span 
+class="cmtt-10">liblapack.[</span><span 
+class="cmsy-10">{</span><span 
+class="cmtt-10">a,so</span><span 
+class="cmsy-10">}</span><span 
+class="cmtt-10">] </span>in
+some standard places (defined in <span 
+class="cmtt-10">lib/make/extras/LAPACK</span>). If <span 
+class="cmtt-10">LAPACK</span><span 
+class="cmtt-10">_DIR </span>is set to <span 
+class="cmtt-10">no </span>the LAPACK library
+path is assumed to be installed in a standard system location (e.g. <span 
+class="cmtt-10">/usr/lib/</span>), and thus the library path will
+not be added to the linker&#8217;s command line.
+<!--l. 704--><p class="noindent" >Because LAPACK doesn&#8217;t come as a standardized system installation, there are additional configuration
+variables to set the name of the LAPACK library (<span 
+class="cmtt-10">LAPACK</span><span 
+class="cmtt-10">_LIBS</span>) as well as the name (<span 
+class="cmtt-10">LAPACK</span><span 
+class="cmtt-10">_EXTRA</span><span 
+class="cmtt-10">_LIBS</span>) and
+location (<span 
+class="cmtt-10">LAPACK</span><span 
+class="cmtt-10">_EXTRA</span><span 
+class="cmtt-10">_LIBS</span><span 
+class="cmtt-10">_DIRS</span>) of extra libraries that are required by LAPACK itself.
+<!--l. 711--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B2.2.4   </span> <a 
+ id="x9-25000B2.2.4"></a>PETSc: Portable, Extensible Toolkit for Scientific Computation</h4>
+<!--l. 713--><p class="noindent" >To compile with PETSc (<a 
+href="http://www-unix.mcs.anl.gov/petsc/petsc-2/index.html" class="url" ><span 
+class="cmtt-10">http://www-unix.mcs.anl.gov/petsc/petsc-2/index.html</span></a>), the configure options
+are
+<div class="alltt">
+<!--l. 717--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">PETSC</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;yes</span><span 
+class="cmtt-10">&#x00A0;|</span><span 
+class="cmtt-10">&#x00A0;no</span><span 
+class="cmtt-10">&#x00A0;|</span><span 
+class="cmtt-10">&#x00A0;&#x003C;blank&#x003E;</span>
+<br /><span 
+class="cmtt-10">[</span><span 
+class="cmtt-10">&#x00A0;PETSC</span><span 
+class="cmtt-10">_DIR</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">dir</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;]</span>
+<br /><span 
+class="cmtt-10">[</span><span 
+class="cmtt-10">&#x00A0;PETSC</span><span 
+class="cmtt-10">_ARCH</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">architecture</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;]</span>
+<br /><span 
+class="cmtt-10">[</span><span 
+class="cmtt-10">&#x00A0;PETSC</span><span 
+class="cmtt-10">_ARCH</span><span 
+class="cmtt-10">_LIBS</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">architecture-specific</span><span 
+class="cmsltt-10">&#x00A0;libraries</span><span 
+class="cmtt-10">&#x003E;</span><span 
+class="cmtt-10">&#x00A0;]</span>
+</div>
+</div>
+<!--l. 724--><p class="noindent" >If <span 
+class="cmtt-10">PETSC</span><span 
+class="cmtt-10">_DIR </span>is not given, the configuration process will search for an installed PETSc package in some standard
+places (defined in <span 
+class="cmtt-10">lib/make/extras/PETSC</span>). If <span 
+class="cmtt-10">PETSC</span><span 
+class="cmtt-10">_ARCH </span>is not given, the configuration process will choose
+the first PETSc configuration found in <span 
+class="cmtt-10">$PETSC</span><span 
+class="cmtt-10">_DIR/lib/libO/</span>. If <span 
+class="cmtt-10">PETSC</span><span 
+class="cmtt-10">_ARCH</span><span 
+class="cmtt-10">_LIBS </span>is not given, the
+configuration process will choose architecture-specific libraries, as required by a PETSc configuration (usually
+PETSc needs the LAPACK library).
+<!--l. 734--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B2.2.5   </span> <a 
+ id="x9-26000B2.2.5"></a>Pthreads: POSIX threads</h4>
+<!--l. 736--><p class="noindent" >To enable multithreading support within Cactus using POSIX threads, the configure option is
+<!--l. 739--><p class="noindent" ><span 
+class="cmtt-10">PTHREADS = yes</span>
+<!--l. 741--><p class="noindent" >The configuration process will check if a reentrant C library is available, and adds it to the linker flags. It will
+also search for the system&#8217;s Pthreads library (either <span 
+class="cmtt-10">libpthread </span>or <span 
+class="cmtt-10">libpthreads</span>), and set preprocessor defines
+necessary for compiling multithreaded code.
+                                                                                       
+                                                                                       
+<!--l. 747--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">B2.3   </span> <a 
+ id="x9-27000B2.3"></a>File Layout</h3>
+<!--l. 749--><p class="noindent" >The configuration process sets up various subdirectories and files in the <span 
+class="cmtt-10">configs </span>directory to contain the
+configuration specific files; these are placed in a directory with the name of the configuration.
+<!--l. 753--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">config-data</span>       </dt><dd 
+class="list">
+                  <!--l. 755--><p class="noindent" >contains the files created by the configure script:
+                  <!--l. 758--><p class="noindent" >The most important ones are
+                  <!--l. 760--><p class="noindent" >
+                                    <dl class="list2"><dt class="list">
+                  <span 
+class="cmtt-10">make.config.defn</span>  </dt><dd 
+class="list">
+                                    <!--l. 762--><p class="noindent" >contains compilers and compilation flags for a configuration.
+                                    </dd><dt class="list">
+                  <span 
+class="cmtt-10">make.extra.defn</span>   </dt><dd 
+class="list">
+                                    <!--l. 765--><p class="noindent" >contains   details   about   extra   packages   used   in   the
+                                    configuration.
+                                    </dd><dt class="list">
+                  <span 
+class="cmtt-10">cctk</span><span 
+class="cmtt-10">_Config.h</span>     </dt><dd 
+class="list">
+                                    <!--l. 768--><p class="noindent" >The main configuration header file, containing architecture
+                                    specific definitions.
+                                    </dd><dt class="list">
+                  <span 
+class="cmtt-10">cctk</span><span 
+class="cmtt-10">_Archdefs.h</span>   </dt><dd 
+class="list">
+                                    <!--l. 772--><p class="noindent" >An architecture specific header file containing things which
+                                    cannot  be  automatically  detected,  and  have  thus  been
+                                    hand-coded for this architecture.</dd></dl>
+                  <!--l. 777--><p class="noindent" >These are the first files which should be checked or modified to suit any peculiarities of this
+                  configuration.
+                  <!--l. 780--><p class="noindent" >In addition, the following files may be informative:
+                  <!--l. 782--><p class="noindent" >
+                                    <dl class="list2"><dt class="list">
+                  <span 
+class="cmtt-10">fortran</span><span 
+class="cmtt-10">_name.pl</span>   </dt><dd 
+class="list">
+                                    <!--l. 783--><p class="noindent" >A Perl script used to determine how the Fortran compiler
+                                    names subroutines. This is used to make some C routines
+                                    callable from Fortran, and Fortran routines callable from C.
+                                    </dd><dt class="list">
+                  <span 
+class="cmtt-10">make.config.deps</span>  </dt><dd 
+class="list">
+                                    <!--l. 788--><p class="noindent" >Initially empty. It can be edited to add extra architecture
+                                    specific dependencies needed to generate the executable.
+                                                                                       
+                                                                                       
+                                    </dd><dt class="list">
+                  <span 
+class="cmtt-10">make.config.rule</span>  </dt><dd 
+class="list">
+                                    <!--l. 792--><p class="noindent" >The <span 
+class="cmtt-10">make </span>rules for generating object files from source files.
+                                    </dd></dl>
+                  <!--l. 797--><p class="noindent" >Finally, <span 
+class="cmtt-10">autoconf </span>generates the following files.
+                  <!--l. 799--><p class="noindent" >
+                                    <dl class="list2"><dt class="list">
+                  <span 
+class="cmtt-10">config.log</span>        </dt><dd 
+class="list">
+                                    <!--l. 801--><p class="noindent" >A log of the <span 
+class="cmtt-10">autoconf </span>process.
+                                    </dd><dt class="list">
+                  <span 
+class="cmtt-10">config.status</span>     </dt><dd 
+class="list">
+                                    <!--l. 804--><p class="noindent" >A script which may be used to regenerate the configuration.
+                                    </dd><dt class="list">
+                  <span 
+class="cmtt-10">config.cache</span>      </dt><dd 
+class="list">
+                                    <!--l. 807--><p class="noindent" >An internal file used by <span 
+class="cmtt-10">autoconf</span>.
+                                    </dd></dl>
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">lib</span>               </dt><dd 
+class="list">
+                  <!--l. 812--><p class="noindent" >An empty directory which will contain the libraries created for each thorn.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">build</span>             </dt><dd 
+class="list">
+                  <!--l. 815--><p class="noindent" >An empty directory which will contain the object files generated for this configuration, and
+                  preprocessed source files.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">config-info</span>       </dt><dd 
+class="list">
+                  <!--l. 819--><p class="noindent" >A file containing information about the configuration (including the options used to
+                  configure the configuration).
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">bindings</span>          </dt><dd 
+class="list">
+                  <!--l. 822--><p class="noindent" >A directory which contains all the files generated by the CST from the <span 
+class="cmtt-10">.ccl</span>
+                  files.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">scratch</span>           </dt><dd 
+class="list">
+                  <!--l. 825--><p class="noindent" >A scratch directory which is used to accommodate Fortran 90 modules.
+                  </dd></dl>
+                                                                                       
+                                                                                       
+<!--l. 831--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">B2.4   </span> <a 
+ id="x9-28000B2.4"></a>Building and Administering a Configuration</h3>
+<!--l. 834--><p class="noindent" >Once you have created a new configuration, the command <br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">configuration name</span><span 
+class="cmtt-10">&#x003E; </span><br 
+class="newline" /><br 
+class="newline" />will build an executable, prompting you along the way for the thorns which should be included. There is a range
+of <span 
+class="cmtt-10">gmake </span>targets and options which are detailed in the following sections.
+<!--l. 843--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B2.4.1   </span> <a 
+ id="x9-29000B2.4.1"></a>gmake Targets for Building and Administering Configurations</h4>
+<!--l. 846--><p class="noindent" >A target for <span 
+class="cmtt-10">gmake </span>can be naively thought of as an argument that tells it which of several things listed in the
+<span 
+class="cmtt-10">Makefile </span>it is to do. The command <span 
+class="cmtt-10">gmake help </span>lists all <span 
+class="cmtt-10">gmake </span>targets:
+<!--l. 851--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;</span>    </dt><dd 
+class="list">
+                  <!--l. 853--><p class="noindent" >builds a configuration. If the configuration doesn&#8217;t exist, it will create it.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-clean</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 857--><p class="noindent" >removes all object and dependency files from a configuration.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-cleandeps</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 860--><p class="noindent" >removes all dependency files from a configuration.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-cleanobjs</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 863--><p class="noindent" >removes all object files from a configuration.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-config</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 866--><p class="noindent" >creates a new configuration or reconfigures an existing one overwriting any previous
+                  configuration options.<br 
+class="newline" />The configuration options are stored in a file <span 
+class="cmtt-10">configs/&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;/config-info</span>.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-configinfo</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 871--><p class="noindent" >displays the options of the configuration (<span 
+class="cmtt-10">cat configs/&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;/config-info</span>).
+                                                                                       
+                                                                                       
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-cvsupdate</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 874--><p class="noindent" >updates the flesh and this configuration&#8217;s thorns from the CVS repositories.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-delete</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 877--><p class="noindent" >deletes a configuration (<span 
+class="cmtt-10">rm -r configs/&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;</span>).
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;config&#x003E;-editthorns</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 880--><p class="noindent" >edits the <span 
+class="cmtt-10">ThornList</span>.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-examples</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 882--><p class="noindent" >copies all the example parameter files relevant for this configuration to the directory
+                  <span 
+class="cmtt-10">examples </span>in the Cactus home directory. If a file of the same name is already there,
+                  it will not overwrite it.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-realclean</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 884--><p class="noindent" >removes  from  a  configuration  all  object  and  dependency  files,  as  well  as  files
+                  generated from the CST (stands for <span 
+class="cmti-10">Cactus Specification Tool</span>, which is the set of
+                  Perl scripts which parse the thorn configuration files). Only the files generated by
+                  configure and the <span 
+class="cmtt-10">ThornList </span>file remain.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-rebuild</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 890--><p class="noindent" >rebuilds a configuration (reruns the CST).
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-reconfig</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 892--><p class="noindent" >reconfigures an existing configuration using its previous configuration options from
+                  the file <span 
+class="cmtt-10">configs/&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;/config-info</span>.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;--testsuite</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 896--><p class="noindent" >runs the test programs associated with each thorn in the configuration. See section
+                  <a 
+href="#x9-34000B2.6">B2.6<!--tex4ht:ref: sec:testing --></a> for information about the test suite mechanism.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-ThornGuide</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 900--><p class="noindent" >builds documentation for the thorns in this configuration (see section <a 
+href="#x9-33000B2.5">B2.5<!--tex4ht:ref: sec:OtherGmakeTargetsDoc --></a>, page
+                  <a 
+href="#x9-33000B2.5">B32<!--tex4ht:ref: sec:OtherGmakeTargetsDoc --></a>, for other targets to build documentation for thorns).
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-thornlist</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 906--><p class="noindent" >regenerates the <span 
+class="cmtt-10">ThornList </span>for a configuration.
+                                                                                       
+                                                                                       
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-utils [UTILS</span>=<span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">list</span><span 
+class="cmtt-10">&#x003E;]</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 909--><p class="noindent" >builds all utility programs provided by the thorns of a configuration. Individual
+                  utilities can be selected by giving their names (ie. name of the source file without
+                  extension) in the <span 
+class="cmtt-10">UTILS </span>variable.
+                  </dd></dl>
+<!--l. 917--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B2.4.2   </span> <a 
+ id="x9-30000B2.4.2"></a>Compiling in Thorns</h4>
+<!--l. 920--><p class="noindent" >Cactus will try to compile all thorns listed in <span 
+class="cmtt-10">configs/&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;/ThornList</span>. The <span 
+class="cmtt-10">ThornList </span>file is
+simply a list of the form <span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">arrangement</span><span 
+class="cmtt-10">&#x003E;/&#x003C;</span><span 
+class="cmsltt-10">thorn</span><span 
+class="cmtt-10">&#x003E;</span>. All text after a pound sign &#8216;<span 
+class="cmtt-10">#</span>&#8217; or exclamation
+mark &#8216;<span 
+class="cmtt-10">!</span>&#8217; on a line is treated as a comment and ignored. If you did not specify a ThornList already,
+the first time that you compile a configuration you will be shown a list of all the thorns in your
+arrangement directory, and asked if you with to edit them. You can regenerate this list at anytime by
+typing
+<div class="alltt">
+<!--l. 932--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">gmake</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-thornlist</span>
+</div>
+</div>,
+<!--l. 936--><p class="noindent" >or you can edit it using
+<div class="alltt">
+<!--l. 938--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">gmake</span><span 
+class="cmtt-10">&#x00A0;&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;-editthorns</span>
+</div>
+</div>.
+<!--l. 942--><p class="noindent" >Instead of using the editor to specify the thorns you want to have compiled, you can <span 
+class="cmti-10">edit </span>the <span 
+class="cmtt-10">ThornList </span>outside
+the make process. It is located in <span 
+class="cmtt-10">configs/&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;/ThornList</span>, where <span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E; </span>refers to the name of
+your configuration. The directory <span 
+class="cmtt-10">./configs </span>exists  <span 
+class="cmti-10">after </span>the very first make phase for the first
+configuration.
+                                                                                       
+                                                                                       
+<!--l. 949--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B2.4.3   </span> <a 
+ id="x9-31000B2.4.3"></a>Notes and Caveats</h4>
+     <ul class="itemize1">
+     <li class="itemize"> If during the build you see the error &#8220;<span 
+class="cmtt-10">missing separator</span>&#8221;, you are probably not using GNU
+     make.
+     </li>
+     <li class="itemize"> <span 
+class="cmti-10">The EDITOR environment variable</span>. You may not be aware of this, but this thing very often exists
+     and, may be set by default to something scary like <span 
+class="cmtt-10">vi</span>. If you don&#8217;t know how to use <span 
+class="cmtt-10">vi</span>, or wish to
+     use your favorite editor instead, reset this environment variable. (To exit <span 
+class="cmtt-10">vi </span>type <span 
+class="cmtt-10">&#x003C;ESC&#x003E; :q!</span>)</li></ul>
+<!--l. 961--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B2.4.4   </span> <a 
+ id="x9-32000B2.4.4"></a><span 
+class="cmtt-10">gmake </span>Options for building configurations</h4>
+<!--l. 964--><p class="noindent" >An <span 
+class="cmti-10">option </span>for <span 
+class="cmtt-10">gmake </span>can be thought of as an argument which tells it how it should make a <span 
+class="cmti-10">target</span>. Note that the
+final result is always the same.
+<!--l. 968--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">target</span><span 
+class="cmtt-10">&#x003E; PROMPT=no</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 969--><p class="noindent" >turns off all prompts from the make system.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">target</span><span 
+class="cmtt-10">&#x003E; SILENT=no</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 971--><p class="noindent" >prints the commands that gmake is executing.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">target</span><span 
+class="cmtt-10">&#x003E; WARN=yes</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 973--><p class="noindent" >shows compiler warnings during compilation.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">target</span><span 
+class="cmtt-10">&#x003E; FJOBS=&#x003C;</span><span 
+class="cmsltt-10">number</span><span 
+class="cmtt-10">&#x003E;</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 975--><p class="noindent" >compiles in parallel, across files within each thorn.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">target</span><span 
+class="cmtt-10">&#x003E; TJOBS=&#x003C;</span><span 
+class="cmsltt-10">number</span><span 
+class="cmtt-10">&#x003E;</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 977--><p class="noindent" >compiles in parallel, across thorns.
+                  </dd></dl>
+                                                                                       
+                                                                                       
+<!--l. 982--><p class="noindent" >Note that with more modern versions of gmake, it is sufficient to pass the normal <span 
+class="cmtt-10">-j &#x003C;</span><span 
+class="cmsltt-10">number</span><span 
+class="cmtt-10">&#x003E; </span>flag to gmake to
+get parallel compilation.
+<!--l. 991--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">B2.5   </span> <a 
+ id="x9-33000B2.5"></a>Other gmake Targets</h3>
+<!--l. 993--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">gmake help</span>        </dt><dd 
+class="list">
+                  <!--l. 995--><p class="noindent" >lists all make options.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake checkout</span>    </dt><dd 
+class="list">
+                  <!--l. 997--><p class="noindent" >allows you to easily checkout Cactus arrangements and thorns. For example, it can
+                  checkout all the thorns in any thornlist file found in the <span 
+class="cmtt-10">thornlists </span>subdirectory
+                  of the Cactus root directory.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake cvsdiff</span>     </dt><dd 
+class="list">
+                  <!--l. 1002--><p class="noindent" >shows differences between the checked out version of Cactus and that in the CVS
+                  repositories.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake cvsstatus</span>   </dt><dd 
+class="list">
+                  <!--l. 1004--><p class="noindent" >shows status of the checked out version of Cactus, reporting which files have been
+                  modified or need updating.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake cvsupdate</span>   </dt><dd 
+class="list">
+                  <!--l. 1006--><p class="noindent" >updates flesh and all thorns from CVS repositories.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake configinfo</span>  </dt><dd 
+class="list">
+                  <!--l. 1008--><p class="noindent" >prints  configuration  options  for  every  configuration  found  in  user&#8217;s  <span 
+class="cmtt-10">configs</span>
+                  subdirectory.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake default</span>     </dt><dd 
+class="list">
+                  <!--l. 1011--><p class="noindent" >creates a new configuration with a default name.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake distclean</span>   </dt><dd 
+class="list">
+                  <!--l. 1013--><p class="noindent" >deletes your <span 
+class="cmtt-10">configs </span>directory, and hence all your configurations.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake downsize</span>    </dt><dd 
+class="list">
+                  <!--l. 1015--><p class="noindent" >removes  non-essential  files  as  documents  and  test  suites  to  allow  for  minimal
+                  installation size.
+                                                                                       
+                                                                                       
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake newthorn</span>    </dt><dd 
+class="list">
+                  <!--l. 1018--><p class="noindent" >creates a new thorn, prompting for the necessary information and creating template
+                  files.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake TAGS</span>        </dt><dd 
+class="list">
+                  <!--l. 1021--><p class="noindent" >creates an Emacs style TAGS file. See section <a 
+href="UsersGuidech18.html#x23-223000D8">D8<!--tex4ht:ref: sec:Appendix.tags --></a> for using tags within Cactus.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake tags</span>        </dt><dd 
+class="list">
+                  <!--l. 1024--><p class="noindent" >creates a <span 
+class="cmtt-10">vi </span>style tags file. See section <a 
+href="UsersGuidech18.html#x23-223000D8">D8<!--tex4ht:ref: sec:Appendix.tags --></a> for using tags within Cactus.
+                  </dd></dl>
+<!--l. 1029--><p class="noindent" ><span 
+class="cmbx-10">Targets to generate Cactus documentation:</span>
+<!--l. 1032--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">arrangement</span><span 
+class="cmtt-10">&#x003E;-ArrangementDoc</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1034--><p class="noindent" >builds the documentation for the arrangement.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake ArrangementDoc</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1037--><p class="noindent" >builds the documentation for all arrangements.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake MaintGuide</span>  </dt><dd 
+class="list">
+                  <!--l. 1040--><p class="noindent" >runs LaTeX to produce a copy of the Maintainers&#8217; Guide.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake ReferenceManual</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1043--><p class="noindent" >runs LaTeX to produce a copy of the Reference Manual.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">thorn</span><span 
+class="cmtt-10">&#x003E;-ThornDoc</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1046--><p class="noindent" >builds the documentation for the thorn.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake ThornDoc</span>    </dt><dd 
+class="list">
+                  <!--l. 1049--><p class="noindent" >builds the documentation for all thorns.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake ThornGuide</span>  </dt><dd 
+class="list">
+                  <!--l. 1051--><p class="noindent" >runs  LaTeX  to  produce  a  copy  of  the  Thorn  Guide,  for  all  the  thorns  in  the
+                  arrangements directory.
+                                                                                       
+                                                                                       
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake UsersGuide</span>  </dt><dd 
+class="list">
+                  <!--l. 1054--><p class="noindent" >runs LaTeX to produce a copy of the Users&#8217; Guide.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">gmake AllDoc</span>      </dt><dd 
+class="list">
+                  <!--l. 1057--><p class="noindent" >creates all of the above documentations.
+                  </dd></dl>
+<!--l. 1062--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">B2.6   </span> <a 
+ id="x9-34000B2.6"></a>Testing</h3>
+<!--l. 1065--><p class="noindent" >Some thorns come with a test suite, consisting of example parameter files and the output files generated by
+running these. To run the test suite for the thorns you have compiled use
+<!--l. 1069--><p class="noindent" ><span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">configuration</span><span 
+class="cmtt-10">&#x003E;--testsuite</span>
+<!--l. 1071--><p class="noindent" >These test suite serve the dual purpose of
+<!--l. 1073--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmss-10">Regression testing</span>    </dt><dd 
+class="list">
+                  <!--l. 1074--><p class="noindent" >i.e. making sure that changes to the thorn or the flesh don&#8217;t affect the output from
+                  a known parameter file.
+                  </dd><dt class="list">
+<span 
+class="cmss-10">Portability testing</span>    </dt><dd 
+class="list">
+                  <!--l. 1077--><p class="noindent" >i.e. checking that the results are independent of the architecture&#8212;this is also of use
+                  when trying to get Cactus to work on a new architecture.</dd></dl>
+                                                                                       
+                                                                                       
+<!--l. 1085--><div class="crosslinks"><p class="noindent">[<a 
+href="UsersGuidech7.html" >next</a>] [<a 
+href="UsersGuidech5.html" >prev</a>] [<a 
+href="UsersGuidech5.html#tailUsersGuidech5.html" >prev-tail</a>] [<a 
+href="UsersGuidech6.html" >front</a>] [<a 
+href="UsersGuidepa2.html#UsersGuidech6.html" >up</a>] </p></div>
+<!--l. 1085--><p class="noindent" ><a 
+ id="tailUsersGuidech6.html"></a>  
+</body></html> 

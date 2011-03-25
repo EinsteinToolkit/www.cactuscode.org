@@ -1,0 +1,1259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,fn-in --> 
+<meta name="src" content="ReferenceManual.tex"> 
+<meta name="date" content="2011-03-25 09:47:00"> 
+<link rel="stylesheet" type="text/css" href="ReferenceManual.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 56--><p class="noindent" >
+<!--l. 56--><p class="noindent" ><span 
+class="cmr-17x-x-143">Cactus 4.0</span><br />
+<span 
+class="cmr-17x-x-143">Reference Manual</span>
+<!--l. 56--><p class="noindent" ><img 
+src="ReferenceManual0x.png" alt="PIC" class="graphics" width="85.35826pt" height="176.8938pt" ><!--tex4ht:graphics  
+name="ReferenceManual0x.png" src="bincactus2.ps"  
+-->
+<!--l. 56--><p class="noindent" >Revision: 4621 <br />
+Date: 2010-06-03 15:31:49 -0500 (Thu, 03 Jun 2010) </div>
+<!--l. 78--><p class="noindent" >
+                                                                                       
+                                                                                       
+<!--l. 15--><p class="noindent" ><span 
+class="cmbx-12">Preface</span> <a 
+ id="x1-1doc"></a>
+<!--l. 20--><p class="noindent" >This document will eventually be a complete reference manual for the Cactus Code. However, it is currently
+under development, so please be patient if you can&#8217;t find what you need. Please report omissions,
+errors, or suggestions to and of our contact addresses below, and we will try and fix them as soon as
+possible.
+<!--l. 29--><p class="noindent" ><span 
+class="cmbx-10">Overview of documentation</span>
+<!--l. 33--><p class="noindent" >This guide covers the following topics
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmbx-10">Part</span><span 
+class="cmbx-10">&#x00A0;</span><a 
+href="ReferenceManualpa1.html#x2-1000A"><span 
+class="cmbx-10">A</span><!--tex4ht:ref: part:CCTKReference --></a><span 
+class="cmbx-10">: </span><span 
+class="cmtt-10">CCTK</span><span 
+class="cmtt-10">_* </span><span 
+class="cmbx-10">Function Reference.</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 37--><p class="noindent" >Here all the <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">CCTK_*()</span></span></span> Cactus flesh functions which are available to thorn writers
+                  are described.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">Part</span><span 
+class="cmbx-10">&#x00A0;</span><a 
+href="ReferenceManualpa2.html#x5-207000B"><span 
+class="cmbx-10">B</span><!--tex4ht:ref: part:UtilReference --></a><span 
+class="cmbx-10">: </span><span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_* </span><span 
+class="cmbx-10">Function Reference.</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 41--><p class="noindent" >Here all the <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">Util_*()</span></span></span> Cactus flesh functions which are available to thorn writers
+                  are described.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">Part</span><span 
+class="cmbx-10">&#x00A0;</span><a 
+href="ReferenceManualpa3.html#x10-256000C"><span 
+class="cmbx-10">C</span><!--tex4ht:ref: part:Appendices --></a><span 
+class="cmbx-10">: Appendices.</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 45--><p class="noindent" >These contain a description of the Cactus Configuration Language, a glossary, and
+                  other odds and ends, such as how to use GNATS or TAGS.
+                  </dd></dl>
+<!--l. 52--><p class="noindent" >Other topics to be discussed in separate documents include:
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmbx-10">Users&#8217; Guide</span>      </dt><dd 
+class="list">
+                  <!--l. 56--><p class="noindent" >This gives a general overview of the Cactus Computational Tool Kit, including
+                  overall  design/architecture,  how  to  get/configure/compile/run  it,  and  general
+                  discussions of the how to program in Cactus.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">Relativity Thorn Guide</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 61--><p class="noindent" >This will contain details about the arrangements and thorns making up the Cactus
+                  Relativity Tool Kit, one of the major motivators, and still the driving force, for the
+                  Cactus Code.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">Flesh Maintainers Guide</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                                                                                       
+                                                                                       
+                  <!--l. 64--><p class="noindent" >This will contain all the gruesome details about the inner workings of Cactus, for
+                  all those who want or need to expand or maintain the core of Cactus.
+                  </dd></dl>
+<!--l. 73--><p class="noindent" ><span 
+class="cmbx-10">Typographical Conventions</span>
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">Typewriter</span>        </dt><dd 
+class="list">
+                  <!--l. 77--><p class="noindent" >Is currently used for everything you type, for program names, and code extracts.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">&#x003C; ... &#x003E;</span>           </dt><dd 
+class="list">
+                  <!--l. 79--><p class="noindent" >Indicates a compulsory argument.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">[ ... ]</span>           </dt><dd 
+class="list">
+                  <!--l. 80--><p class="noindent" >Indicates an optional argument.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">|</span>                 </dt><dd 
+class="list">
+                  <!--l. 81--><p class="noindent" >Indicates an exclusive or.
+                  </dd></dl>
+<!--l. 87--><p class="noindent" ><span 
+class="cmbx-10">How to Contact Us</span>
+<!--l. 91--><p class="noindent" >Please let us know of any errors or omissions in this guide, as well as suggestions for future editions.
+These can be reported via our bug tracking system at <a 
+href="http://www.cactuscode.org" class="url" ><span 
+class="cmtt-10">http://www.cactuscode.org</span></a>, or via email to
+<span 
+class="cmtt-10">cactusmaint@cactuscode.org</span>. Alternatively, write to us at
+<!--l. 97--><p class="noindent" >The Cactus Team<br 
+class="newline" />Center for Computation &amp; Technology<br 
+class="newline" />216 Johnston Hall<br 
+class="newline" />Louisiana State University<br 
+class="newline" />Baton Rouge, LA 70803<br 
+class="newline" />USA
+<!--l. 107--><p class="noindent" ><span 
+class="cmbx-10">Acknowledgements</span>
+<!--l. 111--><p class="noindent" >Hearty thanks to all those who have helped with documentation for the Cactus Code. Special thanks to those
+who struggled with the earliest sparse versions of this guide and sent in mistakes and suggestions, in particular
+John Baker, Carsten Gundlach, Ginny Hudak-David, Sai Iyer, Paul Lamping, Nancy Tran and Ed
+Seidel.
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+<!--l. 24--><p class="noindent" >
+                                                                                       
+                                                                                       
+<div class="tableofcontents">
+<span class="partToc" >A&#x00A0;&#x00A0;<a 
+href="ReferenceManualpa1.html#x2-1000A" id="QQ2-2-1"><span 
+class="cmtt-10">CCTK</span><span 
+class="cmtt-10">_* </span>Functions Reference</a></span>
+<br /><span class="chapterToc" >A1 <a 
+href="ReferenceManualch1.html#x3-2000A1" id="QQ2-3-2">Functions Alphabetically</a></span>
+<br /><span class="chapterToc" >A2 <a 
+href="ReferenceManualch2.html#x4-3000A2" id="QQ2-4-3">Full Description of Functions</a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-4000A2" id="QQ2-4-4"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_Abort</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-5000A2" id="QQ2-4-5"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ActivatingThorn</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-6000A2" id="QQ2-4-6"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ActiveTimeLevels</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-7000A2" id="QQ2-4-7"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ArrayGroupSize</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-8000A2" id="QQ2-4-8"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ArrayGroupSizeI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-9000A2" id="QQ2-4-9"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_Barrier</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-10000A2" id="QQ2-4-10"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ClockRegister</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-11000A2" id="QQ2-4-11"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_Cmplx</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-12000A2" id="QQ2-4-12"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CmplxAbs</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-13000A2" id="QQ2-4-13"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CmplxAdd</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-14000A2" id="QQ2-4-14"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CmplxConjg</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-15000A2" id="QQ2-4-15"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CmplxCos</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-16000A2" id="QQ2-4-16"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CmplxDiv</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-17000A2" id="QQ2-4-17"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CmplxExp</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-18000A2" id="QQ2-4-18"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CmplxImag</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-19000A2" id="QQ2-4-19"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CmplxLog</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-20000A2" id="QQ2-4-20"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CmplxMul</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-21000A2" id="QQ2-4-21"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CmplxReal</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-22000A2" id="QQ2-4-22"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CmplxSin</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-23000A2" id="QQ2-4-23"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CmplxSqrt</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-24000A2" id="QQ2-4-24"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CmplxSub</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-25000A2" id="QQ2-4-25"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CompileDate</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-26000A2" id="QQ2-4-26"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CompileDateTime</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-27000A2" id="QQ2-4-27"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CompileTime</span></a></span>
+                                                                                       
+                                                                                       
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-28000A2" id="QQ2-4-28"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CompiledImplementation</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-29000A2" id="QQ2-4-29"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CompiledThorn</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-30000A2" id="QQ2-4-30"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CoordDir</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-31000A2" id="QQ2-4-31"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CoordIndex</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-32000A2" id="QQ2-4-32"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CoordRange</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-33000A2" id="QQ2-4-33"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CoordRegisterData</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-34000A2" id="QQ2-4-34"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CoordRegisterRange</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-35000A2" id="QQ2-4-35"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CoordRegisterSystem</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-36000A2" id="QQ2-4-36"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CoordSystemDim</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-37000A2" id="QQ2-4-37"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CoordSystemHandle</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-38000A2" id="QQ2-4-38"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CoordSystemName</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-39000A2" id="QQ2-4-39"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_CreateDirectory</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-40000A2" id="QQ2-4-40"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_DecomposeName</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-41000A2" id="QQ2-4-41"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_DisableGroupComm</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-42000A2" id="QQ2-4-42"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_DisableGroupCommI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-43000A2" id="QQ2-4-43"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_DisableGroupStorage</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-44000A2" id="QQ2-4-44"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_DisableGroupStorageI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-45000A2" id="QQ2-4-45"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_EnableGroupComm</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-46000A2" id="QQ2-4-46"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_EnableGroupCommI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-47000A2" id="QQ2-4-47"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_EnableGroupStorage</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-48000A2" id="QQ2-4-48"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_EnableGroupStorageI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-49000A2" id="QQ2-4-49"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_Equals</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-50000A2" id="QQ2-4-50"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_Exit</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-51000A2" id="QQ2-4-51"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_FirstVarIndex</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-52000A2" id="QQ2-4-52"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_FirstVarIndexI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-53000A2" id="QQ2-4-53"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_FortranString</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-54000A2" id="QQ2-4-54"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_FullName</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-55000A2" id="QQ2-4-55"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GetClockName</span></a></span>
+                                                                                       
+                                                                                       
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-56000A2" id="QQ2-4-56"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GetClockResolution</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-57000A2" id="QQ2-4-57"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GetClockSeconds</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-58000A2" id="QQ2-4-58"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GetClockValue</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-59000A2" id="QQ2-4-59"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GetClockValueI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-60000A2" id="QQ2-4-60"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GHExtension</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-61000A2" id="QQ2-4-61"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GHExtensionHandle</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-62000A2" id="QQ2-4-62"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GridArrayReductionOperator</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-63000A2" id="QQ2-4-63"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupbboxGI, CCTK</span><span 
+class="cmbx-10">_GroupbboxGN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-64000A2" id="QQ2-4-64"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupbboxVI, CCTK</span><span 
+class="cmbx-10">_GroupbboxVN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-65000A2" id="QQ2-4-65"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupData</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-66000A2" id="QQ2-4-66"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupDimFromVarI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-67000A2" id="QQ2-4-67"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupDimI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-68000A2" id="QQ2-4-68"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupDynamicData</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-69000A2" id="QQ2-4-69"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupGhostsizesI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-70000A2" id="QQ2-4-70"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupgshGI, CCTK</span><span 
+class="cmbx-10">_GroupgshGN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-71000A2" id="QQ2-4-71"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupgshVI, CCTK</span><span 
+class="cmbx-10">_GroupgshVN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-72000A2" id="QQ2-4-72"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupIndex</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-73000A2" id="QQ2-4-73"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupIndexFromVar</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-74000A2" id="QQ2-4-74"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupIndexFromVarI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-75000A2" id="QQ2-4-75"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GrouplbndGI, CCTK</span><span 
+class="cmbx-10">_GrouplbndGN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-76000A2" id="QQ2-4-76"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GrouplbndVI, CCTK</span><span 
+class="cmbx-10">_GrouplbndVN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-77000A2" id="QQ2-4-77"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GrouplshGI, CCTK</span><span 
+class="cmbx-10">_GrouplshGN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-78000A2" id="QQ2-4-78"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GrouplshVI, CCTK</span><span 
+class="cmbx-10">_GrouplshVN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-79000A2" id="QQ2-4-79"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupName</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-80000A2" id="QQ2-4-80"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupNameFromVarI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-81000A2" id="QQ2-4-81"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupnghostzonesGI, CCTK</span><span 
+class="cmbx-10">_GroupnghostzonesGN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-82000A2" id="QQ2-4-82"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupnghostzonesVI, CCTK</span><span 
+class="cmbx-10">_GroupnghostzonesVN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-83000A2" id="QQ2-4-83"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupSizesI</span></a></span>
+                                                                                       
+                                                                                       
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-84000A2" id="QQ2-4-84"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupStorageDecrease</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-85000A2" id="QQ2-4-85"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupStorageIncrease</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-86000A2" id="QQ2-4-86"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupTagsTable</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-87000A2" id="QQ2-4-87"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupTagsTableI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-88000A2" id="QQ2-4-88"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupTypeFromVarI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-89000A2" id="QQ2-4-89"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupTypeI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-90000A2" id="QQ2-4-90"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupubndGI, CCTK</span><span 
+class="cmbx-10">_GroupubndGN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-91000A2" id="QQ2-4-91"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_GroupubndVI, CCTK</span><span 
+class="cmbx-10">_GroupubndVN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-92000A2" id="QQ2-4-92"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ImpFromVarI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-93000A2" id="QQ2-4-93"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ImplementationRequires</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-94000A2" id="QQ2-4-94"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ImplementationThorn</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-95000A2" id="QQ2-4-95"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ImpThornList</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-96000A2" id="QQ2-4-96"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_INFO</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-97000A2" id="QQ2-4-97"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_InfoCallbackRegister</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-98000A2" id="QQ2-4-98"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_InterpGridArrays</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-99000A2" id="QQ2-4-99"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_InterpHandle</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-100000A2" id="QQ2-4-100"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_InterpLocalUniform</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-101000A2" id="QQ2-4-101"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_InterpRegisterOpLocalUniform</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-102000A2" id="QQ2-4-102"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_IsFunctionAliased</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-103000A2" id="QQ2-4-103"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_IsImplementationActive</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-104000A2" id="QQ2-4-104"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_IsImplementationCompiled</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-105000A2" id="QQ2-4-105"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_IsThornActive</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-106000A2" id="QQ2-4-106"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_IsThornCompiled</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-107000A2" id="QQ2-4-107"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_LocalArrayReduceOperator</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-108000A2" id="QQ2-4-108"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_LocalArrayReduceOperatorImplementation</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-109000A2" id="QQ2-4-109"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_LocalArrayReductionHandle</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-110000A2" id="QQ2-4-110"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_MaxDim</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-111000A2" id="QQ2-4-111"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_MaxGFDim</span></a></span>
+                                                                                       
+                                                                                       
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-112000A2" id="QQ2-4-112"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_MaxTimeLevels</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-113000A2" id="QQ2-4-113"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_MaxTimeLevelsGI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-114000A2" id="QQ2-4-114"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_MaxTimeLevelsGN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-115000A2" id="QQ2-4-115"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_MaxTimeLevelsVI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-116000A2" id="QQ2-4-116"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_MaxTimeLevelsVN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-117000A2" id="QQ2-4-117"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_MyProc</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-118000A2" id="QQ2-4-118"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_nProcs</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-119000A2" id="QQ2-4-119"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_NullPointer</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-120000A2" id="QQ2-4-120"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_NumCompiledImplementations</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-121000A2" id="QQ2-4-121"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_NumCompiledThorns</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-122000A2" id="QQ2-4-122"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_NumGridArrayReductionOperators</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-123000A2" id="QQ2-4-123"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_NumGroups</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-124000A2" id="QQ2-4-124"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_NumIOMethods</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-125000A2" id="QQ2-4-125"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_NumLocalArrayReduceOperators</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-126000A2" id="QQ2-4-126"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_NumReductionArraysGloballyOperators</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-127000A2" id="QQ2-4-127"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_NumTimeLevels</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-128000A2" id="QQ2-4-128"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_NumTimerClocks</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-129000A2" id="QQ2-4-129"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_NumVars</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-130000A2" id="QQ2-4-130"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_NumVarsInGroup</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-131000A2" id="QQ2-4-131"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_NumVarsInGroupI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-132000A2" id="QQ2-4-132"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_OutputGH</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-133000A2" id="QQ2-4-133"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_OutputVar</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-134000A2" id="QQ2-4-134"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_OutputVarAs</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-135000A2" id="QQ2-4-135"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_OutputVarAsByMethod</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-136000A2" id="QQ2-4-136"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_OutputVarByMethod</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-137000A2" id="QQ2-4-137"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ParallelInit</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-138000A2" id="QQ2-4-138"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ParameterData</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-139000A2" id="QQ2-4-139"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ParameterGet</span></a></span>
+                                                                                       
+                                                                                       
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-140000A2" id="QQ2-4-140"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ParameterLevel</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-141000A2" id="QQ2-4-141"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ParameterQueryTimesSet</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-142000A2" id="QQ2-4-142"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ParameterSet</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-143000A2" id="QQ2-4-143"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ParameterSetNotifyRegister</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-144000A2" id="QQ2-4-144"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ParameterSetNotifyUnregister</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-145000A2" id="QQ2-4-145"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ParameterValString</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-146000A2" id="QQ2-4-146"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ParameterWalk</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-147000A2" id="QQ2-4-147"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_PARAMWARN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-148000A2" id="QQ2-4-148"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_PointerTo</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-149000A2" id="QQ2-4-149"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_PrintGroup</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-150000A2" id="QQ2-4-150"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_PrintString</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-151000A2" id="QQ2-4-151"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_PrintVar</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-152000A2" id="QQ2-4-152"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_QueryGroupStorage</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-153000A2" id="QQ2-4-153"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_QueryGroupStorageB</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-154000A2" id="QQ2-4-154"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_QueryGroupStorageI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-155000A2" id="QQ2-4-155"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ReduceArraysGlobally</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-156000A2" id="QQ2-4-156"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ReduceGridArrays</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-157000A2" id="QQ2-4-157"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ReduceLocalArrays</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-158000A2" id="QQ2-4-158"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ReductionHandle</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-159000A2" id="QQ2-4-159"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_RegisterBanner</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-160000A2" id="QQ2-4-160"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_RegisterGHExtension</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-161000A2" id="QQ2-4-161"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_RegisterGHExtensionInitGH</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-162000A2" id="QQ2-4-162"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_RegisterGHExtensionScheduleTraverseGH</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-163000A2" id="QQ2-4-163"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_RegisterGHExtensionSetupGH</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-164000A2" id="QQ2-4-164"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_RegisterGridArrayReductionOperator</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-165000A2" id="QQ2-4-165"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_RegisterIOMethod</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-166000A2" id="QQ2-4-166"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_RegisterIOMethodOutputGH</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-167000A2" id="QQ2-4-167"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_RegisterIOMethodOutputVarAs</span></a></span>
+                                                                                       
+                                                                                       
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-168000A2" id="QQ2-4-168"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_RegisterIOMethodTimeToOutput</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-169000A2" id="QQ2-4-169"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_RegisterIOMethodTriggerOutput</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-170000A2" id="QQ2-4-170"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_RegisterLocalArrayReductionOperator</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-171000A2" id="QQ2-4-171"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_RegisterReduceArraysGloballyOperator</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-172000A2" id="QQ2-4-172"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_RegisterReductionOperator</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-173000A2" id="QQ2-4-173"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_SchedulePrintTimes</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-174000A2" id="QQ2-4-174"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_SchedulePrintTimesToFile</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-175000A2" id="QQ2-4-175"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_SetupGH</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-176000A2" id="QQ2-4-176"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_SyncGroup</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-177000A2" id="QQ2-4-177"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_SyncGroupI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-178000A2" id="QQ2-4-178"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_SyncGroupsI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-179000A2" id="QQ2-4-179"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TerminateNext</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-180000A2" id="QQ2-4-180"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TerminationReached</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-181000A2" id="QQ2-4-181"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_ThornImplementation</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-182000A2" id="QQ2-4-182"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_Timer</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-183000A2" id="QQ2-4-183"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TimerCreate</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-184000A2" id="QQ2-4-184"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TimerCreateData</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-185000A2" id="QQ2-4-185"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TimerCreateI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-186000A2" id="QQ2-4-186"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TimerDestroy</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-187000A2" id="QQ2-4-187"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TimerDestroyData</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-188000A2" id="QQ2-4-188"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TimerDestroyI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-189000A2" id="QQ2-4-189"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TimerI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-190000A2" id="QQ2-4-190"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TimerReset</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-191000A2" id="QQ2-4-191"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TimerResetI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-192000A2" id="QQ2-4-192"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TimerStart</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-193000A2" id="QQ2-4-193"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TimerStartI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-194000A2" id="QQ2-4-194"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TimerStop</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-195000A2" id="QQ2-4-195"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_TimerStopI</span></a></span>
+                                                                                       
+                                                                                       
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-196000A2" id="QQ2-4-196"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_VarDataPtr</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-197000A2" id="QQ2-4-197"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_VarDataPtrB</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-198000A2" id="QQ2-4-198"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_VarDataPtrI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-199000A2" id="QQ2-4-199"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_VarIndex</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-200000A2" id="QQ2-4-200"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_VarName</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-201000A2" id="QQ2-4-201"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_VarTypeI</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-202000A2" id="QQ2-4-202"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_VarTypeSize</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-203000A2" id="QQ2-4-203"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_VInfo</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-204000A2" id="QQ2-4-204"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_VWarn</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-205000A2" id="QQ2-4-205"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_WARN</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch2.html#x4-206000A2" id="QQ2-4-206"><span 
+class="cmbx-10">CCTK</span><span 
+class="cmbx-10">_WarnCallbackRegister</span></a></span>
+<br /><span class="partToc" >B&#x00A0;&#x00A0;<a 
+href="ReferenceManualpa2.html#x5-207000B" id="QQ2-5-207"><span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_* </span>Functions Reference</a></span>
+<br /><span class="chapterToc" >B1 <a 
+href="ReferenceManualch3.html#x6-208000B1" id="QQ2-6-208">Functions Alphabetically</a></span>
+<br />&#x00A0;<span class="sectionToc" >B1.1 <a 
+href="ReferenceManualch3.html#x6-209000B1.1" id="QQ2-6-209">Miscellaneous Functions</a></span>
+<br />&#x00A0;<span class="sectionToc" >B1.2 <a 
+href="ReferenceManualch3.html#x6-210000B1.2" id="QQ2-6-210">String Functions</a></span>
+<br />&#x00A0;<span class="sectionToc" >B1.3 <a 
+href="ReferenceManualch3.html#x6-211000B1.3" id="QQ2-6-211">Table Functions</a></span>
+<br /><span class="chapterToc" >B2 <a 
+href="ReferenceManualch4.html#x7-212000B2" id="QQ2-7-212">Full Descriptions of Miscellaneous Functions</a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch4.html#x7-213000B2" id="QQ2-7-213"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_CurrentDate</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch4.html#x7-214000B2" id="QQ2-7-214"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_CurrentDateTime</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch4.html#x7-215000B2" id="QQ2-7-215"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_CurrentTime</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch4.html#x7-216000B2" id="QQ2-7-216"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_snprintf</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch4.html#x7-217000B2" id="QQ2-7-217"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_vsnprintf</span></a></span>
+<br /><span class="chapterToc" >B3 <a 
+href="ReferenceManualch5.html#x8-218000B3" id="QQ2-8-218">Full Descriptions of String Functions</a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch5.html#x8-219000B3" id="QQ2-8-219"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_StrCmpi</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch5.html#x8-220000B3" id="QQ2-8-220"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_Strdup</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch5.html#x8-221000B3" id="QQ2-8-221"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_Strlcat</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch5.html#x8-222000B3" id="QQ2-8-222"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_Strlcpy</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch5.html#x8-223000B3" id="QQ2-8-223"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_StrSep</span></a></span>
+                                                                                       
+                                                                                       
+<br /><span class="chapterToc" >B4 <a 
+href="ReferenceManualch6.html#x9-224000B4" id="QQ2-9-224">Full Descriptions of Table Functions</a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-225000B4" id="QQ2-9-225"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableClone</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-226000B4" id="QQ2-9-226"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableCreate</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-227000B4" id="QQ2-9-227"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableCreateFromString</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-228000B4" id="QQ2-9-228"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableDeleteKey</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-229000B4" id="QQ2-9-229"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableDestroy</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-230000B4" id="QQ2-9-230"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableGet*</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-231000B4" id="QQ2-9-231"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableGet*Array</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-232000B4" id="QQ2-9-232"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableGetGeneric</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-233000B4" id="QQ2-9-233"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableGetGenericArray</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-234000B4" id="QQ2-9-234"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableGetString</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-235000B4" id="QQ2-9-235"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItAdvance</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-236000B4" id="QQ2-9-236"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItClone</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-237000B4" id="QQ2-9-237"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItCreate</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-238000B4" id="QQ2-9-238"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItDestroy</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-239000B4" id="QQ2-9-239"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItQueryIsNonNull</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-240000B4" id="QQ2-9-240"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItQueryIsNull</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-241000B4" id="QQ2-9-241"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItQueryKeyValueInfo</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-242000B4" id="QQ2-9-242"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItQueryTableHandle</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-243000B4" id="QQ2-9-243"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItResetToStart</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-244000B4" id="QQ2-9-244"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItSetToKey</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-245000B4" id="QQ2-9-245"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableItSetToNull</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-246000B4" id="QQ2-9-246"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableQueryFlags</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-247000B4" id="QQ2-9-247"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableQueryValueInfo</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-248000B4" id="QQ2-9-248"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableQueryMaxKeyLength</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-249000B4" id="QQ2-9-249"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableQueryNKeys</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-250000B4" id="QQ2-9-250"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableSet*</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-251000B4" id="QQ2-9-251"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableSet*Array</span></a></span>
+                                                                                       
+                                                                                       
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-252000B4" id="QQ2-9-252"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableSetFromString</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-253000B4" id="QQ2-9-253"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableSetGeneric</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-254000B4" id="QQ2-9-254"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableSetGenericArray</span></a></span>
+<br />&#x00A0;<span class="likesectionToc" ><a 
+href="ReferenceManualch6.html#x9-255000B4" id="QQ2-9-255"><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_TableSetString</span></a></span>
+<br /><span class="partToc" >C&#x00A0;&#x00A0;<a 
+href="ReferenceManualpa3.html#x10-256000C" id="QQ2-10-256">Appendices</a></span>
+<br /><span class="chapterToc" >C1 <a 
+href="ReferenceManualch7.html#x11-257000C1" id="QQ2-11-257">Glossary</a></span>
+<br /><span class="chapterToc" >C2 <a 
+href="ReferenceManualch8.html#x12-258000C2" id="QQ2-12-258">Configuration File Syntax</a></span>
+<br />&#x00A0;<span class="sectionToc" >C2.1 <a 
+href="ReferenceManualch8.html#x12-259000C2.1" id="QQ2-12-259">General Concepts</a></span>
+<br />&#x00A0;<span class="sectionToc" >C2.2 <a 
+href="ReferenceManualch8.html#x12-260000C2.2" id="QQ2-12-260">interface.ccl</a></span>
+<br />&#x00A0;<span class="sectionToc" >C2.3 <a 
+href="ReferenceManualch8.html#x12-265000C2.3" id="QQ2-12-265">param.ccl</a></span>
+<br />&#x00A0;<span class="sectionToc" >C2.4 <a 
+href="ReferenceManualch8.html#x12-268000C2.4" id="QQ2-12-268">schedule.ccl</a></span>
+<br />&#x00A0;<span class="sectionToc" >C2.5 <a 
+href="ReferenceManualch8.html#x12-273000C2.5" id="QQ2-12-273">configuration.ccl</a></span>
+<br /><span class="chapterToc" >C3 <a 
+href="ReferenceManualch9.html#x13-275000C3" id="QQ2-13-275">Utility Routines</a></span>
+<br />&#x00A0;<span class="sectionToc" >C3.1 <a 
+href="ReferenceManualch9.html#x13-276000C3.1" id="QQ2-13-276">Introduction</a></span>
+<br />&#x00A0;<span class="sectionToc" >C3.2 <a 
+href="ReferenceManualch9.html#x13-277000C3.2" id="QQ2-13-277">Key/Value Tables</a></span>
+<br /><span class="chapterToc" >C4 <a 
+href="ReferenceManualch10.html#x14-287000C4" id="QQ2-14-287">Schedule Bins</a></span>
+<br /><span class="chapterToc" >C5 <a 
+href="ReferenceManualch11.html#x15-288000C5" id="QQ2-15-288">Flesh Parameters</a></span>
+<br />&#x00A0;<span class="sectionToc" >C5.1 <a 
+href="ReferenceManualch11.html#x15-289000C5.1" id="QQ2-15-289">Private Parameters</a></span>
+<br />&#x00A0;<span class="sectionToc" >C5.2 <a 
+href="ReferenceManualch11.html#x15-290000C5.2" id="QQ2-15-290">Restricted Parameters</a></span>
+<br /><span class="chapterToc" >C6 <a 
+href="ReferenceManualch12.html#x16-291000C6" id="QQ2-16-291">Using GNATS</a></span>
+<br /><span class="chapterToc" >C7 <a 
+href="ReferenceManualch13.html#x17-292000C7" id="QQ2-17-292">Using CVS</a></span>
+<br />&#x00A0;<span class="sectionToc" >C7.1 <a 
+href="ReferenceManualch13.html#x17-293000C7.1" id="QQ2-17-293">Essential CVS Commands</a></span>
+<br />&#x00A0;<span class="sectionToc" >C7.2 <a 
+href="ReferenceManualch13.html#x17-294000C7.2" id="QQ2-17-294">CVS Options</a></span>
+<br />&#x00A0;<span class="sectionToc" >C7.3 <a 
+href="ReferenceManualch13.html#x17-295000C7.3" id="QQ2-17-295">CVS Examples</a></span>
+<br />&#x00A0;<span class="sectionToc" >C7.4 <a 
+href="ReferenceManualch13.html#x17-296000C7.4" id="QQ2-17-296">Checking Out Flesh and Thorns with CVS</a></span>
+<br /><span class="chapterToc" >C8 <a 
+href="ReferenceManualch14.html#x18-297000C8" id="QQ2-18-297">Using Tags</a></span>
+<br />&#x00A0;<span class="sectionToc" >C8.1 <a 
+href="ReferenceManualch14.html#x18-298000C8.1" id="QQ2-18-298">Tags with Emacs</a></span>
+<br />&#x00A0;<span class="sectionToc" >C8.2 <a 
+href="ReferenceManualch14.html#x18-299000C8.2" id="QQ2-18-299">Tags with <span 
+class="cmtt-10">vi</span></a></span>
+                                                                                       
+                                                                                       
+<br /><span class="chapterToc" >C9 <a 
+href="ReferenceManualch15.html#x19-300000C9" id="QQ2-19-300">ThornLists</a></span>
+</div>
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+ 
+</body></html> 
+
+                                                                                       
+
+

@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>B1 Installation</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,fn-in --> 
+<meta name="src" content="UsersGuide.tex"> 
+<meta name="date" content="2011-03-25 09:47:00"> 
+<link rel="stylesheet" type="text/css" href="UsersGuide.css"> 
+</head><body 
+>
+<!--l. 20--><div class="crosslinks"><p class="noindent">[<a 
+href="UsersGuidech6.html" >next</a>] [<a 
+href="#tailUsersGuidech5.html">tail</a>] [<a 
+href="UsersGuidepa2.html#UsersGuidech5.html" >up</a>] </p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;B1</span><br /><a 
+ id="x8-14000B1"></a>Installation</h2>
+<h3 class="sectionHead"><span class="titlemark">B1.1   </span> <a 
+ id="x8-15000B1.1"></a>Required Software</h3>
+<!--l. 28--><p class="noindent" >In general, Cactus <span 
+class="cmti-10">requires </span>the following set of software to function in single processor mode. Please refer to the
+architecture section <a 
+href="#x8-16000B1.2">B1.2<!--tex4ht:ref: sec:suar --></a> for architecture specific items.
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmss-10">Perl5.0</span>             </dt><dd 
+class="list">
+                                                                                       
+                                                                                       
+                  <!--l. 32--><p class="noindent" >Perl  is  used  extensively  during  the  Cactus  thorn  configuration  phase.  Perl  is
+                  available for nearly all operating systems known to man, and can be obtained at
+                  <a 
+href="http://www.perl.org" class="url" ><span 
+class="cmtt-10">http://www.perl.org</span></a>.
+                  </dd><dt class="list">
+<span 
+class="cmss-10">GNU make</span>         </dt><dd 
+class="list">
+                  <!--l. 36--><p class="noindent" >The  make  process  works  with  the  GNU  make  utility  (referred  to  as  <span 
+class="cmtt-10">gmake</span>
+                  henceforth).  While  other  make  utilities  may  also  work,  this  is  not  guaranteed.
+                  Gmake can be obtained from your favorite GNU site, or from <a 
+href="http://www.gnu.org" class="url" ><span 
+class="cmtt-10">http://www.gnu.org</span></a>.
+                  </dd><dt class="list">
+<span 
+class="cmss-10">C</span>                 </dt><dd 
+class="list">
+                  <!--l. 41--><p class="noindent" >C compiler. For example, the GNU compiler. This is available for most supported
+                  platforms. Platform specific compilers should also work.
+                  </dd><dt class="list">
+<span 
+class="cmss-10">CPP</span>              </dt><dd 
+class="list">
+                  <!--l. 44--><p class="noindent" >C Preprocessor. For example, the GNU <span 
+class="cmtt-10">cpp</span>. These are normally provided on most
+                  platforms, and many C compilers have an option to just run as a preprocessor.
+                  </dd><dt class="list">
+<span 
+class="cmss-10">CVS</span>               </dt><dd 
+class="list">
+                  <!--l. 47--><p class="noindent" >The <span 
+class="cmti-10">Concurrent Versions System </span>is not needed to run/compile Cactus, but you
+                  are strongly encouraged to install this software to take advantage of the update
+                  procedures. It can be downloaded from your favorite GNU site. Tar files of each
+                  release are also available.</dd></dl>
+<!--l. 54--><p class="noindent" >To use Cactus, with the default driver<span class="footnote-mark"><a 
+href="#fn1x5" id="fn1x5-bk"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x8-15001f1"></a>
+(<span 
+class="cmtt-10">CactusPUGH/PUGH</span>) on multiple processors you also need:
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmss-10">MPI</span>               </dt><dd 
+class="list">
+                  <!--l. 58--><p class="noindent" >The  <span 
+class="cmti-10">Message  Passing  Interface</span>,  which  provides  inter-processor  communication.
+                  Supercomputing sites often supply a native MPI implementation that is very likely
+                  to be compatible with Cactus. Otherwise, there are various freely available ones
+                  available, e.g. the MPICH version of MPI is available for various architectures and
+                  operating systems at <a 
+href="http://www-unix.mcs.anl.gov/mpi/" class="url" ><span 
+class="cmtt-10">http://www-unix.mcs.anl.gov/mpi/</span></a>.</dd></dl>
+<!--l. 67--><p class="noindent" >If you are using any thorns containing routines written in C++ you also need
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmss-10">C++</span>              </dt><dd 
+class="list">
+                  <!--l. 71--><p class="noindent" >C++  compiler.  For  example,  the  GNU  compiler.  This  is  available  for  most
+                  supported platforms. Platform specific compilers should also work. Note that if a
+                  C++ compiler is available, then the main() routine in the flesh is compiled with
+                  C++ to allow static class initialisations.</dd></dl>
+<!--l. 78--><p class="noindent" >If you are using any thorns containing routines written in Fortran you also need
+                                                                                       
+                                                                                       
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmss-10">F90/F77</span>           </dt><dd 
+class="list">
+                  <!--l. 82--><p class="noindent" >For routines written in Fortran 77, either a Fortran 90 or a Fortran 77 compiler
+                  can be used. For routines written in Fortran 90, a Fortran 90 compiler is obviously
+                  required. There is a very limited set of free Fortran 90 compilers available for the
+                  different architectures.</dd></dl>
+<!--l. 88--><p class="noindent" >While not required for compiling or running Cactus, for thorn development it is useful to install
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">ctags/etags</span>       </dt><dd 
+class="list">
+                  <!--l. 92--><p class="noindent" >These programs enable you browse through the calling structure of a program by
+                  help of a function call database. Navigating the flesh and arrangements becomes
+                  very easy. Emacs and <span 
+class="cmtt-10">vi </span>both support this method. See <a 
+href="UsersGuidech18.html#x23-223000D8">D8<!--tex4ht:ref: sec:Appendix.tags --></a> for a short guide to
+                  tags.</dd></dl>
+<!--l. 101--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">B1.2   </span> <a 
+ id="x8-16000B1.2"></a>Supported Architectures</h3>
+<!--l. 104--><p class="noindent" >Cactus runs on many machines, under a large number of operating systems. Here, we list the machines we have
+compiled and verified Cactus on, including some architecture specific notes. A complete list of architectures
+supported by Cactus, along with more notes, can be found at
+<div class="center" 
+>
+<!--l. 109--><p class="noindent" >
+<!--l. 110--><p class="noindent" ><a 
+href="http://www.cactuscode.org/Documentation/Architectures.html" class="url" ><span 
+class="cmtt-10">http://www.cactuscode.org/Documentation/Architectures.html</span></a>.</div>
+<!--l. 113--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmssbx-10">SGI</span>               </dt><dd 
+class="list">
+                  <!--l. 114--><p class="noindent" >32 or 64 bit running Irix.
+                  </dd><dt class="list">
+<span 
+class="cmssbx-10">Cray T3E</span>          </dt><dd 
+class="list">
+                  <!--l. 115--><p class="noindent" >
+                  </dd><dt class="list">
+<span 
+class="cmssbx-10">Compaq Alpha</span>     </dt><dd 
+class="list">
+                  <!--l. 116--><p class="noindent" >Compaq operating system and Linux. Single processor mode and MPI supported.
+                  The Alphas need to have the GNU C/C++ compilers installed.
+                                                                                       
+                                                                                       
+                  </dd><dt class="list">
+<span 
+class="cmssbx-10">IA32</span>              </dt><dd 
+class="list">
+                  <!--l. 120--><p class="noindent" >running Linux, OpenBSD, FreeBSD, or Windows 2000/NT. Single processor mode
+                  and MPI (MPICH and LAM) supported.<br 
+class="newline" />On Windows, Cactus compiles with Cygwin. MPI (WMPI, HPVM, and MPIPro)
+                  supported. Please read <span 
+class="cmtt-10">doc/README.NT </span>for details.
+                  </dd><dt class="list">
+<span 
+class="cmssbx-10">IA64</span>              </dt><dd 
+class="list">
+                  <!--l. 124--><p class="noindent" >running Linux.
+                  </dd><dt class="list">
+<span 
+class="cmssbx-10">Macintosh PowerPC</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 125--><p class="noindent" >(MacOS X and Linux PPC)
+                  </dd><dt class="list">
+<span 
+class="cmssbx-10">IBM SP2,SP3,SP4</span>  </dt><dd 
+class="list">
+                  <!--l. 126--><p class="noindent" >32 or 64 bit running AIX.
+                  </dd><dt class="list">
+<span 
+class="cmssbx-10">Hitachi SR8000-F1</span>  </dt><dd 
+class="list">
+                  <!--l. 127--><p class="noindent" >
+                  </dd><dt class="list">
+<span 
+class="cmssbx-10">Sun </span><span 
+class="cmss-10">Solaris</span>         </dt><dd 
+class="list">
+                  <!--l. 128--><p class="noindent" >
+                  </dd><dt class="list">
+<span 
+class="cmssbx-10">Fujitsu</span>            </dt><dd 
+class="list">
+                  <!--l. 129--><p class="noindent" >
+                  </dd><dt class="list">
+<span 
+class="cmssbx-10">NEC SX-5, SX-6</span>   </dt><dd 
+class="list">
+                  <!--l. 130--><p class="noindent" ></dd></dl>
+<!--l. 133--><p class="noindent" >The following machines are only partially supported,
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmssbx-10">HP Exemplar</span>       </dt><dd 
+class="list">
+                  <!--l. 135--><p class="noindent" ></dd></dl>
+<!--l. 138--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">B1.2.1   </span> <a 
+ id="x8-17000B1.2.1"></a>Note</h4>
+<!--l. 139--><p class="noindent" >Disk space may be a problem on supercomputers where home directories are small. A workaround is to first
+create a configs directory on scratch space, say <span 
+class="cmtt-10">scratch/cactus</span><span 
+class="cmtt-10">_configs/ </span>(where <span 
+class="cmtt-10">scratch/ </span>is your scratch
+directory), and then either
+                                                                                       
+                                                                                       
+     <ul class="itemize1">
+     <li class="itemize"> set the environment variable <span 
+class="cmtt-10">CACTUS</span><span 
+class="cmtt-10">_CONFIGS</span><span 
+class="cmtt-10">_DIR </span>to point to this directory</li></ul>
+<!--l. 147--><p class="noindent" >or
+     <ul class="itemize1">
+     <li class="itemize">  soft  link  this  directory  (<span 
+class="cmtt-10">ln -s scratch/cactus</span><span 
+class="cmtt-10">_configs Cactus/configs/</span>)  to  the  Cactus
+     directory, if your filesystem supports soft links.</li></ul>
+                                                                                       
+                                                                                       
+<div class="footnotes"><!--l. 55--><p class="noindent" ><span class="footnote-mark"><a 
+href="#fn1x5-bk" id="fn1x5"><sup class="textsuperscript">1</sup></a></span><span 
+class="cmr-8">For help with unfamiliar terms, please consult the glossary, Appendix </span><a 
+href="UsersGuidech11.html#x16-183000D1"><span 
+class="cmr-8">D1</span><!--tex4ht:ref: sec:glossary --></a><span 
+class="cmr-8">.</span>                               </div> <!--l. 155--><div class="crosslinks"><p class="noindent">[<a 
+href="UsersGuidech6.html" >next</a>]
+[<a 
+href="UsersGuidech5.html" >front</a>] [<a 
+href="UsersGuidepa2.html#UsersGuidech5.html" >up</a>] </p></div>
+<!--l. 155--><p class="noindent" ><a 
+ id="tailUsersGuidech5.html"></a>   
+</body></html> 

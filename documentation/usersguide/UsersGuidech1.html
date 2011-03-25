@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>A1 Getting Started</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,fn-in --> 
+<meta name="src" content="UsersGuide.tex"> 
+<meta name="date" content="2011-03-25 09:47:00"> 
+<link rel="stylesheet" type="text/css" href="UsersGuide.css"> 
+</head><body 
+>
+<!--l. 18--><div class="crosslinks"><p class="noindent">[<a 
+href="UsersGuidech2.html" >next</a>] [<a 
+href="#tailUsersGuidech1.html">tail</a>] [<a 
+href="UsersGuidepa1.html#UsersGuidech1.html" >up</a>] </p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;A1</span><br /><a 
+ id="x3-2000A1"></a>Getting Started</h2>
+<h3 class="sectionHead"><span class="titlemark">A1.1   </span> <a 
+ id="x3-3000A1.1"></a>Obtaining Cactus</h3>
+<!--l. 26--><p class="noindent" >Cactus is distributed, extended, and maintained using the free CVS software (<span 
+class="cmti-10">Concurrent Versions System</span>:
+<a 
+href="http://www.cvshome.org" class="url" ><span 
+class="cmtt-10">http://www.cvshome.org</span></a>). CVS allows many people to work on a large software project together without
+getting into a tangle. Since Cactus thorns are distributed from several repositories on the main CVS site, and
+from a growing number of user sites, we provide a <span 
+class="cmtt-10">GetCactus </span>script on our website for checking out the flesh and
+thorns. The script is available at
+<!--l. 35--><p class="noindent" ><a 
+href="http://www.cactuscode.org/download/GetCactus" class="url" ><span 
+class="cmtt-10">http://www.cactuscode.org/download/GetCactus</span></a>.
+<!--l. 37--><p class="noindent" >The script takes as an argument the name of a file containing a <span 
+class="cmti-10">ThornList</span>, that is a list of thorns with the
+syntax <div class="alltt">
+<!--l. 40--><p class="noindent" ><div class="obeylines-v">
+<span 
+class="cmtt-10">&#x003C;</span><span 
+class="cmsltt-10">arrangement</span><span 
+class="cmsltt-10">&#x00A0;name</span><span 
+class="cmtt-10">&#x003E;/&#x003C;</span><span 
+class="cmsltt-10">thorn</span><span 
+class="cmsltt-10">&#x00A0;name</span><span 
+class="cmtt-10">&#x003E;</span>
+</div>
+</div>
+<!--l. 44--><p class="noindent" >If no filename is given, only the flesh is checked out. Optional directives in the ThornList indicate which CVS
+                                                                                       
+                                                                                       
+repository to fetch thorns from. The default is to take the thorns from the same repository as the flesh. A full
+description of ThornList syntax is provided in Appendix&#x00A0;<a 
+href="UsersGuidech19.html#x24-226000D9">D9<!--tex4ht:ref: chap:th --></a>. ThornLists for example applications are provided
+on the Cactus website at
+<!--l. 52--><p class="noindent" >The same script can be used to checkout additional thorns, or to update existing ones.
+<!--l. 55--><p class="noindent" >The Cactus website also provides a form interface for direct download at:
+<!--l. 57--><p class="noindent" ><a 
+href="http://www.cactuscode.org/cactus\_cgi-bin/download.pl" class="url" ><span 
+class="cmtt-10">http://www.cactuscode.org/cactus\_cgi-bin/download.pl</span></a>
+<!--l. 59--><p class="noindent" >CVS experts who want to use raw CVS commands are directed to Appendix&#x00A0;<a 
+href="UsersGuidech17.html#x22-218000D7">D7<!--tex4ht:ref: sec:Appendix.cvs --></a> for full instructions. For CVS
+novices, we also summarize in the Appendix basic CVS commands.
+<!--l. 63--><p class="noindent" >The space required for an installation depends on the arrangements and thorns used. The flesh on its own
+requires less than 5 MB.
+<!--l. 66--><p class="noindent" >Another script, <span 
+class="cmtt-10">MakeThornList</span>, can be used to produce a minimal ThornList from a given Cactus par file. It
+needs a <span 
+class="cmti-10">master </span>ThornList to be copied into your <span 
+class="cmtt-10">Cactus </span>directory.
+<!--l. 70--><p class="noindent" >See <a 
+href="http://www.cactuscode.org/toolkit/makeThornList/" class="url" ><span 
+class="cmtt-10">http://www.cactuscode.org/toolkit/makeThornList/</span></a>.
+<!--l. 75--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">A1.1.1   </span> <a 
+ id="x3-4000A1.1.1"></a>Directory Structure</h4>
+<!--l. 78--><p class="noindent" >A fresh checkout creates a directory <span 
+class="cmtt-10">Cactus </span>with the following subdirectories:
+<!--l. 81--><p class="noindent" >
+                  <dl class="list1"><dt class="list">
+<span 
+class="cmtt-10">CVS</span>               </dt><dd 
+class="list">
+                  <!--l. 83--><p class="noindent" >the CVS bookkeeping directory, present in every subdirectory
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">doc</span>               </dt><dd 
+class="list">
+                  <!--l. 85--><p class="noindent" >Cactus documentation
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">lib</span>               </dt><dd 
+class="list">
+                  <!--l. 87--><p class="noindent" >contains libraries
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">src</span>               </dt><dd 
+class="list">
+                  <!--l. 89--><p class="noindent" >contains the source code for Cactus
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">arrangements</span>      </dt><dd 
+class="list">
+                  <!--l. 91--><p class="noindent" >contains the Cactus arrangements. The arrangements (the actual &#8220;physics&#8221;) are
+                  not  supplied  by  just  checking  out  just  Cactus.  If  the  arrangements  you  want
+                  to  use  are  standard  Cactus  arrangements,  or  reside  on  our  CVS  repository
+                  (<span 
+class="cmtt-10">cvs.cactuscode.org</span>), they can be checked out in similar way to the flesh.</dd></dl>
+                                                                                       
+                                                                                       
+<!--l. 98--><p class="noindent" >When Cactus is first compiled, it creates a new directory <span 
+class="cmtt-10">Cactus/configs</span>, which will contain all the source
+code, object files and libraries created during the build process.
+<!--l. 102--><p class="noindent" >Configurations are described in detail in Section <a 
+href="#x3-6000A1.2.1">A1.2.1<!--tex4ht:ref: sec:configurations --></a>.
+<!--l. 106--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">A1.2   </span> <a 
+ id="x3-5000A1.2"></a>Compiling a Cactus application</h3>
+<!--l. 111--><p class="noindent" >Cactus can be built in different configurations from the same copy of the source files, and these different
+configurations coexist in the <span 
+class="cmtt-10">Cactus/configs </span>directory. Here are several instances in which this can be
+useful:
+<!--l. 116--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x3-5002x1">Different configurations can be for <span 
+class="cmti-10">different architectures</span>. You can keep executables for multiple
+     architectures based on a single copy of source code, shared on a common file system.
+     </li>
+     <li 
+  class="enumerate" id="x3-5004x2"> You can compare different <span 
+class="cmti-10">compiler options</span>, and <span 
+class="cmti-10">debug-modes</span>. You might want to compile different
+     communication protocols (e.g. MPI or Globus), or leave them out all together.
+     </li>
+     <li 
+  class="enumerate" id="x3-5006x3"> You can have different configurations for <span 
+class="cmti-10">different thorn collections </span>compiled into your executable.</li></ol>
+<!--l. 129--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">A1.2.1   </span> <a 
+ id="x3-6000A1.2.1"></a>Creating a Configuration</h4>
+<!--l. 132--><p class="noindent" >At its simplest, this is done by <span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E;</span>. This generates a configuration with the name <span 
+class="cmsltt-10">config</span>, doing its
+best to automatically determine the default compilers and compilation flags suitable for the current
+architecture.
+<!--l. 138--><p class="noindent" >There are a number of additional command-line arguments which may be supplied to override some parts of the
+procedure; they are listed in Section&#x00A0;<a 
+href="UsersGuidech6.html#x9-19000B2.1">B2.1<!--tex4ht:ref: sec:confopts --></a>.
+<!--l. 141--><p class="noindent" >Once you have created a new configuration, the command <br 
+class="newline" /><br 
+class="newline" /><span 
+class="cmtt-10">gmake &#x003C;</span><span 
+class="cmsltt-10">configuration name</span><span 
+class="cmtt-10">&#x003E; </span><br 
+class="newline" /><br 
+class="newline" />will build an executable, prompting you along the way for the thorns which should be included. There is a range
+of <span 
+class="cmtt-10">gmake </span>targets and options which are detailed in Section&#x00A0;<a 
+href="UsersGuidech6.html#x9-29000B2.4.1">B2.4.1<!--tex4ht:ref: sec:gmtafobuanadco --></a>.
+                                                                                       
+                                                                                       
+<!--l. 152--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">A1.3   </span> <a 
+ id="x3-7000A1.3"></a>Running a Cactus application</h3>
+<!--l. 154--><p class="noindent" >Cactus executables always run from a parameter file (which may be provided as a command-line argument taken
+from standard input), which specifies which thorns to use and sets the values of each thorn&#8217;s parameters (the
+parameters that are not set will take on default values, see&#x00A0;<a 
+href="UsersGuidech12.html#x17-191000D2.3">D2.3<!--tex4ht:ref: sec:Appendix.param --></a>).
+<!--l. 160--><p class="noindent" >There is no restriction on the name of the parameter file, although it is conventional to use the file extension
+<span 
+class="cmtt-10">.par</span>. Optional command-line arguments can be used to customise runtime behaviour, and to provide
+information about the thorns used in the executable. The general syntax for running Cactus from a parameter
+file is then
+<!--l. 168--><p class="noindent" ><span 
+class="cmtt-10">./cactus</span><span 
+class="cmtt-10">_&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmtt-10">&#x003E; &#x003C;</span><span 
+class="cmsltt-10">parameter file</span><span 
+class="cmtt-10">&#x003E; [</span><span 
+class="cmsltt-10">command-line options</span><span 
+class="cmtt-10">]</span>
+<!--l. 170--><p class="noindent" >A parameter file is a text file whose lines are either comments or parameter statements. Comments are blank
+lines or lines that begin with either &#8216;<span 
+class="cmtt-10">#</span>&#8217; or &#8216;<span 
+class="cmtt-10">!</span>&#8217;. A parameter statement consists of one or more parameter names,
+followed by an &#8216;<span 
+class="cmtt-10">=</span>&#8217;, followed by the value(s) for this (these) parameter(s). Note that all string parameters are case
+insensitive.
+<!--l. 178--><p class="noindent" >The first parameter statement in any parameter file should set <span 
+class="cmtt-10">ActiveThorns</span>, which is a special parameter that
+tells the program which <span 
+class="cmti-10">thorns </span>are to be activated. Only parameters from active thorns can be set (and only
+those routines <span 
+class="cmti-10">scheduled </span>by active thorns are run). By default all thorns are inactive. For example, the first entry
+in a parameter file which is using just the two thorns <span 
+class="cmtt-10">CactusPUGH/PUGH </span>and <span 
+class="cmtt-10">CactusBase/CartGrid3D </span>should
+be
+<!--l. 186--><p class="noindent" ><span 
+class="cmtt-10">ActiveThorns = "PUGH CartGrid3D"</span>
+<!--l. 188--><p class="noindent" >Parameter specifications following <span 
+class="cmtt-10">ActiveThorns </span>usually are carried out by listing the name of the <span 
+class="cmti-10">thorn </span>which
+defined the parameter, two colons, and the name of the parameter &#8212; e.g.&#x00A0;<span 
+class="cmtt-10">wavetoyF77::amplitude </span>(see
+Section&#x00A0;<a 
+href="UsersGuidech9.html#x13-79000C1.4.2">C1.4.2<!--tex4ht:ref: sec:Cactus_parameters.scope --></a> for more information).
+<!--l. 194--><p class="noindent" >Notes:
+     <ul class="itemize1">
+     <li class="itemize"> You can obtain lists of the parameters associated with each thorn using the command-line options
+     <span 
+class="cmtt-10">-o </span>and <span 
+class="cmtt-10">-O </span>(Section&#x00A0;<a 
+href="UsersGuidech7.html#x10-36000B3.1">B3.1<!--tex4ht:ref: sec:command_line_options --></a>).
+     </li>
+     <li class="itemize"> For examples of parameter files, look in the <span 
+class="cmtt-10">par </span>directory which can be found in most thorns.
+     </li>
+     <li class="itemize"> The Cactus make system provides a mechanism for generating a <span 
+class="cmti-10">Thorn Guide </span>containing separate
+     chapters for each thorn and arrangement in your configuration. Details about parameters, grid
+     variables and scheduling are automatically included in from a thorns CCL files into the Thorn
+     Guide. To construct a Thorn Guide for the configuration <span 
+class="cmmi-10">&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmmi-10">&#x003E; </span>use
+     <!--l. 214--><p class="noindent" ><span 
+class="cmtt-10">gmake </span><span 
+class="cmmi-10">&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmmi-10">&#x003E;</span><span 
+class="cmtt-10">-ThornGuide</span>
+     <!--l. 216--><p class="noindent" >or to make a Thorn Guide for all the thorns in the <span 
+class="cmtt-10">arrangements </span>directory
+     <!--l. 218--><p class="noindent" ><span 
+class="cmtt-10">gmake </span><span 
+class="cmmi-10">&#x003C;</span><span 
+class="cmsltt-10">config</span><span 
+class="cmmi-10">&#x003E;</span>.
+     </li></ul>
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+<!--l. 226--><div class="crosslinks"><p class="noindent">[<a 
+href="UsersGuidech2.html" >next</a>] [<a 
+href="UsersGuidech1.html" >front</a>] [<a 
+href="UsersGuidepa1.html#UsersGuidech1.html" >up</a>] </p></div>
+<!--l. 226--><p class="noindent" ><a 
+ id="tailUsersGuidech1.html"></a>  
+</body></html> 

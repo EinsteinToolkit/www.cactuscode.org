@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>B2 Full Descriptions of Miscellaneous Functions</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,fn-in --> 
+<meta name="src" content="ReferenceManual.tex"> 
+<meta name="date" content="2011-03-25 09:47:00"> 
+<link rel="stylesheet" type="text/css" href="ReferenceManual.css"> 
+</head><body 
+>
+<!--l. 347--><div class="crosslinks"><p class="noindent">[<a 
+href="ReferenceManualch5.html" >next</a>] [<a 
+href="ReferenceManualch3.html" >prev</a>] [<a 
+href="ReferenceManualch3.html#tailReferenceManualch3.html" >prev-tail</a>] [<a 
+href="#tailReferenceManualch4.html">tail</a>] [<a 
+href="ReferenceManualpa2.html#ReferenceManualch4.html" >up</a>] </p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;B2</span><br /><a 
+ id="x7-212000B2"></a>Full Descriptions of Miscellaneous Functions</h2>
+<!--l. 349--><p class="noindent" ><div class="functiondescription">
+<h3 class="likesectionHead"><a 
+ id="x7-213000B2"></a><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_CurrentDate</span></h3>
+<!--l. 349--><p class="noindent" ></div> <div class="functiondescriptioncontent">
+<!--l. 351--><p class="noindent" >Fills string with current local date
+<!--l. 353--><p class="noindent" ><span 
+class="cmbx-10">Synopsis</span>
+<!--l. 354--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"cctk.h"
+&#x00A0;<br />#include&#x00A0;"cctk_Misc.h.h"
+&#x00A0;<br />
+&#x00A0;<br />int&#x00A0;retval&#x00A0;=&#x00A0;Util_CurrentDate&#x00A0;(int&#x00A0;len,&#x00A0;char&#x00A0;*now);
+</div>
+<!--l. 360--><p class="nopar" > </div><br style="clear: both;"/>
+<!--l. 364--><p class="noindent" ><span 
+class="cmbx-10">Parameters</span>
+<!--l. 365--><p class="noindent" ><span 
+class="cmtt-10">len </span>length of the user-supplied string buffer <br/>
+<span 
+class="cmtt-10">now </span>user-supplied string buffer to write the date stamp to <br/>
+<!--l. 373--><p class="noindent" ><span 
+class="cmbx-10">Result</span>
+<!--l. 374--><p class="noindent" ><span 
+class="cmtt-10">retval </span>length of the string returned in <span 
+class="cmtt-10">n</span>ow, or 0 if the string was truncated <br/>
+<!--l. 379--><p class="noindent" ><span 
+class="cmbx-10">See Also</span>
+<!--l. 380--><p class="noindent" ><span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_CurrentTime </span>[<a 
+href="#x7-215000B2">B17<!--tex4ht:ref: Util-CurrentTime --></a>] Fills string with current local time <br/>
+<span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_CurrentDateTime </span>[<a 
+href="#x7-214000B2">B15<!--tex4ht:ref: Util-CurrentDateTime --></a>] Returns the current datetime in a machine-processable format as defined in ISO
+8601 chapter 5.4. <br/>
+</div>
+
+<!--l. 392--><p class="noindent" ><div class="functiondescription">
+<h3 class="likesectionHead"><a 
+ id="x7-214000B2"></a><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_CurrentDateTime</span></h3>
+<!--l. 392--><p class="noindent" ></div> <div class="functiondescriptioncontent">
+<!--l. 394--><p class="noindent" >Returns the current datetime in a machine-processable format as defined in ISO 8601 chapter 5.4.
+                                                                                       
+                                                                                       
+<!--l. 397--><p class="noindent" ><span 
+class="cmbx-10">Synopsis</span>
+<!--l. 398--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"cctk.h"
+&#x00A0;<br />#include&#x00A0;"cctk_Misc.h.h"
+&#x00A0;<br />
+&#x00A0;<br />char&#x00A0;*current_datetime&#x00A0;=&#x00A0;Util_CurrentDateTime&#x00A0;();
+</div>
+<!--l. 404--><p class="nopar" > </div><br style="clear: both;"/>
+<!--l. 408--><p class="noindent" ><span 
+class="cmbx-10">Result</span>
+<!--l. 409--><p class="noindent" ><span 
+class="cmtt-10">current</span><span 
+class="cmtt-10">_datetime </span>Pointer to an allocated formatted string containing the current datetime stamp. The pointer
+should be freed by the caller. <br/>
+<!--l. 415--><p class="noindent" ><span 
+class="cmbx-10">Discussion</span>
+<!--l. 416--><p class="noindent" >The formatted string returned contains the current datetime in a machine-processable format as defined in ISO
+8601 chapter 5.4: <span 
+class="cmtt-10">"</span>YYYY-MM-DDThh:mm:ss+hh:mm&#8221;
+<!--l. 421--><p class="noindent" ><span 
+class="cmbx-10">See Also</span>
+<!--l. 422--><p class="noindent" ><span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_CurrentDate </span>[<a 
+href="#x7-213000B2">B14<!--tex4ht:ref: Util-CurrentDate --></a>] Fills string with current local date <br/>
+<span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_CurrentTime </span>[<a 
+href="#x7-215000B2">B17<!--tex4ht:ref: Util-CurrentTime --></a>] Fills string with current local time <br/>
+</div>
+
+<!--l. 432--><p class="noindent" ><div class="functiondescription">
+<h3 class="likesectionHead"><a 
+ id="x7-215000B2"></a><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_CurrentTime</span></h3>
+<!--l. 432--><p class="noindent" ></div> <div class="functiondescriptioncontent">
+<!--l. 434--><p class="noindent" >Fills string with current local time
+<!--l. 436--><p class="noindent" ><span 
+class="cmbx-10">Synopsis</span>
+                                                                                       
+                                                                                       
+<!--l. 437--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"cctk.h"
+&#x00A0;<br />#include&#x00A0;"cctk_Misc.h.h"
+&#x00A0;<br />
+&#x00A0;<br />int&#x00A0;retval&#x00A0;=&#x00A0;Util_CurrentTime&#x00A0;(int&#x00A0;len,&#x00A0;char&#x00A0;*now);
+</div>
+<!--l. 443--><p class="nopar" > </div><br style="clear: both;"/>
+<!--l. 447--><p class="noindent" ><span 
+class="cmbx-10">Parameters</span>
+<!--l. 448--><p class="noindent" ><span 
+class="cmtt-10">len </span>length of the user-supplied string buffer <br/>
+<span 
+class="cmtt-10">now </span>user-supplied string buffer to write the time stamp to <br/>
+<!--l. 456--><p class="noindent" ><span 
+class="cmbx-10">Result</span>
+<!--l. 457--><p class="noindent" ><span 
+class="cmtt-10">retval </span>length of the string returned in <span 
+class="cmtt-10">n</span>ow, or 0 if the string was truncated <br/>
+<!--l. 462--><p class="noindent" ><span 
+class="cmbx-10">See Also</span>
+<!--l. 463--><p class="noindent" ><span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_CurrentDate </span>[<a 
+href="#x7-213000B2">B14<!--tex4ht:ref: Util-CurrentDate --></a>] Fills string with current local date <br/>
+<span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_CurrentDateTime </span>[<a 
+href="#x7-214000B2">B15<!--tex4ht:ref: Util-CurrentDateTime --></a>] Returns the current datetime in a machine-processable format as defined in ISO
+8601 chapter 5.4. <br/>
+</div>
+
+<!--l. 476--><p class="noindent" ><div class="functiondescription">
+<h3 class="likesectionHead"><a 
+ id="x7-216000B2"></a><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_snprintf</span></h3>
+<!--l. 476--><p class="noindent" ></div> <div class="functiondescriptioncontent">
+<!--l. 478--><p class="noindent" >Safely format data into a caller-supplied buffer.
+                                                                                       
+                                                                                       
+<!--l. 480--><p class="noindent" ><span 
+class="cmbx-10">Synopsis</span>
+<!--l. 481--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"util_String.h"
+&#x00A0;<br />int&#x00A0;count&#x00A0;=&#x00A0;Util_snprintf(char*&#x00A0;buffer,&#x00A0;size_t&#x00A0;size,&#x00A0;const&#x00A0;char*&#x00A0;format,&#x00A0;...)
+</div>
+<!--l. 485--><p class="nopar" > </div><br style="clear: both;"/>
+<!--l. 489--><p class="noindent" ><span 
+class="cmbx-10">Result</span>
+<!--l. 490--><p class="noindent" ><span 
+class="cmtt-10">result</span><span 
+class="cmtt-10">_len </span>The number of characters (not including the trailing NUL) that would have been stored in the
+destination string if <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">size</span></span></span> had been infinite. <br/>
+<!--l. 496--><p class="noindent" ><span 
+class="cmbx-10">Parameters</span>
+<!--l. 497--><p class="noindent" ><span 
+class="cmtt-10">buffer </span>A non-NULL pointer to the (caller-provided) buffer. <br/>
+<span 
+class="cmtt-10">size </span>The size of the buffer pointed to by <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">buffer</span></span></span>. <br/>
+<span 
+class="cmtt-10">format </span>A (non-NULL pointer to a) C-style NUL-terminated string describing how to format any further
+arguments <br/>
+<span 
+class="cmtt-10">... </span>Zero or more further arguments, with types as specified by the <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">format</span></span></span> argument. <br/>
+<!--l. 513--><p class="noindent" ><span 
+class="cmbx-10">Discussion</span>
+<!--l. 514--><p class="noindent" >C99 defines, and many systems provide, a C library function <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">snprintf()</span></span></span>, which
+safely formats data into a caller-supplied buffer. However, a few systems don&#8217;t provide
+this,<span class="footnote-mark"><a 
+href="#fn1x4" id="fn1x4-bk"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x7-216001f1"></a> so Cactus provides its own
+version, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">Util_snprintf()</span></span></span>.<span class="footnote-mark"><a 
+href="#fn2x4" id="fn2x4-bk"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x7-216002f2"></a>
+<!--l. 529--><p class="noindent" >The interpretation of <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">format</span></span></span> is the same as that of <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">printf()</span></span></span>. See the <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">printf()</span></span></span> documentation on your
+favorite computer system (notably, on any Unix system, type &#8220;<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">man</span><span 
+class="cmtt-10">&#x00A0;printf</span></span></span>&#8221;) for lots and lots of
+details.
+<!--l. 534--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">Util_snprintf()</span></span></span> stores at most <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">size</span></span></span> characters in the destination buffer; the last character it stores is always
+the terminating NUL character. If <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">result_len</span><span 
+class="cmtt-10">&#x00A0;&#x003E;=</span><span 
+class="cmtt-10">&#x00A0;size</span></span></span> then the destination string was truncated to fit into the
+destination buffer.
+<!--l. 540--><p class="noindent" ><span 
+class="cmbx-10">See Also</span>
+<!--l. 541--><p class="noindent" ><span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_vsnprintf </span>[<a 
+href="#x7-217000B2">B24<!--tex4ht:ref: Util-vsnprintf --></a>] Similar function which takes a <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x003C;stdarg.h&#x003E;</span></span></span> variable argument list. <br/>
+<span 
+class="cmtt-10">snprintf() </span>Standard C library function which this function tries to clone. <br/>
+                                                                                       
+                                                                                       
+<span 
+class="cmtt-10">sprintf() </span>Unsafe and dangerous C library function similar to <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">snprintf()</span></span></span>, which doesn&#8217;t check the buffer
+length. <br/>
+<!--l. 553--><p class="noindent" ><span 
+class="cmbx-10">Errors</span>
+<!--l. 554--><p class="noindent" ><span 
+class="cmmi-10">&#x003C;</span> <span 
+class="cmtt-10">0</span> Some sort of error occured. It&#8217;s indeterminate what (if anything) has been stored in the destination buffer. <br/>
+<!--l. 560--><p class="noindent" ><span 
+class="cmbx-10">Examples</span>
+<!--l. 561--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"util_String.h"
+&#x00A0;<br />
+&#x00A0;<br />/*&#x00A0;some&#x00A0;values&#x00A0;to&#x00A0;be&#x00A0;formatted&#x00A0;*/
+&#x00A0;<br />char&#x00A0;&#x00A0;&#x00A0;c&#x00A0;=&#x00A0;&#8217;@&#8217;;
+&#x00A0;<br />int&#x00A0;&#x00A0;&#x00A0;&#x00A0;i&#x00A0;=&#x00A0;42;
+&#x00A0;<br />double&#x00A0;d&#x00A0;=&#x00A0;3.14159265358979323846;
+&#x00A0;<br />const&#x00A0;char&#x00A0;s[]&#x00A0;=&#x00A0;"this&#x00A0;is&#x00A0;a&#x00A0;string&#x00A0;to&#x00A0;format";
+&#x00A0;<br />
+&#x00A0;<br />int&#x00A0;len;
+&#x00A0;<br />#define&#x00A0;N_BUFFER 100
+&#x00A0;<br />char&#x00A0;buffer[N_BUFFER];
+&#x00A0;<br />
+&#x00A0;<br />/*&#x00A0;safely&#x00A0;format&#x00A0;the&#x00A0;values&#x00A0;into&#x00A0;the&#x00A0;buffer&#x00A0;*/
+&#x00A0;<br />Util_snprintf(buffer,&#x00A0;N_BUFFER,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;"values&#x00A0;are&#x00A0;c=&#8217;%c&#8217;&#x00A0;i=%d&#x00A0;d=%g&#x00A0;s=\"%s\"",
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;c,&#x00A0;i,&#x00A0;d,&#x00A0;s);
+&#x00A0;<br />
+&#x00A0;<br />/*
+&#x00A0;<br />&#x00A0;*&#x00A0;same&#x00A0;as&#x00A0;above&#x00A0;example,&#x00A0;but&#x00A0;now&#x00A0;explicitly&#x00A0;check&#x00A0;for&#x00A0;the&#x00A0;output
+&#x00A0;<br />&#x00A0;*&#x00A0;being&#x00A0;truncated&#x00A0;due&#x00A0;to&#x00A0;the&#x00A0;buffer&#x00A0;being&#x00A0;too&#x00A0;small
+&#x00A0;<br />&#x00A0;*/
+&#x00A0;<br />const&#x00A0;int&#x00A0;len&#x00A0;=&#x00A0;Util_snprintf(buffer,&#x00A0;N_BUFFER,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;"values&#x00A0;are&#x00A0;c=&#8217;%c&#8217;&#x00A0;i=%d&#x00A0;d=%g&#x00A0;s=\"%s\"",
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;c,&#x00A0;i,&#x00A0;d,&#x00A0;s);
+&#x00A0;<br />if&#x00A0;(len&#x00A0;&#x003E;=&#x00A0;N_BUFFER)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/*
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*&#x00A0;output&#x00A0;was&#x00A0;truncated&#x00A0;(i.e.&#x00A0;buffer&#x00A0;was&#x00A0;too&#x00A0;small)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*&#x00A0;(&#x00A0;buffer&#x00A0;&#x00A0;probably&#x00A0;doesn&#8217;t&#x00A0;have&#x00A0;all&#x00A0;the&#x00A0;information&#x00A0;we&#x00A0;wanted
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*&#x00A0;but&#x00A0;the&#x00A0;code&#x00A0;is&#x00A0;still&#x00A0;"safe",&#x00A0;in&#x00A0;the&#x00A0;sense&#x00A0;that&#x00A0;&#x00A0;buffer&#x00A0;&#x00A0;is
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*&#x00A0;still&#x00A0;NUL-terminated,&#x00A0;and&#x00A0;no&#x00A0;buffer-overflow&#x00A0;has&#x00A0;occured)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;*/
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;}
+</div>
+<!--l. 596--><p class="nopar" > </div><br style="clear: both;"/>
+</div>
+
+<!--l. 602--><p class="noindent" ><div class="functiondescription">
+<h3 class="likesectionHead"><a 
+ id="x7-217000B2"></a><span 
+class="cmbx-10">Util</span><span 
+class="cmbx-10">_vsnprintf</span></h3>
+                                                                                       
+                                                                                       
+<!--l. 602--><p class="noindent" ></div> <div class="functiondescriptioncontent">
+<!--l. 604--><p class="noindent" >Safely format data into a caller-supplied buffer.
+<!--l. 606--><p class="noindent" ><span 
+class="cmbx-10">Synopsis</span>
+<!--l. 607--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
+                                                                                       
+                                                                                       
+<div class="verbatim">
+#include&#x00A0;"util_String.h"
+&#x00A0;<br />int&#x00A0;count&#x00A0;=&#x00A0;Util_vsnprintf(char*&#x00A0;buffer,&#x00A0;size_t&#x00A0;size,&#x00A0;const&#x00A0;char*&#x00A0;format,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;va_list&#x00A0;arg)
+</div>
+<!--l. 612--><p class="nopar" > </div><br style="clear: both;"/>
+<!--l. 616--><p class="noindent" ><span 
+class="cmbx-10">Discussion</span>
+<!--l. 617--><p class="noindent" >This function is identical to <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">Util_snprintf</span></span></span>, except that it takes its data arguements in the form of a <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">va_list</span></span></span>
+&#8220;cookie&#8221; (as defined by <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x003C;stdarg.h&#x003E;</span></span></span>, which is already included by <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">"util_String.h"</span></span></span>), instead of in the from of a
+variable length argument list.
+<!--l. 624--><p class="noindent" ><span 
+class="cmbx-10">See Also</span>
+<!--l. 625--><p class="noindent" ><span 
+class="cmtt-10">Util</span><span 
+class="cmtt-10">_snprintf </span>[<a 
+href="#x7-216000B2">B19<!--tex4ht:ref: Util-snprintf --></a>] Similar function which takes a variable length argument list. <br/>
+<span 
+class="cmtt-10">vsnprintf() </span>Standard C library function which this function tries to clone. <br/>
+<span 
+class="cmtt-10">vsprintf() </span>Unsafe and dangerous C library function similar to <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">vsnprintf()</span></span></span>, which doesn&#8217;t check the buffer
+length. <br/>
+<span 
+class="cmtt-10">&#x003C;stdarg.h&#x003E; </span>System header file which defines the <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">va_list</span></span></span> &#8220;cookie&#8221; type and various macros to manipulate it.
+On most Unix systems the man page for this header file this also includes a mini-tutorial on how to use <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">va_list</span></span></span>
+objects. <br/>
+</div>
+                                                                                       
+                                                                                       
+<div class="footnotes"><!--l. 521--><p class="noindent" ><span class="footnote-mark"><a 
+href="#fn1x4-bk" id="fn1x4"><sup class="textsuperscript">1</sup></a></span><span 
+class="cmr-8">There&#8217;s also a related (older) API </span><span 
+class="cmtt-8">sprintf()</span><span 
+class="cmr-8">. Don&#8217;t use it &#8211; it almost guarantees buffer overflows.</span>
+<!--l. 527--><p class="noindent" ><span class="footnote-mark"><a 
+href="#fn2x4-bk" id="fn2x4"><sup class="textsuperscript">2</sup></a></span><span 
+class="cmr-8">Contrary to the usual Cactus convention, the &#8220;</span><span 
+class="cmtt-8">s</span><span 
+class="cmr-8">&#8221; in &#8220;</span><span 
+class="cmtt-8">Util</span><span 
+class="cmtt-8">_snprintf</span><span 
+class="cmr-8">&#8221; is in </span><span 
+class="cmti-8">lower </span><span 
+class="cmr-8">case, not upper case.</span>           </div> <!--l. 646--><div class="crosslinks"><p class="noindent">[<a 
+href="ReferenceManualch5.html" >next</a>]
+[<a 
+href="ReferenceManualch3.html" >prev</a>] [<a 
+href="ReferenceManualch3.html#tailReferenceManualch3.html" >prev-tail</a>] [<a 
+href="ReferenceManualch4.html" >front</a>] [<a 
+href="ReferenceManualpa2.html#ReferenceManualch4.html" >up</a>] </p></div>
+<!--l. 646--><p class="noindent" ><a 
+ id="tailReferenceManualch4.html"></a>  
+</body></html> 

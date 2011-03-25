@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>A3 Checkpointing/Recovery</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,fn-in --> 
+<meta name="src" content="UsersGuide.tex"> 
+<meta name="date" content="2011-03-25 09:47:00"> 
+<link rel="stylesheet" type="text/css" href="UsersGuide.css"> 
+</head><body 
+>
+<!--l. 331--><div class="crosslinks"><p class="noindent">[<a 
+href="UsersGuidech4.html" >next</a>] [<a 
+href="UsersGuidech2.html" >prev</a>] [<a 
+href="UsersGuidech2.html#tailUsersGuidech2.html" >prev-tail</a>] [<a 
+href="#tailUsersGuidech3.html">tail</a>] [<a 
+href="UsersGuidepa1.html#UsersGuidech3.html" >up</a>] </p></div>
+<h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;A3</span><br /><a 
+ id="x5-11000A3"></a>Checkpointing/Recovery</h2>
+<!--l. 334--><p class="noindent" >Checkpointing is defined as saving the current state of a run (parameter settings, contents of grid variables, and
+other relevant information) to a file. At a later time, this run can then be restarted from that state by recovering
+all the data from the checkpoint file.
+<!--l. 339--><p class="noindent" >Cactus checkpointing and recovery methods are provided by thorns. In general, these thorns decide how often to
+generate a checkpoint. They also register their recovery routines with the flesh; these recovery routines may then
+be called during initialisation of a subsequent run to perform the recovery of the state of the run. Such a
+recovery is requested by setting a parameter in the parameter file.
+<!--l. 346--><p class="noindent" >See Chapter&#x00A0;<a 
+href="UsersGuidech10.html#x14-178000C2.8">C2.8<!--tex4ht:ref: chap:cp_recovery_methods --></a> for details of how to create your own checkpointing and recovery methods.
+                                                                                       
+                                                                                       
+<!--l. 355--><div class="crosslinks"><p class="noindent">[<a 
+href="UsersGuidech4.html" >next</a>] [<a 
+href="UsersGuidech2.html" >prev</a>] [<a 
+href="UsersGuidech2.html#tailUsersGuidech2.html" >prev-tail</a>] [<a 
+href="UsersGuidech3.html" >front</a>] [<a 
+href="UsersGuidepa1.html#UsersGuidech3.html" >up</a>] </p></div>
+<!--l. 355--><p class="noindent" ><a 
+ id="tailUsersGuidech3.html"></a>  
+</body></html> 
