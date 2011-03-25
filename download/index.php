@@ -29,20 +29,20 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <h4>Method #1: GetComponents</h4>
 
 <ul>
-<p align=justify> Cactus is maintained using <a
+<p> Cactus is maintained using <a
 href="http://subversion.apache.org/">Subversion</a>.  
 The preferred method is to use the <kbd>GetComponents</kbd> script along with
 a thornlist as described below.  We maintain a 
 <a href="/download/thorns/">page of basic thornlists</a>, 
 but you can use your own customized thornlist.</p>
 
-<p align=justify> Download 
+<p> Download 
 <a href="GetComponents">GetComponents</a> 
 and make sure it is executable. 
 <code> wget https://github.com/gridaphobe/CRL/raw/master/GetComponents 
 chmod a+x GetComponents</code></p>
 
-<p align=justify> To checkout the Cactus flesh and required thorns, choose and save one of
+<p> To checkout the Cactus flesh and required thorns, choose and save one of
 our 
 <a href="thorns">ThornLists</a> 
 (or provide your own) and issue the command: 
@@ -53,17 +53,17 @@ our
 
 <ul>
 
-<p align=justify> Instead of using the <kbd>GetComponents</kbd> script, you can also check
+<p> Instead of using the <kbd>GetComponents</kbd> script, you can also check
 out Cactus and the Cactus Computational Toolkit using <kbd>svn</kbd> commands
 or another Subversion client.  The main Cactus Subversion Server
 (<kbd>svn.cactuscode.org</kbd>) hosts several different repositories including
 different branches for the stable and development versions of Cactus.  </p>
 
-<p align=justify> The Subversion server can be use anonymously to checkout Cactus
+<p> The Subversion server can be use anonymously to checkout Cactus
 components. It supports both http and https connections, but only https can
 be used for authenticated logins, e.g. for commits to the repositories.  </p>
 
-<p align=justify> Check out the Cactus flesh: 
+<p> Check out the Cactus flesh: 
 <code>svn co http://svn.cactuscode.org/flesh/trunk Cactus</code> 
 Move to the arrangements directory of the Cactus installation and install the
 required arrangements and thorns: 
@@ -72,7 +72,7 @@ If you are using thorns other than those in the standard Cactus distributions
 you will need to know the details for downloading or checking them out. Here
 we just describe checking out from the Cactus distribution.  </p>
 
-<p align=justify> To checkout individual thorns (e.g. see our standard <a
+<p> To checkout individual thorns (e.g. see our standard <a
 href="/documentation/thorns/">ThornLists</a>):
 
 <code>svn co http://svn.cactuscode.org/arrangements/&lt;<var>arrangement</var>&gt;/&lt;<var>thorn</var>&gt;/trunk &lt;<var>thorn</var>&gt;</code>
@@ -82,7 +82,7 @@ href="/documentation/thorns/">ThornLists</a>):
 
 <h3>License</h3> 
 
-<p align=justify> The Cactus Code is (C) Copyrighted by the individual Authors and
+<p> The Cactus Code is (C) Copyrighted by the individual Authors and
 distributed under the 
 <a href="http://www.gnu.org/copyleft/lgpl.html"
 >GNU Lesser General Public License</a>.  
