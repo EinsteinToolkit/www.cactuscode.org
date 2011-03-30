@@ -37,10 +37,9 @@ a thornlist as described below.  We maintain a
 but you can use your own customized thornlist.</p>
 
 <p> Download 
-<a href="GetComponents">GetComponents</a> 
-and make sure it is executable. 
-<code> wget https://github.com/gridaphobe/CRL/raw/master/GetComponents 
-chmod a+x GetComponents</code></p>
+<a href="GetComponents.php">GetComponents</a> and make sure it is executable. 
+<code>curl -O https://github.com/gridaphobe/CRL/raw/master/GetComponents 
+chmod a+x GetComponents </code></p>
 
 <p> To checkout the Cactus flesh and required thorns, choose and save one of
 our 

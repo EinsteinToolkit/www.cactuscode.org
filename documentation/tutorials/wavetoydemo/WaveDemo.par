@@ -10,7 +10,7 @@ httpd::pause                    = 0
 
 # Simulation
 
-cactus::cctk_itlast             = 50000
+cactus::cctk_itlast             = 20000
 driver::local_nx                = 40
 driver::local_ny                = 40
 driver::local_nz                = 40
@@ -37,19 +37,19 @@ IO::out_downsample_x            = 2
 IO::out_downsample_y            = 2
 IO::out_downsample_z            = 2
 
-IOBasic::outInfo_every          = 10
+IOBasic::outInfo_every          = 25
 IOBasic::outInfo_vars           = "wavetoy::phi"
 
-IOBasic::outScalar_every        = 10
+IOBasic::outScalar_every        = 25
 IOBasic::outScalar_vars         = "wavetoy::phi"
 
-IOASCII::out1D_every            = 10
+IOASCII::out1D_every            = 25
 IOASCII::out1D_vars             = "wavetoy::phi"
 
-IOASCII::out2D_every            = 10
+IOASCII::out2D_every            = 25
 IOASCII::out2D_vars             = "wavetoy::phi"
 
-IOJpeg::out_every               = 10
+IOJpeg::out_every               = 25
 IOJpeg::out_vars                = "wavetoy::phi"
 IOJpeg::mode                    = "remove"
 IOJpeg::colormap                = "auto"
