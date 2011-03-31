@@ -210,7 +210,7 @@ you have the simple visualization client
 <a href="http://cactuscode.org/documentation/visualizations/xgraph">
 xgraph</a>. After downloading and installing xgraph, issue: 
 <code>xgraph WaveDemo/phi_x_[20][20].xg</code> </p>
-<center> <img src="xgraph1.jpg" alt="xgraph" width="400" /> </center>
+<center> <img src="xgraph.gif" alt="xgraph" width="400" /> </center>
 
 <h3>Connecting with a web browser</h3>
 
