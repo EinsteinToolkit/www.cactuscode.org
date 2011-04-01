@@ -8,7 +8,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <ul>
   <li>
-    <a href="alpaca">Alpaca</a> develops Cactus Tools for Application
+    <a href="www.cct.lsu.edu/~eschnett/alpaca">Alpaca</a> develops Cactus Tools for Application
     Level Profiling and Correctness Analysis
   </li>
   <li>
