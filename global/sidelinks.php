@@ -6,23 +6,12 @@ switch ($section)
 case 'about': echo '
 <h2>About</h2>
 <ul class="sidemenu">
-	<li><a href="/about/contact">Contact</a></li>
-	<li><a href="/about/funding">Funding</a></li>
-	<li><a href="/about/history">History</a></li>
+	<li><a href="/about/funding.php">Funding</a></li>
+	<li><a href="/about/contact.php">Contact</a></li>
+	<li><a href="/about/history.php">History</a></li>
+	<li><a href="/about/mailinglists">Mailing Lists</a></li>
+	<li><a href="/about/partners/">Partners</a></li>
 	<li><a href="/about/team/">Team</a></li>
-</ul>
-'; break;
-
-
-case 'community': echo '
-<h2>Community</h2>
-<ul class="sidemenu">
-	<li><a href="/community/benchmarks/">Benchmarks</a></li>
-	<li><a href="/community/bugs/">Bugs</a></li>
-	<li><a href="/community/mailinglists">Mailing Lists</a></li>
-	<li><a href="/community/partners/">Partners</a></li>
-	<li><a href="/community/projects/">Projects</a></li>
-	<li><a href="/community/regressiontests/">Regression Tests</a></li>
 </ul>
 '; break;
 
@@ -46,21 +35,6 @@ case 'partners': echo '
 </ul>
 '; break;
 
-
-/*
-case 'documentation':
-echo '
-<h2>Documentation</h2>
-<ul class="sidemenu">
-	<li><a href="/documentation/tutorials/">Tutorials</a></li>
-	<li><a href="/documentation/faq">FAQ</a></li>
-	<li><a href="/documentation/arrangements/">Arrangement Guides</a></li>
-	<li><a href="/documentation/thorns/">Thorn Guides</a></li>
-	<li><a href="/documentation/visualization/">Visualization</a></li>
-</ul>
-';
-break;
-*/
 
 case 'visualization': echo '
 <h2>Visualization</h2>
@@ -91,13 +65,6 @@ case 'download': echo '
 </ul>
 '; break;
 
-
-//internal sidebar?
-
-/*
-case 'media': echo '
-'; break;
-*/
 
 case 'search':
 echo 'search again';
