@@ -3,7 +3,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <p>
 <ul>
-<?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/tools/ls.php'); ?>
+<li><a href="AEI">AEI</a>
+<li><a href="LSU">LSU</a>
 </ul>
 </p>
 
