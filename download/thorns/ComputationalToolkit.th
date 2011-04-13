@@ -1,7 +1,22 @@
+# Component list for the Cactus Computational Toolkit <http://www.cactuscode.org/>
+# $Revision: $
+# $Date: $
+# $HeadURL: $
+
 !CRL_VERSION = 1.0
 
 !DEFINE ROOT = Cactus
 !DEFINE ARR  = $ROOT/arrangements
+
+
+
+# This thorn list
+!TARGET   = $ROOT
+!TYPE     = svn
+!AUTH_URL = https://svn.cactuscode.org/www/download
+!URL      = http://svn.cactuscode.org/www/download
+!CHECKOUT = thorns
+!NAME     = thornlists
 
 # Cactus Flesh
 !TARGET   = $ROOT
@@ -11,7 +26,13 @@
 !CHECKOUT = Cactus
 !NAME     = .
 
-# Cactus utilities, including the GetComponents script
+# Simulation Factory
+!TARGET   = $ROOT
+!TYPE     = svn
+!URL      = https://svn.cct.lsu.edu/repos/numrel/$1/trunk
+!CHECKOUT = simfactory
+
+# Various Cactus utilities
 !TARGET   = $ROOT
 !TYPE     = svn
 !AUTH_URL = https://svn.cactuscode.org/Utilities/trunk
@@ -19,51 +40,53 @@
 !CHECKOUT = .
 !NAME     = utils
 
+# The GetComponents script
+!TARGET   = $ROOT/bin
+!TYPE     = git
+!URL      = git://github.com/gridaphobe/CRL.git
+!AUTH_URL = git@github.com:gridaphobe/CRL.git
+!CHECKOUT = GetComponents
+
+
+
 # Basic Cactus thorns
 !TARGET   = $ARR
 !TYPE     = svn
 !AUTH_URL = https://svn.cactuscode.org/arrangements/$1/$2/trunk
 !URL      = http://svn.cactuscode.org/arrangements/$1/$2/trunk
 !CHECKOUT =
-CactusBase/Boundary                
-CactusBase/CartGrid3D              
+CactusBase/Boundary
+CactusBase/CartGrid3D
 CactusBase/CoordBase
 CactusBase/Fortran
 CactusBase/IOASCII
-CactusBase/IOBasic                 
-CactusBase/IOUtil  
-CactusBase/LocalInterp  
-CactusBase/LocalReduce              
+CactusBase/IOBasic
+CactusBase/IOUtil
+CactusBase/LocalInterp
+CactusBase/LocalReduce
 CactusBase/SymBase
-CactusBase/Time 
-       
+CactusBase/Time
+
 CactusConnect/HTTPD
 CactusConnect/HTTPDExtra
 CactusConnect/Socket
-           
-CactusElliptic/EllBase             
-CactusElliptic/EllPETSc
-CactusElliptic/EllSOR              
 
-CactusExternal/BLAS
-CactusExternal/FFTWlib
-CactusExternal/FlexIO
-CactusExternal/GSL
-CactusExternal/HDF5
-CactusExternal/LAPACK
-CactusExternal/LORENE
-CactusExternal/OpenSSL
-CactusExternal/PAPI
-CactusExternal/PETSc
-CactusExternal/SDF
-CactusExternal/curl
-CactusExternal/flickcurl
-CactusExternal/jpeg6b
-CactusExternal/libcurl
-CactusExternal/libxml2
-  
+CactusElliptic/EllBase
+#CactusElliptic/EllPETSc
+CactusElliptic/EllSOR
+
 CactusIO/IOJpeg
-CactusIO/IOSDF
+#CactusIO/IOSDF
+
+#CactusExternal/FFTWlib
+#CactusExternal/FlexIO
+#CactusExternal/PAPI
+#CactusExternal/PETSc
+#CactusExternal/SDF
+#CactusExternal/curl
+#CactusExternal/flickcurl
+#CactusExternal/libcurl
+#CactusExternal/libxml2
 
 CactusNumerical/Cartoon2D
 CactusNumerical/Dissipation
@@ -80,21 +103,76 @@ CactusNumerical/SlabTest
 CactusNumerical/SpaceMask
 CactusNumerical/SphericalSurface
 
-CactusPUGH/PUGH                    
-CactusPUGH/PUGHInterp                  
+CactusPUGH/PUGH
+CactusPUGH/PUGHInterp
 CactusPUGH/PUGHReduce
 CactusPUGH/PUGHSlab
 
-CactusPUGHIO/IOFlexIO              
+#CactusPUGHIO/IOFlexIO
 CactusPUGHIO/IOHDF5
 CactusPUGHIO/IOHDF5Util
-CactusPUGHIO/IOPanda
-CactusPUGHIO/IOStreamedHDF5
+#CactusPUGHIO/IOPanda
+#CactusPUGHIO/IOStreamedHDF5
 CactusPUGHIO/IsoSurfacer
+
+#CactusTest/TestAllTypes
+CactusTest/TestArrays
+CactusTest/TestComplex
+CactusTest/TestCoordinates
+CactusTest/TestFortranDependencies1
+CactusTest/TestFortranDependencies2
+CactusTest/TestFpointerNULL
+CactusTest/TestFreeF90
+CactusTest/TestGlobalReduce
+CactusTest/TestInclude1
+CactusTest/TestInclude2
+CactusTest/TestLocalReduce
+CactusTest/TestLoop
+CactusTest/TestReduce
+CactusTest/TestSchedule
+CactusTest/TestStrings
+CactusTest/TestTable
+CactusTest/TestTimers
+CactusTest/TestTypes
 
 CactusUtils/Formaline
 CactusUtils/NaNChecker
 CactusUtils/Nice
-CactusUtils/TerminationTrigger		   
+CactusUtils/NoMPI
+CactusUtils/TerminationTrigger		
 CactusUtils/TimerReport
+
+
+
+# Additional Cactus thorns
+!TARGET   = $ARR
+!TYPE     = svn
+!AUTH_URL = https://svn.cactuscode.org/projects/$1/$2/trunk
+!URL      = http://svn.cactuscode.org/projects/$1/$2/trunk
+!CHECKOUT =
+ExternalLibraries/BLAS
+ExternalLibraries/GSL
+ExternalLibraries/HDF5
+ExternalLibraries/LAPACK
+ExternalLibraries/libjpeg
+ExternalLibraries/OpenSSL
+#ExternalLibraries/PETSc
+ExternalLibraries/zlib
+
+TAT/TATelliptic
+#TAT/TATPETSc
+
+
+# Various thorns from LSU
+!TARGET   = $ARR
+!TYPE     = svn
+!URL      = https://svn.cct.lsu.edu/repos/numrel/$1/$2/trunk
+!CHECKOUT =
+LSUThorns/Vectors
+
+
+# Private thorns
+!TARGET   = $ARR
+!TYPE     = ignore
+!CHECKOUT =
 
