@@ -18,6 +18,9 @@ of the Cactus project. </p>
 </ul><br><li><a href="prizes">prizes</a> </li><ul>
     A summary of prizes awarded to Cactus. 
 
+</ul><br><li><a href="/documentation/tutorials">tutorials</a> </li><ul>
+    Cactus tutorials.
+
 </ul></ul>
 
 <?php
