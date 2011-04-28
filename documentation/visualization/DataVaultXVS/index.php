@@ -52,10 +52,9 @@ The DataVaultXVSutils package provides two utility programs which convert Cactus
 
 <h4>Downloading and Installing</h4>
 
-The OpenDXutils package can be downloaded from the Cactus CVS server via anonymous checkout:
+The OpenDXutils package can be downloaded from the Cactus svn server via anonymous checkout:
 <pre>
-  cvs -d :pserver:cvs_anon@cvs.cactuscode.org:/cactus login    # password is 'anon'
-  cvs -d :pserver:cvs_anon@cvs.cactuscode.org:/cactus checkout VizTools/DataVaultXVSutils
+   svn co http://svn.cactuscode.org/VizTools/DataVaultXVSutils/trunk/
 </pre>
 A <tt>GNUmakefile</tt> is supplied with the package in order to build the
 <tt>hdf5todv</tt> utility program. As prerequisites, HDF5 and the SDF libraries must be installed on your system.
