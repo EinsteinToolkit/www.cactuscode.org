@@ -18,7 +18,7 @@ $section='visualization';?>
 
 		  <p>
 
-		  ygraph was developed by Denis Pollney, based on the xgraph package, and much more information is available on the <a href="http://www.aei.mpg.de/~pollney/ygraph/">ygraph homepage</a>.
+		  ygraph was developed by Denis Pollney, based on the xgraph package. The source code can be obtained from the Subversion repository <a href="https://svn.cactuscode.org/VizTools/ygraph/trunk">https://svn.cactuscode.org/VizTools/ygraph/trunk</a>.
 		</p>
 	      </td>
 	      <td valign="top">
@@ -92,8 +92,7 @@ ygraph &lt;data filename&gt; &lt;data filename&gt;</pre>
 
 
 	  <p>
-	    The are several options for customising aspects of and using ygraph, see the <a	 href="http://www.aei.mpg.de/~pollney/ygraph/ygraph.html">man
-	    page</a> or type <tt><font size=2>ygraph --help</font></tt> for more information.
+	    The are several options for customising aspects of and using ygraph, a manpage can be built from the source, or type <tt><font size=2>ygraph --help</font></tt> for more information.
 	    	    	    </p>
 
 	  <p>
@@ -105,7 +104,7 @@ ygraph &lt;data filename&gt; &lt;data filename&gt;</pre>
 	  <h3>Getting Hold of ygraph</h3>
 
 	  
-	  <p>Binaries and source code for ygraph are all available from the <a href="http://www.aei.mpg.de/~pollney/ygraph">ygraph home page</a>
+	  <p>Binaries and source code for ygraph are all available from the <a href="https://svn.cactuscode.org/VizTools/ygraph/trunk">ygraph subversion repository</a>.
 	   </p>
 
 	  <a name="support"></a>
@@ -116,7 +115,7 @@ ygraph &lt;data filename&gt; &lt;data filename&gt;</pre>
 	    <em>
 
 	      <a href="
-		mailto:pollney@aei.mpg.de">pollney@aei.mpg.de</a>
+		mailto:denis.pollney@gmail.com">denis.pollney@gmail.com</a>
 	    </em>
 	  </p>
 
