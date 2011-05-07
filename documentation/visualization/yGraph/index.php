@@ -107,6 +107,23 @@ ygraph &lt;data filename&gt; &lt;data filename&gt;</pre>
 	  <p>Binaries and source code for ygraph are all available from the <a href="https://svn.cactuscode.org/VizTools/ygraph/trunk">ygraph subversion repository</a>.
 	   </p>
 
+    <h3> Compilation of ygraph on Macs</h3>
+    <p>Thanks to Bruno Giacomazzo we have a step-through-like tutorial on how to
+    compile ygraph on Macs:</p>
+    <ol>
+     <li> install svn, gtk+, gtk+2 and gtk+2-dev with Fink
+     <li> <pre>svn co https://svn.cactuscode.org/VizTools/ygraph/trunk ygraph</pre>
+     <li> <pre>cd ygraph</pre>
+     <li> <pre>gettextize -c --no-changelog --intl</pre>
+     <li> <pre>aclocal -I m4</pre> (suggested by gettextize)
+     <li> <pre>touch ABOUT-NLS</pre> (otherwise it complains that this file doesn't exist)
+     <li> <pre>autoreconf -i</pre>
+     <li> <pre>./configure --disable-gtktest</pre> (otherwise it comlplains that gtk2 doesn't have gtk-config)
+     <li> edit <pre>src/Makefile</pre> and change 'gcc' into 'gcc -arch i386' (otherwise Mac complains that the libraries installed via Fink are incompatible)
+     <li>  <pre>ln -s intl/libintl.rc intl/libintl.a</pre>
+     <li>  <pre>make</pre> (this will create the ygraph executable in the src subdirectory)
+    </ol>
+
 	  <a name="support"></a>
 	  <h3>Support</h3>
 
