@@ -14,5 +14,5 @@ for doing numerical relativity."
 href=http://www.linuxjournal.com/content/numeric-relativity-einstein-toolkit>here</a>.
 </p>
 
-<h3 class="align-right">day Mon year — user posting</h3>
+<h3 class="align-right">11 June 2011 — dcastl2</h3>
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
