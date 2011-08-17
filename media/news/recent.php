@@ -1,6 +1,11 @@
+
 <p class="align-right"> July 2011
 </p> <li><a href="/media/news/Mojave2"
 >Mojave Update</a></li>
+</a></li>
+
+<p class="align-right"> June 2011
+</p> <li><a href="/media/news/ET_Linux">Einstein Toolkit Featured in Linux Journal</a></li>
 </a></li>
 
 <p class="align-right"> November 2010
