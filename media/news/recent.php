@@ -1,8 +1,8 @@
+<p class="align-right"> August 2011
+<li><a href="/media/news/hpcwire">Cactus Mentioned in HPC Wire Article</a></li>
 
 <p class="align-right"> July 2011
-</p> <li><a href="/media/news/Mojave2"
->Mojave Update</a></li>
-</a></li>
+</p> <li><a href="/media/news/Mojave2" >Mojave Update</a></li> </a></li>
 
 <p class="align-right"> June 2011
 </p> <li><a href="/media/news/ET_Linux">Einstein Toolkit Featured in Linux Journal</a></li>
