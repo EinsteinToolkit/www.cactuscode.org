@@ -37,6 +37,9 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
   <li><a href="visualization/">Visualization</a></li>
     <ul><p> This lists and describes visualization packages and data output formats for Cactus.
     <br></ul></p>
+  <li><a href="citation/">Citation</a></li>
+    <ul><p> How to cite Cactus.
+    <br></ul></p>
 
 </ul>
 
