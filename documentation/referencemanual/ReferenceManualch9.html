@@ -7,11 +7,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,fn-in --> 
 <meta name="src" content="ReferenceManual.tex"> 
-<meta name="date" content="2011-03-25 09:47:00"> 
+<meta name="date" content="2011-10-25 15:07:00"> 
 <link rel="stylesheet" type="text/css" href="ReferenceManual.css"> 
 </head><body 
 >
-<!--l. 1176--><div class="crosslinks"><p class="noindent">[<a 
+<!--l. 1200--><div class="crosslinks"><p class="noindent">[<a 
 href="ReferenceManualch10.html" >next</a>] [<a 
 href="ReferenceManualch8.html" >prev</a>] [<a 
 href="ReferenceManualch8.html#tailReferenceManualch8.html" >prev-tail</a>] [<a 
@@ -21,55 +21,55 @@ href="ReferenceManualpa3.html#ReferenceManualch9.html" >up</a>] </p></div>
  id="x13-275000C3"></a>Utility Routines</h2>
 <h3 class="sectionHead"><span class="titlemark">C3.1   </span> <a 
  id="x13-276000C3.1"></a>Introduction</h3>
-<!--l. 1180--><p class="noindent" >As well as the high-level <span class="obeylines-h"><span class="verb"><span 
+<!--l. 1204--><p class="noindent" >As well as the high-level <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">CCTK_</span></span></span>* routines, Cactus also provides a set of lower-level <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">Util_</span></span></span>* utility routines, which
 are mostly independent of the rest of Cactus. This chapter gives a general overview of programming with these
 utility routines.
-<!--l. 1187--><p class="noindent" >
+<!--l. 1211--><p class="noindent" >
 <h3 class="sectionHead"><span class="titlemark">C3.2   </span> <a 
  id="x13-277000C3.2"></a>Key/Value Tables</h3>
-<!--l. 1191--><p class="noindent" >
+<!--l. 1215--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">C3.2.1   </span> <a 
  id="x13-278000C3.2.1"></a>Motivation</h4>
-<!--l. 1193--><p class="noindent" >Cactus functions may need to pass information through a generic interface. In the past, we have used various ad
+<!--l. 1217--><p class="noindent" >Cactus functions may need to pass information through a generic interface. In the past, we have used various ad
 hoc means to do this, and we often had trouble passing &#8221;extra&#8221; information that wasn&#8217;t anticipated in the
 original design. For example, for periodic output of grid variables, <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">CCTK_OutputVarAsByMethod()</span></span></span> requires that
 any parameters (such as hyperslabbing parameters) be appended as an option string to the variable&#8217;s character
 string name. Similarly, elliptic solvers often need to pass various parameters, but we haven&#8217;t had a good way to
 do this.
-<!--l. 1204--><p class="noindent" >Key/value tables (<span 
+<!--l. 1228--><p class="noindent" >Key/value tables (<span 
 class="cmti-10">tables </span>for short) provide a clean solution to these problems. They&#8217;re implemented by the
 <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">Util_Table</span></span></span>* functions (described in detail in the Reference Manual).
-<!--l. 1210--><p class="noindent" >
+<!--l. 1234--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">C3.2.2   </span> <a 
  id="x13-279000C3.2.2"></a>The Basic Idea</h4>
-<!--l. 1212--><p class="noindent" >Basically, a table is an object which maps strings to almost arbitrary user-defined data. (If you know Perl, a
+<!--l. 1236--><p class="noindent" >Basically, a table is an object which maps strings to almost arbitrary user-defined data. (If you know Perl, a
 table is very much like a Perl hash table. Alternatively, if you know Unix shells, a table is like the set of all
 environment variables. As yet another analogy, if you know Awk, a table is like an Awk associative
 array.)<span class="footnote-mark"><a 
 href="#fn1x9" id="fn1x9-bk"><sup class="textsuperscript">1</sup></a></span><a 
  id="x13-279001f1"></a>
-<!--l. 1225--><p class="noindent" >More formally, a table is an object which stores a set of <span 
+<!--l. 1249--><p class="noindent" >More formally, a table is an object which stores a set of <span 
 class="cmti-10">keys </span>and a corresponding set of <span 
 class="cmti-10">values</span>. We refer to a
 (key,value) pair as a table <span 
 class="cmti-10">entry</span>.
                                                                                        
                                                                                        
-<!--l. 1229--><p class="noindent" >Keys are C-style null-terminated character strings, with the slash character &#8216;<span 
+<!--l. 1253--><p class="noindent" >Keys are C-style null-terminated character strings, with the slash character &#8216;<span 
 class="cmtt-10">/</span>&#8217; reserved for future
 expansion.<span class="footnote-mark"><a 
 href="#fn2x9" id="fn2x9-bk"><sup class="textsuperscript">2</sup></a></span><a 
  id="x13-279002f2"></a>
-<!--l. 1236--><p class="noindent" >Values are 1-dimensional arrays of any of the usual Cactus data types described in Section&#x00A0;<span 
+<!--l. 1260--><p class="noindent" >Values are 1-dimensional arrays of any of the usual Cactus data types described in Section&#x00A0;<span 
 class="cmbx-10">??</span>. A string
 can be stored by treating it as a 1-dimensional array of <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">CCTK_CHAR</span></span></span> (there&#8217;s an example of this
 below).
-<!--l. 1241--><p class="noindent" >The basic &#8220;life cycle&#8221; of a table looks like this:
+<!--l. 1265--><p class="noindent" >The basic &#8220;life cycle&#8221; of a table looks like this:
      <ol  class="enumerate1" >
      <li 
   class="enumerate" id="x13-279004x1">Some code creates it with <span class="obeylines-h"><span class="verb"><span 
@@ -100,30 +100,30 @@ class="cmtt-10">Util_TableGetString()</span></span></span> functions.
   class="enumerate" id="x13-279010x4">When  everyone  is  through  with  a  table,  some  (single)  piece  of  code  should  destroy  it  with
      <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">Util_TableDestroy()</span></span></span>.</li></ol>
-<!--l. 1259--><p class="noindent" >There are also convenience functions <span class="obeylines-h"><span class="verb"><span 
+<!--l. 1283--><p class="noindent" >There are also convenience functions <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">Util_TableSetFromString()</span></span></span> to set entries in a table based on a
 parameter-file-style string, and <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">Util_TableCreateFromString()</span></span></span> to create a table and then set entries in it
 based on a parameter-file-style string.
-<!--l. 1264--><p class="noindent" >As well, there are &#8220;table iterator&#8221; functions <span class="obeylines-h"><span class="verb"><span 
+<!--l. 1288--><p class="noindent" >As well, there are &#8220;table iterator&#8221; functions <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">Util_TableIt*()</span></span></span> to allow manipulation of a table even if you don&#8217;t
 know its keys.
-<!--l. 1267--><p class="noindent" >A table has an integer &#8220;flags word&#8221; which may be used to specify various options, via bit flags defined in
+<!--l. 1291--><p class="noindent" >A table has an integer &#8220;flags word&#8221; which may be used to specify various options, via bit flags defined in
 <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">util_Table.h</span></span></span>. For example, the flags word can be used to control whether keys should be compared as case
 sensitive or case insensitive strings. See the detailed function description of <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">Util_TableCreate()</span></span></span> in the
 Reference Manual for a list of the possible bit flags and their semantics.
-<!--l. 1277--><p class="noindent" >
+<!--l. 1301--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">C3.2.3   </span> <a 
  id="x13-280000C3.2.3"></a>A Simple Example</h4>
-<!--l. 1280--><p class="noindent" >Here&#8217;s a simple example (in C)<span class="footnote-mark"><a 
+<!--l. 1304--><p class="noindent" >Here&#8217;s a simple example (in C)<span class="footnote-mark"><a 
 href="#fn3x9" id="fn3x9-bk"><sup class="textsuperscript">3</sup></a></span><a 
  id="x13-280001f3"></a>
 of how to use a table:
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-520">
 #include&#x00A0;"util_Table.h"
 &#x00A0;<br />#include&#x00A0;"cctk.h"
 &#x00A0;<br />
@@ -140,8 +140,8 @@ of how to use a table:
 &#x00A0;<br />Util_TableGetInt(handle,&#x00A0;&amp;two_value,&#x00A0;"two");&#x00A0;&#x00A0;&#x00A0;&#x00A0;/*&#x00A0;sets&#x00A0;two_value&#x00A0;=&#x00A0;2&#x00A0;*/
 &#x00A0;<br />Util_TableGetReal(handle,&#x00A0;&amp;pi_value,&#x00A0;"pi");&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;/*&#x00A0;sets&#x00A0;pi_value&#x00A0;=&#x00A0;3.14&#x00A0;*/
 </div>
-<!--l. 1304--><p class="nopar" >
-<!--l. 1306--><p class="noindent" >Actually, you shouldn&#8217;t write code like this&#8212;in the real world errors sometimes happen, and it&#8217;s much better to
+<!--l. 1328--><p class="nopar" >
+<!--l. 1330--><p class="noindent" >Actually, you shouldn&#8217;t write code like this&#8212;in the real world errors sometimes happen, and it&#8217;s much better to
 catch them close to their point of occurrence, rather than silently produce garbage results or crash your
 program. So, the <span 
 class="cmti-10">right </span>thing to do is to always check for errors. To allow this, all the table routines return a
@@ -152,7 +152,7 @@ href="#fn4x9" id="fn4x9-bk"><sup class="textsuperscript">4</sup></a></span><a
 So, the above example should be rewritten like this:
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-521">
 #include&#x00A0;"util_Table.h"
 &#x00A0;<br />
 &#x00A0;<br />/*&#x00A0;create&#x00A0;a&#x00A0;table&#x00A0;and&#x00A0;set&#x00A0;some&#x00A0;entries&#x00A0;in&#x00A0;it&#x00A0;*/
@@ -178,18 +178,18 @@ So, the above example should be rewritten like this:
 &#x00A0;<br />
 &#x00A0;<br />/*&#x00A0;if&#x00A0;we&#x00A0;get&#x00A0;to&#x00A0;here,&#x00A0;then&#x00A0;two_value&#x00A0;=&#x00A0;2&#x00A0;and&#x00A0;pi_value&#x00A0;=&#x00A0;3.14&#x00A0;*/
 </div>
-<!--l. 1349--><p class="nopar" >
-<!--l. 1353--><p class="noindent" >
+<!--l. 1373--><p class="nopar" >
+<!--l. 1377--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">C3.2.4   </span> <a 
  id="x13-281000C3.2.4"></a>Arrays as Table Values</h4>
-<!--l. 1355--><p class="noindent" >As well as a single numbers (or characters or pointers), tables can also store 1-dimensional arrays of numbers (or characters
+<!--l. 1379--><p class="noindent" >As well as a single numbers (or characters or pointers), tables can also store 1-dimensional arrays of numbers (or characters
 or pointers).<span class="footnote-mark"><a 
 href="#fn5x9" id="fn5x9-bk"><sup class="textsuperscript">5</sup></a></span><a 
  id="x13-281001f5"></a>
-<!--l. 1365--><p class="noindent" >For example (continuing the previous example):
+<!--l. 1389--><p class="noindent" >For example (continuing the previous example):
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-522">
 static&#x00A0;const&#x00A0;CCTK_INT&#x00A0;a[3]&#x00A0;=&#x00A0;{&#x00A0;42,&#x00A0;69,&#x00A0;105&#x00A0;};
 &#x00A0;<br />if&#x00A0;(Util_TableSetIntArray(handle,&#x00A0;3,&#x00A0;a,&#x00A0;"my&#x00A0;array")&#x00A0;&#x003C;&#x00A0;0)
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;CCTK_WARN(CCTK_WARN_ABORT,&#x00A0;"couldn&#8217;t&#x00A0;set&#x00A0;integer&#x00A0;array&#x00A0;value&#x00A0;in&#x00A0;table!");
@@ -203,42 +203,42 @@ static&#x00A0;const&#x00A0;CCTK_INT&#x00A0;a[3]&#x00A0;=&#x00A0;{&#x00A0;42,&#x0
 &#x00A0;<br />/*&#x00A0;now&#x00A0;count&#x00A0;=&#x00A0;3,&#x00A0;blah[0]&#x00A0;=&#x00A0;42,&#x00A0;blah[1]&#x00A0;=&#x00A0;69,&#x00A0;blah[2]&#x00A0;=&#x00A0;105,&#x00A0;*/
 &#x00A0;<br />/*&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;and&#x00A0;all&#x00A0;remaining&#x00A0;elements&#x00A0;of&#x00A0;blah[]&#x00A0;are&#x00A0;unchanged&#x00A0;*/
 </div>
-<!--l. 1379--><p class="nopar" > As you can see, a table entry remembers the length of any array value that has been stored in
+<!--l. 1403--><p class="nopar" > As you can see, a table entry remembers the length of any array value that has been stored in
 it.<span class="footnote-mark"><a 
 href="#fn6x9" id="fn6x9-bk"><sup class="textsuperscript">6</sup></a></span><a 
  id="x13-281002f6"></a>
-<!--l. 1389--><p class="noindent" >If you only want the first few values of a larger array, just pass in the appropriate length of your array, that&#8217;s
+<!--l. 1413--><p class="noindent" >If you only want the first few values of a larger array, just pass in the appropriate length of your array, that&#8217;s
 OK:
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-523">
 CCTK_INT&#x00A0;blah2[2];
 &#x00A0;<br />int&#x00A0;count&#x00A0;=&#x00A0;Util_TableGetIntArray(handle,&#x00A0;2,&#x00A0;blah2,&#x00A0;"my&#x00A0;array");
 &#x00A0;<br />if&#x00A0;(count&#x00A0;&#x003C;&#x00A0;0)
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;CCTK_WARN(CCTK_WARN_ABORT,&#x00A0;"couldn&#8217;t&#x00A0;get&#x00A0;integer&#x00A0;array&#x00A0;value&#x00A0;from&#x00A0;table!");
 &#x00A0;<br />/*&#x00A0;now&#x00A0;count&#x00A0;=&#x00A0;3,&#x00A0;blah2[0]&#x00A0;=&#x00A0;42,&#x00A0;blah2[1]&#x00A0;=&#x00A0;69&#x00A0;*/
 </div>
-<!--l. 1398--><p class="nopar" > You can even ask for just the first value:
+<!--l. 1422--><p class="nopar" > You can even ask for just the first value:
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-524">
 CCTK_INT&#x00A0;blah1;
 &#x00A0;<br />int&#x00A0;count&#x00A0;=&#x00A0;Util_TableGetInt(handle,&#x00A0;&amp;blah1,&#x00A0;"my&#x00A0;array");
 &#x00A0;<br />if&#x00A0;(count&#x00A0;&#x003C;&#x00A0;0)
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;CCTK_WARN(CCTK_WARN_ABORT,&#x00A0;"couldn&#8217;t&#x00A0;get&#x00A0;integer&#x00A0;array&#x00A0;value&#x00A0;from&#x00A0;table!");
 &#x00A0;<br />/*&#x00A0;now&#x00A0;count&#x00A0;=&#x00A0;3,&#x00A0;blah1&#x00A0;=&#x00A0;42&#x00A0;*/
 </div>
-<!--l. 1406--><p class="nopar" >
-<!--l. 1410--><p class="noindent" >
+<!--l. 1430--><p class="nopar" >
+<!--l. 1434--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">C3.2.5   </span> <a 
  id="x13-282000C3.2.5"></a>Character Strings</h4>
-<!--l. 1412--><p class="noindent" >One very common thing you might want to store in a table is a character string. While you could do this by
+<!--l. 1436--><p class="noindent" >One very common thing you might want to store in a table is a character string. While you could do this by
 explicitly storing an array of <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">CCTK_CHAR</span></span></span>, there are also routines specially for conveniently setting and getting
 strings:
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-525">
 if&#x00A0;(Util_TableSetString(handle,&#x00A0;"black&#x00A0;holes&#x00A0;are&#x00A0;fun",&#x00A0;"bh")&#x00A0;&#x003C;&#x00A0;0)
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;CCTK_WARN(CCTK_WARN_ABORT,&#x00A0;"couldn&#8217;t&#x00A0;set&#x00A0;string&#x00A0;value&#x00A0;in&#x00A0;table!");
 &#x00A0;<br />
@@ -249,21 +249,21 @@ if&#x00A0;(Util_TableSetString(handle,&#x00A0;"black&#x00A0;holes&#x00A0;are&#x0
 &#x00A0;<br />
 &#x00A0;<br />/*&#x00A0;now&#x00A0;buffer[]&#x00A0;contains&#x00A0;the&#x00A0;string&#x00A0;"black&#x00A0;holes&#x00A0;are&#x00A0;fun"&#x00A0;*/
 </div>
-<!--l. 1426--><p class="nopar" >
-<!--l. 1428--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+<!--l. 1450--><p class="nopar" >
+<!--l. 1452--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">Util_TableGetString()</span></span></span> guarantees that the string is terminated by a null character (&#8216;<span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">\0</span></span></span>&#8217;), and also returns an
 error if the string is too long for the buffer.
-<!--l. 1434--><p class="noindent" >
+<!--l. 1458--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">C3.2.6   </span> <a 
  id="x13-283000C3.2.6"></a>Convenience Routines</h4>
-<!--l. 1436--><p class="noindent" >There are also convenience routines for the common case of setting values in a table based on a
+<!--l. 1460--><p class="noindent" >There are also convenience routines for the common case of setting values in a table based on a
 string.
-<!--l. 1439--><p class="noindent" >For example, the following code sets up exactly the same table as the example in Section <a 
+<!--l. 1463--><p class="noindent" >For example, the following code sets up exactly the same table as the example in Section <a 
 href="#x13-280000C3.2.3">C3.2.3<!--tex4ht:ref: Tables_Simple_Example --></a>:
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-526">
 #include&#x00A0;&#x003C;util_Table.h&#x003E;
 &#x00A0;<br />
 &#x00A0;<br />/*&#x00A0;create&#x00A0;a&#x00A0;table&#x00A0;and&#x00A0;set&#x00A0;some&#x00A0;values&#x00A0;in&#x00A0;it&#x00A0;*/
@@ -275,13 +275,13 @@ href="#x13-280000C3.2.3">C3.2.3<!--tex4ht:ref: Tables_Simple_Example --></a>:
 &#x00A0;<br />if&#x00A0;(Util_TableSetFromString(handle,&#x00A0;"two=2&#x00A0;pi=3.14")&#x00A0;!=&#x00A0;2)
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;CCTK_WARN(CCTK_WARN_ABORT,&#x00A0;"couldn&#8217;t&#x00A0;set&#x00A0;values&#x00A0;in&#x00A0;table!");
 </div>
-<!--l. 1453--><p class="nopar" >
-<!--l. 1455--><p class="noindent" >There is also an even higher-level convenience function <span class="obeylines-h"><span class="verb"><span 
+<!--l. 1477--><p class="nopar" >
+<!--l. 1479--><p class="noindent" >There is also an even higher-level convenience function <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">Util_TableCreateFromString()</span></span></span>: this creates a table
 with the case insensitive flag set (to match Cactus parameter file semantics), then (assuming no errors occurred)
 calls <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">Util_TableSetFromString()</span></span></span> to set values in the table.
-<!--l. 1461--><p class="noindent" >For example, the following code sets up a table (with the case insensitive flag set) with four entries: an integer
+<!--l. 1485--><p class="noindent" >For example, the following code sets up a table (with the case insensitive flag set) with four entries: an integer
 number (<span 
 class="cmtt-10">two</span>), a real number (<span 
 class="cmtt-10">pi</span>), a string (<span 
@@ -290,7 +290,7 @@ class="cmtt-10">buffer</span>), and an integer array with three elements
 class="cmtt-10">array</span>):
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-527">
 #include&#x00A0;&#x003C;util_Table.h&#x003E;
 &#x00A0;<br />
 &#x00A0;<br />int&#x00A0;handle&#x00A0;=&#x00A0;Util_TableCreateFromString("&#x00A0;two&#x00A0;&#x00A0;&#x00A0;&#x00A0;=&#x00A0;2&#x00A0;"
@@ -300,15 +300,15 @@ class="cmtt-10">array</span>):
 &#x00A0;<br />if&#x00A0;(handle&#x00A0;&#x003C;&#x00A0;0)
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;CCTK_WARN(CCTK_WARN_ABORT,&#x00A0;"couldn&#8217;t&#x00A0;create&#x00A0;table&#x00A0;from&#x00A0;string!");
 </div>
-<!--l. 1475--><p class="nopar" >
-<!--l. 1477--><p class="noindent" >Note  that  this  code  passes  a  single  string  to
+<!--l. 1499--><p class="nopar" >
+<!--l. 1501--><p class="noindent" >Note  that  this  code  passes  a  single  string  to
 <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">Util_TableCreateFromString()</span></span></span><span class="footnote-mark"><a 
 href="#fn7x9" id="fn7x9-bk"><sup class="textsuperscript">7</sup></a></span><a 
  id="x13-283001f7"></a>,
 which then gets parsed into key/value pairs, with the key separated from its corresponding value by an equals
 sign.
-<!--l. 1484--><p class="noindent" >Values for numbers are converted into integers (<span 
+<!--l. 1508--><p class="noindent" >Values for numbers are converted into integers (<span 
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_INT</span>) if possible (no decimal point appears in the value),
 otherwise into reals (<span 
@@ -317,13 +317,13 @@ class="cmtt-10">_REAL</span>). Strings must be enclosed in either single or doub
 single quotes are interpreted literally, strings in double quotes may contain character escape codes which then
 will be interpreted as in C. Arrays must be enclosed in curly braces, array elements must be single numbers of
 the same type (either all integer or all real).
-<!--l. 1494--><p class="noindent" >
+<!--l. 1518--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">C3.2.7   </span> <a 
  id="x13-284000C3.2.7"></a>Table Iterators</h4>
-<!--l. 1497--><p class="noindent" >In the examples up to now, the code, which wanted to get values from the table, knew what the keys were. It&#8217;s
+<!--l. 1521--><p class="noindent" >In the examples up to now, the code, which wanted to get values from the table, knew what the keys were. It&#8217;s
 also useful to be able to write generic code which can operate on a table without knowing the keys. &#8220;Table
 iterators&#8221; (&#8220;iterators&#8221;, for short) are used for this.
-<!--l. 1502--><p class="noindent" >An iterator is an abstraction of a pointer to a particular table entry. Iterators are analogous to the <span class="obeylines-h"><span class="verb"><span 
+<!--l. 1526--><p class="noindent" >An iterator is an abstraction of a pointer to a particular table entry. Iterators are analogous to the <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">DIR</span><span 
 class="cmtt-10">&#x00A0;*</span></span></span>
 pointers used by the POSIX <span class="obeylines-h"><span class="verb"><span 
@@ -335,7 +335,7 @@ class="cmtt-10">each()</span></span></span>, <span class="obeylines-h"><span cla
 class="cmtt-10">keys()</span></span></span>, and <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">values()</span></span></span>, and to the C++ Standard Template Library&#8217;s forward
 iterators.
-<!--l. 1509--><p class="noindent" >At any time, the entries in a table may be considered to be in some arbitrary (implementation-defined) order; an
+<!--l. 1533--><p class="noindent" >At any time, the entries in a table may be considered to be in some arbitrary (implementation-defined) order; an
 iterator may be used to walk through some or all of the table entries in this order. This order is guaranteed to
 remain unchanged for any given table, so long as no changes are made to that table, i.e. so long as no
 <span class="obeylines-h"><span class="verb"><span 
@@ -352,28 +352,28 @@ differ even between different tables with identical key/value contents (includin
 class="cmtt-10">Util_TableClone()</span></span></span>).<span class="footnote-mark"><a 
 href="#fn8x9" id="fn8x9-bk"><sup class="textsuperscript">8</sup></a></span><a 
  id="x13-284001f8"></a>
-<!--l. 1529--><p class="noindent" >Any change in the table also invalidates all iterators pointing anywhere in the table; using any such iterator is an
+<!--l. 1553--><p class="noindent" >Any change in the table also invalidates all iterators pointing anywhere in the table; using any such iterator is an
                                                                                        
                                                                                        
 error. Multiple iterators may point into the same table; they all use the same order, and (unlike in Perl) they&#8217;re
 all independent.
-<!--l. 1534--><p class="noindent" >The detailed function description in the Reference Manual for <span class="obeylines-h"><span class="verb"><span 
+<!--l. 1558--><p class="noindent" >The detailed function description in the Reference Manual for <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">Util_TableItQueryKeyValueInfo()</span></span></span> has an
 example of using an iterator to print out all the entries in a table.
-<!--l. 1541--><p class="noindent" >
+<!--l. 1565--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">C3.2.8   </span> <a 
  id="x13-285000C3.2.8"></a>Multithreading and Multiprocessor Issues</h4>
-<!--l. 1543--><p class="noindent" >At the moment, the table functions are <span 
+<!--l. 1567--><p class="noindent" >At the moment, the table functions are <span 
 class="cmti-10">not </span>thread-safe in a multithreaded environment.
-<!--l. 1561--><p class="noindent" >Note that tables and iterators are process-wide, i.e. all threads see the same tables and iterators (think of them
+<!--l. 1585--><p class="noindent" >Note that tables and iterators are process-wide, i.e. all threads see the same tables and iterators (think of them
 as like the Unix current working directory, with the various routines which modify the table or change iterators
 acting like a Unix <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">chdir()</span></span></span> system call).
-<!--l. 1567--><p class="noindent" >In a multiprocessor environment, tables are always processor-local.
-<!--l. 1571--><p class="noindent" >
+<!--l. 1591--><p class="noindent" >In a multiprocessor environment, tables are always processor-local.
+<!--l. 1595--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">C3.2.9   </span> <a 
  id="x13-286000C3.2.9"></a>Metadata about All Tables</h4>
-<!--l. 1573--><p class="noindent" >Tables do not <span 
+<!--l. 1597--><p class="noindent" >Tables do not <span 
 class="cmti-10">themselves </span>have names or other attributes. However, we may add some special &#8220;system tables&#8221; to
 be used by Cactus itself to store this sort of information for those cases where it&#8217;s needed. For example, we may
 add support for a &#8220;checkpoint me&#8221; bit in a table&#8217;s flags word, so that if you want a table to be checkpointed, you
@@ -384,20 +384,20 @@ checkpoint table by looking in a special &#8220;master system table&#8221; that 
 tables.)
                                                                                        
                                                                                        
-<div class="footnotes"><!--l. 1223--><p class="noindent" ><span class="footnote-mark"><a 
+<div class="footnotes"><!--l. 1247--><p class="noindent" ><span class="footnote-mark"><a 
 href="#fn1x9-bk" id="fn1x9"><sup class="textsuperscript">1</sup></a></span><span 
 class="cmr-8">However, the present Cactus tables implementation is optimized for a relatively small number of distinct keys in any one table.</span>
 <span 
 class="cmr-8">It will still work OK for huge numbers of keys, but it will be slow.</span>
-<!--l. 1234--><p class="noindent" ><span class="footnote-mark"><a 
+<!--l. 1258--><p class="noindent" ><span class="footnote-mark"><a 
 href="#fn2x9-bk" id="fn2x9"><sup class="textsuperscript">2</sup></a></span><span 
 class="cmr-8">Think of hierarchical tables for storing tree-like data structures.</span>
-<!--l. 1286--><p class="noindent" ><span class="footnote-mark"><a 
+<!--l. 1310--><p class="noindent" ><span class="footnote-mark"><a 
 href="#fn3x9-bk" id="fn3x9"><sup class="textsuperscript">3</sup></a></span><span 
 class="cmr-8">All (or almost all) of the table routines are also usable from Fortran. See the full descriptions in the Reference Manual for</span>
 <span 
 class="cmr-8">details.</span>
-<!--l. 1321--><p class="noindent" ><span class="footnote-mark"><a 
+<!--l. 1345--><p class="noindent" ><span class="footnote-mark"><a 
 href="#fn4x9-bk" id="fn4x9"><sup class="textsuperscript">4</sup></a></span><span 
 class="cmr-8">Often (as in the examples here) you don&#8217;t care about the details of which error occurred. But if you do, there are various error</span>
 <span 
@@ -410,7 +410,7 @@ class="cmtt-8">_ErrorCodes.h</span></span><span
 class="cmr-8">; the detailed function descriptions in the Reference Manual say which error</span>
 <span 
 class="cmr-8">codes each function can return.</span>
-<!--l. 1363--><p class="noindent" ><span class="footnote-mark"><a 
+<!--l. 1387--><p class="noindent" ><span class="footnote-mark"><a 
 href="#fn5x9-bk" id="fn5x9"><sup class="textsuperscript">5</sup></a></span><span 
 class="cmr-8">Note that the table makes (stores) a </span><span 
 class="cmti-8">copy </span><span 
@@ -428,27 +428,27 @@ class="cmtt-8">_POINTER </span><span
 class="cmr-8">is</span>
 <span 
 class="cmr-8">used.)</span>
-<!--l. 1386--><p class="noindent" ><span class="footnote-mark"><a 
+<!--l. 1410--><p class="noindent" ><span class="footnote-mark"><a 
 href="#fn6x9-bk" id="fn6x9"><sup class="textsuperscript">6</sup></a></span><span 
 class="cmr-8">In fact, actually </span><span 
 class="cmti-8">all </span><span 
 class="cmr-8">table values are arrays&#8212;setting or getting a single value is just the special case where the array length is</span>
 <span 
 class="cmr-8">1.</span>
-<!--l. 1480--><p class="noindent" ><span class="footnote-mark"><a 
+<!--l. 1504--><p class="noindent" ><span class="footnote-mark"><a 
 href="#fn7x9-bk" id="fn7x9"><sup class="textsuperscript">7</sup></a></span><span 
 class="cmr-8">C automatically concatenates adjacent character string constants separated only by whitespace.</span>
-<!--l. 1526--><p class="noindent" ><span class="footnote-mark"><a 
+<!--l. 1550--><p class="noindent" ><span class="footnote-mark"><a 
 href="#fn8x9-bk" id="fn8x9"><sup class="textsuperscript">8</sup></a></span><span 
 class="cmr-8">For example, if tables were implemented by hashing, the internal order could be that of the hash buckets, and the hash function</span>
 <span 
-class="cmr-8">could depend on the internal table address.</span>                                                        </div> <!--l. 1591--><div class="crosslinks"><p class="noindent">[<a 
+class="cmr-8">could depend on the internal table address.</span>                                                        </div> <!--l. 1615--><div class="crosslinks"><p class="noindent">[<a 
 href="ReferenceManualch10.html" >next</a>]
 [<a 
 href="ReferenceManualch8.html" >prev</a>] [<a 
 href="ReferenceManualch8.html#tailReferenceManualch8.html" >prev-tail</a>] [<a 
 href="ReferenceManualch9.html" >front</a>] [<a 
 href="ReferenceManualpa3.html#ReferenceManualch9.html" >up</a>] </p></div>
-<!--l. 1591--><p class="noindent" ><a 
+<!--l. 1615--><p class="noindent" ><a 
  id="tailReferenceManualch9.html"></a>   
 </body></html> 

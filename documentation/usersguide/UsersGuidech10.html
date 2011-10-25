@@ -7,7 +7,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,fn-in --> 
 <meta name="src" content="UsersGuide.tex"> 
-<meta name="date" content="2011-03-25 09:47:00"> 
+<meta name="date" content="2011-10-25 15:07:00"> 
 <link rel="stylesheet" type="text/css" href="UsersGuide.css"> 
 </head><body 
 >
@@ -377,7 +377,7 @@ associated with a grid variable (e.g.&#x00A0;storage and communication state), h
 very difficult to describe in general, but one simple example might be
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-107">
 &#x00A0;<br />struct&#x00A0;SimpleExtension
 &#x00A0;<br />{
 &#x00A0;<br />&#x00A0;&#x00A0;/*&#x00A0;The&#x00A0;data&#x00A0;associated&#x00A0;with&#x00A0;each&#x00A0;variable&#x00A0;*/
@@ -391,7 +391,7 @@ very difficult to describe in general, but one simple example might be
 class="cmtt-10">SetupGH </span>routine like
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-108">
 &#x00A0;<br />struct&#x00A0;SimpleExtension&#x00A0;*SimpleSetupGH(tFleshConfig&#x00A0;*config,&#x00A0;int&#x00A0;conv_level,&#x00A0;cGH&#x00A0;*GH)
 &#x00A0;<br />{
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;struct&#x00A0;SimpleExtension&#x00A0;*extension;
@@ -436,7 +436,7 @@ class="cmtt-10">_ScheduleTraverse </span>to
 have the functions scheduled at that point executed on the grid
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-109">
 &#x00A0;<br />int&#x00A0;SimpleScheduleTraverseGH(cGH&#x00A0;*GH,&#x00A0;const&#x00A0;char&#x00A0;*where)
 &#x00A0;<br />{
 &#x00A0;<br />&#x00A0;&#x00A0;int&#x00A0;retcode;
@@ -506,7 +506,7 @@ function to call, and is an alternative place where the cGH can be setup.
 <!--l. 299--><p class="noindent" >This function is optional, but a simple implementation might be
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-110">
 &#x00A0;<br />int&#x00A0;SimpleCallFunction(void&#x00A0;*function,
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;cFunctionData&#x00A0;*fdata,
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;void&#x00A0;*data)
@@ -583,7 +583,7 @@ former state, e.g.&#x00A0;if the group already has storage assigned, they should
 <!--l. 365--><p class="noindent" >In our simple example above, the enabling routine would look something like
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-111">
 &#x00A0;<br />int&#x00A0;SimpleEnableGroupStorage(cGH&#x00A0;*GH,&#x00A0;const&#x00A0;char&#x00A0;*groupname)
 &#x00A0;<br />{
 &#x00A0;<br />
@@ -642,7 +642,7 @@ class="cmtt-10">SimpleIO</span>, with routines to provide all
 these different types of output.
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-112">
 &#x00A0;&#x00A0;void&#x00A0;SimpleIO_Startup&#x00A0;(void)
 &#x00A0;<br />&#x00A0;&#x00A0;{
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;int&#x00A0;handle&#x00A0;=&#x00A0;CCTK_RegisterIOMethod&#x00A0;("SimpleIO");
@@ -971,7 +971,7 @@ class="cmtt-10">set </span>functions should write to and read from (respectively
 class="cmtt-10">cTimerVal* </span>argument:
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-113">
 typedef&#x00A0;enum&#x00A0;{val_none,&#x00A0;val_int,&#x00A0;val_long,&#x00A0;val_double}&#x00A0;cTimerValType;
 &#x00A0;<br />
 &#x00A0;<br />typedef&#x00A0;struct

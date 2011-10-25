@@ -7,27 +7,26 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,fn-in --> 
 <meta name="src" content="ReferenceManual.tex"> 
-<meta name="date" content="2011-03-25 09:47:00"> 
+<meta name="date" content="2011-10-25 15:07:00"> 
 <link rel="stylesheet" type="text/css" href="ReferenceManual.css"> 
 </head><body 
 >
-<!--l. 2300--><div class="crosslinks"><p class="noindent">[<a 
-href="ReferenceManualch15.html" >next</a>] [<a 
+<!--l. 2082--><div class="crosslinks"><p class="noindent">[<a 
 href="ReferenceManualch13.html" >prev</a>] [<a 
 href="ReferenceManualch13.html#tailReferenceManualch13.html" >prev-tail</a>] [<a 
 href="#tailReferenceManualch14.html">tail</a>] [<a 
 href="ReferenceManualpa3.html#ReferenceManualch14.html" >up</a>] </p></div>
 <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;C8</span><br /><a 
- id="x18-297000C8"></a>Using Tags</h2>
-<!--l. 2302--><p class="noindent" >Finding your way around in the Cactus structure can be pretty difficult to handle. To make life easier there is
+ id="x18-294000C8"></a>Using Tags</h2>
+<!--l. 2084--><p class="noindent" >Finding your way around in the Cactus structure can be pretty difficult to handle. To make life easier there is
 support for <span 
 class="cmti-10">tags</span>, which lets you browse the code easily from within Emacs/XEmacs or <span 
 class="cmtt-10">vi</span>. A tags database can
 be generated with <span 
 class="cmtt-10">gmake</span>:
 <h3 class="sectionHead"><span class="titlemark">C8.1   </span> <a 
- id="x18-298000C8.1"></a>Tags with Emacs</h3>
-<!--l. 2309--><p class="noindent" >The command <span 
+ id="x18-295000C8.1"></a>Tags with Emacs</h3>
+<!--l. 2091--><p class="noindent" >The command <span 
 class="cmtt-10">gmake TAGS </span>will create a database for a routine reference table to be used within Emacs. This
 database can be accessed within Emacs if you add either of the following lines to your <span 
 class="cmtt-10">.emacs</span>
@@ -43,26 +42,26 @@ class="newline" />where <span
 class="cmtt-10">CACTUS</span><span 
 class="cmtt-10">_HOME </span>is your Cactus directory.<br 
 class="newline" />
-<!--l. 2316--><p class="noindent" >You can now easily navigate your Cactus flesh and Toolkits by searching for functions or &#8220;tags&#8221;:
+<!--l. 2098--><p class="noindent" >You can now easily navigate your Cactus flesh and Toolkits by searching for functions or &#8220;tags&#8221;:
      <ol  class="enumerate1" >
      <li 
-  class="enumerate" id="x18-298002x1"> <span 
+  class="enumerate" id="x18-295002x1"> <span 
 class="cmbx-10">Alt. </span>will find a tag
      </li>
      <li 
-  class="enumerate" id="x18-298004x2"> <span 
+  class="enumerate" id="x18-295004x2"> <span 
 class="cmbx-10">Alt, </span>will find the next matching tag
      </li>
      <li 
-  class="enumerate" id="x18-298006x3"> <span 
+  class="enumerate" id="x18-295006x3"> <span 
 class="cmbx-10">Alt* </span>will go back to the last matched tag</li></ol>
-<!--l. 2323--><p class="noindent" >If you add the following lines to your <span 
+<!--l. 2105--><p class="noindent" >If you add the following lines to your <span 
 class="cmtt-10">.emacs </span>file, the files found with tags will opened in <span 
 class="cmti-10">read-only</span>
 mode:
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-535">
 (defun&#x00A0;find-tag-readonly&#x00A0;(&amp;rest&#x00A0;a)
 &#x00A0;<br />&#x00A0;&#x00A0;(interactive)
 &#x00A0;<br />&#x00A0;&#x00A0;(call-interactively&#x00A0;&#8216;find-tag&#x00A0;a)
@@ -76,52 +75,52 @@ mode:
 &#x00A0;<br />(global-set-key&#x00A0;[(control&#x00A0;meta&#x00A0;\.)]&#x00A0;&#8217;find-tag-readonly)
 &#x00A0;<br />(global-set-key&#x00A0;[(control&#x00A0;meta&#x00A0;\,)]&#x00A0;&#8217;find-tag-readonly-next)
 </div>
-<!--l. 2338--><p class="nopar" > The key strokes to use when you want to browse in read-only mode are:
+<!--l. 2120--><p class="nopar" > The key strokes to use when you want to browse in read-only mode are:
      <ol  class="enumerate1" >
      <li 
-  class="enumerate" id="x18-298008x1"><span 
+  class="enumerate" id="x18-295008x1"><span 
 class="cmbx-10">CTRL Alt. </span>will find a tag and open the file in read-only mode
      </li>
      <li 
-  class="enumerate" id="x18-298010x2"><span 
+  class="enumerate" id="x18-295010x2"><span 
 class="cmbx-10">CTRL Alt, </span>will find the next matching tag in read-only mode</li></ol>
-<!--l. 2345--><p class="noindent" >
+<!--l. 2127--><p class="noindent" >
 <h3 class="sectionHead"><span class="titlemark">C8.2   </span> <a 
- id="x18-299000C8.2"></a>Tags with <span 
+ id="x18-296000C8.2"></a>Tags with <span 
 class="cmtt-10">vi</span></h3>
-<!--l. 2347--><p class="noindent" >The commands available are highly dependent upon the version of <span 
+<!--l. 2129--><p class="noindent" >The commands available are highly dependent upon the version of <span 
 class="cmtt-10">vi</span>, but the following is a selection of
 commands which may work.
-<!--l. 2351--><p class="noindent" >
+<!--l. 2133--><p class="noindent" >
      <ol  class="enumerate1" >
      <li 
-  class="enumerate" id="x18-299002x1"><span 
+  class="enumerate" id="x18-296002x1"><span 
 class="cmbx-10">vi -t tag </span>Start <span 
 class="cmtt-10">vi </span>and position the cursor at the file and line where &#8216;tag&#8217; is defined.
      </li>
      <li 
-  class="enumerate" id="x18-299004x2"><span 
+  class="enumerate" id="x18-296004x2"><span 
 class="cmbx-10">Control-] </span>Find the tag under the cursor.
      </li>
      <li 
-  class="enumerate" id="x18-299006x3"><span 
+  class="enumerate" id="x18-296006x3"><span 
 class="cmbx-10">:ta tag </span>Find a tag.
      </li>
      <li 
-  class="enumerate" id="x18-299008x4"><span 
+  class="enumerate" id="x18-296008x4"><span 
 class="cmbx-10">:tnext </span>Find the next matching tag.
      </li>
      <li 
-  class="enumerate" id="x18-299010x5"><span 
+  class="enumerate" id="x18-296010x5"><span 
 class="cmbx-10">:pop </span>Return to previous location before jump to tag.
                                                                                        
                                                                                        
      </li>
      <li 
-  class="enumerate" id="x18-299012x6"><span 
+  class="enumerate" id="x18-296012x6"><span 
 class="cmbx-10">Control-T </span>Return to previous location before jump to tag (not widely implemented).
      </li></ol>
-<!--l. 2378--><p class="noindent" ><span 
+<!--l. 2160--><p class="noindent" ><span 
 class="cmti-10">Note: Currently some of the </span><span 
 class="cmitt-10">CCTK</span><span 
 class="cmitt-10">_FILEVERSION() </span><span 
@@ -136,12 +135,11 @@ class="cmti-10">programs, so tags does not find the first subroutine in any file
 class="cmti-10">with this problem.</span>
                                                                                        
                                                                                        
-<!--l. 2384--><div class="crosslinks"><p class="noindent">[<a 
-href="ReferenceManualch15.html" >next</a>] [<a 
+<!--l. 96--><div class="crosslinks"><p class="noindent">[<a 
 href="ReferenceManualch13.html" >prev</a>] [<a 
 href="ReferenceManualch13.html#tailReferenceManualch13.html" >prev-tail</a>] [<a 
 href="ReferenceManualch14.html" >front</a>] [<a 
 href="ReferenceManualpa3.html#ReferenceManualch14.html" >up</a>] </p></div>
-<!--l. 2384--><p class="noindent" ><a 
- id="tailReferenceManualch14.html"></a>  
+<!--l. 96--><p class="noindent" ><a 
+ id="tailReferenceManualch14.html"></a> 
 </body></html> 

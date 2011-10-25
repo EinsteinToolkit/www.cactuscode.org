@@ -7,7 +7,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,fn-in --> 
 <meta name="src" content="ReferenceManual.tex"> 
-<meta name="date" content="2011-03-25 09:47:00"> 
+<meta name="date" content="2011-10-25 15:07:00"> 
 <link rel="stylesheet" type="text/css" href="ReferenceManual.css"> 
 </head><body 
 >
@@ -1362,17 +1362,24 @@ thorn).
 <!--l. 836--><p class="noindent" >The storage line includes the number of timelevels to activate storage for, this number can be from 1 up to the
 maximum number or timelevels for the group, as specified in the defining <span 
 class="cmtt-10">interface.ccl </span>file. If the maximum
-number of timelevels is 1 (the default), this number may be omitted.
-<!--l. 842--><p class="noindent" >The behaviour of an assignment statement is independent of its position in the schedule file (so long as it is
+number of timelevels is 1 (the default), this number may be omitted. Alternatively <span 
+class="cmsltt-10">timelevels </span>can
+be the name of a parameter accessible to the thorn. The parameter name is the same as used in
+C routines of the thorn, fully qualified parameter names of the form <span 
+class="cmsltt-10">thorn</span><span 
+class="cmtt-10">::</span><span 
+class="cmsltt-10">parameter </span>are not
+allowed.
+<!--l. 845--><p class="noindent" >The behaviour of an assignment statement is independent of its position in the schedule file (so long as it is
 outside a schedule block).
-<!--l. 846--><p class="noindent" >
+<!--l. 849--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">C2.4.2   </span> <a 
  id="x12-270000C2.4.2"></a>Schedule Blocks</h4>
-<!--l. 848--><p class="noindent" >Each <span 
+<!--l. 851--><p class="noindent" >Each <span 
 class="cmti-10">schedule block </span>in the file <span class="obeylines-h"><span 
 class="cmtt-10">schedule.ccl</span></span> must have the syntax
 <div class="alltt">
-<!--l. 850--><p class="noindent" ><div class="obeylines-v">
+<!--l. 853--><p class="noindent" ><div class="obeylines-v">
 <span 
 class="cmtt-10">schedule</span><span 
 class="cmtt-10">&#x00A0;[GROUP]</span><span 
@@ -1506,16 +1513,16 @@ class="cmsltt-10">Description</span><span
 class="cmsltt-10">&#x00A0;of</span><span 
 class="cmsltt-10">&#x00A0;function</span><span 
 class="cmtt-10">"</span>
-</div>
-</div>
-<!--l. 864--><p class="noindent" >
                                                                                        
                                                                                        
+</div>
+</div>
+<!--l. 867--><p class="noindent" >
                   <dl class="list1"><dt class="list">
 <span 
 class="cmtt-10">GROUP</span>             </dt><dd 
 class="list">
-                  <!--l. 865--><p class="noindent" >Schedule  a  schedule  group  with  the  same  options  as  a  schedule  function.  The
+                  <!--l. 868--><p class="noindent" >Schedule  a  schedule  group  with  the  same  options  as  a  schedule  function.  The
                   schedule group will be created if it doesn&#8217;t exist.
                   </dd><dt class="list">
 <span 
@@ -1526,7 +1533,7 @@ class="cmsltt-10">group name</span><span
 class="cmtt-10">&#x003E;</span><br 
 class="newline" />                  </dt><dd 
 class="list">
-                  <!--l. 868--><p class="noindent" >The name of a function or a schedule group to be scheduled. Function and schedule
+                  <!--l. 871--><p class="noindent" >The name of a function or a schedule group to be scheduled. Function and schedule
                   group names are case sensitive.
                   </dd><dt class="list">
 <span 
@@ -1534,13 +1541,13 @@ class="cmtt-10">&#x003C;</span><span
 class="cmsltt-10">group</span><span 
 class="cmtt-10">&#x003E;</span>           </dt><dd 
 class="list">
-                  <!--l. 872--><p class="noindent" >A group of grid variables. Variable groups inherited from other thorns may be used,
+                  <!--l. 875--><p class="noindent" >A group of grid variables. Variable groups inherited from other thorns may be used,
                   but they must then be fully qualified with the implementation name.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">AT</span>                </dt><dd 
 class="list">
-                  <!--l. 876--><p class="noindent" >Functions  can  be  scheduled  to  run  at  the  Cactus  schedule  bins,  for  example,
+                  <!--l. 879--><p class="noindent" >Functions  can  be  scheduled  to  run  at  the  Cactus  schedule  bins,  for  example,
                   <span 
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_EVOL</span>, and <span 
@@ -1559,32 +1566,32 @@ class="cmtt-10">_SHUTDOWN </span>timebins.
 <span 
 class="cmtt-10">IN</span>                </dt><dd 
 class="list">
-                  <!--l. 883--><p class="noindent" >Schedules a function or schedule group to run in a schedule group, rather than in
+                  <!--l. 886--><p class="noindent" >Schedules a function or schedule group to run in a schedule group, rather than in
                   a Cactus timebin.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">AS</span>                </dt><dd 
 class="list">
-                  <!--l. 886--><p class="noindent" >Provides  an  alias  for  a  function  or  schedule  group  which  should  be  used  for
+                  <!--l. 889--><p class="noindent" >Provides  an  alias  for  a  function  or  schedule  group  which  should  be  used  for
                   scheduling before, after or in. This can be used to provide thorn independence for
                   other thorns scheduling functions, or schedule groups relative to this one.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">WHILE</span>             </dt><dd 
 class="list">
-                  <!--l. 891--><p class="noindent" >Executes a function or schedule group until the given variable (which must be a
+                  <!--l. 894--><p class="noindent" >Executes a function or schedule group until the given variable (which must be a
                   fully qualified integer grid scalar) has the value zero.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">IF</span>                </dt><dd 
 class="list">
-                  <!--l. 895--><p class="noindent" >Executes a function or schedule group only if the given variable (which must be a
+                  <!--l. 898--><p class="noindent" >Executes a function or schedule group only if the given variable (which must be a
                   fully qualified integer grid scalar) has a non-zero value.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">BEFORE/AFTER</span>      </dt><dd 
 class="list">
-                  <!--l. 899--><p class="noindent" >Takes  a  function  name,  a  function  alias,  a  schedule  group  name,  or  a
+                  <!--l. 902--><p class="noindent" >Takes  a  function  name,  a  function  alias,  a  schedule  group  name,  or  a
                   parentheses-enclosed whitespace-separated list of these. (Any names that are not
                   provided by an active thorn are ignored.) Note that a single schedule block may
                   have multiple <span 
@@ -1595,7 +1602,7 @@ class="cmtt-10">BEFORE/AFTER </span>clauses.
 <span 
 class="cmtt-10">LANG</span>              </dt><dd 
 class="list">
-                  <!--l. 908--><p class="noindent" >The code language for the function (either <span 
+                  <!--l. 911--><p class="noindent" >The code language for the function (either <span 
 class="cmtt-10">C </span>or <span 
 class="cmtt-10">FORTRAN</span>). No language should be
                   specified for a schedule group.
@@ -1603,17 +1610,23 @@ class="cmtt-10">FORTRAN</span>). No language should be
 <span 
 class="cmtt-10">STORAGE</span>           </dt><dd 
 class="list">
-                  <!--l. 911--><p class="noindent" >List of variable groups which should have storage switched on for the duration of
+                  <!--l. 914--><p class="noindent" >List of variable groups which should have storage switched on for the duration of
                   the function or schedule group. Each group must specify how many timelevels to
-                  activate storage for, from 1 up to the maximum number for the group as specified
-                  in the defining <span 
-class="cmtt-10">interface.ccl </span>file. If the maximum is 1 (the default) this number
-                  may be omitted.
+                  activate storage for, from 1 up to the maximum number for the group as specified in
+                  the defining <span 
+class="cmtt-10">interface.ccl </span>file. If the maximum is 1 (the default) this number may
+                  be omitted. Alternatively <span 
+class="cmsltt-10">timelevels </span>can be the name of a parameter accessible
+                  to the thorn. The parameter name is the same as used in C routines of the thorn,
+                  fully qualified parameter names of the form <span 
+class="cmsltt-10">thorn</span><span 
+class="cmtt-10">::</span><span 
+class="cmsltt-10">parameter </span>are not allowed.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">TRIGGER</span>           </dt><dd 
 class="list">
-                  <!--l. 918--><p class="noindent" >List of grid variables or groups to be used as triggers for causing an <span 
+                  <!--l. 924--><p class="noindent" >List of grid variables or groups to be used as triggers for causing an <span 
 class="cmtt-10">ANALYSIS</span>
                   function or group to be executed. Any schedule block for an analysis function or
                   analysis group may contain a <span 
@@ -1622,47 +1635,75 @@ class="cmtt-10">TRIGGER </span>line.
 <span 
 class="cmtt-10">SYNCHRONISE</span>       </dt><dd 
 class="list">
-                  <!--l. 923--><p class="noindent" >List of groups to be synchronised, as soon as the function or schedule group is
+                  <!--l. 929--><p class="noindent" >List of groups to be synchronised, as soon as the function or schedule group is
                   exited.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">OPTIONS</span>           </dt><dd 
 class="list">
-                  <!--l. 926--><p class="noindent" >List  of  additional  options  (see  below)  for  the  scheduled  function  or  group  of
+                  <!--l. 932--><p class="noindent" >List  of  additional  options  (see  below)  for  the  scheduled  function  or  group  of
                   functions
                   </dd></dl>
-<!--l. 930--><p class="noindent" >
+<!--l. 936--><p class="noindent" >
 <h5 class="subsubsectionHead"><a 
  id="x12-271000C2.4.2"></a>Allowed Options</h5>
-<!--l. 934--><p class="noindent" >Cactus understands the following options. These options are interpreted by the driver, not by Cactus. The
+<!--l. 940--><p class="noindent" >Cactus understands the following options. These options are interpreted by the driver, not by Cactus. The
 current set of options is useful for Berger-Oliger mesh refinement which has subcycling in time, and for
 multi-patch simulations in which the domain is split into several distinct patches. Given this, the meanings of the
 options below is only tentative, and their exact meaning needs to be obtained from the driver documentation.
 The standard driver PUGH ignores all options.
-<!--l. 943--><p class="noindent" >Option names are case-insensitive. There can be several options given at the same time.
-<!--l. 946--><p class="noindent" >
+<!--l. 949--><p class="noindent" >Option names are case-insensitive. There can be several options given at the same time.
+<!--l. 952--><p class="noindent" >
                   <dl class="list1"><dt class="list">
 <span 
 class="cmtt-10">META</span>              </dt><dd 
 class="list">
-                  <!--l. 948--><p class="noindent" >This routine will only be called once, even if several simulations are performed at
+                                                                                       
+                                                                                       
+                  <!--l. 954--><p class="noindent" >This routine will only be called once, even if several simulations are performed at
                   the same time. This can be used, for example, to initialise external libraries, or to
                   set up data structures that live in global variables.
-                                                                                       
-                                                                                       
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">META-EARLY</span>        </dt><dd 
+class="list">
+                  <!--l. 959--><p class="noindent" >This option is identical to to <span 
+class="cmtt-10">META </span>option with the exception that the routine will
+                  be called together with the routines on the first subgrid.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">META-LATE</span>         </dt><dd 
+class="list">
+                  <!--l. 963--><p class="noindent" >This option is identical to to <span 
+class="cmtt-10">META </span>option with the exception that the routine will
+                  be called together with the routines on the last subgrid.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">GLOBAL</span>            </dt><dd 
 class="list">
-                  <!--l. 953--><p class="noindent" >This routine will only be called once on a grid hierarchy, not for all subgrids making
+                  <!--l. 967--><p class="noindent" >This routine will only be called once on a grid hierarchy, not for all subgrids making
                   up the hierarchy. This can be used, for example, for analysis routines which use
                   global reduction or interpolation routines, rather than the local subgrid passed to
                   them, and hence should only be called once.
                   </dd><dt class="list">
 <span 
+class="cmtt-10">GLOBAL-EARLY</span>      </dt><dd 
+class="list">
+                  <!--l. 973--><p class="noindent" >This option is identical to to <span 
+class="cmtt-10">GLOBAL </span>option with the exception that the routine
+                  will be called together with the routines on the first subgrid.
+                  </dd><dt class="list">
+<span 
+class="cmtt-10">GLOBAL-LATE</span>       </dt><dd 
+class="list">
+                  <!--l. 977--><p class="noindent" >This option is identical to to <span 
+class="cmtt-10">GLOBAL </span>option with the exception that the routine
+                  will be called together with the routines on the last subgrid.
+                  </dd><dt class="list">
+<span 
 class="cmtt-10">LEVEL</span>             </dt><dd 
 class="list">
-                  <!--l. 959--><p class="noindent" >This routine will only be called once on any &#8220;level&#8221; of the grid hierarchy. That is, it
+                  <!--l. 981--><p class="noindent" >This routine will only be called once on any &#8220;level&#8221; of the grid hierarchy. That is, it
                   will only be called once for any set of sub-grids which have the same <span 
 class="cmtt-10">cctk</span><span 
 class="cmtt-10">_levfac</span>
@@ -1671,7 +1712,7 @@ class="cmtt-10">_levfac</span>
 <span 
 class="cmtt-10">SINGLEMAP</span>         </dt><dd 
 class="list">
-                  <!--l. 964--><p class="noindent" >This routine will only be called once on any of the &#8220;patches&#8221; that form a &#8220;level&#8221; of
+                  <!--l. 986--><p class="noindent" >This routine will only be called once on any of the &#8220;patches&#8221; that form a &#8220;level&#8221; of
                   the grid hierarchy.
                   </dd><dt class="list">
 <span 
@@ -1679,43 +1720,43 @@ class="cmtt-10">LOCAL </span><span
 class="cmss-10">(this is the default)</span><br 
 class="newline" />                  </dt><dd 
 class="list">
-                  <!--l. 967--><p class="noindent" >This routine will be called on every &#8220;component&#8221;.
+                  <!--l. 989--><p class="noindent" >This routine will be called on every &#8220;component&#8221;.
                   </dd></dl>
-<!--l. 972--><p class="noindent" >When the above options are used, it is often the case that a certain routine should, e.g.&#x00A0;be called at the time for
+<!--l. 994--><p class="noindent" >When the above options are used, it is often the case that a certain routine should, e.g.&#x00A0;be called at the time for
 a <span 
 class="cmtt-10">GLOBAL </span>routine, but should actually loop over all &#8220;components&#8221;. The following set of options allows
 this:
-<!--l. 977--><p class="noindent" >
+<!--l. 999--><p class="noindent" >
+                                                                                       
+                                                                                       
                   <dl class="list1"><dt class="list">
 <span 
 class="cmtt-10">LOOP-META</span>         </dt><dd 
 class="list">
-                  <!--l. 979--><p class="noindent" >Loop once.
+                  <!--l. 1001--><p class="noindent" >Loop once.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">LOOP-GLOBAL</span>       </dt><dd 
 class="list">
-                  <!--l. 981--><p class="noindent" >Loop over all simulations.
+                  <!--l. 1003--><p class="noindent" >Loop over all simulations.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">LOOP-LEVEL</span>        </dt><dd 
 class="list">
-                  <!--l. 983--><p class="noindent" >Loop over all &#8220;levels&#8221;.
+                  <!--l. 1005--><p class="noindent" >Loop over all &#8220;levels&#8221;.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">LOOP-SINGLEMAP</span>    </dt><dd 
 class="list">
-                  <!--l. 985--><p class="noindent" >Loop over all &#8220;patches&#8221;.
+                  <!--l. 1007--><p class="noindent" >Loop over all &#8220;patches&#8221;.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">LOOP-LOCAL</span>        </dt><dd 
 class="list">
-                  <!--l. 987--><p class="noindent" >Loop over all &#8220;components&#8221;.
+                  <!--l. 1009--><p class="noindent" >Loop over all &#8220;components&#8221;.
                   </dd></dl>
-                                                                                       
-                                                                                       
-<!--l. 991--><p class="noindent" >For example, the specification <div class="alltt">
-<!--l. 992--><p class="noindent" ><div class="obeylines-v">
+<!--l. 1013--><p class="noindent" >For example, the specification <div class="alltt">
+<!--l. 1014--><p class="noindent" ><div class="obeylines-v">
 <span 
 class="cmtt-10">&#x00A0;</span><span 
 class="cmtt-10">&#x00A0;OPTIONS:</span><span 
@@ -1725,21 +1766,19 @@ class="cmtt-10">&#x00A0;loop-local</span>
 </div> schedules a routine at the time when a <span 
 class="cmtt-10">GLOBAL </span>routine is scheduled, and then calls the routine in a loop over all
 &#8220;components&#8221;.
-<!--l. 1000--><p class="noindent" >
+<!--l. 1022--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">C2.4.3   </span> <a 
  id="x12-272000C2.4.3"></a>Conditional Statements</h4>
-<!--l. 1002--><p class="noindent" >Any schedule block or assignment statements can be optionally surrounded by conditional <span class="obeylines-h"><span 
+<!--l. 1024--><p class="noindent" >Any schedule block or assignment statements can be optionally surrounded by conditional <span class="obeylines-h"><span 
 class="cmtt-10">if-elseif-else</span></span>
 constructs using the parameter data base. These can be nested, and have the general form:
 <div class="alltt">
-<!--l. 1007--><p class="noindent" ><div class="obeylines-v">
+<!--l. 1029--><p class="noindent" ><div class="obeylines-v">
 <span 
 class="cmtt-10">if</span><span 
-class="cmtt-10">&#x00A0;(CCTK_Equals(&#x003C;</span><span 
-class="cmsltt-10">parameter</span><span 
-class="cmtt-10">&#x003E;,&#x003C;</span><span 
-class="cmsltt-10">string</span><span 
-class="cmtt-10">&#x003E;))</span>
+class="cmtt-10">&#x00A0;(&#x003C;</span><span 
+class="cmsltt-10">conditional-expression</span><span 
+class="cmtt-10">&#x003E;)</span>
 <br /><span 
 class="cmsy-10">{</span>
 <br /><span 
@@ -1755,33 +1794,35 @@ class="cmsltt-10">&#x00A0;blocks</span><span
 class="cmtt-10">&#x003E;]</span>
 <br /><span 
 class="cmsy-10">}</span>
+                                                                                       
+                                                                                       
 </div>
 </div>
-<!--l. 1014--><p class="noindent" >Such conditionals are evaluated only at program startup, and are used to pick between different static schedule
-options. For dynamic scheduling, the <span 
+<!--l. 1036--><p class="noindent" >¡<span 
+class="cmsltt-10">conditional-expression</span>¿ can be any valid C construct evaluating to a truth value. Such conditionals are
+evaluated only at program startup, and are used to pick between different static schedule options. For dynamic
+scheduling, the <span 
 class="cmtt-10">SCHEDULE WHILE </span>construction should be used.
-<!--l. 1018--><p class="noindent" >Conditional constructs cannot be used inside a schedule block.
-<!--l. 1022--><p class="noindent" >
+<!--l. 1042--><p class="noindent" >Conditional constructs cannot be used inside a schedule block.
+<!--l. 1046--><p class="noindent" >
 <h3 class="sectionHead"><span class="titlemark">C2.5   </span> <a 
  id="x12-273000C2.5"></a>configuration.ccl</h3>
-<!--l. 1025--><p class="noindent" >[<span 
+<!--l. 1049--><p class="noindent" >[<span 
 class="cmbx-10">NOTE: </span>The configuration.ccl is still relatively new, and not all features listed below may be fully implemented
 or functional.]
-<!--l. 1028--><p class="noindent" >A configuration.ccl file defines <span 
+<!--l. 1052--><p class="noindent" >A configuration.ccl file defines <span 
 class="cmbx-10">capabilities </span>which a thorn either provides or requires, or may use if available.
 Unlike <span 
 class="cmbx-10">implementations</span>, only one thorn providing a particular capability may be compiled into a
-                                                                                       
-                                                                                       
 configuration at one time. Thus, this mechanism may be used to, for example: provide access to external
 libraries; provide access to functions which other thorns must call, but are too complex for function
 aliasing; or to split a thorn into several thorns, all of which require some common (not aliased)
 functions.
-<!--l. 1037--><p class="noindent" >A configuration options file can contain any number of the following sections:
+<!--l. 1061--><p class="noindent" >A configuration options file can contain any number of the following sections:
      <ul class="itemize1">
      <li class="itemize">
      <div class="alltt">
-     <!--l. 1044--><p class="noindent" ><div class="obeylines-v">
+     <!--l. 1068--><p class="noindent" ><div class="obeylines-v">
      <span 
 class="cmtt-10">PROVIDES</span><span 
 class="cmtt-10">&#x00A0;&#x003C;</span><span 
@@ -1810,25 +1851,27 @@ class="cmtt-10">&#x00A0;[&#x003C;option&#x003E;[,&#x003C;option&#x003E;]...]]</s
 class="cmsy-10">}</span>
 </div>
      </div>
-     <!--l. 1053--><p class="noindent" >Informs the CST that this thorn provides a given capability, and that this capability has a given detection
+     <!--l. 1077--><p class="noindent" >Informs the CST that this thorn provides a given capability, and that this capability has a given detection
      script which may be used to configure it (e.g. running an autoconf script or detecting an
      external library&#8217;s location). The script should output configuration information on its standard
      output&#8212;the syntax is described below in Section <a 
 href="#x12-274000C2.5.1">C2.5.1<!--tex4ht:ref: sec:Appendix.configuration.ccl.configscript --></a>. The script may also indicate the failure to
      detect a capability by returning a non-zero exit code; this will stop the build after the CST
      stage.
-     <!--l. 1063--><p class="noindent" >Scripts can be in any language. If an interpreter is needed to run the script, for example <span class="obeylines-h"><span class="verb"><span 
+     <!--l. 1087--><p class="noindent" >Scripts can be in any language. If an interpreter is needed to run the script, for example <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">Perl</span></span></span>, this should
      be indicated by the <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">LANG</span></span></span> option.
-     <!--l. 1067--><p class="noindent" >The specified options are checked for in the original configuration, and any options passed on the
+                                                                                       
+                                                                                       
+     <!--l. 1091--><p class="noindent" >The specified options are checked for in the original configuration, and any options passed on the
      command line (including an &#8216;options&#8217; file) at compile time when the thorn is added, or if
      the CST is rerun. These options need be set only once, and will be remembered between
      builds.
      </li>
      <li class="itemize">
      <div class="alltt">
-     <!--l. 1075--><p class="noindent" ><div class="obeylines-v">
+     <!--l. 1099--><p class="noindent" ><div class="obeylines-v">
      <span 
 class="cmtt-10">REQUIRES</span><span 
 class="cmtt-10">&#x00A0;</span><span 
@@ -1837,12 +1880,10 @@ class="cmsltt-10">Capability</span><span
 class="cmtt-10">&#x003E;</span>
 </div>
      </div>
-     <!--l. 1079--><p class="noindent" >Informs the CST that this thorn requires a certain capability to be present. If no thorn providing the
+     <!--l. 1103--><p class="noindent" >Informs the CST that this thorn requires a certain capability to be present. If no thorn providing the
      capability is in the ThornList, the build will stop after the CST stage.
      <div class="alltt">
-                                                                                       
-                                                                                       
-     <!--l. 1083--><p class="noindent" ><div class="obeylines-v">
+     <!--l. 1107--><p class="noindent" ><div class="obeylines-v">
      <span 
 class="cmtt-10">OPTIONAL</span><span 
 class="cmtt-10">&#x00A0;&#x003C;</span><span 
@@ -1860,21 +1901,23 @@ class="cmtt-10">&#x003E;</span>
 class="cmsy-10">}</span>
 </div>
      </div>
-     <!--l. 1090--><p class="noindent" >Informs the CST that this thorn may use a certain capability, if a thorn providing it is in the
+     <!--l. 1114--><p class="noindent" >Informs the CST that this thorn may use a certain capability, if a thorn providing it is in the
      ThornList. If present, the preprocessor macro, <span class="obeylines-h"><span class="verb"><span 
 class="cmtt-10">macro</span></span></span>, will be defined and given the value
      &#8220;1&#8221;.
      </li></ul>
-<!--l. 1096--><p class="noindent" >
+<!--l. 1120--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">C2.5.1   </span> <a 
  id="x12-274000C2.5.1"></a>Configuration Scripts</h4>
-<!--l. 1099--><p class="noindent" >The configuration script may tell the CST to add certain features to the Cactus environment&#8212;either to the
+<!--l. 1123--><p class="noindent" >The configuration script may tell the CST to add certain features to the Cactus environment&#8212;either to the
 make system or to header files included by thorns. It does this by outputting lines to its standard
 output:
      <ul class="itemize1">
      <li class="itemize">
      <div class="alltt">
-     <!--l. 1110--><p class="noindent" ><div class="obeylines-v">
+                                                                                       
+                                                                                       
+     <!--l. 1134--><p class="noindent" ><div class="obeylines-v">
      <span 
 class="cmtt-10">BEGIN</span><span 
 class="cmtt-10">&#x00A0;DEFINE</span>
@@ -1885,25 +1928,23 @@ class="cmtt-10">END</span><span
 class="cmtt-10">&#x00A0;DEFINE</span>
 </div>
      </div>
-     <!--l. 1116--><p class="noindent" >Places a set of definitions in a header file which will be included by all thorns using this capability (either
+     <!--l. 1140--><p class="noindent" >Places a set of definitions in a header file which will be included by all thorns using this capability (either
      through an OPTIONAL or REQUIRES entry in their configuration.ccl files).
      </li>
      <li class="itemize">
      <div class="alltt">
-     <!--l. 1122--><p class="noindent" ><div class="obeylines-v">
+     <!--l. 1146--><p class="noindent" ><div class="obeylines-v">
      <span 
 class="cmtt-10">INCLUDE_DIRECTORY</span><span 
 class="cmtt-10">&#x00A0;</span><span 
 class="cmtt-10">&#x00A0;&#x003C;directory&#x003E;</span>
-                                                                                       
-                                                                                       
 </div>
      </div>
-     <!--l. 1126--><p class="noindent" >Adds a directory to the include path used for compiling files in thorns using this capability.
+     <!--l. 1150--><p class="noindent" >Adds a directory to the include path used for compiling files in thorns using this capability.
      </li>
      <li class="itemize">
      <div class="alltt">
-     <!--l. 1131--><p class="noindent" ><div class="obeylines-v">
+     <!--l. 1155--><p class="noindent" ><div class="obeylines-v">
      <span 
 class="cmtt-10">BEGIN</span><span 
 class="cmtt-10">&#x00A0;MAKE_DEFINITION</span>
@@ -1914,11 +1955,11 @@ class="cmtt-10">END</span><span
 class="cmtt-10">&#x00A0;MAKE_DEFINITION</span>
 </div>
      </div>
-     <!--l. 1137--><p class="noindent" >Adds a makefile definition into the compilation of all thorns using this capability.
+     <!--l. 1161--><p class="noindent" >Adds a makefile definition into the compilation of all thorns using this capability.
      </li>
      <li class="itemize">
      <div class="alltt">
-     <!--l. 1142--><p class="noindent" ><div class="obeylines-v">
+     <!--l. 1166--><p class="noindent" ><div class="obeylines-v">
      <span 
 class="cmtt-10">BEGIN</span><span 
 class="cmtt-10">&#x00A0;MAKE_DEPENDENCY</span>
@@ -1929,39 +1970,39 @@ class="cmtt-10">END</span><span
 class="cmtt-10">&#x00A0;MAKE_DEPENDENCY</span>
 </div>
      </div>
-     <!--l. 1148--><p class="noindent" >Adds makefile dependency information into the compilation of all thorns using this capability.
+     <!--l. 1172--><p class="noindent" >Adds makefile dependency information into the compilation of all thorns using this capability.
+                                                                                       
+                                                                                       
      </li>
      <li class="itemize">
      <div class="alltt">
-     <!--l. 1153--><p class="noindent" ><div class="obeylines-v">
+     <!--l. 1177--><p class="noindent" ><div class="obeylines-v">
      <span 
 class="cmtt-10">LIBRARY</span><span 
 class="cmtt-10">&#x00A0;&#x003C;library&#x003E;</span>
 </div>
      </div>
-     <!--l. 1157--><p class="noindent" >Adds a library to the final cactus link.
+     <!--l. 1181--><p class="noindent" >Adds a library to the final cactus link.
      </li>
      <li class="itemize">
      <div class="alltt">
-     <!--l. 1161--><p class="noindent" ><div class="obeylines-v">
+     <!--l. 1185--><p class="noindent" ><div class="obeylines-v">
      <span 
 class="cmtt-10">LIBRARY_DIRECTORY</span><span 
 class="cmtt-10">&#x00A0;&#x003C;library&#x003E;</span>
-                                                                                       
-                                                                                       
 </div>
      </div>
-     <!--l. 1165--><p class="noindent" >Adds a directory to the list of directories searched for libraries at link time.
+     <!--l. 1189--><p class="noindent" >Adds a directory to the list of directories searched for libraries at link time.
      </li></ul>
-<!--l. 1170--><p class="noindent" >No other lines should be output by the script.
+<!--l. 1194--><p class="noindent" >No other lines should be output by the script.
                                                                                        
                                                                                        
-<!--l. 1176--><div class="crosslinks"><p class="noindent">[<a 
+<!--l. 1200--><div class="crosslinks"><p class="noindent">[<a 
 href="ReferenceManualch9.html" >next</a>] [<a 
 href="ReferenceManualch7.html" >prev</a>] [<a 
 href="ReferenceManualch7.html#tailReferenceManualch7.html" >prev-tail</a>] [<a 
 href="ReferenceManualch8.html" >front</a>] [<a 
 href="ReferenceManualpa3.html#ReferenceManualch8.html" >up</a>] </p></div>
-<!--l. 1176--><p class="noindent" ><a 
+<!--l. 1200--><p class="noindent" ><a 
  id="tailReferenceManualch8.html"></a>   
 </body></html> 

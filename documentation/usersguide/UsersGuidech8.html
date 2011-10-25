@@ -7,11 +7,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,fn-in --> 
 <meta name="src" content="UsersGuide.tex"> 
-<meta name="date" content="2011-03-25 09:47:00"> 
+<meta name="date" content="2011-10-25 15:07:00"> 
 <link rel="stylesheet" type="text/css" href="UsersGuide.css"> 
 </head><body 
 >
-<!--l. 1402--><div class="crosslinks"><p class="noindent">[<a 
+<!--l. 1433--><div class="crosslinks"><p class="noindent">[<a 
 href="UsersGuidech7.html" >prev</a>] [<a 
 href="UsersGuidech7.html#tailUsersGuidech7.html" >prev-tail</a>] [<a 
 href="#tailUsersGuidech8.html">tail</a>] [<a 
@@ -20,16 +20,16 @@ href="UsersGuidepa2.html#UsersGuidech8.html" >up</a>] </p></div>
  id="x11-39000B4"></a>Getting and Looking at Output</h2>
 <h3 class="sectionHead"><span class="titlemark">B4.1   </span> <a 
  id="x11-40000B4.1"></a>Screen Output</h3>
-<!--l. 1407--><p class="noindent" >As your Cactus executable runs, standard output and standard error are usually written to the screen. Standard
+<!--l. 1438--><p class="noindent" >As your Cactus executable runs, standard output and standard error are usually written to the screen. Standard
 output provides you with information about the run, and standard error reports warnings and errors from the
 flesh and thorns.
-<!--l. 1412--><p class="noindent" >As the program runs, the normal output provides the following information:
-<!--l. 1414--><p class="noindent" >
+<!--l. 1443--><p class="noindent" >As the program runs, the normal output provides the following information:
+<!--l. 1445--><p class="noindent" >
                   <dl class="list1"><dt class="list">
 <span 
 class="cmss-10">Active thorns</span>        </dt><dd 
 class="list">
-                  <!--l. 1416--><p class="noindent" >A report is made as each of the thorns in the <span 
+                  <!--l. 1447--><p class="noindent" >A report is made as each of the thorns in the <span 
 class="cmtt-10">ActiveThorns </span>parameters from the
                   parameter file (see Section&#x00A0;<a 
 href="UsersGuidech7.html#x10-37000B3.2">B3.2<!--tex4ht:ref: sec:Parameter_File --></a>) is attempted to be activated. This report shows
@@ -37,41 +37,41 @@ href="UsersGuidech7.html#x10-37000B3.2">B3.2<!--tex4ht:ref: sec:Parameter_File -
                   implementation. For example
                                                                                        
                                                                                        
-                  <div class="verbatim">
+                  <div class="verbatim" id="verbatim-5">
                   Activating&#x00A0;thorn&#x00A0;idscalarwave...Success&#x00A0;-&#x003E;&#x00A0;active&#x00A0;implementation&#x00A0;idscalarwave
 </div>
-                  <!--l. 1425--><p class="nopar" >
+                  <!--l. 1456--><p class="nopar" >
                   </dd><dt class="list">
 <span 
 class="cmss-10">Failed parameters</span>    </dt><dd 
 class="list">
-                  <!--l. 1427--><p class="noindent" >If any of the parameters in the parameter file does not belong to any of the active thorns,
+                  <!--l. 1458--><p class="noindent" >If any of the parameters in the parameter file does not belong to any of the active thorns,
                   or if the parameter value is not in the allowed range (see Section&#x00A0;<a 
 href="UsersGuidech9.html#x13-73000C1.4.1">C1.4.1<!--tex4ht:ref: sec:Parameters.Types_and_Ranges --></a>), an error is
                   registered. For example, if the parameter is not recognised,
                                                                                        
                                                                                        
-                  <div class="verbatim">
+                  <div class="verbatim" id="verbatim-6">
                   Unknown&#x00A0;parameter&#x00A0;time::ddtfac
 </div>
-                  <!--l. 1435--><p class="nopar" > or if the parameter value is not in the allowed range,
+                  <!--l. 1466--><p class="nopar" > or if the parameter value is not in the allowed range,
                                                                                        
                                                                                        
-                  <div class="verbatim">
+                  <div class="verbatim" id="verbatim-7">
                   Unable&#x00A0;to&#x00A0;set&#x00A0;keyword&#x00A0;CartGrid3D::type&#x00A0;-&#x00A0;ByMouth&#x00A0;not&#x00A0;in&#x00A0;any&#x00A0;active&#x00A0;range
 </div>
-                  <!--l. 1440--><p class="nopar" >
+                  <!--l. 1471--><p class="nopar" >
                   </dd><dt class="list">
 <span 
 class="cmss-10">Scheduling information</span><br 
 class="newline" />                  </dt><dd 
 class="list">
-                  <!--l. 1442--><p class="noindent" >The scheduled routines (see Section&#x00A0;<a 
+                  <!--l. 1473--><p class="noindent" >The scheduled routines (see Section&#x00A0;<a 
 href="UsersGuidech9.html#x13-81000C1.5">C1.5<!--tex4ht:ref: chap:scheduling --></a>) are listed, in the order that they will be
                   executed. For example,
                                                                                        
                                                                                        
-                  <div class="verbatim">
+                  <div class="verbatim" id="verbatim-8">
                   ----------------------------------------------------------------------
                   &#x00A0;<br />&#x00A0;&#x00A0;Startup&#x00A0;routines
                   &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;Cactus:&#x00A0;Register&#x00A0;banner&#x00A0;for&#x00A0;Cactus
@@ -102,30 +102,30 @@ href="UsersGuidech9.html#x13-81000C1.5">C1.5<!--tex4ht:ref: chap:scheduling --><
                   &#x00A0;<br />&#x00A0;&#x00A0;enddo
                   &#x00A0;<br />----------------------------------------------------------------------
 </div>
-                  <!--l. 1476--><p class="nopar" >
+                  <!--l. 1507--><p class="nopar" >
                   </dd><dt class="list">
 <span 
 class="cmss-10">Thorn banners</span>       </dt><dd 
 class="list">
-                  <!--l. 1478--><p class="noindent" >Usually a thorn registers a short piece of text as a <span 
+                  <!--l. 1509--><p class="noindent" >Usually a thorn registers a short piece of text as a <span 
 class="cmti-10">banner</span>. The banner of each thorn is
                   displayed in the standard output when the thorn is initialised.
                   </dd></dl>
-<!--l. 1486--><p class="noindent" >
+<!--l. 1517--><p class="noindent" >
 <h3 class="sectionHead"><span class="titlemark">B4.2   </span> <a 
  id="x11-41000B4.2"></a>Output</h3>
-<!--l. 1487--><p class="noindent" >Output methods in Cactus are all provided by thorns. Any number of output methods can be used for each run.
+<!--l. 1518--><p class="noindent" >Output methods in Cactus are all provided by thorns. Any number of output methods can be used for each run.
 The behaviour of the output thorns in the standard arrangements are described in those thorns&#8217;
 documentation.
                                                                                        
                                                                                        
-<!--l. 1492--><p class="noindent" >In general, output thorns decide what to output by parsing a string parameter containing the names of those
+<!--l. 1523--><p class="noindent" >In general, output thorns decide what to output by parsing a string parameter containing the names of those
 grid variables, or groups of variables, for which output is required. The names should be fully qualified with the
 implementation and group or variable names.
-<!--l. 1497--><p class="noindent" >There is usually a parameter for each method to denote how often, in evolution iterations, this output should be
+<!--l. 1528--><p class="noindent" >There is usually a parameter for each method to denote how often, in evolution iterations, this output should be
 performed. There is also usually a parameter to define the directory in which the output should be placed,
 defaulting to the directory from which the executable is run.
-<!--l. 1502--><p class="noindent" >See Chapter&#x00A0;<a 
+<!--l. 1533--><p class="noindent" >See Chapter&#x00A0;<a 
 href="UsersGuidech10.html#x14-173000C2.7">C2.7<!--tex4ht:ref: chap:io_methods --></a> for details on creating your own I/O method.
                                                                                        
                                                                                        

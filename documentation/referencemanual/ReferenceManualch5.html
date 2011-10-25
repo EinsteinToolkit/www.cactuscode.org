@@ -7,7 +7,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,fn-in --> 
 <meta name="src" content="ReferenceManual.tex"> 
-<meta name="date" content="2011-03-25 09:47:00"> 
+<meta name="date" content="2011-10-25 15:07:00"> 
 <link rel="stylesheet" type="text/css" href="ReferenceManual.css"> 
 </head><body 
 >
@@ -31,7 +31,7 @@ class="cmbx-10">Synopsis</span>
 <!--l. 656--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-429">
 #include&#x00A0;"util_String.h"
 &#x00A0;<br />int&#x00A0;cmp&#x00A0;=&#x00A0;Util_StrCmpi(const&#x00A0;char&#x00A0;*str1,&#x00A0;const&#x00A0;char&#x00A0;*str2);
 </div>
@@ -96,14 +96,14 @@ class="cmtt-10">strcmp()</span>, is zero (logical &#8220;false&#8221; in C) for 
 strings, and nonzero (logical &#8220;true&#8221; in C) for non-equal strings. Code of the form
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-430">
 if&#x00A0;(Util_StrCmpi(str1,&#x00A0;str2))
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{&#x00A0;/*&#x00A0;strings&#x00A0;differ&#x00A0;*/&#x00A0;}
 </div>
 <!--l. 704--><p class="nopar" > or
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-431">
 if&#x00A0;(!Util_StrCmpi(str1,&#x00A0;str2))
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{&#x00A0;/*&#x00A0;strings&#x00A0;are&#x00A0;identical&#x00A0;apart&#x00A0;from&#x00A0;case&#x00A0;distinctions&#x00A0;*/&#x00A0;}
 </div>
@@ -111,14 +111,14 @@ if&#x00A0;(!Util_StrCmpi(str1,&#x00A0;str2))
 comparison against zero make make things clearer:
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-432">
 if&#x00A0;(Util_StrCmpi(str1,&#x00A0;str2)&#x00A0;!=&#x00A0;0)
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{&#x00A0;/*&#x00A0;strings&#x00A0;differ&#x00A0;*/&#x00A0;}
 </div>
 <!--l. 716--><p class="nopar" > or
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-433">
 if&#x00A0;(Util_StrCmpi(str1,&#x00A0;str2)&#x00A0;==&#x00A0;0)
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;{&#x00A0;/*&#x00A0;strings&#x00A0;are&#x00A0;identical&#x00A0;apart&#x00A0;from&#x00A0;case&#x00A0;distinctions&#x00A0;*/&#x00A0;}
 </div>
@@ -143,7 +143,7 @@ class="cmbx-10">Examples</span>
 <!--l. 770--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-434">
 #include&#x00A0;"util_String.h"
 &#x00A0;<br />
 &#x00A0;<br />/*&#x00A0;does&#x00A0;the&#x00A0;Cactus&#x00A0;parameter&#x00A0;&#x00A0;driver&#x00A0;&#x00A0;specify&#x00A0;the&#x00A0;PUGH&#x00A0;driver?&#x00A0;*/
@@ -169,7 +169,7 @@ class="cmbx-10">Synopsis</span>
 <!--l. 793--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-435">
 #include&#x00A0;"util_String.h"
 &#x00A0;<br />char*&#x00A0;copy&#x00A0;=&#x00A0;Util_Strdup(const&#x00A0;char&#x00A0;*str);
 </div>
@@ -226,7 +226,7 @@ class="cmbx-10">Examples</span>
 <!--l. 847--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-436">
 #include&#x00A0;"util_String.h"
 &#x00A0;<br />
 &#x00A0;<br />/*
@@ -268,7 +268,7 @@ class="cmbx-10">Synopsis</span>
 <!--l. 887--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-437">
 #include&#x00A0;"util_String.h"
 &#x00A0;<br />size_t&#x00A0;result_len&#x00A0;=&#x00A0;Util_Strlcat(char&#x00A0;*dst,&#x00A0;const&#x00A0;char&#x00A0;*src,&#x00A0;size_t&#x00A0;size);
 </div>
@@ -355,7 +355,7 @@ class="cmbx-10">Examples</span>
 <!--l. 959--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-438">
 #include&#x00A0;"util_String.h"
 &#x00A0;<br />
 &#x00A0;<br />/*
@@ -375,7 +375,7 @@ class="cmbx-10">Examples</span>
 <!--l. 977--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-439">
 #include&#x00A0;"util_String.h"
 &#x00A0;<br />
 &#x00A0;<br />#define&#x00A0;OK&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0
@@ -422,7 +422,7 @@ class="cmbx-10">Synopsis</span>
 <!--l. 1020--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-440">
 #include&#x00A0;"util_String.h"
 &#x00A0;<br />size_t&#x00A0;result_len&#x00A0;=&#x00A0;Util_Strlcpy(char&#x00A0;*dst,&#x00A0;const&#x00A0;char&#x00A0;*src,&#x00A0;size_t&#x00A0;size);
 </div>
@@ -515,7 +515,7 @@ class="cmbx-10">Examples</span>
 <!--l. 1096--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-441">
 #include&#x00A0;"util_String.h"
 &#x00A0;<br />
 &#x00A0;<br />/*
@@ -535,7 +535,7 @@ class="cmbx-10">Examples</span>
 <!--l. 1114--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-442">
 #include&#x00A0;"util_String.h"
 &#x00A0;<br />
 &#x00A0;<br />#define&#x00A0;OK&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0
@@ -582,7 +582,7 @@ class="cmbx-10">Synopsis</span>
 <!--l. 1157--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-443">
 #include&#x00A0;"util_String.h"
 &#x00A0;<br />char*&#x00A0;token&#x00A0;=&#x00A0;Util_StrSep(const&#x00A0;char**&#x00A0;string_ptr,&#x00A0;const&#x00A0;char*&#x00A0;delim_set);
 </div>
@@ -646,7 +646,7 @@ class="cmbx-10">Examples</span>
 <!--l. 1216--><p class="noindent" ><div class="codecontent"> <div class="codetype">C</div>
                                                                                        
                                                                                        
-<div class="verbatim">
+<div class="verbatim" id="verbatim-444">
 #include&#x00A0;&#x003C;stdio.h&#x003E;
 &#x00A0;<br />#include&#x00A0;&#x003C;stdlib.h&#x003E;
 &#x00A0;<br />#include&#x00A0;"util_String.h"
