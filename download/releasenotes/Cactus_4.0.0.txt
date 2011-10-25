@@ -36,3 +36,12 @@ The Cactus Framework is partially supported by NSF 0903973/0903782/0904015
 0905046/0941653 (PetaCactus) and 0710874 (LONI Grid).
 
 The "4.0.0" Release Team on behalf of the Cactus Framework Group (2011-10-25) 
+
+Significant Changes
+-------------------
+
+ - SILENT=no is depreciated, use VERBOSE=yes
+ - Compilation is now much quiter by default
+ - CactusExternal is depreciated, use ExternalLibraries
+ - Cactus now handles parameter files with DOS line breaks
+ - LocalInterp and LocalReduce are now in CactusNumerical
