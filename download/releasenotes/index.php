@@ -4,14 +4,14 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
 <p>
-The current version of Cactus is 4.0. 
+The current version of Cactus is 4.0.0. 
 The release notices contain information about changes from one release to the next, such as new thorns, interface changes or new functionality. Also we provide a list of tested architectures. These messages are distributed to the news, users and developers mailing lists with each release.
 </p>
 
 <p>
 	<strong>Latest release:</strong>
 	<br />
-	<a href="beta16">Cactus 4.0 beta 16</a> (02 February 2009)
+	<a href="Cactus_4.0.0">Cactus 4.0.0</a> (25 October 2011)
 </p>
 
 	  <!--<p>
@@ -21,6 +21,8 @@ The release notices contain information about changes from one release to the ne
 
 	  <p>
 	    <strong>Previous releases:</strong>
+	    <br />
+      <a href="beta16">Cactus 4.0 beta 16</a> (02 February 2009)
 	    <br />
 	    <a href="beta15.txt">Cactus 4.0 beta 15</a>  (02 November 2004)
 	    <br />
