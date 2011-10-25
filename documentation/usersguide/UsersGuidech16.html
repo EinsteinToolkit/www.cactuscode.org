@@ -1,117 +1,128 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
   "http://www.w3.org/TR/html4/loose.dtd">  
 <html > 
-<head><title>D6 Using GNATS</title> 
+<head><title>D6 Using TRAC</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,fn-in --> 
 <meta name="src" content="UsersGuide.tex"> 
-<meta name="date" content="2011-03-25 09:47:00"> 
+<meta name="date" content="2011-10-25 15:07:00"> 
 <link rel="stylesheet" type="text/css" href="UsersGuide.css"> 
 </head><body 
 >
-<!--l. 1904--><div class="crosslinks"><p class="noindent">[<a 
+<!--l. 1928--><div class="crosslinks"><p class="noindent">[<a 
 href="UsersGuidech17.html" >next</a>] [<a 
 href="UsersGuidech15.html" >prev</a>] [<a 
 href="UsersGuidech15.html#tailUsersGuidech15.html" >prev-tail</a>] [<a 
 href="#tailUsersGuidech16.html">tail</a>] [<a 
 href="UsersGuidepa4.html#UsersGuidech16.html" >up</a>] </p></div>
 <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;D6</span><br /><a 
- id="x21-217000D6"></a>Using GNATS</h2>
-<!--l. 1906--><p class="noindent" >GNATS is a freely redistributable set of tools for tracking bug reports. It allows users to categorize their problem
-report and submit them to the GNATS. The bug tracker will assign appropriate maintainers to analyze and
-solve the problem. We are currently supporting a web-based interface at <a 
-href="http://www.cactuscode.org" class="url" ><span 
-class="cmtt-10">http://www.cactuscode.org</span></a>, which
-lets you interactively file a bug report. Here, we briefly describe the main categories when creating a Cactus
-problem report.
+ id="x21-217000D6"></a>Using TRAC</h2>
+<!--l. 1931--><p class="noindent" >TRAC is a web-based tool for tracking bug reports and feature requests. Cactus bugs and feature requests are
+handled using the TRAC system hosted by the Einstein Toolkit consortium at <a 
+href="http://trac.einsteintoolkit.org" class="url" ><span 
+class="cmtt-10">http://trac.einsteintoolkit.org</span></a>.
+Click on <span 
+class="cmti-10">New Ticket </span>to create a new ticket in the system.
+<!--l. 1937--><p class="noindent" >Here, we briefly describe the main categories when creating a Cactus problem report.
                   <dl class="list1"><dt class="list">
 <span 
-class="cmbx-10">Reporters email</span>   </dt><dd 
+class="cmbx-10">Summary</span>         </dt><dd 
 class="list">
-                  <!--l. 1916--><p class="noindent" >Your email address, so we can get in contact with you.
-                  </dd><dt class="list">
-<span 
-class="cmbx-10">Category</span>         </dt><dd 
-class="list">
-                  <!--l. 1918--><p class="noindent" >There is currently a category for each of the Cactus thorns and arrangements, also
-                  a category for the old Cactus3.x and some general subjects like Web, etc. Select
-                  whatever category fits best.
-                  </dd><dt class="list">
-<span 
-class="cmbx-10">Synopsis</span>          </dt><dd 
-class="list">
-                  <!--l. 1922--><p class="noindent" >A brief and informative subject line.
-                  </dd><dt class="list">
-<span 
-class="cmbx-10">Confidential</span>      </dt><dd 
-class="list">
-                  <!--l. 1924--><p class="noindent" >Unused, all PRs are public.
-                  </dd><dt class="list">
-<span 
-class="cmbx-10">Severity</span>          </dt><dd 
-class="list">
-                  <!--l. 1926--><p class="noindent" >Pick one of three levels.
-                  </dd><dt class="list">
-<span 
-class="cmbx-10">Class</span>             </dt><dd 
-class="list">
-                  <!--l. 1928--><p class="noindent" >In the selected category, specify what kind of problem you are dealing with.
-                  </dd><dt class="list">
-<span 
-class="cmbx-10">submitter ID</span>      </dt><dd 
-class="list">
-                  <!--l. 1931--><p class="noindent" >Unused
-                  </dd><dt class="list">
-<span 
-class="cmbx-10">Originator</span>        </dt><dd 
-class="list">
-                  <!--l. 1933--><p class="noindent" >Your name. Anonymous is OK, but you real name would be best.
-                  </dd><dt class="list">
-<span 
-class="cmbx-10">Release</span>           </dt><dd 
-class="list">
-                  <!--l. 1936--><p class="noindent" >The Cactus release you are using. You can find this out, for example, from an
-                  executable by typing <span 
-class="cmtt-10">cactus</span><span 
-class="cmtt-10">_&#x003C;config&#x003E; -v</span>.
-                  </dd><dt class="list">
-<span 
-class="cmbx-10">Environment</span>      </dt><dd 
-class="list">
-                                                                                       
-                                                                                       
-                  <!--l. 1939--><p class="noindent" >Very important: specify the environment, e.g.&#x00A0;<span 
-class="cmtt-10">uname -a</span>, MPI/non-MPI, etc.
+                  <!--l. 1940--><p class="noindent" >A brief and informative subject line.
                   </dd><dt class="list">
 <span 
 class="cmbx-10">Description</span>       </dt><dd 
 class="list">
-                  <!--l. 1942--><p class="noindent" >Describe your problem precisely, if you get a core dump, include the stack trace,
-                  give the minimal number of thorns, this problems occurs with.
+                  <!--l. 1942--><p class="noindent" >Describe your problem precisely, if you get a core dump, include the stack trace, and
+                  if possible give the minimal number of thorns, this problems occurs with. Describe
+                  how to reproduce the problem if it is not clear. Note that the description field
+                  (and the comments) allow a wiki-style syntax. This means that blocks of code or
+                  error messages should be surrounded by <span 
+class="cmsy-10">{{{ </span>... <span 
+class="cmsy-10">}}} </span>in order to avoid the text being
+                  interpreted as wiki markup. Click on the WikiFormatting link to learn more about
+                  the available markup.
                   </dd><dt class="list">
 <span 
-class="cmbx-10">How-To-Repeat</span>   </dt><dd 
+class="cmbx-10">Type</span>             </dt><dd 
 class="list">
-                  <!--l. 1946--><p class="noindent" >Tell us how to repeat the problem if it is software related.
+                  <!--l. 1952--><p class="noindent" >Choose <span 
+class="cmti-10">defect </span>for cases where there is clearly something wrong and <span 
+class="cmti-10">enhancement</span>
+                  for a feature request.
                   </dd><dt class="list">
 <span 
-class="cmbx-10">Fix</span>               </dt><dd 
+class="cmbx-10">Priority</span>           </dt><dd 
 class="list">
-                  <!--l. 1949--><p class="noindent" >If you can provide a fix, let us know.</dd></dl>
-<!--l. 1952--><p class="noindent" >We also provide the customized <span 
-class="cmtt-10">send-pr </span>and <span 
-class="cmtt-10">send-pr.el </span>programs at our website. These commands are
-compiled to submit Cactus problem reports in your shell and from within Emacs, respectively.
+                  <!--l. 1955--><p class="noindent" >Pick  whichever  level  is  appropriate.  <span 
+class="cmti-10">Blocker </span>for  issues  that  stop  you  using  the
+                  code, <span 
+class="cmti-10">critical </span>for very serious problems, <span 
+class="cmti-10">major </span>for things which should definitely
+                  be addressed, <span 
+class="cmti-10">minor </span>for things which would be good to fix but not essential, and
+                  <span 
+class="cmti-10">optional </span>for very low priority items. If in doubt, choose either <span 
+class="cmti-10">major </span>or <span 
+class="cmti-10">minor</span>.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">Milestone</span>         </dt><dd 
+class="list">
+                  <!--l. 1962--><p class="noindent" >This is used by the maintainers to indicate an intention to fix the problem before
+                  a particular release of Cactus.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">Component</span>       </dt><dd 
+class="list">
+                  <!--l. 1965--><p class="noindent" >Use <span 
+class="cmti-10">Cactus </span>for problems related to the Cactus flesh or one of the thorns in one of
+                  the Cactus arrangements (those in arrangements with names starting &#8220;Cactus&#8221;).
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">Version</span>           </dt><dd 
+class="list">
+                  <!--l. 1969--><p class="noindent" >The Cactus release you are using. You can find this out, for example, from an
+                  executable by typing <span 
+class="cmtt-10">cactus</span><span 
+class="cmtt-10">_&#x003C;config&#x003E; -v</span>.
                                                                                        
                                                                                        
-<!--l. 1962--><div class="crosslinks"><p class="noindent">[<a 
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">Keywords</span>         </dt><dd 
+class="list">
+                  <!--l. 1974--><p class="noindent" >Here you can enter a space-separated list of keywords which might be useful for
+                  people searching for specific types of tickets. For example, you could enter the thorn
+                  name if the problem is with a specific thorn, the keyword <span 
+class="cmti-10">testsuite </span>if the ticket is
+                  related to a test failure, or the keyword <span 
+class="cmti-10">documentation </span>if the problem is related to
+                  the documentation.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">CC</span>               </dt><dd 
+class="list">
+                  <!--l. 1981--><p class="noindent" >Email addresses of people who should be emailed on any change to the ticket, such
+                  as a comment being added.
+                  </dd><dt class="list">
+<span 
+class="cmbx-10">Email or username</span><br 
+class="newline" />                  </dt><dd 
+class="list">
+                  <!--l. 1984--><p class="noindent" >Your email address, so we can get in contact with you.</dd></dl>
+<!--l. 1988--><p class="noindent" >If you have an account on the computer systems at CCT, you can log in to the TRAC system in order to be
+recognised. Otherwise, your comments will appear as &#8220;anonymous&#8221;.
+                                                                                       
+                                                                                       
+<!--l. 1996--><div class="crosslinks"><p class="noindent">[<a 
 href="UsersGuidech17.html" >next</a>] [<a 
 href="UsersGuidech15.html" >prev</a>] [<a 
 href="UsersGuidech15.html#tailUsersGuidech15.html" >prev-tail</a>] [<a 
 href="UsersGuidech16.html" >front</a>] [<a 
 href="UsersGuidepa4.html#UsersGuidech16.html" >up</a>] </p></div>
-<!--l. 1962--><p class="noindent" ><a 
+<!--l. 1996--><p class="noindent" ><a 
  id="tailUsersGuidech16.html"></a>  
 </body></html> 

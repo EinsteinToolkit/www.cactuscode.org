@@ -7,11 +7,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,fn-in --> 
 <meta name="src" content="UsersGuide.tex"> 
-<meta name="date" content="2011-03-25 09:47:00"> 
+<meta name="date" content="2011-10-25 15:07:00"> 
 <link rel="stylesheet" type="text/css" href="UsersGuide.css"> 
 </head><body 
 >
-<!--l. 1591--><div class="crosslinks"><p class="noindent">[<a 
+<!--l. 1615--><div class="crosslinks"><p class="noindent">[<a 
 href="UsersGuidech15.html" >next</a>] [<a 
 href="UsersGuidech13.html" >prev</a>] [<a 
 href="UsersGuidech13.html#tailUsersGuidech13.html" >prev-tail</a>] [<a 
@@ -19,50 +19,50 @@ href="#tailUsersGuidech14.html">tail</a>] [<a
 href="UsersGuidepa4.html#UsersGuidech14.html" >up</a>] </p></div>
 <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;D4</span><br /><a 
  id="x19-213000D4"></a>Schedule Bins</h2>
-<!--l. 1594--><p class="noindent" >Using the <span 
+<!--l. 1618--><p class="noindent" >Using the <span 
 class="cmtt-10">schedule.ccl </span>files, thorn functions can be scheduled to run in the different timebins which are
 executed by the Cactus flesh. This chapter describes these standard timebins, and shows the flow of program
 execution through them.
-<!--l. 1599--><p class="noindent" >Scheduled functions must be declared as
+<!--l. 1623--><p class="noindent" >Scheduled functions must be declared as
                   <dl class="list1"><dt class="list">
 <span 
 class="cmss-10">In C:</span>              </dt><dd 
 class="list">
-                  <!--l. 1602--><p class="noindent" >
+                  <!--l. 1626--><p class="noindent" >
                                                                                        
                                                                                        
-                  <div class="verbatim">
+                  <div class="verbatim" id="verbatim-122">
                   #include&#x00A0;"cctk_Arguments.h"
                   &#x00A0;<br />void&#x00A0;MyFunction&#x00A0;(CCTK_ARGUMENTS);
 </div>
-                  <!--l. 1606--><p class="nopar" >
+                  <!--l. 1630--><p class="nopar" >
                   </dd><dt class="list">
 <span 
 class="cmss-10">In C++:</span>           </dt><dd 
 class="list">
-                  <!--l. 1608--><p class="noindent" >
+                  <!--l. 1632--><p class="noindent" >
                                                                                        
                                                                                        
-                  <div class="verbatim">
+                  <div class="verbatim" id="verbatim-123">
                   #include&#x00A0;"cctk_Arguments.h"
                   &#x00A0;<br />extern&#x00A0;"C"&#x00A0;void&#x00A0;MyFunction&#x00A0;(CCTK_ARGUMENTS);
 </div>
-                  <!--l. 1612--><p class="nopar" >
+                  <!--l. 1636--><p class="nopar" >
                   </dd><dt class="list">
 <span 
 class="cmss-10">In Fortran:</span>          </dt><dd 
 class="list">
-                  <!--l. 1614--><p class="noindent" >
+                  <!--l. 1638--><p class="noindent" >
                                                                                        
                                                                                        
-                  <div class="verbatim">
+                  <div class="verbatim" id="verbatim-124">
                   #include&#x00A0;"cctk_Arguments.h"
                   &#x00A0;<br />subroutine&#x00A0;MyFunction&#x00A0;(CCTK_ARGUMENTS)
                   &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;DECLARE_CCTK_ARGUMENTS
                   &#x00A0;<br />end
 </div>
-                  <!--l. 1620--><p class="nopar" ></dd></dl>
-<!--l. 1623--><p class="noindent" >Exceptions are the functions that are scheduled in the bins <span 
+                  <!--l. 1644--><p class="nopar" ></dd></dl>
+<!--l. 1647--><p class="noindent" >Exceptions are the functions that are scheduled in the bins <span 
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_STARTUP</span>, <span 
 class="cmtt-10">CCTK</span><span 
@@ -76,43 +76,43 @@ as
 <span 
 class="cmss-10">In C:</span>              </dt><dd 
 class="list">
-                  <!--l. 1629--><p class="noindent" >
+                  <!--l. 1653--><p class="noindent" >
                                                                                        
                                                                                        
-                  <div class="verbatim">
+                  <div class="verbatim" id="verbatim-125">
                   int&#x00A0;MyFunction&#x00A0;(void);
 </div>
-                  <!--l. 1632--><p class="nopar" >
+                  <!--l. 1656--><p class="nopar" >
                   </dd><dt class="list">
 <span 
 class="cmss-10">In C++</span>            </dt><dd 
 class="list">
-                  <!--l. 1634--><p class="noindent" >
+                  <!--l. 1658--><p class="noindent" >
                                                                                        
                                                                                        
-                  <div class="verbatim">
+                  <div class="verbatim" id="verbatim-126">
                   extern&#x00A0;"C"&#x00A0;int&#x00A0;MyFunction&#x00A0;();
 </div>
-                  <!--l. 1637--><p class="nopar" >
+                  <!--l. 1661--><p class="nopar" >
                   </dd><dt class="list">
 <span 
 class="cmss-10">In Fortran:</span>          </dt><dd 
 class="list">
-                  <!--l. 1639--><p class="noindent" >
+                  <!--l. 1663--><p class="noindent" >
                                                                                        
                                                                                        
-                  <div class="verbatim">
+                  <div class="verbatim" id="verbatim-127">
                   integer&#x00A0;function&#x00A0;MyFunction&#x00A0;()
                   &#x00A0;<br />end
 </div>
-                  <!--l. 1643--><p class="nopar" ></dd></dl>
-<!--l. 1646--><p class="noindent" >The return value in <span 
+                  <!--l. 1667--><p class="nopar" ></dd></dl>
+<!--l. 1670--><p class="noindent" >The return value in <span 
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_STARTUP </span>and <span 
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_SHUTDOWN </span>is unused, and might in the future be used to indicate
 whether an error occurred. You should return 0.
-<!--l. 1650--><p class="noindent" >The return value in <span 
+<!--l. 1674--><p class="noindent" >The return value in <span 
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_RECOVER</span><span 
 class="cmtt-10">_PARAMETERS </span>should be zero, positive, or negative, indicating that no
@@ -131,7 +131,7 @@ class="cmtt-10">_RECOVER</span><span
 class="cmtt-10">_PARAMETERS</span><br 
 class="newline" />                  </dt><dd 
 class="list">
-                  <!--l. 1661--><p class="noindent" >Used by thorns with relevant I/O methods as the point to read parameters when
+                  <!--l. 1685--><p class="noindent" >Used by thorns with relevant I/O methods as the point to read parameters when
                   recovering from checkpoint files. Grid variables are not available in this timebin.
                   Scheduling in this timebin is special (see above).
                   </dd><dt class="list">
@@ -139,7 +139,7 @@ class="list">
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_STARTUP</span>      </dt><dd 
 class="list">
-                  <!--l. 1667--><p class="noindent" >Run before any grids are constructed, this is the timebin, for example, where grid
+                  <!--l. 1691--><p class="noindent" >Run before any grids are constructed, this is the timebin, for example, where grid
                   independent information (e.g.&#x00A0;output methods, reduction operators) is registered.
                   Note that since no grids are setup at this point, grid variables cannot be used in
                   routines scheduled here.
@@ -148,7 +148,7 @@ class="list">
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_WRAGH</span>        </dt><dd 
 class="list">
-                  <!--l. 1674--><p class="noindent" >This timebin is executed when all parameters are known, but before the driver thorn
+                  <!--l. 1698--><p class="noindent" >This timebin is executed when all parameters are known, but before the driver thorn
                   constructs the grid. It should only be used to set up information that is needed by
                   the driver.
                   </dd><dt class="list">
@@ -156,7 +156,7 @@ class="list">
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_PARAMCHECK</span>   </dt><dd 
 class="list">
-                  <!--l. 1679--><p class="noindent" >This timebin is for thorns to check the validity of parameter combinations. This
+                  <!--l. 1703--><p class="noindent" >This timebin is for thorns to check the validity of parameter combinations. This
                   bin is also executed before the grid hierarchy is made, so that routines scheduled
                   here only have access to the global grid size and the parameters.
                   </dd><dt class="list">
@@ -165,7 +165,7 @@ class="cmtt-10">CCTK</span><span
 class="cmtt-10">_PREREGRIDINITIAL</span><br 
 class="newline" />                  </dt><dd 
 class="list">
-                  <!--l. 1685--><p class="noindent" >This timebin is used in mesh refinement settings. It is ignored for unigrid runs. This
+                  <!--l. 1709--><p class="noindent" >This timebin is used in mesh refinement settings. It is ignored for unigrid runs. This
                   bin is executed whenever the grid hierarchy is about to change during evolution;
                   compare <span 
 class="cmtt-10">CCTK</span><span 
@@ -179,7 +179,7 @@ class="newline" />                  </dt><dd
 class="list">
                                                                                        
                                                                                        
-                  <!--l. 1692--><p class="noindent" >This timebin is used in mesh refinement settings. It is ignored for unigrid runs.
+                  <!--l. 1716--><p class="noindent" >This timebin is used in mesh refinement settings. It is ignored for unigrid runs.
                   This bin is executed whenever the grid hierarchy or patch setup has changed during
                   evolution; see <span 
 class="cmtt-10">CCTK</span><span 
@@ -191,21 +191,21 @@ class="cmtt-10">_POSTREGRID</span>. It is, e.g. necessary to re-apply the bounda
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_BASEGRID</span>     </dt><dd 
 class="list">
-                  <!--l. 1701--><p class="noindent" >This timebin is executed very early after a driver thorn constructs grid; this bin
+                  <!--l. 1725--><p class="noindent" >This timebin is executed very early after a driver thorn constructs grid; this bin
                   should only be used to set up coordinate systems on the newly created grids.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_INITIAL</span>      </dt><dd 
 class="list">
-                  <!--l. 1706--><p class="noindent" >This is the place to set up any required initial data. This timebin is not run when
+                  <!--l. 1730--><p class="noindent" >This is the place to set up any required initial data. This timebin is not run when
                   recovering from a checkpoint file.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_POSTINITIAL</span>  </dt><dd 
 class="list">
-                  <!--l. 1710--><p class="noindent" >This is the place to modify initial data, or to calculate data that depend on the
+                  <!--l. 1734--><p class="noindent" >This is the place to modify initial data, or to calculate data that depend on the
                   initial data. This timebin is also not run when recovering from a checkpoint file.
                   </dd><dt class="list">
 <span 
@@ -213,7 +213,7 @@ class="cmtt-10">CCTK</span><span
 class="cmtt-10">_POSTRESTRICTINITIAL</span><br 
 class="newline" />                  </dt><dd 
 class="list">
-                  <!--l. 1715--><p class="noindent" >This timebin is used only in mesh refinement settings. It is ignored for unigrid
+                  <!--l. 1739--><p class="noindent" >This timebin is used only in mesh refinement settings. It is ignored for unigrid
                   runs. This bin is executed after each restriction operation while initial data are set
                   up; compare <span 
 class="cmtt-10">CCTK</span><span 
@@ -225,7 +225,7 @@ class="cmtt-10">CCTK</span><span
 class="cmtt-10">_POSTPOSTINITIAL</span><br 
 class="newline" />                  </dt><dd 
 class="list">
-                  <!--l. 1723--><p class="noindent" >This is the place to modify initial data, or to calculate data that depend on the
+                  <!--l. 1747--><p class="noindent" >This is the place to modify initial data, or to calculate data that depend on the
                   initial data. This timebin is executed after the recursive initialisation of finer grids
                   if there is a mesh refinement hierarchy, and it is also not run when recovering from
                   a checkpoint file.
@@ -236,7 +236,7 @@ class="cmtt-10">_RECOVER</span><span
 class="cmtt-10">_VARIABLES</span><br 
 class="newline" />                  </dt><dd 
 class="list">
-                  <!--l. 1730--><p class="noindent" >Used by thorns with relevant I/O methods as the point to read in all the grid
+                  <!--l. 1754--><p class="noindent" >Used by thorns with relevant I/O methods as the point to read in all the grid
                   variables when recovering from checkpoint files.
                   </dd><dt class="list">
 <span 
@@ -246,14 +246,14 @@ class="cmtt-10">_RECOVER</span><span
 class="cmtt-10">_VARIABLES</span><br 
 class="newline" />                  </dt><dd 
 class="list">
-                  <!--l. 1735--><p class="noindent" >This timebin exists for scheduling any functions which need to modify grid variables
+                  <!--l. 1759--><p class="noindent" >This timebin exists for scheduling any functions which need to modify grid variables
                   after recovery.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_CPINITIAL</span>    </dt><dd 
 class="list">
-                  <!--l. 1739--><p class="noindent" >Used by thorns with relevant I/O methods as the point to checkpoint initial data
+                  <!--l. 1763--><p class="noindent" >Used by thorns with relevant I/O methods as the point to checkpoint initial data
                   if required.
                                                                                        
                                                                                        
@@ -262,14 +262,14 @@ class="list">
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_CHECKPOINT</span>   </dt><dd 
 class="list">
-                  <!--l. 1743--><p class="noindent" >Used by thorns with relevant I/O methods as the point to checkpoint data during
+                  <!--l. 1767--><p class="noindent" >Used by thorns with relevant I/O methods as the point to checkpoint data during
                   the iterative loop when required.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_PREREGRID</span>    </dt><dd 
 class="list">
-                  <!--l. 1747--><p class="noindent" >This timebin is used in mesh refinement settings. It is ignored for unigrid runs. This
+                  <!--l. 1771--><p class="noindent" >This timebin is used in mesh refinement settings. It is ignored for unigrid runs. This
                   bin is executed whenever the grid hierarchy is about to change during evolution;
                   compare <span 
 class="cmtt-10">CCTK</span><span 
@@ -280,7 +280,7 @@ class="cmtt-10">_PREREGRIDINITIAL</span>. Routines that decide the new grid stru
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_POSTREGRID</span>   </dt><dd 
 class="list">
-                  <!--l. 1754--><p class="noindent" >This timebin is used in mesh refinement settings. It is ignored for unigrid runs.
+                  <!--l. 1778--><p class="noindent" >This timebin is used in mesh refinement settings. It is ignored for unigrid runs.
                   This  bin  is  executed  whenever  the  grid  hierarchy  or  patch  setup  has  changed
                   during evolution; see <span 
 class="cmtt-10">CCTK</span><span 
@@ -292,7 +292,7 @@ class="cmtt-10">_POSTREGRIDINITIAL</span>. It is, e.g. necessary to re-apply the
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_PRESTEP</span>      </dt><dd 
 class="list">
-                  <!--l. 1763--><p class="noindent" >The  timebin  for  scheduling  any  routines  which  need  to  be  executed  before
+                  <!--l. 1787--><p class="noindent" >The  timebin  for  scheduling  any  routines  which  need  to  be  executed  before
                   any  routines  in  the  main  evolution  step.  This  timebin  exists  for  thorn  writers
                   convenience, the <span 
 class="cmtt-10">BEFORE</span>, <span 
@@ -306,13 +306,13 @@ class="cmtt-10">_EVOL </span>timebin.
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_EVOL</span>         </dt><dd 
 class="list">
-                  <!--l. 1771--><p class="noindent" >The timebin for the main evolution step.
+                  <!--l. 1795--><p class="noindent" >The timebin for the main evolution step.
                   </dd><dt class="list">
 <span 
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_POSTRESTRICT</span> </dt><dd 
 class="list">
-                  <!--l. 1774--><p class="noindent" >This timebin is used only in mesh refinement settings. It is ignored for unigrid
+                  <!--l. 1798--><p class="noindent" >This timebin is used only in mesh refinement settings. It is ignored for unigrid
                   runs.  This  bin  is  executed  after  each  restriction  operation  during  evolution;
                   compare <span 
 class="cmtt-10">CCTK</span><span 
@@ -323,7 +323,7 @@ class="cmtt-10">_POSTRESTRICTINITIAL</span>. It is, e.g. necessary to re-apply t
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_POSTSTEP</span>     </dt><dd 
 class="list">
-                  <!--l. 1782--><p class="noindent" >The  timebin  for  scheduling  any  routines  which  need  to  be  executed  after  all
+                  <!--l. 1806--><p class="noindent" >The  timebin  for  scheduling  any  routines  which  need  to  be  executed  after  all
                   the  routines  in  the  main  evolution  step.  This  timebin  exists  for  thorn  writers
                   convenience, the <span 
 class="cmtt-10">BEFORE</span>, <span 
@@ -337,7 +337,7 @@ class="cmtt-10">_EVOL </span>timebin.
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_ANALYSIS</span>     </dt><dd 
 class="list">
-                  <!--l. 1790--><p class="noindent" >The <span 
+                  <!--l. 1814--><p class="noindent" >The <span 
 class="cmtt-10">ANALYSIS </span>timebin is special, in that it is closely coupled with output, and
                   routines which are scheduled here are typically only executed if output of analysis
                   variables is required. Routines which perform analysis should be independent of the
@@ -350,7 +350,7 @@ class="cmtt-10">ANALYSIS </span>timebin is special, in that it is closely couple
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_TERMINATE</span>    </dt><dd 
 class="list">
-                  <!--l. 1799--><p class="noindent" >Called after the main iteration loop when Cactus terminates. Note that sometime,
+                  <!--l. 1823--><p class="noindent" >Called after the main iteration loop when Cactus terminates. Note that sometime,
                   in this timebin, a driver thorn should be destroying the grid hierarchy and removing
                   grid variables.
                   </dd><dt class="list">
@@ -358,17 +358,17 @@ class="list">
 class="cmtt-10">CCTK</span><span 
 class="cmtt-10">_SHUTDOWN</span>     </dt><dd 
 class="list">
-                  <!--l. 1804--><p class="noindent" >Cactus final shutdown routines, after the grid hierarchy has been destroyed. Grid
+                  <!--l. 1828--><p class="noindent" >Cactus final shutdown routines, after the grid hierarchy has been destroyed. Grid
                   variables are no longer available.
                   </dd></dl>
                                                                                        
                                                                                        
-<!--l. 1814--><div class="crosslinks"><p class="noindent">[<a 
+<!--l. 1838--><div class="crosslinks"><p class="noindent">[<a 
 href="UsersGuidech15.html" >next</a>] [<a 
 href="UsersGuidech13.html" >prev</a>] [<a 
 href="UsersGuidech13.html#tailUsersGuidech13.html" >prev-tail</a>] [<a 
 href="UsersGuidech14.html" >front</a>] [<a 
 href="UsersGuidepa4.html#UsersGuidech14.html" >up</a>] </p></div>
-<!--l. 1814--><p class="noindent" ><a 
+<!--l. 1838--><p class="noindent" ><a 
  id="tailUsersGuidech14.html"></a>  
 </body></html> 
