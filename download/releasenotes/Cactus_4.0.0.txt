@@ -56,3 +56,18 @@ Significant Changes
  - Documentation can now be built in pdf and html.
  - Fix/enable parallel builds for Cactus
 
+Release Trivia
+--------------
+
+ - The name of the release branches is Cactus_4.0.0
+ - The list of thorns included in this release can be downloaded from
+   http://svn.cactuscode.org/Utilities/branches/Cactus_4.0.0/ThornLists/Cactus_4.0.0.th
+ - The Einstein Toolkit (www.einsteintoolkit.org) released their current
+   version "Maxwell" today as well.
+ - A thornlist containing a large collection of components of the just released
+   Cactus framework 4.0.0, the just-released Einstein Toolkit "Maxwell", and
+   the Alpaca project with thorns also marked as compiling with the new Cactus
+   release is available from:
+   https://svn.cactuscode.org/Utilities/branches/Cactus_4.0.0/ThornLists/Cactus_ET_2011_10_Alpaca.th
+
+
