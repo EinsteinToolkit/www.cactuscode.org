@@ -45,3 +45,14 @@ Significant Changes
  - CactusExternal is deprecated, use ExternalLibraries
  - Cactus now handles parameter files with DOS line breaks
  - LocalInterp and LocalReduce are now in CactusNumerical
+ - Cactus now accepts multi-line strings in parameter files.
+ - Parameters in STORAGE specifications are now allowed.
+ - Prototypes for scheduled functions are now generated, which
+   might lead to compiler errors for incorrectly declared functions.
+ - Cactus now checks for, and provides MAKE, TAR, GZIP_CMD, PATCH and GIT
+ - Optional usage of capabilities is now possible.
+ - New configuration flags were added, e.g. for debugging, profiling,
+   openmp and warning options (r4656).
+ - Documentation can now be built in pdf and html.
+ - Fix/enable parallel builds for Cactus
+
