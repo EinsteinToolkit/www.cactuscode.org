@@ -2,7 +2,7 @@ We are pleased to announce a new release of the Cactus computational toolkit,
 an open source problem solving environment designed for scientists and
 engineers. This release includes new features like support for CUDA compilers,
 support for new architectures and comes bundled with supporting tools like
-GetComponents and Simfactory. Also, CactusExternal is now depreciated in favor
+GetComponents and Simfactory. Also, CactusExternal is now deprecated in favor
 of the better infrastructure in ExternalLibraries. In addition, bug fixes
 accumulated since the previous release in February 2009 have been included.
 
@@ -40,8 +40,8 @@ The "4.0.0" Release Team on behalf of the Cactus Framework Group (2011-10-25)
 Significant Changes
 -------------------
 
- - SILENT=no is depreciated, use VERBOSE=yes
- - Compilation is now much quiter by default
- - CactusExternal is depreciated, use ExternalLibraries
+ - SILENT=no is deprecated, use VERBOSE=yes
+ - Compilation is now much quieter by default
+ - CactusExternal is deprecated, use ExternalLibraries
  - Cactus now handles parameter files with DOS line breaks
  - LocalInterp and LocalReduce are now in CactusNumerical
