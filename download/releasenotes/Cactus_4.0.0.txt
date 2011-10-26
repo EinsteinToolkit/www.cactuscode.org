@@ -1,4 +1,4 @@
-We are pleased to announce a new release of the Cactus computational toolkit,
+We are pleased to announce release 4.0.0 of the Cactus computational toolkit,
 an open source problem solving environment designed for scientists and
 engineers. This release includes new features like support for CUDA compilers,
 support for new architectures and comes bundled with supporting tools like
