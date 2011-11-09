@@ -5,7 +5,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <a name="requirements"/></a>
 <h3>Requirements</h3>
 <table> 
- <tr><td style=color:red> Required
+ <tr><td style=color:green> Required
 </td><td style=color:black> Optional 
 </td></tr>
  <tr><td> Perl
@@ -78,6 +78,15 @@ href="/documentation/thorns/">ThornLists</a>):
 </p>
 </ul>
  
+<h4>Method #3: Virtual Machine</h4>
+
+Download VirtualBox <a href="https://www.virtualbox.org/wiki/Downloads">here</a>, then follow the installation instructions.
+
+<code>wget http://www.cct.lsu.edu/~dcastl2/cOS.tgz
+tar -xvvzf http://www.cct.lsu.edu/~dcastl2/cOS.tgz</code>
+
+You may then run VirtualBox. Create a new virtual machine. When prompted whether you want to use a new or existing hard disk, select 'Use Existing Hard Disk',
+then select the CactusOS VirtualBox .vdi file from your VirtualBox VMs folder.
 
 <h3>License</h3> 
 
