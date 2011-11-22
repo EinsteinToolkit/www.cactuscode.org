@@ -1,6 +1,7 @@
 <!-- -*-mode:html;coding:utf-8-*- -->
 <?php $title='Welcome'; $hide_path=1;
-include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
+include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
+include_once('counter.php');?>
 
 <p>
   Cactus is an open source problem solving environment designed for
