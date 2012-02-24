@@ -3,7 +3,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php'); ?>
 
 <p> We recommend using our 
-<a href="/community/mailinglists/index.php">Mailing Lists</a> 
+<a href="/about/mailinglists/index.php">Mailing Lists</a> 
 to ask questions about Cactus concerning how to 
 use and develop for it. If you want to contact the 
 <a href="/about/team/">Cactus Team</a> directly, you can mail to 
