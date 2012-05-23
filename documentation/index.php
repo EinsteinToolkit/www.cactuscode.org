@@ -25,9 +25,11 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
     <ul><p> These tutorials, some of which were presented in past conferences such as 
     TeraGrid, offer an interactive approach to using Cactus; others explain the installation
     and compilation of Cactus on specific architectures. <br></ul></p>
+<!--
   <li><a href="faq">FAQ</a></li>
     <ul><p> Frequently Asked Questions regarding the background, CVS checkout, configuration,
     building, and running of Cactus, in addition to thorn writing and documentation.<br></ul></p>
+-->
   <li><a href="arrangements/">Arrangement Guides</a></li>
     <ul><p> This includes documentation for the CactusWave and CactusEinstein thorn arrangements.
     It gives the purpose of the arrangement and the description of the thorns.<br></ul></p>
