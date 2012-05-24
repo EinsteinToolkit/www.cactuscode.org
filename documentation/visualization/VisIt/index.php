@@ -124,14 +124,20 @@ anonymous checkout:
   svn co https://svn.cactuscode.org/VizTools/CarpetHDF5/trunk/ CarpetHDF5
 </code>
 <p>
-In order to build the CarpetHDF5 plugin you need to have HDF5 (with C++ bindings) and a 
-standard distribution of VisIt installed on your system. For details where to 
-obtain and how to install HDF5 please refer to the Cactus <a href="/documentation/tutorials/hdf5HowTo.txt">HDF5 HOWTO</a> Page.
-</p><p>
+In order to build the CarpetHDF5 plugin you need to have a 
+standard distribution of VisIt already installed on your system.
 To install the package, simply execute the install script contained in the 
 CarpetHDF5 package. If VisIt was properly installed, a window will pop-up. 
-In the "Makefile"-tab modify the library and include path for the HDF5-library 
-to match the installation on your system. Then go to the "File"-menu, save the 
+In the "CMake"-tab modify the library and include path for the HDF5-library 
+which is included in the Visit installation. For example:
+</p>
+<code>
+  CXXFLAGS: -I/path_to_visit/2.5.0/linux-x86_64/include/hdf5/include
+  LDFLAGS: -L/path_to_visit/2.5.0/linux-x86_64/lib
+  LIBS: -lhdf5
+</code>
+<p>
+Then go to the "File"-menu, save the 
 file and close the window. The plugin will then be generated and installed.
 </p><p>
 Note that there may be a problem if several plugins support HDF5
@@ -141,7 +147,27 @@ dialogue.  As a work-around, you can remove all other HDF5-based
 plugins, such as e.g. the PIXIE plugin; alternatively, the command-line
 flag "-assume_format CarpetHDF5" passed to VisIt ensures that all
 HDF5 files are opened with this plugin.
+</p><p>
+There is a known problem with some of the 2.5.0 binaries. When trying to
+compile CarpetHDF5 with this, errors about VISIT_PLUGIN_TARGET_RTOD not being
+defined appear. You can correct this by applying the following patch
+to your visit installation and then retry to compile the CarpetHDF5 plugin:
 </p>
+<code>
+--- visit2_5_0.linux-x86_64.orig/2.5.0/linux-x86_64/include/PluginVsInstall.cmake       2012-05-09 11:34:08.000000000 -0500
++++ visit2_5_0.linux-x86_64/2.5.0/linux-x86_64/include/PluginVsInstall.cmake    2012-05-24 09:51:54.000000000 -0500
+@@ -360,8 +360,8 @@
+     )
+ ENDFUNCTION(ADD_TARGET_DEFINITIONS)
+ 
+-MACRO(VISIT_PLUGIN_TARGET_PREFIX) 
++MACRO(VISIT_PLUGIN_TARGET_RTOD type) 
+     IF(WIN32)
+         SET_TARGET_PROPERTIES(${ARGN} PROPERTIES PREFIX "../lib")
+     ENDIF(WIN32)
+-ENDMACRO(VISIT_PLUGIN_TARGET_PREFIX)
++ENDMACRO(VISIT_PLUGIN_TARGET_RTOD)
+</code>
 
 <h3>Support and Acknowledgements</h3>
 <p>
