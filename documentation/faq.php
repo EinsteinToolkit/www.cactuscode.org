@@ -262,19 +262,17 @@ href="mailto:cactusmaint@cactuscode.org">the CactusMaint mailing list</a>.</p>
         (<code>MPI_Init</code>)? I thought that the Cactus flesh was
         independent of any parallel protocol, why isn't this call made from a
         driver thorn?</a></li>
-      <li><a href="#F4">Is there any way to tell what CVS version of
-        individual source files was used to build an executable?</a></li>
-      <li><a href="#F5">Why is the main routine of Cactus written in C++
+      <li><a href="#F4">Why is the main routine of Cactus written in C++
         (<kbd>src/main/flesh.cc</kbd>) when the rest of the flesh is standard
         ANSI C? More strangely, why does Cactus still compile when I have no
         C++ compiler on my system?</a></li>
-      <li><a href="#F6">Are there grid scalars of type <code>STRING</code>
+      <li><a href="#F5">Are there grid scalars of type <code>STRING</code>
         ?</a></li>
-      <li><a href="#F7">Why don't you use compilers <kbd>mpicc</kbd>,
+      <li><a href="#F6">Why don't you use compilers <kbd>mpicc</kbd>,
         <kbd>mpiCC</kbd> etc when they exist on parallel machines?</a></li>
-      <li><a href="#F8">How does Cactus manage to so seamlessly call Fortran
+      <li><a href="#F7">How does Cactus manage to so seamlessly call Fortran
         routines from C, and vice versa?</a></li>
-      <li><a href="#F9">The documentation says that Cactus parameters are
+      <li><a href="#F8">The documentation says that Cactus parameters are
         read-only, but I can trivially change the value of a parameter in the
         Fortran source code of my thorn.</a></li>
     </ol>
@@ -1554,22 +1552,7 @@ $                          "off")) then
         uglier option.</p>
         </div>
       </li>
-      <li><p><a id="F4">Is there any way to tell what CVS version of
-        individual source files was used to build an executable?</a></p>
-
-        <div class="ANS">
-        <p>Actually there is, just issue the Unix command:</p>
-        <p><code>strings cactus_&lt;<var>config</var>&gt; | grep
-        Header</code></p>
-        <p>to see all the version information for all source files, and</p>
-        <p><code>strings cactus_&lt;<var>config</var>&gt; | grep Header |
-        grep &lt;<var>filename</var>&gt;</code></p>
-        <p>to look for a particular file.</p>
-        <p>(Note that this only works for files using the
-        <code>CCTK_FILEVERSION</code> macro.)</p>
-        </div>
-      </li>
-      <li><p><a id="F5">Why is the main routine of Cactus written in C++
+      <li><p><a id="F4">Why is the main routine of Cactus written in C++
         (<kbd>src/main/flesh.cc</kbd>) when the rest of the flesh is standard
         ANSI C? More strangely, why does Cactus still compile when I have no
         C++ compiler on my system?</a></p>
@@ -1583,7 +1566,7 @@ $                          "off")) then
         compile any thorns containing C++), we use the C compiler instead.</p>
         </div>
       </li>
-      <li><p><a id="F6">Are there grid scalars of type <code>STRING</code>
+      <li><p><a id="F5">Are there grid scalars of type <code>STRING</code>
         ?</a></p>
 
         <div class="ANS">
@@ -1592,7 +1575,7 @@ $                          "off")) then
         length.</p>
         </div>
       </li>
-      <li><p><a id="F7">Why don't you use compilers <kbd>mpicc</kbd>,
+      <li><p><a id="F6">Why don't you use compilers <kbd>mpicc</kbd>,
         <kbd>mpiCC</kbd> etc when they exist on parallel machines?</a></p>
 
         <div class="ANS">
@@ -1607,7 +1590,7 @@ $                          "off")) then
         point we will be reinvestigating this.</p>
         </div>
       </li>
-      <li><p><a id="F8">How does Cactus manage to so seamlessly call Fortran
+      <li><p><a id="F7">How does Cactus manage to so seamlessly call Fortran
         routines from C, and vice versa?</a></p>
 
         <div class="ANS">
@@ -1627,7 +1610,7 @@ $                          "off")) then
         argument list.</p>
         </div>
       </li>
-      <li><p><a id="F9">The documentation says that Cactus parameters are
+      <li><p><a id="F8">The documentation says that Cactus parameters are
         read-only, but I can trivially change the value of a parameter in the
         Fortran source code of my thorn.</a></p>
 
