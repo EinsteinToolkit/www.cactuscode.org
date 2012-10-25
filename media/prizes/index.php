@@ -9,6 +9,14 @@ Over the years, Cactus and its developers have won some of high performance comp
 <ul>
 
 <li>
+<div>
+<a class="float-right" href="hpdc-red.png"><img src="hpdc-red.png" width="200" height="150"></a>
+<br />
+A research paper whose co-authors include LSU's Gabrielle Allen, Werner Benger, Andrew Merzky, and Ed Seidel has been named by the International ACM Symposium on High-Performance Parallel and Distributed Computing (HPDC) as one of the top 20 papers in the past 20 years of publications. HPDC is the premier computer science conference for presenting new research related to high-performance parallel and distributed systems used in both science and industry.  Since its inception, HPDC has been at the center of new discoveries in systems such as clusters, grids, clouds, and parallel and multicore computers.
+</div>
+</li>
+
+<li>
 <a href="http://awards.computer.org/ana/award/viewPastRecipients.action?id=16">IEEE Sidney Fernbach Award (2006)</a>
 <div>
 <a class="float-right" href="EdSeidelSC06.jpg"><img src="EdSeidelSC06.jpg" width="200" height="150"></a>
