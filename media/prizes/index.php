@@ -9,6 +9,7 @@ Over the years, Cactus and its developers have won some of high performance comp
 <ul>
 
 <li>
+<a href="http://www.cct.lsu.edu/news/lsu-cct-receives-top-paper-award-hpdc">Cactus Receives 2012 HPDC Award</a>
 <div>
 <a class="float-right" href="hpdc-red.png"><img src="hpdc-red.png" width="200" height="200"></a>
 <br />
