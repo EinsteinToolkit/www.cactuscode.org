@@ -7,6 +7,9 @@ shallow water equations. CaFunwave is based on the
 <a href="http://chinacat.coastal.udel.edu/programs/funwave/funwave.html">Funwave</a> made available by the University of Delaware.
 </p>
 <p>
+Complete parameter listing: <a href='params.php'>Funwave Parameters</a>
+</p>
+<p>
 <table border="1" cellpadding="5" cellspacing="0">
 <tr>
 <td>
