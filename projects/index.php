@@ -7,10 +7,16 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 </p>
 
 <ul>
+
   <li>
     <a href="www.cct.lsu.edu/~eschnett/alpaca">Alpaca</a> develops Cactus Tools for Application
     Level Profiling and Correctness Analysis
   </li>
+
+  <li>
+    <a href="cafunwave/index.php">CaFunWave</a> is a wave equation solver using GPUs.
+  </li>
+
   <li>
     <a href="http://www.cct.lsu.edu/xirel">XiRel</a> develops a Next
     Generation Infrastructure for Numerical Relativity
