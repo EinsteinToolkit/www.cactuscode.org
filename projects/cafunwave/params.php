@@ -8,7 +8,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <tr><td class='sidenews'>NAME</td><td>earth_a</td></tr>
 <tr><td class='sidenews'>DESC</td><td>"Radius of the Earth"</td></tr>
 <tr><td class='sidenews'>LOWER BOUND</td><td>*</td></tr>
-<tr><td class='sidenews'>UPPER BOUND</td><td>INF</td></tr>
+<tr><td class='sidenews'>UPPER BOUND</td><td>*</td></tr>
 <tr><td class='sidenews'>DEFAULT</td><td>6378137.0</td></tr>
 <tr><td colspan='2' class='sidenews'>&nbsp;</td></tr>
 <tr><td class='sidenews'>TYPE</td><td>REAL</td></tr>
@@ -17,7 +17,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <tr><td class='sidenews'>NAME</td><td>earth_b</td></tr>
 <tr><td class='sidenews'>DESC</td><td>"Radius of the Earth"</td></tr>
 <tr><td class='sidenews'>LOWER BOUND</td><td>*</td></tr>
-<tr><td class='sidenews'>UPPER BOUND</td><td>INF</td></tr>
+<tr><td class='sidenews'>UPPER BOUND</td><td>*</td></tr>
 <tr><td class='sidenews'>DEFAULT</td><td>6356752.314245</td></tr>
 <tr><td colspan='2' class='sidenews'>&nbsp;</td></tr>
 <tr><td class='sidenews'>TYPE</td><td>REAL</td></tr>
@@ -26,7 +26,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <tr><td class='sidenews'>NAME</td><td>xmin</td></tr>
 <tr><td class='sidenews'>DESC</td><td>"Minimum in x-direction of the window to be read"</td></tr>
 <tr><td class='sidenews'>LOWER BOUND</td><td>*</td></tr>
-<tr><td class='sidenews'>UPPER BOUND</td><td>INF</td></tr>
+<tr><td class='sidenews'>UPPER BOUND</td><td>*</td></tr>
 <tr><td class='sidenews'>DEFAULT</td><td>0.0</td></tr>
 <tr><td colspan='2' class='sidenews'>&nbsp;</td></tr>
 <tr><td class='sidenews'>TYPE</td><td>REAL</td></tr>
@@ -35,7 +35,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <tr><td class='sidenews'>NAME</td><td>xmax</td></tr>
 <tr><td class='sidenews'>DESC</td><td>"Maximum in x-direction of the window to be read"</td></tr>
 <tr><td class='sidenews'>LOWER BOUND</td><td>*</td></tr>
-<tr><td class='sidenews'>UPPER BOUND</td><td>INF</td></tr>
+<tr><td class='sidenews'>UPPER BOUND</td><td>*</td></tr>
 <tr><td class='sidenews'>DEFAULT</td><td>1.0</td></tr>
 <tr><td colspan='2' class='sidenews'>&nbsp;</td></tr>
 <tr><td class='sidenews'>TYPE</td><td>REAL</td></tr>
@@ -44,7 +44,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <tr><td class='sidenews'>NAME</td><td>ymin</td></tr>
 <tr><td class='sidenews'>DESC</td><td>"Minimum in y-direction of the window to be read"</td></tr>
 <tr><td class='sidenews'>LOWER BOUND</td><td>*</td></tr>
-<tr><td class='sidenews'>UPPER BOUND</td><td>INF</td></tr>
+<tr><td class='sidenews'>UPPER BOUND</td><td>*</td></tr>
 <tr><td class='sidenews'>DEFAULT</td><td>0.0</td></tr>
 <tr><td colspan='2' class='sidenews'>&nbsp;</td></tr>
 <tr><td class='sidenews'>TYPE</td><td>REAL</td></tr>
@@ -53,7 +53,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 <tr><td class='sidenews'>NAME</td><td>ymax</td></tr>
 <tr><td class='sidenews'>DESC</td><td>"Maximum in y-direction of the window to be read"</td></tr>
 <tr><td class='sidenews'>LOWER BOUND</td><td>*</td></tr>
-<tr><td class='sidenews'>UPPER BOUND</td><td>INF</td></tr>
+<tr><td class='sidenews'>UPPER BOUND</td><td>*</td></tr>
 <tr><td class='sidenews'>DEFAULT</td><td>1.0</td></tr>
 <tr><td colspan='2' class='sidenews'>&nbsp;</td></tr>
 <tr><td class='sidenews'>TYPE</td><td>KEYWORD</td></tr>
