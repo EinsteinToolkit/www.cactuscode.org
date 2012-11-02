@@ -10,17 +10,17 @@ shallow water equations. CaFunwave is based on the
 <table border="1" cellpadding="5" cellspacing="0">
 <tr>
 <td>
-<img src="images/water.png">
+<img src="images/water-300.png">
 </td>
 </tr>
 <tr>
 <td>
-<img src="images/bottom.png">
+<img src="images/bottom-300.png">
 </td>
 </tr>
 <tr>
 <td>
-<img src="images/funwave-amr.png">
+<img src="images/funwave-amr-300.png">
 </tr>
 </td>
 </table>
