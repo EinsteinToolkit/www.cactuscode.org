@@ -1,0 +1,101 @@
+# This file was automatically generated using the GetComponents script.
+
+!CRL_VERSION = 1.0
+
+
+# Component list: funwave.th
+
+
+!DEFINE ROOT = Cactus
+!DEFINE ARR = $ROOT/arrangements
+
+# Cactus Flesh
+!TARGET   = $ROOT
+!TYPE     = svn
+!AUTH_URL = https://svn.cactuscode.org/flesh/trunk
+!URL      = http://svn.cactuscode.org/flesh/trunk
+!CHECKOUT = Cactus
+!NAME     = . 
+
+!TARGET = $ARR
+!TYPE   = svn
+!AUTH_URL = https://svn.cct.lsu.edu/repos/projects/ngchc/code/$1/$2
+!URL = http://svn.cct.lsu.edu/repos/projects/ngchc/code/$1/$2
+!CHECKOUT =
+CactusCoastal/Funwave
+CactusCoastal/Tridiagonal
+
+# Cactus thorns
+!TARGET   = $ARR
+!TYPE     = svn
+!AUTH_URL = https://svn.cactuscode.org/arrangements/$1/$2/trunk
+!URL      = http://svn.cactuscode.org/arrangements/$1/$2/trunk
+!CHECKOUT = 
+CactusPUGH/PUGH
+CactusPUGH/PUGHReduce
+
+CactusBase/CoordBase
+CactusBase/IOUtil
+CactusBase/CartGrid3D
+CactusBase/SymBase
+CactusBase/Boundary
+CactusBase/InitBase
+
+CactusNumerical/MoL
+
+CactusIO/IOJpeg
+CactusPUGH/PUGHSlab
+CactusBase/IOASCII    
+CactusBase/IOBasic
+
+CactusNumerical/Dissipation
+CactusNumerical/SpaceMask
+CactusNumerical/SphericalSurface
+CactusNumerical/LocalReduce
+
+
+# Carpet, the AMR driver
+!TARGET   = $ARR
+!TYPE     = hg
+!AUTH_URL = ssh://carpetmercurial@carpetcode.org/carpet
+!URL      = http://www.carpetcode.org/hg/carpet
+# For the git version of Carpet, comment the previous three lines and uncomment
+# the next three
+#!TYPE     = git
+#!AUTH_URL = carpetgit@carpetcode.org:carpet
+#!URL      = git://carpetcode.org/carpet
+!CHECKOUT = Carpet/doc
+Carpet/Carpet
+Carpet/CarpetIOASCII
+Carpet/CarpetIOBasic
+Carpet/CarpetReduce
+Carpet/CarpetSlab
+Carpet/CarpetLib
+Carpet/LoopControl
+Carpet/CarpetRegrid2
+Carpet/CarpetIOScalar
+
+# Additional Cactus thorns
+!TARGET   = $ARR
+!TYPE     = svn
+!AUTH_URL = https://svn.cactuscode.org/projects/$1/$2/trunk
+!URL      = http://svn.cactuscode.org/projects/$1/$2/trunk
+!CHECKOUT =
+ExternalLibraries/libjpeg
+ExternalLibraries/GSL
+
+# Simulation Factory
+!TARGET   = $ROOT
+!TYPE     = svn
+!URL      = https://svn.cct.lsu.edu/repos/numrel/$1/trunk
+!CHECKOUT = simfactory2
+!NAME     = simfactory
+
+# Various thorns from LSU
+!TARGET   = $ARR
+!TYPE     = svn
+!URL      = https://svn.cct.lsu.edu/repos/numrel/$1/$2/trunk
+!CHECKOUT =
+LSUThorns/Vectors
+#LSUThorns/QuasiLocalMeasures
+#LSUThorns/SummationByParts
