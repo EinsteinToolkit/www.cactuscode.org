@@ -9,7 +9,7 @@ curl -O https://raw.github.com/gridaphobe/CRL/master/GetComponents
 chmod a+x GetComponents
 
 ./GetComponents --parallel \
-    https://svn.cct.lsu.edu/repos/projects/ngchc/code/CactusCoastal/Funwave/thornlists/funwave_carpet.th
+    https://svn.cct.lsu.edu/repos/projects/ngchc/code/CactusCoastal/funwave_carpet.th
 </pre>
 
 To build, follow the instructions on the
