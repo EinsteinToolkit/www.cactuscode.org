@@ -1,5 +1,6 @@
 <p class="align-right"> November 2012
 	<li><a href="/media/news/cactus_4.1.0">Cactus 4.1.0 release</a></li>
+	<li><a href="/media/news/ET_2012_11">Einstein Toolkit "Ørsted" release</a></li>
 <p class="align-right"> May 2012
 	<li><a href="/media/news/ET_2012_05">Einstein Toolkit "Lovelave" release</a></li>
 <p class="align-right"> October 2011
