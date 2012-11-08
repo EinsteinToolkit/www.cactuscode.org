@@ -175,5 +175,5 @@ thorns  changed  name,  also indicated in this table.
 
 
 
-<h3 class="align-right">Apr 26 2010 — knarf</h3>
+<h3 class="align-right">Apr 26 2010 — Frank Löffler</h3>
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
