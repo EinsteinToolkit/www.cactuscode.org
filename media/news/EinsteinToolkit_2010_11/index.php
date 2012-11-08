@@ -9,5 +9,5 @@ The branch <code>ET_2010_11</code> was added to all corresponding repositories,
 including the Cactus repositories.
 </p>
 
-<h3 class="align-right">23 Nov 2010 — knarf</h3>
+<h3 class="align-right">23 Nov 2010 — Frank Löffler</h3>
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>

@@ -10,5 +10,5 @@ information can be found
 <a href="http://www.whiskycode.org/events/whiskyretreatV/WhiskyRetreat_V.html">here</a>.
 </p>
 
-<h3 class="align-right">7 November 2009 — knarf</h3>
+<h3 class="align-right">7 November 2009 — Frank Löffler</h3>
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
