@@ -14,37 +14,16 @@ team:
 <h3>Current</h3>
 
 <ul> <li><a href="gallen">Gabrielle Allen</a>
-<br />Lead of Cactus project at 
+<br />Former lead of Cactus project at 
 <a href="http://www.lsu.edu/">LSU</a> and inactive developer</li> <br />
 
-<li> <a href="ebentivegna">Eloisa Bentivegna</a>
-<br />Postdoc researcher at the 
-<a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at 
-<a href="http://www.lsu.edu/">LSU</a></li> <br />
-
-<li> <a href="rcross">Robert Cross</a>
-<br />Undergraduate student at the 
-<a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at 
-<a href="http://www.lsu.edu/">LSU</a></li> <br />
-
-<li> <a href="ljiang">Lei Jiang</a>
-<br />Graduate student in Computer Science at 
-<a href="http://www.lsu.edu/">LSU</a></li> <br />
-
-<li> <a href="sko">Soon-Heum Ko</a>
-<br />Postdoc researcher at the 
-<a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at 
-<a href="http://www.lsu.edu/">LSU</a></li> <br />
-
-<li> Oleg Korobkin
-<br />Graduate student at the 
-<a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> 
-and the 
-<a href="http://www.phys.lsu.edu/">Department of Physics &amp; Astronomy</a> at 
-<a href="http://www.lsu.edu/">LSU</a></li> <br />
-
 <li> <a href="floeffler">Frank Löffler</a>
-<br />Postdoc researcher at the 
+<br />Co-lead of the Cactus project at the 
+<a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at 
+<a href="http://www.lsu.edu/">LSU</a></li> <br />
+
+<li> <a href="sbrandt">Steven R. Brandt</a>
+<br />Co-lead of the Cactus project at the 
 <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at 
 <a href="http://www.lsu.edu/">LSU</a></li> <br />
 
@@ -58,27 +37,34 @@ at the
 
 <li> <a href="eschnetter">Erik Schnetter</a>
 <br />Scientist in the 
-<a href="http://www.cct.lsu.edu/numerical/">Numerical Relativity Group</a> at the 
-<a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> 
-and the 
-<a href="http://www.phys.lsu.edu/">Department of Physics &amp; Astronomy</a> at 
-<a href="http://www.lsu.edu/">LSU</a></li> <br />
+<a href="http://www.perimeterinstitute.ca/">Perimeter Institute for Theoretical Physics</a></li> <br />
 
-<li> <a href="ericseidel">Eric Seidel</a>
-<br />Undergraduate student in computer science at City College, City University of New York
-</li> <br />
+<li> <a href="haas">Roland Haas</a>
+<br />Postdoc researcher at
+<a href="http://www.caltech.edu/" title="Caltech">Caltech</a></li> <br />
 
+<li> <a href="hinder">Ian Hinder</a>
+<br />Postdoc researcher at the 
+<a href="http://www.aei.mpg.de/english/contemporaryIssues/home/index.php" title="AEI">AEI</a></li> <br />
+
+<li> <a href="ebentivegna">Eloisa Bentivegna</a>
+<br />Postdoc researcher at the 
+<a href="http://www.aei.mpg.de/english/contemporaryIssues/home/index.php" title="AEI">AEI</a></li> <br />
 
 <li> <a href="jtao">Jian Tao</a>
-<br />Postdoc researcher at the 
+<br />Research Staff at the 
 <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at 
 <a href="http://www.lsu.edu/">LSU</a></li> <br />
 
-<li> <a href="azebrowski">Ashley Zebrowski</a>
-<br />Graduate student at the 
+<li> <a href="dcastl">Dennis Castleberry</a>
+<br />Graduate Student at the
 <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at 
 <a href="http://www.lsu.edu/">LSU</a></li> <br />
-</ul>
+
+<li> <a href="hari">Hari Krishnan</a>
+<br />Graduate Student at the
+<a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at 
+<a href="http://www.lsu.edu/">LSU</a></li> <br />
 
 <h3>Alumni</h3>
 
@@ -89,6 +75,12 @@ and the
 </li><li>Gerd Lanfermann
 </li><li>Thomas Radke
 </li><li>Steve White
+</li><li>Robert Cross
+</li><li>Lei Jiang
+</li><li>Soon-Heum Ko
+</li><li>Oleg Korobkin
+</li><li>Eric Seidel
+</li><li>Ashley Zebrowski
 </ul>
 
 <?php
