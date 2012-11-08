@@ -39,6 +39,10 @@ at the
 <br />Scientist in the 
 <a href="http://www.perimeterinstitute.ca/">Perimeter Institute for Theoretical Physics</a></li> <br />
 
+<li> <a href="cott">Christian D. Ott</a>
+<br />Assistant Professor of Theoretical Astrophysics at
+<a href="http://www.caltech.edu/" title="Caltech">Caltech</a></li> <br />
+
 <li> <a href="haas">Roland Haas</a>
 <br />Postdoc researcher at
 <a href="http://www.caltech.edu/" title="Caltech">Caltech</a></li> <br />
