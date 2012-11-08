@@ -43,7 +43,15 @@ at the
 <br />Postdoc researcher at
 <a href="http://www.caltech.edu/" title="Caltech">Caltech</a></li> <br />
 
+<li> <a href="tbode">Tanja Bode</a>
+<br />Postdoc researcher at
+<a href="http://www.gatech.edu/" title="Gatech">Gatech</a></li> <br />
+
 <li> <a href="hinder">Ian Hinder</a>
+<br />Postdoc researcher at the 
+<a href="http://www.aei.mpg.de/english/contemporaryIssues/home/index.php" title="AEI">AEI</a></li> <br />
+
+<li> <a href="mundim">Bruno Mundim</a>
 <br />Postdoc researcher at the 
 <a href="http://www.aei.mpg.de/english/contemporaryIssues/home/index.php" title="AEI">AEI</a></li> <br />
 
