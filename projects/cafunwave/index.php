@@ -32,4 +32,15 @@ Complete parameter listing: <a href='params.php'>Funwave Parameters</a>
 </table>
 </p>
 
+<p>
+<b>Current version:</b> FW_2012_11
+</p>
+<p>
+<b>Developers of CaFunwave:</b>
+Steven R. Brandt,
+Frank Loeffler,
+Jian Tao, and
+Terrance K. Pat
+</p>
+
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
