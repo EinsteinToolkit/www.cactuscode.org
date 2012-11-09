@@ -1,0 +1,144 @@
+
+#Reorder the parameters for easy comparison to the input.txt in example 3
+ActiveThorns = "CoordBase FunWave FunwaveCoord CartGrid3D Carpet
+	CarpetIOASCII CartGrid3D IOUtil CarpetIOBasic CarpetSlab
+	Boundary SymBase MoL CarpetReduce LocalReduce InitBase
+	CarpetLib LoopControl Tridiagonal HDF5 CarpetIOHDF5"
+
+#----------------------------------------------------
+# Flesh and CCTK parameters
+#----------------------------------------------------
+
+# flesh
+Cactus::cctk_run_title = "Test Run"
+Cactus::cctk_show_schedule = "yes"
+Cactus::cctk_itlast = 3000
+Cactus::allow_mixeddim_gfs = "yes"
+
+# CartGrid3D
+CartGrid3D::type = "coordbase"
+CartGrid3D::avoid_origin = "no"
+CoordBase::domainsize = "minmax"
+CoordBase::spacing    = "gridspacing"
+CoordBase::xmin =  0
+CoordBase::xmax =  295.0
+CoordBase::ymin =  0
+CoordBase::ymax =  95.0
+CoordBase::zmin =  0.0
+CoordBase::zmax =  0.0
+CoordBase::dx   =  0.5
+CoordBase::dy   =  0.5
+
+CoordBase::boundary_size_x_lower     = 3
+CoordBase::boundary_size_x_upper     = 3
+CoordBase::boundary_size_y_lower     = 3
+CoordBase::boundary_size_y_upper     = 3
+CoordBase::boundary_size_z_lower     = 0
+CoordBase::boundary_size_z_upper     = 0
+CoordBase::boundary_shiftout_x_lower = 1
+CoordBase::boundary_shiftout_x_upper = 1
+CoordBase::boundary_shiftout_y_lower = 1
+CoordBase::boundary_shiftout_y_upper = 1
+CoordBase::boundary_shiftout_z_lower = 1
+CoordBase::boundary_shiftout_z_upper = 1
+
+# Carpet
+Carpet::domain_from_coordbase = "yes"
+Carpet::ghost_size_x = 3
+Carpet::ghost_size_y = 3
+Carpet::ghost_size_z = 1
+carpet::adaptive_stepsize = yes
+
+# MoL
+MoL::ODE_Method = "RK3"
+MoL::disable_prolongation        = "yes"
+
+# the output dir will be named after the parameter file name
+IO::out_dir = $parfile
+IO::out_fileinfo="none"
+IOBasic::outInfo_every = 10
+IOBasic::outInfo_vars = "FunWave::eta"
+
+IOASCII::out2D_every = 100
+IOASCII::out2D_xyplane_z = 0
+IOASCII::out2D_vars = "FunWave::eta FunWave::u FunWave::v  Funwave::depth"
+IOASCII::out2D_xz = "no"
+IOASCII::out2D_yz = "no"
+IOASCII::output_ghost_points = "no"
+
+
+#----------------------------------------------------
+# Funwave parameters
+#----------------------------------------------------
+
+# Funwave depth 
+FunWave::depth_type = "data"
+FunWave::depth_format = "ele"
+FunWave::depth_file = "island.txt"
+FunWave::depth_flat = 0.8
+FunWave::depth_xslp = 10.0
+FunWave::depth_slope = 0.05
+FunWave::depth_file_offset_x = -3
+FunWave::depth_file_offset_y = -3
+FunWave::dt_size = 0
+
+# Funwave wind forcing
+Funwave::wind_force = false
+Funwave::use_wind_mask = false
+Funwave::num_time_wind_data = 2
+Funwave::timewind[0] = 0
+Funwave::wu[0] = 25
+Funwave::wv[0] = 50
+Funwave::timewind[1] = 1000
+Funwave::wu[1] = 100
+Funwave::wv[1] = 100
+Funwave::boundary = funwave
+
+# Funwave wave maker
+FunWave::wavemaker_type = "ini_gau"
+FunWave::xc = 56.5
+FunWave::yc = 56.9
+FunWave::amp =  10
+FunWave::wid =  10
+
+# Funwave sponge 
+FunWave::sponge_on = "no"
+FunWave::sponge_west_width = 2.0
+FunWave::sponge_east_width = 2.0
+FunWave::sponge_north_width = 0.0
+FunWave::sponge_south_width = 0.0
+FunWave::sponge_decay_rate = 0.9
+FunWave::sponge_damping_magnitude = 5.0
+
+# Funwave dispersion (example 3 enables dispersion)
+FunWave::dispersion_on = "false"
+FunWave::gamma1 = 1.0
+FunWave::gamma2 = 1.0
+FunWave::gamma3 = 1.0
+FunWave::beta_ref = -0.531
+FunWave::swe_eta_dep = 0.80
+FunWave::cd = 0.0
+
+# Funwave numerics (MoL parameter controls time integration scheme)
+FunWave::reconstruction_scheme = "fourth"
+FunWave::riemann_solver = "HLLC"
+FunWave::dtfac = 0.5
+FunWave::froudecap = 10.0
+FunWave::mindepth = 0.001
+FunWave::mindepthfrc = 0.001
+FunWave::enable_masks = "true"
+Funwave::estimate_dt_on = "true"
+
+FunwaveCoord::earth_a = 6371000.0
+FunwaveCoord::earth_b = 6371000.0
+
+FunwaveCoord::lat_south = 10.1
+FunwaveCoord::spherical_coordinates = no
+
+# HDF5 output only for initial data
+IOHDF5::out_every = 100
+IOHDF5::out_vars  = "Funwave::eta Funwave::depth"
+IOHDF5::out2d_every = 100
+IOHDF5::out2d_vars  = "Funwave::eta Funwave::depth"
+IOHDF5::out2d_xy = "yes"
+
