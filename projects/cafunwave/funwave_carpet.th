@@ -5,31 +5,33 @@
 
 # Component list: funwave.th
 
-
-!DEFINE ROOT = Cactus
+!DEFINE ROOT = CactusFW
 !DEFINE ARR = $ROOT/arrangements
+!DEFINE ET_RELEASE = ET_2012_11
+!DEFINE FW_RELEASE = FW_2012_11
 
 # Cactus Flesh
 !TARGET   = $ROOT
 !TYPE     = svn
-!AUTH_URL = https://svn.cactuscode.org/flesh/trunk
-!URL      = http://svn.cactuscode.org/flesh/trunk
+!AUTH_URL = https://svn.cactuscode.org/flesh/branches/$ET_RELEASE
+!URL      = http://svn.cactuscode.org/flesh/branches/$ET_RELEASE
 !CHECKOUT = Cactus
 !NAME     = . 
 
 !TARGET = $ARR
 !TYPE   = svn
-!AUTH_URL = https://svn.cct.lsu.edu/repos/projects/ngchc/code/$1/$2
-!URL = http://svn.cct.lsu.edu/repos/projects/ngchc/code/$1/$2
+#!AUTH_URL = https://svn.cct.lsu.edu/repos/projects/ngchc/code/branches/$FW_RELEASE/$1/$2
+!URL = https://svn.cct.lsu.edu/repos/projects/ngchc/code/branches/$FW_RELEASE/$2
 !CHECKOUT =
 CactusCoastal/Funwave
+CactusCoastal/FunwaveMesh
 CactusCoastal/Tridiagonal
 
 # Cactus thorns
 !TARGET   = $ARR
 !TYPE     = svn
-!AUTH_URL = https://svn.cactuscode.org/arrangements/$1/$2/trunk
-!URL      = http://svn.cactuscode.org/arrangements/$1/$2/trunk
+!AUTH_URL = https://svn.cactuscode.org/arrangements/$1/$2/branches/$ET_RELEASE
+!URL      = http://svn.cactuscode.org/arrangements/$1/$2/branches/$ET_RELEASE
 !CHECKOUT = 
 CactusPUGH/PUGH
 CactusPUGH/PUGHReduce
@@ -56,14 +58,15 @@ CactusNumerical/LocalReduce
 
 # Carpet, the AMR driver
 !TARGET   = $ARR
-!TYPE     = hg
-!AUTH_URL = ssh://carpetmercurial@carpetcode.org/carpet
-!URL      = http://www.carpetcode.org/hg/carpet
-# For the git version of Carpet, comment the previous three lines and uncomment
+!TYPE     = git
+!AUTH_URL = carpetgit@carpetcode.org:carpet
+!URL      = git://carpetcode.org/carpet
+!REPO_BRANCH = $ET_RELEASE
+# For the (old) hg version of Carpet, comment the previous three lines and uncomment
 # the next three
-#!TYPE     = git
-#!AUTH_URL = carpetgit@carpetcode.org:carpet
-#!URL      = git://carpetcode.org/carpet
+#!TYPE     = hg
+#!AUTH_URL = ssh://carpetgit@carpetcode.org
+#!URL      = http://www.carpetcode.org/carpet
 !CHECKOUT = Carpet/doc
 Carpet/Carpet
 Carpet/CarpetIOASCII
@@ -78,23 +81,24 @@ Carpet/CarpetIOScalar
 # Additional Cactus thorns
 !TARGET   = $ARR
 !TYPE     = svn
-!AUTH_URL = https://svn.cactuscode.org/projects/$1/$2/trunk
-!URL      = http://svn.cactuscode.org/projects/$1/$2/trunk
+!AUTH_URL = https://svn.cactuscode.org/projects/$1/$2/branches/$ET_RELEASE
+!URL      = http://svn.cactuscode.org/projects/$1/$2/branches/$ET_RELEASE
 !CHECKOUT =
 ExternalLibraries/libjpeg
 ExternalLibraries/GSL
+ExternalLibraries/MPI
 
 # Simulation Factory
 !TARGET   = $ROOT
 !TYPE     = svn
-!URL      = https://svn.cct.lsu.edu/repos/numrel/$1/trunk
+!URL      = https://svn.cct.lsu.edu/repos/numrel/$1/branches/$ET_RELEASE
 !CHECKOUT = simfactory2
 !NAME     = simfactory
 
 # Various thorns from LSU
 !TARGET   = $ARR
 !TYPE     = svn
-!URL      = https://svn.cct.lsu.edu/repos/numrel/$1/$2/trunk
+!URL      = https://svn.cct.lsu.edu/repos/numrel/$1/$2/branches/$ET_RELEASE
 !CHECKOUT =
 LSUThorns/Vectors
 #LSUThorns/QuasiLocalMeasures
