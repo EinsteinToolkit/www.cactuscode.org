@@ -25,6 +25,7 @@
 !CHECKOUT =
 CactusCoastal/Funwave
 CactusCoastal/FunwaveMesh
+CactusCoastal/FunwaveCoord
 CactusCoastal/Tridiagonal
 
 # Cactus thorns
