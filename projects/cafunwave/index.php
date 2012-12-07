@@ -39,7 +39,8 @@ Complete parameter listing: <a href='params.php'>Funwave Parameters</a>
 <b>Developers of CaFunwave:</b>
 Steven R. Brandt,
 Frank Loeffler,
-Jian Tao, and
+Jian Tao, 
+Fengyan Shi, and
 Terrance K. Pat
 </p>
 
