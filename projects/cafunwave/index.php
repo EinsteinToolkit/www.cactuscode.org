@@ -40,8 +40,9 @@ Complete parameter listing: <a href='params.php'>Funwave Parameters</a>
 Steven R. Brandt,
 Frank Loeffler,
 Jian Tao, 
-Fengyan Shi, and
-Terrance K. Pat
+Fengyan Shi,
+Terrance K. Pat, and
+Qin Chen
 </p>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
