@@ -1,6 +1,8 @@
 <?php $title='Cactus-related Projects';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
+The current release of Funwave is FW_2013_03.
+
 Downloading Funwave + Cactus consists of the following steps:
 
 <pre>
