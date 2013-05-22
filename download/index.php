@@ -38,7 +38,7 @@ but you can use your own customized thornlist.</p>
 
 <p> Download 
 <a href="GetComponents.php">GetComponents</a> and make sure it is executable. 
-<code>wget --no-check-certificate https://raw.github.com/gridaphobe/CRL/Cactus_4.1.0/GetComponents
+<code>wget --no-check-certificate https://raw.github.com/gridaphobe/CRL/Cactus_4.2.0/GetComponents
 chmod a+x GetComponents </code></p>
 
 <p> To checkout the Cactus flesh and required thorns, choose and save one of
@@ -63,7 +63,7 @@ components. It supports both http and https connections, but only https can
 be used for authenticated logins, e.g. for commits to the repositories.  </p>
 
 <p> Check out the Cactus flesh: 
-<code>svn co http://svn.cactuscode.org/flesh/branches/Cactus_4.1.0 Cactus</code> 
+<code>svn co http://svn.cactuscode.org/flesh/branches/Cactus_4.2.0 Cactus</code> 
 Move to the arrangements directory of the Cactus installation and install the
 required arrangements and thorns: 
 <code>cd Cactus/arrangements</code> 
@@ -74,7 +74,7 @@ we just describe checking out from the Cactus distribution.  </p>
 <p> To checkout individual thorns (e.g. see our standard <a
 href="/documentation/thorns/">ThornLists</a>):
 
-<code>svn co http://svn.cactuscode.org/arrangements/&lt;<var>arrangement</var>&gt;/&lt;<var>thorn</var>&gt;/branches/Cactus_4.1.0 &lt;<var>thorn</var>&gt;</code>
+<code>svn co http://svn.cactuscode.org/arrangements/&lt;<var>arrangement</var>&gt;/&lt;<var>thorn</var>&gt;/branches/Cactus_4.2.0 &lt;<var>thorn</var>&gt;</code>
 </p>
 </ul>
 <!--
