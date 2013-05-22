@@ -20,10 +20,10 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 <li> The Cactus Computational Toolkit includes thorns supported and developed by the Cactus Team that provide general computational infrastructure<br>
  <a href="https://svn.cactuscode.org/Utilities/trunk/ThornLists/Cactus_devel.th"
    >development version</a>,
+ <a href="https://svn.cactuscode.org/Utilities/branches/Cactus_4.2.0/ThornLists/Cactus_4.2.0.th"
+   >current stable version 4.2.0</a>
  <a href="https://svn.cactuscode.org/Utilities/branches/Cactus_4.1.0/ThornLists/Cactus_4.1.0.th"
-   >current stable version 4.1.0</a>
- <a href="https://svn.cactuscode.org/Utilities/branches/Cactus_4.0.0/ThornLists/Cactus_4.0.0.th"
-   >old stable version 4.0.0</a>
+   >old stable version 4.1.0</a>
 </li>
 
 <li>The WaveToy example  evolves a 3D scalar field. This application is one of the simplest examples of a solving a hyperbolic partial differential equation using finite differences, and so provides a very good learning example of how a PDE can be solved within the Cactus framework. The WaveToy application is provided in each of the programming languages supported by Cactus.  <br>
