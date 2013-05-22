@@ -1,15 +1,14 @@
 <p class="align-right"> May 2013
 	<li><a href="/media/news/ET_2013_05">Einstein Toolkit "Gauss" release</a></li>
-<p class="align-right"> May 2013
 	<li><a href="/media/news/cactus_4.2.0">Cactus 4.2.0 release</a></li>
 <p class="align-right"> November 2012
-	<li><a href="/media/news/cactus_4.1.0">Cactus 4.1.0 release</a></li>
 	<li><a href="/media/news/ET_2012_11">Einstein Toolkit "Ørsted" release</a></li>
+	<li><a href="/media/news/cactus_4.1.0">Cactus 4.1.0 release</a></li>
 <p class="align-right"> May 2012
 	<li><a href="/media/news/ET_2012_05">Einstein Toolkit "Lovelave" release</a></li>
 <p class="align-right"> October 2011
-	<li><a href="/media/news/cactus_4.0.0">Cactus 4.0.0 release</a></li>
 	<li><a href="/media/news/ET_2011_10">Einstein Toolkit "Maxwell" release</a></li>
+	<li><a href="/media/news/cactus_4.0.0">Cactus 4.0.0 release</a></li>
 <p class="align-right"> August 2011
 <li><a href="/media/news/hpcwire">Cactus Mentioned in HPC Wire Article</a></li>
 <p class="align-right"> July 2011
