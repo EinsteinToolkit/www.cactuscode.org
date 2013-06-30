@@ -94,9 +94,13 @@ be obtained with the command-line flag -nopty.
 
 <h2>The CarpetHDF5 package</h2>
 <p>
-Datafiles written in the HDF5 file format (as created by various I/O methods in 
-Cactus) cannot be read by one of the built-in VisIt database plugins. For that 
+Starting with VisIt version 2.5
+datafiles written in the HDF5 file format (as created by various I/O methods in 
+Cactus) can be read by the built-in VisIt database plugins. 
+
+Older versions of VisIt do not yet include the database plugin. For that
 reason appropriate readers must be provided as external database plugins.
+This is also required is the very newest version of the reader is required.
 </p><p>
 The CarpetHDF5 package provides such readers as runtime-loadable plugins to 
 be used in a standard installation of VisIt.
