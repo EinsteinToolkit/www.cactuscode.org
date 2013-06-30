@@ -100,7 +100,7 @@ Cactus) can be read by the built-in VisIt database plugins.
 
 Older versions of VisIt do not yet include the database plugin. For that
 reason appropriate readers must be provided as external database plugins.
-This is also required is the very newest version of the reader is required.
+This is also required if the very newest version of the reader is needed.
 </p><p>
 The CarpetHDF5 package provides such readers as runtime-loadable plugins to 
 be used in a standard installation of VisIt.
