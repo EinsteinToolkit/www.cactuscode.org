@@ -9,30 +9,17 @@ $section='visualization';?>
 
 	<h3>Gnuplot - Powerful Visualization Tool for 1D and 2D Data</h3>
 
-	<table>
-	    <tr>
-	      <td valign="top" width="70%">
-		<p>
+  <p>
+   <a href="gnuPlot1.gif"
+    ><img border="0" align="right" width="300" height="150" src="gnuPlot1.gif" alt="Gnuplot Image">
+   </a>
 		  Gnuplot is a command-driven interactive function plotting program.  It can plot functions and data points in both two- and three-dimensional plots in various formats (points, lines, surfaces, contours).  A set of built-in terminal drivers support many different graphics devices, eg. for plotting to different types of terminals or for generating GIF, postscript, latex files.
-		</p>
-		
-		<p>
-		  Gnuplot is free software. It is available on a variety of platforms and architectures.
-		</p>
+  </p>
+  <p>
+	  Gnuplot is free software. It is available on a variety of platforms and architectures.
+	</p>
 
-	      </td>
-
-	      <td valign="top">
-		<a href="gnuPlot1.gif">
-		  <img border="0" align="right" width="300" height="150" src="gnuPlot1.gif"
-		    alt="Gnuplot Image"></a>
-	      </td>
-	    </tr>
-
-	    <tr>
-
-	      <td colspan=2>
-		<p>
+	<p>
 		  The gnuplot home page <a
 		    href="http://www.gnuplot.info"> www.gnuplot.info</a> provides the latest official release, along with documentation, a FAQ list, and links to more information.  Gnuplot development is managed by SourceForge. The latest development source code version can be checked out on the
 		  <a href="http://sourceforge.net/projects/gnuplot/">SourceForge CVS page for gnuplot</a>. The SourceForge ftp server also contains <a href="ftp://gnuplot.sourceforge.net/pub/gnuplot/"> development tarballs with source code and binaries</a> of the most recent stable gnuplot version.
@@ -41,19 +28,10 @@ $section='visualization';?>
 		  Since in many software distributions only an older version of gnuplot is included, we provide
 <a href="http://jean-luc.aei.mpg.de/Codes/gnuplot/">  statically linked Linux executables of gnuplot 4.0.0</a> (with mouse support for rotating/scaling/zooming and pm3d support for drawing color/gray maps and surfaces).
 		</p>
-	      </td>
-	    </tr>
-	  </table>
 
-	  <table width="100%">
-
-	    <tr>
-	      <td align=left valign=top>
-		<H1>Using gnuplot with Cactus</H1>
+		<H3>Using gnuplot with Cactus</H3>
 		<P><STRONG>Erik Schnetter</STRONG></P>
 		<P><STRONG>June 17, 2001</STRONG></P>
-	      </td>
-	  </table>
 
 	  <H3>Abstract:</H3>
 	  <p>
