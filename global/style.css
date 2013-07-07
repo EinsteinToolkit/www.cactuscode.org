@@ -102,7 +102,8 @@ blockquote
 	font: bold 1.3em/1.5em Verdana, 'Trebuchet MS', Tahoma, arial, Sans-serif; 
 	color: #2361BA;
 	border: 1px solid #E5F0FB;   
-	background: #F4F8FD url(images/quote.jpg) no-repeat 8px 6px;
+	/*background: #F4F8FD url(images/quote.jpg) no-repeat 8px 6px;*/
+	background: #F4F8FD;
 	}
 /* end images */
 
