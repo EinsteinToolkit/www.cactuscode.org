@@ -11,8 +11,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 <p>
  The two leaders of the Cactus project travelled to <a
  href="http://www.tsinghua.edu.cn/publish/then/">Tsinghua University</a> to
- visit <a ref="http://hpclab.cs.tsinghua.edu.cn/~duzh/">都志辉 (Zhihui Du)</a>, Associate
- Professor at the Department of Computer Science and Technology.
+ visit <a ref="http://hpclab.cs.tsinghua.edu.cn/~duzh/">都志辉 (Zhihui Du)</a>, associate
+ professor at the Department of Computer Science and Technology.
 </p>
 <div style="float:left; margin:5px;"><img src="china_2.jpg" width="250"></div>
 <p>
