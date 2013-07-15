@@ -15,6 +15,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
  Professor at the Department of Computer Science and Technology.
 </p>
 <p>
+<div style="float:left;"><img src="china_2.jpg" width="300"></div>
  Brandt and Löffler presented Cactus and the
  <a href="http://einsteintoolkit.org/">Einstein Toolkit</a> to faculty of the
  <a href="http://www.tsinghua.edu.cn/publish/csen/">Department of Computer
