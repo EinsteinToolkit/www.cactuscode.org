@@ -1,3 +1,6 @@
+<!--<p class="align-right"> Jul 2013
+	<li><a href="/media/news/Cactus_Beijing_2013">Cactus enters the year of the water snake</a></li>
+-->
 <p class="align-right"> May 2013
 	<li><a href="/media/news/ET_2013_05">Einstein Toolkit "Gauss" release</a></li>
 	<li><a href="/media/news/cactus_4.2.0">Cactus 4.2.0 release</a></li>
