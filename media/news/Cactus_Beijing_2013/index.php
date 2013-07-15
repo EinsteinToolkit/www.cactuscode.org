@@ -32,5 +32,5 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
  and are planning a scientific paper in the near future.
 </p>
 
-<h3 class="align-right">day Mon year — user posting</h3>
+<h3 class="align-right">12 July 2013 — sbrandt/knarf</h3>
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
