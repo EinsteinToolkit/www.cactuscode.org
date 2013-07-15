@@ -7,15 +7,15 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
  high-performance computing): That was the title of one of the four invited
  talks presented by Steven R. Brandt and Frank Löffler this year in Beijing, China.
 </p>
-<p>
 <div style="float:right; margin:5px;"><img src="china_1.jpg" width="250"></div>
+<p>
  The two leaders of the Cactus project travelled to <a
  href="http://www.tsinghua.edu.cn/publish/then/">Tsinghua University</a> to
  visit <a ref="http://hpclab.cs.tsinghua.edu.cn/~duzh/">都志辉 (Zhihui Du)</a>, Associate
  Professor at the Department of Computer Science and Technology.
 </p>
-<p>
 <div style="float:left; margin:5px;"><img src="china_2.jpg" width="250"></div>
+<p>
  Brandt and Löffler presented Cactus and the
  <a href="http://einsteintoolkit.org/">Einstein Toolkit</a> to faculty of the
  <a href="http://www.tsinghua.edu.cn/publish/csen/">Department of Computer
