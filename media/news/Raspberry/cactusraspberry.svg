@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="640px"
+   height="480px"
+   id="svg2385"
+   sodipodi:version="0.32"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="cactusdrawing.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="/Users/colbyjordan/CCT/cactuslogo.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   version="1.1">
+  <defs
+     id="defs2387">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 240 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="640 : 240 : 1"
+       inkscape:persp3d-origin="320 : 160 : 1"
+       id="perspective2393" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.7447248"
+     inkscape:cx="226.74291"
+     inkscape:cy="223.47581"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:window-width="1231"
+     inkscape:window-height="756"
+     inkscape:window-x="49"
+     inkscape:window-y="22"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2390">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     style="display:inline">
+    <path
+       sodipodi:type="arc"
+       style="fill:#00ff00"
+       id="path2401"
+       sodipodi:cx="257.51065"
+       sodipodi:cy="142.46098"
+       sodipodi:rx="45.822697"
+       sodipodi:ry="45.822697"
+       d="M 303.33335,142.46098 A 45.822697,45.822697 0 1 1 211.68795,142.46098 L 257.51065,142.46098 z"
+       sodipodi:start="0"
+       sodipodi:end="3.1415927"
+       transform="matrix(-0.8450705,0,0,-0.8450705,473.18912,309.90019)" />
+    <rect
+       style="fill:#d6264f;fill-opacity:1"
+       id="rect2403"
+       width="77.446815"
+       height="155.32388"
+       x="216.85107"
+       y="188.73759" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#d6264f;fill-opacity:1"
+       id="path2434"
+       sodipodi:cx="257.51065"
+       sodipodi:cy="142.46098"
+       sodipodi:rx="45.822697"
+       sodipodi:ry="45.822697"
+       d="m 303.33335,142.46098 a 45.822697,45.822697 0 1 1 -91.6454,0 l 45.8227,0 z"
+       sodipodi:start="0"
+       sodipodi:end="3.1415927"
+       transform="matrix(0.32615572,0,0,0.32615572,107.3697,218.44541)" />
+    <path
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       id="rect2436"
+       d="m 206.3036,265.98013 -29.89067,0 0,-59.9474 29.89067,19.82825 0,40.11915 z"
+       style="fill:#d6264f;fill-opacity:1" />
+  </g>
+</svg>
