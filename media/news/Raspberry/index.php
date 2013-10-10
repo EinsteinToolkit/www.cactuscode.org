@@ -37,7 +37,7 @@ contains an optionlist <a href="https://svn.cct.lsu.edu/repos/numrel/simfactory2
 and also lists a couple of packages that, if installed, reduce build-time. The
 only change that is necessary to build the whole Einstein Toolkit on a standard
 Raspbian image (besides the neccessary packages mentioned also in the option list;
-like compilers), is a larger swap space, for compilation of some file (edit
+like compilers), is a larger swap space, for compilation of some files (to do this: edit
 <b>/etc/dphys-swapfile</b>, I used 1GB, and then run <b>dphys-swapfile setup</b>
 and <b>dphys-swapfile swapon</b>).
 </p>
