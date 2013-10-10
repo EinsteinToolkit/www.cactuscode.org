@@ -36,8 +36,8 @@ and also lists a couple of packages that, if installed, reduce build-time. The
 only change that is necessary to build the whole Einstein Toolkit on a standard
 Raspbian image (besides the neccessary packages mentioned also in the option list;
 like compilers), is a larger swap space, for compilation of some file (edit
-<pre>/etc/dphys-swapfile</pre>, I used 1GB, and then run <pre>dphys-swapfile setup</pre>
-and <pre>dphys-swapfile swapon</pre>).
+<b>/etc/dphys-swapfile</b>, I used 1GB, and then run <b>dphys-swapfile setup</b>
+and <b>dphys-swapfile swapon</b>).
 </p>
 
 <h3 class="align-right">day Mon year — user posting</h3>
