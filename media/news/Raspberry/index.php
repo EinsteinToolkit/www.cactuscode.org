@@ -40,5 +40,5 @@ like compilers), is a larger swap space, for compilation of some file (edit
 and <b>dphys-swapfile swapon</b>).
 </p>
 
-<h3 class="align-right">day Mon year — user posting</h3>
+<h3 class="align-right">10 October 2013 — knarf</h3>
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
