@@ -17,8 +17,9 @@ echo "--Adding it to svn"
 svn add $1
 
 mv recent.php oldrecent.php
-echo "--Including a link to the story in the recent stories list"
+echo "--Including a link to the story in the recent stories list, edit recent.php!"
 (
+echo '<p class="align-right"> date';
 echo '	<li><a href="/media/news/'$1'">'$2'</a></li>';
 cat oldrecent.php;
 ) > recent.php
