@@ -2,7 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
-<img src="cactusraspberry.png" alt="cactusraspberry" width="50px">
+<img src="cactusraspberry.png" alt="cactusraspberry" width="50">
 
 <p>
 Cactus was ported to run on <a href="http://raspberrypi.org/">Raspberry Pis</a>.
