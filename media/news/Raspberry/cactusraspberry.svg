@@ -14,9 +14,9 @@
    id="svg2385"
    sodipodi:version="0.32"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="cactusdrawing.svg"
+   sodipodi:docname="cactusraspberry.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   inkscape:export-filename="/Users/colbyjordan/CCT/cactuslogo.png"
+   inkscape:export-filename="cactusraspberry.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
    version="1.1">
@@ -38,7 +38,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.7447248"
-     inkscape:cx="226.74291"
+     inkscape:cx="227.47158"
      inkscape:cy="223.47581"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
@@ -67,7 +67,7 @@
      style="display:inline">
     <path
        sodipodi:type="arc"
-       style="fill:#00ff00"
+       style="fill:#00ff00;stroke-width:4.43749959;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:1"
        id="path2401"
        sodipodi:cx="257.51065"
        sodipodi:cy="142.46098"
@@ -78,7 +78,7 @@
        sodipodi:end="3.1415927"
        transform="matrix(-0.8450705,0,0,-0.8450705,473.18912,309.90019)" />
     <rect
-       style="fill:#d6264f;fill-opacity:1"
+       style="fill:#d6264f;fill-opacity:1;stroke-width:3.75;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:1"
        id="rect2403"
        width="77.446815"
        height="155.32388"
@@ -86,7 +86,7 @@
        y="188.73759" />
     <path
        sodipodi:type="arc"
-       style="fill:#d6264f;fill-opacity:1"
+       style="fill:#d6264f;fill-opacity:1;stroke-width:11.49757545;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:1"
        id="path2434"
        sodipodi:cx="257.51065"
        sodipodi:cy="142.46098"
@@ -101,6 +101,6 @@
        sodipodi:nodetypes="ccccc"
        id="rect2436"
        d="m 206.3036,265.98013 -29.89067,0 0,-59.9474 29.89067,19.82825 0,40.11915 z"
-       style="fill:#d6264f;fill-opacity:1" />
+       style="fill:#d6264f;fill-opacity:1;stroke-width:3.75;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:1" />
   </g>
 </svg>
