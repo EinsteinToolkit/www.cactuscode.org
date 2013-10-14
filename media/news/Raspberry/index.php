@@ -40,5 +40,5 @@ href="https://svn.cct.lsu.edu/repos/numrel/simfactory2/trunk/mdb/optionlists/ras
 which includes instructions and lists packages which reduce build-time when installed.
 </p>
 
-<h3 class="align-right">10 October 2013 — knarf</h3>
+<h3 class="align-right">14 October 2013 — knarf</h3>
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
