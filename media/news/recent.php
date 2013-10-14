@@ -1,5 +1,5 @@
-<!--<p class="align-right"> October 2013
-	<li><a href="/media/news/Raspberry">Cactus runs on Raspberry Pi</a></li>-->
+<p class="align-right"> October 2013
+	<li><a href="/media/news/Raspberry">Cactus runs on Raspberry Pi</a></li>
 <p class="align-right"> July 2013
 	<li><a href="/media/news/Cactus_Beijing_2013">Cactus enters the year of the water snake</a></li>
 <p class="align-right"> May 2013
