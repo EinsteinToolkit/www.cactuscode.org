@@ -9,6 +9,10 @@ relativistic astrophysics. This release includes various improvements to the
 Cactus flesh, Carpet and GRHydro. In addition, bug fixes accumulated since the
 previous release in May 2013 have been included.</p>
 
+<p>For more detailed information about the "Noether" release please read
+the <a href="http://einsteintoolkit.org/about/releases/ET_2013_11_announcement.php">
+long release announcement</a> on the Einstein Toolkit web pages.</p>
+
 <p>For more information about using or contributing to the Einstein Toolkit, or to
 join the Einstein Toolkit Consortium, please visit our web pages at
 &lt;<a href="http://einsteintoolkit.org">http://einsteintoolkit.org</a>&gt;.</p>
