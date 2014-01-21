@@ -38,7 +38,7 @@ but you can use your own customized thornlist.</p>
 
 <p> Download 
 <a href="GetComponents.php">GetComponents</a> and make sure it is executable. 
-<code>wget --no-check-certificate https://raw.github.com/gridaphobe/CRL/Cactus_4.2.0/GetComponents
+<code>wget --no-check-certificate https://raw.github.com/gridaphobe/CRL/master/GetComponents
 chmod a+x GetComponents </code></p>
 
 <p> To checkout the Cactus flesh and required thorns, choose and save one of
