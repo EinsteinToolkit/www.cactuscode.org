@@ -3,7 +3,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
 <p>
-The Center for Computation & Technology will held the first XiRel workshop that will bring together researchers from <a href="http://www.lsu.edu">LSU</a>, <a href="http://rit.edu/">Rochester Institute of Technology</a>, <a href="http://www.psu.edu/">Pennsylvania State University</a>, and the <a href="http://www.aei.mpg.de/english">Albert-Einstein Institute</a> from Germany.
+The Center for Computation & Technology will held the first XiRel workshop that will bring together researchers from <a href="http://www.lsu.edu">LSU</a>, <a href="http://rit.edu/">Rochester Institute of Technology</a>, <a href="http://www.psu.edu/">Pennsylvania State University</a>, and the <a href="http://www.aei.mpg.de">Albert-Einstein Institute</a> from Germany.
 </p>
 
 <p>
