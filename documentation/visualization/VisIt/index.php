@@ -14,7 +14,7 @@ engineering and analytical data: Its open system design is built on a standard
 interface environment. And its sophisticated data model provides users with 
 great flexibility in creating visualizations.
 </p><p>
-The official <a href="http://www.llnl.gov/visit">VisIt home page</a>
+The official <a href="https://wci.llnl.gov/simulation/computer-codes/visit/">VisIt home page</a>
 should be visited to 
 get general information about VisIt. There are links to a "Getting Started" 
 introduction into VisIt, a gallery of VisIt visualization examples, a user and 
@@ -115,7 +115,9 @@ be used in a standard installation of VisIt.
 </p>
 <h3>Downloading and Installing</h3>
 <p>
-For obtaining VisIt you can go to the VisIt <a href="http://www.llnl.gov/visit/download.html">download page</a> which provides pre-compiled binaries 
+For obtaining VisIt you can go to the VisIt 
+<a href="https://wci.llnl.gov/simulation/computer-codes/visit/downloads">download page</a> 
+which provides pre-compiled binaries 
 for a number of architectures. If your architecture is not among these, or the 
 binary distribution doesn't work for you, you can also download the sources and 
 build VisIt yourself. Please read the README and INSTALL files in the source 
