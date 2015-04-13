@@ -5,6 +5,8 @@
 >Cactus Demo
 </a> to see the simple WaveToy example in action. </p>
 
+<h2>Note: This tutorial is, at least in parts, too old and needs an update</h2>
+
 <h2>Setting up the WaveToy Demo</h2>
 
  <p> In this tutorial, through the use of the WaveToy example we describe:
@@ -41,7 +43,7 @@ will work for you! </p>
 
 <p> Check out the source code using the <b>GetComponents</b> script. 
 
-<code> wget http://www.cactuscode.org/download/GetComponents
+<code>wget --no-check-certificate https://raw.github.com/gridaphobe/CRL/ET_2014_11/GetComponents
 chmod 755 GetComponents
 ./GetComponents http://cactuscode.org/documentation/tutorials/wavetoydemo/WaveDemo.th
 </code>
