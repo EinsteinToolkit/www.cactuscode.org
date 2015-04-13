@@ -4,38 +4,74 @@
 
 !DEFINE ROOT = Cactus
 !DEFINE ARR  = $ROOT/arrangements
+!DEFINE COMPONENTLIST_TARGET = $ROOT/thornlists/
 
 # Cactus Flesh
 !TARGET   = $ROOT
-!TYPE     = svn
-!AUTH_URL = https://svn.cactuscode.org/flesh/trunk
-!URL      = http://svn.cactuscode.org/flesh/trunk
-!CHECKOUT = Cactus
-!NAME     = .
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactus.git
+!NAME     = flesh
+!CHECKOUT = CONTRIBUTORS COPYRIGHT doc lib Makefile src
 
 # Cactus thorns
 !TARGET   = $ARR
-!TYPE     = svn
-!AUTH_URL = https://svn.cactuscode.org/arrangements/$1/$2/trunk
-!URL      = http://svn.cactuscode.org/arrangements/$1/$2/trunk
-!CHECKOUT = 
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactusbase.git
+!REPO_PATH= $2
+!CHECKOUT =
 CactusBase/Boundary        
 CactusBase/CoordBase
 CactusBase/CartGrid3D      
 CactusBase/IOASCII      
 CactusBase/IOUtil          
 CactusBase/IOBasic         
-CactusBase/LocalReduce           
 CactusBase/SymBase
-CactusBase/Time 
+CactusBase/Time
+
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactusnumerical.git
+!REPO_PATH= $2
+!CHECKOUT =
+CactusNumerical/LocalReduce
+
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactusconnect.git
+!REPO_PATH= $2
+!CHECKOUT =
 CactusConnect/HTTPD
 CactusConnect/HTTPDExtra 
 CactusConnect/Socket
+
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactuspugh.git
+!REPO_PATH= $2
+!CHECKOUT =
 CactusPUGH/PUGH            
 CactusPUGH/PUGHSlab
 CactusPUGH/PUGHReduce
+
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactuspughio.git
+!REPO_PATH= $2
+!CHECKOUT =
 CactusPUGHIO/IsoSurfacer
+
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactusio.git
+!REPO_PATH= $2
+!CHECKOUT =
 CactusIO/IOJpeg
+
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactuswave.git
+!REPO_PATH= $2
+!CHECKOUT =
 CactusWave/WaveToyC        
 CactusWave/IDScalarWaveC   
 CactusWave/WaveBinarySource   
