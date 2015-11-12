@@ -11,16 +11,16 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
  <tr><td> Perl
 </td><td> MPI
 </td></tr>
- <tr><td> C 
-</td><td> C++
+ <tr><td> C, C++
+</td><td> F90
 </td></tr>
- <tr><td> CPP 
-</td><td> F90/F77
-</td></tr>
- <tr><td> GNU make
+ <tr><td> CPP
 </td><td> ctags/etags
 </td></tr>
- <tr><td> SVN
+ <tr><td> GNU make
+</td><td> Python
+</td></tr>
+ <tr><td> svn, git
 </td><td>
 </td></tr>
 </table>
