@@ -2,28 +2,75 @@
 
 !DEFINE ROOT = Cactus
 !DEFINE ARR  = $ROOT/arrangements
+!DEFINE COMPONENTLIST_TARGET = $ROOT/thornlists/
+
+!DEFINE CACTUS_RELEASE = Cactus_4.3.0
 
 # Cactus Flesh
 !TARGET   = $ROOT
-!TYPE     = svn
-!AUTH_URL = https://svn.cactuscode.org/flesh/trunk
-!URL      = http://svn.cactuscode.org/flesh/trunk
-!CHECKOUT = Cactus
-!NAME     = .
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactus.git
+!NAME     = flesh
+!REPO_BRANCH = $CACTUS_RELEASE
+!CHECKOUT = .clang-format CONTRIBUTORS COPYRIGHT doc lib Makefile src
 
-# Cactus utilities, including the GetComponents script
+# Various Cactus utilities
 !TARGET   = $ROOT
-!TYPE     = svn
-!AUTH_URL = https://svn.cactuscode.org/Utilities/trunk
-!URL      = http://svn.cactuscode.org/Utilities/trunk
-!CHECKOUT = .
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/utilities.git
+!REPO_PATH= $1
 !NAME     = utils
+!REPO_BRANCH = $CACTUS_RELEASE
+!CHECKOUT = ./utils
+
+# The GetComponents script
+!TARGET   = $ROOT/bin
+!TYPE     = git
+!URL      = https://github.com/gridaphobe/CRL.git
+!REPO_BRANCH = $CACTUS_RELEASE
+!CHECKOUT = GetComponents
 
 # Basic Cactus thorns
 !TARGET   = $ARR
-!TYPE     = svn
-!AUTH_URL = https://svn.cactuscode.org/arrangements/$1/$2/trunk
-!URL      = http://svn.cactuscode.org/arrangements/$1/$2/trunk
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactusbase.git
+!REPO_PATH= $2
+!REPO_BRANCH = $CACTUS_RELEASE
+!CHECKOUT =
+CactusBase/Boundary        
+CactusBase/CartGrid3D      
+CactusBase/CoordBase
+CactusBase/IOASCII
+CactusBase/IOBasic         
+CactusBase/IOUtil          
+CactusBase/SymBase
+CactusBase/Time            
+
+# CactusNumerical thorns
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactusnumerical.git
+!REPO_PATH= $2
+!CHECKOUT =
+CactusBase/LocalReduce
+
+# CactusPUGH thorns
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactuspugh.git
+!REPO_PATH= $2
+!REPO_BRANCH = $CACTUS_RELEASE
+!CHECKOUT =
+CactusPUGH/PUGH            
+CactusPUGH/PUGHSlab
+CactusPUGH/PUGHReduce
+
+# CactusWave thorns
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactuswave.git
+!REPO_PATH= $2
+!REPO_BRANCH = $CACTUS_RELEASE
 !CHECKOUT =
 CactusWave/WaveToyC        
 CactusWave/WaveToyF77      
@@ -34,15 +81,3 @@ CactusWave/WaveBinarySource
 CactusWave/IDScalarWave    
 CactusWave/IDScalarWaveC   
 CactusWave/IDScalarWaveCXX 
-CactusBase/Boundary        
-CactusBase/CartGrid3D      
-CactusBase/CoordBase
-CactusBase/IOASCII
-CactusBase/IOBasic         
-CactusBase/IOUtil          
-CactusBase/SymBase
-CactusBase/Time            
-CactusPUGH/PUGH            
-CactusPUGH/PUGHSlab
-CactusPUGH/PUGHReduce
-CactusBase/LocalReduce
