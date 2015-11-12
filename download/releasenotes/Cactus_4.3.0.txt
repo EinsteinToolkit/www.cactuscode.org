@@ -1,0 +1,139 @@
+We are pleased to announce the 4.3.0 release of the Cactus Computational
+Toolkit, an open source problem solving environment designed for
+scientists and engineers.
+
+This release includes, among other things, improvements to the Cactus
+flesh (see below for details), new utility thorns, and changed and
+additions to the external library thorns. In addition, bug fixes
+accumulated since the previous release have been included.
+
+Cactus is an open source problem solving environment designed for
+scientists and engineers. Its modular structure easily enables parallel
+computation across different architectures and collaborative code
+development between different groups. Cactus originated in the academic
+research community, where it was developed and used over many years by a
+large international collaboration of physicists and computational
+scientists.
+
+Cactus runs on many architectures. Applications, developed on standard
+workstations or laptops, can be seamlessly run on clusters or
+supercomputers. Cactus provides easy access to many cutting edge
+software technologies being developed in the academic research
+community.
+
+The Cactus user community has created and is maintaining toolkits for
+several research fields. The Einstein Toolkit addresses computational
+relativistic astrophysics, supporting simulations of black holes,
+neutron stars, and related systems.
+
+For more information about using or contributing to the Cactus Computational Toolkit,
+please visit our web pages at http://cactuscode.org.
+
+The changes between this and the previous release include:
+
+=== Larger changes since last release ===
+
+* Almost all repositories moved from the Cactus subversion server to bitbucket,
+  with the ExternalLibraries being the only exception. Taking
+  this move as opportunity, some already existing thorns were moved to more
+  appropriate arrangements.
+
+* Cactus Flesh
+  - While not a particular user-visible change, the Cactus version number was
+    bumped to 4.3.0.
+  - Thorns can specify versions for capabilities they provide, and thorns
+    using them can depend on specific versions of those.
+  - pthread support got moved into a thorn (ExternalLibraries/pthreads)
+  - added support for an unlimited number of timelevels
+  - Change default output filename format from implementation::groupname
+    to implementation-groupname (parameter IOUtil::out_group_separator).
+  - Piraha replaced parts of the old Cactus parser (but that should not
+    be a user visible change).
+  - Cactus complex number arithmetic functions are deprecated
+  - Prevent Cactus from choking on very large parameter files
+  - support linux-gnueabi architecture (e.g. Raspberry Pi)
+  - check that providing function name is different from aliased
+    function name
+  - Drop explicit support for Fortran 77 in Cactus
+  - Require C99 support
+  - make: Don't require configuration name when only one is present
+
+* External Libraries:
+  - Delay build of external libraries so they can be 'made' in parallel.
+  - HDF5: Enable fortran interface by default, disable C++ interface by
+          default.
+
+* New Components
+  - CactusNumerical/LocalInterp2: a C++ drop-in replacement for
+    LocalInterp
+  - CactusNumerical/TestLocalInterp2: containing tests for LocalInterp2
+  - CactusNumerical/SummationByParts
+  - CactusUtils/SystemTopology
+  - CactusUtils/MemSpeed
+  - CactusUtils/NaNCatcher
+  - CactusUtils/SystemStatistics
+  - ExternalLibraries/PAPI
+  - ExternalLibraries/libncurses
+  - ExternalLibraries/libreadline
+  - ExternalLibraries/pthreads
+
+=== How to upgrade from 4.2.0 ===
+
+To upgrade from the previous release, use GetComponents with the new thornlist
+to check out the new version. Switching to the new branch is not possible for
+most repositories due to repository moves.
+
+See the [http://cactuscode.org/download/ Download] page on the Cactus
+website for download instructions.
+
+=== Remaining issues with this release ===
+
+* Certain machines need to be configured specially in Simfactory because the
+  remote directories cannot be determined automatically just from the user
+  name. See the Machine notes below.
+
+=== Machine notes ===
+
+Supported (tested through the Einstein Toolkit) machines include:
+
+- Default Debian, Ubuntu, Fedora and MacOS installations
+- Bethe
+- Bluewaters
+- Carver
+- Comet
+- Datura
+- Edison
+- Fermi
+- Galileo
+- Gordon
+- Gullimin
+- Hopper
+- Nvidia
+- Philip
+- Queenbee 2
+- Shelob
+- Supermike II
+- Stampede (CPU)
+- Zwicky
+
+* Stampede: defs.local.ini needs to have sourcebasedir = $WORK and basedir =
+  $SCRATCH/simulations configured for this machine.  You need to determine
+  $WORK and $SCRATCH by logging in to the machine.
+
+All repositories participating in this release carry a branch
+Cactus_4.3.0 marking this release.  These release branches will be
+updated if severe errors are found.
+
+The 4.3.0 Release Team on behalf of the Cactus Framework Group (2015-11-11)
+
+Steven R. Brandt
+Peter Diener
+Roland Haas
+Ian Hinder
+Frank Löffler
+Bruno C. Mundim
+Erik Schnetter
+Barry Wardell
+
+November 11, 2015
+
