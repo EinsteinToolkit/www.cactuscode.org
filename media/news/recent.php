@@ -1,3 +1,5 @@
+<p class="align-right"> June 2017
+	<li><a href="/media/news/ET_2017_06">Einstein Toolkit "Hack" release</a></li>
 <p class="align-right"> November 2015
 	<li><a href="/media/news/cactus_4.3.0">Cactus 4.3.0 release</a></li>
 <p class="align-right"> November 2013
