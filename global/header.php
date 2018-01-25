@@ -8,7 +8,7 @@
 
   $path_all=explode("/",$_SERVER["PHP_SELF"]);
   $category=$path_all[1]; //set to the top level directory
-  
+
   //find the lowest directory ignoring filename and any extra slashes
   $expect_directory=0; //not expecting the lowest directory yet
   while(count($path_all)>0) { //prevent unexpected inf loop
@@ -22,7 +22,7 @@
   list($blank0, $category)=explode("/",$_SERVER["PHP_SELF"]);
   if ($category=='x.php') $category='internal'; //special case for update interface
   echo '#menu ul li#'.$category.' a {text-decoration:overline;}';
-  
+
 ?></style>
 <title>Cactus Code &mdash; <?php echo $title; ?></title>
 </head>
@@ -32,21 +32,23 @@
 <div id="wrap">
 	<!--header -->
 	<div id="header">
-		<h1 id="logo-text"><img id="logo" src="/global/images/cactuslogo.png" /><a href="/">cactus code</a></h1>		
-		<!-- <p id="slogan">code</p> -->	
+		<h1 id="logo-text"><img id="logo" src="/global/images/cactuslogo.png" /><a href="/">cactus code</a></h1>
+		<!-- <p id="slogan">code</p> -->
 
 		<div id="header-links">
 			<p>
-			<a href="/">Home</a> | 
+			<a href="/">Home</a> |
 			<a href="/about/contact">Contact</a>
-			</p>		
-		</div>		
+			</p>
+		</div>
 	</div>
 
 	<!-- navigation -->
 	<div id="menu"><ul>
 		<li id="about"><a href="/about/">About</a></li>
+        <!--
 		<li id="demo"><a href="/demo/">Demo</a></li>
+        -->
 		<li id="documentation"><a href="/documentation/">Documentation</a></li>
 		<li id="download"><a href="/download/">Download</a></li>
 		<li id="internal"><a href="https://wiki.cct.lsu.edu/frameworks">Internal</a></li>
