@@ -24,16 +24,16 @@ team:
 </li> <br />
 
 <li> <a href="sbrandt">Steven R. Brandt</a>
-<br />Co-lead of the Cactus project at the 
+<br />Current lead of the Cactus project at the 
 <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at 
 <a href="http://www.lsu.edu/">LSU</a></li> <br />
 
 <li> <a href="drideout">David Rideout</a>
 <br />Researcher in the 
-<a href="http://www.perimeterinstitute.ca/en/Scientific/Research/Quantum_Foundations/"
->Quantum Foundations Group</a> 
-at the 
-<a href="http://www.perimeterinstitute.ca/">Perimeter Institute for Theoretical Physics</a>
+<a href="http://www.math.ucsd.edu/~drideout/">
+University of California, San Diego
+Department of Mathematics
+</a> 
 </li><br />
 
 <li> <a href="eschnetter">Erik Schnetter</a>
@@ -47,20 +47,24 @@ at the
 -->
 
 <li> <a href="haas">Roland Haas</a>
-<br />Postdoc researcher at
-<a href="http://www.caltech.edu/" title="Caltech">Caltech</a></li> <br />
+<br />Researcher at
+<a href="http://gravity.ncsa.illinois.edu/people/rhaas/" title="NCSA">NCSA</a></li> <br />
 
+<!--
 <li> <a href="tbode">Tanja Bode</a>
 <br />Postdoc researcher at
 <a href="http://www.gatech.edu/" title="Gatech">Gatech</a></li> <br />
+-->
 
 <li> <a href="hinder">Ian Hinder</a>
 <br />Postdoc researcher at the 
 <a href="http://www.aei.mpg.de/14014/AEI_Potsdam-Golm" title="AEI">AEI</a></li> <br />
 
+<!--
 <li> <a href="mundim">Bruno Mundim</a>
 <br />Postdoc researcher at the 
 <a href="http://astro.uni-frankfurt.de/relastro/" title="ITP">ITP</a></li> <br />
+-->
 
 <li> <a href="ebentivegna">Eloisa Bentivegna</a>
 <br />Postdoc researcher at the 
@@ -86,6 +90,8 @@ at the
 <h3>Alumni</h3>
 
  <ul><li>Thomas Dramlitsch
+</li><li>Tanja Bode
+</li><li>Bruno Mundim
 </li><li>Yaakoub El-Khamra
 </li><li>Tom Goodale
 </li><li>Colby Jordan
