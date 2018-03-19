@@ -17,7 +17,7 @@ team:
 
 <li><a href="gallen">Gabrielle Allen</a>
 <br />Former lead of Cactus project at 
-<a href="https://astro.illinois.edu/directory/profile/gdallen">UIUC</a> and inactive developer</li> <br />
+<a href="https://astro.illinois.edu/">UIUC</a> and inactive developer</li> <br />
 
 <li> <a href="floeffler">Frank Löffler</a>
 <br />Former lead of the Cactus project
@@ -48,7 +48,7 @@ Department of Mathematics
 
 <li> <a href="haas">Roland Haas</a>
 <br />Researcher at
-<a href="http://gravity.ncsa.illinois.edu/people/rhaas/" title="NCSA">NCSA</a></li> <br />
+<a href="http://gravity.ncsa.illinois.edu/" title="NCSA">NCSA</a></li> <br />
 
 <!--
 <li> <a href="tbode">Tanja Bode</a>
@@ -67,7 +67,7 @@ Department of Mathematics
 -->
 
 <li> <a href="ebentivegna">Eloisa Bentivegna</a>
-<br />Postdoc researcher at the 
+<br />Assistant Professor at the 
 <a href="http://www.unict.it/en/" title="University of Catania">department of Physics and Astronomy, University of Catania, Italy</a></li> <br />
 
 <!--
