@@ -13,14 +13,15 @@ team:
 
 <h3>Current</h3>
 
-<ul> <li><a href="gallen">Gabrielle Allen</a>
+<ul>
+
+<li><a href="gallen">Gabrielle Allen</a>
 <br />Former lead of Cactus project at 
-<a href="http://www.lsu.edu/">LSU</a> and inactive developer</li> <br />
+<a href="https://astro.illinois.edu/directory/profile/gdallen">UIUC</a> and inactive developer</li> <br />
 
 <li> <a href="floeffler">Frank Löffler</a>
-<br />Co-lead of the Cactus project at the 
-<a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at 
-<a href="http://www.lsu.edu/">LSU</a></li> <br />
+<br />Former lead of the Cactus project
+</li> <br />
 
 <li> <a href="sbrandt">Steven R. Brandt</a>
 <br />Co-lead of the Cactus project at the 
@@ -39,9 +40,11 @@ at the
 <br />Scientist in the 
 <a href="http://www.perimeterinstitute.ca/">Perimeter Institute for Theoretical Physics</a></li> <br />
 
+<!--
 <li> <a href="cott">Christian D. Ott</a>
 <br />Assistant Professor of Theoretical Astrophysics at
 <a href="http://www.caltech.edu/" title="Caltech">Caltech</a></li> <br />
+-->
 
 <li> <a href="haas">Roland Haas</a>
 <br />Postdoc researcher at
@@ -63,6 +66,7 @@ at the
 <br />Postdoc researcher at the 
 <a href="http://www.unict.it/en/" title="University of Catania">department of Physics and Astronomy, University of Catania, Italy</a></li> <br />
 
+<!--
 <li> <a href="jtao">Jian Tao</a>
 <br />Research Staff at the 
 <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at 
@@ -77,6 +81,7 @@ at the
 <br />Graduate Student at the
 <a href="http://www.cct.lsu.edu/" title="Center for Computation &amp; Technology">CCT</a> at 
 <a href="http://www.lsu.edu/">LSU</a></li> <br />
+-->
 
 <h3>Alumni</h3>
 
@@ -93,6 +98,7 @@ at the
 </li><li>Oleg Korobkin
 </li><li>Eric Seidel
 </li><li>Ashley Zebrowski
+</li><li>Jian Tao
 </ul>
 
 <?php
