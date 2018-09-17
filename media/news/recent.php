@@ -1,6 +1,6 @@
-<p class="align-right"> Feb 2018
+<p class="align-right"> Sep 2018
 	<li><a href="/media/news/ET_2018_09">Einstein Toolkit "Chien-Shiung Wu" release</a></li>
-<p class="align-right"> Feb 2018
+<p class="align-right"> Sep 2018
 	<li><a href="/media/news/cactus_4.4.0">Cactus 4.4.0 release</a></li>
 <p class="align-right"> Feb 2018
 	<li><a href="/media/news/ET_2018_02">Einstein Toolkit "Tesla" release</a></li>
