@@ -11,5 +11,5 @@ relativistic astrophysics.</p>
 join the Einstein Toolkit Consortium, please visit our web pages at
 <a href="http://einsteintoolkit.org">http://einsteintoolkit.org</a>.</p>
 
-<h3 class="align-right">17 Sep 2018 — Frank Löffler</h3>
+<h3 class="align-right">17 Sep 2018 — Steven R. Brandt</h3>
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>
