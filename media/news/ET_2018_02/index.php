@@ -1,4 +1,4 @@
-<?php $title='Einstein Toolkit "Hack" Release';
+<?php $title='Einstein Toolkit "Tesla" Release';
 include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');
 ?>
 
