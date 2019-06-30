@@ -6,7 +6,10 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
    <p><a href="xGraph">xGraph</a> is a freely available, lightweight and easy to use visualization client for viewing 1D data files. It includes features for animation, zooming and saving to postscript. </p> 
 
 <h3> ygraph: Animated, Easy Client for 1D Line Plots </h3>
-   <p><a href="yGraph">yGraph</a> is a freely available, lightweight and easy to use visualization client for viewing 1D data files. It includes features for animation, zooming and saving to postscript. </a>
+   <p><a href="yGraph">yGraph</a> is a freely available, lightweight and easy to use visualization client for viewing 1D data files. It includes features for animation, zooming and saving to postscript. </p>
+
+<h3> pyGraph: Animated, Easy Client for 1D Line Plots </h3>
+   <p><a href="pyGraph">pyGraph</a> pygraph is a PyQt re-implementation of xGraph and yGraph </p>
 
 <h3> Gnuplot - Powerful Visualization Tool for 1D and 2D Data </h3>
    <p><a href="gnuPlot">Gnuplot</a> is a command-driven interactive function plotting program. It can plot functions and data points in both two- and three-dimensional plots in various formats (points, lines, surfaces, contours). </p>
