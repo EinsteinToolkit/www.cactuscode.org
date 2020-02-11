@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/global/style.css" type="text/css" />
+
+<html>
+  <body>
+
+<div id="wrap">
+	<!--header -->
+	<div id="header">
+		<h1 id="logo-text"><img id="logo" src="/global/images/cactuslogo.png" /><a href="/">cactus code</a></h1>
+		<!-- <p id="slogan">code</p> -->
+
+		<div id="header-links">
+			<p>
+			<a href="/">Home</a> |
+			<a href="/about/contact">Contact</a>
+			</p>
+		</div>
+	</div>
+
+	<!-- navigation -->
+	<div id="menu"><ul>
+		<li id="about"><a href="/about/">About</a></li>
+        <!--
+		<li id="demo"><a href="/demo/">Demo</a></li>
+        -->
+		<li id="documentation"><a href="/documentation/">Documentation</a></li>
+		<li id="download"><a href="/download/">Download</a></li>
+		<li id="internal"><a href="https://wiki.cct.lsu.edu/frameworks">Internal</a></li>
+		<li id="media"><a href="/media/">Media</a></li>
+		<li id="projects"><a href="/projects/">Projects</a></li>
+		<li id="sitemap"><a href="/sitemap.php">Site Map</a></li>
+	</ul></div>
+
+	<!-- content-wrap starts here -->
+	<div id="content-wrap">
+
+		<div id="main">
+			<h2>{{page.title}}</h2>
+
+{{ content }}
+
+              <br />
+		</div> <!-- closing "main" content div -->
+
+	</div> <!-- closing content-wrap div -->	
+
+	<div id="footer">
+		<p>
+			<strong>cactuscode.org</strong> 1998&ndash;  {{ site.time }} | Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a>/<a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>
+		</p>
+	</div> <!-- closing footer div -->
+
+</div> <!-- wrap ends here -->
+
+<!-- Original template design provided generously by http://styleshout.com/ under a creative commons attritbution license-->
+
+</body>
+</html>
