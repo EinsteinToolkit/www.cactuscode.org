@@ -1,0 +1,7 @@
+#!/bin/bash
+
+find . -name "*.php" |
+    while read f; do
+        echo "CONVERTING $f"
+        php-to-md $f
+    done

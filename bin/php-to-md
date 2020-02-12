@@ -12,7 +12,7 @@ tmpmdfile=${infile%.php}.tmp.md
 cp $infile $htmlfile
 pandoc $htmlfile -o $tmpmdfile
 
-title=$(./re-extract "\\\$title='(.*)';" $infile)
+title=$(re-extract "\\\$title='(.*)';" $infile)
 
 cat - $tmpmdfile > $mdfile <<EOF
 ---
