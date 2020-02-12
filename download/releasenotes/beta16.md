@@ -1,0 +1,413 @@
+---
+layout: default
+title: Release Notes for Beta 16
+---
+Release Notices for Cactus 4.0 beta 16\
+======================================\
+Date: 2 February 2009
+
+Released modules:\
+================
+
+Cactus\
+CactusBase\
+CactusBench\
+CactusConnect\
+CactusEinstein\
+CactusElliptic\
+CactusExamples\
+CactusExternal\
+CactusIO\
+CactusPUGH\
+CactusPUGHIO\
+CactusTest\
+CactusUtils\
+CactusWave\
+
+New thorns:\
+==========
+
+CactusBase/InitBase\
+CactusExternal/BLAS\
+CactusExternal/FFTWlib\
+CactusExternal/GSL\
+CactusExternal/HDF5\
+CactusExternal/LAPACK\
+CactusExternal/LORENE\
+CactusExternal/PETSc\
+CactusExternal/SDF\
+CactusTest/TestAllTypes\
+CactusTest/TestFortranDependencies1\
+CactusTest/TestFortranDependencies2\
+CactusTest/TestGlobalReduce\
+CactusTest/TestLocalReduce\
+CactusTest/TestSchedule\
+CactusTest/TestTable\
+CactusTest/TestTypes\
+
+New supported architectures:\
+============================
+
+Blue Gene/P\
+Cray XT-4\
+Loongson 2F\
+SiCortex\
+
+CVS Tag:\
+========
+
+Cactus\_4\_0\_Beta\_16\
+
+==============================================================================
+
+CHANGES FOR BETA 16\
+===================
+
+Flesh\
+=====
+
+New Reduction Interface:\
+There is a new reduction interface which has been brought into line\
+with the interpolation interface. The old reduction interface will\
+remain available.
+
+New mechanism for configuring external libraries:\
+External libraries, such as e.g. HDF5 or LAPACK, can now be\
+configured via configuration scripts within thorns, instead of\
+relying on the central Cactus configuration mechanism. This\
+simplifies interfacing to non-Cactus libraries. A set of new thorns\
+in the CactusExternal arrangement use this mechanism. The old\
+configuration mechanism is still available.
+
+Cactus documentation format changed to PDF:\
+Documentation is now produced as pdf files (instead of postscript).\
+Figures in thorn documentation directories need to be updated from\
+eps to pdf as well.
+
+Core Thorns\
+===========
+
+CactusBase/InitBase:\
+A new thorn CactusBase/InitBase helps ensure that initial data are\
+set up correctly on all time levels. It does not set up any initial\
+data by itself; it merely remembers how initial data are to be set\
+up, so that other thorns can check their actions against this thorn.\
+
+==============================================================================\
+
+KNOWN BUGS IN BETA 16\
+=====================\
+(See Cactus bug tracking system for a complete list)
+
+==============================================================================\
+
+TEST MACHINES NOTES\
+===================
+
+(Alphabetical by architecture.)
+
+\* Cray XT-4
+
+o kraken.nics.tennessee.edu with MPI (MPI: Native)\
+(PGI 7.2.5)
+
+\- not compiling:\
+CactusElliptic/EllPETSc (missing certain PETSc libraries)\
+CactusExternal/PETSc (missing certain PETSc libraries)\
+CactusConnect/HTTPD (no SSL installed)\
+CactusConnect/HTTPDExtra (no SSL installed)\
+CactusConnect/Socket (no SSL installed)\
+CactusExternal/SDF (no SDF installed)\
+CactusExternal/LORENE (no LORENE installed)\
+CactusEinstein/AHFinder (compiler issues)\
+CactusTest/TestAllTypes (compiler issues)
+
+\- testsuites failing:\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+teuktest4 (from PsiKadelia)\
+arrays (from TestArrays)\
+arrays0 (from TestArrays)
+
+\* IBM p5
+
+o pelican.hpc.lsu.edu with MPI (MPI: Native)\
+(xlc-7.0 / xlf-9.1)\
+Other LONI/LSU p5 systems are similar, i.e.,\
+bluedawg.loni.org, ducky.loni.org, lacumba.loni.org,\
+neptune.loni.org, zeke.loni.org
+
+\- not compiling:\
+CactusElliptic/EllPETSc (no PETSc installed)\
+CactusExternal/PETSc (no PETSc installed)\
+CactusExternal/SDF (no SDF installed)\
+CactusExternal/FFTWlib (no FFTW installed)\
+CactusTest/TestAllTypes (not all types available)
+
+\- testsuites failing:\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+teuktest4 (from PsiKadelia)
+
+\* Intel IA32 (Linux 2.6.9-55.0.9.EL\_lustre.1.6.4custom)
+
+o abe.ncsa.uiuc.edu with MPI\
+(MPI: mvapich2-0.9.8p2patched, compiled with Intel, and with ofed-1.2)\
+(Intel icc/icpc 10.1.008 / ifort 10.1.008)
+
+\- not compiling:\
+CactusElliptic/EllPETSc (PETSc not installed)\
+CactusExternal/FFTWlib (FFTW not installed)\
+CactusExternal/LORENE (LORENE not installed)\
+CactusExternal/PETSc (PETSc not installed)\
+CactusExternal/SDF (SDF not installed)\
+CactusPUGHIO/IOStreamedHDF5 (installed HDF5 does not suppport streaming)
+
+\- testsuites failing:\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+teuktest4 (from PsiKadelia)\
+arrays (from TestArrays)\
+arrays0 (from TestArrays)
+
+o eric.loni.org with MPI (mvapich2-1.02 compiled with Intel C++ 10.1)\
+(Intel icc/icpc v10.1.008 / ifort v10.1.008)\
+All other LONI and LSU Linux clusters are similar, i.e.,\
+louie.loni.org, oliver.loni.org, poseidon.loni.org,\
+queenbee.loni.org, tezpur.hpc.lsu.edu
+
+\- not compiling:\
+CactusExternal/SDF (no SDF installed)\
+TAT/TATPETSc (not compatible with PETSc installed)
+
+\- testsuites failing:\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+teuktest4 (from PsiKadelia)\
+arrays (from TestArrays)\
+arrays0 (from TestArrays)\
+test\_waveell (from IDScalarWaveElliptic)
+
+o lonestar.tacc.utexas.edu with MPI (MPI: MVAPICH/1.0.1)\
+(Intel icc/icpc 10.1 / ifort 10.1)
+
+\- not compiling:\
+CactusElliptic/EllPETSc (PETSc not installed)\
+CactusExternal/FFTWlib (FFTW not installed)\
+CactusExternal/LORENE (LORENE not installed)\
+CactusExternal/PETSc (PETSc not installed)\
+CactusExternal/SDF (SDF not installed)\
+CactusPUGHIO/IOStreamedHDF5 (installed HDF5 does not suppport streaming)
+
+\- testsuites failing:\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+teuktest4 (from PsiKadelia)\
+arrays (from TestArrays)\
+arrays0 (from TestArrays)\
+test\_waveell (from IDScalarWaveElliptic)
+
+o numrel02.cct.lsu.edu with MPI (MPI: MPICH/1.2.7p1)\
+(GCC 4.3.0 20080109 (experimental))\
+Linux workstation
+
+\- not compiling:\
+CactusExternal/FFTWlib (FFTW not installed)\
+CactusExternal/LORENE (LORENE not installed)\
+CactusExternal/SDF (SDF not installed)\
+CactusPUGHIO/IOStreamedHDF5 (installed HDF5 does not suppport streaming)
+
+\- testsuites failing:\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+teuktest4 (from PsiKadelia)\
+arrays (from TestArrays)\
+arrays0 (from TestArrays)
+
+o numrel02.cct.lsu.edu with MPI (MPI: MPICH/1.2.7p1)\
+(Intel icc/icpc v10.1.013 / ifort v10.1.013)\
+Linux workstation
+
+\- not compiling:\
+CactusElliptic/EllPETSc (PETSc not installed)\
+CactusExternal/FFTWlib (FFTW not installed)\
+CactusExternal/LORENE (LORENE not installed)\
+CactusExternal/PETSc (PETSc not installed)\
+CactusExternal/SDF (SDF not installed)\
+CactusPUGHIO/IOStreamedHDF5 (installed HDF5 does not suppport streaming)
+
+\- testsuites failing:\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+teuktest4 (from PsiKadelia)\
+arrays (from TestArrays)\
+arrays0 (from TestArrays)\
+test\_waveell (from IDScalarWaveElliptic)
+
+o numrel02.cct.lsu.edu without MPI\
+(Intel icc/icpc v10.1.013 / ifort v10.1.013)\
+Linux workstation
+
+\- not compiling:\
+CactusElliptic/EllPETSc (PETSc not installed)\
+CactusExternal/FFTWlib (FFTW not installed)\
+CactusExternal/LORENE (LORENE not installed)\
+CactusExternal/PETSc (PETSc not installed)\
+CactusExternal/SDF (SDF not installed)\
+CactusPUGHIO/IOPanda (configured without MPI)\
+CactusPUGHIO/IOStreamedHDF5 (installed HDF5 does not suppport streaming)
+
+\- testsuites failing:\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+teuktest4 (from PsiKadelia)\
+arrays (from TestArrays)\
+arrays0 (from TestArrays)
+
+o ranger.tacc.utexas.edu with MPI (MPI: MVAPICH/0.9.9)\
+(Intel icc/icpc v10.1 / ifort v10.1)
+
+\- not compiling:\
+CactusElliptic/EllPETSc (PETSc requires MVAPICH2)\
+CactusExternal/PETSc (PETSc requires MVAPICH2)\
+CactusExternal/SDF (no SDF installed)\
+CactusExternal/LORENE (no LORENE installed)
+
+\- testsuites failing:\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+teuktest4 (from PsiKadelia)\
+arrays (from TestArrays)\
+arrays0 (from TestArrays)\
+test\_waveell (from IDScalarWaveElliptic)
+
+o redshift with MPI (MPI: MPICH/1.2.7)\
+(GCC 4.3.2)\
+Mac OS X laptop
+
+\- not compiling:\
+CactusExternal/LORENE (LORENE not installed)\
+CactusExternal/SDF (SDF not installed)\
+CactusPUGHIO/IOStreamedHDF5 (installed HDF5 does not suppport
+streaming)\
+CactusTest/TestAllTypes (CCTK\_REAL16 not supported)
+
+\- testsuites failing:\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+teuktest4 (from PsiKadelia)\
+arrays (from TestArrays)\
+arrays0 (from TestArrays)
+
+o redshift without MPI\
+(GCC 4.3.2)\
+Mac OS X laptop
+
+\- not compiling:\
+CactusElliptic/EllPETSc (PETSc not installed)\
+CactusExternal/LORENE (LORENE not installed)\
+CactusExternal/PETSc (PETSc not installed)\
+CactusExternal/SDF (SDF not installed)\
+CactusPUGHIO/IOPanda (configured without MPI)\
+CactusPUGHIO/IOStreamedHDF5 (installed HDF5 does not suppport
+streaming)\
+CactusTest/TestAllTypes (CCTK\_REAL16 not supported)
+
+\- testsuites failing:\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+teuktest4 (from PsiKadelia)\
+arrays (from TestArrays)\
+arrays0 (from TestArrays)
+
+\* Intel IA64 (Scientific Linux 5.0, 2.6.18-SMP)
+
+o damiana.aei.mpg.de with MPI (MPI: Scali MPI 5.6.3)\
+(Intel icc/icpc v10.1.008 / ifort v10.1.008)
+
+\- not compiling:\
+CactusElliptic/EllPETSc (no PETSc installed)\
+CactusExternal/PETSc (no PETSc installed)\
+TAT/TATPETSc (no PETSc installed)\
+CactusExternal/SDF (no SDF installed)\
+CactusExternal/FFTWlib (no FFTW installed)
+
+\- testsuites failing:\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+teuktest4 (from PsiKadelia)\
+arrays (from TestArrays)\
+arrays0 (from TestArrays)
+
+\* SGI Altix 4700
+
+o hlrb2.lrz-muenchen.de with MPI (MPI: Native)\
+(Intel icc/icpc v10.1.018 / ifort v10.1.018)
+
+\- not compiling:\
+CactusElliptic/EllPETSc (incompatible PETSc installation)\
+CactusExternal/PETSc (incompatible PETSc installation)\
+CactusExternal/SDF (no SDF installed)
+
+\- testsuites failing:\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+teuktest4 (from PsiKadelia)\
+arrays (from TestArrays)\
+arrays0 (from TestArrays)
+
+\* SGI Altix Prism
+
+o santaka.cct.lsu.edu with MPI (MPI: Native)\
+(Intel icc v10.1.015 / ifort v10.1.015)
+
+\- not compiling:\
+CactusElliptic/EllPETSc (no PETSc installed)\
+CactusExternal/PETSc (no PETSc installed)\
+CactusExternal/SDF (no SDF installed)\
+CactusExternal/FFTWlib (no FFTW installed)
+
+\- testsuites failing:\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+teuktest4 (from PsiKadelia)\
+arrays (from TestArrays)\
+arrays0 (from TestArrays)
+
+\* SiCortex
+
+o machine located at SiCortex in Houston with MPI (custom MPI)\
+(PathScale 3.2.99r)
+
+\- not compiling:\
+CactusConnect/HTTPD (no SSL installed)\
+CactusConnect/HTTPDExtra (no SSL installed)\
+CactusConnect/Socket (no SSL installed)\
+CactusEinstein/AHFinder (compiler issues)\
+CactusElliptic/EllPETSc (missing certain PETSc libraries)\
+CactusExternal/LORENE (no LORENE installed)\
+CactusExternal/PETSc (missing certain PETSc libraries)\
+CactusExternal/SDF (no SDF installed)\
+CactusPUGHIO/IOStreamedHDF5 (installed HDF5 does not suppport
+streaming)\
+CactusTest/TestAllTypes (CCTK\_REAL16 not supported)\
+CactusTest/TestCoordinates (some types not supported)\
+CactusTest/TestAllTypes (compiler issues)
+
+\- testsuites failing:\
+test\_Bench (from BenchADM)\
+test\_ADM\_2 (from ADM)\
+test\_axibrill\_nostagger (from IDAxiBrillBH)\
+test\_pw\_ADM\_sl (from IDLinearWaves)\
+test\_maximal\_1 (from Maximal)\
+teuktest4 (from PsiKadelia)\
+
+=====================================================================
+
+CONFIGURATION FILES FOR TEST MACHINES\
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+
+Availabe in CVS at
+
+cvs -d :pserver:cvs\_anon\@cvs.cactuscode.org:/cactus checkout
+Utilities/Releases/Beta16
