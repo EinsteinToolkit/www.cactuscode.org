@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+import re
+import sys
+
+(pattern,infile) = sys.argv[1:]
+
+with open(infile,"r") as f:
+    content = f.read()
+
+m = re.search(pattern, content, re.MULTILINE)
+
+if m is None:
+    sys.exit("No match for "+pattern+" found in "+infile)
+
+print(m.group(1))

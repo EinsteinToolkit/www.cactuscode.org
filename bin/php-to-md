@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+set -u
+
+infile=$1
+
+htmlfile=${infile%.php}.html
+mdfile=${infile%.php}.md
+tmpmdfile=${infile%.php}.tmp.md
+
+cp $infile $htmlfile
+pandoc $htmlfile -o $tmpmdfile
+
+title=$(./re-extract "\\\$title='(.*)';" $infile)
+
+cat - $tmpmdfile > $mdfile <<EOF
+---
+layout: default
+title: $title
+---
+EOF
+
+rm -f $tmpmdfile $htmlfile
