@@ -12,7 +12,18 @@ tmpmdfile=${infile%.php}.tmp.md
 cp $infile $htmlfile
 pandoc $htmlfile -o $tmpmdfile
 
+set +e
 title=$(re-extract "\\\$title='(.*)';" $infile)
+if [ $? -ne 0 ]; then
+    echo "ERROR from $0:"
+    echo "  Failed to extract title from $infile" >&2
+    echo "  Removing temporary files" >&2
+    echo "  $infile has not been converted" >&2
+    rm -f $tmpmdfile $htmlfile
+    exit 1
+fi
+    
+set -e
 
 cat - $tmpmdfile > $mdfile <<EOF
 ---

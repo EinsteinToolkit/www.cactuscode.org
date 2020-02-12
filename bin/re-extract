@@ -11,6 +11,6 @@ with open(infile,"r") as f:
 m = re.search(pattern, content, re.MULTILINE)
 
 if m is None:
-    sys.exit("No match for "+pattern+" found in "+infile)
+    sys.exit(sys.argv[0]+": No match for "+pattern+" found in "+infile)
 
 print(m.group(1))
