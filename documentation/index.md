@@ -21,7 +21,3 @@ Reference Manual ([PDF](ReferenceManual.pdf),
 [Visualization](visualization/)
 
 [Citation](citation/)
-
-\
-\
-\
