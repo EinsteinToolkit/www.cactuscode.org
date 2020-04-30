@@ -9,7 +9,7 @@ Choptuik](http://laplace.physics.ubc.ca/People/matt/).
 DV is a powerful visualization and data analysis package for numerical
 codes that solve partial differential equations via grid-based methods,
 in particular those utilizing adaptive mesh refinement (AMR) and/or
-running in a parallel environment.\
+running in a parallel environment.  
 DV provides a comprehensive set of built-in functions to analyze 1D, 2D,
 and 3D time-dependent datasets, eg.
 
@@ -32,28 +32,28 @@ xvs please refer to the [DV
 tutorial](http://laplace.physics.ubc.ca/Doc/DV/) and the [xvs
 documentation](http://laplace.physics.ubc.ca/~matt/410/Doc/xvs/).
 Download and installation instructions for DV and xvs can be found
-[here](http://laplace.physics.ubc.ca/People/matt/rnpletal.html).\
+[here](http://laplace.physics.ubc.ca/People/matt/rnpletal.html).  
 Also check out the UBC Physics & Astronomy Theory/Numerical Relativity
 [Software and Related
 page](http://laplace.physics.ubc.ca/Group/Software.html).
 
-![DV Visualization](DV.jpg){width="100"} ![xvs
-Visualization](xvs.jpg){width="100"}
+<img src="DV.jpg" alt="DV Visualization" width="100" />
+<img src="xvs.jpg" alt="xvs Visualization" width="100" />
 
 ### The DataVaultXVSutils Package
 
 Both DV and xvs expect the data to be analyzed in SDF (simple data
 format). Cactus does not support this format therefore data format
-conversion utilities are needed.\
+conversion utilities are needed.  
 The DataVaultXVSutils package provides two utility programs which
 convert Cactus output data into SDF:
 
--   `hdf5todv`\
+-   `hdf5todv`  
     A utility program which reads an HDF5 datafile and sends its
     selected datasets in SDF format to a DV visualization server.
     Because DV is able to process unigrid as well as FMR datasets HDF5
     output files from both PUGH and Carpet can be sent and visualized.
--   `ascii1Dtoxvs.pl`\
+-   `ascii1Dtoxvs.pl`  
     A perl script which reads 1D output files in ASCII format (as
     created by thorn `CactusBase/IOASCII`) and sends them to an xvs
     visualization server. Both gnuplot and xgraph/ygraph output files
@@ -75,8 +75,8 @@ must be installed on your system.
 `hdf5todv` can be called with an optional index vector to select
 individual datasets in the HDF5 input file. The vector can be given as a
 comma-separated list of individual dataset indices and/or as a min-max
-range with \'\*\' as wildcard character and an optional output frequency
-argument.\
+range with '\*' as wildcard character and an optional output frequency
+argument.  
 For example,
 
       hdf5todv -i '0,10,20-*/2' alp.h5

@@ -23,7 +23,7 @@ processor.
 -   [BenchIO\_FlexIO\_eachproc\_80l.par](BenchIO_FlexIO_eachproc_80l.par)
 -   [BenchIO\_FlexIO.thornlist](BenchIO_FlexIO.thornlist)
 
-These files are also contained in the benchmark\'s tarball.
+These files are also contained in the benchmark's tarball.
 
 -   [BenchIO\_FlexIO.tar.gz](BenchIO_FlexIO.tar.gz)
 
@@ -31,5 +31,5 @@ For an overview of the commands on how to download, compile and run the
 benchmark see [Downloading and building the benchmark
 tarballs](http://www.cactuscode.org/Benchmarks/Tutorial).
 
-\
-\
+  
+  

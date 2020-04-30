@@ -2,7 +2,7 @@
 layout: default
 title: Oleg Korobkin
 ---
-![Photo of Oleg Korobkin](okorobkin-photo.jpg){.float-right width="150"}
+<img src="okorobkin-photo.jpg" alt="Photo of Oleg Korobkin" class="float-right" width="150" />
 
 ### Position
 

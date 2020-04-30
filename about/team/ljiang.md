@@ -2,7 +2,7 @@
 layout: default
 title: Lei Jiang
 ---
-![Photo of Lei Jiang](ljiang-photo.png){.float-right width="150"}
+<img src="ljiang-photo.png" alt="Photo of Lei Jiang" class="float-right" width="150" />
 
 ### Position
 

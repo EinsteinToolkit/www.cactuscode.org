@@ -14,7 +14,7 @@ LSU has developed a Cactus simulation of an inspiraling binary black
 hole system using over 5,800 cores for large-scale testing and online
 remote visualization. At SuperComputing 2008, the largest uniform grid
 evolution of a black hole collision to-date was performed using an
-800^3^ sized data set.
+800<sup>3</sup> sized data set.
 
 During the webcast, Drs. Schnetter and Brandt also discuss how their
 simulation results will be used to carry out further scientific research

@@ -2,8 +2,7 @@
 layout: default
 title: Eloisa Bentivegna
 ---
-![Photo of Eloisa Bentivegna](bentivegna-photo.png){.float-right
-width="150"}
+<img src="bentivegna-photo.png" alt="Photo of Eloisa Bentivegna" class="float-right" width="150" />
 
 ### Position
 

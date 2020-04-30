@@ -7,5 +7,5 @@ Portal](http://portal.cactuscode.org).
 
 ### Login credentials-
 
-*username*: guest\
+*username*: guest  
 *password*: guest

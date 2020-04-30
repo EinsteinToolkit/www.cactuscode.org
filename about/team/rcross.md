@@ -2,7 +2,7 @@
 layout: default
 title: Robert Cross
 ---
-![Photo of Robert Cross](rcross-photo.png){.float-right width="150"}
+<img src="rcross-photo.png" alt="Photo of Robert Cross" class="float-right" width="150" />
 
 ### Position
 

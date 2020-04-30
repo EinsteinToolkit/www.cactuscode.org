@@ -8,7 +8,7 @@ and for profiling and optimization studies. The Cactus Team regularly
 run the benchmarks on this page with different architectures, compilers,
 MPI implementations etc. More details about publications and reports
 resulting from this work can be found on our [publications
-page](http://www.cactuscode.org/Papers/performance). Sasanka Madiraju\'s
+page](http://www.cactuscode.org/Papers/performance). Sasanka Madiraju's
 [master
 thesis](http://www.cactuscode.org/Articles/Cactus_Madiraju06.pdf/)
 presents the performance of Cactus benchmarks on different machines and
@@ -21,8 +21,8 @@ why Cactus provides a good benchmarking platform. Also see the
 
 To read a description of the significance and profile of BSSN\_PUGH,
 along with performance and scaling results with various architectures,
-see *[\"A Scientific Application Benchmark using the Cactus
-Framework\"](http://www.cactuscode.org/Articles/Cactus_Allen07a.pre.pdf)*
+see *["A Scientific Application Benchmark using the Cactus
+Framework"](http://www.cactuscode.org/Articles/Cactus_Allen07a.pre.pdf)*
 
 ### Standard Benchmarks
 
@@ -45,7 +45,7 @@ We currently maintain five standard benchmarking applications:
     relativistic Euler equations in addition to the Einstein equations.
     Download [Bench\_Whisky\_Carpet.tar.gz](Bench_Whisky_Carpet.tar.gz)
 -   [BenchIO\_FlexIO](benchio_flexio): An I/O benchmark using John
-    Shalf\'s FlexIO library. It measures the speed of writing simulation
+    Shalf's FlexIO library. It measures the speed of writing simulation
     data to disk using the IOFlexIO I/O method. Download
     [BenchIO\_FlexIO.tar.gz](BenchIO_FlexIO.tar.gz)
 -   [BenchIO\_HDF5](benchio_hdf5): An I/O benchmark using the
@@ -79,5 +79,5 @@ target architectures.
 
 -   [Pre-2004 benchmarks](http://www.cactuscode.org/old/Benchmark/)
 
-\
-\
+  
+  

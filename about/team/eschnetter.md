@@ -2,8 +2,7 @@
 layout: default
 title: Erik Schnetter
 ---
-![Photo of Erik Schnetter](eschnetter-photo.jpg){.float-right
-width="150"}
+<img src="eschnetter-photo.jpg" alt="Photo of Erik Schnetter" class="float-right" width="150" />
 
 ### Position
 

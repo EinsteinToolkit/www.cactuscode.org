@@ -9,53 +9,53 @@ list some of the current active members of the development team:
 
 ### Current
 
-[Gabrielle Allen](gallen)\
+[Gabrielle Allen](gallen)  
 Former lead of Cactus project at [UIUC](https://astro.illinois.edu/) and
 inactive developer
 
-\
+  
 
-[Frank Löffler](floeffler)\
+[Frank Löffler](floeffler)  
 Former lead of the Cactus project
 
-\
+  
 
-[Steven R. Brandt](sbrandt)\
+[Steven R. Brandt](sbrandt)  
 Current lead of the Cactus project at the
 [CCT](http://www.cct.lsu.edu/ "Center for Computation & Technology") at
 [LSU](http://www.lsu.edu/)
 
-\
+  
 
-[David Rideout](drideout)\
+[David Rideout](drideout)  
 Researcher in the [University of California, San Diego Department of
 Mathematics](http://www.math.ucsd.edu/~drideout/)
 
-\
+  
 
-[Erik Schnetter](eschnetter)\
+[Erik Schnetter](eschnetter)  
 Scientist in the [Perimeter Institute for Theoretical
 Physics](http://www.perimeterinstitute.ca/)
 
-\
+  
 
-[Roland Haas](haas)\
+[Roland Haas](haas)  
 Researcher at [NCSA](http://gravity.ncsa.illinois.edu/ "NCSA")
 
-\
+  
 
-[Ian Hinder](hinder)\
+[Ian Hinder](hinder)  
 Postdoc researcher at the
 [AEI](http://www.aei.mpg.de/14014/AEI_Potsdam-Golm "AEI")
 
-\
+  
 
-[Eloisa Bentivegna](ebentivegna)\
+[Eloisa Bentivegna](ebentivegna)  
 Assistant Professor at the [department of Physics and Astronomy,
 University of Catania,
 Italy](http://www.unict.it/en/ "University of Catania")
 
-\
+  
 
 ### Alumni
 

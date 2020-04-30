@@ -11,4 +11,4 @@ the previous release in November 2012 have been included.
 Read more about the new release in the longer [release
 notes](http://cactuscode.org/download/releasenotes/Cactus_4.2.0).
 
-### 22 May 2013 --- Frank Löffler {#may-2013-frank-löffler .align-right}
+### 22 May 2013 — Frank Löffler

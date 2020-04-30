@@ -14,6 +14,6 @@ Demo](/documentation/tutorials/wavetoydemo) is a good place to start.
 -   [Building Cactus](/documentation/tutorials/BuildingCactus.pdf)
 -   [Thorn Writing 101](/documentation/tutorials/CactusTutorial2.pdf)
 
-\
+  
 
 [Complete listing of tutorials](list)

@@ -2,7 +2,7 @@
 layout: default
 title: Gabrielle Allen
 ---
-![Photo of Gabrielle Allen](gallen-photo.jpg){.float-right width="150"}
+<img src="gallen-photo.jpg" alt="Photo of Gabrielle Allen" class="float-right" width="150" />
 
 ### Position
 

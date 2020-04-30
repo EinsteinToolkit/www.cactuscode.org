@@ -11,7 +11,7 @@ and HTTPS.
 
 VisitConnect is a module that provides running Cactus simulations with
 the capability to expose their mesh and data structures to the
-visualization package VisIt. Leveraging on VisIt\'s functionalities, the
+visualization package VisIt. Leveraging on VisIt's functionalities, the
 module allows for remote visualization and simulation control through
 pause, restart and single-step commands.
 
@@ -23,7 +23,7 @@ check if the actual order of functions execution is correct. It is a
 good starting point for different interesting visualization and
 debugging functionalities.
 
-[![](visitconnect.png){height="150"}](visitconnect)
-[![](https.png){height="150"}](https)
+[<img src="visitconnect.png" height="150" />](visitconnect)
+[<img src="https.png" height="150" />](https)
 
-### 16 Dec 2008 --- bentivegna {#dec-2008-bentivegna .align-right}
+### 16 Dec 2008 — bentivegna

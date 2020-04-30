@@ -14,7 +14,7 @@ we will design and implement a [Cactus](http://www.cactuscode.org)
 driver which is based on
 [Paramesh](http://www.physics.drexel.edu/~olson/paramesh-doc/Users_manual/amr.html),
 a parallel adaptive mesh refinement library. This project is called
-\"Parca\", a mixture of the words \"Cactus\" and \"Paramesh\".
+"Parca", a mixture of the words "Cactus" and "Paramesh".
 
 A driver in Cactus manages storage for variables and implements
 communication for parallel processing. A driver is the heart piece for
@@ -30,4 +30,4 @@ relativity from the [University of
 Maryland](http://www.physics.umd.edu/grt/). David Fiske will visit the
 CCT from June 5 to 9.
 
-### 28 Jun 2006 --- jeffd {#jun-2006-jeffd .align-right}
+### 28 Jun 2006 — jeffd

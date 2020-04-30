@@ -10,8 +10,8 @@ research community, where it was developed and used over many years by a
 large international collaboration of physicists and computational
 scientists.
 
-The name Cactus comes from the design of a central core (\"flesh\")
-which connects to application modules (\"thorns\") through an extensible
+The name Cactus comes from the design of a central core ("flesh") which
+connects to application modules ("thorns") through an extensible
 interface. Thorns can implement custom developed scientific or
 engineering applications, such as computational fluid dynamics. Other
 thorns from a standard computational toolkit provide a range of

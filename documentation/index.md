@@ -2,8 +2,7 @@
 layout: default
 title: Documentation
 ---
-User\'s Guide ([PDF](UsersGuide.pdf),
-[HTML](usersguide/UsersGuide.html))
+User's Guide ([PDF](UsersGuide.pdf), [HTML](usersguide/UsersGuide.html))
 
 Reference Manual ([PDF](ReferenceManual.pdf),
 [HTML](referencemanual/ReferenceManual.html))
@@ -21,3 +20,7 @@ Reference Manual ([PDF](ReferenceManual.pdf),
 [Visualization](visualization/)
 
 [Citation](citation/)
+
+  
+  
+  

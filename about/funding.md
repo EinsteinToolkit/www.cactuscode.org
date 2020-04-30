@@ -23,7 +23,7 @@ Currently active grants supporting Cactus:
     Breaking Through the Limits*](http://www.cybertools.loni.org)
     (NSF 0725070)
 
--   NSF [*Louisiana\'s Research Infrastructure Improvement Strategy
+-   NSF [*Louisiana's Research Infrastructure Improvement Strategy
     (CyberTools)*](http://www.cybertools.loni.org) (NSF 0701491)
 
 -   NSF [*XiRel: Next Generation Infrastructure for Numerical

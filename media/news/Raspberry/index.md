@@ -2,7 +2,7 @@
 layout: default
 title: Cactus runs on Raspberry Pi
 ---
-![cactusraspberry](cactusraspberry.png){width="50"}
+<img src="cactusraspberry.png" alt="cactusraspberry" width="50" />
 
 Cactus was ported to run on [Raspberry Pis](http://raspberrypi.org/).
 These credit-card sized computers run
@@ -25,7 +25,7 @@ release of the [Einstein Toolkit](http://einsteintoolkit.org/),
 successfully passing all but a few test suites (apparently connected to
 [HDF5](http://www.hdfgroup.org/HDF5/) recovery in
 [Carpet](http://www.carpetcode.org/)) on one Raspberry Pi and a small
-\"cluster\" of two Raspberry nodes.
+"cluster" of two Raspberry nodes.
 
 Building is straightforward: [Simfactory](http://simfactory.org/) now
 contains an optionlist
@@ -33,4 +33,4 @@ contains an optionlist
 which includes instructions and lists packages which reduce build-time
 when installed.
 
-### 14 October 2013 --- knarf {#october-2013-knarf .align-right}
+### 14 October 2013 — knarf

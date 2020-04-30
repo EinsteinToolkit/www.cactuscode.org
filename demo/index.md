@@ -8,9 +8,9 @@ installation of Cactus, read through our comprehensive
 action, continue to the [live WaveToy
 demonstration](http://cactuscode.org:8080/).
 
-\
+  
 
-#### Viewport example screenshot: {#viewport-example-screenshot style="color:green"}
+#### Viewport example screenshot:
 
-\
+  
 ![](viewport.png)

@@ -13,4 +13,4 @@ release in February 2009 have been included.
 Read more about the new release in the longer [release
 notes](http://cactuscode.org/download/releasenotes/Cactus_4.0.0).
 
-### 25 Oct 2011 --- Frank Löffler {#oct-2011-frank-löffler .align-right}
+### 25 Oct 2011 — Frank Löffler

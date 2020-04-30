@@ -2,8 +2,7 @@
 layout: default
 title: Yaakoub El-Khamra
 ---
-![Photo of Yaakoub El-Khamra](yelkhamra-photo.png){.float-right
-width="150"}
+<img src="yelkhamra-photo.png" alt="Photo of Yaakoub El-Khamra" class="float-right" width="150" />
 
 ### Position
 
@@ -17,6 +16,6 @@ width="150"}
 
 ### Research
 
-Yaakoub\'s research interests lie in the areas of petroleum engineering,
+Yaakoub's research interests lie in the areas of petroleum engineering,
 computational fluid dynamics, computational frameworks, numerical
 methods and high performance computing.

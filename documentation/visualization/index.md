@@ -26,7 +26,7 @@ program. It can plot functions and data points in both two- and
 three-dimensional plots in various formats (points, lines, surfaces,
 contours).
 
-### Amira: ZIB\'s Advanced 3D Visualization System
+### Amira: ZIB's Advanced 3D Visualization System
 
 [Amira](Amira) can be used to view 3D data of scalar fields, vector
 fields, tensor fields, apparent horizon multipole expansions and
@@ -66,7 +66,7 @@ Its open system design is built on a standard interface environment. And
 its sophisticated data model provides users with great flexibility in
 creating visualizations.
 
-\
+  
 
 Cactus Output Methods and Data Formats
 --------------------------------------
@@ -74,22 +74,22 @@ Cactus Output Methods and Data Formats
 The following table details output formats which can currently be
 produced from Cactus thorns:
 
-  IO method       Description                                                              Providing thorn             Viz Tools
-  --------------- ------------------------------------------------------------------------ --------------------------- --------------------------
-  `Scalar`        output of scalars or grid array reductions in xgraph or gnuplot format   `CactusBase/IOBasic`        xgraph/ygraph, gnuplot
-  `Info`          screen output of scalars or grid array reductions                        `CactusBase/IOBasic`        xgraph/ygraph, gnuplot
-  `IOASCII_1D`    1D line output of grid arrays in xgraph or gnuplot format                `CactusBase/IOASCII`        xgraph/ygraph, gnuplot
-  `IOASCII_2D`    2D slice output of grid arrays in gnuplot format                         `CactusBase/IOASCII`        gnuplot
-  `IOASCII_3D`    3D slice output of grid arrays in gnuplot format                         `CactusBase/IOASCII`        gnuplot
-  `IOHDF5_2D`     2D slice output of grid arrays in HDF5 format                            `CactusPUGHIO/IOHDF5`       Amira, DV, OpenDX, VisIt
-  `IOHDF5_3D`     full 3D output of grid arrays in HDF5 format                             `CactusPUGHIO/IOHDF5`       Amira, DV, OpenDX, VisIt
-  `IOFlexIO_2D`   2D slice output of grid arrays in FlexIO format                          `CactusPUGHIO/IOFlexIO`     Amira
-  `IOFlexIO`      full 3D output of grid arrays in FlexIO format                           `CactusPUGHIO/IOFlexIO`     Amira
-  `IOJpeg_2D`     2D slice output as a jpeg image                                          `CactusIO/IOJpeg`           web browser, xv
-  `IOPanda`                                                                                `CactusPUGHIO/IOPanda`       
-  `IsoSurfacer`   Constant value isosurfaces of grid functions                             `CactusPUGHIO/IOSurfacer`   Amira, IsoView
+| IO method     | Description                                                            | Providing thorn           | Viz Tools                |
+|---------------|------------------------------------------------------------------------|---------------------------|--------------------------|
+| `Scalar`      | output of scalars or grid array reductions in xgraph or gnuplot format | `CactusBase/IOBasic`      | xgraph/ygraph, gnuplot   |
+| `Info`        | screen output of scalars or grid array reductions                      | `CactusBase/IOBasic`      | xgraph/ygraph, gnuplot   |
+| `IOASCII_1D`  | 1D line output of grid arrays in xgraph or gnuplot format              | `CactusBase/IOASCII`      | xgraph/ygraph, gnuplot   |
+| `IOASCII_2D`  | 2D slice output of grid arrays in gnuplot format                       | `CactusBase/IOASCII`      | gnuplot                  |
+| `IOASCII_3D`  | 3D slice output of grid arrays in gnuplot format                       | `CactusBase/IOASCII`      | gnuplot                  |
+| `IOHDF5_2D`   | 2D slice output of grid arrays in HDF5 format                          | `CactusPUGHIO/IOHDF5`     | Amira, DV, OpenDX, VisIt |
+| `IOHDF5_3D`   | full 3D output of grid arrays in HDF5 format                           | `CactusPUGHIO/IOHDF5`     | Amira, DV, OpenDX, VisIt |
+| `IOFlexIO_2D` | 2D slice output of grid arrays in FlexIO format                        | `CactusPUGHIO/IOFlexIO`   | Amira                    |
+| `IOFlexIO`    | full 3D output of grid arrays in FlexIO format                         | `CactusPUGHIO/IOFlexIO`   | Amira                    |
+| `IOJpeg_2D`   | 2D slice output as a jpeg image                                        | `CactusIO/IOJpeg`         | web browser, xv          |
+| `IOPanda`     |                                                                        | `CactusPUGHIO/IOPanda`    |                          |
+| `IsoSurfacer` | Constant value isosurfaces of grid functions                           | `CactusPUGHIO/IOSurfacer` | Amira, IsoView           |
 
-[]{#hdf5}
+<span id="hdf5"></span>
 
 ### Cactus Postprocessing Utilities
 
@@ -98,14 +98,14 @@ To aid the visualisation of very large HDF5 output data, thorn
 used to manipulate HDF5 files, independently of their driver-specific
 format:
 
--   `hdf5_double_to_single`\
+-   `hdf5_double_to_single`  
     Copies the entire contents of an input HDF5 file to an output HDF5
     file, converting all double precision datasets to single precision.
--   `hdf5_merge`\
+-   `hdf5_merge`  
     Merges a list of HDF5 input files into a single HDF5 output file.
     This can be used to concatenate HDF5 output data created as one file
     per timestep.
--   hdf5\_extract\
+-   hdf5\_extract  
     Extracts a given list of named objects (groups or datasets) from an
     HDF5 input file and writes them into a new HDF5 output file. This is
     the reverse operation to what `hdf5_merge` does. Useful eg. for

@@ -20,7 +20,6 @@ Here is [the data](bssnpugh.txt) we used with the [gnuplot
 script](Scaling_BSSN_PUGH_script.txt) to generate the scaling graph of
 the BSSN\_PUGH on BlueGene/L (BGW).
 
-[![](Scaling_BSSN_PUGH.png){width="480"
-height="360"}](Scaling_BSSN_PUGH.png)
+[<img src="Scaling_BSSN_PUGH.png" width="480" height="360" />](Scaling_BSSN_PUGH.png)
 
-### 29 Jan 2007 --- elena {#jan-2007-elena .align-right}
+### 29 Jan 2007 — elena

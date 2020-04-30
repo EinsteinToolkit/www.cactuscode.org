@@ -4,9 +4,9 @@ title: Ed Seidel wins Fernbach prize for Cactus and Black Hole Work
 ---
 **November 2006:**
 
-  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Ed Seidel won the 2006 Sidney Fernbach Award for his work with Cactus and Black Holes. He received one of the highest honors in computational science at the annual Supercomputing Conference in Tampa, Fla. on Nov. 15. Seidel gave a keynote address on his research at the conference. He was honored for his work to develop collaborative, high-performance computing approaches to solve complex problems in physics, such as Einstein's equations of general relativity, specifically for colliding black holes, which was the subject of his speech.   [![](edsc06.jpg){width="300" height="225"}](http://www.cct.lsu.edu/~gallen/Movies/SeidelCactus.avi) [Ed talking about Cactus](http://www.cct.lsu.edu/~gallen/Movies/SeidelCactus.avi) (-a movie of 194 MB!)
-  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |                                                                                                                                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ed Seidel won the 2006 Sidney Fernbach Award for his work with Cactus and Black Holes. He received one of the highest honors in computational science at the annual Supercomputing Conference in Tampa, Fla. on Nov. 15. Seidel gave a keynote address on his research at the conference. He was honored for his work to develop collaborative, high-performance computing approaches to solve complex problems in physics, such as Einstein’s equations of general relativity, specifically for colliding black holes, which was the subject of his speech. | [<img src="edsc06.jpg" width="300" height="225" />](http://www.cct.lsu.edu/~gallen/Movies/SeidelCactus.avi) [Ed talking about Cactus](http://www.cct.lsu.edu/~gallen/Movies/SeidelCactus.avi) (-a movie of 194 MB!) |
 
 In his speech, Seidel discussed how developing the software needed to
 solve these problems has advanced breakthroughs in grid computing and
@@ -27,7 +27,7 @@ Among the past recipients are John B. Bell (2005), Jack J. Dongarra
 (2003), Michael L. Norman (1999) and Phillip Collela (1998). [*(Source
 CCT Weekly)*](http://www.cct.lsu.edu/news/news/155)
 
-[Download Ed\'s presentation](/media/presentations/SC06Seidel.pdf)
+[Download Ed's presentation](/media/presentations/SC06Seidel.pdf)
 
 [See SC06 flyer for Sidney Fernbach Award.](/media/presentations/sc06_1)
 
@@ -37,7 +37,7 @@ CCT Weekly)*](http://www.cct.lsu.edu/news/news/155)
 Article](http://appl003.lsu.edu/UNV002.nsf/PressReleases/PR4052?OpenDocument):
 
 *There are only a handful of awards in the computational sciences that
-mark career achievements. Edward Seidel, director of LSU\'s Center for
+mark career achievements. Edward Seidel, director of LSU's Center for
 Computation and Technology, or CCT, has just received one of the most
 prestigious honors, the Sidney Fernbach Award.*
 
@@ -56,8 +56,8 @@ computing and grid computing to enable the collaborative numerical
 investigation of complex problems in physics, particularly focusing on
 modeling black hole collisions.
 
-Seidel\'s successful work in numerical relativity, the mathematical
-investigation of relativity through the solution of Einstein\'s
+Seidel's successful work in numerical relativity, the mathematical
+investigation of relativity through the solution of Einstein's
 equations, has been aided by technologies and methods developed by
 Seidel and his teams of researchers throughout the past several years.
 
@@ -75,13 +75,13 @@ problems. He and his research team pursued solving these equations using
 supercomputers in different locations simultaneously, which led to
 breakthroughs in the field of grid computing.
 
-Seidel\'s career is marked by a history of risk-taking experimentation
+Seidel's career is marked by a history of risk-taking experimentation
 that has paid huge dividends in scientific discovery. His scientific
 legacy combines an extraordinary grasp of very complex concepts, with a
 keen eye for the uses of technology and the ability to inspire diverse
 groups of researchers, scientists and students to lend the full range of
 their expertise to solving complex problems in novel and groundbreaking
 ways. It is this level of leadership that makes his work one of the best
-examples of the success of LSU\'s Flagship Agenda.
+examples of the success of LSU's Flagship Agenda.
 
-### day Mon year --- user posting {#day-mon-year-user-posting .align-right}
+### day Mon year — user posting

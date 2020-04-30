@@ -12,6 +12,6 @@ on the infrastructure that it provides.
 -   [XiRel](http://www.cct.lsu.edu/xirel) develops a Next Generation
     Infrastructure for Numerical Relativity
 
-\
-\
-\
+  
+  
+  

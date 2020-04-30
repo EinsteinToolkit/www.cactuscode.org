@@ -6,7 +6,7 @@ This page describes standard thornlists for Cactus.
 
 -   The Cactus Computational Toolkit includes thorns supported and
     developed by the Cactus Team that provide general computational
-    infrastructure\
+    infrastructure  
     [development
     version](https://bitbucket.org/cactuscode/utilities/raw/master/ThornLists/Cactus_devel.th),
     [current stable version
@@ -16,5 +16,5 @@ This page describes standard thornlists for Cactus.
     differential equation using finite differences, and so provides a
     very good learning example of how a PDE can be solved within the
     Cactus framework. The WaveToy application is provided in each of the
-    programming languages supported by Cactus.\
+    programming languages supported by Cactus.  
     [WaveToy.th](WaveToy.th)

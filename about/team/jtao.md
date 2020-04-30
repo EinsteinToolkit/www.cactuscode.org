@@ -2,7 +2,7 @@
 layout: default
 title: Jian Tao
 ---
-![Photo of Jian Tao](jtao-photo.png){.float-right width="110"}
+<img src="jtao-photo.png" alt="Photo of Jian Tao" class="float-right" width="110" />
 
 ### Position
 

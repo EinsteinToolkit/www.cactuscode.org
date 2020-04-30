@@ -2,8 +2,7 @@
 layout: default
 title: Ashley Zebrowski
 ---
-![Photo of Ashley Zebrowski](azebrowski-photo.png){.float-right
-width="150"}
+<img src="azebrowski-photo.png" alt="Photo of Ashley Zebrowski" class="float-right" width="150" />
 
 ### Position
 

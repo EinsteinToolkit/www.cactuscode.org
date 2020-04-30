@@ -15,7 +15,7 @@ Sciences as the secondary contractor).
 KD-50-I is a diskless cluster with a total of 336 Loongson-2F CPUs
 (750MHz) and 1GB memory for each CPU. The operating system is Debian
 Linux. The size of the supercomputer is about that of a household
-refrigerator and the cost is about \$110,000.
+refrigerator and the cost is about $110,000.
 
 Cactus standard testsuites were verified on multiple processors. Several
 jobs were run with up to 128 processors. The results are presented on
@@ -23,11 +23,11 @@ the graph below. The compute time seemed to scale well while the wall
 time seemed to be affected by I/O and other overheads when the number of
 processors went beyond 16.
 
-[![](Loongson.jpg){width="150" height="220"}](Loongson.jpg)
+[<img src="Loongson.jpg" width="150" height="220" />](Loongson.jpg)
 
 The white cluster is the KD-50-I cluster
 
-[![](KD50.png){width="75%"}](KD50.png)
+[<img src="KD50.png" style="width:75.0%" />](KD50.png)
 
     #The MPI compilers/scripts are based on gcc version 4.1.2 20061115 (pre-release) (Debian 4.1.1-21).
 
@@ -63,4 +63,4 @@ The white cluster is the KD-50-I cluster
 
     LIBS=gfortran
 
-### 3 Feb 2008 --- elena {#feb-2008-elena .align-right}
+### 3 Feb 2008 — elena

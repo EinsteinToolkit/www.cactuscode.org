@@ -2,7 +2,7 @@
 layout: default
 title: Frank Löffler
 ---
-![Photo of Frank Löffler](floeffler-photo.jpg){.float-right width="150"}
+<img src="floeffler-photo.jpg" alt="Photo of Frank Löffler" class="float-right" width="150" />
 
 ### Position
 

@@ -27,13 +27,13 @@ Chris White showed a [UCoMs](http://www.ucoms.org/) demo black oil and
 Mayank Tyagi talked about the *Computational Fluid Dynamics Toolkit in
 Cactus*.
 
-  --------------------------------------------------
-  [![](ErikSC07.jpg){width="50%"}](ErikSC07.jpg)
-  Erik Schnetter
-  [![](ChrisSC07.jpg){width="50%"}](ChrisSC07.jpg)
-  Chris White
-  [![](EdBeeSC07.jpg){width="50%"}](EdBeeSC07.jpg)
-  Ed Seidel talking about Queen Bee
-  --------------------------------------------------
+|                                                                  |
+|------------------------------------------------------------------|
+| [<img src="ErikSC07.jpg" style="width:50.0%" />](ErikSC07.jpg)   |
+| Erik Schnetter                                                   |
+| [<img src="ChrisSC07.jpg" style="width:50.0%" />](ChrisSC07.jpg) |
+| Chris White                                                      |
+| [<img src="EdBeeSC07.jpg" style="width:50.0%" />](EdBeeSC07.jpg) |
+| Ed Seidel talking about Queen Bee                                |
 
-### 10 Jan 2008 --- elena {#jan-2008-elena .align-right}
+### 10 Jan 2008 — elena

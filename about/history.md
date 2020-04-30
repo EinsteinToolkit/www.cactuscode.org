@@ -3,9 +3,9 @@ layout: default
 title: History
 ---
 Cactus is a direct descendant of many years of code development in Ed
-Seidel\'s group of researchers at the National Center for Supercomputing
+Seidel's group of researchers at the National Center for Supercomputing
 Applications (NCSA) as the group wrestled to numerically solve
-Einstein\'s Equations for General Relativity and thus model black holes,
+Einstein's Equations for General Relativity and thus model black holes,
 neutron stars, and boson stars.
 
 In 1995, Ed Seidel and many of his group moved to the [Max Planck

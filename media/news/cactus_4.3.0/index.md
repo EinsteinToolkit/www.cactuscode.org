@@ -11,4 +11,4 @@ accumulated since the previous release have been included.
 Read more about the new release in the longer [release
 notes](http://cactuscode.org/download/releasenotes/Cactus_4.3.0).
 
-### 11 Nov 2015 --- Frank Löffler {#nov-2015-frank-löffler .align-right}
+### 11 Nov 2015 — Frank Löffler

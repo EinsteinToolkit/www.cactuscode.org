@@ -2,7 +2,7 @@
 layout: default
 title: David Rideout
 ---
-![Photo of David Rideout](drideout-photo.jpg){.float-right width="150"}
+<img src="drideout-photo.jpg" alt="Photo of David Rideout" class="float-right" width="150" />
 
 ### Position
 

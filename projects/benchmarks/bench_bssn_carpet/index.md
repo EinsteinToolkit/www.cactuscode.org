@@ -29,7 +29,7 @@ list here available.
 -   [Bench\_BSSN\_Carpet\_3lev\_42l.par](Bench_BSSN_Carpet_3lev_42l.par)
 -   [Bench\_BSSN\_Carpet.thornlist](Bench_BSSN_Carpet.thornlist)
 
-These files are also contained in the benchmark\'s tarball.
+These files are also contained in the benchmark's tarball.
 
 -   [Bench\_BSSN\_Carpet.tar.gz](Bench_BSSN_Carpet.tar.gz)
 
@@ -37,5 +37,5 @@ For an overview of the commands on how to download, compile and run the
 benchmark see [Downloading and building the benchmark
 tarballs](/community/benchmarks/tutorial).
 
-\
-\
+  
+  

@@ -6,18 +6,16 @@ title: Download Cactus
 
 ### Requirements
 
-  ---------- -------------
-  Required   Optional
-  Perl       MPI
-  C, C++     F90
-  CPP        ctags/etags
-  GNU make   Python
-  svn, git   
-  ---------- -------------
+|          |             |
+|----------|-------------|
+| Required | Optional    |
+| Perl     | MPI         |
+| C, C++   | F90         |
+| CPP      | ctags/etags |
+| GNU make | Python      |
+| svn, git |             |
 
 ### Getting the Code
-
-(MARKDOWN CONVERSION ERROR HERE - NEED TO CHECK WHAT HAPPENED.  IAN.)
 
 ### License
 

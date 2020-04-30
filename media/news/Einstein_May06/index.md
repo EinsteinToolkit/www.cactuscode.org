@@ -4,10 +4,10 @@ title: Cactus Einstein Workshop
 ---
 ### CactusEinstein Workshop
 
-Location: Baton Rouge, LA\
+Location: Baton Rouge, LA  
 **Date: May 23 to May 25, 2006**
 
-[![](Cactus_Poster.jpg){width="200" height="300"}](Cactus_Poster.pdf)
+[<img src="Cactus_Poster.jpg" alt="Cactus_Poster.jpg" width="200" height="300" />](Cactus_Poster.pdf)
 
 The CCT offers a CactusEinstein workshop from May 23 to May 25, 2006.
 The aim of this workshop is to introduce physicists to [mesh refinement
@@ -34,11 +34,11 @@ differencing operators, and non-trivial initial data for single and
 binary black hole simulations.
 
 There is no registration fee. If you plan to attend, please send email
-to [ [Erik Schnetter](mailto:schnetter@cct.ls.edu) before May 1. Please
-specify the dates at which you plan to attend, whether you are
-interested in the lab sessions, and whether you would maybe like to
-present a talk or a poster. Please indicate also if you want help in
-finding accommodation.]{.nobr}
+to <span class="nobr"> [Erik Schnetter](mailto:schnetter@cct.ls.edu)
+before May 1. Please specify the dates at which you plan to attend,
+whether you are interested in the lab sessions, and whether you would
+maybe like to present a talk or a poster. Please indicate also if you
+want help in finding accommodation.</span>
 
 The workshop programme is here
 ([Programme](http://wiki.cct.lsu.edu/numrel/space/Events/CactusEinstein_2006/Programme))
@@ -49,4 +49,4 @@ The list of software packages for the lab sessions is here
 The slides of the presentations are here
 ([Slides](http://wiki.cct.lsu.edu/numrel/space/Events/CactusEinstein_2006/Slides)).
 
-### 28 Jun 2006 --- jeffd {#jun-2006-jeffd .align-right}
+### 28 Jun 2006 — jeffd

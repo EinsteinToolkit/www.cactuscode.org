@@ -21,7 +21,7 @@ list here available.
 -   [Bench\_Whisky\_Carpet\_48l.par](Bench_Whisky_Carpet_48l.par)
 -   [Bench\_Whisky\_Carpet.thornlist](Bench_Whisky_Carpet.thornlist)
 
-These files are also contained in the benchmark\'s tarball.
+These files are also contained in the benchmark's tarball.
 
 -   [Bench\_Whisky\_Carpet.tar.gz](Bench_Whisky_Carpet.tar.gz)
 
@@ -29,5 +29,5 @@ For an overview of the commands on how to download, compile and run the
 benchmark see [Downloading and building the benchmark
 tarballs](/community/benchmarks/tutorial).
 
-\
-\
+  
+  

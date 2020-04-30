@@ -11,11 +11,11 @@ made available by the University of Delaware.
 
 Complete parameter listing: [Funwave Parameters](params.php)
 
-  ---------------------------------
-  ![](images/water-300.png)
-  ![](images/bottom-300.png)
-  ![](images/funwave-amr-300.png)
-  ---------------------------------
+|                                 |
+|---------------------------------|
+| ![](images/water-300.png)       |
+| ![](images/bottom-300.png)      |
+| ![](images/funwave-amr-300.png) |
 
 **Current version:** FW\_2012\_11
 

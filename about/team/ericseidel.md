@@ -2,7 +2,7 @@
 layout: default
 title: Eric Seidel
 ---
-![Photo of Eric Seidel](ericseidel.jpg){.float-right width="110"}
+<img src="ericseidel.jpg" alt="Photo of Eric Seidel" class="float-right" width="110" />
 
 ### Position
 

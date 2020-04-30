@@ -23,7 +23,7 @@ processor.
 -   [BenchIO\_HDF5\_eachproc\_80l.par](BenchIO_HDF5_eachproc_80l.par)
 -   [BenchIO\_HDF5.thornlist](BenchIO_HDF5.thornlist)
 
-These files are also contained in the benchmark\'s tarball.
+These files are also contained in the benchmark's tarball.
 
 -   [BenchIO\_HDF5.tar.gz](BenchIO_HDF5.tar.gz)
 
@@ -31,5 +31,5 @@ For an overview of the commands on how to download, compile and run the
 benchmark see [Downloading and building the benchmark
 tarballs](/community/benchmarks/tutorial).
 
-\
-\
+  
+  

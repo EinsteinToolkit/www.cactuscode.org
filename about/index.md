@@ -11,11 +11,11 @@ dynamics and quantum gravity are developing open community toolkits for
 Cactus.
 
 Cactus allows you to develop code in your language of choice: F77, F90,
-C, C++ are all supported --- developers write their own components,
-which we call \"thorns\" which are connected together by the Cactus
-\"flesh\". Developers and users can take advantage of a selection of
-existing computational thorns, as well as a growing number of domain
-specific thorns.
+C, C++ are all supported — developers write their own components, which
+we call "thorns" which are connected together by the Cactus "flesh".
+Developers and users can take advantage of a selection of existing
+computational thorns, as well as a growing number of domain specific
+thorns.
 
 Cactus runs on a wide range (just about all) architectures and operating
 systems. Cactus is being used as the basis for numerous projects in
@@ -31,15 +31,15 @@ Computation & Technology at Louisiana State University.
 -   [Cactus History and Funding](history)
 -   [Contact Us!](contact)
 
-\
+  
 How do I cite Cactus?
 
 Here is an example citation of the flesh:
 
-Goodale et al. \"The Cactus Framework and Toolkit: Design and
-Applications.\" *Vector and Parallel Processing \-- VECPAR\'2002, 5th
+Goodale et al. "The Cactus Framework and Toolkit: Design and
+Applications." *Vector and Parallel Processing -- VECPAR'2002, 5th
 International Converence, Lecture Notes in Computer Science.*
-Berlin:Springer, 2003. \<http://edoc.mpg.de/3341\>.
+Berlin:Springer, 2003. &lt;http://edoc.mpg.de/3341&gt;.
 
 The BibTeX entry:
 

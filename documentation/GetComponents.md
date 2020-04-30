@@ -47,15 +47,15 @@ Up-to-date documentation for GetComponents can be seen by executing
 `GetComponents [options] [file]` or `GetComponents [options] [URL]`
 where options are
 
-  ------------- ------------------------------------------------
-  −−help        brief help message
-  −−man         full documentation
-  −−verbose     print all system commands as they are executed
-  −−debug       print all commands to be executed and exit
-  −−anonymous   use anonymous checkout for all components
-  −−update      process all updates
-  −−root        override root directory
-  ------------- ------------------------------------------------
+|             |                                                |
+|-------------|------------------------------------------------|
+| −−help      | brief help message                             |
+| −−man       | full documentation                             |
+| −−verbose   | print all system commands as they are executed |
+| −−debug     | print all commands to be executed and exit     |
+| −−anonymous | use anonymous checkout for all components      |
+| −−update    | process all updates                            |
+| −−root      | override root directory                        |
 
 ### Component Retrieval Language (CRL)
 
@@ -66,7 +66,7 @@ includes a range of different repositories.
 
 Formally, the CRL file must have the following syntax:
 
-1.  The first (non‐comment) line must be '!CRL\_VERSION = 1.0'
+1.  The first (non‐comment) line must be ’!CRL\_VERSION = 1.0’
 2.  It will be split up in to multiple sections, with each section
     corresponding to a repository. The order of the sections is
     irrelevant.
@@ -79,14 +79,14 @@ Formally, the CRL file must have the following syntax:
 4.  !TARGET MUST be the first directive for each section. It will
     specify the directory, in which the components for the current
     repository will be placed. !TARGET may contain predefined constants
-    i.e. \$ROOT, which could represent the root directory for all of the
+    i.e. $ROOT, which could represent the root directory for all of the
     components.
 5.  !TYPE specifies the tool used to checkout the components. Currently,
     cvs, svn, git, http, https, ftp, and hg (mercurial) are
     supported. 5. !URL specifies the location of the repository for
-    anonymous checkout. !URL may contain variables \$1, \$2, etc, which
+    anonymous checkout. !URL may contain variables $1, $2, etc, which
     will correspond to the directories in the path given by !CHECKOUT.
-    For example, if !URL = http://svn.foo.com/\$2/trunk and !CHECKOUT =
+    For example, if !URL = http://svn.foo.com/$2/trunk and !CHECKOUT =
     foo/bar, !URL will be interpreted as
     http://svn.foo.com/bar/trunk. 6. !AUTH\_URL will specify a different
     location for an authenticated checkout. If both !AUTH\_URL and !URL
@@ -102,18 +102,18 @@ Formally, the CRL file must have the following syntax:
 8.  !ANON\_USER and !ANON\_PASS will specify the login credentials for
     an anonymous cvs checkout from the repository.
 9.  !REPO\_PATH will specify the location of the item to be checked out
-    within a repository. It can consist of a file path, or \$1 or \$2,
-    and will essentially serve as a prefix to the checkout path when the
+    within a repository. It can consist of a file path, or $1 or $2, and
+    will essentially serve as a prefix to the checkout path when the
     script is looking for the checkout item.
 10. Each directive will be followed by optional whitespace, an =,
     optional whitespace, the corresponding argument, and more optional
     whitespace. The end of an argument will be indicated by the !
     preceding the next directive. The argument may be enclosed in quotes
-    (\\\" or\\ '), in which case the argument will be taken literally
-    and no variable substitution will occur.
+    (\\" or\\ ’), in which case the argument will be taken literally and
+    no variable substitution will occur.
 11. Extra newlines may be inserted between sections for greater clarity,
     and any comments will be preceded by a \#.
 12. There is an optional section that will contain any definitions i.e.
-    \$ROOT. These definitions will be preceded by !DEFINE, and then
+    $ROOT. These definitions will be preceded by !DEFINE, and then
     follow the syntax for the directives. Definitions may only be
     defined once.

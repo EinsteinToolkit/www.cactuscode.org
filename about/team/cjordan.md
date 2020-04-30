@@ -2,7 +2,7 @@
 layout: default
 title: Colby Jordan
 ---
-![Colby Jordan](cjordan-photo.png){.float-right width="150"}
+<img src="cjordan-photo.png" alt="Colby Jordan" class="float-right" width="150" />
 
 ### Position
 

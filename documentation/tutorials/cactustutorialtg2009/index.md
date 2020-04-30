@@ -48,7 +48,7 @@ title: Cactus Tutorial for TeraGrid 2009
     [Thorns.th](https://svn.cct.lsu.edu/repos/cactus/tutorials/introduction/examples/Cactus/misc/Thorns.th).
     Check out the Cactus flesh and arrangements:
     ` ./GetCactus -repository=development ~/misc/Thorns.th` The script
-    will prompt you a few questions. Simply hit \<ENTER\> to accept
+    will prompt you a few questions. Simply hit &lt;ENTER&gt; to accept
     default options.
 -   Additional information on ways to obtain Cactus and associated
     arrangements are described on the [Downloads](/download/) section of
@@ -58,14 +58,13 @@ title: Cactus Tutorial for TeraGrid 2009
 
 Make sure you have configuration options file
 [queenbee.config](https://svn.cct.lsu.edu/repos/cactus/tutorials/introduction/examples/Cactus/misc/queenbee.config)
-in \$HOME/misc directory.
+in $HOME/misc directory.
 
 Create and compile cactus configuration **WaveToy**.
 ` cd ~/Cactus gmake wavetoy-config THORNLIST=~/misc/Thorns.th options=~/misc/queenbee.config gmake -j10 wavetoy`
 
 (optional) Check the compiled executable with **`--help`** on head node:
-`  `{mpirun="" -np="" 1="" -machinefile="" &lt;(echo="" localhost)=""
-~="" cactus="" exe="" cactus_wavetoy="" --help="" <="" code=""}
+`  `
 
 #### Running Cactus simulations:
 
@@ -73,20 +72,20 @@ Create and compile cactus configuration **WaveToy**.
     file](http://svn.cct.lsu.edu/repos/cactus/tutorials/introduction/examples/Cactus/misc/WaveToy.par)
     and [PBS job submission
     script](http://svn.cct.lsu.edu/repos/cactus/tutorials/introduction/examples/Cactus/misc/queenbee.qsub)
-    in your \$HOME/misc directory.
+    in your $HOME/misc directory.
 -   Submit your job: `qsub ~/misc/queenbee.qsub `
 -   Now you can monitor your job status using the **qstat** command.
     [Here](http://www.teragrid.org/userinfo/jobs/pbs.php) you can find
     more information about **qstat** and other PBS tools.
 -   The output data that your simulation is producing is located in
-    \$HOME/simulations/WaveToy. You can examine it while the job is
+    $HOME/simulations/WaveToy. You can examine it while the job is
     running.
 -   (optional) Once the job has started, it announces itself on
     [twitter.com](http://twitter.com/numrel), where it prints a
     temporary link to the simulation webpage. Follow the link to see
     various simulation parameters and control options.
 -   (optional) In order to examine standard output or standard error
-    while the job is running, you will need to ssh to the job\'s root
+    while the job is running, you will need to ssh to the job's root
     node and check its temporary files in **/var/spool/torque/spool:**
     ` qstat -u <USER>                         # lists all jobs for a user <USER> qstat -f <JOB-NUMBER> | grep exec_host;  # gives you first line in the list of nodes  ssh <ROOT-NODE> -x less /var/spool/torque/spool/<JOB-NUMBER>.qb2.OU  # standard output of your job ssh <ROOT-NODE> -x less /var/spool/torque/spool/<JOB-NUMBER>.qb2.ER  # standard error   `
 -   You can delete (abort) your job using **qdel** command.
@@ -102,7 +101,7 @@ gnuplot [here]() and
 
 -   The WaveToy simulation produced output of 1D cuts along the X-, Y-
     and Z-directions for variable phi. The files with this data can be
-    found in \$HOME/simulations/WaveToy directory.
+    found in $HOME/simulations/WaveToy directory.
 -   Change to the simulation data directory and start gnuplot:
     ` cd ~/simulations/WaveToy gnuplot `
 -   Try various 1D and 2D plots:
@@ -126,19 +125,19 @@ gnuplot [here]() and
     the list of host profiles. This procedure for using GUI interface
     for a generic machine is described
     [here](/documentation/guides/visualization/VisIt).
--   On Linux or Mac, you can also simply edit file **\~/.visit/config**
+-   On Linux or Mac, you can also simply edit file **~/.visit/config**
     by adding the following lines to host profiles section of XML
     (replace **train01** with your username):
     ` <Object name="HostProfile">     <Field name="profileName" type="string">serial</Field>     <Field name="host" type="string">queenbee.loni.org</Field>     <Field name="userName" type="string">train01</Field>     <Field name="profileName" type="string">serial</Field>     <Field name="active" type="bool">true</Field>     <Field name="arguments" type="stringVector">"-dir" "/home/ebentive/VisIt/1.11.2" </Field>     <Field name="hostAliases" type="string">queenbee.loni.org qb4.loni.org qb3.loni.org qb4 qb3</Field>     <Field name="tunnelSSH" type="bool">true</Field> </Object> `
-    If the file **\~/.visit/config** doesn\'t exist, simply run VisIt
-    once to have VisIt create it for you.
+    If the file **~/.visit/config** doesn't exist, simply run VisIt once
+    to have VisIt create it for you.
 -   Start VisIt on your laptop by typing
     `visit -debug 5 &   # let's run it with debugging output in case things go wrong `
--   Go to \"File \> Open file\", select \"Host\" =
-    \"queenbee.loni.org\". Enter your password to connect to Queen Bee.
-    Establishing connection might take a while.
--   Select path /scratch/\<USERNAME\>/simulations/WaveToy. Select file
-    **phi.h5**.
+-   Go to "File &gt; Open file", select "Host" = "queenbee.loni.org".
+    Enter your password to connect to Queen Bee. Establishing connection
+    might take a while.
+-   Select path /scratch/&lt;USERNAME&gt;/simulations/WaveToy. Select
+    file **phi.h5**.
 -   Now you can visualize your data (e.g. the wave function phi) with
     VisIt using different visualization plotting types and operators.
     For instance, you might want to try Pseudocolor plot + a Slice

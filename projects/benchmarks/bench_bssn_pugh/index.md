@@ -27,7 +27,7 @@ list here available.
 -   [Bench\_BSSN\_PUGH\_100l.par](Bench_BSSN_PUGH_100l.par)
 -   [Bench\_BSSN\_PUGH.thornlist](Bench_BSSN_PUGH.thornlist)
 
-These files are also contained in the benchmark\'s tarball.
+These files are also contained in the benchmark's tarball.
 
 -   [Bench\_BSSN\_PUGH.tar.gz](Bench_BSSN_PUGH.tar.gz)
 
@@ -35,5 +35,5 @@ For an overview of the commands on how to download, compile and run the
 benchmark see [Downloading and building the benchmark
 tarballs](/community/benchmarks/tutorial).
 
-\
-\
+  
+  

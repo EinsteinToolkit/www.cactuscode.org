@@ -21,7 +21,7 @@ In this tutorial, through the use of the WaveToy example we describe:
 -   Remote visualization of 2D slices from any grid function in a
     simulation as JPEGs in a web browser
 
-If you are new to Cactus or haven\'t used some of these tools before,
+If you are new to Cactus or haven't used some of these tools before,
 this is a good example to try. Note that you need a C compiler and about
 50 MB of free disk space.
 
@@ -29,17 +29,17 @@ WaveToy simulates a 3D scalar field produced by two orbiting sources.
 The solution is found by finite-differencing a hyperbolic partial
 differential equation for the scalar field. Though this is a very simple
 application, it is representative of a large class of more complex
-systems including those described by Einstein\'s Equations, Maxwell\'s
+systems including those described by Einstein's Equations, Maxwell's
 Equations, and the Navier-Stokes Equations. We use it for demonstration
 since the simulation is graphical, computationally inexpensive, robust,
 has simple parameter choices.
 
 Here we do not describe how to checkout and compile this Cactus
 application. For this, see the primer on the [Download](/download/)
-page, the [HOWTOs](/documentation/tutorials/) or the [User\'s
+page, the [HOWTOs](/documentation/tutorials/) or the [User's
 Guide](/documentation/guides/). We assume that you are checking out
 Cactus using CVS and that you have the configuration options set up. If
-you don\'t, hopefully the default configuration will work for you!
+you don't, hopefully the default configuration will work for you!
 
 Demo with Web Server and Streaming IsoSurfaces
 ----------------------------------------------
@@ -79,20 +79,20 @@ if you have the simple visualization client
 After downloading and installing xgraph, issue:
 `xgraph WaveDemo/phi_x_[20][20].xg`
 
-![xgraph](xgraph.gif){width="400"}
+<img src="xgraph.gif" alt="xgraph" width="400" />
 
 ### Connecting with a web browser
 
 To connect to the simulation, move to another machine and start up a web
-browser. Connect to **http://\<machine name\>:5555** where **\<machine
-name\>:5555** is the name of the machine where the simulation is
-running. Note that this information was part of the standard output when
-the simulation started. For example:
+browser. Connect to **http://&lt;machine name&gt;:5555** where
+**&lt;machine name&gt;:5555** is the name of the machine where the
+simulation is running. Note that this information was part of the
+standard output when the simulation started. For example:
 `Server started on http://tg-c305.ncsa.teragrid.org:5555/`
 
 Now you should see a screen with information about the simulation.
 
-![screenshot 1](http1.jpg){width="400"}
+<img src="http1.jpg" alt="screenshot 1" width="400" />
 
 Click through the links to find information about the thorns, parameters
 and variables you are using. Go to the ViewPort to see JPEG images from
@@ -104,7 +104,7 @@ See the
 [WebBrowser-HOWTO](/documentation/tutorials/WebBrowser-HOWTO.txt) for
 more details).
 
-![screenshot 2](http2.jpg){width="400"}
+<img src="http2.jpg" alt="screenshot 2" width="400" />
 
 ### Viewing IsoSurfaces
 
@@ -157,7 +157,7 @@ steerable or not. This is decided by the thorn author.
 Note that if you click on a parameter name, you get all the known
 information about that parameter.
 
-![screenshot 6](http6.jpg){width="400"}
+<img src="http6.jpg" alt="screenshot 6" width="400" />
 
 Steer the parameter by changing the value in the box to 0 and pressing
 the update button. If you are watching the isosurfaces, you should see

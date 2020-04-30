@@ -8,4 +8,4 @@ The fifth Whisky Retreat, the annual meeting of the developers of the
 information can be found
 [here](http://www.whiskycode.org/events/whiskyretreatV/WhiskyRetreat_V.html).
 
-### 7 November 2009 --- Frank Löffler {#november-2009-frank-löffler .align-right}
+### 7 November 2009 — Frank Löffler

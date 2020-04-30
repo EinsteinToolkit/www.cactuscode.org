@@ -2,14 +2,14 @@
 layout: default
 title: Cactus Repositories - HOWTO
 ---
-CactusRepositories-HOWTO\
-Gabrielle Allen\
+CactusRepositories-HOWTO  
+Gabrielle Allen  
 
 This HOWTO is written to explain the organisation of the CVS
 repositories which are maintained by the Cactus Team at
 cvs.cactuscode.org. Please help us to keep this documentation complete
 and up-to-date by sending complaints, suggestions and errata to the
-Cactus Team at cactusmaint\@cactuscode.org
+Cactus Team at cactusmaint@cactuscode.org
 
 Introduction
 ------------
@@ -45,19 +45,21 @@ Repositories
 
 The repositories maintained at cvs.cactuscode.org are
 
--   [/cactus]{.blit} The current stable (last released) version of the
-    Cactus span, and released arrangements (including the Computational
-    Toolkit, and the Einstein Toolkit). This repository also holds
-    archived versions of all past releases of the flesh and thorns.
--   [/cactusdevcvs]{.blit} The development version of the Cactus span,
-    the Cactus Computational Toolkit and the Cactus Einstein Toolkit
--   [/arrangements]{.blit} Private thorn arrangements, hosted on our CVS
-    server
--   [/packages]{.blit} External packages which are needed for some
-    thorns (e.g. FlexIO, Jpeg). Note that we are currently updating our
-    procedures for dealing with external packages to provide the
-    possibility for easily linking to packages compiled outside of
-    Cactus.
+-   <span class="blit">/cactus</span> The current stable (last released)
+    version of the Cactus span, and released arrangements (including the
+    Computational Toolkit, and the Einstein Toolkit). This repository
+    also holds archived versions of all past releases of the flesh and
+    thorns.
+-   <span class="blit">/cactusdevcvs</span> The development version of
+    the Cactus span, the Cactus Computational Toolkit and the Cactus
+    Einstein Toolkit
+-   <span class="blit">/arrangements</span> Private thorn arrangements,
+    hosted on our CVS server
+-   <span class="blit">/packages</span> External packages which are
+    needed for some thorns (e.g. FlexIO, Jpeg). Note that we are
+    currently updating our procedures for dealing with external packages
+    to provide the possibility for easily linking to packages compiled
+    outside of Cactus.
 
 Using a Repository
 ------------------
@@ -118,6 +120,6 @@ CVS documentation which you can find at
 
         www.cvshome.org
 
-If you need more help, contact cactusmaint\@cactuscode.org, we can\'t
+If you need more help, contact cactusmaint@cactuscode.org, we can't
 promise that we will have time to help, but we can give you some
 pointers, and we have some documentation for creating CVS repositories.

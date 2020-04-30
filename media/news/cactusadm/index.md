@@ -32,4 +32,4 @@ With this release, CactusADM benchmark joins application benchmarks from
 other intensive scientific applications in different fields, such as
 GAMESS, ZEUS, WRF, GROMACS and NAMD.
 
-### 29 Dec 2006 --- elena {#dec-2006-elena .align-right}
+### 29 Dec 2006 — elena

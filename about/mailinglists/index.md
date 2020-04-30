@@ -11,41 +11,41 @@ should be used to submit patches to the Cactus team.
 
 #### News items:
 
-<news@cactuscode.org>\
+<news@cactuscode.org>  
 \[[subscribe](http://www.cactuscode.org/mailman/listinfo/news)\]  
 \[[archives](http://www.cactuscode.org/pipermail/news)\]
 
-\
+  
 
 #### Discussion list for users:
 
-<users@cactuscode.org>\
+<users@cactuscode.org>  
 \[[subscribe](http://cactuscode.org/mailman/listinfo/users)\]  
 \[[archives](http://cactuscode.org/pipermail/users)\]
 
-\
+  
 
 #### Discussion list for all developers:
 
-<developers@cactuscode.org>\
+<developers@cactuscode.org>  
 \[[subscribe](http://cactuscode.org/mailman/listinfo/developers)\]  
 \[[archives](http://cactuscode.org/pipermail/developers)\]
 
-\
+  
 
 #### Cactus maintainer mailing list:
 
-<cactusmaint@cactuscode.org>\
+<cactusmaint@cactuscode.org>  
   \[[archives](http://cactuscode.org/mailman/private/cactusmaint)\]
 
 This list is not public. You can send questions, comments, or complaints
 to this list which you do not want to make in public.
 
-\
+  
 
 #### Patch list:
 
-<patches@cactuscode.org>\
+<patches@cactuscode.org>  
 \[[subscribe](http://cactuscode.org/mailman/listinfo/patches)\]  
 \[[archives](http://cactuscode.org/pipermail/patches)\]
 
@@ -57,11 +57,11 @@ you, please subscribe to the *patches* mailing list.
 For more information on how to use this list, please read the [patches
 information](/community/mailinglists/patches) page.
 
-\
+  
 
 #### Commit message list:
 
-<commits@cactuscode.org>\
+<commits@cactuscode.org>  
 \[[subscribe](http://cactuscode.org/mailman/listinfo/commits)\]  
 \[[archives](http://cactuscode.org/pipermail/commits)\]
 

@@ -22,7 +22,7 @@ earth\_a
 
 DESC
 
-\"Radius of the Earth\"
+"Radius of the Earth"
 
 LOWER BOUND
 
@@ -56,7 +56,7 @@ earth\_b
 
 DESC
 
-\"Radius of the Earth\"
+"Radius of the Earth"
 
 LOWER BOUND
 
@@ -90,7 +90,7 @@ xmin
 
 DESC
 
-\"Minimum in x-direction of the window to be read\"
+"Minimum in x-direction of the window to be read"
 
 LOWER BOUND
 
@@ -124,7 +124,7 @@ xmax
 
 DESC
 
-\"Maximum in x-direction of the window to be read\"
+"Maximum in x-direction of the window to be read"
 
 LOWER BOUND
 
@@ -158,7 +158,7 @@ ymin
 
 DESC
 
-\"Minimum in y-direction of the window to be read\"
+"Minimum in y-direction of the window to be read"
 
 LOWER BOUND
 
@@ -192,7 +192,7 @@ ymax
 
 DESC
 
-\"Maximum in y-direction of the window to be read\"
+"Maximum in y-direction of the window to be read"
 
 LOWER BOUND
 
@@ -226,15 +226,15 @@ coordinate\_units
 
 DESC
 
-\"Units used within mesh file\"
+"Units used within mesh file"
 
 PATTERN
 
-\"WGS84\"
+"WGS84"
 
 DEFAULT
 
-\"WGS84\"
+"WGS84"
 
  
 
@@ -256,11 +256,11 @@ spherical\_coordinates
 
 DESC
 
-\"Do we want to use spherical coordinates ?\"
+"Do we want to use spherical coordinates ?"
 
 DEFAULT
 
-\"no\"
+"no"
 
  
 
@@ -282,7 +282,7 @@ lat\_south
 
 DESC
 
-\"Latitude South\"
+"Latitude South"
 
 LOWER BOUND
 
@@ -316,7 +316,7 @@ funwave\_maxnum\_evolvedvars
 
 DESC
 
-\"The maximum number of evolved variables used by Funwave\"
+"The maximum number of evolved variables used by Funwave"
 
 LOWER BOUND
 
@@ -350,7 +350,7 @@ number\_stations
 
 DESC
 
-\"number of stations\"
+"number of stations"
 
 LOWER BOUND
 
@@ -380,7 +380,7 @@ station\_file
 
 DESC
 
-\"list of position of stations\"
+"list of position of stations"
 
 PATTERN
 
@@ -388,7 +388,7 @@ PATTERN
 
 DEFAULT
 
-\"station\_file.txt\"
+"station\_file.txt"
 
  
 
@@ -410,11 +410,11 @@ periodic
 
 DESC
 
-\"Do we want periodic conditions?\"
+"Do we want periodic conditions?"
 
 DEFAULT
 
-\"no\"
+"no"
 
  
 
@@ -436,11 +436,11 @@ mixing
 
 DESC
 
-\"Do we want to use mixing?\"
+"Do we want to use mixing?"
 
 DEFAULT
 
-\"no\"
+"no"
 
  
 
@@ -462,7 +462,7 @@ gamma1
 
 DESC
 
-\"parameter for linear dispersive terms\"
+"parameter for linear dispersive terms"
 
 LOWER BOUND
 
@@ -496,7 +496,7 @@ gamma2
 
 DESC
 
-\"parameter for nonlinear dispersive terms\"
+"parameter for nonlinear dispersive terms"
 
 LOWER BOUND
 
@@ -530,7 +530,7 @@ gamma3
 
 DESC
 
-\"parameter for linear shallow water equations\"
+"parameter for linear shallow water equations"
 
 LOWER BOUND
 
@@ -564,7 +564,7 @@ beta\_ref
 
 DESC
 
-\"parameter beta defined for the reference level\"
+"parameter beta defined for the reference level"
 
 LOWER BOUND
 
@@ -598,7 +598,7 @@ cd
 
 DESC
 
-\"bottom friction coefficient\"
+"bottom friction coefficient"
 
 LOWER BOUND
 
@@ -632,7 +632,7 @@ swe\_eta\_dep
 
 DESC
 
-\"ratio of height/depth for switching from Boussinesq to NSWE\"
+"ratio of height/depth for switching from Boussinesq to NSWE"
 
 LOWER BOUND
 
@@ -666,11 +666,11 @@ dispersion\_on
 
 DESC
 
-\"Do we want to enable dispersion terms ?\"
+"Do we want to enable dispersion terms ?"
 
 DEFAULT
 
-\"no\"
+"no"
 
  
 
@@ -692,11 +692,11 @@ disp\_time\_left
 
 DESC
 
-\"Do we want to move the time derivate dispersive terms to LHS ?\"
+"Do we want to move the time derivate dispersive terms to LHS ?"
 
 DEFAULT
 
-\"no\"
+"no"
 
  
 
@@ -718,11 +718,11 @@ enable\_masks
 
 DESC
 
-\"Do we want to include mask logic in the simulation?\"
+"Do we want to include mask logic in the simulation?"
 
 DEFAULT
 
-\"yes\"
+"yes"
 
  
 
@@ -744,15 +744,15 @@ boundary
 
 DESC
 
-\"boundary condition for the evolved variables\"
+"boundary condition for the evolved variables"
 
 PATTERN
 
-\"funwave\"
+"funwave"
 
 DEFAULT
 
-\"funwave\"
+"funwave"
 
  
 
@@ -774,15 +774,15 @@ wavemaker\_type
 
 DESC
 
-\"types of wave makers\"
+"types of wave makers"
 
 PATTERN
 
-\"lef\_sol\"
+"lef\_sol"
 
 DEFAULT
 
-\"wk\_reg\"
+"wk\_reg"
 
  
 
@@ -804,8 +804,8 @@ amp
 
 DESC
 
-\"amplitude (m) of initial eta, if wavemaker = ini\_rec, wavemaker =
-ini\_sol, wavemaker = lef\_sol, wavemaker = gausian\"
+"amplitude (m) of initial eta, if wavemaker = ini\_rec, wavemaker =
+ini\_sol, wavemaker = lef\_sol, wavemaker = gausian"
 
 LOWER BOUND
 
@@ -839,8 +839,8 @@ wdep
 
 DESC
 
-\"water depth at wavemaker location, if wavemaker = ini\_sol, wavemaker
-= lef\_sol\"
+"water depth at wavemaker location, if wavemaker = ini\_sol, wavemaker =
+lef\_sol"
 
 LOWER BOUND
 
@@ -870,8 +870,8 @@ lagtime
 
 DESC
 
-\"time lag (s) for the solitary wave generated on the left boundary,
-e.g.,wavemaker = lef\_sol\"
+"time lag (s) for the solitary wave generated on the left boundary,
+e.g.,wavemaker = lef\_sol"
 
 LOWER BOUND
 
@@ -901,7 +901,7 @@ xwavemaker
 
 DESC
 
-\"x (m) coordinate for wavemaker = ini\_sol\"
+"x (m) coordinate for wavemaker = ini\_sol"
 
 LOWER BOUND
 
@@ -931,8 +931,8 @@ xc
 
 DESC
 
-\"x (m) coordinate of the center of a rectangular hump if wavemaker =
-ini\_rec\"
+"x (m) coordinate of the center of a rectangular hump if wavemaker =
+ini\_rec"
 
 LOWER BOUND
 
@@ -966,8 +966,8 @@ yc
 
 DESC
 
-\"y (m) coordinate of the center of a rectangular hump if wavemaker =
-ini\_rec\"
+"y (m) coordinate of the center of a rectangular hump if wavemaker =
+ini\_rec"
 
 LOWER BOUND
 
@@ -1001,7 +1001,7 @@ wid
 
 DESC
 
-\"width (m) of a rectangular hump if wavemaker = ini\_rec or ini\_gau\"
+"width (m) of a rectangular hump if wavemaker = ini\_rec or ini\_gau"
 
 LOWER BOUND
 
@@ -1031,7 +1031,7 @@ time\_ramp
 
 DESC
 
-\"time ramp (s) for Wei and Kirby (1999) wavemaker\"
+"time ramp (s) for Wei and Kirby (1999) wavemaker"
 
 LOWER BOUND
 
@@ -1065,7 +1065,7 @@ delta\_wk
 
 DESC
 
-\"width parameter delta for Wei and Kirby (1999) wavemaker\"
+"width parameter delta for Wei and Kirby (1999) wavemaker"
 
 LOWER BOUND
 
@@ -1099,7 +1099,7 @@ dep\_wk
 
 DESC
 
-\"water depth (m) for Wei and Kirby (1999) wavemaker\"
+"water depth (m) for Wei and Kirby (1999) wavemaker"
 
 LOWER BOUND
 
@@ -1133,7 +1133,7 @@ xc\_wk
 
 DESC
 
-\"x coordinate (m) for Wei and Kirby (1999) wavemaker\"
+"x coordinate (m) for Wei and Kirby (1999) wavemaker"
 
 LOWER BOUND
 
@@ -1167,7 +1167,7 @@ yc\_wk
 
 DESC
 
-\"y coordinate (m) for Wei and Kirby (1999) wavemaker\"
+"y coordinate (m) for Wei and Kirby (1999) wavemaker"
 
 LOWER BOUND
 
@@ -1201,7 +1201,7 @@ ywidth\_wk
 
 DESC
 
-\"width (m) in y direction for Wei and Kirby (1999) wavemaker\"
+"width (m) in y direction for Wei and Kirby (1999) wavemaker"
 
 LOWER BOUND
 
@@ -1235,7 +1235,7 @@ tperiod
 
 DESC
 
-\"period (s) of regular wave for Wei and Kirby (1999) wavemaker\"
+"period (s) of regular wave for Wei and Kirby (1999) wavemaker"
 
 LOWER BOUND
 
@@ -1269,7 +1269,7 @@ amp\_wk
 
 DESC
 
-\"amplitude (m) of regular wave for Wei and Kirby (1999) wavemaker\"
+"amplitude (m) of regular wave for Wei and Kirby (1999) wavemaker"
 
 LOWER BOUND
 
@@ -1299,9 +1299,9 @@ theta\_wk
 
 DESC
 
-\"direction (degrees) of regular wave for Wei and Kirby (1999)
-wavemaker. Note: it may be adjusted for a periodic boundary case by the
-program. A warning will be given if adjustment is made\"
+"direction (degrees) of regular wave for Wei and Kirby (1999) wavemaker.
+Note: it may be adjusted for a periodic boundary case by the program. A
+warning will be given if adjustment is made"
 
 LOWER BOUND
 
@@ -1335,7 +1335,7 @@ freqpeak
 
 DESC
 
-\"peak frequency (1/s) for Wei and Kirby (1999) irregular wavemaker\"
+"peak frequency (1/s) for Wei and Kirby (1999) irregular wavemaker"
 
 LOWER BOUND
 
@@ -1365,8 +1365,8 @@ freqmin
 
 DESC
 
-\"low frequency cutoff (1/s) for Wei and Kirby (1999) irregular
-wavemaker\"
+"low frequency cutoff (1/s) for Wei and Kirby (1999) irregular
+wavemaker"
 
 LOWER BOUND
 
@@ -1396,8 +1396,8 @@ freqmax
 
 DESC
 
-\"high frequency cutoff (1/s) for Wei and Kirby (1999) irregular
-wavemaker\"
+"high frequency cutoff (1/s) for Wei and Kirby (1999) irregular
+wavemaker"
 
 LOWER BOUND
 
@@ -1427,7 +1427,7 @@ hmo
 
 DESC
 
-\"hmo (m) for Wei and Kirby (1999) irregular wavemaker\"
+"hmo (m) for Wei and Kirby (1999) irregular wavemaker"
 
 LOWER BOUND
 
@@ -1457,7 +1457,7 @@ gammatma
 
 DESC
 
-\"TMA parameter gamma for Wei and Kirby (1999) irregular wavemaker\"
+"TMA parameter gamma for Wei and Kirby (1999) irregular wavemaker"
 
 LOWER BOUND
 
@@ -1487,8 +1487,7 @@ thetapeak
 
 DESC
 
-\"peak direction (degrees) for Wei and Kirby (1999) irregular
-wavemaker\"
+"peak direction (degrees) for Wei and Kirby (1999) irregular wavemaker"
 
 LOWER BOUND
 
@@ -1518,8 +1517,8 @@ sigma\_theta
 
 DESC
 
-\"parameter of directional spectrum for Wei and Kirby (1999) irregular
-wavemaker\"
+"parameter of directional spectrum for Wei and Kirby (1999) irregular
+wavemaker"
 
 LOWER BOUND
 
@@ -1549,11 +1548,11 @@ estimate\_dt\_on
 
 DESC
 
-\"do you want to turn on the dt estimator ?\"
+"do you want to turn on the dt estimator ?"
 
 DEFAULT
 
-\"true\"
+"true"
 
  
 
@@ -1575,7 +1574,7 @@ dt\_size
 
 DESC
 
-\"Use zero for adaptive\"
+"Use zero for adaptive"
 
 LOWER BOUND
 
@@ -1609,7 +1608,7 @@ dtfac
 
 DESC
 
-\"dt factor. should be the same as time::dtfac for consistency\"
+"dt factor. should be the same as time::dtfac for consistency"
 
 LOWER BOUND
 
@@ -1643,15 +1642,15 @@ riemann\_solver
 
 DESC
 
-\"the riemann\_solver\"
+"the riemann\_solver"
 
 PATTERN
 
-\"HLLC\"
+"HLLC"
 
 DEFAULT
 
-\"HLLC\"
+"HLLC"
 
  
 
@@ -1673,15 +1672,15 @@ reconstruction\_scheme
 
 DESC
 
-\"the reconstruction scheme\"
+"the reconstruction scheme"
 
 PATTERN
 
-\"fourth\"
+"fourth"
 
 DEFAULT
 
-\"fourth\"
+"fourth"
 
  
 
@@ -1703,7 +1702,7 @@ cbrk1
 
 DESC
 
-\"parameter C1 in Kennedy et al. (2000)\"
+"parameter C1 in Kennedy et al. (2000)"
 
 LOWER BOUND
 
@@ -1737,7 +1736,7 @@ cbrk2
 
 DESC
 
-\"parameter C2 in Kennedy et al. (2000)\"
+"parameter C2 in Kennedy et al. (2000)"
 
 LOWER BOUND
 
@@ -1771,11 +1770,11 @@ sponge\_on
 
 DESC
 
-\"Do we want to enable sponge layer ?\"
+"Do we want to enable sponge layer ?"
 
 DEFAULT
 
-\"yes\"
+"yes"
 
  
 
@@ -1797,7 +1796,7 @@ sponge\_decay\_rate
 
 DESC
 
-\"decay rate in in sponge layer, r\_sponge in Funwave\"
+"decay rate in in sponge layer, r\_sponge in Funwave"
 
 LOWER BOUND
 
@@ -1831,7 +1830,7 @@ sponge\_damping\_magnitude
 
 DESC
 
-\"maximum damping magnitude, a\_sponge in Funwave\"
+"maximum damping magnitude, a\_sponge in Funwave"
 
 LOWER BOUND
 
@@ -1865,7 +1864,7 @@ sponge\_east\_width
 
 DESC
 
-\"width of sponge layer at east boundary\"
+"width of sponge layer at east boundary"
 
 LOWER BOUND
 
@@ -1895,7 +1894,7 @@ sponge\_south\_width
 
 DESC
 
-\"width of sponge layer at south boundary\"
+"width of sponge layer at south boundary"
 
 LOWER BOUND
 
@@ -1925,7 +1924,7 @@ sponge\_west\_width
 
 DESC
 
-\"width of sponge layer at west boundary\"
+"width of sponge layer at west boundary"
 
 LOWER BOUND
 
@@ -1955,7 +1954,7 @@ sponge\_north\_width
 
 DESC
 
-\"width of sponge layer at north boundary\"
+"width of sponge layer at north boundary"
 
 LOWER BOUND
 
@@ -1985,15 +1984,15 @@ initial\_data
 
 DESC
 
-\"initial condition\"
+"initial condition"
 
 PATTERN
 
-\"gausian\"
+"gausian"
 
 DEFAULT
 
-\"gausian\"
+"gausian"
 
  
 
@@ -2015,15 +2014,15 @@ depth\_type
 
 DESC
 
-\"how to intialized depth ?\"
+"how to intialized depth ?"
 
 PATTERN
 
-\"flat\"
+"flat"
 
 DEFAULT
 
-\"flat\"
+"flat"
 
  
 
@@ -2045,7 +2044,7 @@ depth\_file
 
 DESC
 
-\"bathymetry file if depth\_type==data\"
+"bathymetry file if depth\_type==data"
 
 PATTERN
 
@@ -2053,7 +2052,7 @@ PATTERN
 
 DEFAULT
 
-\"depth\_file.txt\"
+"depth\_file.txt"
 
  
 
@@ -2075,7 +2074,7 @@ depth\_file\_offset\_x
 
 DESC
 
-\"X position of start of depth file\"
+"X position of start of depth file"
 
 LOWER BOUND
 
@@ -2109,7 +2108,7 @@ depth\_file\_offset\_y
 
 DESC
 
-\"Y position of start of depth file\"
+"Y position of start of depth file"
 
 LOWER BOUND
 
@@ -2143,15 +2142,15 @@ depth\_format
 
 DESC
 
-\"what is the format of the depth file ?\"
+"what is the format of the depth file ?"
 
 PATTERN
 
-\"nod\"
+"nod"
 
 DEFAULT
 
-\"ele\"
+"ele"
 
  
 
@@ -2173,7 +2172,7 @@ depth\_flat
 
 DESC
 
-\"water depth of flat bottom\"
+"water depth of flat bottom"
 
 LOWER BOUND
 
@@ -2207,7 +2206,7 @@ depth\_xslp
 
 DESC
 
-\"starting x position of a slope\"
+"starting x position of a slope"
 
 LOWER BOUND
 
@@ -2241,7 +2240,7 @@ depth\_slope
 
 DESC
 
-\"slope if depth\_type==slope\"
+"slope if depth\_type==slope"
 
 LOWER BOUND
 
@@ -2275,7 +2274,7 @@ r\_earth
 
 DESC
 
-\"Earth radius\"
+"Earth radius"
 
 LOWER BOUND
 
@@ -2309,7 +2308,7 @@ grav
 
 DESC
 
-\"Earth gravity acceleration\"
+"Earth gravity acceleration"
 
 LOWER BOUND
 
@@ -2343,7 +2342,7 @@ small
 
 DESC
 
-\"the number that we consider small in the code\"
+"the number that we consider small in the code"
 
 LOWER BOUND
 
@@ -2377,7 +2376,7 @@ large
 
 DESC
 
-\"the number that we consider large in the code\"
+"the number that we consider large in the code"
 
 LOWER BOUND
 
@@ -2411,7 +2410,7 @@ froudecap
 
 DESC
 
-\"the maxium Froude number \"
+"the maxium Froude number "
 
 LOWER BOUND
 
@@ -2445,7 +2444,7 @@ mindepth
 
 DESC
 
-\"the minimum water depth for wettting and drying scheme\"
+"the minimum water depth for wettting and drying scheme"
 
 LOWER BOUND
 
@@ -2479,7 +2478,7 @@ mindepthfrc
 
 DESC
 
-\"the minimum water depth to limit bottom frition value\"
+"the minimum water depth to limit bottom frition value"
 
 LOWER BOUND
 
@@ -2513,11 +2512,11 @@ stretch\_grid
 
 DESC
 
-\"Whether stretch grid is enabled\"
+"Whether stretch grid is enabled"
 
 DEFAULT
 
-\"no\"
+"no"
 
  
 
@@ -2539,7 +2538,7 @@ wind\_crest\_percent
 
 DESC
 
-\"percentage of wind crest for wind mask\"
+"percentage of wind crest for wind mask"
 
 LOWER BOUND
 
@@ -2573,7 +2572,7 @@ num\_time\_wind\_data
 
 DESC
 
-\"Time sequence data for wind\"
+"Time sequence data for wind"
 
 LOWER BOUND
 
@@ -2709,11 +2708,11 @@ wind\_force
 
 DESC
 
-\"Whether to use wind force\"
+"Whether to use wind force"
 
 DEFAULT
 
-\"false\"
+"false"
 
  
 
@@ -2735,7 +2734,7 @@ cdw
 
 DESC
 
-\"CDW is what?\"
+"CDW is what?"
 
 LOWER BOUND
 
@@ -2769,11 +2768,11 @@ use\_wind\_mask
 
 DESC
 
-\"Whether to apply the wind mask\"
+"Whether to apply the wind mask"
 
 DEFAULT
 
-\"false\"
+"false"
 
  
 
@@ -2795,11 +2794,11 @@ show\_breaking
 
 DESC
 
-\"Whether to show breaking waves\"
+"Whether to show breaking waves"
 
 DEFAULT
 
-\"false\"
+"false"
 
  
 
@@ -2821,7 +2820,7 @@ drain\_center\_x
 
 DESC
 
-\"Center of the drain in x\"
+"Center of the drain in x"
 
 LOWER BOUND
 
@@ -2851,7 +2850,7 @@ drain\_center\_y
 
 DESC
 
-\"Center of the drain in y\"
+"Center of the drain in y"
 
 LOWER BOUND
 
@@ -2881,7 +2880,7 @@ drain\_radius
 
 DESC
 
-\"Radius of the draining region\"
+"Radius of the draining region"
 
 LOWER BOUND
 
@@ -2911,7 +2910,7 @@ drain\_rate
 
 DESC
 
-\"Negative removes water, positive adds\"
+"Negative removes water, positive adds"
 
 LOWER BOUND
 
@@ -2941,11 +2940,11 @@ use\_correct\_dispersion
 
 DESC
 
-\"Use the correct dispersion term\"
+"Use the correct dispersion term"
 
 DEFAULT
 
-\"dispersion\"
+"dispersion"
 
  
 
@@ -2967,8 +2966,8 @@ search\_range
 
 DESC
 
-\"What is the spatial range for searching the cell that the interested
-grid point is located ?\"
+"What is the spatial range for searching the cell that the interested
+grid point is located ?"
 
 LOWER BOUND
 
@@ -2998,15 +2997,15 @@ interp\_algorithm
 
 DESC
 
-\"Algorithm used in the interpolation\"
+"Algorithm used in the interpolation"
 
 PATTERN
 
-\"average\"
+"average"
 
 DEFAULT
 
-\"invdist\"
+"invdist"
 
  
 
@@ -3028,7 +3027,7 @@ invdist\_power
 
 DESC
 
-\"Power parameter used in inverse distance weighted interpolation\"
+"Power parameter used in inverse distance weighted interpolation"
 
 LOWER BOUND
 
@@ -3058,11 +3057,11 @@ verbose
 
 DESC
 
-\"Do you want to see more debugging information ?\"
+"Do you want to see more debugging information ?"
 
 DEFAULT
 
-\"no\"
+"no"
 
  
 
@@ -3084,8 +3083,8 @@ veryverbose
 
 DESC
 
-\"Do you want to see all the debugging information ?\"
+"Do you want to see all the debugging information ?"
 
 DEFAULT
 
-\"no\"
+"no"

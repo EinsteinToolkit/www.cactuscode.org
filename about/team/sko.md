@@ -2,7 +2,7 @@
 layout: default
 title: Soon-Heum Ko
 ---
-![Photo of Soon-Heum Ko](sko-photo.jpg){.float-right width="150"}
+<img src="sko-photo.jpg" alt="Photo of Soon-Heum Ko" class="float-right" width="150" />
 
 ### Position
 
