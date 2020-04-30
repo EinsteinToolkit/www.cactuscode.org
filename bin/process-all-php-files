@@ -1,6 +1,6 @@
 #!/bin/bash
 
-find . -name "*.php" |
+find . -name "*.php" | grep -v "/_site/" |
     while read f; do
         # echo "CONVERTING $f"
         php-to-md $f
