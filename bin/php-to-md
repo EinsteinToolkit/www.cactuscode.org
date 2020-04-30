@@ -10,7 +10,7 @@ mdfile=${infile%.php}.md
 tmpmdfile=${infile%.php}.tmp.md
 
 cp $infile $htmlfile
-pandoc $htmlfile -o $tmpmdfile
+pandoc $htmlfile -t markdown_strict+pipe_tables -o $tmpmdfile
 
 set +e
 title=$(re-extract "\\\$title='(.*)';" $infile)
