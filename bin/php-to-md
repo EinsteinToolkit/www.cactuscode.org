@@ -15,12 +15,16 @@ pandoc $htmlfile -t markdown_strict+pipe_tables -o $tmpmdfile
 set +e
 title=$(re-extract "\\\$title='(.*)';" $infile)
 if [ $? -ne 0 ]; then
-    echo "ERROR from $0:"
+    echo "WARNING from $0:"
+    # echo "ERROR from $0:"
     echo "  Failed to extract title from $infile" >&2
-    echo "  Removing temporary files" >&2
-    echo "  $infile has not been converted" >&2
-    rm -f $tmpmdfile $htmlfile
-    exit 1
+    # echo "  Removing temporary files" >&2
+    # echo "  $infile has not been converted" >&2
+    # rm -f $tmpmdfile $htmlfile
+    # exit 1
+    title_line=""
+else
+    title_line="title: $title"
 fi
     
 set -e
