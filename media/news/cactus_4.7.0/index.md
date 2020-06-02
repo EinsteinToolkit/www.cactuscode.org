@@ -4,7 +4,7 @@ title: Cactus 4.7.0 release
 ---
 We are pleased to announce release 4.7.0 of the Cactus computational
 toolkit in conjunction with the
-"[Proca](https://en.wikipedia.org/wiki/Maria_Goeppert_Mayer)" release of
+"[Mayer](https://en.wikipedia.org/wiki/Maria_Goeppert_Mayer)" release of
 the [Einstein Toolkit](https://einsteintoolkit.org).
 
 Read more about the new release in the longer [Einstein Toolkit release
