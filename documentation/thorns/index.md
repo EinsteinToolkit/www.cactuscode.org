@@ -12,10 +12,7 @@ title: Thorn Documentation
     {% assign arrthorn = g.name | split: "-" %}
     {% assign arrangement = arrthorn[0] %}
     {% assign thorn = arrthorn[1] | remove: ".pdf" %}
-  
-        <li><a href="/thorndocs/{{g.name}}">{{arrangement}}/{{thorn}}</a></li>
-     {% if g.extname == 'pdf' %}
-     {% endif %}
+    <li><a href="/thorndocs/{{g.name}}">{{arrangement}}/{{thorn}}</a></li>
   {% endfor %}
 </ul>
 {% endfor %}
