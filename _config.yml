@@ -1,2 +1,4 @@
 name: Cactus Code Website
 
+liquid:
+  error_mode: strict # or lax or warn
