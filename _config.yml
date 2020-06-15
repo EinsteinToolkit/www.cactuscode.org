@@ -3,8 +3,6 @@ name: Cactus Code Website
 collections:
   thorndocs:
     output: true
-
-collections:
   arrangementdocs:
     output: true
 
