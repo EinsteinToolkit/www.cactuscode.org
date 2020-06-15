@@ -4,5 +4,9 @@ collections:
   thorndocs:
     output: true
 
+collections:
+  arrangementdocs:
+    output: true
+
 liquid:
   error_mode: strict # or lax or warn
