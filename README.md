@@ -23,4 +23,4 @@ docker run --rm -p 4000:4000 --volume="$PWD:/srv/jekyll" -it jekyll/jekyll jekyl
 
 if you have Docker available.
 
-The website will then be served from localhost:4000.
+The website will then be served from http://0.0.0.0:4000.
