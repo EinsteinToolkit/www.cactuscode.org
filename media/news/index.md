@@ -7,3 +7,6 @@ title: News Stories
 below.***
 
 #### Complete Listing
+<ul>
+{% include {{base}}/media/news/recent.html %}
+<ul>
