@@ -3,6 +3,7 @@ layout: default
 title: Download Cactus
 sidebar: downloads.html
 ---
+{% include base.html %}
 <span id="requirements"></span>
 
 ### Requirements
@@ -21,8 +22,8 @@ sidebar: downloads.html
 Cactus is maintained using [git](https://git-scm.com/).  The preferred method
 is to use the <kbd>GetComponents</kbd> script along with a thornlist as
 described below.  We maintain a
-[page of basic thornlists]({{base}}/download/thorns/), but you can use your own
-customized thornlist.
+[page of basic thornlists](thorns/index.html), but you can
+use your own customized thornlist.
 
 Download
 [GetComponents](https://github.com/gridaphobe/CRL) and make sure it is executable.
@@ -33,7 +34,7 @@ chmod a+x GetComponents
 ```
 
 To checkout the Cactus flesh and required thorns, choose and save one of our
-[ThornLists](thorns) (or provide your own) and issue the command:
+[ThornLists](thorns/index.html) (or provide your own) and issue the command:
 
 ```
 ./GetComponents <thornlist-url>

@@ -2,6 +2,7 @@
 layout: default
 title: xGraph
 ---
+{% include base.html %}
 <table>
 <colgroup>
 <col style="width: 100%" />
@@ -59,7 +60,7 @@ title: xGraph
 <pre><code>xgraph &lt;data filename&gt;</code></pre>
 <p>The are many options for customising aspects of and using xgraph (for example an animation option), type <code>xgraph -help</code> to see them. The image at the top of the page was created from the above data using <code>        </code></p>
 <pre><code>xgraph xgraph.dat -lw 2 -P -t &quot;Easy Plot&quot;</code></pre>
-<p>If you are using thorn <code>CactusConnect/HTTPD</code> you can setup your browser to automatically view any advertised xgraph files. Instructions on how to do this are provided in the <a href="/documentation/tutorials/webServerHowTo.txt">WebServer-HOWTO</a>.</p>
+<p>If you are using thorn <code>CactusConnect/HTTPD</code> you can setup your browser to automatically view any advertised xgraph files. Instructions on how to do this are provided in the <a href="{{base}}/documentation/tutorials/webServerHowTo.txt">WebServer-HOWTO</a>.</p>
 <span id="download"></span>
 <h3 id="downloading-xgraph">Downloading xgraph</h3>
 <table>

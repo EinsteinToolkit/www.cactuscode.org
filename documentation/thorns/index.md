@@ -3,6 +3,7 @@ layout: default
 title: Thorn Documentation
 ---
 
+{% include base.html %}
 {% assign thorndocs = site.collections | where:"label","thorndocs" %}
 
 {% for f in thorndocs  %}
@@ -12,7 +13,7 @@ title: Thorn Documentation
     {% assign arrthorn = g.name | split: "-" %}
     {% assign arrangement = arrthorn[0] %}
     {% assign thorn = arrthorn[1] | remove: ".pdf" %}
-    <li><a href="/thorndocs/{{g.name}}">{{arrangement}}/{{thorn}}</a></li>
+    <li><a href="{{base}}/thorndocs/{{g.name}}">{{arrangement}}/{{thorn}}</a></li>
   {% endfor %}
 </ul>
 {% endfor %}

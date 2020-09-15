@@ -2,6 +2,7 @@
 layout: default
 title: pyGraph
 ---
+{% include base.html %}
 <table>
 <colgroup>
 <col style="width: 100%" />
@@ -60,7 +61,7 @@ title: pyGraph
 <code>          </code>
 <pre><code>ygraph &lt;data filename&gt; &lt;data filename&gt;</code></pre>
 <p>The are several options for customising aspects of and using ygraph, a manpage can be built from the source, or type <code>pygraph --help</code> for more information.</p>
-<p>If you are using thorn <code>CactusConnect/HTTPD</code> you can setup your browser to automatically view any advertised ygraph files. Instructions on how to do this are provided in the <a href="/documentation/tutorials/webServerHowTo.txt">WebServer-HOWTO</a>.</p>
+<p>If you are using thorn <code>CactusConnect/HTTPD</code> you can setup your browser to automatically view any advertised ygraph files. Instructions on how to do this are provided in the <a href="{{base}}/documentation/tutorials/webServerHowTo.txt">WebServer-HOWTO</a>.</p>
 <span id="download"></span>
 <h3 id="getting-hold-of-pygraph">Getting Hold of pyGraph</h3>
 <p>Binaries and source code for ygraph are all available from the <a href="https://bitbucket.org/dradice/pygraph/">pyGraph mercurial repository</a>.</p>
