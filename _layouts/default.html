@@ -1,9 +1,13 @@
-{% include base.html %}
 <!DOCTYPE html>
-<link rel="stylesheet" href="{{ base }}/global/style.css" type="text/css" />
-
+{% include base.html %}
 <html>
-  <body>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="{{ base }}/global/style.css" type="text/css" />
+<title>{{page.title}}</title>
+</head>
+
+<body>
 
 <div id="wrap">
 	<!--header -->
@@ -35,18 +39,13 @@
 
 	<!-- content-wrap starts here -->
 	<div id="content-wrap">
-
 		<div id="main">
 			<h2>{{page.title}}</h2>
-
-{{ content }}
-
-              <br />
+			{{ content }} <br />
 		</div> <!-- closing "main" content div -->
-        <div id="sidebar">
-            {% include {{page.sidebar}} %}
-        </div>
-
+        	<div id="sidebar">
+            		{% include {{page.sidebar}} %}
+	        </div> <!-- closing "sidebar" div -->
 	</div> <!-- closing content-wrap div -->	
 
 	<div id="footer">
