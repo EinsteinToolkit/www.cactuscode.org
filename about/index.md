@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About Cactus
+sidebar: about.html
 ---
 Cactus provides computational scientists and engineers with a
 collaborative, modular and portable programming environment for parallel
