@@ -63,7 +63,7 @@ img.float-left
 	margin: 5px 10px 10px 0px;
 	}
 
-h1, h2, h3, p
+h1, h2, h3, p, pre
 	{
 	margin: 10px 15px;
 	padding: 0;
@@ -391,8 +391,11 @@ input.button
 	margin-right: 30px;
         text-align: justify;
 	}
- 
-        }
+#main pre
+        {
+	margin-left: 20px;
+	margin-right: 30px;
+	}
 #main h3
 	{
 	margin-top: 20px;
