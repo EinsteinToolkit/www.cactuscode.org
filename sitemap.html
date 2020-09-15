@@ -2,6 +2,8 @@
 layout: default
 title: Site Map
 ---
+<!-- no idea why this include is needed here, shouldn't be -->
+{% include base.html %}
 {% assign olddepth = 0 %}
 {% assign sorted_pages = site.pages | sort: "url" %}
 {% for page in sorted_pages %}
