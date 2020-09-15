@@ -2,9 +2,10 @@
 layout: default
 title: Contact
 ---
-We recommend using our [Mailing Lists](/about/mailinglists/index.php) to
+{%-include base.html-%}
+We recommend using our [Mailing Lists]({{base}}/about/mailinglists/index.html) to
 ask questions about Cactus concerning how to use and develop for it. If
-you want to contact the [Cactus Team](/about/team/) directly, you can
+you want to contact the [Cactus Team]({{base}}//about/team/) directly, you can
 mail to <cactusmaint@cactuscode.org>.
 
 We welcome comments and feedback about what you use Cactus for, your
