@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Site Redesign for 2005
+sitemap_exclude: true
 ---
 CactusCode.org has been redesigned.
 

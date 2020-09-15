@@ -1,6 +1,7 @@
 ---
 layout: default
 title: One day workshop organized by CCT and the NSF IGERT program
+sitemap_exclude: true
 ---
 On **April 20**, 2007, the LSU IGERT students and CCT organized a
 [workshop](http://www.cct.lsu.edu/IGERT/wiki/index.php/Spring_2007_High_School_Workshop%20)

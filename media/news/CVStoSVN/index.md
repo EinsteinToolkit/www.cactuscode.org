@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Cactus moves from CVS to Subversion
+sitemap_exclude: true
 ---
 In April 2010 several organization changes were made for the
 distribution of the Cactus Code. The main changes are:

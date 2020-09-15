@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Cactus Used in Evaluating Application Performance on Big Iron
+sitemap_exclude: true
 ---
 **March 2007:** Scientists from Lawrence Berkeley National Laboratory
 and Princeton Plasma Physics Laboratory have chosen Cactus to be one of

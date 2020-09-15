@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Einstein Toolkit Featured in Linux Journal
+sitemap_exclude: true
 ---
 An article about Einstein Toolkit has appeared in the June 2011 issue of
 *Linux Journal*. The article showcases the capabilities of the Einstein

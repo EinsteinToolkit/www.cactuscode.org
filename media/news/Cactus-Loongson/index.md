@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Cactus Run on First Loongson 2F Chinese Cluster
+sitemap_exclude: true
 ---
 On December 26, 2007, China revealed its first supercomputer of 1
 teraflops utilizing the domestic Chinese CPU

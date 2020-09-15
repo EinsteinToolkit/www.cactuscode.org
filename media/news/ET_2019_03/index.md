@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Einstein Toolkit "Proca" Release
+sitemap_exclude: true
 ---
 We are pleased to announce the sixteenth release (code name
 "[Proca](https://en.wikipedia.org/wiki/Alexandru_Proca)") of the

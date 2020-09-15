@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Einstein Toolkit "Noether" release
+sitemap_exclude: true
 ---
 We are pleased to announce the eighth release (code name
 "[Noether](http://en.wikipedia.org/wiki/Emmy_Noether)") of the Einstein

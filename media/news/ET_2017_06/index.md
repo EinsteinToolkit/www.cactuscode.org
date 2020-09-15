@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Einstein Toolkit "Hack" Release
+sitemap_exclude: true
 ---
 We are pleased to announce the fifteenth release (code name
 "[Hack](https://en.wikipedia.org/wiki/Margherita_Hack)") of the Einstein

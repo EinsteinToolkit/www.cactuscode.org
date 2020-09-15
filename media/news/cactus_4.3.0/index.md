@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Cactus 4.3.0 release
+sitemap_exclude: true
 ---
 We are pleased to announce release 4.3.0 of the Cactus computational
 toolkit. This release includes, among other things, improvements to the

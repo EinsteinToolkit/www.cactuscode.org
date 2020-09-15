@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Einstein Toolkit "Chien-Shiung Wu" Release
+sitemap_exclude: true
 ---
 We are pleased to announce the sixteenth release (code name
 "[Chien-Shiung Wu](https://en.wikipedia.org/wiki/Chien-Shiung_Wu)") of

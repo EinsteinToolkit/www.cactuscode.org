@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 
+sitemap_exclude: true
 ---
 We are pleased to announce the sixth release (code name "Ørsted") of the
 Einstein Toolkit, an open, community developed software infrastructure

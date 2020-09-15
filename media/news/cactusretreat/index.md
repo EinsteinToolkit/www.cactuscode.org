@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Cactus Retreat
+sitemap_exclude: true
 ---
 Cactus retreat to be held at the end of April, 2004.
 

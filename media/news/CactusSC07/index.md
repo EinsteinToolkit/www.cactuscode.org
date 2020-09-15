@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Cactus Showcased at SC07
+sitemap_exclude: true
 ---
 The Cactus Computational Toolkit has been showcased again by the [Center
 for Computation & Technology](http://www.cct.lsu.edu)(CCT) researchers

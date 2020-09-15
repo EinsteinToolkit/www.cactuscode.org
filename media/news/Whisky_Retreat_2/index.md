@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Whisky Retreat II
+sitemap_exclude: true
 ---
 Whisky retreat at AEI between Wednesday June 8th and Friday June 10th
 2005.

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Cactus runs on Raspberry Pi
+sitemap_exclude: true
 ---
 <img src="cactusraspberry.png" alt="cactusraspberry" width="50" />
 

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Cactus Einstein Workshop
+sitemap_exclude: true
 ---
 ### CactusEinstein Workshop
 
