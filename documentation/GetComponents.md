@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 
+title: GetComponents
 ---
 Cactus applications are comprised of the Flesh and Cactus Computational
 Toolkit, distributed by the Cactus team, along with thorns distributed
