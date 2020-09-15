@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Download Cactus
+sidebar: downloads.html
 ---
 <span id="requirements"></span>
 
