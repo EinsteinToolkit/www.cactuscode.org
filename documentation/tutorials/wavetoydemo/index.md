@@ -2,6 +2,7 @@
 layout: default
 title: WaveToy Demo
 ---
+{% include base.html %}
 Connect to our [Cactus Demo](http://www.cactuscode.org:8080/) to see the
 simple WaveToy example in action.
 
@@ -34,12 +35,12 @@ Equations, and the Navier-Stokes Equations. We use it for demonstration
 since the simulation is graphical, computationally inexpensive, robust,
 has simple parameter choices.
 
-Here we do not describe how to checkout and compile this Cactus
-application. For this, see the primer on the [Download](/download/)
-page, the [HOWTOs](/documentation/tutorials/) or the [User's
-Guide](/documentation/guides/). We assume that you are checking out
-Cactus using CVS and that you have the configuration options set up. If
-you don't, hopefully the default configuration will work for you!
+Here we do not describe how to checkout and compile this Cactus application.
+For this, see the primer on the [Download]({{base}}/download/index.html) page,
+the [HOWTOs]({{base}}/documentation/tutorials/index.html) or the [User's
+Guide]({{base}}/documentation/guides/index.html). We assume that you are
+checking out Cactus using CVS and that you have the configuration options set
+up. If you don't, hopefully the default configuration will work for you!
 
 Demo with Web Server and Streaming IsoSurfaces
 ----------------------------------------------
@@ -52,7 +53,7 @@ Check out the source code using the **GetComponents** script.
 Once the checkout has completed, move into the Cactus directory and
 compile the application.
 ` cd Cactus gmake WaveDemo-config gmake WaveDemo` Hopefully there were
-no errors and you now have an executable, **exe/cactus\_WaveDemo**.
+no errors and you now have an executable, `exe/cactus_WaveDemo`.
 Check that it worked by running the test suites. Type:
 `gmake WaveDemo-testsuite` and give the default answers to each
 question.
@@ -101,14 +102,15 @@ will update. Go to the Files page and see some of the output files that
 are being created. (If you have xgraph installed on your machine you can
 set up your browser to automatically view these when you click on them.
 See the
-[WebBrowser-HOWTO](/documentation/tutorials/WebBrowser-HOWTO.txt) for
+[WebBrowser-HOWTO]({{base}}/documentation/tutorials/WebBrowser-HOWTO.txt) for
 more details).
 
 <img src="http2.jpg" alt="screenshot 2" width="400" />
 
 ### Viewing IsoSurfaces
 
-Download [IsoView](/documentation/guides/visualization/IsoView), the
+Download
+[IsoView]({{base}}/documentation/guides/visualization/IsoView/index.html), the
 isosurface visualization client.
 
 Start up IsoView: `IsoView -h <machine name> -dp 7051 -cp 7050`

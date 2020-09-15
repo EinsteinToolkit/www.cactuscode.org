@@ -2,6 +2,7 @@
 layout: default
 title: Cactus Tutorial for TeraGrid 2009
 ---
+{% include base.html %}
 ### Tutorial materials:
 
 -   [Presentation
@@ -36,14 +37,14 @@ title: Cactus Tutorial for TeraGrid 2009
 
 #### Downloading Cactus:
 
--   Download the [GetCactus](/download/GetCactus) script to your home
-    directory. Make it executable:
-    ` cd ~ wget http://www.cactuscode.org/download/GetCactus chmod +x GetCactus  `
+-   Download the [GetCactus]({{base}}/download/GetCactus/index.html) script to
+    your home directory. Make it executable:
+    ` cd ~ ; wget http://www.cactuscode.org/download/GetCactus chmod +x GetCactus`
 -   Download configuration files from SVN repository. The following
     command will create a directory **misc** and place all necessary
     installation scripts, configuration files, thornlists and parameter
     files to this directory.
-    ` cd ~ svn co https://svn.cct.lsu.edu/repos/cactus/tutorials/introduction/examples/Cactus/misc  `
+    ` cd ~ ; svn co https://svn.cct.lsu.edu/repos/cactus/tutorials/introduction/examples/Cactus/misc  `
 -   Download the Cactus thornlist for this tutorial:
     [Thorns.th](https://svn.cct.lsu.edu/repos/cactus/tutorials/introduction/examples/Cactus/misc/Thorns.th).
     Check out the Cactus flesh and arrangements:
@@ -51,7 +52,7 @@ title: Cactus Tutorial for TeraGrid 2009
     will prompt you a few questions. Simply hit &lt;ENTER&gt; to accept
     default options.
 -   Additional information on ways to obtain Cactus and associated
-    arrangements are described on the [Downloads](/download/) section of
+    arrangements are described on the [Downloads]({{base}}/download/index.html) section of
     this website.
 
 #### Compiling Cactus:
@@ -124,7 +125,7 @@ gnuplot [here]() and
 -   To enable remote visualization, you will need to add Queen Bee to
     the list of host profiles. This procedure for using GUI interface
     for a generic machine is described
-    [here](/documentation/guides/visualization/VisIt).
+    [here]({{base}}/documentation/guides/visualization/VisIt).
 -   On Linux or Mac, you can also simply edit file **~/.visit/config**
     by adding the following lines to host profiles section of XML
     (replace **train01** with your username):

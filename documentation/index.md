@@ -11,15 +11,15 @@ Reference Manual ([PDF](ReferenceManual.pdf),
 
 [Overview of Thorn README files](Readme_Info.php)
 
-[Tutorials](tutorials/)
+[Tutorials](tutorials/index.html)
 
-[Arrangement Guides](arrangements/)
+[Arrangement Guides](arrangements/index.html)
 
-[Thorn Guides](thorns/)
+[Thorn Guides](thorns/index.html)
 
-[Visualization](visualization/)
+[Visualization](visualization/index.html)
 
-[Citation](citation/)
+[Citation](citation/index.html)
 
   
   

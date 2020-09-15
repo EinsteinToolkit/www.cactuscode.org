@@ -15,7 +15,7 @@ Techniques **B**erlin(ZIB).
 Amira can be used to view 3D data of scalar fields, vector fields,
 tensor fields, apparent horizon multipole expansions and gaussian
 curvature data, embedding coefficients, remotely computed isosurfaces
-(similarly to [IsoView](../IsoView/)), geodesics, and more. For remote
+(similarly to [IsoView](../IsoView/index.html)), geodesics, and more. For remote
 visualization a remote control interface for steering Cactus simulations
 is also available.
 

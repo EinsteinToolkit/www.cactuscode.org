@@ -28,9 +28,9 @@ Cactus is developed and supported by an international team of
 computational and computer scientists, based largely at the Center for
 Computation & Technology at Louisiana State University.
 
--   [Cactus Development Team](team/)
--   [Cactus History and Funding](history)
--   [Contact Us!](contact)
+-   [Cactus Development Team](team/index.html)
+-   [Cactus History and Funding](history/index.html)
+-   [Contact Us!](contact/index.html)
 
   
 How do I cite Cactus?
