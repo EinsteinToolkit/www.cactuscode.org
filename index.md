@@ -34,6 +34,6 @@ Toolkit](http://einsteintoolkit.org/) addresses computational
 relativistic astrophysics, supporting simulations of black holes,
 neutron stars, and related systems.
 
-Connect to our [Cactus demo](/demo) to see the simple WaveToy example in
+Connect to our [Cactus demo]({{base}}/demo) to see the simple WaveToy example in
 action, and read the [demo
 guide](/documentation/tutorials/wavetoydemo/).
