@@ -9,6 +9,6 @@ below.***
 #### Complete Listing
 <ul>
 {% for item in site.data.news %}
-<li><a href="{{base}}{{item.link}}">{{item.title}}</a><span class="align-right float-right">{{item.date}}</span></li>
+<li class="clear"><span class="align-right float-right">{{item.date}}</span><a href="{{base}}{{item.link}}">{{item.title}}</a></li>
 {% endfor %}
 </ul>
