@@ -32,12 +32,12 @@
 <div id="wrap">
 	<!--header -->
 	<div id="header">
-		<h1 id="logo-text"><img id="logo" src="/global/images/cactuslogo.png" /><a href="/">cactus code</a></h1>
+		<h1 id="logo-text"><img id="logo" src="/global/images/cactuslogo.png" /><a href="/index.html">cactus code</a></h1>
 		<!-- <p id="slogan">code</p> -->
 
 		<div id="header-links">
 			<p>
-			<a href="/">Home</a> |
+			<a href="/index.html">Home</a> |
 			<a href="/about/contact">Contact</a>
 			</p>
 		</div>
@@ -45,15 +45,15 @@
 
 	<!-- navigation -->
 	<div id="menu"><ul>
-		<li id="about"><a href="/about/">About</a></li>
+		<li id="about"><a href="/about/index.html">About</a></li>
         <!--
-		<li id="demo"><a href="/demo/">Demo</a></li>
+		<li id="demo"><a href="/demo/index.html">Demo</a></li>
         -->
-		<li id="documentation"><a href="/documentation/">Documentation</a></li>
-		<li id="download"><a href="/download/">Download</a></li>
+		<li id="documentation"><a href="/documentation/index.html">Documentation</a></li>
+		<li id="download"><a href="/download/index.html">Download</a></li>
 		<li id="internal"><a href="https://wiki.cct.lsu.edu/frameworks">Internal</a></li>
-		<li id="media"><a href="/media/">Media</a></li>
-		<li id="projects"><a href="/projects/">Projects</a></li>
+		<li id="media"><a href="/media/index.html">Media</a></li>
+		<li id="projects"><a href="/projects/index.html">Projects</a></li>
 		<li id="sitemap"><a href="/sitemap.php">Site Map</a></li>
 	</ul></div>
 

@@ -1,7 +1,7 @@
 <?php $title='WaveToy Demo'; include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <p>Connect to our 
-<a href="http://www.cactuscode.org:8080/"
+<a href="http://www.cactuscode.org:8080/index.html"
 >Cactus Demo
 </a> to see the simple WaveToy example in action. </p>
 
@@ -31,9 +31,9 @@ computationally inexpensive, robust, has simple parameter choices.  </p>
 
 <p> Here we do not describe how to checkout and compile this Cactus
 application. For this, see the primer on the 
-<a href="/download/">Download</a> page, the 
-<a href="/documentation/tutorials/">HOWTOs</a> or the 
-<a href="/documentation/guides/">User's Guide</a>. 
+<a href="/download/index.html">Download</a> page, the
+<a href="/documentation/tutorials/index.html">HOWTOs</a> or the
+<a href="/documentation/guides/index.html">User's Guide</a>.
 We assume that you are checking out Cactus using CVS and that you have the
 configuration options set up. If you don't, hopefully the default configuration
 will work for you! </p> 

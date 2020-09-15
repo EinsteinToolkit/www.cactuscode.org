@@ -13,13 +13,13 @@ $section='visualization';?>
 	    <tr>
 	      <td valign=top>
 		<p>
-		  <A href="http://amira.zib.de/">Amira</A> is a research software package for the development of new advanced high-end visualization methods, developed by the
-		<A href="http://www.zib.de/Visual/">visualization  department</A> of the
+		  <A href="http://amira.zib.de/index.html">Amira</A> is a research software package for the development of new advanced high-end visualization methods, developed by the
+		<A href="http://www.zib.de/Visual/index.html">visualization  department</A> of the
 		  <A href="http://www.zib.de">Konrad-<B>Z</B>use-Center</a> for <B>I</B>nformation Techniques <B>B</B>erlin(ZIB).
 		</p>
 	      </td>
 	      <td valign=top>
-		<a href="http://jean-luc.aei.mpg.de/NCSA1999/">
+		<a href="http://jean-luc.aei.mpg.de/NCSA1999/index.html">
 		  <img
 		    border=0
 		    align=right
@@ -31,7 +31,7 @@ $section='visualization';?>
 	    <tr>
 	      <td colspan=2>
 		<p>
-		  Amira can be used to view 3D data of scalar fields, vector fields, tensor fields, apparent horizon multipole expansions and gaussian curvature data, embedding coefficients, remotely computed isosurfaces (similarly to <A href="../IsoView/">IsoView</A>), geodesics, and more.  For remote visualization a remote control interface
+		  Amira can be used to view 3D data of scalar fields, vector fields, tensor fields, apparent horizon multipole expansions and gaussian curvature data, embedding coefficients, remotely computed isosurfaces (similarly to <A href="../IsoView/index.html">IsoView</A>), geodesics, and more.  For remote visualization a remote control interface
 		  for steering Cactus
 		  simulations is also available.
 		</p>
@@ -63,7 +63,7 @@ $section='visualization';?>
 		  <br>
 		  A free time-limited, but renewable demo version is
 	          available for
-		  <A href="http://amira.zib.de/download/">downloading
+		  <A href="http://amira.zib.de/download/index.html">downloading
 		    from ZIB</A> after registration.
 		  In addition you need the (free)
 		  Numerical Relativity extension for handling Cactus data.
@@ -72,7 +72,7 @@ $section='visualization';?>
 		<p>
 		  <strong>Commercial Version</strong>
 		  <br>
-		  <A href="http://www.amiravis.com/">Amira</A> is
+		  <A href="http://www.amiravis.com/index.html">Amira</A> is
 		  distributed
 		  commercially through <A href="http://www.tgs.com">Template
 		    Graphics Software</A>.
@@ -124,7 +124,7 @@ $section='visualization';?>
 		</p>
 
 		<strong>Predefined Networks</B>
-		<A href="http://www.zib.de/geodesics/">
+		<A href="http://www.zib.de/geodesics/index.html">
 		<img src="kerr.jpg" align=right border=0> 
 		</A>
 		<p>
@@ -153,7 +153,7 @@ amira2000 +remoteviz</PRE>
  	        </tt>
 		</font>
 		will launch Amira ready for retrieving data from a
-		<A href="http://www.zib.de/geodesics/">remote simulation</A>.
+		<A href="http://www.zib.de/geodesics/index.html">remote simulation</A>.
 		<P>
 		<img src="1s.gif" align=right> 
 		<strong>Working with 3D data</B>
@@ -197,14 +197,14 @@ amira2000 psi0re_3d.ieee</PRE>
 		  Amira is used by the following projects
 		  (as part of a ZIB-AEI cooperation):
 		<P>
-		  <A href="http://www.zib.de/visual/projects/ART/"><strong>ART Project</strong></A> -
+		  <A href="http://www.zib.de/visual/projects/ART/index.html"><strong>ART Project</strong></A> -
 		  Visualization of General Relativity
 		<P>
 		  <A href="http://www.zib.de/visual/projects/amr/amr.en.html"><strong>AMR Project</strong></A> -
 		  Visualization of Hierarchical Datasets
 		<P>
 
-		  <A href="http://www.zib.de/visual/projects/TIKSL/"><strong>TIKSL Project</strong></A> -
+		  <A href="http://www.zib.de/visual/projects/TIKSL/index.html"><strong>TIKSL Project</strong></A> -
 		  Remote Visualization
 		<P>
 	          <A href="http://www.griksl.org"><strong>GriKSL Project</strong></a> -

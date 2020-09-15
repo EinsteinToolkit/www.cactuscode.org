@@ -24,7 +24,7 @@ A research paper whose co-authors include LSU's Gabrielle Allen, Werner Benger, 
 <br />
 Dr. Edward Seidel has been awarded one of the most prestigious awards for "outstanding contributions in the application of high performance computers using innovative approaches". The IEEE computer society recognized Seidel for outstanding contributions to the development of software for high-performance computing and grid computing to enable the collaborative numerical investigation of complex problems in physics, particularly focusing on modeling black hole collisions.
 <br /><br />
-More information in the <a href="/media/news/SidneyFernbach06/">news story</a>.
+More information in the <a href="/media/news/SidneyFernbach06/index.html">news story</a>.
 </div>
 </li>
 <br /><hr /><br />
@@ -60,7 +60,7 @@ The Cactus team were a core part of the Global Grid Testbed Collaboration, who w
 <br /><hr /><br />
 
 <li>
-<a href="http://jean-luc.aei.mpg.de/Projects/SC98/">HPC “Most Stellar” Challenge Award (SC1998)</a>
+<a href="http://jean-luc.aei.mpg.de/Projects/SC98/index.html">HPC “Most Stellar” Challenge Award (SC1998)</a>
 <div>
 <a class="float-right" href="SC98_StellarAward.jpg"><img src="SC98_StellarAward.jpg" width="200" height="150"></a>
 <br />
@@ -70,7 +70,7 @@ The Cactus team were a core part of the Global Grid Testbed Collaboration, who w
 <br /><hr /><br />
 
 <li>
-<a href ="http://www.billingpreis.mpg.de/">Heinz Billing Prize for Scientific Computing (1998)</a>
+<a href ="http://www.billingpreis.mpg.de/index.html">Heinz Billing Prize for Scientific Computing (1998)</a>
 <div>
 <a class="float-right" href= "hbp98.jpg"><img src="hbp98.jpg"  width="200" height="132"></a>
 <br />   

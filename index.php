@@ -28,11 +28,11 @@ include_once('counter.php');?>
   standard workstations or laptops, can be seamlessly run on clusters
   or supercomputers.  Cactus provides easy access to many cutting edge
   software technologies being developed in the academic research
-  community, including the <a href="http://www.globus.org/">Globus</a>
+  community, including the <a href="http://www.globus.org/index.html">Globus</a>
   Metacomputing
-  Toolkit, <a href="http://www.hdfgroup.org/HDF5/">HDF5</a> parallel
-  file I/O, the <a href="http://www.mcs.anl.gov/petsc/">PETSc</a>
-  scientific library, <a href="http://www.carpetcode.org/">adaptive
+  Toolkit, <a href="http://www.hdfgroup.org/HDF5/index.html">HDF5</a> parallel
+  file I/O, the <a href="http://www.mcs.anl.gov/petsc/index.html">PETSc</a>
+  scientific library, <a href="http://www.carpetcode.org/index.html">adaptive
   mesh refinement</a>, web interfaces, and advanced visualization
   tools.
 </p>
@@ -40,7 +40,7 @@ include_once('counter.php');?>
 <p>
   The Cactus user community has created and is maintaining toolkits
   for several research fields.
-  The <a href="http://einsteintoolkit.org/">Einstein Toolkit</a>
+  The <a href="http://einsteintoolkit.org/index.html">Einstein Toolkit</a>
   addresses computational relativistic astrophysics, supporting
   simulations of black holes, neutron stars, and related systems.
 </p>
@@ -48,7 +48,7 @@ include_once('counter.php');?>
 <p>
   Connect to our <a href="/demo">Cactus
   demo</a> to see the simple WaveToy example in action, and read
-  the <a href="/documentation/tutorials/wavetoydemo/">demo guide</a>.
+  the <a href="/documentation/tutorials/wavetoydemo/index.html">demo guide</a>.
 </p>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'].'/global/footer.php');?>

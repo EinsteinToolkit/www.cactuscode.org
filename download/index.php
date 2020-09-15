@@ -29,10 +29,10 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <ul>
 <p> Cactus is maintained using <a
-href="http://subversion.apache.org/">Subversion</a> and <a href="https://git-scm.com/">git</a>.
+href="http://subversion.apache.org/index.html">Subversion</a> and <a href="https://git-scm.com/">git</a>.
 The preferred method is to use the <kbd>GetComponents</kbd> script along with
 a thornlist as described below.  We maintain a 
-<a href="/download/thorns/">page of basic thornlists</a>, 
+<a href="/download/thorns/index.html">page of basic thornlists</a>,
 but you can use your own customized thornlist.</p>
 
 <p> Download 

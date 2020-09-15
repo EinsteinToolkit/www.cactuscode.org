@@ -44,7 +44,7 @@ svn co https://svn.cct.lsu.edu/repos/cactus/tutorials/introduction/examples/Cact
 ./GetCactus -repository=development ~/misc/Thorns.th</code>
   The script will prompt you a few questions. Simply hit &lt;ENTER&gt; to accept default options.
   </li>
-  <li>Additional information on ways to obtain Cactus and associated arrangements are described on the <a href="/download/">Downloads</a> section of this website.</li>
+  <li>Additional information on ways to obtain Cactus and associated arrangements are described on the <a href="/download/index.html">Downloads</a> section of this website.</li>
 </ul>
 
 <h4>Compiling Cactus:</h4>
@@ -83,7 +83,7 @@ ssh &lt;ROOT-NODE&gt; -x less /var/spool/torque/spool/&lt;JOB-NUMBER&gt;.qb2.ER 
 
 <h4>Using <strong>gnuplot</strong> for 1D and 2D output</h4>
 
-<a href="http://www.gnuplot.info/">gnuplot</a> is a powerful command-line interactive tool for scientific plotting. You can learn more about gnuplot <a href="">here</a> and <a href="http://t16web.lanl.gov/Kawano/gnuplot/index-e.html">here</a>.
+<a href="http://www.gnuplot.info/index.html">gnuplot</a> is a powerful command-line interactive tool for scientific plotting. You can learn more about gnuplot <a href="">here</a> and <a href="http://t16web.lanl.gov/Kawano/gnuplot/index-e.html">here</a>.
 <ul>
   <li>The WaveToy simulation produced output of 1D cuts along the X-, Y- and Z-directions for variable <it>phi</it>. The files with this data can be found in $HOME/simulations/WaveToy directory.</li>
   <li>Change to the simulation data directory and start gnuplot:

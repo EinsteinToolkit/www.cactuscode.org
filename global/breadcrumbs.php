@@ -4,7 +4,7 @@
 if ($hide_path!=1)
 {
   $bcsep = ' &rarr; '; //text separator between links
-  $bcstart = '&rsaquo; <a href="/">home</a>'.$bcsep; //text first symbol
+  $bcstart = '&rsaquo; <a href="/index.html">home</a>'.$bcsep; //text first symbol
   $bcend = ''; //text last symbol
   echo '<div id= "link-path">';
   

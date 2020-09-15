@@ -5,9 +5,9 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/global/header.php');?>
 
 <p align=justify>To find information on how to set up the WaveToy demo to work with your
 installation of Cactus, read through our comprehensive 
-<a href="/documentation/tutorials/wavetoydemo/"
+<a href="/documentation/tutorials/wavetoydemo/index.html"
 >tutorial</a>. To see WaveToy in action, continue to the 
-<a href="http://cactuscode.org:8080/"
+<a href="http://cactuscode.org:8080/index.html"
 >live WaveToy demonstration</a>.</p> <br />
 
 <!-- SCREENSHOT -->

@@ -30,7 +30,7 @@ or for a better performance, a configuration with different compilers flags and 
 
 <p>You will be asked if you want to setup the configuration with the name you have chosen, in our case: BSSN_PUGH_single. Say yes.</p>
 
-<p>For configurations using specific compiler options or MPI refer to the <a href="/Documentation/">Users' Guide</a> and our page containing different <a href="http://www.cactuscode.org/Toolkit/Configs">option-files</a>.</p>
+<p>For configurations using specific compiler options or MPI refer to the <a href="/Documentation/index.html">Users' Guide</a> and our page containing different <a href="http://www.cactuscode.org/Toolkit/Configs">option-files</a>.</p>
 
 <p>4. Build the configuration.
 <code>make BSSN_PUGH_single</code>
