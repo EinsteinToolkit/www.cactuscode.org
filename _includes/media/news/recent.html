@@ -1,4 +1,7 @@
+{% assign nitems = 0 %}
 {% for item in site.data.news %}
 <p class="align-right">{{item.date}}</p>
 <li><a href="{{base}}{{item.link}}">{{item.title}}</a></li>
+{% assign nitems = nitems | plus: 1 %}
+{% if include.maxitems %}{% if nitems >= include.maxitems %} {% break %} {% endif %} {% endif %}
 {% endfor %}
