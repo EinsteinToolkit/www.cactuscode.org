@@ -3,9 +3,9 @@ layout: default
 title: News Stories
 ---
 {% include base.html %}
-**Recent news stories are listed on the right. *Use the site search
+Recent news stories are listed on the right. Use the site search
 (also on the right) to quickly find text from any news story listed
-below.***
+below.
 
 #### Complete Listing
 <ul>
