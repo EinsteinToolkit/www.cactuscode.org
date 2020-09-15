@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Welcome
+sitemap_exclude: true
 ---
 Cactus is an open source problem solving environment designed for
 scientists and engineers. Its modular structure easily enables parallel
