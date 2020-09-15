@@ -37,3 +37,5 @@ neutron stars, and related systems.
 Connect to our [Cactus demo]({{base}}/demo) to see the simple WaveToy example in
 action, and read the [demo
 guide](/documentation/tutorials/wavetoydemo/).
+
+{{ page.sidebar }}
