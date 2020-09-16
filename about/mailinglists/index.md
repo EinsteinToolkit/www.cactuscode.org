@@ -55,7 +55,7 @@ left in so you can get the patch. If you want to get the patch mailed to
 you, please subscribe to the *patches* mailing list.
 
 For more information on how to use this list, please read the [patches
-information](/community/mailinglists/patches) page.
+information](patches.html) page.
 
   
 
