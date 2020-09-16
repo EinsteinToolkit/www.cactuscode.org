@@ -1,4 +1,7 @@
 const aSync = true;
+const rootOrg = "cactuscode";
+// either not really thorns or wrong license (not LGPL)
+const ignoreRepos = ["Cactus", "Numerical", "Utilities"];
 
 class MakeReadmes {
   constructor(release_branch) {
@@ -22,20 +25,25 @@ class MakeReadmes {
   }
 
   handle_repos(content) {
-    var readmes_list = document.getElementById("readmes");
-  
     var resp = JSON.parse(content);
     var repos = resp.values;
     for (var repo in repos) {
       var repo_name = repos[repo].name;
-      if (repo_name == "Cactus")
-        continue; // skip "Cactus" repoangement
+      if (ignoreRepos.includes(repo_name))
+        continue;
   
       var source = repos[repo].links.source.href;
       var xmlHttp = new XMLHttpRequest();
       xmlHttp.onreadystatechange = this.branch_callback(xmlHttp, repo_name, source);
       var branch_url = repos[repo].links.branches.href+"/"+this.release_branch;
       xmlHttp.open("GET", branch_url, aSync);
+      xmlHttp.send(null);
+    }
+    if (resp.next) {
+      var next = resp.next;
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.onreadystatechange = this.callback(xmlHttp);
+      xmlHttp.open("GET", next, aSync);
       xmlHttp.send(null);
     }
   }
@@ -169,7 +177,6 @@ class MakeReadmes {
               .appendChild(document.createTextNode("Author(s)"));
         header.appendChild(document.createElement("th"))
               .appendChild(document.createTextNode("Purpose"));
-        //readmes_list.appendChild(txt);
         for(const thorn of Object.keys(readmes).sort()) {
           var res = MakeReadmes.parse_readme(readmes[thorn]);
           var row = table.appendChild(document.createElement("tr"));
@@ -251,7 +258,7 @@ function getReadmes(release_branch)
   var apiBase = "https://api.bitbucket.org/2.0";
   var makeReadmes = new MakeReadmes(release_branch);
   var xmlHttp = new XMLHttpRequest();
-  var theURL = apiBase+"/repositories/cactuscode?pagelen=20";
+  var theURL = apiBase+"/repositories/"+rootOrg;
   xmlHttp.onreadystatechange = makeReadmes.callback(xmlHttp);
   xmlHttp.open("GET", theURL, true); // true for asynchronous 
   xmlHttp.send(null);
