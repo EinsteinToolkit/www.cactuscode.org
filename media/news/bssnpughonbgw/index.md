@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Properly formatted story title
+title: Cactus scales to all of IBM's BLueGene/L
 sitemap_exclude: true
 ---
 **November 2005:** The Cactus team was recently given access to the
