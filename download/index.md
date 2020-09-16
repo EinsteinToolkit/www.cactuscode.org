@@ -8,9 +8,7 @@ sidebar: downloads.html
 
 ### Requirements
 
-|          |             |
-|----------|-------------|
-| Required | Optional    |
+| <span style="color:green">Required</span> | Optional    |
 | Perl     | MPI         |
 | C, C++   | F90         |
 | CPP      | ctags/etags |
