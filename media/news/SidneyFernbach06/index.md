@@ -85,4 +85,4 @@ their expertise to solving complex problems in novel and groundbreaking
 ways. It is this level of leadership that makes his work one of the best
 examples of the success of LSU's Flagship Agenda.
 
-### day Mon year — user posting
+### 15 Nov 2006
