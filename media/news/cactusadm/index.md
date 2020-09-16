@@ -1,7 +1,6 @@
 ---
 layout: default
 title: CactusADM - part of the SPEC CPU2006 
-sitemap_exclude: true
 ---
 The [SPEC](http://www.spec.org) computer-benchmarking consortium has
 released the 2006 edition of their widely used performance benchmarking

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 
-sitemap_exclude: true
 ---
 We are pleased to announce the fifth release (code name "Lovelace") of
 the Einstein Toolkit, an open, community developed software

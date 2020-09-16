@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Einstein Toolkit "Gauss" release
-sitemap_exclude: true
 ---
 We are pleased to announce the seventh release (code name "Gauss") of
 the Einstein Toolkit, an open, community developed software

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: CCT researcher accelerates Einstein code with GPU computing
-sitemap_exclude: true
 ---
 Using the Cactus Computational Toolkit, CCT researcher, Dr. Burkhard
 Zink, solved Albert Einstein's field equations for general relativistic

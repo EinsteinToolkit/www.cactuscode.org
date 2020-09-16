@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Funding received for phase two of the Parca project
-sitemap_exclude: true
 ---
 **April 2007:**
 

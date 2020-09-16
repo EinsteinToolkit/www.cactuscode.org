@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Two ALPACA tools displayed at SC08
-sitemap_exclude: true
 ---
 At the recent [2008 Supercomputing
 conference](http://sc08.supercomputing.org/) in Austin, the LSU Center

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Cactus included in Einstein Toolkit release
-sitemap_exclude: true
 ---
 Cactus was included in the [Einstein
 Toolkit](http://einsteintoolkit.org/) release

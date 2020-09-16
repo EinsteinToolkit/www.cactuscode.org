@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Whisky Retreat V
-sitemap_exclude: true
 ---
 The fifth Whisky Retreat, the annual meeting of the developers of the
 [Whisky code](http://www.whiskycode.org/) will be held from December

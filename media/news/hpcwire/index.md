@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Cactus Mentioned in HPC Wire Article
-sitemap_exclude: true
 ---
 In an article entitled *Developing Scientific Computing Communities*,
 author Aaron Dubrow cites Cactus as an example of "Modular Software for

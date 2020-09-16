@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Cactus 4.0 Beta 16 release
-sitemap_exclude: true
 ---
 The latest beta version of Cactus 4.0 has been released! [Release Notes
 for Beta 16](/download/releasenotes/beta16) for more information

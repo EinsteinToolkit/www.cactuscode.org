@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Webcast on Using Cactus for Gravitational Physics Simulations
-sitemap_exclude: true
 ---
 ### March 17, 2009: Webcast: *From Black Holes to Gamma-Ray Bursts*, hosted by SiCortex
 

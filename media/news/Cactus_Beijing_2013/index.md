@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Cactus enters the year of the water snake
-sitemap_exclude: true
 ---
 "仙人掌：高性能计算开源框架" (Cactus: An open-source framework for
 high-performance computing): That was the title of one of the four

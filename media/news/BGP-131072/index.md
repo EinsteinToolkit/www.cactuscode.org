@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Cactus runs on 131,072 cores on Blue Gene/P at ANL
-sitemap_exclude: true
 ---
 During the [Leap to Petascale
 Workshop](https://www.alcf.anl.gov/events/workshops/scaling_workshop08/)

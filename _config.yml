@@ -17,3 +17,8 @@ defaults:
       sidebar: "media/news/recent.html"
       nrecentnewsitems: 10
       release_branch: "Cactus_4.8.0"
+  -
+    scope:
+      path: "media/news"
+    values:
+      sitemap_exclude: true

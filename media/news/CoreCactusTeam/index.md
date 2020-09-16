@@ -1,7 +1,6 @@
 ---
 layout: default
 title: New Frameworks Group at CCT
-sitemap_exclude: true
 ---
 Frameworks group established by core Cactus team members at the Center
 for Computation and Technology at LSU.

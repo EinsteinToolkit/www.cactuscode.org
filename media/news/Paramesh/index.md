@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Success with the PARAMESH Grant
-sitemap_exclude: true
 ---
 PARAMESH Grant for the development of a Cactus driver.
 

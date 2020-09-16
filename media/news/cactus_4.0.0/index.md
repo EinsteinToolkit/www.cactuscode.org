@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Cactus 4.0.0 release
-sitemap_exclude: true
 ---
 We are pleased to announce release 4.0.0 of the Cactus computational
 toolkit. This release includes new features like support for CUDA

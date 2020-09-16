@@ -1,7 +1,6 @@
 ---
 layout: default
 title: First XiRel Workshop
-sitemap_exclude: true
 ---
 The Center for Computation & Technology will held the first XiRel
 workshop that will bring together researchers from

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: CFD Cactus toolkit used in the study of pollutant/chemical dispersion in urban cityscapes
-sitemap_exclude: true
 ---
 In **March 2007**, three CCT undergraduate research students presented
 their work at the annual conference of [Louisiana Academy of

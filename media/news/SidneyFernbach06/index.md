@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Ed Seidel wins Fernbach prize for Cactus and Black Hole Work
-sitemap_exclude: true
 ---
 **November 2006:**
 

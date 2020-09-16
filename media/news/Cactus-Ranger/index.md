@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Cactus Benchmarks Run on Ranger
-sitemap_exclude: true
 ---
 The Cactus group at LSU successfully ported the Cactus framework to
 [Ranger](http://www.tacc.utexas.edu/services/userguides/ranger), the new

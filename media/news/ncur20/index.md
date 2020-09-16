@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Cactus Papers presented at NCUR-20
-sitemap_exclude: true
 ---
 CCT undergraduate students had the opportunity to present results of
 their research at NCUR-20.
