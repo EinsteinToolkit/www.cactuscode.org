@@ -9,7 +9,7 @@ Reference Manual ([PDF](ReferenceManual.pdf),
 
 [Advanced Concepts (PDF)](CoreDoc.pdf)
 
-[Overview of Thorn README files](Readme_Info.php)
+[Overview of Thorn README files](Readme_Info.html)
 
 [Tutorials](tutorials/index.html)
 
