@@ -7,20 +7,20 @@ of the Cactus project.
 
   
 
-[news](news)
+[news](news/index.html)
 
   
 
-[presentations](presentations)
+[presentations](presentations/index.html)
 
   
 
-[publications](publications)
+[publications](publications/index.html)
 
   
 
-[prizes](prizes)
+[prizes](prizes/index.html)
 
   
 
-[tutorials](/documentation/tutorials)
+[tutorials](/documentation/tutorials.html)
