@@ -7,13 +7,13 @@ title: Site Map
 {% assign olddepth = 0 %}
 {% assign sorted_pages = site.pages | sort_natural: "url" %}
 {% for page in sorted_pages %}
-{% unless page.sitemap_exclude %} 
-{% assign depth = page.url | split: '/' | size | minus: 1%}
-{% if depth > olddepth %}
-{% for i in (olddepth .. depth) offset: 1 %} <ul> {% endfor %}
-{% elsif depth < olddepth %}
-{% for i in (depth .. olddepth) offset: 1 %} </ul> {% endfor %}
-{% endif %}
+{%   unless page.sitemap_exclude %} 
+{%   assign depth = page.url | split: '/' | size | minus: 1%}
+{%   if depth > olddepth %}
+{%     for i in (olddepth .. depth) offset: 1 %} <ul> {% endfor %}
+{%   elsif depth < olddepth %}
+{%     for i in (depth .. olddepth) offset: 1 %} </ul> {% endfor %}
+{%   endif %}
 <li><a href="{{base}}{{page.url}}">{{page.title}}</a></li>
 {% assign olddepth = depth %}
 {% endunless %} {% endfor %}
