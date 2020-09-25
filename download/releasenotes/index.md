@@ -9,12 +9,12 @@ of tested architectures. These messages are distributed to the news,
 users and developers mailing lists with each release.
 
 **Latest release:**  
-[Cactus 4.2.0](Cactus_4.2.0) (22 May 2013)
+[Cactus 4.2.0](Cactus_4.2.0.txt) (22 May 2013)
 
 **Previous releases:**  
-[Cactus 4.1.0](Cactus_4.1.0) (08 November 2012)  
-[Cactus 4.0.0](Cactus_4.0.0) (25 October 2011)  
-[Cactus 4.0 beta 16](beta16) (02 February 2009)  
+[Cactus 4.1.0](Cactus_4.1.0.txt) (08 November 2012)
+[Cactus 4.0.0](Cactus_4.0.0.txt) (25 October 2011)
+[Cactus 4.0 beta 16](beta16.txt) (02 February 2009)
 [Cactus 4.0 beta 15](beta15.txt) (02 November 2004)  
 [Cactus 4.0 beta 14](beta14.txt) (13 May 2004)  
 [Cactus 4.0 beta 13](beta13.txt) (30 March 2004)  
