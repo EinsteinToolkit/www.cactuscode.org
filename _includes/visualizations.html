@@ -1,0 +1,11 @@
+<h2>Visualization</h2>
+<ul class="sidemenu">
+{% assign sorted_pages = site.pages | sort_natural: "url" %}
+{% for page in sorted_pages %}
+  {% assign startswith = page.url | split: "/documentation/visualization/" %}
+  {% if startswith[0] == "" %}
+    {% assign vistool = page.url | split: "/" | last %}
+  <li><a href="{{base}}{{page.url}}index.html">{{vistool}}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>

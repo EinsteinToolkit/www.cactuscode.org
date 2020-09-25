@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Visualization Packages and Data Output Formats
+sidebar: visualizations.html
 ---
 ### xgraph: Animated, Easy Client for 1D Line Plots
 
