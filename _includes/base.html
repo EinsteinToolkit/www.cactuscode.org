@@ -4,8 +4,14 @@ append a string to the end of url since index.html is stripped from
 /foo/index.html and split | size counts the number of fields and not
 separators
 {%-endcomment-%}
-{%-assign depth = page.url | append: 'index.html' | split: '/' | size | minus: 1-%}
-{%-if    depth <= 1 %}{% assign base = '.'-%}
-{%-elsif depth == 2 %}{% assign base = '..'-%}
-{%-elsif depth == 3 %}{% assign base = '../..'-%}
-{%-elsif depth == 4 %}{% assign base = '../../..'-%}{%-endif-%}
+{%-if page.base_is_absolute-%}
+{%-comment-%}Used for error pages which are "mobile"{%-endcomment-%}
+{%-  assign base = ""-%}
+{%-else-%}
+{%-  assign depth = page.url | append: 'index.html' | split: '/' | size | minus: 1-%}
+{%-  if    depth <= 1 %}{% assign base = '.'-%}
+{%-  elsif depth == 2 %}{% assign base = '..'-%}
+{%-  elsif depth == 3 %}{% assign base = '../..'-%}
+{%-  elsif depth == 4 %}{% assign base = '../../..'-%}
+{%-  endif-%}
+{%-endif-%}
