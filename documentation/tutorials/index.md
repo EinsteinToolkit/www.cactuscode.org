@@ -16,4 +16,4 @@ Demo](/documentation/tutorials/wavetoydemo) is a good place to start.
 
   
 
-[Complete listing of tutorials](list)
+[Complete listing of tutorials](list.html)
