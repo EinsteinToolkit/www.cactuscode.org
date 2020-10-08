@@ -1,4 +1,6 @@
 name: Cactus Code Website
+# fixes /assets/css/style.css showing up. See https://github.com/jekyll/jekyll/issues/7478
+theme: null
 
 collections:
   thorndocs:
