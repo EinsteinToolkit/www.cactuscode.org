@@ -2,6 +2,7 @@
 layout: default
 title: Media and News
 ---
+{% include base.html %}
 Here you can learn more about the history, progress, and accomplishments
 of the Cactus project.
 
@@ -23,4 +24,4 @@ of the Cactus project.
 
   
 
-[tutorials](/documentation/tutorials.html)
+[tutorials]({{base}}/documentation/tutorials/index.html)
