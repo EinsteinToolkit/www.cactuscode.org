@@ -1,26 +1,30 @@
 #!/bin/bash
 
+set -e
+
+if [ -d $1 ] ; then
+  echo >/dev/stderr "$1 already exists"
+  exit 1
+fi
+
 #this script expects two arguments, the url name and the title for the news story
 # $#=2
 
 echo "--Making a new news story called "$1
 cp -r template $1
-rm -rf $1/.svn
 
-#change the title variable in index.php
-(
-echo "<?php \$title='"$2"';";
-tail -9 template/index.php;
-) > $1/index.php
+#change the title variable in index.md
+sed -i 's/Properly formatted story title/'"${2//\//\\\/}"'/' $1/index.md
 
-echo "--Adding it to svn"
-svn add $1
+echo "--Including a link to the story in the recent stories list!"
+DATE=$(date +"%B %Y")
+NEWS="$(< ../../_data/news.yml)"
+cat >../../_data/news.yml <<EOF
+- date: "$DATE"
+  link: "$1/index.html"
+  title: '${2//\'/\'\'}'
+$NEWS
+EOF
 
-mv recent.php oldrecent.php
-echo "--Including a link to the story in the recent stories list, edit recent.php!"
-(
-echo '<p class="align-right"> date';
-echo '	<li><a href="/media/news/'$1'">'$2'</a></li>';
-cat oldrecent.php;
-) > recent.php
-rm oldrecent.php
+echo "--Adding it to git"
+git add $1 ../../_data/news.yml

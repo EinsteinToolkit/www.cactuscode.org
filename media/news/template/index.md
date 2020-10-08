@@ -1,4 +1,5 @@
 ---
+# add news item to _data/news.yml once done
 layout: default
 title: Properly formatted story title
 ---
