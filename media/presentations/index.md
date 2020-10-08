@@ -47,7 +47,7 @@ Seidel, CBuilding Petascale Applications and Software Environments on
 the Teragrid Workshop, December 11-12, 2007, Arizona State University,
 Tempe, Az., USA.
 
-[<img src="GravityVideo.jpg" width="120" />](http://www.youtube.com/watch?v=SFUG6itL_0M)
+[<img src="GravityVideo.png" width="120" />](http://www.youtube.com/watch?v=SFUG6itL_0M)
 
 *[Tackling the Riddles of Gravity (Visions of Space
 Time)](http://www.youtube.com/watch?v=SFUG6itL_0M).* Video compilation
