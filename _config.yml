@@ -24,3 +24,10 @@ defaults:
       path: "media/news"
     values:
       sitemap_exclude: true
+  -
+    scope:
+      path: "global/errors"
+    values:
+      sitemap_exclude: true
+      base_is_absolute: true
+      permalink: /:basename:output_ext
