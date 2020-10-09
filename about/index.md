@@ -29,8 +29,8 @@ computational and computer scientists, based largely at the Center for
 Computation & Technology at Louisiana State University.
 
 -   [Cactus Development Team](team/index.html)
--   [Cactus History and Funding](history/index.html)
--   [Contact Us!](contact/index.html)
+-   [Cactus History and Funding](history.html)
+-   [Contact Us!](contact.html)
 
   
 How do I cite Cactus?
