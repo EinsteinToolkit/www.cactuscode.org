@@ -48,15 +48,21 @@ Demo with Web Server and Streaming IsoSurfaces
 ### Check out and compile
 
 Check out the source code using the **GetComponents** script.
-`wget --no-check-certificate https://raw.github.com/gridaphobe/CRL/ET_2014_11/GetComponents chmod 755 GetComponents ./GetComponents http://cactuscode.org/documentation/tutorials/wavetoydemo/WaveDemo.th`
+
+    wget --no-check-certificate https://raw.github.com/gridaphobe/CRL/ET_2014_11/GetComponents chmod 755 GetComponents ./GetComponents http://cactuscode.org/documentation/tutorials/wavetoydemo/WaveDemo.th
 
 Once the checkout has completed, move into the Cactus directory and
 compile the application.
-` cd Cactus gmake WaveDemo-config gmake WaveDemo` Hopefully there were
-no errors and you now have an executable, `exe/cactus_WaveDemo`.
+
+    cd Cactus
+    gmake WaveDemo-config gmake WaveDemo
+
+Hopefully there were no errors and you now have an executable, `exe/cactus_WaveDemo`.
 Check that it worked by running the test suites. Type:
-`gmake WaveDemo-testsuite` and give the default answers to each
-question.
+
+    gmake WaveDemo-testsuite
+
+and give the default answers to each question.
 
 ### Run the demo
 
@@ -65,20 +71,157 @@ Download the demo parameter file:
 
 To start the simulation, run your new executable with the demo parameter
 file. If you have a single processor, execute:
-`./exe/cactus_WaveDemo WaveDemo.par`
+
+    ./exe/cactus_WaveDemo WaveDemo.par
 
 If you compiled with MPI and have a multiprocessor version, you need to
 use the appropriate MPI command for running.
 
 When the simulation starts, you will see output describing the activated
 thorns and the scheduling tree.
-`tg-c305 dstark/Cactus> ./exe/cactus_WaveDemo parfiles/WaveDemo.par  --------------------------------------------------------------------------------         10                                     1   0101       ************************     01  1010 10      The Cactus Code V4.0      1010 1101 011      www.cactuscode.org        1001 100101    ************************       00010101                                     100011     (c) Copyright The Authors         0100      GNU Licensed. No Warranty         0101                                   --------------------------------------------------------------------------------  Cactus version: 4.0.b15 Compile date:   Nov 19 2004 (08:52:01) Run date:       Nov 19 2004 (08:54:30) Run host:       tg-c305.ncsa.teragrid.org Executable:     /home/ac/dstark/Cactus/./exe/cactus_WaveDemo Parameter file: parfiles/WaveDemo.par --------------------------------------------------------------------------------  Activating thorn Cactus...Success -> active implementation Cactus Activation requested for  --->coordbase symbase pugh pughslab pughreduce isosurfacer iojpeg jpeg6b ioutil ioascii iobasic time wavetoyc cartgrid3d boundary idscalarwavec wavebinarysource  httpd httpdextra socket<--- Activating thorn boundary...Success -> active implementation boundary Activating thorn cartgrid3d...Success -> active implementation grid Activating thorn coordbase...Success -> active implementation CoordBase Activating thorn httpd...Success -> active implementation HTTPD Activating thorn httpdextra...Success -> active implementation http_utils    . . .  Activating thorn wavebinarysource...Success -> active implementation binarysource Activating thorn wavetoyc...Success -> active implementation wavetoy --------------------------------------------------------------------------------   if (recover initial data)     Recover parameters   endif    Startup routines     [CCTK_STARTUP]     CartGrid3D: Register GH Extension for GridSymmetry     CoordBase: Register a GH extension to store the coordinate system handles     GROUP HTTP_Startup: HTTP daemon startup group       HTTPD: Start HTTP server       GROUP HTTP_SetupPages: Group to setup stuff which needs to be done           between starting the server and the first time it serves pages       HTTPD: Serve first pages at startup     HTTPDExtra: Utils for httpd startup     PUGH: Startup routine     IOUtil: Startup routine     IOJpeg: Startup routine     IOASCII: Startup routine     IsoSurfacer: Startup routine     IOBasic: Startup routine     PUGHReduce: Startup routine     SymBase: Register GH Extension for SymBase     WaveToyC: Register banner    . . .    Termination routines     [CCTK_TERMINATE]     IsoSurfacer: Termination routine     PUGH: Termination routine    Shutdown routines     [CCTK_SHUTDOWN]     HTTPD: HTTP daemon shutdown    Routines run after restricting:     [CCTK_POSTRESTRICT]     WaveToyC: Boundaries of 3D wave equation     GROUP WaveToyC_ApplyBCs: Apply boundary conditions       GROUP BoundaryConditions: Execute all boundary conditions         Boundary: Apply all requested local physical boundary conditions         CartGrid3D: Apply symmetry boundary conditions       Boundary: Unselect all grid variables for boundary conditions    Routines run after changing the grid hierarchy:     [CCTK_POSTREGRID]     CartGrid3D: Set Coordinates after regridding -------------------------------------------------------------------------------- Server started on http://tg-c305.ncsa.teragrid.org:5555/ INFO (what): PUGHReduce -------------------------------------------------------------------------------- Driver provided by PUGH -------------------------------------------------------------------------------- WaveToyC: Evolutions of a Scalar Field --------------------------------------------------------------------------------  INFO (IOJpeg): I/O Method 'IOJpeg' registered: output of 2D jpeg images                 of grid functions/arrays INFO (IOJpeg): Periodic IOJpeg output every 10 iterations INFO (IOJpeg): Periodic IOJpeg output requested for 'WAVETOY::phi' INFO (IOASCII): I/O Method 'IOASCII_1D' registered: output of 1D lines of                  grid functions/arrays to ASCII files INFO (IOASCII): Periodic 1D output every 10 iterations INFO (IOASCII): Periodic 1D output requested for 'WAVETOY::phi'    . . .  INFO (IsoSurfacer): Isosurfacer listening for connections      host 'tg-c305.ncsa.teragrid.org' control port 7050 data port 7051    . . .  INFO (PUGH):   Local load: 64000   [40 x 40 x 40] INFO (PUGH):   Maximum load skew: 100.000000 INFO (Time): Timestep set to 0.00649351 (courant_static) INFO (IOBasic): Periodic scalar output requested for 'WAVETOY::phi' INFO (IOBasic): Periodic info output requested for 'WAVETOY::phi' -------------------------------------------------    it  |          | WAVETOY::phi                |        |    t     | minimum      | maximum      | -------------------------------------------------      0 |    0.000 | 5.148200e-131 |   0.95066004 |     10 |    0.065 |-1.319022e-33 |   0.98026627 |     20 |    0.130 |  -0.30418278 |   1.40297645 |     30 |    0.195 |-9.120612e-23 |   1.53352239 |     40 |    0.260 |-4.980518e-19 |   1.76419451 |     50 |    0.325 |-5.650478e-16 |   2.06547404 |     60 |    0.390 |-5.221892e-13 |   2.20300711 |     70 |    0.455 |-3.124912e-10 |   2.39674767 |     80 |    0.519 |-9.294138e-09 |   2.38699930 |     90 |    0.584 |  -0.00000002 |   2.38045481 |    100 |    0.649 |-9.382595e-09 |   2.37422575 |    . . .`
+
+```
+tg-c305 dstark/Cactus&gt; ./exe/cactus_WaveDemo parfiles/WaveDemo.par
+--------------------------------------------------------------------------------
+
+       10
+  1   0101       ************************
+  01  1010 10      The Cactus Code V4.0
+ 1010 1101 011      www.cactuscode.org
+  1001 100101    ************************
+    00010101
+     100011     (c) Copyright The Authors
+      0100      GNU Licensed. No Warranty
+      0101
+
+--------------------------------------------------------------------------------
+
+Cactus version: 4.0.b15
+Compile date:   Nov 19 2004 (08:52:01)
+Run date:       Nov 19 2004 (08:54:30)
+Run host:       tg-c305.ncsa.teragrid.org
+Executable:     /home/ac/dstark/Cactus/./exe/cactus_WaveDemo
+Parameter file: parfiles/WaveDemo.par
+--------------------------------------------------------------------------------
+
+Activating thorn Cactus...Success -&gt; active implementation Cactus
+Activation requested for
+---&gt;coordbase symbase pugh pughslab pughreduce isosurfacer iojpeg jpeg6b ioutil
+ioascii iobasic time wavetoyc cartgrid3d boundary idscalarwavec wavebinarysource
+httpd httpdextra socket&lt;---
+Activating thorn boundary...Success -&gt; active implementation boundary
+Activating thorn cartgrid3d...Success -&gt; active implementation grid
+Activating thorn coordbase...Success -&gt; active implementation CoordBase
+Activating thorn httpd...Success -&gt; active implementation HTTPD
+Activating thorn httpdextra...Success -&gt; active implementation http_utils
+
+  . . .
+
+Activating thorn wavebinarysource...Success -&gt; active implementation binarysource
+Activating thorn wavetoyc...Success -&gt; active implementation wavetoy
+--------------------------------------------------------------------------------
+  if (recover initial data)
+    Recover parameters
+  endif
+
+  Startup routines
+    [CCTK_STARTUP]
+    CartGrid3D: Register GH Extension for GridSymmetry
+    CoordBase: Register a GH extension to store the coordinate system handles
+    GROUP HTTP_Startup: HTTP daemon startup group
+      HTTPD: Start HTTP server
+      GROUP HTTP_SetupPages: Group to setup stuff which needs to be done
+          between starting the server and the first time it serves pages
+      HTTPD: Serve first pages at startup
+    HTTPDExtra: Utils for httpd startup
+    PUGH: Startup routine
+    IOUtil: Startup routine
+    IOJpeg: Startup routine
+    IOASCII: Startup routine
+    IsoSurfacer: Startup routine
+    IOBasic: Startup routine
+    PUGHReduce: Startup routine
+    SymBase: Register GH Extension for SymBase
+    WaveToyC: Register banner
+
+  . . .
+
+  Termination routines
+    [CCTK_TERMINATE]
+    IsoSurfacer: Termination routine
+    PUGH: Termination routine
+
+  Shutdown routines
+    [CCTK_SHUTDOWN]
+    HTTPD: HTTP daemon shutdown
+
+  Routines run after restricting:
+    [CCTK_POSTRESTRICT]
+    WaveToyC: Boundaries of 3D wave equation
+    GROUP WaveToyC_ApplyBCs: Apply boundary conditions
+      GROUP BoundaryConditions: Execute all boundary conditions
+        Boundary: Apply all requested local physical boundary conditions
+        CartGrid3D: Apply symmetry boundary conditions
+      Boundary: Unselect all grid variables for boundary conditions
+
+  Routines run after changing the grid hierarchy:
+    [CCTK_POSTREGRID]
+    CartGrid3D: Set Coordinates after regridding
+--------------------------------------------------------------------------------
+Server started on http://tg-c305.ncsa.teragrid.org:5555/
+INFO (what): PUGHReduce
+--------------------------------------------------------------------------------
+Driver provided by PUGH
+--------------------------------------------------------------------------------
+WaveToyC: Evolutions of a Scalar Field
+--------------------------------------------------------------------------------
+
+INFO (IOJpeg): I/O Method 'IOJpeg' registered: output of 2D jpeg images
+               of grid functions/arrays
+INFO (IOJpeg): Periodic IOJpeg output every 10 iterations
+INFO (IOJpeg): Periodic IOJpeg output requested for 'WAVETOY::phi'
+INFO (IOASCII): I/O Method 'IOASCII_1D' registered: output of 1D lines of
+                grid functions/arrays to ASCII files
+INFO (IOASCII): Periodic 1D output every 10 iterations
+INFO (IOASCII): Periodic 1D output requested for 'WAVETOY::phi'
+
+  . . .
+
+INFO (IsoSurfacer): Isosurfacer listening for connections
+     host 'tg-c305.ncsa.teragrid.org' control port 7050 data port 7051
+
+  . . .
+
+INFO (PUGH):   Local load: 64000   [40 x 40 x 40]
+INFO (PUGH):   Maximum load skew: 100.000000
+INFO (Time): Timestep set to 0.00649351 (courant_static)
+INFO (IOBasic): Periodic scalar output requested for 'WAVETOY::phi'
+INFO (IOBasic): Periodic info output requested for 'WAVETOY::phi'
+-------------------------------------------------
+   it  |          | WAVETOY::phi                |
+       |    t     | minimum      | maximum      |
+-------------------------------------------------
+     0 |    0.000 | 5.148200e-131 |   0.95066004 |
+    10 |    0.065 |-1.319022e-33 |   0.98026627 |
+    20 |    0.130 |  -0.30418278 |   1.40297645 |
+    30 |    0.195 |-9.120612e-23 |   1.53352239 |
+    40 |    0.260 |-4.980518e-19 |   1.76419451 |
+    50 |    0.325 |-5.650478e-16 |   2.06547404 |
+    60 |    0.390 |-5.221892e-13 |   2.20300711 |
+    70 |    0.455 |-3.124912e-10 |   2.39674767 |
+    80 |    0.519 |-9.294138e-09 |   2.38699930 |
+    90 |    0.584 |  -0.00000002 |   2.38045481 |
+   100 |    0.649 |-9.382595e-09 |   2.37422575 |
+
+  . . .
+```
 
 This may take a while. You can look at the 1D output when it is finished
 if you have the simple visualization client
 [xgraph](http://cactuscode.org/documentation/visualizations/xgraph).
 After downloading and installing xgraph, issue:
-`xgraph WaveDemo/phi_x_[20][20].xg`
+
+    xgraph WaveDemo/phi_x_[20][20].xg
 
 <img src="xgraph.gif" alt="xgraph" width="400" />
 
@@ -89,7 +232,8 @@ browser. Connect to **http://&lt;machine name&gt;:5555** where
 **&lt;machine name&gt;:5555** is the name of the machine where the
 simulation is running. Note that this information was part of the
 standard output when the simulation started. For example:
-`Server started on http://tg-c305.ncsa.teragrid.org:5555/`
+
+    Server started on http://tg-c305.ncsa.teragrid.org:5555/
 
 Now you should see a screen with information about the simulation.
 
@@ -113,11 +257,13 @@ Download
 [IsoView]({{base}}/documentation/guides/visualization/IsoView/index.html), the
 isosurface visualization client.
 
-Start up IsoView: `IsoView -h <machine name> -dp 7051 -cp 7050`
+Start up IsoView:
+
+    IsoView -h <machine name> -dp 7051 -cp 7050
 
 Again, this information can be found in the standard output, for example
 
-`INFO (IsoSurfacer): Isosurfacer listening for connections                    host 'GridRebels-MacBook-Pro.local' control port 7050 data port 7051`
+    INFO (IsoSurfacer): Isosurfacer listening for connections host 'GridRebels-MacBook-Pro.local' control port 7050 data port 7051
 
 You should now see rotating blobs appearing in the client which should
 look something like this:

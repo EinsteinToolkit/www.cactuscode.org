@@ -73,7 +73,8 @@ and give the default answers to each question.
 
 <p> If you compiled with MPI and have a multiprocessor version, you need to use the appropriate MPI command for running. </p>
 <p> When the simulation starts, you will see output describing the activated thorns and the scheduling tree. 
-<code>tg-c305 dstark/Cactus&gt; ./exe/cactus_WaveDemo parfiles/WaveDemo.par 
+<code>
+tg-c305 dstark/Cactus&gt; ./exe/cactus_WaveDemo parfiles/WaveDemo.par
 --------------------------------------------------------------------------------
 
        10                                  
