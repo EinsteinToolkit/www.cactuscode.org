@@ -7,9 +7,9 @@ water equations. CaFunwave is based on the
 [Funwave](http://chinacat.coastal.udel.edu/programs/funwave/funwave.html)
 made available by the University of Delaware.
 
-[DOWNLOAD](download.php)
+[DOWNLOAD](download.html)
 
-Complete parameter listing: [Funwave Parameters](params.php)
+Complete parameter listing: [Funwave Parameters](params.html)
 
 |                                 |
 |---------------------------------|
