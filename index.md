@@ -27,8 +27,8 @@ software technologies being developed in the academic research
 community, including the [Globus](http://www.globus.org/) Metacomputing
 Toolkit, [HDF5](http://www.hdfgroup.org/HDF5/) parallel file I/O, the
 [PETSc](http://www.mcs.anl.gov/petsc/) scientific library, [adaptive
-mesh refinement](http://www.carpetcode.org/), web interfaces, and
-advanced visualization tools.
+mesh refinement](https://bitbucket.org/eschnett/carpet.git), web interfaces,
+and advanced visualization tools.
 
 The Cactus user community has created and is maintaining toolkits for
 several research fields. The [Einstein

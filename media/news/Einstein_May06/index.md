@@ -11,7 +11,7 @@ Location: Baton Rouge, LA
 
 The CCT offers a CactusEinstein workshop from May 23 to May 25, 2006.
 The aim of this workshop is to introduce physicists to [mesh refinement
-methods](http://www.carpetcode.org/), to the [CactusEinstein
+methods](https://bitbucket.org/eschnett/carpet.git), to the [CactusEinstein
 infrastructure](/documentation/arrangements/CactusEinstein.pdf), and to
 some visualisation tools. This workshop includes extended lab sessions.
 It is oriented towards graduate students and post-doctoral scholars with

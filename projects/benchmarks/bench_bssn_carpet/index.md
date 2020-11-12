@@ -4,9 +4,9 @@ title: Bench BSSN Carpet
 ---
 This benchmark is similar to Bench\_BSSN\_PUGH, but it uses mesh
 refinement instead of a uniform grid. It also uses the driver Carpet
-instead of PUGH. You find more information about Carpet on its [web
-page](http://www.carpetcode.org/). Carpet is still under development. It
-scales up to about 100 processors.
+instead of PUGH. You find more information about Carpet in its [code
+repository] (https://bitbucket.org/eschnett/carpet.git). Carpet is still under
+development. It scales up to about 100 processors.
 
 This benchmark comes in two configurations, 1lev and 3lev. The first is
 a unigrid configuration, which should in an ideal world show the same

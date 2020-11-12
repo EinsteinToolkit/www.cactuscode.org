@@ -20,8 +20,8 @@ A driver in Cactus manages storage for variables and implements
 communication for parallel processing. A driver is the heart piece for
 the efficient use of supercomputers. Parca will be a third driver for
 Cactus, next to PUGH, a highly efficient unigrid driver, and the mesh
-refinement driver Carpet \[http://www.carpetcode.org/\]. Parca will
-implement a somewhat different mesh refinement algorithm than Carpet,
+refinement driver [Carpet](https://bitbucket.org/eschnett/carpet.git). Parca
+will implement a somewhat different mesh refinement algorithm than Carpet,
 and will make the knowledge and experience that is build into Paramesh
 available to Cactus users.
 

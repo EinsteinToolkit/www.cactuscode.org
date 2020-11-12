@@ -35,7 +35,8 @@ We currently maintain five standard benchmarking applications:
     differencing in space, an explicit time integration method. Download
     [Bench\_BSSN\_PUGH.tar.gz](../Benchmarks/Bench_BSSN_PUGH.tar.gz)
 -   [Bench\_BSSN\_Carpet](bench_bssn_carpet): A numerical relativity
-    code using [mesh refinement](http://www.carpetcode.org/). It is
+    code using [mesh
+    refinement](https://bitbucket.org/eschnett/carpet.git). It is
     similar to BSSN\_PUGH, but instead of a uniform structured grid it
     uses the Carpet driver. Download
     [Bench\_BSSN\_Carpet.tar.gz](Bench_BSSN_Carpet.tar.gz)

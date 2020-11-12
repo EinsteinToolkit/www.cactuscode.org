@@ -19,8 +19,8 @@ received from Ranger's support team and are looking forward to using the
 full machine in the near future.
 
 The graph below shows weak scaling tests for two unigrid and one
-nine-level [mesh refinement](http://www.carpetcode.org/) benchmark
-solving the Einstein equations. The problem size was kept fixed per
+nine-level [mesh refinement](https://bitbucket.org/eschnett/carpet.git)
+benchmark solving the Einstein equations. The problem size was kept fixed per
 core, and there were 4 OpenMP threads per MPI process, with 1 MPI
 process per socket. (The PUGH benchmark was run only up to 1024 cores.)
 As the graphs show, this benchmark scales near perfectly in unigrid, and

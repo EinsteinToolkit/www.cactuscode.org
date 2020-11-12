@@ -60,14 +60,8 @@ CactusNumerical/LocalReduce
 # Carpet, the AMR driver
 !TARGET   = $ARR
 !TYPE     = git
-!AUTH_URL = carpetgit@carpetcode.org:carpet
-!URL      = git://carpetcode.org/carpet
+!URL      = https://bitbucket.org/eschnett/carpet.git
 !REPO_BRANCH = $ET_RELEASE
-# For the (old) hg version of Carpet, comment the previous three lines and uncomment
-# the next three
-#!TYPE     = hg
-#!AUTH_URL = ssh://carpetgit@carpetcode.org
-#!URL      = http://www.carpetcode.org/carpet
 !CHECKOUT = Carpet/doc
 Carpet/Carpet
 Carpet/CarpetIOASCII
