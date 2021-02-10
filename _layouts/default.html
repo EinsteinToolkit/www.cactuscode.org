@@ -42,12 +42,11 @@
 		</div> <!-- closing "main" content div -->
         	<div id="sidebar">
 			<p><form action="https://www.google.com/search" class="searchform" id="cse-search-box" method="get" target="_blank">
-				<input name="sitesearch" type="hidden" value="test.cactuscode.org"/>
+				<input name="sitesearch" type="hidden" value="www.cactuscode.org"/>
                                 <input type="hidden" name="ie" value="UTF-8" />
 				<input autocomplete="on" class="textbox" name="q" placeholder="Search CactusCode.org" required="required" type="text"/>
 				<input type="submit" name="sa" value="search" class="button" />
                         </form>
-                        <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
                         </p>
 			{% include {{page.sidebar}} maxitems=page.nrecentnewsitems %}
 	        </div> <!-- closing "sidebar" div -->
