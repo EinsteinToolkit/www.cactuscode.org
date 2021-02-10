@@ -22,27 +22,26 @@ At the time of this writing, there are two supported client programmes available
 
 <h2 id="contents"><span id="SECTION1">Contents</span></h2>
 <ul>
-<li><a href="gnuPlot" id="tex2html19">Contents</a></li>
-<li><a href="gnuPlot#SECTION2" id="tex2html20">1. Choosing gnuplot output in Cactus</a></li>
-<li><a href="gnuPlot#SECTION3" id="tex2html21">2. Producing some example files</a></li>
-<li><a href="gnuPlot#SECTION4" id="tex2html22">3. First steps</a></li>
-<li><a href="gnuPlot#SECTION5" id="tex2html23">4. Brushing up the graphs</a>
+<li><a href="#SECTION2">1. Choosing gnuplot output in Cactus</a></li>
+<li><a href="#SECTION3">2. Producing some example files</a></li>
+<li><a href="#SECTION4">3. First steps</a></li>
+<li><a href="#SECTION5">4. Brushing up the graphs</a>
 <ul>
-<li><a href="gnuPlot#SECTION51" id="tex2html24">4.1. Comfortable input</a></li>
-<li><a href="gnuPlot#SECTION52" id="tex2html25">4.2. Basic "set" options</a></li>
-<li><a href="gnuPlot#SECTION53" id="tex2html26">4.3. Combining several graphs</a></li>
-<li><a href="gnuPlot#SECTION54" id="tex2html27">4.4. Saving the output / Printing</a></li>
+<li><a href="#SECTION51">4.1. Comfortable input</a></li>
+<li><a href="#SECTION52">4.2. Basic "set" options</a></li>
+<li><a href="#SECTION53">4.3. Combining several graphs</a></li>
+<li><a href="#SECTION54">4.4. Saving the output / Printing</a></li>
 </ul></li>
-<li><a href="gnuPlot#SECTION6" id="tex2html28">5. Plotting 2D output files</a></li>
-<li><a href="gnuPlot#SECTION7" id="tex2html29">6. Getting professional</a></li>
-<li><a href="gnuPlot#SECTION8%22" id="tex2html30">7. Some advanced options</a>
+<li><a href="#SECTION6">5. Plotting 2D output files</a></li>
+<li><a href="#SECTION7">6. Getting professional</a></li>
+<li><a href="#SECTION8">7. Some advanced options</a>
 <ul>
-<li><a href="gnuPlot#SECTION81" id="tex2html31">7.1. Downsampling</a></li>
-<li><a href="gnuPlot#SECTION82" id="tex2html32">7.2. Rescaling</a></li>
-<li><a href="gnuPlot#SECTION83" id="tex2html33">7.3. Scripting</a></li>
+<li><a href="#SECTION81">7.1. Downsampling</a></li>
+<li><a href="#SECTION82">7.2. Rescaling</a></li>
+<li><a href="#SECTION83">7.3. Scripting</a></li>
 </ul></li>
-<li><a href="gnuPlot#SECTION9" id="tex2html34">8. 3D plots of time evolutions</a></li>
-<li><a href="gnuPlot#SECTION10" id="tex2html35">9. Closing remarks</a></li>
+<li><a href="#SECTION9">8. 3D plots of time evolutions</a></li>
+<li><a href="#SECTION10">9. Closing remarks</a></li>
 </ul>
 <h1 id="choosing-gnuplot-output-in-cactus"><span id="SECTION2">1. Choosing gnuplot output in Cactus</span></h1>
 By default, the thorns IOBasic and IOASCII produce xgraph output. You have to set the parameters
