@@ -47,7 +47,7 @@ Up-to-date documentation for GetComponents can be seen by executing
 `GetComponents [options] [file]` or `GetComponents [options] [URL]`
 where options are
 
-|             |                                                |
+
 |-------------|------------------------------------------------|
 | −−help      | brief help message                             |
 | −−man       | full documentation                             |
