@@ -13,8 +13,9 @@ system design is built on a standard interface environment. And its
 sophisticated data model provides users with great flexibility in
 creating visualizations.
 
-The official [VisIt home
-page](https://wci.llnl.gov/simulation/computer-codes/visit/) should be
+The official
+[VisIt home page](https://wci.llnl.gov/simulation/computer-codes/visit/)
+should be
 visited to get general information about VisIt. There are links to a
 "Getting Started" introduction into VisIt, a gallery of VisIt
 visualization examples, a user and developer discussion forum, FAQs,
@@ -119,7 +120,9 @@ distribution and follow the instructions given therein.
 The CarpetHDF5 package can be obtained from the Cactus Subversion server
 via anonymous checkout:
 
-`   svn co https://svn.cactuscode.org/VizTools/CarpetHDF5/trunk/ CarpetHDF5`
+```
+svn co https://svn.cactuscode.org/VizTools/CarpetHDF5/trunk/ CarpetHDF5
+```
 
 In order to build the CarpetHDF5 plugin you need to have a standard
 distribution of VisIt already installed on your system. To install the
@@ -128,7 +131,11 @@ package. If VisIt was properly installed, a window will pop-up. In the
 "CMake"-tab modify the library and include path for the HDF5-library
 which is included in the Visit installation. For example:
 
-`   CXXFLAGS: -I/path_to_visit/2.5.0/linux-x86_64/include/hdf5/include   LDFLAGS: -L/path_to_visit/2.5.0/linux-x86_64/lib   LIBS: -lhdf5`
+```
+CXXFLAGS: -I/path_to_visit/2.5.0/linux-x86_64/include/hdf5/include
+LDFLAGS: -L/path_to_visit/2.5.0/linux-x86_64/lib
+LIBS: -lhdf5
+```
 
 Then go to the "File"-menu, save the file and close the window. The
 plugin will then be generated and installed.
@@ -147,7 +154,21 @@ not being defined appear. You can correct this by applying the following
 patch to your visit installation and then retry to compile the
 CarpetHDF5 plugin:
 
-` --- visit2_5_0.linux-x86_64.orig/2.5.0/linux-x86_64/include/PluginVsInstall.cmake       2012-05-09 11:34:08.000000000 -0500 +++ visit2_5_0.linux-x86_64/2.5.0/linux-x86_64/include/PluginVsInstall.cmake    2012-05-24 09:51:54.000000000 -0500 @@ -360,8 +360,8 @@      )  ENDFUNCTION(ADD_TARGET_DEFINITIONS)   -MACRO(VISIT_PLUGIN_TARGET_PREFIX)  +MACRO(VISIT_PLUGIN_TARGET_RTOD type)       IF(WIN32)          SET_TARGET_PROPERTIES(${ARGN} PROPERTIES PREFIX "../lib")      ENDIF(WIN32) -ENDMACRO(VISIT_PLUGIN_TARGET_PREFIX) +ENDMACRO(VISIT_PLUGIN_TARGET_RTOD)`
+```
+--- visit2_5_0.linux-x86_64.orig/2.5.0/linux-x86_64/include/PluginVsInstall.cmake       2012-05-09 11:34:08.000000000 -0500
++++ visit2_5_0.linux-x86_64/2.5.0/linux-x86_64/include/PluginVsInstall.cmake    2012-05-24 09:51:54.000000000 -0500
+@@ -360,8 +360,8 @@
+     )
+ ENDFUNCTION(ADD_TARGET_DEFINITIONS)
+
+-MACRO(VISIT_PLUGIN_TARGET_PREFIX)
++MACRO(VISIT_PLUGIN_TARGET_RTOD type)
+     IF(WIN32)
+         SET_TARGET_PROPERTIES(${ARGN} PROPERTIES PREFIX "../lib")
+     ENDIF(WIN32)
+-ENDMACRO(VISIT_PLUGIN_TARGET_PREFIX)
++ENDMACRO(VISIT_PLUGIN_TARGET_RTOD)
+```
 
 ### Support and Acknowledgements
 
