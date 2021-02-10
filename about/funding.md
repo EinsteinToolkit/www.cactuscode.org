@@ -14,6 +14,22 @@ different institutions. In particular, we would like to give thanks to:
 
 Currently active grants supporting Cactus:
 
+-   NSF <em>The Einstein Toolkit ecosystem: Enabling fundamental research in the
+    era of multi-messenger astrophysics</em> (NSF
+   [2004157](http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=2004157) /
+   [2004044](http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=2004044) /
+   [2004311](http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=2004311) /
+   [2004879](http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=2004879) /
+   [2003893](http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=2003893))
+
+-   NSF *Einstein Toolkit Community Integration and Data Exploration* (NDF
+   [1550551](http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1550551) /
+   [1550461](http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1550461) /
+   [1550436](http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1550436) /
+   [1550514](http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1550514))
+
+Cactus has in the past been supported through the following grants:
+
 -   NSF [*Collaborative Research: Community Infrastructure for General
     Relativistic MHD
     (CIGR)*](http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0903973)
@@ -41,8 +57,6 @@ Currently active grants supporting Cactus:
 -   DOE/BOR *Ubiquitous Computing and Monitoring System for Discovery
     and Management of Energy Resources (UCOMS)* (DOE DE-FG02-04ER46136,
     BOR DOE/LEQSF(2004-07))
-
-Cactus has in the past been supported through the following grants:
 
 -   NSF *Astrophysics Simulation Collaboratory: Enabling Large Scale
     Simulations of Relativistic Astrophysics* (NSF PHY-9979985)
