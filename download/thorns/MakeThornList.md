@@ -32,10 +32,8 @@ description of CVS directives in available in the
 1.  To generate a ThornList `MyRun.th` for the parameter file
     `MyRun.par` simply issue the command
 
-    `          `
-
         MakeThornList -o=MyRun.th MyRun.par
 
-2.  Then checkout Cactus using `         `
+2.  Then checkout Cactus using 
 
         GetCactus MyRun.th
