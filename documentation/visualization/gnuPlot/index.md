@@ -49,6 +49,7 @@ By default, the thorns IOBasic and IOASCII produce xgraph output. You have to se
 ```
 IOBasic::outScalar_style = "gnuplot"
 IOASCII::out1D_style = "gnuplot f(x)"
+IO::new_filename_scheme = "no"
 ```
 to get gnuplot output. The basic file contents will be the same, but the file will have a slightly different structure.
 
@@ -73,19 +74,19 @@ plot "phi.xl" with lines
 You will see phi plotted vs. x. Each curve is for one time step. In order to choose a particular time only, you say
 
 ```
-plot "phi.xl" index 10 with points
+plot "phi.xl" every :::10::10 with points
 ```
-where "`index 10`" selects the 10th output (numbering starts from zero). The general form of the "`index`" option is "`index  FROM:TO:STRIDE`", so that the command
+where "`every :::10::10`" selects the 10th output (numbering starts from zero). The general form of the "`every`" option is "`every  <point_incr>:<block_incr>:<start_point>:<start_block>:<end_point>:<end_block>`", so that the command
 
 ```
-plot "phi.xl" index 10:20:5 with linespoints
+plot "phi.xl" every :5::10::20 with linespoints
 ```
-plots the 10th, 15th, and 20th output with connected points. Note that you cannot change the relative order of the "`index`" and "`with`" options; the `index` option has to come before `with`.
+plots the 10th, 15th, and 20th output with connected points. Note that you cannot change the relative order of the "`every`" and "`with`" options; the `every` option has to come before `with`.
 
 You can zoom in by specifying ranges in the x and y direction, as with
 
 ```
-plot [0:2][-0.25:] "phi.xl" index 10:20:5 with linespoints
+plot [0:2][-0.25:] "phi.xl" every :5::10::20 with linespoints
 ```
 which chooses the range [0:2] for the x axis and [-0.25:YMAX] for the y axis. ymax is automatically determined through the data you plot.
 You get help with "`help`", especially with "`help plot`".
@@ -107,16 +108,16 @@ Gnuplot has many options that can be set using the "`set`" command:
 Sometimes you want to plot several graphs on top of each other. In order to do that, you use a single plot command and separate the plot options by commas, as in
 
 ```
-plot "phi.xl" index 0 with lines, "phi.xl" index 10 with lines
+plot "phi.xl" every :::0::0 with lines, "phi.xl" every :::10::10 with lines
 ```
 Notice that you get different colours that way. You can specify which colours to use by adding a number after the plotting style, as in "`with points 4`", "`with lines 7`", "`with dots 8`". You can get a test page listing all colours by giving the "`test`" command.
 
 If you want different labels for the different graphs that you combine, say
 
 ```
-plot "phi.xl" index 0 title "initial" with lines, "phi.xl" index 60 title "final" with lines
+plot "phi.xl" every :::0::0 title "initial" with lines, "phi.xl" every :::60::60 title "final" with lines
 ```
-(on a single line, of course). Again the order of "index", "title", and "with" cannot be changed.
+(on a single line, of course). Again the order of "every", "title", and "with" cannot be changed.
 
 <h2 id="saving-the-output-printing"><span id="SECTION54">4.4. Saving the output / Printing</span></h2>
 After that much work you will likely want to print your work. Gnuplot can output in many different formats; your screen is only one of them. To produce postscript output and write that into a file, you would first come up with the corresponding "`plot`" command. Then you say
@@ -145,7 +146,9 @@ The basic gnuplot command for 2D-plots (aka surface plots) is "`splot`". Thus
 ```
 splot "phi_2d_xy.gnuplot" index 0 with lines
 ```
-works as expected. "`splot`" accepts the same "`index`", "`with`", and "`title`" options as "`plot`". Do not forget about "`help splot`". [Old versions of gnuplot might need a "`set parametric`" before they can plot surfaces. Install a current version if that happens to you.]
+where "`index 0`" selects the 0th output (numbering starts from zero). The general form of the "`index`" option is "`index  FROM:TO:STRIDE`" similar to the "`every`" option. "`index`" selects 
+data sets separated by pairs of blank records while "`every`" selects blocks separated by a single blank record.
+Other than that "`splot`" accepts the same "`with`", and "`title`" options as "`plot`". Do not forget about "`help splot`". [Old versions of gnuplot might need a "`set parametric`" before they can plot surfaces. Install a current version if that happens to you.]
 
 You can remove the hidden lines, i. e. make the surface non-transparent, with the option "`set hidden3d`". After setting that option you have to replot the graph.
 
@@ -171,12 +174,12 @@ You can rotate the graph with "`set view`". See "`help set view`" for details.
 Many people love their keyboards so much that they are hesitant to type more characters than absolutely necessary. Fortunately for them, most gnuplot commands can be abbreviated. Instead of the cumbersome
 
 ```
-plot "phi.xl" index 0 title "initial" with lines, "phi.xl" index 60 title "final" with lines
+plot "phi.xl" every :::0::0 title "initial" with lines, "phi.xl" every :::60::60 title "final" with lines
 ```
 from above, you can also write
 
 ```
-p "phi.xl" i 0 t "initial" w l, "" i 60 t "final" w l
+p "phi.xl" e :::0::0 t "initial" w l, "" e :::60::60 t "final" w l
 ```
 Most commands and options are abbreviated by their first or first few characters. An empty file name repeats the previous file name. "`linespoints`", by the way, is abbreviated "`lp`".
 
@@ -189,7 +192,7 @@ You can also save your current gnuplot state (including all the "`set`" options 
 If you have high resolution data, you might want to plot only every n-th data point:
 
 ```
-plot "phi.xl" index 0 every 2 with linespoints
+plot "phi.xl" every 2:::0::0 with linespoints
 splot "phi_2d_xy.gnuplot" index 0 every 2:2 with lines
 ```
 The "`every 2`" and "`every 2:2`" display only every second grid point.
@@ -197,7 +200,7 @@ The "`every 2`" and "`every 2:2`" display only every second grid point.
 <h2 id="rescaling"><span id="SECTION82">7.2 Rescaling</span></h2>
 You can rescale or shift the data:
 
-`plot "phi.xl" index 0 using 1:($2*2) with linespoints`
+`plot "phi.xl" every :::0::0 using 1:($2*2) with linespoints`
 The expression "`($2*2)`" multiplies all values in the second column ("`$2`") with 2 before it is displayed. You can put arbitrary expressions in a C-like syntax here, such as "`(sqrt($2*$2))`" for the absolute value, or "`(2*pi*$2)`" to multiply by 2 pi, or add a sine wave as in "`($2+sin($1))`". You can also modify the x coordinate. The whole formula has to be put in parentheses.
 
 An expression that is sometimes useful is "`(test ? value : 0/0)`". It displays the value only if "`test`" is true. Otherwise the value is omitted from the graph.
