@@ -1,10 +1,9 @@
 
 # cactuscode.org website
 
-This is the source repository for a pre-release version of the new
-cactuscode.org website, currently hosted at
-[test.cactuscode.org](https://test.cactuscode.org).  The website is
-automatically updated when changes are made to the master branch of
+This is the source repository for the new
+[www.cactuscode.org](https://www.cactuscode.org) website. The website
+is automatically updated when changes are made to the master branch of
 this repository.
 
 The website is built using the static site generator "Jekyll", and the
