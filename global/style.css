@@ -9,7 +9,6 @@ body
 	{
 	background: #caced1;
 	font: 82%/1.5em Verdana, Tahoma, arial, sans-serif;
-	color: #777;
 	text-align: center;
 	margin: 15px 0;
 	}
@@ -106,7 +105,6 @@ blockquote
 	margin: 10px 15px;
 	padding: 0 0 0 25px;  
 	font: bold 1.3em/1.5em Verdana, 'Trebuchet MS', Tahoma, arial, Sans-serif; 
-	color: #2361BA;
 	border: 1px solid #E5F0FB;   
 	/*background: #F4F8FD url(images/quote.jpg) no-repeat 8px 6px;*/
 	background: #F4F8FD;
@@ -173,7 +171,6 @@ input
 	padding:3px;
 	border: 1px solid #E5F0FB; 
 	font: normal 1em Verdana, sans-serif;
-	color:#777;	
 	}
 textarea
 	{
@@ -183,7 +180,6 @@ textarea
 	border: 1px solid #E5F0FB; 
 	height:100px;
 	display:block;
-	color:#777;
 	}
 input.button
 	{ 
@@ -213,7 +209,6 @@ input.button
 .searchform input.textbox
 	{ 
 	width: 111px;
-	color: #777;
 	height: 16px;
 	padding: 3px;
 	border: 1px solid #D2E8F7;
@@ -432,7 +427,6 @@ input.button
 	width: 190px;
 	padding: 0;
 	margin: 0 0 0 0;	
-	color: #777;
 	}	
 #sidebar h2
 	{
@@ -459,7 +453,6 @@ input.button
 	list-style: none;
 	padding: 4px 0 4px 5px;
 	margin: 0 2px;	
-	color: #777;	
 	border-bottom: 1px solid #D2E8F7;
 	font-size: 1.3em;
 	}
@@ -500,7 +493,6 @@ input.button
 	list-style: none;
 	padding: 4px 0 4px 5px;
 	margin: 0 2px;	
-	color: #777;	
 	border-bottom: 1px solid #D2E8F7;
 	}
 * html body #sidebar ul.sidenews li
