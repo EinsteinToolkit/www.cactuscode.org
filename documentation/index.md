@@ -11,6 +11,8 @@ Reference Manual ([PDF](ReferenceManual.pdf),
 
 [Overview of Thorn README files](Readme_Info.html)
 
+[GetComponents](GetComponents.html)
+
 [Tutorials](tutorials/index.html)
 
 [Arrangement Guides](arrangements/index.html)
@@ -20,7 +22,3 @@ Reference Manual ([PDF](ReferenceManual.pdf),
 [Visualization](visualization/index.html)
 
 [Citation](citation/index.html)
-
-  
-  
-  
