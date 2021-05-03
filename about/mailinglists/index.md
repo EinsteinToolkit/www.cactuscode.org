@@ -12,8 +12,8 @@ should be used to submit patches to the Cactus team.
 #### News items:
 
 <news@cactuscode.org>  
-\[[subscribe](http://www.cactuscode.org/mailman/listinfo/news)\]  
-\[[archives](http://www.cactuscode.org/pipermail/news)\]
+\[[subscribe](http://cactuscode.org/mailman/listinfo/news)\]  
+\[[archives](http://cactuscode.org/pipermail/news)\]
 
   
 
