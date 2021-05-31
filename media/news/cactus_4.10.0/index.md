@@ -1,8 +1,13 @@
 ---
-# add news item to _data/news.yml once done
 layout: default
-title: 
+title: Cactus 4.10.0 release
 ---
-Write the story here.
+We are pleased to announce release 4.10.0 of the Cactus computational toolkit
+in conjunction with the [Lorentz](https://en.wikipedia.org/wiki/Hendrik_Lorentz)
+release of the
+[Einstein Toolkit](https://einsteintoolkit.org).
 
-### day Mon year — user posting
+Read more about the new release in the longer
+[Einstein Toolkit release notes](https://einsteintoolkit.org/about/releases/ET_2021_05_announcement.html).
+
+### May 31, 2021 Zachariah Etienne
