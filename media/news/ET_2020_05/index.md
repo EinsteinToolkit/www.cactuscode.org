@@ -2,7 +2,7 @@
 layout: default
 title: Einstein Toolkit "Turing" Release
 ---
-We are pleased to announce the nineteenth release (code name
+We are pleased to announce the twentieth release (code name
 [Turing](https://en.wikipedia.org/wiki/Alan_Turing)) of the
 Einstein Toolkit, an open, community developed software infrastructure for
 relativistic astrophysics.
