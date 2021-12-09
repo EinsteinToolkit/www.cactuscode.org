@@ -2,8 +2,8 @@
 layout: default
 title:  Einstein Toolkit "Lorentz" Release
 ---
-We are pleased to announce the twenty-third  release (code name
-[Johson](https://en.wikipedia.org/wiki/Katherine_Johnson)) of the
+We are pleased to announce the twenty-second release (code name
+[Lorentz](https://en.wikipedia.org/wiki/Hendrik_Lorentz)) of the
 Einstein Toolkit, an open, community developed software infrastructure for
 relativisticastrophysics.
 
