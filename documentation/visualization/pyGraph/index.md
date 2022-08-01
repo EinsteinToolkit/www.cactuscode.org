@@ -56,13 +56,20 @@ Binaries and source code for ygraph are all available from the <a href="https://
 pyGraph requires the following packages to be available
 
 
-- PyQt-4, including its development tools for pyrcc4
+- PyQt-5, including its development tools for pyrcc4
 - PythonQwt
 
-and once those are installed pygraph and its scidata depency can be installed using pip
+which can be installed using your system's package manager or via pip
+
 ```
-pip install --user hg+https://bitbucket.org/dradice/scidata
-pip install --user hg+https://bitbucket.org/dradice/pygraph
+pip install --user PyQt5
+pip install --user pyqwt
+```
+
+Once those are installed pygraph and its scidata depency can be installed using pip
+```
+pip install --user git+https://bitbucket.org/dradice/scidata
+pip install --user git+https://bitbucket.org/dradice/pygraph
 ```
 
 <h3 id="support">Support</h3>
