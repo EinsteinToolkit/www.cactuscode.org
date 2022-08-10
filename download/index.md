@@ -42,7 +42,7 @@ To checkout the Cactus flesh and required thorns, choose and save one of our
 
 The Cactus Code is (C) Copyrighted by the individual Authors and
 distributed under the [GNU Lesser General Public
-License](http://www.gnu.org/copyleft/lgpl.html). Most of the
+License](https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html). Most of the
 computational packages that come with it follow this license, but the
 authors of any thorn are free to follow any licensing they deem
 appropriate as long as they state it explicitly in their thorn
