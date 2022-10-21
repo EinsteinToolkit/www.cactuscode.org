@@ -11,7 +11,6 @@ on the infrastructure that it provides.
     GPUs.
 -   [XiRel](http://www.cct.lsu.edu/xirel) develops a Next Generation
     Infrastructure for Numerical Relativity
-
-  
-  
-  
+-   [Einstein Toolkit](http://www.einsteintoolkit.org) a community-driven
+    software platform of core computational tools to advance and support
+    research in relativistic astrophysics and gravitational physics.
