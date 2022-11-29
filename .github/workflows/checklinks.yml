@@ -1,4 +1,9 @@
-on: push
+on:
+  workflow_run:
+    workflows:
+      - pages-build-deployment
+    types:
+      - completed
 jobs:
   linkChecker:
     runs-on: ubuntu-latest
