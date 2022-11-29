@@ -24,9 +24,10 @@ Cactus runs on many architectures. Applications, developed on standard
 workstations or laptops, can be seamlessly run on clusters or
 supercomputers. Cactus provides easy access to many cutting edge
 software technologies being developed in the academic research
-community, including the [Globus](http://www.globus.org/) Metacomputing
-Toolkit, [HDF5](http://www.hdfgroup.org/HDF5/) parallel file I/O, the
-[PETSc](http://www.mcs.anl.gov/petsc/) scientific library, [adaptive
+community, including the [Globus](https://www.globus.org/) Metacomputing
+Toolkit, [HDF5](https://www.hdfgroup.org/solutions/hdf5/) parallel file I/O,
+the
+[PETSc](https://www.mcs.anl.gov/petsc/) scientific library, [adaptive
 mesh refinement](https://bitbucket.org/eschnett/carpet.git), web interfaces,
 and advanced visualization tools.
 

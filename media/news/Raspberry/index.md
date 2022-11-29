@@ -23,7 +23,7 @@ What has been demonstrated is a build of the
 [Gauss](http://einsteintoolkit.org/about/releases/ET_2013_05_announcement.php)
 release of the [Einstein Toolkit](http://einsteintoolkit.org/),
 successfully passing all but a few test suites (apparently connected to
-[HDF5](http://www.hdfgroup.org/HDF5/) recovery in
+[HDF5](https://www.hdfgroup.org/solutions/hdf5/) recovery in
 [Carpet](https://bitbucket.org/eschnett/carpet.git)) on one Raspberry Pi and a
 small "cluster" of two Raspberry nodes.
 
