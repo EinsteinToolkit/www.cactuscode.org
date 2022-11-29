@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: install checklinks
-        run: sudo apt-get update && sudo apt-get install w3c-linkchecker
+       run: sudo apt-get update && sudo apt-get install w3c-linkchecker
      - name: Check links
-        run: checklink  --exclude '^https?://[a-zA-Z_0-9]*.w3.org/.*' https://www.cactuscode.org
+       run: checklink  --exclude '^https?://[a-zA-Z_0-9]*.w3.org/.*' https://www.cactuscode.org
