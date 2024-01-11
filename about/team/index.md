@@ -10,15 +10,16 @@ list some of the current active members of the development team:
 ### Current
 
 [Gabrielle Allen](gallen)  
-Former lead of Cactus project at [UIUC](https://astro.illinois.edu/) and
+Former lead of Cactus project at
+[UWYO](https://www.uwyo.edu/soc/people/gabrielle-allen.html) and
 inactive developer
 
   
 
 [Frank Löffler](floeffler)  
-Former lead of the Cactus project
+Former lead of the Cactus project at
+[University of Jena](https://www.zedif.uni-jena.de/de/team/frank-l%C3%B6ffler.html).
 
-  
 
 [Steven R. Brandt](sbrandt)  
 Current lead of the Cactus project at the
@@ -40,20 +41,18 @@ Physics](http://www.perimeterinstitute.ca/)
   
 
 [Roland Haas](haas)  
-Researcher at [NCSA](http://gravity.ncsa.illinois.edu/ "NCSA")
+Researcher at [NCSA](http://gravity.ncsa.illinois.edu/)
 
   
 
 [Ian Hinder](hinder)  
-Postdoc researcher at the
-[AEI](http://www.aei.mpg.de/14014/AEI_Potsdam-Golm "AEI")
+Researcher at the
+[University of Manchester](https://ianhinder.net/)
 
   
 
 [Eloisa Bentivegna](ebentivegna)  
-Assistant Professor at the [department of Physics and Astronomy,
-University of Catania,
-Italy](http://www.unict.it/en/ "University of Catania")
+Research staff at [IBM](https://research.ibm.com/people/eloisa-bentivegna)
 
   
 
