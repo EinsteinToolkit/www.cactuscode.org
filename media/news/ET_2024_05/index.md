@@ -2,7 +2,7 @@
 layout: default
 title:  Einstein Toolkit "Landau" Release
 ---
-We are pleased to announce the twenty-seventh release (code name
+We are pleased to announce the twenty-eighth release (code name
 [Landau](https://en.wikipedia.org/wiki/Lev_Landau)) of the
 Einstein Toolkit, an open, community developed software infrastructure for
 relativisticastrophysics.
