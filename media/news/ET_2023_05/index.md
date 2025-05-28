@@ -5,7 +5,7 @@ title:  Einstein Toolkit "Schwarzschild" Release
 We are pleased to announce the twenty-sixth release (code name
 [Schwarzschild](https://en.wikipedia.org/wiki/Karl_Schwarzschild)) of the
 Einstein Toolkit, an open, community developed software infrastructure for
-relativisticastrophysics.
+relativistic astrophysics.
 
 For more information about using or contributing to the Einstein Toolkit, or to
 join the Einstein Toolkit Consortium, please visit our web pages at
