@@ -10,4 +10,4 @@ release of the
 Read more about the new release in the longer
 [Einstein Toolkit release notes](https://einsteintoolkit.org/about/releases/ET_2023_05_announcement.html).
 
-### May 22, 2025 cd
+### May 29, 2025 Maxwell Rizzo

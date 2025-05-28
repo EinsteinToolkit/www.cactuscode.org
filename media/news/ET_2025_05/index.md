@@ -11,4 +11,4 @@ For more information about using or contributing to the Einstein Toolkit, or to
 join the Einstein Toolkit Consortium, please visit our web pages at
 [http://einsteintoolkit.org](http://einsteintoolkit.org).
 
-### May 22, 2025 cd
+### May 29, 2025 Maxwell Rizzo
